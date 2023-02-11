@@ -2,7 +2,7 @@
 
 This is the source-code for the course "Physics For Unity".
 
-https://bit.ly/physics-for-unity-on-udemy
+https://bit.ly/physics-for-unity-2022-on-udemy
 
 Created By
 =============
