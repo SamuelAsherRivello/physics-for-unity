@@ -5,13 +5,13 @@ This is the source-code for the course "Physics For Unity".
 https://bit.ly/physics-for-unity-2022-on-udemy
 
 
+# Repo
+
 **Getting Started**
 1. Download this repo (*.zip or *.git)
 1. Download the [Unity Editor](https://store.unity.com/#plans-individual)
 1. Open this repo in the Unity Editor
 1. Enjoy!
-
----
 
 **Documentation**
 * `README.md` - Overall Docs for this repo
