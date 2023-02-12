@@ -24,6 +24,7 @@ There are **two** projects within. Use 1 for most lessons. Use 2 for the final, 
 ### Project 1 - Unity w/ GameObjects
 
 **Configuration**
+* `Path` - `./Unity/`
 * `Unity Target` - [Standalone MAC/PC](https://support.unity.com/hc/en-us/articles/206336795-What-platforms-are-supported-by-Unity-)
 * `Unity Version` - Use this [Version](./Unity/ProjectSettings/ProjectVersion.txt)
 * `Dependencies` - Already included via [Unity Package Manager](https://docs.unity3d.com/Manual/upm-ui.html) as this [Version](./Unity/Packages/manifest.json)
@@ -31,6 +32,7 @@ There are **two** projects within. Use 1 for most lessons. Use 2 for the final, 
 ### Project 2 - Unity w/ DOTS
 
 **Configuration**
+* `Path` - `./Unity_DOTS/`
 * `Unity Target` - [Standalone MAC/PC](https://support.unity.com/hc/en-us/articles/206336795-What-platforms-are-supported-by-Unity-)
 * `Unity Version` - Use this [Version](./Unity_DOTS/ProjectSettings/ProjectVersion.txt)
 * `Dependencies` - Already included via [Unity Package Manager](https://docs.unity3d.com/Manual/upm-ui.html) as this [Version](./Unity/Packages/manifest.json)
