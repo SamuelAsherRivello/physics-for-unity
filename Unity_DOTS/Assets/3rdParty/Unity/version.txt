@@ -1,0 +1,6 @@
+Source Url: 
+* https://github.com/Unity-Technologies/EntityComponentSystemSamples/tree/master/PhysicsSamples
+
+Changelog: 
+* Deleted all files except the desired demo
+* Moved to /Assets/3rdParty/

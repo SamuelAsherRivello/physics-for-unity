@@ -1,6 +1,108 @@
 # Release Notes
 All notable changes to this project will be documented in this file.
 
+## [Samples Project for 0.51.0-preview.32] - 2022-06-30
+### Changes
+* Packages:
+  * Updated com.unity.physics from `0.50.0-preview.24` to `0.51.0-preview.32`  
+  * Updated com.havok.physics from `0.50.0-preview.24` to `0.51.0-preview.32`  
+  * Updated com.unity.collections from `1.2.3-pre.24` to `1.3.1`
+  * Updated com.unity.entities from `0.50.0-preview.24` to `0.51.0-preview.32`
+  * Updated com.unity.jobs from `0.50.0-preview.8` to `0.51.0-preview.32`
+  * Updated com.unity.rendering.hybrid from `0.50.0-preview.24` to `0.51.0-preview.32`
+  * Updated com.unity.render-pipelines.universal from `10.8.1` to `12.1.7`
+* Editor:
+  * Updated Editor version from `2020.3.30f1` to `2021.3.4f1`  
+* Documentation:
+  * Updated Documentation folder has been renamed to READMEimages and Samples.md has been renamed to README.md.  
+* Shader PhysicsStatic material has been disabled due to some rendering errors with `2021.3.4f1` a new material substitutes the shader while the errors gets fixed.
+* Updated NativeHashMap to NativeParallelHashMap.
+
+### Fixes
+### Known Issues
+
+## [Samples Project for 0.50.0-preview.24] - 2022-03-25
+### Changes
+* Project:
+  * Updated project name from UnityPhysicsSamples to PhysicsSamples.   
+  * add urp to the project.
+  * upgrade shaders so they are urp compatible.
+  * cleanup Shaders/PhysicsStaticInputs.hlsl and Shaders/PhysicsStatic.shader + add materials.
+* Packages:
+  * Updated com.unity.physics to `0.50.0-preview.24`  
+  * Updated com.havok.physics  to `0.50.0-preview.24`  
+  * Updated com.unity.collections to `1.2.3-pre.24`
+  * Updated com.unity.entities to `0.50.0-preview.24`
+  * Updated com.unity.jobs to `0.50.0-preview.8`
+  * Updated com.unity.rendering.hybrid to `0.50.0-preview.24`
+  * Updated com.unity.render-pipelines.universal to `10.8.1` 
+
+### Fixes
+  * fixed materials for all demos
+  * fixed up ragdoll parts scale based on collider mesh bounds
+  * fixed material colors
+  
+### Known Issues
+
+## [Samples Project for 0.10.0-preview] - 2021-12-31
+### Changes
+* Added `ImmediatePhysicsWorldStepper` utility class for running physics simulation immediately on the current thread.
+* Changed `ProjectIntoFutureOnCueSystem` in Pool demo to use `ImmediatePhysicsWorldStepper`.
+* Added Assets/Tests/MultipleWorlds/Animation/Animation scene that shows how you can use a separate `PhysicsWorld` to simulate a small number of non-critical bodies for animation purposes (character's ponytail and scabbard). `DriveAnimationBodySystem` syncs critical bodies between default and side physics world (character's head and torso) and prepares the data for non-critical bodies (position and velocity correction for ponytail and scabbard). `AnimationPhysicsSystem` performs single-threaded `PhysicsWorld` building, simulation and export to ECS components. The demo shows 2 variants of physically animated ponytail: with position and velocity corrections (green) and without them (blue).
+* Added Assets/Tests/MultipleWorlds/ClientServer/ClientServer scene as a simplified client-server sample, with game-critical ghost bodies (exist on both server and client) and client-only bodies that are simulated only locally to add to game's visual appeal.
+Bodies in server physics world are simulated first (would be predicted based on server data in real use-cases) and then mirrored into the default physics world. Default physics world contains ghost and client-only bodies, where ghost bodies are driven by their server counterparts (game objects are linked via Server Entity setting in Drive Ghost Body Authoring script). `DriveGhostBodySystem` drives ghost bodies by position or velocity, the ratio (position vs velocity) is determined by First Order Gain setting in Drive Ghost Body Authoring script on the client ghost body game object. `ServerPhysicsSystem` is the key system that builds, simulates and exports server physics world. 
+The demo shows different kinematic bars (client-only, dynamic and kinematic ghost) rotating and pushing various speheres around (client-only, dynamic and kinematic ghosts driven by position, velocity and both equally).
+### Fixes
+### Known Issues
+
+## [Samples Project for 0.9.0-preview.4] - 2021-05-19
+### Changes
+* Dependencies
+  * Updated Data Flow Graph to `0.21.0-preview.1`
+  * Updated IDE Visual Studio to `2.0.7`
+  * Updated Hybrid Renderer `0.13.0-preview.30`
+### Fixes
+### Known Issues
+
+## [Samples Project for 0.8.0-preview] - 2021-03-26
+
+### Changes
+* Dependencies
+  * Updated DOTS Editor from `0.13.0-preview` to `0.14.0-preview.1`
+  * Updated Hybrid Renderer from `0.12.0-preview.42` to `0.13.0-preview.17`
+  * Updated Burst from `1.4.4` to `1.5.0`
+
+* Refactored the `CollisionEvent` and `TriggerEvent` demos to make the Stateful events clearer.
+  * To add stateful events to your own project copy all scripts from the [Stateful](Assets/Demos/2.%20Setup/2d.%20Events/Scripts/Stateful) folder.
+  * Then, if you want to have collision events:
+    1. Use the **'Collide Raise Collision Events'** option of the **'Collision Response'** property of a `PhysicsShapeAuthoring` component, and
+    2. Add a `StatefulCollisionEventBufferAuthoring` component to that entity (and select if details should be calculated or not)
+    3. At runtime, read from the dynamic buffer of `StatefulCollisionEvent`s
+  * Alternatively, if you want to have trigger events:
+    1. Use the **'Raise Trigger Events'** option of the **'Collision Response'** property of a `PhysicsShapeAuthoring` component, and
+    2. Add a `StatefulTriggerEventBufferAuthoring` component to that entity
+    3. At runtime, read from the dynamic buffer of `StatefulTriggerEvent`s
+
+## [Samples Project for 0.7.0-preview.3] - 2021-02-24
+
+### Changes
+
+* Dependencies
+  * Updated Data Flow Graph from `0.18.0-preview.3` to `0.20.0-preview.4`
+  * Updated DOTS Editor from `0.12.0-preview.4` to `0.13.0-preview`
+  * Updated Hybrid Renderer from `0.10.0-preview.21` to `0.12.0-preview.42`
+  * Updated Coding from `0.1.0-preview.17` to `0.1.0-preview.20`
+  
+* Added a new `MouseHoverAuthoring` script to help highlight the extra `CompoundCollider.Child.Entity` field and `PhysicsRenderEntity` component data. Check out the simple `1b. Representations` and more complex `2a2. Collider Parade - Advanced` demos scene for example of setup variations. 
+* Added `Tests/VelocityClipping/VelocityClippingStacking` demo to showcase a simple replacement for the removed `SimulationCallbacks.Phase.PostSolveJacobians`. This demo does a really simple velocity clipping and the point is not to showcase stacking (which is covered with `Tests/Stacking` demos) but instead to show how to achieve the effect similar to previous callback without using the callback itself.
+* Added `Tests/SystemScheduling/SchedulingSample` which shows how jobs that interact with physics runtime data (stored in PhysicsWorld) should be scheduled.
+
+### Fixes
+
+* Fixed a bug where duplicate joint Entities were created when multiple joint components are added to the same game object.
+
+### Known Issues
+
 ## [Samples Project for 0.6.0-preview.3] - 2021-01-18
 
 ### Changes
