@@ -26,8 +26,8 @@ namespace RMC.UnityGamePhysics.Sections.Section05
 
 			// Physics			------------------------------------
 			// True is default. 
-			// False requires us to manually call Simulate below
-			Physics.autoSimulation = false;
+			// This simulationMode requires us to manually call Simulate below
+			Physics.simulationMode = SimulationMode.Script;
 		}
 
 		protected void OnValidate()
@@ -46,9 +46,9 @@ namespace RMC.UnityGamePhysics.Sections.Section05
 		protected void Update()
 		{
 			// Physics			------------------------------------
-			if (Physics.autoSimulation)
+			if (Physics.simulationMode != SimulationMode.Script)
 			{
-				return; // do nothing if the automatic simulation is enabled
+				return; // Do nothing here if we are not in Script mode
 			}
 
 			// Time Dilation	------------------------------------
