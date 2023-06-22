@@ -15,6 +15,7 @@ namespace RMC.UnityGamePhysics.Sections.Section04
 		[SerializeField]
 		private float _rayDuration = 0.1f;
 
+		
 		private void Update()
 		{
 			// SETUP: Allow for 1 result (the closest) per job
@@ -23,7 +24,9 @@ namespace RMC.UnityGamePhysics.Sections.Section04
 
 			// Here we create one command. Simple demo.
 			// NOTE: This system is optimized to can handle MANY commands. 
-			commands[0] = new RaycastCommand(transform.position, Vector3.down, _rayDistance);
+			QueryParameters queryParameters = new QueryParameters();
+			queryParameters.layerMask = LayerMask.GetMask(ProjectConstants.FloorLayer, ProjectConstants.RampLayer);
+			commands[0] = new RaycastCommand(transform.position, Vector3.down, queryParameters, _rayDistance);
 
 			if (_isDebug == true)
 			{
