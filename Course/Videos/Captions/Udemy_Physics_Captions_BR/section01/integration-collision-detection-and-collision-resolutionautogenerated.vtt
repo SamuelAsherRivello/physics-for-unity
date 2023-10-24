@@ -1,223 +1,223 @@
 WEBVTT
 
 00:01.520 --> 00:04.670
-Welcome to an Introduction to Game Physics Section one.
+Bem-vindo à Seção um de Introdução à Física de Jogos.
 
 00:04.700 --> 00:08.360
-In this section, we'll look at the benefits of creating physics based games.
+Nesta seção, veremos os benefícios de criar jogos baseados em física.
 
 00:08.510 --> 00:14.060
-We'll look at the three major concerns of any physics system, and we'll see how those concerns apply
+Examinaremos as três principais preocupações de qualquer sistema de física e veremos como essas preocupações se aplicam
 
 00:14.060 --> 00:17.310
-to unity, Unity's physics system and project setup.
+ao Unity, o sistema de física do Unity e a configuração do projeto.
 
 00:17.330 --> 00:20.180
-We'll also look at physics, life cycle and timing.
+Também examinaremos a física, o ciclo de vida e o tempo.
 
 00:20.360 --> 00:25.760
-In this video integration, collision detection and collision resolution, we'll see.
+Neste vídeo, veremos integração, detecção de colisão e resolução de colisão.
 
 00:25.760 --> 00:28.320
-These are the three major concerns of any physics system.
+Estas são as três principais preocupações de qualquer sistema de física.
 
 00:28.340 --> 00:30.650
-We'll see how unity handles each one.
+Veremos como o unity lida com cada uma delas.
 
 00:30.650 --> 00:34.310
-And we'll take a look at physics in the Unity editor for the first time.
+E daremos uma olhada na física no editor Unity pela primeira vez.
 
 00:34.550 --> 00:36.450
-So what do we mean by game physics?
+Então, o que queremos dizer com física de jogo?
 
 00:36.470 --> 00:41.920
-Typically, when we think of game physics as a player, we think more of rigid body simulation.
+Normalmente, quando pensamos em física de jogo como um jogador, pensamos mais em simulação de corpo rígido.
 
 00:41.930 --> 00:43.610
-These are the calculations.
+Estes são os cálculos.
 
 00:43.610 --> 00:50.690
-For example, a stack of cubes on how cubes can stand on top of each other, collide, interact.
+Por exemplo, uma pilha de cubos sobre como os cubos podem ficar em cima uns dos outros, colidir, interagir.
 
 00:50.840 --> 00:52.820
-But there's also spatial queries.
+Mas também há consultas espaciais.
 
 00:52.820 --> 00:55.690
-Spatial queries are non visual.
+As consultas espaciais não são visuais.
 
 00:55.700 --> 01:03.650
-They're examining the space in the 3D world, using physics to check distances by projecting a line
+Elas examinam o espaço no mundo 3D, usando a física para verificar as distâncias projetando uma linha
 
 01:03.650 --> 01:09.350
-or a collider through space to judge where the obstacles are in the world.
+ou um colisor através do espaço para avaliar onde estão os obstáculos no mundo.
 
 01:09.350 --> 01:12.860
-You can also look ahead to see potential future collisions.
+Você também pode olhar para frente para ver possíveis colisões futuras.
 
 01:12.860 --> 01:19.910
-And for example, you could evaluate is my gun of my character pointing at the enemy and have the enemy
+E, por exemplo, você pode avaliar se a arma do meu personagem está apontada para o inimigo e fazer com que o inimigo
 
 01:19.910 --> 01:21.380
-with a reaction for that.
+com uma reação para isso.
 
 01:21.590 --> 01:28.460
-The three major concerns of any physics system are integration, collision detection and collision resolution.
+As três principais preocupações de qualquer sistema de física são a integração, a detecção de colisões e a resolução de colisões.
 
 01:28.460 --> 01:31.460
-Integration handles how physics fit into the game.
+A integração trata de como a física se encaixa no jogo.
 
 01:31.460 --> 01:38.780
-World Collision detection is regarding how objects are overlapping and how the system detects that,
+A detecção de colisão mundial diz respeito a como os objetos estão se sobrepondo e como o sistema detecta isso,
 
 01:38.780 --> 01:44.840
-and collision resolution is handling the reactions of those overlapping objects.
+e a resolução de colisão está lidando com as reações desses objetos sobrepostos.
 
 01:44.840 --> 01:49.460
-For example, objects could bounce or move away from each other.
+Por exemplo, os objetos podem ricochetear ou se afastar uns dos outros.
 
 01:49.520 --> 01:50.900
-Let's look at integration.
+Vamos dar uma olhada na integração.
 
 01:50.900 --> 01:53.780
-Using physics in unity is optional.
+O uso da física na unidade é opcional.
 
 01:53.780 --> 02:00.680
-The way that unity projects are architected is game objects are in the three D space and each has one
+A forma como os projetos do unity são arquitetados é que os objetos do jogo estão no espaço de três D e cada um tem um
 
 02:00.680 --> 02:02.300
-or more components on top.
+ou mais componentes na parte superior.
 
 02:02.540 --> 02:09.080
-For example, in the screenshot we see a game object with the transform component that is obligatory.
+Por exemplo, na captura de tela, vemos um objeto de jogo com o componente de transformação que é obrigatório.
 
 02:09.080 --> 02:15.440
-If we want to add and integrate physics into this project, we just add a rigid body onto that same
+Se quisermos adicionar e integrar a física a esse projeto, basta adicionar um corpo rígido a esse mesmo objeto
 
 02:15.440 --> 02:16.160
-game object.
+objeto do jogo.
 
 02:16.160 --> 02:19.130
-And now the game object is aware of its own space.
+E agora o objeto do jogo está ciente de seu próprio espaço.
 
 02:19.130 --> 02:20.810
-Inside the physics world.
+Dentro do mundo da física.
 
 02:20.960 --> 02:26.480
-Each frame, the physics system will review all the components related to physics and do the right updates
+A cada quadro, o sistema de física analisará todos os componentes relacionados à física e fará as atualizações corretas
 
 02:26.480 --> 02:27.590
-and calculations.
+e cálculos corretos.
 
 02:27.890 --> 02:29.690
-Collision detection is the second.
+A detecção de colisão é o segundo.
 
 02:29.720 --> 02:36.410
-It's the system that looks at all the physical based objects in the world and decides are they overlapping.
+É o sistema que examina todos os objetos físicos do mundo e decide se eles estão se sobrepondo.
 
 02:36.410 --> 02:42.260
-For example, in this image we see a blue square and a pink square overlapping by just a little bit.
+Por exemplo, nesta imagem, vemos um quadrado azul e um quadrado rosa sobrepostos por apenas um pouco.
 
 02:42.470 --> 02:47.060
-Collision resolution is handling that overlap in the same situation.
+A resolução de colisão está lidando com essa sobreposição na mesma situação.
 
 02:47.060 --> 02:52.730
-The blue square and pink Square would be moved apart by the physics system because rigid bodies may
+O quadrado azul e o quadrado rosa seriam afastados pelo sistema de física porque os corpos rígidos podem
 
 02:52.730 --> 02:53.720
-not overlap.
+não se sobrepor.
 
 02:54.260 --> 03:00.000
-After the physics system executes, there will be no overlapping rigid bodies in the entire world.
+Depois que o sistema de física for executado, não haverá corpos rígidos sobrepostos em todo o mundo.
 
 03:00.020 --> 03:03.470
-Now, this happens so quickly that you don't perceive any overlap.
+Agora, isso acontece tão rapidamente que você não percebe nenhuma sobreposição.
 
 03:03.470 --> 03:05.540
-That's the ideal setup in a world.
+Essa é a configuração ideal em um mundo.
 
 03:05.540 --> 03:10.550
-You see objects interacting as if they are solid and cannot pass through each other.
+Você vê os objetos interagindo como se fossem sólidos e não pudessem passar uns pelos outros.
 
 03:10.970 --> 03:12.890
-Now let's look at a demo Inside Unity.
+Agora vamos dar uma olhada em uma demonstração dentro do Unity.
 
 03:12.890 --> 03:18.560
-If you've downloaded the asset files that come with this course, open the core project and browse to
+Se você baixou os arquivos de recursos que acompanham este curso, abra o projeto principal e navegue até
 
 03:18.560 --> 03:19.310
-the folder.
+a pasta.
 
 03:19.310 --> 03:20.240
-Section one.
+Seção um.
 
 03:20.240 --> 03:23.890
-Video two, you'll see a scene called three D Pyramid.
+No vídeo dois, você verá uma cena chamada Three D Pyramid.
 
 03:23.900 --> 03:25.310
-We'll take a look at that together.
+Vamos dar uma olhada nisso juntos.
 
 03:25.310 --> 03:27.200
-You can follow along here.
+Você pode acompanhar aqui.
 
 03:27.200 --> 03:33.260
-We'll examine the differences of start, stop and step as we control the scene and we'll examine some
+Examinaremos as diferenças entre start, stop e step enquanto controlamos a cena e examinaremos alguns
 
 03:33.260 --> 03:36.650
-of the objects in the scene to look for a rigid body and collider.
+dos objetos na cena para procurar um corpo rígido e um colisor.
 
 03:37.410 --> 03:38.890
-Here we are inside unity.
+Aqui estamos dentro da unidade.
 
 03:38.910 --> 03:43.680
-If you download the course materials that come with this course, you'll see a project just like this.
+Se você baixar os materiais do curso que acompanham este curso, verá um projeto como este.
 
 03:43.710 --> 03:48.300
-Inside, you can drill through the project window to find the related scene that we'll be touching.
+Dentro dele, você pode percorrer a janela do projeto para encontrar a cena relacionada que será abordada.
 
 03:48.300 --> 03:51.390
-Or you can drill down through this menu here that I've created.
+Ou você pode pesquisar neste menu que eu criei.
 
 03:51.390 --> 03:53.190
-So if we go to Section one.
+Então, se formos para a Seção um.
 
 03:54.130 --> 03:56.820
-Video two, three, D Pyramid.
+Vídeo dois, três, D Pyramid.
 
 03:56.830 --> 04:01.290
-We open it up, we can hit, play, pause and step through the scene.
+Abrimos o vídeo, podemos clicar em "play", "pause" e percorrer a cena.
 
 04:01.300 --> 04:02.930
-Step goes frame by frame.
+O passo vai quadro a quadro.
 
 04:02.970 --> 04:03.910
-Here we're going to play.
+Aqui vamos reproduzir.
 
 04:03.920 --> 04:06.160
-We see these boxes settle upon each other.
+Vemos essas caixas se assentarem umas sobre as outras.
 
 04:06.160 --> 04:11.680
-We can then manipulate the scene and we see real world physics interaction.
+Podemos então manipular a cena e ver a interação física do mundo real.
 
 04:12.100 --> 04:17.470
-Each one of these cubes is set up in a similar way, and in the inspector window we can see we've got
+Cada um desses cubos é configurado de forma semelhante e, na janela do inspetor, podemos ver que temos
 
 04:17.470 --> 04:19.780
-a box collider and a rigid body.
+um colisor de caixa e um corpo rígido.
 
 04:19.780 --> 04:26.020
-We'll be learning about those two physics components in future lessons in the next video unities physics
+Aprenderemos sobre esses dois componentes físicos em lições futuras, no próximo vídeo sobre a física das unidades
 
 04:26.020 --> 04:28.180
-system, past, present and future.
+O sistema, passado, presente e futuro.
 
 04:28.270 --> 04:29.890
-We'll look at what is unity.
+Veremos o que é unidade.
 
 04:29.890 --> 04:32.350
-We'll take a step back and look at the system itself.
+Daremos um passo atrás e analisaremos o sistema em si.
 
 04:32.350 --> 04:37.780
-We'll look at what libraries and power unity physics today, and we'll look into the future of unity
+Veremos o que são as bibliotecas e o poder da unidade física hoje em dia e analisaremos o futuro da unidade
 
 04:37.780 --> 04:38.440
-physics.
+física.

@@ -1,220 +1,220 @@
 WEBVTT
 
 00:01.590 --> 00:05.000
-Section two Unity two D physics components.
+Seção dois Unidade dois componentes de física D.
 
 00:05.010 --> 00:10.440
-In this section we'll cover the rigid body, two RD component, the collider two RD component, and
+Nesta seção, abordaremos o corpo rígido, o componente two RD, o componente collider two RD e
 
 00:10.440 --> 00:13.290
-also two RD effectors and two D joints.
+também dois efetores RD e duas articulações D.
 
 00:13.290 --> 00:16.680
-We'll even discuss physics for Unity Sprite sheet.
+Discutiremos até mesmo a física para a folha Unity Sprite.
 
 00:17.250 --> 00:22.830
-In this video we'll cover the rigid body two RD component and its most important properties.
+Neste vídeo, abordaremos o componente de corpo rígido dois RD e suas propriedades mais importantes.
 
 00:22.830 --> 00:26.130
-We'll also play with this component inside the Unity editor.
+Também brincaremos com esse componente dentro do Unity Editor.
 
 00:26.950 --> 00:29.570
-First, let's discuss the transform component.
+Primeiro, vamos discutir o componente de transformação.
 
 00:29.590 --> 00:33.480
-The transform component is the most basic component in unity.
+O componente de transformação é o componente mais básico da unidade.
 
 00:33.490 --> 00:38.000
-It enables position, rotation and scale for a game object.
+Ele permite a posição, rotação e escala de um objeto de jogo.
 
 00:38.020 --> 00:41.850
-This is automatically attached to every game object in your world.
+É automaticamente anexado a todos os objetos do jogo em seu mundo.
 
 00:41.860 --> 00:44.860
-The rigid body component is also a component.
+O componente de corpo rígido também é um componente.
 
 00:44.860 --> 00:50.650
-It is the component that enables physical behavior for a game object with a rigid body attached.
+É o componente que habilita o comportamento físico de um objeto do jogo com um corpo rígido acoplado.
 
 00:50.650 --> 00:53.290
-The object will immediately respond to gravity.
+O objeto responderá imediatamente à gravidade.
 
 00:53.290 --> 00:59.140
-Let's see the script reference for rigid body two D inside the script reference for rigid body two d.
+Vamos ver a referência de script para o corpo rígido dois D dentro da referência de script para o corpo rígido dois d.
 
 00:59.140 --> 01:01.600
-We can see lots of great information.
+Podemos ver muitas informações excelentes.
 
 01:01.600 --> 01:06.820
-This is a resource you want to visit while you're in development with a game to understand the features
+Esse é um recurso que você deve visitar enquanto estiver desenvolvendo um jogo para entender os recursos
 
 01:06.820 --> 01:08.650
-that are there and how to use them.
+que estão lá e como usá-los.
 
 01:08.720 --> 01:11.020
-You may even discover some optimizations.
+Você pode até descobrir algumas otimizações.
 
 01:11.020 --> 01:12.460
-There's the description.
+Aqui está a descrição.
 
 01:12.910 --> 01:14.740
-There is properties as well.
+Há também as propriedades.
 
 01:15.600 --> 01:17.730
-Public methods that you can call.
+Métodos públicos que você pode chamar.
 
 01:18.830 --> 01:23.120
-As well as inherited members and public methods from its super classes.
+Assim como membros herdados e métodos públicos de suas superclasses.
 
 01:24.890 --> 01:26.710
-A note about two D versus three D.
+Uma nota sobre dois D versus três D.
 
 01:26.720 --> 01:29.510
-Unity has two completely separate systems.
+O Unity tem dois sistemas completamente separados.
 
 01:29.510 --> 01:36.200
-Sometimes during the course I may refer specifically to rigid body two D or more generically to rigid
+Às vezes, durante o curso, posso me referir especificamente ao corpo rígido dois D ou, de forma mais genérica, ao corpo rígido três D.
 
 01:36.200 --> 01:36.740
-body.
+corpo rígido.
 
 01:36.740 --> 01:42.290
-I use rigid body to refer to both 2D and 3D since the concepts are the same.
+Eu uso corpo rígido para me referir tanto a 2D quanto a 3D, já que os conceitos são os mesmos.
 
 01:43.530 --> 01:47.520
-Understanding the rigid body is critical to understanding unity physics.
+A compreensão do corpo rígido é fundamental para entender a física da unidade.
 
 01:47.940 --> 01:53.850
-If we select a game object with rigid body attached, we'll see all of the properties of rigid body
+Se selecionarmos um objeto de jogo com corpo rígido anexado, veremos todas as propriedades do corpo rígido
 
 01:53.850 --> 01:55.090
-inside the inspector.
+dentro do inspetor.
 
 01:55.110 --> 01:56.570
-Let's browse those properties.
+Vamos navegar por essas propriedades.
 
 01:56.580 --> 01:58.260
-There's a lot of properties to see.
+Há muitas propriedades para ver.
 
 01:58.290 --> 02:00.150
-We'll focus on a few key ones.
+Vamos nos concentrar em algumas das principais.
 
 02:00.180 --> 02:02.040
-First of all, there's body type.
+Em primeiro lugar, há o tipo de corpo.
 
 02:02.040 --> 02:05.070
-This controls the physical behavior of a rigid body.
+Isso controla o comportamento físico de um corpo rígido.
 
 02:05.070 --> 02:06.590
-There's three different options.
+Há três opções diferentes.
 
 02:06.600 --> 02:07.920
-First is dynamic.
+A primeira é a dinâmica.
 
 02:08.010 --> 02:11.830
-This is the most common when we set to rigid body into dynamic.
+Essa é a mais comum quando definimos o corpo rígido como dinâmico.
 
 02:11.850 --> 02:14.990
-This allows it to react to gravity and applied forces.
+Isso permite que ele reaja à gravidade e às forças aplicadas.
 
 02:15.000 --> 02:18.180
-We should never move this manually through its transform.
+Nunca devemos movê-lo manualmente por meio de sua transformação.
 
 02:18.180 --> 02:20.070
-We should always apply forces.
+Devemos sempre aplicar forças.
 
 02:20.160 --> 02:21.870
-Body type two is kinematic.
+O corpo tipo dois é cinemático.
 
 02:21.870 --> 02:26.940
-This does not respond to gravity or forces and we are allowed to move it manually.
+Ele não responde à gravidade ou às forças e podemos movê-lo manualmente.
 
 02:26.940 --> 02:31.950
-Body type three is static things like the floor in our world or the world itself.
+O corpo do tipo três é estático, como o chão do nosso mundo ou o próprio mundo.
 
 02:31.950 --> 02:35.400
-If we're building a planet, we don't want it respond to gravity.
+Se estivermos construindo um planeta, não queremos que ele responda à gravidade.
 
 02:35.400 --> 02:40.920
-We want objects on top of it to fall and then to believably bounce and interact with the surface of
+Queremos que os objetos em cima dele caiam e depois saltem e interajam de forma crível com a superfície do planeta.
 
 02:40.920 --> 02:41.550
-the floor.
+do piso.
 
 02:41.580 --> 02:44.340
-Other properties of our focus are material.
+Outras propriedades do nosso foco são materiais.
 
 02:44.340 --> 02:49.590
-The physical material describes the friction and bouncing us, and we'll talk about this in depth later.
+O material físico descreve o atrito e o ricochete, e falaremos sobre isso em detalhes mais tarde.
 
 02:49.590 --> 02:52.860
-The drag value is the tendency for an object to slow down.
+O valor de arrasto é a tendência de desaceleração de um objeto.
 
 02:52.860 --> 02:59.370
-You can think of a high linear drag as being something that's difficult to drag across a floor or move
+Você pode pensar em um arrasto linear alto como sendo algo difícil de arrastar pelo chão ou mover
 
 02:59.370 --> 03:00.300
-across the floor.
+pelo chão.
 
 03:00.300 --> 03:04.980
-You can think of high angular drag as something that's difficult to spin or rotate.
+Você pode pensar em alto arrasto angular como algo que é difícil de girar ou rotacionar.
 
 03:04.980 --> 03:07.500
-The mass of an object is incredibly important.
+A massa de um objeto é incrivelmente importante.
 
 03:07.500 --> 03:11.040
-The higher the mass, the more difficult it is to move it.
+Quanto maior a massa, mais difícil é movê-lo.
 
 03:11.040 --> 03:17.250
-In our world, you can think of a bowling ball as having a high mass because on earth with Earth's gravity,
+Em nosso mundo, podemos pensar em uma bola de boliche como tendo uma massa alta porque na Terra, com a gravidade da Terra,
 
 03:17.250 --> 03:20.820
-it would be difficult to pick up and also difficult to roll.
+ela seria difícil de pegar e também de rolar.
 
 03:20.820 --> 03:26.820
-Compared to a beach ball, which is very low mass, you can make a small movement touching the side
+Em comparação com uma bola de praia, que tem massa muito baixa, você pode fazer um pequeno movimento tocando a lateral
 
 03:26.820 --> 03:31.230
-of a beach ball and expect it to move much further than a bowling ball.
+de uma bola de praia e esperar que ela se mova muito mais do que uma bola de boliche.
 
 03:32.020 --> 03:34.490
-Let's take a look at a demo of two D mass.
+Vamos dar uma olhada em uma demonstração de duas massas D.
 
 03:34.510 --> 03:40.540
-We'll play the scene, inspect the mass values, and we'll create a new massive weight and interact
+Reproduziremos a cena, inspecionaremos os valores de massa e criaremos um novo peso maciço e interagiremos
 
 03:40.540 --> 03:42.670
-with it, see how it behaves differently.
+com ele, para ver como ele se comporta de forma diferente.
 
 03:43.580 --> 03:45.920
-Let's open up the two RD mask project.
+Vamos abrir o projeto da máscara de dois RDs.
 
 03:45.920 --> 03:47.720
-We're going to create a new.
+Vamos criar um novo.
 
 03:48.780 --> 03:50.720
-Very massive weight.
+Peso muito grande.
 
 03:50.730 --> 03:52.940
-We'll add to it a rigid body to D.
+Vamos adicionar a ele um corpo rígido para D.
 
 03:54.070 --> 03:55.360
-In a collider two rd.
+Em um colisor de dois níveis.
 
 03:56.960 --> 04:01.280
-And we're going to add 100 for the mass value, which is a lot higher than the others.
+E vamos adicionar 100 para o valor da massa, que é muito maior do que os outros.
 
 04:02.440 --> 04:06.450
-We can see when we run the scene here, they'll all fall with the same gravity.
+Podemos ver que quando executamos a cena aqui, todos eles cairão com a mesma gravidade.
 
 04:06.460 --> 04:11.170
-However, the very massive weight will squeeze the other objects out of the way.
+Entretanto, o peso muito grande espremerá os outros objetos para fora do caminho.
 
 04:11.170 --> 04:15.610
-It's so massive it really wants to return to the ground surface more than the others.
+O peso é tão grande que ele realmente quer retornar à superfície do solo mais do que os outros.
 
 04:20.380 --> 04:21.190
-And that's it.
+E é isso.
 
 04:23.790 --> 04:27.330
-In the next video, we'll take a look at the two D collider component.
+No próximo vídeo, daremos uma olhada no componente do colisor de dois D.

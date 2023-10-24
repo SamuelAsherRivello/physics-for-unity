@@ -1,289 +1,289 @@
 WEBVTT
 
 00:01.640 --> 00:04.290
-Unities physics project settings.
+Configurações do projeto de física do Unities.
 
 00:04.310 --> 00:07.880
-In this video we'll cover what are Unity Project settings?
+Neste vídeo, falaremos sobre o que são as configurações do projeto Unity.
 
 00:07.880 --> 00:10.550
-Which of these settings are most important to physics?
+Quais dessas configurações são mais importantes para a física?
 
 00:10.550 --> 00:15.230
-And we'll experiment with these settings inside the Unity editor to see some results.
+E faremos experimentos com essas configurações dentro do editor do Unity para ver alguns resultados.
 
 00:15.860 --> 00:17.360
-Unity Project Settings.
+Configurações do projeto Unity.
 
 00:17.360 --> 00:23.390
-These are the high level settings we use to adjust major systems in unity, including graphics and physics
+Estas são as configurações de alto nível que usamos para ajustar os principais sistemas na unidade, incluindo gráficos e física
 
 00:23.390 --> 00:24.290
-To open them.
+Para abri-las.
 
 00:24.290 --> 00:26.730
-You use unity edit project settings.
+Você usa as configurações do projeto unity edit.
 
 00:26.750 --> 00:31.370
-As the screenshot shows, there's a search box that you can filter through the settings.
+Como mostra a captura de tela, há uma caixa de pesquisa que pode filtrar as configurações.
 
 00:31.370 --> 00:36.890
-There's settings organized by category and there's a details pane with the settings themselves that
+Há configurações organizadas por categoria e há um painel de detalhes com as próprias configurações que
 
 00:36.890 --> 00:39.440
-will interact with the physics project.
+interagirão com o projeto de física.
 
 00:39.440 --> 00:43.100
-Settings for three D include many different properties.
+As configurações para três D incluem muitas propriedades diferentes.
 
 00:43.100 --> 00:45.020
-We'll focus on a few key ones.
+Vamos nos concentrar em algumas das principais.
 
 00:45.020 --> 00:46.310
-First of all, gravity.
+Em primeiro lugar, a gravidade.
 
 00:46.310 --> 00:52.670
-The default settings are simulating gravity on earth If you want to simulate other planets or different
+As configurações padrão estão simulando a gravidade na Terra. Se você quiser simular outros planetas ou diferentes
 
 00:52.670 --> 00:55.460
-scenarios in your game, you could tweak the gravity here.
+cenários em seu jogo, você pode ajustar a gravidade aqui.
 
 00:55.460 --> 01:01.010
-It should be noted that if you change the gravity drastically, you may want to also tweak the default
+Deve-se observar que, se você alterar a gravidade drasticamente, talvez queira ajustar também a gravidade padrão
 
 01:01.010 --> 01:04.070
-solver iterations that'll give you more stable results.
+iterações do solver que lhe darão resultados mais estáveis.
 
 01:04.070 --> 01:09.320
-You can also set the default material in a later section will cover what physics materials are.
+Você também pode definir o material padrão em uma seção posterior que abordará o que são materiais físicos.
 
 01:09.320 --> 01:14.120
-They allow each object in your world to have different properties of bouncy ness and friction.
+Eles permitem que cada objeto em seu mundo tenha propriedades diferentes de elasticidade e atrito.
 
 01:14.120 --> 01:15.440
-If you want to set them globally.
+Se você quiser defini-las globalmente.
 
 01:15.440 --> 01:18.080
-Here you can do that and contact pair modes.
+Aqui você pode fazer isso e os modos de pares de contato.
 
 01:18.080 --> 01:22.520
-This is a setting you might want to tweak if you're moving kinematic Objects in a physics world.
+Esta é uma configuração que você pode querer ajustar se estiver movendo objetos cinemáticos em um mundo físico.
 
 01:22.520 --> 01:25.550
-We'll talk about kinematic rigid body properties later.
+Falaremos sobre as propriedades do corpo rígido cinemático mais tarde.
 
 01:25.550 --> 01:29.090
-Other properties that are interesting enable enhanced determinism.
+Outras propriedades que são interessantes permitem um determinismo aprimorado.
 
 01:29.090 --> 01:34.130
-Now this mode will sacrifice some performance, meaning you'll need a more powerful device, but you'll
+Esse modo sacrificará um pouco o desempenho, o que significa que você precisará de um dispositivo mais potente, mas
 
 01:34.130 --> 01:35.570
-get better determinism.
+obterá melhor determinismo.
 
 01:35.570 --> 01:41.630
-Determinism in physics means if you ran the same simulation again and again, you'd get the same result
+O determinismo na física significa que se você executar a mesma simulação várias vezes, obterá o mesmo resultado
 
 01:41.630 --> 01:43.520
-in some gameplay design.
+em algum projeto de jogo.
 
 01:43.520 --> 01:44.480
-This is important.
+Isso é importante.
 
 01:44.480 --> 01:45.380
-Often it is not.
+Muitas vezes não é.
 
 01:45.380 --> 01:51.200
-The layer collision matrix defines which objects in your world collide with which other objects.
+A matriz de colisão de camadas define quais objetos em seu mundo colidem com quais outros objetos.
 
 01:51.200 --> 01:54.950
-Now, by default, in unity, everything collides with everything.
+Agora, por padrão, na unidade, tudo colide com tudo.
 
 01:54.950 --> 01:57.920
-It gives you the visual result and quick feedback you want.
+Isso lhe dá o resultado visual e o feedback rápido que você deseja.
 
 01:57.920 --> 02:03.350
-When you're designing a game as an optimization, consider unchecking all of the collisions that don't
+Quando estiver projetando um jogo como uma otimização, considere desmarcar todas as colisões que não
 
 02:03.350 --> 02:07.190
-occur in your game or that you do not want and you'll get better performance.
+que não ocorrem no jogo ou que você não deseja e obterá melhor desempenho.
 
 02:07.980 --> 02:09.400
-Let's take a look at a demo.
+Vamos dar uma olhada em uma demonstração.
 
 02:09.420 --> 02:11.280
-We'll look at the three D Pyramids project.
+Vamos dar uma olhada no projeto Three D Pyramids.
 
 02:11.280 --> 02:11.730
-Again.
+De novo.
 
 02:11.730 --> 02:18.060
-We'll play with the gravity default material and the layer collision matrix inside Unity.
+Vamos brincar com o material padrão da gravidade e a matriz de colisão de camadas dentro do Unity.
 
 02:18.060 --> 02:22.520
-Let's open up section one, Video two, three, D Pyramid.
+Vamos abrir a seção um, vídeo dois, três, D Pyramid.
 
 02:22.530 --> 02:29.640
-We'll be reusing this scene to discuss the project settings in the edit window project settings.
+Vamos reutilizar esta cena para discutir as configurações do projeto nas configurações do projeto da janela de edição.
 
 02:29.790 --> 02:34.560
-We're able to see all of the project settings for various things inside Unity.
+Podemos ver todas as configurações de projeto para várias coisas dentro do Unity.
 
 02:34.620 --> 02:40.830
-We're interested in the Physics two D for our two D physics, and in this demo the physics for our three
+Estamos interessados no Physics two D para a nossa física de dois D e, nesta demonstração, a física para a nossa física de três D.
 
 02:40.830 --> 02:41.640
-D physics.
+D.
 
 02:41.640 --> 02:45.330
-Since we have a3d scene, let's go ahead and manipulate that one first.
+Como temos uma cena 3d, vamos manipulá-la primeiro.
 
 02:45.330 --> 02:50.000
-Let's just start by playing the scene and we can see that these cubes settle on top of each other.
+Vamos começar reproduzindo a cena e podemos ver que esses cubos se assentam uns sobre os outros.
 
 02:50.010 --> 02:55.710
-Now let's change it from a negative gravity that simulates Earth to a positive gravity.
+Agora vamos mudar de uma gravidade negativa que simula a Terra para uma gravidade positiva.
 
 02:55.830 --> 03:00.000
-This would be something that creates gravity in an upwards direction.
+Isso seria algo que cria gravidade em uma direção ascendente.
 
 03:00.000 --> 03:03.210
-Maybe your game needs that depending on the game mechanics you have.
+Talvez seu jogo precise disso, dependendo da mecânica de jogo que você tem.
 
 03:03.630 --> 03:07.560
-So we can see that these objects fly up in the air.
+Assim, podemos ver que esses objetos voam no ar.
 
 03:07.560 --> 03:11.310
-It's a little bit silly for most of our examples, but you know, you can control that.
+É um pouco bobo para a maioria dos nossos exemplos, mas é possível controlar isso.
 
 03:11.310 --> 03:15.300
-They're inside this little cogwheel you can open this menu and hit reset.
+Eles estão dentro dessa pequena roda dentada, você pode abrir esse menu e pressionar reset.
 
 03:15.370 --> 03:18.990
-That'll bring all the values in this particular window back to the defaults.
+Isso fará com que todos os valores desta janela em particular voltem aos padrões.
 
 03:18.990 --> 03:21.110
-So there we've undone that change.
+Assim, desfizemos essa alteração.
 
 03:21.120 --> 03:25.140
-Now let's look at the default material inside the project window.
+Agora vamos dar uma olhada no material padrão dentro da janela do projeto.
 
 03:25.140 --> 03:27.630
-We're able to create a physics material.
+Podemos criar um material de física.
 
 03:27.630 --> 03:32.820
-Now we'll be talking more about this later, but we want to show you that if we create a physic material
+Falaremos mais sobre isso mais tarde, mas queremos mostrar que se criarmos um material físico
 
 03:32.820 --> 03:38.490
-and we create it with a lot of bouncy ness, a bouncy ness of one, then we drag that in as the new
+e o criarmos com muita elasticidade, uma elasticidade de um, então o arrastaremos como o novo
 
 03:38.490 --> 03:39.570
-default material.
+material padrão.
 
 03:39.570 --> 03:45.480
-And that says that if there's any objects in the scene that do not already have a material attached,
+E isso diz que se houver algum objeto na cena que ainda não tenha um material anexado,
 
 03:45.480 --> 03:47.940
-then this will be the new default material.
+então este será o novo material padrão.
 
 03:47.940 --> 03:50.520
-So here we're giving them this one that's bouncy.
+Então, aqui estamos dando a eles este que é saltitante.
 
 03:50.520 --> 03:52.140
-So let's go ahead and play the scene.
+Vamos então reproduzir a cena.
 
 03:53.890 --> 03:57.310
-And we can see that at least one of the boxes behaves a little wacky.
+E podemos ver que pelo menos uma das caixas se comporta de forma um pouco estranha.
 
 03:57.730 --> 04:03.100
-Now, if I go ahead and I move this, we can see that the ones that I've moved bounce around the scene
+Agora, se eu for em frente e mover isso, podemos ver que as que eu movi saltam ao redor da cena
 
 04:03.670 --> 04:05.620
-with a high level of bouncy ness.
+com um alto nível de elasticidade.
 
 04:05.650 --> 04:07.360
-Now they're all affected evenly.
+Agora todos estão sendo afetados uniformemente.
 
 04:07.360 --> 04:09.400
-Just depends on which one I manipulate.
+Depende apenas de qual deles eu manipulo.
 
 04:11.260 --> 04:13.720
-Now, if we stop the scene again and I reset.
+Agora, se pararmos a cena novamente e eu reiniciar.
 
 04:14.710 --> 04:17.660
-We can look down here and we see the layer collision matrix.
+Podemos olhar aqui embaixo e ver a matriz de colisão de camadas.
 
 04:17.680 --> 04:23.440
-This is showing that everything in the project collides with everything by layer.
+Isso mostra que tudo no projeto colide com tudo por camada.
 
 04:23.470 --> 04:25.120
-Layers are set here.
+As camadas estão definidas aqui.
 
 04:25.390 --> 04:30.850
-At the top we can designate the layer for each of the objects in our scene so we can see that the cubes
+Na parte superior, podemos designar a camada para cada um dos objetos em nossa cena para que possamos ver que os cubos
 
 04:30.850 --> 04:32.590
-are designated as default.
+são designados como padrão.
 
 04:33.550 --> 04:38.530
-And inside the environment, we've got floor designated as floor.
+E dentro do ambiente, temos o piso designado como floor.
 
 04:38.920 --> 04:40.990
-So if I go ahead and play the scene.
+Então, se eu for em frente e reproduzir a cena.
 
 04:43.980 --> 04:47.310
-And then down here I can uncheck floor and default.
+E então, aqui embaixo, eu posso desmarcar o piso e o padrão.
 
 04:47.310 --> 04:52.890
-And we'll see that Now our default cubes fall directly through the floor.
+E veremos que agora os nossos cubos padrão caem diretamente no chão.
 
 04:52.920 --> 04:55.920
-So you're able to control within that matrix.
+Portanto, você pode controlar dentro dessa matriz.
 
 04:56.220 --> 05:01.450
-Also, note that any changes we make during the scene may be reset once we stop the scene.
+Observe também que quaisquer alterações que fizermos durante a cena podem ser redefinidas quando a cena for interrompida.
 
 05:01.470 --> 05:03.450
-Within this window, it depends a bit.
+Dentro dessa janela, isso depende um pouco.
 
 05:03.450 --> 05:05.610
-Some of the settings stick and some do not.
+Algumas das configurações permanecem e outras não.
 
 05:05.640 --> 05:08.070
-So just be conscious of when you make changes.
+Portanto, tenha consciência de quando você faz as alterações.
 
 05:08.070 --> 05:12.360
-If you're playing the scene, they might need to be reset after you stop the scene.
+Se você estiver reproduzindo a cena, talvez seja necessário redefinir as alterações depois de interromper a cena.
 
 05:14.140 --> 05:17.830
-The physics project settings in 2D is a separate panel.
+As configurações do projeto de física em 2D são um painel separado.
 
 05:17.830 --> 05:22.160
-Now most of the important properties in 2D are the same ones we just discussed in 3D.
+Agora, a maioria das propriedades importantes em 2D são as mesmas que acabamos de discutir em 3D.
 
 05:22.180 --> 05:24.820
-You can see them in the screenshot, but something of note.
+Você pode vê-las na captura de tela, mas há algo digno de nota.
 
 05:24.820 --> 05:30.910
-Now it is possible that your game project includes both 2D and 3D physics, but it's likely that you
+Agora é possível que seu projeto de jogo inclua física 2D e 3D, mas é provável que você
 
 05:30.910 --> 05:31.630
-choose one.
+escolha uma.
 
 05:31.630 --> 05:38.080
-So if your game is 2D and you have two D physics, be sure that when you're changing the physics settings,
+Portanto, se o seu jogo for 2D e você tiver duas físicas D, certifique-se de que ao alterar as configurações de física,
 
 05:38.080 --> 05:41.050
-you're on the right panel here of physics 2D.
+você está no painel direito aqui da física 2D.
 
 05:42.620 --> 05:47.770
-In the next video physics, life cycle physics, simulate and time dilation.
+No próximo vídeo, física, física do ciclo de vida, simulação e dilatação do tempo.
 
 05:47.780 --> 05:50.330
-We'll look at the structure of unity projects.
+Veremos a estrutura dos projetos de unidade.
 
 05:50.330 --> 05:56.360
-We'll see the role of mono behaviors in unity, and we'll look at some code for behaviors regarding
+Veremos o papel dos comportamentos mono no unity e examinaremos alguns códigos para comportamentos relacionados a
 
 05:56.360 --> 05:56.990
-physics.
+física.

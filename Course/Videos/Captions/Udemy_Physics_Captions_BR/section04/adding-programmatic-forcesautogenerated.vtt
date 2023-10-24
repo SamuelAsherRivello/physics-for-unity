@@ -1,238 +1,238 @@
 WEBVTT
 
 00:00.700 --> 00:02.470
-Adding programatic forces.
+Adicionando forças programáticas.
 
 00:02.740 --> 00:08.720
-In this video, we'll cover movement in unity, both traditional movement and movement with physics.
+Neste vídeo, abordaremos o movimento na unidade, tanto o movimento tradicional quanto o movimento com física.
 
 00:08.740 --> 00:12.510
-We'll examine the types of forces we can use in physics movement.
+Examinaremos os tipos de forças que podemos usar no movimento físico.
 
 00:12.520 --> 00:15.220
-We'll open up unity and we'll play with those forces.
+Abriremos o unity e brincaremos com essas forças.
 
 00:15.400 --> 00:18.490
-Movement in Unity with traditional movement.
+Movimento no Unity com movimento tradicional.
 
 00:18.490 --> 00:22.060
-In unity, movement occurs via the transform component.
+No Unity, o movimento ocorre por meio do componente de transformação.
 
 00:22.360 --> 00:25.600
-Take a look at the snippet on a update call.
+Dê uma olhada no snippet em uma chamada de atualização.
 
 00:25.600 --> 00:32.260
-We check if the input is In this case, a right arrow key is held down and then we move the transform
+Verificamos se a entrada é Neste caso, a tecla de seta para a direita é mantida pressionada e, em seguida, movemos a transformação
 
 00:32.260 --> 00:35.290
-position to some other position.
+para alguma outra posição.
 
 00:35.290 --> 00:40.870
-The steps are update input and use the transform movement.
+As etapas são atualizar a entrada e usar o movimento de transformação.
 
 00:40.870 --> 00:45.640
-In physics a little bit different Movement occurs via the rigid body component.
+Na física, o movimento é um pouco diferente e ocorre por meio do componente de corpo rígido.
 
 00:45.910 --> 00:53.140
-Crafting a very similar example here we're using fixed update, taking the input and then adding a force
+Para criar um exemplo muito semelhante, estamos usando a atualização fixa, recebendo a entrada e adicionando uma força
 
 00:53.140 --> 00:54.310
-to the rigid body.
+ao corpo rígido.
 
 00:54.520 --> 01:00.640
-Let's compare the two in traditional we use update and update is called one time per frame.
+Vamos comparar os dois no tradicional que usamos update e o update é chamado uma vez por quadro.
 
 01:00.760 --> 01:06.760
-This depends on the frame rate, both the intended frame rate set by the developer and also the actual
+Isso depende da taxa de quadros, tanto a taxa de quadros pretendida definida pelo desenvolvedor quanto a real
 
 01:07.000 --> 01:12.970
-frame rate, which is variable and unpredictable depending on the device and how much computation is
+taxa de quadros, que é variável e imprevisível, dependendo do dispositivo e da quantidade de computação
 
 01:12.970 --> 01:14.470
-happening at the given moment.
+acontecendo em um determinado momento.
 
 01:14.470 --> 01:17.580
-Fixed update, on the other hand, is only for physics.
+A atualização fixa, por outro lado, é apenas para a física.
 
 01:17.590 --> 01:22.870
-It's called zero or one or many times per frame, depending on your project setup.
+É chamada de zero, uma ou muitas vezes por quadro, dependendo da configuração do seu projeto.
 
 01:22.870 --> 01:25.810
-It depends on the value called fixed time step.
+Depende do valor chamado etapa de tempo fixo.
 
 01:25.810 --> 01:27.610
-It's very predictable.
+É muito previsível.
 
 01:27.640 --> 01:29.170
-And note about fixed update.
+E nota sobre a atualização fixa.
 
 01:29.170 --> 01:35.260
-Fixed update function is recommended as the place to apply forces and change rigid body settings as
+A função de atualização fixa é recomendada como o local para aplicar forças e alterar as configurações do corpo rígido como
 
 01:35.260 --> 01:39.310
-opposed to update, which is used for most other unity tasks.
+ao contrário da atualização, que é usada para a maioria das outras tarefas da unidade.
 
 01:39.310 --> 01:45.700
-The reason for this is that physics update is carried out in a measured time step and it doesn't coincide
+A razão para isso é que a atualização da física é realizada em um passo de tempo medido e não coincide
 
 01:45.700 --> 01:46.870
-with the frame update.
+com a atualização do quadro.
 
 01:46.870 --> 01:53.260
-Fixed update is called immediately before each physics update, so any changes made there will be processed
+A atualização fixa é chamada imediatamente antes de cada atualização física, portanto, todas as alterações feitas lá serão processadas
 
 01:53.260 --> 01:53.920
-directly.
+diretamente.
 
 01:53.920 --> 01:58.900
-So we want to use physics update for any of our physics based operations.
+Portanto, queremos usar o physics update para qualquer uma de nossas operações baseadas em física.
 
 01:58.900 --> 02:03.430
-Let's look at physics movement in unity, there's different types of forces we can apply.
+Vamos dar uma olhada no movimento da física na unidade, há diferentes tipos de forças que podemos aplicar.
 
 02:03.460 --> 02:10.750
-There's lots If we want to change, the position will be changing the property called velocity, and
+Se quisermos mudar, a posição estará mudando a propriedade chamada velocidade, e
 
 02:10.750 --> 02:15.610
-the methods that we can use are add force, add explosion force and more.
+Os métodos que podemos usar são adicionar força, adicionar força de explosão e outros.
 
 02:15.730 --> 02:21.220
-If we want to change rotation, we'll be changing the angular velocity and there's methods for that
+Se quisermos alterar a rotação, estaremos alterando a velocidade angular e há métodos para isso
 
 02:21.220 --> 02:21.690
-too.
+também.
 
 02:21.700 --> 02:25.090
-The most common ones are add force and add torque.
+Os mais comuns são adicionar força e adicionar torque.
 
 02:25.090 --> 02:27.280
-Really add force is the most common.
+Realmente adicionar força é o mais comum.
 
 02:27.400 --> 02:32.740
-If we look at a code snippet here, we see inside fixed update, we're adding a force and this object
+Se olharmos para um trecho de código aqui, veremos que, dentro da atualização fixa, estamos adicionando uma força e esse objeto
 
 02:32.740 --> 02:37.060
-would be moving in the x direction positive, which is toward the right.
+estaria se movendo na direção x positiva, que é para a direita.
 
 02:37.240 --> 02:44.740
-If we were to add torque, we could use a similar setup and use the add torque method and apply a rotation
+Se tivéssemos de adicionar torque, poderíamos usar uma configuração semelhante e usar o método de adicionar torque e aplicar uma rotação
 
 02:44.740 --> 02:45.690
-to that object.
+a esse objeto.
 
 02:45.700 --> 02:52.240
-Now the force mode, which is passed in to the ADD force and add torque has different consequences.
+Agora o modo de força, que é passado para o método ADD force e add torque, tem consequências diferentes.
 
 02:52.330 --> 02:54.730
-The default value is force.
+O valor padrão é force.
 
 02:54.820 --> 02:58.950
-There's also acceleration, impulse and velocity change.
+Há também a aceleração, o impulso e a mudança de velocidade.
 
 02:58.960 --> 03:04.300
-You can see that some of these are affected by the mass of the objects and some are not.
+Você pode ver que alguns deles são afetados pela massa dos objetos e outros não.
 
 03:04.480 --> 03:11.320
-The typical one of force is a gradual and realistic movement, and that's the one you typically use
+A força típica é um movimento gradual e realista, e é essa que você normalmente usa
 
 03:11.320 --> 03:13.840
-for basic physics and games.
+para física básica e jogos.
 
 03:13.930 --> 03:16.630
-But these other ones offer good alternatives.
+Mas estes outros oferecem boas alternativas.
 
 03:16.870 --> 03:18.370
-Let's take a look at a demo.
+Vamos dar uma olhada em uma demonstração.
 
 03:18.400 --> 03:24.340
-We'll open the ad force demo, we'll play the scene, we'll use the up and down arrow keys, which I
+Abriremos a demonstração do ad force, reproduziremos a cena, usaremos as teclas de seta para cima e para baixo, que eu
 
 03:24.340 --> 03:29.380
-have set up similar to the snippets we've saw to add forces to different objects.
+configurei de forma semelhante aos trechos que vimos para adicionar forças a diferentes objetos.
 
 03:29.380 --> 03:34.600
-Then we'll check out the inspector and the source code and we'll play around with physic material,
+Em seguida, daremos uma olhada no inspetor e no código-fonte e brincaremos com o material físico,
 
 03:34.600 --> 03:35.080
-too.
+também.
 
 03:35.770 --> 03:35.980
-All right.
+Muito bem.
 
 03:35.980 --> 03:37.300
-Let's open up our next scene.
+Vamos abrir nossa próxima cena.
 
 03:37.300 --> 03:39.280
-We'll take a look at the ad force demo.
+Vamos dar uma olhada na demonstração do ad force.
 
 03:40.310 --> 03:44.270
-Now here we've got a series of cubes set up on ramps.
+Aqui temos uma série de cubos montados em rampas.
 
 03:44.480 --> 03:46.190
-Notice the highlights text.
+Observe o texto de destaque.
 
 03:46.190 --> 03:51.560
-Here we've got a force, impulse velocity change and acceleration.
+Aqui temos uma força, mudança de velocidade de impulso e aceleração.
 
 03:53.010 --> 03:58.610
-If we look at the code that's on each of these we see in the inspector, we have an add force demo script.
+Se observarmos o código que está em cada um deles, veremos no inspetor que temos um script de demonstração de adição de força.
 
 03:58.620 --> 04:01.020
-We take an up arrow and a down arrows.
+Pegamos uma seta para cima e uma seta para baixo.
 
 04:01.020 --> 04:05.880
-Our input for all of them, we add the same force of 20 in the x direction.
+Nossa entrada para todas elas é adicionar a mesma força de 20 na direção x.
 
 04:05.880 --> 04:09.450
-The force mode is different for each of the four cubes.
+O modo de força é diferente para cada um dos quatro cubos.
 
 04:10.430 --> 04:12.380
-The one we have highlighted here is force.
+O que destacamos aqui é a força.
 
 04:12.380 --> 04:18.080
-Let's play the scene and see how differently they behave with the same scenario where the only difference
+Vamos reproduzir a cena e ver como eles se comportam de forma diferente com o mesmo cenário em que a única diferença é a força.
 
 04:18.080 --> 04:19.040
-is the force mode.
+é o modo de força.
 
 04:24.220 --> 04:26.380
-If they're falling under their own control.
+Se eles estiverem sob seu próprio controle.
 
 04:28.080 --> 04:30.030
-And then I'm going to hold the up key.
+E então vou segurar a tecla para cima.
 
 04:34.710 --> 04:36.570
-And then I'm going to hold the down key.
+E depois vou segurar a tecla para baixo.
 
 04:42.730 --> 04:48.310
-Notice that some accelerate much more quickly and also some have more of an unpredictable movement in
+Observe que alguns aceleram muito mais rapidamente e outros têm um movimento mais imprevisível em
 
 04:48.310 --> 04:49.510
-the Y direction.
+na direção Y.
 
 04:50.320 --> 04:51.610
-As a bonus assignment.
+Como uma tarefa bônus.
 
 04:51.610 --> 04:57.640
-If you want to get deeper into this, there's another scene you can take a look at its ad talk demo.
+Se quiser se aprofundar no assunto, há outra cena que você pode dar uma olhada na demonstração do anúncio.
 
 04:57.670 --> 05:02.740
-You can play the scene, use the arrow keys and inspect the code to take a look.
+Você pode reproduzir a cena, usar as teclas de seta e inspecionar o código para dar uma olhada.
 
 05:02.740 --> 05:04.930
-If you're interested to learn more about talk.
+Se você estiver interessado em saber mais sobre o talk.
 
 05:05.410 --> 05:12.160
-In the next video we'll cover is Sleeping is kinematic use, gravity and velocity.
+No próximo vídeo, abordaremos o uso cinemático do Sleeping, a gravidade e a velocidade.
 
 05:12.250 --> 05:16.300
-These are common, useful physics properties that we can set with code.
+Essas são propriedades físicas comuns e úteis que podemos definir com o código.
 
 05:16.330 --> 05:21.760
-We'll also take a look at turning on and off physics in your game objects and we'll learn why we want
+Também daremos uma olhada em como ativar e desativar a física nos objetos do jogo e aprenderemos por que queremos
 
 05:21.760 --> 05:22.180
-to do that.
+fazer isso.
 
 05:22.180 --> 05:26.800
-Sometimes we'll also play around with all these properties inside the Unity Editor.
+Às vezes, também brincaremos com todas essas propriedades dentro do Unity Editor.

@@ -1,259 +1,259 @@
 WEBVTT
 
 00:01.650 --> 00:06.010
-Data oriented technology stack or dots for unity physics.
+Pilha de tecnologia orientada a dados ou pontos para física de unidade.
 
 00:06.030 --> 00:11.350
-In this video, we'll cover what is Unity dots and what are the three major features.
+Neste vídeo, abordaremos o que é o Unity dots e quais são os três principais recursos.
 
 00:11.370 --> 00:15.750
-We'll also look at how dots will impact the future of unity physics.
+Também veremos como os dots afetarão o futuro da física do Unity.
 
 00:16.470 --> 00:17.820
-So what is dots?
+Então, o que são os dots?
 
 00:18.630 --> 00:22.890
-Dance is a project by unity that promises performance by default.
+Dance é um projeto da unity que promete desempenho por padrão.
 
 00:22.920 --> 00:30.360
-It takes advantage of today's multi core processors and Unity's new high performance system data oriented
+Ele tira proveito dos processadores de múltiplos núcleos atuais e do novo sistema de alto desempenho orientado a dados da Unity
 
 00:30.360 --> 00:31.410
-technology stack.
+orientado a dados.
 
 00:31.440 --> 00:37.260
-Your games will run faster and your code will be easier to read and reuse across other projects.
+Seus jogos serão executados mais rapidamente e seu código será mais fácil de ler e reutilizar em outros projetos.
 
 00:37.290 --> 00:42.030
-Take a look at this screenshot from the free megacity demo by Unity Technologies.
+Dê uma olhada nesta captura de tela da demonstração gratuita do megacity da Unity Technologies.
 
 00:42.030 --> 00:46.380
-It's a really complex scene with lots going on in the megacity demo.
+É uma cena realmente complexa com muita coisa acontecendo na demonstração do megacity.
 
 00:46.380 --> 00:52.420
-It features four and a half million mesh renders and over 200,000 unique building objects.
+Ela apresenta quatro milhões e meio de renderizações de malha e mais de 200.000 objetos de construção exclusivos.
 
 00:52.440 --> 00:57.400
-It's so complex and would not be possible without dots to accomplish this.
+É tão complexo e não seria possível sem pontos para realizar isso.
 
 00:57.420 --> 01:00.180
-Unity is rebuilding the core of the tool.
+A Unity está reconstruindo o núcleo da ferramenta.
 
 01:00.180 --> 01:05.040
-It's rebuilding each of the major systems with high performance multithreaded dots.
+Está reconstruindo cada um dos principais sistemas com dots multithreaded de alto desempenho.
 
 01:05.040 --> 01:11.970
-Features of this system are the C-sharp job system for running multithreaded code, the entity component
+As características desse sistema são o sistema de trabalho C-sharp para executar código multithread, o componente de entidade
 
 01:11.970 --> 01:18.720
-system for writing high performance code and finally the burst compiler for producing highly optimized
+para escrever código de alto desempenho e, finalmente, o compilador burst para produzir código altamente otimizado
 
 01:18.720 --> 01:19.710
-native code.
+código nativo altamente otimizado.
 
 01:20.520 --> 01:22.290
-So what is dots Physics.
+Então, o que é a física de pontos.
 
 01:22.590 --> 01:27.270
-In the future, Dot's physics will be rebranded to just unity physics.
+No futuro, a física do Dot será renomeada para apenas física da unidade.
 
 01:27.270 --> 01:34.500
-The philosophy is complete deterministic, rigid body dynamics and spatial query system written in high
+A filosofia é determinística completa, dinâmica de corpo rígido e sistema de consulta espacial escrito em alta resolução.
 
 01:34.500 --> 01:35.070
-performance.
+desempenho.
 
 01:35.070 --> 01:41.160
-C-sharp It will be stateless unity Physics forgoes any caching in favor of simplicity.
+C-sharp Será uma unidade sem estado A física renuncia a qualquer cache em favor da simplicidade.
 
 01:41.160 --> 01:46.140
-It's modular, it's decoupled from other systems, and it encourages its re-use.
+É modular, está desacoplado de outros sistemas e incentiva sua reutilização.
 
 01:46.380 --> 01:47.550
-It's performant.
+Tem bom desempenho.
 
 01:47.550 --> 01:52.830
-It will meet or exceed the performance of any commercially available physics engine.
+Atenderá ou excederá o desempenho de qualquer mecanismo de física disponível comercialmente.
 
 01:52.830 --> 01:54.570
-So what does this mean for us?
+Então, o que isso significa para nós?
 
 01:54.570 --> 01:59.970
-The principles we cover in this course are relevant for today's physics, as well as the future with
+Os princípios que abordamos neste curso são relevantes para a física de hoje, bem como para o futuro, com
 
 01:59.970 --> 02:06.090
-unity physics, The version of today's 2D and 3D physics that we cover will continue to exist.
+A versão da física 2D e 3D atual que abordamos continuará existindo.
 
 02:06.090 --> 02:11.220
-Unity Physics will be an additional option for blazing fast speed improvements.
+O Unity Physics será uma opção adicional para melhorias de velocidade extremamente rápidas.
 
 02:11.930 --> 02:12.530
-Let's see.
+Vamos ver.
 
 02:12.560 --> 02:12.880
-Dots.
+Pontos.
 
 02:12.890 --> 02:14.030
-Physics in action.
+Física em ação.
 
 02:14.300 --> 02:16.670
-The following steps have already been done for you.
+As etapas a seguir já foram executadas para você.
 
 02:16.670 --> 02:17.750
-But here's the steps.
+Mas aqui estão os passos.
 
 02:17.750 --> 02:21.800
-If you wanted to create a project from scratch, first, you check out this repo.
+Se você quiser criar um projeto do zero, primeiro dê uma olhada neste repositório.
 
 02:21.830 --> 02:27.160
-Then you open up the latest Unity editor and open up the Unity Physics Examples Project.
+Em seguida, você abre o editor mais recente do Unity e abre o Unity Physics Examples Project.
 
 02:27.170 --> 02:30.950
-Then we have to make sure we have the right packages and update them.
+Em seguida, temos de nos certificar de que temos os pacotes certos e atualizá-los.
 
 02:30.950 --> 02:38.000
-So open up the package manager, click Advanced Click Show preview packages Verify you have the latest
+Portanto, abra o gerenciador de pacotes, clique em Advanced (Avançado), clique em Show preview packages (Mostrar pacotes de visualização) e verifique se você tem os pacotes mais recentes.
 
 02:38.000 --> 02:42.020
-version of the required packages, including Unity Physics.
+versão dos pacotes necessários, incluindo o Unity Physics.
 
 02:43.210 --> 02:44.720
-Let's take a look at a demo.
+Vamos dar uma olhada em uma demonstração.
 
 02:44.740 --> 02:50.350
-Note that compared to every other demo in this course, this one is located in a separate project.
+Observe que, em comparação com todas as outras demonstrações deste curso, esta está localizada em um projeto separado.
 
 02:50.350 --> 02:52.960
-That's because it has unique setup aspects.
+Isso se deve ao fato de ela ter aspectos de configuração exclusivos.
 
 02:52.960 --> 02:55.930
-Play the scene and will inspect the scene together.
+Reproduzir a cena e inspecionar a cena juntos.
 
 02:55.930 --> 02:59.950
-We'll see that the physics, shape and physics body are new components.
+Veremos que a física, a forma e o corpo da física são novos componentes.
 
 02:59.950 --> 03:06.730
-We'll check out my restart scene controller code and see how I had to tweak it specifically for dots.
+Verificaremos meu código de controlador de cena de reinicialização e veremos como tive de ajustá-lo especificamente para os pontos.
 
 03:06.730 --> 03:10.000
-As a bonus, I've added some spanners to the scene.
+Como bônus, adicionei algumas chaves inglesas à cena.
 
 03:10.000 --> 03:14.170
-We'll be able to add a lot of physics objects and see how the performance works.
+Poderemos adicionar muitos objetos de física e ver como o desempenho funciona.
 
 03:14.620 --> 03:16.830
-All right, let's open up our Dots project here.
+Muito bem, vamos abrir o nosso projeto Dots aqui.
 
 03:16.840 --> 03:21.710
-Again, note that this is a different project than we've used for the rest of the course.
+Novamente, observe que este é um projeto diferente do que usamos no restante do curso.
 
 03:21.730 --> 03:24.370
-That's because this needs some specific setup.
+Isso se deve ao fato de que ele precisa de uma configuração específica.
 
 03:24.930 --> 03:32.070
-But here in the Unity Physics Dots example, we'll run the scene and see a pretty similar setup.
+Mas aqui no exemplo do Unity Physics Dots, executaremos a cena e veremos uma configuração bastante semelhante.
 
 03:32.160 --> 03:36.810
-We've got a stack of cubes, something like our demos we've used before.
+Temos uma pilha de cubos, algo parecido com as demonstrações que usamos anteriormente.
 
 03:36.840 --> 03:41.910
-I can even hit the spacebar and reload the scene as we've been able to do before.
+Posso até mesmo apertar a barra de espaço e recarregar a cena, como já fizemos antes.
 
 03:42.180 --> 03:46.950
-And if we look into the scene, we'll notice that we have no cubes in here anymore.
+E se olharmos para a cena, notaremos que não temos mais cubos aqui.
 
 03:47.370 --> 03:53.160
-There's a temporary, I think, unique aspect to dots in that once the scene starts, certain objects
+Há um aspecto temporário, acho que único, dos pontos, pois quando a cena começa, certos objetos
 
 03:53.160 --> 03:54.130
-will disappear.
+desaparecerão.
 
 03:54.150 --> 03:55.200
-It's not a bug.
+Não é um bug.
 
 03:55.200 --> 04:01.620
-It's just a way that the optimization works and in the future that will be represented in the hierarchy.
+É apenas uma maneira de a otimização funcionar e, no futuro, isso será representado na hierarquia.
 
 04:02.300 --> 04:08.000
-So if we look at one of the cubes, instead of seeing the familiar collider, we see physics shape.
+Portanto, se olharmos para um dos cubos, em vez de vermos o colisor familiar, veremos a forma física.
 
 04:08.150 --> 04:12.560
-And instead of seeing the familiar rigid body, we see physics body.
+E em vez de ver o corpo rígido familiar, vemos o corpo físico.
 
 04:12.560 --> 04:14.930
-So there's a different naming scheme here.
+Portanto, há um esquema de nomenclatura diferente aqui.
 
 04:15.080 --> 04:20.900
-But a lot of the similar values we'd expect to see, including being able to have something like a physics
+Mas muitos dos valores semelhantes que esperávamos ver, incluindo a possibilidade de ter algo como um corpo físico
 
 04:20.900 --> 04:23.030
-material for bouncing --, etc..
+material para saltar --, etc..
 
 04:23.420 --> 04:29.120
-Something else I wanted to show is that I was able to restart the scene, but I had to add a little
+Outra coisa que gostaria de mostrar é que consegui reiniciar a cena, mas tive de acrescentar um pouco de
 
 04:29.120 --> 04:31.820
-bit of something to the code down here.
+algo ao código aqui embaixo.
 
 04:31.820 --> 04:38.570
-In addition to reloading the scene which I did before here for dots, I have to restart the system by
+Além de recarregar a cena, o que fiz antes aqui para os pontos, tenho de reiniciar o sistema
 
 04:38.570 --> 04:40.970
-destroying what are called entities in the scene.
+destruindo o que chamamos de entidades na cena.
 
 04:40.970 --> 04:46.700
-So definitely a little bit more thinking I have to do when I had to do some simple steps here but works
+Então, definitivamente, tenho que pensar um pouco mais quando tive que fazer alguns passos simples aqui, mas funciona
 
 04:46.700 --> 04:47.180
-great.
+muito bem.
 
 04:48.250 --> 04:54.160
-Lastly, I want to show I have a sponsor set up here that's going to spawn 3000 different objects in
+Por fim, quero mostrar que tenho um patrocinador configurado aqui que vai gerar 3.000 objetos diferentes em
 
 04:54.160 --> 04:54.760
-the world.
+no mundo.
 
 04:55.330 --> 04:57.190
-Let's see how well it performs.
+Vamos ver o desempenho dele.
 
 04:57.520 --> 05:01.780
-I'm going to show just the game view here and give it a play.
+Vou mostrar apenas a visualização do jogo aqui e dar uma olhada.
 
 05:02.230 --> 05:04.840
-I'm also going to turn on the frame rate counter.
+Também vou ativar o contador de taxa de quadros.
 
 05:05.170 --> 05:11.830
-You can see we're at about six frames, ten frames a second when the scene first starts and then it
+Você pode ver que estamos em cerca de seis quadros, dez quadros por segundo quando a cena começa e depois
 
 05:11.830 --> 05:13.660
-quickly gains a lot of speed.
+ganha rapidamente muita velocidade.
 
 05:13.690 --> 05:17.410
-I think it's the instantiation of items in the world that's expensive.
+Acho que é a instanciação de itens no mundo que é cara.
 
 05:17.410 --> 05:20.620
-But then the physics operation runs really well.
+Mas a operação física funciona muito bem.
 
 05:20.650 --> 05:25.900
-Here we have thousands of objects more than we can even see on screen, and I'm still able to interact
+Aqui temos milhares de objetos, mais do que podemos ver na tela, e ainda consigo interagir
 
 05:25.900 --> 05:27.610
-with them with really good frame rate.
+com eles com uma taxa de quadros muito boa.
 
 05:27.640 --> 05:32.980
-I think this will continue to improve as the project matures, but we were already seeing really good
+Acho que isso continuará a melhorar à medida que o projeto amadurecer, mas já estávamos vendo uma taxa de quadros muito boa
 
 05:32.980 --> 05:33.880
-performance.
+desempenho.
 
 05:34.150 --> 05:35.040
-So that's it.
+Então é isso.
 
 05:35.050 --> 05:37.210
-That's a quick overview of Unity Dots.
+Essa é uma visão geral rápida do Unity Dots.
 
 05:38.290 --> 05:39.830
-This is the end of the course.
+Este é o fim do curso.
 
 05:39.850 --> 05:41.380
-Thank you very much.
+Muito obrigado.

@@ -1,301 +1,301 @@
 WEBVTT
 
 00:01.630 --> 00:03.160
-Creating the obstacles.
+Criando os obstáculos.
 
 00:03.550 --> 00:08.720
-In this video, we'll cover creating new obstacles in using on collision events for hit detection.
+Neste vídeo, abordaremos a criação de novos obstáculos usando eventos de colisão para detecção de acerto.
 
 00:08.740 --> 00:14.930
-We'll also look at documenting health for the damaged objects and using a unity event for communication.
+Também veremos como documentar a saúde dos objetos danificados e como usar um evento de unidade para comunicação.
 
 00:14.950 --> 00:20.620
-We'll also swap out sprites in the sprite render to show when an object is damaged.
+Também trocaremos os sprites na renderização de sprites para mostrar quando um objeto está danificado.
 
 00:21.220 --> 00:22.360
-Creating the Obstacles.
+Criando os obstáculos.
 
 00:22.360 --> 00:24.340
-This is a task breakdown here.
+Esta é uma divisão de tarefas aqui.
 
 00:24.400 --> 00:29.140
-We're going to be creating the upset Duck prefab and C-sharp script.
+Vamos criar o pré-fabricado Duck perturbado e o script C-sharp.
 
 00:29.170 --> 00:33.080
-Along with the upset duck prefab will add a world item script.
+Junto com o prefab do pato perturbado, adicionaremos um script de item mundial.
 
 00:33.100 --> 00:38.920
-Then we'll add the Create Prefab and the Crate script and finally take a look at a very basic version
+Em seguida, adicionaremos o script Create Prefab e o Crate e, finalmente, daremos uma olhada em uma versão muito básica
 
 00:38.920 --> 00:41.560
-of the upset duck game script.
+do script do jogo do pato chateado.
 
 00:41.800 --> 00:44.070
-Our target image is shown here.
+Nossa imagem alvo é mostrada aqui.
 
 00:44.080 --> 00:49.360
-We already have the catapult and other graphics, but we're going to be adding the ducks and the crates
+Já temos a catapulta e outros gráficos, mas vamos acrescentar os patos e as caixas
 
 00:49.360 --> 00:50.110
-this time.
+desta vez.
 
 00:50.620 --> 00:55.810
-So we'll open up the project Section five Video three We'll look at the scene.
+Então, abriremos o projeto Section five Video three e veremos a cena.
 
 00:55.810 --> 00:57.340
-Upset Ducks three.
+Patos chateados três.
 
 00:57.910 --> 00:59.380
-Let's open up unity here.
+Vamos abrir a unidade aqui.
 
 01:00.110 --> 01:02.900
-We're going to be looking at the upset Ducks three.
+Vamos dar uma olhada nos três Patos chateados.
 
 01:03.690 --> 01:06.810
-Now in this scene, it's got the familiar setup.
+Agora, nesta cena, temos a configuração familiar.
 
 01:06.810 --> 01:09.540
-Now we have a pyramid of crates, though, that's new.
+Mas agora temos uma pirâmide de caixas, o que é novo.
 
 01:09.540 --> 01:13.290
-And also the birds themselves, which are the upset ducks.
+E também as aves propriamente ditas, que são os patos chateados.
 
 01:13.290 --> 01:15.200
-We can go ahead and hit them.
+Podemos ir em frente e acertá-los.
 
 01:15.210 --> 01:21.750
-The guy flaps a little bit and I can hit the crate and the creek gets hit hard enough.
+O cara se agita um pouco e eu consigo acertar o caixote e o riacho é atingido com força suficiente.
 
 01:21.750 --> 01:23.040
-It disappears.
+Ele desaparece.
 
 01:23.040 --> 01:26.210
-You can see they react with a little facial expression and stuff.
+Você pode ver que eles reagem com uma pequena expressão facial e outras coisas.
 
 01:26.220 --> 01:27.690
-So let's see how to set that up.
+Então, vamos ver como configurar isso.
 
 01:28.690 --> 01:33.940
-If we look inside the world, items here, which is got the docks themselves and the crates.
+Se olharmos dentro do mundo, os itens aqui, que são as próprias docas e os caixotes.
 
 01:34.090 --> 01:39.100
-If we look at a crate, it has the following sprite render.
+Se olharmos para uma caixa, ela tem o seguinte sprite renderizado.
 
 01:39.250 --> 01:48.010
-Rigid body box Collider world item and Crate World item is what manages the health and I got damaged.
+Caixa de corpo rígido Item do mundo Collider e item do mundo Crate é o que gerencia a saúde e eu fui danificado.
 
 01:48.010 --> 01:50.050
-The crate listens to that.
+A caixa ouve isso.
 
 01:50.050 --> 01:53.020
-I got damaged message and it decides what to do about it.
+Recebi uma mensagem de dano e ela decide o que fazer a respeito.
 
 01:53.020 --> 01:59.080
-In this case, it's going to disappear If too much damage was done later on in the future, video will
+Nesse caso, ela vai desaparecer. Se houver muito dano no futuro, o vídeo vai
 
 01:59.590 --> 02:00.640
-explosion as well.
+explosão também.
 
 02:01.150 --> 02:07.540
-Since the crate is set up, just like the duck will actually create the duck from scratch here in this.
+Como o engradado está montado, assim como o pato, o pato será criado do zero aqui.
 
 02:07.540 --> 02:09.520
-So it has a similar set up sprite.
+Portanto, ele tem um sprite de configuração semelhante.
 
 02:09.520 --> 02:13.450
-Render a collider a rigid body to DX.
+Renderize um collider como um corpo rígido para DX.
 
 02:14.260 --> 02:16.080
-World item and upset duck.
+Item do mundo e pato chateado.
 
 02:16.090 --> 02:16.870
-Same rule.
+Mesma regra.
 
 02:17.170 --> 02:21.970
-World item manages the health and damage and the upset duck decides what to do about that.
+O item do mundo gerencia a saúde e os danos e o pato perturbado decide o que fazer a respeito.
 
 02:22.150 --> 02:24.820
-So let's get rid of those upset ducks.
+Portanto, vamos nos livrar desses patos irritados.
 
 02:26.380 --> 02:28.870
-And we'll get rid of the upset duck prefab.
+E vamos nos livrar do pato chateado pré-fabricado.
 
 02:29.820 --> 02:31.570
-Then we'll create one from scratch.
+Em seguida, criaremos um do zero.
 
 02:35.770 --> 02:40.630
-So we've got a lot of different frames here I'm going to choose to use.
+Portanto, temos aqui várias molduras diferentes que vou optar por utilizar.
 
 02:41.740 --> 02:42.970
-The.
+O.
 
 02:44.300 --> 02:45.410
-This idol one.
+Este ídolo.
 
 02:46.850 --> 02:50.300
-And then I'm going to add in the needed components we want.
+E então eu vou adicionar os componentes necessários que queremos.
 
 03:01.950 --> 03:03.180
-In the world item.
+No item do mundo.
 
 03:05.700 --> 03:08.160
-So we have world item.
+Portanto, temos o item world.
 
 03:09.380 --> 03:11.570
-And then I'll drag in the upset.
+E então eu arrastarei o transtorno.
 
 03:14.210 --> 03:16.100
-Well, give us a name and make prefab.
+Bem, nos dê um nome e faça um prefab.
 
 03:26.770 --> 03:27.130
-Okay.
+Está bem.
 
 03:27.550 --> 03:31.480
-We look at the upset duck script and the world item script.
+Vamos dar uma olhada no script do upset duck e no script do item do mundo.
 
 03:31.480 --> 03:36.880
-I guess we can see that the upset duck script wants a reference to world item.
+Acho que podemos ver que o script do upset duck quer uma referência ao item do mundo.
 
 03:38.200 --> 03:40.360
-And a reference to the sprite renderer.
+E uma referência ao renderizador de sprite.
 
 03:41.660 --> 03:45.410
-And then a reference to some of the different.
+E depois uma referência a alguns dos diferentes.
 
 03:46.360 --> 03:47.160
-Sprites that we have.
+Sprites que temos.
 
 03:47.170 --> 03:51.490
-So if we run this one, we can choose.
+Portanto, se executarmos este, podemos escolher.
 
 03:56.190 --> 03:58.170
-Let's choose the.
+Vamos escolher o.
 
 03:59.530 --> 04:00.820
-Hero.
+Herói.
 
 04:01.580 --> 04:09.830
-And then the hero one and the hero to where he's looking like he got hit really badly.
+E, em seguida, o herói um e o herói para onde ele está parecendo ter sido atingido muito mal.
 
 04:09.830 --> 04:10.550
-He's dead there.
+Ele está morto ali.
 
 04:11.270 --> 04:13.280
-And let's look at each of these scripts.
+E vamos dar uma olhada em cada um desses roteiros.
 
 04:14.200 --> 04:20.080
-So in the world item, what's interesting is we use a unity event here to pass a float of how much was
+Portanto, no item do mundo, o interessante é que usamos um evento de unidade aqui para passar um float de quanto foi
 
 04:20.080 --> 04:21.040
-I damaged?
+Eu danifiquei?
 
 04:21.460 --> 04:25.720
-Then down here inside the on collision enter.
+Depois, aqui embaixo, dentro do evento de colisão, entre.
 
 04:26.320 --> 04:29.480
-We checked the velocity of the collision.
+Verificamos a velocidade da colisão.
 
 04:29.500 --> 04:33.970
-If it's too small, we skip right out and return and do any further code.
+Se for muito pequena, pulamos fora e voltamos para fazer qualquer outro código.
 
 04:34.360 --> 04:41.410
-If it's a sizable enough damage, we calculate and we decrement the health and then we use on health
+Se for um dano suficientemente grande, calculamos e diminuímos a saúde e depois usamos a saúde
 
 04:41.410 --> 04:47.710
-change, invoke damage to send out an event to any scope that cares and they can listen.
+invocamos o dano para enviar um evento para qualquer escopo que se importe e que possa ouvir.
 
 04:48.100 --> 04:53.920
-Then if we look at the upset duck script itself, what we do that's interesting here in the start is
+Então, se olharmos para o script do upset duck em si, o que fazemos de interessante aqui no início é
 
 04:53.920 --> 04:56.420
-we add a listener to that health change.
+adicionamos um ouvinte a essa alteração de saúde.
 
 04:56.440 --> 05:02.380
-Now, the upset duck script can here any time the health changed on the world item, that's how that's
+Agora, o script do pato chateado pode estar aqui sempre que a saúde mudar no item do mundo, é assim que é
 
 05:02.380 --> 05:02.950
-set up.
+configurado.
 
 05:02.950 --> 05:04.750
-That's how the unity event works.
+É assim que o evento de unidade funciona.
 
 05:05.110 --> 05:11.650
-Then down here, when it changes, it's able to switch it to the dead sprite in the case that the health
+Então, aqui embaixo, quando ele muda, ele é capaz de mudar para o sprite morto no caso de a saúde
 
 05:11.650 --> 05:19.420
-is way too low or it can temporarily flicker to the second of the frames where he got hit.
+estiver muito baixa ou pode mudar temporariamente para o segundo dos quadros em que ele foi atingido.
 
 05:19.420 --> 05:25.900
-But he's not quite dead in this script down here at the bottom just turns the Sprite render or Sprite
+Mas ele não está totalmente morto nesse script aqui embaixo, na parte inferior, apenas transforma o Sprite render ou Sprite
 
 05:25.900 --> 05:31.210
-to one, and then after a couple of seconds, it's actually after a few milliseconds because they have
+para um, e depois de alguns segundos, na verdade, depois de alguns milissegundos, porque eles têm
 
 05:31.210 --> 05:35.800
-a small value there, it then will turn it back to the idle sprite.
+um pequeno valor lá, ele então voltará para o sprite ocioso.
 
 05:36.100 --> 05:38.740
-So let's take a look at how that works altogether.
+Então, vamos dar uma olhada em como isso funciona.
 
 05:40.240 --> 05:43.620
-So we'll just take our guy here.
+Então, vamos pegar o nosso cara aqui.
 
 05:43.630 --> 05:47.290
-We'll duplicate a couple of them and we'll run the scene.
+Vamos duplicar alguns deles e executar a cena.
 
 05:52.400 --> 05:54.290
-So watch when I hit.
+Então, observe quando eu clicar.
 
 05:58.120 --> 06:00.580
-You can see the orientation is a little off.
+Você pode ver que a orientação está um pouco errada.
 
 06:00.580 --> 06:03.400
-We could tweak that and tweak the directions and stuff.
+Podemos ajustar isso e ajustar as direções e outras coisas.
 
 06:03.760 --> 06:04.750
-That's fine.
+Tudo bem.
 
 06:04.810 --> 06:10.840
-What I want to show you is that as they're hit, they flap a little bit, and if they're hit too much,
+O que eu quero lhe mostrar é que, ao serem atingidos, eles batem um pouco e, se forem atingidos demais, eles se mexem,
 
 06:10.840 --> 06:13.060
-then their eyes bulge out.
+então seus olhos se projetam para fora.
 
 06:14.650 --> 06:15.370
-And that's it.
+E é isso.
 
 06:15.400 --> 06:16.600
-Thanks very much.
+Muito obrigado.
 
 06:20.360 --> 06:26.600
-Oh, one more thing I want to show here is that the upset duck script, which if we take a look at that,
+Ah, mais uma coisa que quero mostrar aqui é que o script do upset duck, que se dermos uma olhada nele,
 
 06:26.660 --> 06:28.690
-it's got very little stuff in it.
+tem muito pouca coisa nele.
 
 06:28.760 --> 06:35.030
-What it does here is it adds the asteroid on START, so it puts one in the catapult and then later the
+O que ele faz aqui é adicionar o asteroide no START, então ele coloca um na catapulta e depois o
 
 06:35.030 --> 06:35.510
-crate.
+caixa.
 
 06:35.510 --> 06:40.070
-When the crates had too much damage, the crate can say, Hey, will you destroy me?
+Quando as caixas sofrem muitos danos, a caixa pode dizer: "Ei, você quer me destruir?
 
 06:40.070 --> 06:42.050
-And the crate will pass in itself.
+E a caixa passará por si mesma.
 
 06:42.050 --> 06:43.910
-And then here we do the destroy.
+E então aqui fazemos a destruição.
 
 06:44.120 --> 06:45.050
-So that's it.
+Então é isso.
 
 06:45.820 --> 06:46.570
-So that's it.
+Então é isso.
 
 06:46.600 --> 06:47.560
-Thanks very much.
+Muito obrigado.
 
 06:48.720 --> 06:52.500
-And in the next video, we'll take a look at adding win loss conditions.
+No próximo vídeo, daremos uma olhada na adição de condições de ganho e perda.

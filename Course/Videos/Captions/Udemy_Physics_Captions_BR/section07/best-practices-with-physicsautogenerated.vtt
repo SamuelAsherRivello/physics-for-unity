@@ -1,205 +1,205 @@
 WEBVTT
 
 00:01.610 --> 00:04.110
-Section seven Advanced Topics.
+Seção 7 - Tópicos Avançados.
 
 00:04.130 --> 00:10.400
-In this section, we'll cover best practices with physics, optimizing physics, predicting physics
+Nesta seção, abordaremos as melhores práticas com a física, otimizando a física, prevendo a física
 
 00:10.400 --> 00:13.550
-trajectory, as well as data oriented technology.
+trajetória, bem como a tecnologia orientada a dados.
 
 00:13.550 --> 00:16.400
-Stack word dots for unity physics.
+Pilha de pontos de palavras para física de unidade.
 
 00:17.460 --> 00:19.350
-Best practices with physics.
+Melhores práticas com física.
 
 00:19.590 --> 00:23.800
-In this video, we will cover the best practices you should do.
+Neste vídeo, abordaremos as práticas recomendadas que você deve seguir.
 
 00:23.820 --> 00:30.750
-We'll see the inefficient steps to be avoided and we'll look at the best project set up for best performance.
+Veremos as etapas ineficientes que devem ser evitadas e analisaremos a melhor configuração de projeto para obter o melhor desempenho.
 
 00:31.380 --> 00:33.780
-Gotchas, dos and Don'ts.
+Pegadinhas, o que fazer e o que não fazer.
 
 00:33.810 --> 00:38.010
-Gotchas are the helpful hints, which are not always obvious when developing.
+Gotchas são as dicas úteis, que nem sempre são óbvias durante o desenvolvimento.
 
 00:38.010 --> 00:43.800
-DOS are the best practices that give us smooth results, and the don't list will be things to avoid
+DOS são as práticas recomendadas que nos proporcionam resultados satisfatórios, e a lista de "don't" são as coisas a serem evitadas
 
 00:43.800 --> 00:47.400
-because they create bottlenecks or otherwise bad performance.
+porque criam gargalos ou desempenho ruim.
 
 00:47.400 --> 00:48.900
-Some general gotchas.
+Algumas pegadinhas gerais.
 
 00:48.900 --> 00:52.800
-First of all, when you're setting up your project, mimic the world scale.
+Em primeiro lugar, quando estiver configurando o seu projeto, imite a escala mundial.
 
 00:52.800 --> 00:57.330
-A common problem when you start out with rigid bodies is things look like they're in slow motion.
+Um problema comum quando se começa a usar corpos rígidos é que as coisas parecem estar em câmera lenta.
 
 00:57.330 --> 01:01.080
-This is actually just due to scale the default gravity settings.
+Na verdade, isso se deve apenas à escala das configurações de gravidade padrão.
 
 01:01.080 --> 01:08.430
-Assume that you have units corresponding to two units high for a human or four units long for a car.
+Suponha que você tenha unidades correspondentes a duas unidades de altura para um ser humano ou quatro unidades de comprimento para um carro.
 
 01:08.430 --> 01:11.610
-So try to use those scale are pretty close to it.
+Portanto, tente usar essas escalas que estão bem próximas disso.
 
 01:11.610 --> 01:12.630
-Determinism.
+Determinismo.
 
 01:12.630 --> 01:16.710
-Generally speaking, today's unity physics is not deterministic.
+De modo geral, a física da unidade atual não é determinista.
 
 01:16.710 --> 01:23.190
-That means that it's not going to repeat the exact same result on every machine every time.
+Isso significa que ela não repetirá exatamente o mesmo resultado em todas as máquinas, todas as vezes.
 
 01:23.190 --> 01:27.560
-This is due to the way that different compilers and processors implement their math.
+Isso se deve à forma como diferentes compiladores e processadores implementam a matemática.
 
 01:27.570 --> 01:31.950
-However, in the future, Unity dots physics promises determinism.
+No entanto, no futuro, a física Unity dots promete determinismo.
 
 01:32.190 --> 01:35.940
-Some general dos choose to DD versus three d smartly.
+Alguns dos gerais escolhem DD versus três d de forma inteligente.
 
 01:35.940 --> 01:40.410
-If you're doing a 2D project, don't use the three d physics components.
+Se estiver fazendo um projeto 2D, não use os componentes físicos tridimensionais.
 
 01:40.410 --> 01:46.590
-It's overkill static for each game object or go in a project.
+É um exagero usar a estática para cada objeto de jogo ou para cada objeto em um projeto.
 
 01:46.590 --> 01:47.940
-Set them to static.
+Defina-os como estáticos.
 
 01:47.940 --> 01:49.530
-If you notice they're not moving.
+Se notar que eles não estão se movendo.
 
 01:49.530 --> 01:52.410
-This is floor background platform elements.
+Este é o piso dos elementos da plataforma de fundo.
 
 01:52.410 --> 01:54.030
-It's a great optimization.
+É uma ótima otimização.
 
 01:54.030 --> 02:00.360
-Next, keep your scale at one If you can try to keep your objects scales at one that will maximize the
+Em seguida, mantenha a sua escala em um Se você puder tentar manter a escala dos seus objetos em uma escala que maximize a
 
 02:00.360 --> 02:06.510
-performance for rigid body and joints movement Use rigid body move position and move rotation instead
+desempenho para movimentos de corpo rígido e articulações Use a posição de movimento de corpo rígido e a rotação de movimento em vez disso
 
 02:06.510 --> 02:09.330
-of direct transform access or use.
+do acesso ou uso de transformação direta.
 
 02:09.330 --> 02:10.800
-Add force and add torque.
+Adicione força e adicione torque.
 
 02:10.800 --> 02:17.790
-As we talked about before, joints use small differences less than ten times different in the masses
+Como falamos anteriormente, as articulações usam pequenas diferenças menores do que dez vezes diferentes nas massas
 
 02:17.790 --> 02:23.640
-between rigid body components that'll give you smoother results, things you shouldn't do in a general
+entre os componentes do corpo rígido que lhe darão resultados mais suaves, coisas que você não deve fazer em um
 
 02:23.640 --> 02:24.240
-sense.
+sentido geral.
 
 02:24.270 --> 02:30.240
-Avoid making rotation or scale changes because this recreates the colliders and it's expensive to do.
+Evite fazer alterações de rotação ou escala porque isso recria os colliders e é caro.
 
 02:30.270 --> 02:37.860
-Don't use mesh colliders if you can get away with it, use these simpler primitive colliders box sphere,
+Não use colisores de malha se você puder se safar com isso, use esses colisores primitivos mais simples, box sphere,
 
 02:37.860 --> 02:43.800
-etc. If you can even add multiple because mesh colliders are very expensive to operate and avoid using
+etc. Se puder, adicione vários, pois os colisores de malha são muito caros para operar e evite usar
 
 02:43.800 --> 02:46.350
-wheel colliders, they're also very expensive.
+colisores de roda, eles também são muito caros.
 
 02:46.620 --> 02:51.990
-Some recasting tips things to do use the least amount of raise to get the job done.
+Algumas dicas de reformulação para usar a menor quantidade de aumento possível para realizar o trabalho.
 
 02:51.990 --> 02:56.820
-Try to be specific using layer masks on your ray casts things not to do.
+Tente ser específico usando máscaras de camada em seus ray casts - coisas que não devem ser feitas.
 
 02:56.850 --> 02:59.670
-Don't extend the rays length more than you need to.
+Não estenda o comprimento dos raios mais do que o necessário.
 
 02:59.790 --> 03:05.670
-If you know more or less that your level is 100 units, try and set that as the max so you're not scanning
+Se você sabe mais ou menos que o seu nível é de 100 unidades, tente definir esse valor como o máximo para não fazer a varredura
 
 03:05.670 --> 03:07.920
-out into infinity, which is expensive.
+para o infinito, o que é caro.
 
 03:07.920 --> 03:10.890
-And don't use Ray cast against Mesh Collider.
+E não use o Ray cast contra o Mesh Collider.
 
 03:10.890 --> 03:12.330
-It's really expensive.
+É muito caro.
 
 03:13.780 --> 03:16.360
-Some good tips for Unity Project setup.
+Algumas boas dicas para a configuração do Unity Project.
 
 03:16.360 --> 03:18.720
-Optimize the layer collision matrix.
+Otimize a matriz de colisão de camadas.
 
 03:18.730 --> 03:20.620
-You can see it at the bottom of the screenshot.
+Você pode vê-la na parte inferior da captura de tela.
 
 03:20.620 --> 03:23.200
-By default, everything collides with everything you know.
+Por padrão, tudo colide com tudo o que você conhece.
 
 03:23.200 --> 03:27.400
-After you get your project set up, go ahead and uncheck the boxes that aren't needed.
+Depois de configurar o projeto, vá em frente e desmarque as caixas que não são necessárias.
 
 03:27.400 --> 03:32.980
-It's going to lead to better results for ragdoll use, equal mass for all rigid bodies.
+Isso levará a melhores resultados para o uso do ragdoll, massa igual para todos os corpos rígidos.
 
 03:32.980 --> 03:37.480
-Avoid using small limit spans like five or 15 or more.
+Evite usar pequenos intervalos de limite, como cinco ou 15 ou mais.
 
 03:37.480 --> 03:39.540
-That's better if it's jittery.
+É melhor se for instável.
 
 03:39.550 --> 03:43.690
-Update the default solver iterations use 20 or more.
+Atualize as iterações padrão do solver usando 20 ou mais.
 
 03:44.600 --> 03:50.690
-Some project settings in the time area do tweak the fix time step tweak it to reach a good compromise
+Algumas configurações do projeto na área de tempo ajustam o passo de tempo fixo para chegar a um bom compromisso
 
 03:50.690 --> 03:56.540
-between accuracy, which is a high value, and the CPU spent on physics, which is a low value.
+entre a precisão, que é um valor alto, e a CPU gasta com a física, que é um valor baixo.
 
 03:56.570 --> 04:02.120
-You can see there that if we tweak it to like 0.1, that means we're still getting ten physics updates
+Você pode ver que se ajustarmos para 0,1, isso significa que ainda estamos recebendo dez atualizações de física
 
 04:02.120 --> 04:03.810
-per second and that's pretty good.
+por segundo e isso é muito bom.
 
 04:03.830 --> 04:10.190
-Tweak the maximum allowed timestamp as well, use 8 to 10 to cap the time spent on physics in your worst
+Ajuste também o registro de data e hora máximo permitido, use de 8 a 10 para limitar o tempo gasto com a física no seu pior
 
 04:10.190 --> 04:11.210
-case scenario.
+cenário de caso.
 
 04:11.920 --> 04:18.160
-Do use the unity profiler periodically, even during early development, open it up and investigate
+Use o profiler do unity periodicamente, mesmo durante o desenvolvimento inicial, abra-o e investigue
 
 04:18.160 --> 04:20.150
-what large spikes in performance you have.
+quais são os grandes picos de desempenho que você tem.
 
 04:20.170 --> 04:24.250
-Look for warnings to also it'll show a warning there.
+Procure por avisos para também mostrar um aviso lá.
 
 04:24.250 --> 04:29.710
-If, for example, you accidentally move something marked static, which is possible at gameplay, but
+Se, por exemplo, você mover acidentalmente algo marcado como estático, o que é possível na jogabilidade, mas
 
 04:29.710 --> 04:30.910
-really expensive.
+realmente caro.
 
 04:32.500 --> 04:36.160
-In the next video, we'll talk about optimizing physics.
+No próximo vídeo, falaremos sobre a otimização da física.

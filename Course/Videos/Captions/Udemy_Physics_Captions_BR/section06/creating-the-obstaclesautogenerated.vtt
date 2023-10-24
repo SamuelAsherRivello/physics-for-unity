@@ -1,298 +1,298 @@
 WEBVTT
 
 00:01.780 --> 00:03.200
-Creating the obstacles.
+Criando os obstáculos.
 
 00:03.220 --> 00:08.950
-In this video, we'll cover creating movable and immovable objects, and we'll add spinning coins which
+Neste vídeo, abordaremos a criação de objetos móveis e imóveis e adicionaremos moedas giratórias que
 
 00:08.950 --> 00:10.650
-are collectible by the player.
+são colecionáveis pelo jogador.
 
 00:10.660 --> 00:12.100
-Here's the task breakdown.
+Aqui está o detalhamento da tarefa.
 
 00:12.100 --> 00:18.140
-We'll add the cube movable prefab, and we'll add the cube immovable prefab along with its script.
+Adicionaremos o pré-fabricado móvel do cubo e adicionaremos o pré-fabricado imóvel do cubo junto com seu script.
 
 00:18.160 --> 00:23.260
-We'll add a coin prefab and its script to handle spinning and being collected by the player.
+Adicionaremos um prefab de moeda e seu script para lidar com o giro e a coleta pelo jogador.
 
 00:23.410 --> 00:27.190
-For the project, we'll open up section six, Video three and the scene.
+Para o projeto, abriremos a seção seis, o vídeo três e a cena.
 
 00:27.190 --> 00:28.390
-Crazy Ball three.
+Crazy Ball três.
 
 00:28.780 --> 00:30.310
-All right, Here we are inside Unity.
+Muito bem, aqui estamos dentro do Unity.
 
 00:30.670 --> 00:33.890
-Let's go ahead and open up our crazy ball three scene.
+Vamos em frente e abrir nossa cena do Crazy Ball Three.
 
 00:33.910 --> 00:34.810
-Give it a play.
+Dê uma olhada.
 
 00:35.470 --> 00:38.980
-So what's new in this is we have objects within the walls.
+O que há de novo aqui é que temos objetos dentro das paredes.
 
 00:38.980 --> 00:40.870
-We've got different platforms.
+Temos plataformas diferentes.
 
 00:40.870 --> 00:44.350
-We've got different movable and immovable objects.
+Temos diferentes objetos móveis e imóveis.
 
 00:44.350 --> 00:49.090
-So the darker cubes, I can't move and the lighter cubes I can move them.
+Portanto, não posso mover os cubos mais escuros e posso mover os cubos mais claros.
 
 00:49.090 --> 00:51.070
-So it just gives a little visual variety.
+Assim, isso apenas proporciona uma pequena variedade visual.
 
 00:51.280 --> 00:56.170
-Also, as I'm collecting these coins, you can see I collide with them and they disappear.
+Além disso, como estou coletando essas moedas, você pode ver que eu colido com elas e elas desaparecem.
 
 00:56.290 --> 00:58.240
-So they instantly disappear.
+Portanto, elas desaparecem instantaneamente.
 
 00:58.240 --> 01:01.990
-And of course they're spinning around just for a nice visual effect.
+E, é claro, eles estão girando apenas para um efeito visual agradável.
 
 01:02.540 --> 01:04.850
-And also cast shadows, which is cool.
+E também projetam sombras, o que é legal.
 
 01:04.870 --> 01:08.500
-So let's focus on just how the coin is set up.
+Então, vamos nos concentrar em como a moeda está configurada.
 
 01:08.530 --> 01:10.570
-Let's do that together from scratch.
+Vamos fazer isso juntos a partir do zero.
 
 01:10.690 --> 01:12.580
-So here we are.
+Então, aqui estamos.
 
 01:12.790 --> 01:15.040
-Let's take a look at the.
+Vamos dar uma olhada no.
 
 01:18.290 --> 01:20.030
-Pick up prototype object.
+Pegue o objeto protótipo.
 
 01:20.660 --> 01:21.440
-Just double check.
+Apenas verifique novamente.
 
 01:21.440 --> 01:24.350
-When we see this, I'm going to drag out the right one.
+Quando virmos isso, vou arrastar o objeto certo.
 
 01:26.390 --> 01:30.410
-Okay, So let's talk about converting this into our coin.
+Certo, então vamos falar sobre a conversão disso em nossa moeda.
 
 01:31.070 --> 01:34.400
-So first thing, we want it to be a little bit higher off the ground.
+Então, em primeiro lugar, queremos que ela fique um pouco mais alta do chão.
 
 01:35.350 --> 01:36.460
-Uh, you could make a call.
+Você poderia fazer uma ligação.
 
 01:36.460 --> 01:40.510
-If this is the right size for us, I'm going to say we want it to be a little bit smaller.
+Se esse for o tamanho certo para nós, vou dizer que queremos que ele seja um pouco menor.
 
 01:42.270 --> 01:43.920
-So I scale it down.
+Então eu diminuo a escala.
 
 01:45.130 --> 01:48.290
-Checking the scale against the size of our character.
+Verificando a escala em relação ao tamanho do nosso personagem.
 
 01:49.230 --> 01:50.550
-I think that looks pretty good.
+Acho que ficou muito bom.
 
 01:50.850 --> 01:52.830
-Then I've got a gold texture setup.
+Depois, tenho uma configuração de textura dourada.
 
 01:52.830 --> 01:53.910
-We could use that.
+Podemos usar isso.
 
 01:54.870 --> 01:58.050
-It's often in games that we want our coins to look like gold coins.
+Muitas vezes, nos jogos, queremos que nossas moedas se pareçam com moedas de ouro.
 
 01:58.050 --> 02:00.270
-So we'll use that same look.
+Portanto, usaremos essa mesma aparência.
 
 02:01.170 --> 02:03.480
-And then let's get the code going on.
+E então vamos colocar o código em funcionamento.
 
 02:03.480 --> 02:07.710
-So I've already created a script for.
+Então, eu já criei um script para.
 
 02:08.970 --> 02:10.770
-The queen.
+A rainha.
 
 02:11.430 --> 02:14.100
-And to do that, we'll need a collider as well.
+E para fazer isso, precisamos de um colisor também.
 
 02:15.620 --> 02:21.890
-So I'm going to add a box collider and I can go ahead and give a look at the box collider just to make
+Portanto, vou adicionar um colisor de caixa e posso dar uma olhada no colisor de caixa só para garantir
 
 02:21.890 --> 02:22.670
-sure it's sized.
+que ele está dimensionado.
 
 02:22.670 --> 02:23.000
-Right?
+Certo?
 
 02:23.000 --> 02:24.740
-But it looks pretty good to me.
+Mas parece muito bom para mim.
 
 02:25.340 --> 02:28.220
-And then let's take a look at our coin script.
+E então vamos dar uma olhada no nosso script de moeda.
 
 02:28.640 --> 02:31.460
-This is really the bulk of our work here, some scripting.
+Esta é realmente a maior parte do nosso trabalho aqui, alguns scripts.
 
 02:31.820 --> 02:37.820
-So in the coin, first of all, I track if it's alive or not, I set it alive to true.
+Então, na moeda, em primeiro lugar, eu rastreio se ela está viva ou não, eu a defino como verdadeira.
 
 02:37.850 --> 02:42.920
-Now, typically you can keep the amount of behavior alive and just delete it when you're ready for it
+Agora, normalmente você pode manter a quantidade de comportamento vivo e simplesmente excluí-lo quando estiver pronto para ele
 
 02:42.920 --> 02:43.810
-not to be alive.
+não esteja mais ativo.
 
 02:43.820 --> 02:46.580
-But here I needed this bull for an extra reason.
+Mas aqui eu precisava deste touro por uma razão extra.
 
 02:46.860 --> 02:47.990
-Talk about it in a second.
+Falarei sobre isso em um segundo.
 
 02:48.290 --> 02:51.010
-So in the update, I rotate the graphics.
+Então, na atualização, eu giro os gráficos.
 
 02:51.020 --> 02:55.610
-I'm doing rotation based on how much do I want it to rotate per frame.
+Estou fazendo a rotação com base em quanto eu quero que ele gire por quadro.
 
 02:55.610 --> 02:58.920
-And I'm using a crazy ball constants class to handle that.
+E estou usando uma classe de constantes de bola maluca para lidar com isso.
 
 02:58.970 --> 03:03.630
-So in here I've got some isolated variables so that it's really easy to tweak.
+Então, aqui eu tenho algumas variáveis isoladas para que seja realmente fácil de ajustar.
 
 03:03.650 --> 03:09.080
-So you can see that it's going to units in the Y direction every frame then.
+Assim, você pode ver que as unidades vão se deslocar na direção Y a cada quadro.
 
 03:10.060 --> 03:11.140
-Back in the coin.
+De volta à moeda.
 
 03:12.820 --> 03:16.840
-Hear something from outside is going to call this public, destroy me.
+Ouvir algo de fora vai chamar isso de público, me destruir.
 
 03:16.840 --> 03:22.090
-And what's going to happen inside is I'm going to use that is alive to market false, and then I immediately
+E o que vai acontecer internamente é que vou usar o que está vivo para comercializar o falso, e então eu imediatamente
 
 03:22.090 --> 03:23.410
-destroy the game object.
+destruo o objeto do jogo.
 
 03:23.440 --> 03:29.530
-It's not quite obvious yet why I'm using this as a live, but in a future video we're going to see that
+Ainda não é muito óbvio por que estou usando isso como um live, mas em um vídeo futuro veremos isso
 
 03:29.530 --> 03:31.450
-instead of instantly destroying it.
+em vez de destruí-lo instantaneamente.
 
 03:31.450 --> 03:36.400
-Like now, I'm going to use a programmatic motion to have it slowly fade away for some polish.
+Como agora, vou usar um movimento programático para que ele desapareça lentamente para dar um pouco de polimento.
 
 03:36.400 --> 03:38.260
-So this is just the setup for that.
+Portanto, esta é apenas a configuração para isso.
 
 03:38.260 --> 03:41.920
-Now, how do we detect the ball and the coin?
+Agora, como detectamos a bola e a moeda?
 
 03:41.920 --> 03:47.710
-Well, I've chosen to put that inside the crazy ball here, so we're going to use trigger enter.
+Bem, eu optei por colocar isso dentro da bola maluca aqui, então vamos usar o trigger enter.
 
 03:47.710 --> 03:54.520
-So that's important that then I go into the coins Collider and I set is trigger.
+Portanto, é importante que eu vá para o coins Collider e defina o trigger.
 
 03:54.520 --> 04:00.850
-So by setting this trigger here, then the crazy ball, when it's going to get into the same collider
+Assim, ao definir esse gatilho aqui, a bola maluca, quando entrar no mesmo colisor
 
 04:00.850 --> 04:04.210
-area as the coin, the on trigger enter is going to fire.
+área do colisor que a moeda, o acionador enter será disparado.
 
 04:04.210 --> 04:09.340
-I could choose to put this trigger, enter code inside the coin or inside the ball.
+Eu poderia optar por colocar esse gatilho, inserir o código dentro da moeda ou dentro da bola.
 
 04:09.340 --> 04:10.630
-Either one is fine.
+Qualquer um dos dois está bom.
 
 04:10.630 --> 04:16.750
-I know in the future of this game I want the crazy ball to collide with multiple different types of
+Sei que, no futuro deste jogo, quero que a bola maluca colida com vários tipos diferentes de
 
 04:16.750 --> 04:17.380
-objects.
+objetos.
 
 04:17.380 --> 04:19.840
-So I'm going to put all that here in the same spot.
+Portanto, vou colocar tudo isso aqui no mesmo local.
 
 04:19.840 --> 04:21.640
-So this is the nice spot for me.
+Portanto, este é o local ideal para mim.
 
 04:21.640 --> 04:24.100
-So here I detect and I collect the coin.
+Então, aqui eu detecto e coleto a moeda.
 
 04:24.190 --> 04:28.330
-I check the tag of what I'm colliding with to make sure it's the coin tag.
+Verifico a etiqueta do objeto com o qual estou colidindo para ter certeza de que é a etiqueta da moeda.
 
 04:28.480 --> 04:30.250
-Take a look at that variable.
+Dê uma olhada nessa variável.
 
 04:30.250 --> 04:31.600
-It's just coin.
+É apenas coin.
 
 04:31.600 --> 04:37.120
-And when I go here and I set up this world, it's important that I set the tag to coin.
+E quando eu for aqui e configurar este mundo, é importante que eu defina a etiqueta como coin.
 
 04:38.150 --> 04:45.320
-Then back here in the crazy ball, I then check to see does the game object in colliding with have the
+Depois, aqui na bola maluca, verifico se o objecto de jogo com o qual colide tem a etiqueta
 
 04:45.320 --> 04:47.930
-game object component called coin?
+componente do game object chamado coin?
 
 04:47.960 --> 04:52.700
-Of course it does because of how I've constructed this, but it's just a good idea to check if it's
+É claro que tem, devido à forma como construí isso, mas é uma boa ideia verificar se é
 
 04:52.700 --> 04:56.000
-null and then I check to see is it still alive?
+null e depois ver se ainda está vivo?
 
 04:56.000 --> 04:57.940
-If so, destroy me that way.
+Se sim, me destrua dessa forma.
 
 04:57.950 --> 05:05.330
-Once we add a programmatic effect as the coin is dissolving away, perhaps shrinking, I don't want
+Quando adicionarmos um efeito programático enquanto a moeda está se dissolvendo, talvez encolhendo, eu não quero
 
 05:05.330 --> 05:08.300
-to collide with it again and again and again as it's shrinking.
+colidir com ela de novo e de novo e de novo enquanto ela estiver encolhendo.
 
 05:08.300 --> 05:09.260
-So I tag.
+Então eu coloco a tag.
 
 05:09.260 --> 05:10.640
-It is a live false.
+É um falso vivo.
 
 05:10.640 --> 05:13.310
-Then I won't trigger this again and again.
+Assim, não vou desencadear isto repetidamente.
 
 05:13.310 --> 05:16.580
-So destroy me executes exactly one time for each.
+Portanto, o destroy me é executado exatamente uma vez para cada um.
 
 05:16.580 --> 05:17.630
-So that's it?
+Então é isso?
 
 05:17.630 --> 05:18.890
-That's the way it's set up.
+É assim que está configurado.
 
 05:18.890 --> 05:21.290
-I can go ahead and run the scene now.
+Posso prosseguir e executar a cena agora.
 
 05:23.840 --> 05:27.800
-And run into there and it disappears perfectly.
+E executar a cena e ela desaparecerá perfeitamente.
 
 05:29.270 --> 05:29.960
-That's it.
+É isso aí.
 
 05:32.070 --> 05:35.370
-In the next video, we'll cover adding win loss conditions.
+No próximo vídeo, abordaremos a adição de condições de ganho e perda.

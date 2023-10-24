@@ -1,346 +1,346 @@
 WEBVTT
 
 00:01.380 --> 00:04.860
-Creating an Angry Birds clone to DH game.
+Criando um clone do Angry Birds para o jogo DH.
 
 00:04.860 --> 00:09.330
-Well, after all the things we've learned in the previous sections, here we are.
+Bem, depois de tudo o que aprendemos nas seções anteriores, aqui estamos.
 
 00:09.330 --> 00:11.640
-We're going to make a complete game from scratch.
+Vamos criar um jogo completo a partir do zero.
 
 00:11.880 --> 00:14.920
-We're going to create projectile motion with input.
+Vamos criar um movimento de projétil com entrada.
 
 00:14.940 --> 00:17.610
-Add the game obstacles into the world.
+Adicione os obstáculos do jogo ao mundo.
 
 00:17.670 --> 00:23.970
-Add win loss conditions and a UI to reflect that on the screen and we'll even have time to add some
+Adicione as condições de vitória e derrota e uma interface de usuário para refletir isso na tela e ainda teremos tempo para adicionar alguns
 
 00:23.970 --> 00:25.050
-extra polish.
+polimento extra.
 
 00:26.760 --> 00:28.180
-Two RD project setup.
+Configuração do projeto Two RD.
 
 00:28.200 --> 00:33.750
-In this video, we'll cover what's the inspiration for a new game project and how do we translate that
+Neste vídeo, abordaremos o que é a inspiração para um novo projeto de jogo e como traduzir isso
 
 00:33.750 --> 00:38.820
-inspiration into the key concepts and physics concepts we'll need for the game?
+inspiração em conceitos-chave e conceitos de física que precisaremos para o jogo?
 
 00:38.820 --> 00:41.020
-Then we'll open up unity and get started.
+Então abriremos o unity e começaremos.
 
 00:41.040 --> 00:46.560
-A note about all of Section five is we'll be spending a lot more time inside Unity.
+Uma observação sobre toda a Seção 5 é que passaremos muito mais tempo dentro do Unity.
 
 00:47.500 --> 00:49.060
-Planning a two RD game.
+Planejando um jogo de dois RDs.
 
 00:50.090 --> 00:51.720
-Let's take Angry Birds.
+Vamos pegar o Angry Birds.
 
 00:51.740 --> 00:54.860
-A popular mobile physics game as our inspiration.
+Um jogo popular de física móvel como nossa inspiração.
 
 00:54.860 --> 01:01.130
-Here's a very basic screenshot showing some illustration of where major parts of the screen will be.
+Aqui está uma captura de tela muito básica mostrando uma ilustração de onde estarão as partes principais da tela.
 
 01:01.160 --> 01:03.200
-We're going to keep the 2D game play.
+Vamos manter o jogo em 2D.
 
 01:03.200 --> 01:05.300
-We're going to use projectile motion.
+Vamos usar o movimento de projétil.
 
 01:05.300 --> 01:09.650
-That blue ball would fly through the air toward the Pac-Man yellow character.
+Essa bola azul voaria pelo ar em direção ao personagem amarelo do Pac-Man.
 
 01:09.650 --> 01:14.060
-We'll have physics collisions with the green ground and the crates that are brown.
+Teremos colisões físicas com o chão verde e as caixas marrons.
 
 01:14.060 --> 01:17.650
-We'll have explosions and we'll have a light, fun art style.
+Teremos explosões e um estilo de arte leve e divertido.
 
 01:17.660 --> 01:20.750
-This represents the end graphics that we're shooting for.
+Isso representa os gráficos finais que estamos buscando.
 
 01:20.780 --> 01:23.060
-The game that we create will look like this.
+O jogo que criarmos terá a seguinte aparência.
 
 01:23.060 --> 01:26.720
-The rules of our game, we're going to call it upset ducks.
+As regras do nosso jogo, vamos chamá-lo de "patos chateados".
 
 01:26.990 --> 01:30.770
-The rules are to kill all the ducks using limited asteroids to win.
+As regras são matar todos os patos usando asteroides limitados para vencer.
 
 01:30.770 --> 01:34.600
-I think we'll give you three asteroids and you try and hit three ducks.
+Acho que lhe daremos três asteroides e você tentará acertar três patos.
 
 01:34.610 --> 01:36.590
-Mouse drag to shoot an asteroid.
+Arraste o mouse para atirar em um asteroide.
 
 01:36.590 --> 01:42.410
-As the asteroid collides with the objects, it will remove health from ducks and crates the duck health.
+Quando o asteroide colide com os objetos, ele remove a saúde dos patos e reduz a saúde dos patos.
 
 01:42.410 --> 01:45.290
-When it reaches zero, the duck will die and give you points.
+Quando chegar a zero, o pato morrerá e lhe dará pontos.
 
 01:45.290 --> 01:46.340
-The crate health.
+A saúde do caixote.
 
 01:46.340 --> 01:50.840
-When it reaches zero, it will explode and that will help clear out the level so that you can hit the
+Quando chegar a zero, ele explodirá e isso ajudará a limpar o nível para que você possa atingir o
 
 01:50.840 --> 01:51.520
-ducks.
+patos.
 
 01:51.530 --> 01:53.120
-Let's talk about the physics involved.
+Vamos falar sobre a física envolvida.
 
 01:53.120 --> 01:54.380
-There's three major steps.
+Há três etapas principais.
 
 01:54.380 --> 01:56.840
-As you can see, we have an asteroid inside of a catapult.
+Como você pode ver, temos um asteroide dentro de uma catapulta.
 
 01:56.840 --> 02:01.070
-We're going to use Target joint to pull that back with the mouse and release it.
+Vamos usar o Target joint para puxá-lo para trás com o mouse e soltá-lo.
 
 02:01.070 --> 02:03.050
-The asteroids flight through the air.
+O voo dos asteróides pelo ar.
 
 02:03.050 --> 02:06.110
-We'll be using physics, add force and gravity.
+Usaremos a física, adicionaremos força e gravidade.
 
 02:06.110 --> 02:11.570
-When the collisions happen, the ducks and crates will use on collision events to check.
+Quando as colisões acontecerem, os patos e as caixas usarão os eventos de colisão para verificar.
 
 02:11.570 --> 02:13.130
-How fast did you hit me?
+Com que velocidade você me atingiu?
 
 02:13.130 --> 02:19.310
-How much damage should it cause, etc. And as a bonus, we'll have explosions using two rd effectors.
+Quanto dano deve causar, etc. E, como bônus, teremos explosões usando dois efetores rd.
 
 02:20.100 --> 02:21.840
-Let's talk about the task breakdown.
+Vamos falar sobre a divisão de tarefas.
 
 02:21.840 --> 02:23.110
-We'd need to get this done.
+Precisamos fazer isso.
 
 02:23.130 --> 02:27.150
-This is also what we'll cover in each of the five videos in this section.
+Isso também é o que abordaremos em cada um dos cinco vídeos desta seção.
 
 02:27.180 --> 02:32.820
-In five one, we'll do the two D project set up in five two, we'll handle the catapult and the asteroid
+No primeiro vídeo, faremos a configuração do projeto dois D. No segundo vídeo, trataremos da catapulta e do asteroide.
 
 02:32.820 --> 02:33.930
-and how to handle the input.
+e como lidar com a entrada.
 
 02:33.930 --> 02:39.810
-In five three, we'll create the crates and the upset docs in five four will add win loss conditions,
+Em cinco três, criaremos as caixas e os documentos de transtorno em cinco quatro adicionaremos condições de vitória e perda,
 
 02:39.810 --> 02:45.960
-including the UI that you see in text and in five five will add extra polish like the explosion effect
+incluindo a interface do usuário que você vê no texto e, em cinco cinco, adicionaremos um polimento extra, como o efeito de explosão
 
 02:45.960 --> 02:47.310
-and also some sounds.
+e também alguns sons.
 
 02:48.280 --> 02:49.810
-The two RD project setup.
+A configuração dos dois projetos RD.
 
 02:50.350 --> 02:53.220
-Let's use this screenshot as our target goal.
+Vamos usar esta captura de tela como nosso objetivo.
 
 02:53.230 --> 02:58.220
-We'll set up the folders, set up the camera, the ground and the background.
+Vamos configurar as pastas, configurar a câmera, o chão e o fundo.
 
 02:58.240 --> 03:02.650
-We'll talk a bit about camera settings and also pixels per unit on the sprites.
+Falaremos um pouco sobre as configurações da câmera e também sobre os pixels por unidade nos sprites.
 
 03:03.370 --> 03:04.960
-So let's open up project.
+Então, vamos abrir o projeto.
 
 03:04.990 --> 03:10.770
-It'll be in section five, Video one and this scene will look at is upset Dux one.
+Estará na seção cinco, Vídeo um, e esta cena será vista no Dux um.
 
 03:10.780 --> 03:16.930
-Also throughout this section, sometimes we'll jump into a scene and see the end result, and then I'll
+Também ao longo desta seção, às vezes entraremos em uma cena e veremos o resultado final, e então eu
 
 03:16.930 --> 03:19.060
-start coding from scratch to get us there.
+começarei a codificar do zero para chegarmos lá.
 
 03:19.060 --> 03:25.030
-Other times we'll use the previous video as the starting point for the next video so you can follow
+Outras vezes, usaremos o vídeo anterior como ponto de partida para o próximo vídeo para que você possa acompanhar
 
 03:25.030 --> 03:28.660
-all the way along from five 1 to 5 five and complete the game.
+todo o caminho de cinco 1 a cinco cinco e completar o jogo.
 
 03:30.340 --> 03:32.260
-All right, let's open up unity and get started.
+Muito bem, vamos abrir o unity e começar.
 
 03:33.110 --> 03:36.860
-We'll take a look at the upset dux, one seen as our inspiration.
+Vamos dar uma olhada no upset dux, que foi visto como nossa inspiração.
 
 03:36.860 --> 03:38.500
-We're going to be recreating this.
+Vamos recriar isso.
 
 03:38.580 --> 03:45.110
-You can see we've got the Sky Sprite background, the grass sprite for the floor and these black boxes
+Você pode ver que temos o fundo Sky Sprite, o sprite de grama para o chão e estas caixas pretas
 
 03:45.110 --> 03:50.000
-on the outside, which will catch the shot if you shoot it too far off screen.
+do lado de fora, que capturarão o tiro se ele for disparado muito longe da tela.
 
 03:50.000 --> 03:51.080
-It's just there.
+Está ali.
 
 03:51.080 --> 03:54.170
-Not for the user to see, but just for some simple physics.
+Não para o usuário ver, mas apenas por uma questão de física simples.
 
 03:54.410 --> 04:00.980
-So we can see the folder setup we've got here animation, physic material, prefab scenes, scripts.
+Assim, podemos ver a configuração da pasta que temos aqui: animação, material físico, cenas pré-fabricadas, scripts.
 
 04:00.980 --> 04:02.900
-So we're going to replicate that from scratch.
+Então, vamos replicar isso do zero.
 
 04:02.900 --> 04:09.770
-I'm actually going to keep these folders and I'll just delete what we have here and create a new scene
+Na verdade, vou manter essas pastas e vou excluir o que temos aqui e criar uma nova cena
 
 04:09.770 --> 04:11.030
-from scratch.
+do zero.
 
 04:14.230 --> 04:15.340
-I'll give it the same name.
+Vou lhe dar o mesmo nome.
 
 04:15.370 --> 04:17.800
-Upset Ducks one.
+Upset Ducks um.
 
 04:19.420 --> 04:23.200
-Well, it's actually going to rename it for me, so I'm going to delete the original one.
+Bem, na verdade, ele vai renomeá-lo para mim, portanto, vou excluir o original.
 
 04:24.480 --> 04:26.580
-And here we have this.
+E aqui temos isto.
 
 04:29.960 --> 04:31.760
-Okay, so we've got an empty scene.
+Muito bem, temos uma cena vazia.
 
 04:32.000 --> 04:32.900
-We're ready to go.
+Estamos prontos para começar.
 
 04:33.140 --> 04:36.740
-So first thing I'm going to do is just search for some of the assets we need.
+Então, a primeira coisa que vou fazer é procurar alguns dos ativos de que precisamos.
 
 04:40.770 --> 04:42.180
-Sky tile sprite.
+Sprite do mosaico do céu.
 
 04:45.370 --> 04:46.600
-Grasp, right?
+Grasp, certo?
 
 04:47.770 --> 04:49.210
-Get those out into the world.
+Leve-os para o mundo.
 
 04:49.960 --> 04:52.680
-Then I can just moving them around.
+Depois, posso simplesmente movimentá-los.
 
 04:52.690 --> 04:56.270
-You'll notice that the grass is behind the sky.
+Você notará que a grama está atrás do céu.
 
 04:56.290 --> 05:02.230
-So for the sprite renders, one setting we want to tweak is the order in layer property.
+Portanto, para as renderizações de sprite, uma configuração que queremos ajustar é a propriedade order in layer (ordem na camada).
 
 05:02.860 --> 05:03.760
-We can do that.
+Podemos fazer isso.
 
 05:06.220 --> 05:10.720
-And create one here, then this is going to be our ground with physics.
+E crie um aqui, então este será o nosso solo com física.
 
 05:10.720 --> 05:11.890
-So we need a collider.
+Então, precisamos de um colisor.
 
 05:14.690 --> 05:16.160
-And if we edit the collider.
+E se editarmos o collider.
 
 05:18.920 --> 05:23.030
-We'll make it so that a little bit of grass sticks up above the collider.
+Faremos com que um pouco de grama fique acima do collider.
 
 05:24.040 --> 05:25.810
-Then I'm going to want to duplicate that.
+Então, vou querer duplicar isso.
 
 05:29.350 --> 05:31.420
-So we've got to.
+Portanto, temos de fazê-lo.
 
 05:32.300 --> 05:35.270
-And move up the background a little bit as well.
+E mover o fundo um pouco para cima também.
 
 05:36.070 --> 05:39.400
-So we're good now to create those other parts.
+Portanto, agora estamos prontos para criar as outras partes.
 
 05:41.480 --> 05:43.820
-Just drag a black box out here.
+Basta arrastar uma caixa preta para aqui.
 
 05:45.260 --> 05:46.730
-Resize it.
+Redimensione-a.
 
 05:48.780 --> 05:50.010
-At a collider.
+Em um colisor.
 
 05:56.680 --> 05:58.960
-And it's not too important where these go yet.
+E ainda não é muito importante para onde eles vão.
 
 06:10.210 --> 06:12.040
-The idea is just to catch those shots.
+A ideia é apenas capturar essas fotos.
 
 06:12.040 --> 06:13.360
-We'll be able to tweak it later.
+Poderemos ajustá-lo mais tarde.
 
 06:13.870 --> 06:14.560
-So there we go.
+Então, lá vamos nós.
 
 06:14.560 --> 06:20.170
-We've got a good looking screen set up with the grass, the sky, and these black boxes just to catch
+Temos uma tela de boa aparência configurada com a grama, o céu e essas caixas pretas apenas para capturar
 
 06:20.170 --> 06:21.970
-the shots that go too far.
+os tiros que vão longe demais.
 
 06:22.240 --> 06:24.070
-Now, let's pack that all together.
+Agora, vamos juntar tudo isso.
 
 06:27.350 --> 06:29.090
-Just to have a clean view here.
+Só para ter uma visão limpa aqui.
 
 06:29.600 --> 06:30.920
-We'll zero out.
+Vamos zerar.
 
 06:32.370 --> 06:33.900
-Create an environment.
+Criar um ambiente.
 
 06:37.320 --> 06:39.180
-And we'll put everything into it.
+E colocaremos tudo nele.
 
 06:42.010 --> 06:44.560
-And we'll drag it down here into our prefabs.
+E vamos arrastá-lo para baixo aqui em nossos pré-fabricados.
 
 06:45.390 --> 06:46.530
-So we're all set up.
+Então, está tudo pronto.
 
 06:46.530 --> 06:49.620
-That way we can reuse this prefab between scenes if we want to.
+Dessa forma, podemos reutilizar esse pré-fabricado entre as cenas, se quisermos.
 
 06:49.770 --> 06:53.370
-And I also started with another world items.
+E também comecei com outros itens do mundo.
 
 06:55.040 --> 06:56.300
-Game object here.
+Objeto de jogo aqui.
 
 06:58.350 --> 07:03.150
-And that's the place where we'll put the crates and the docks, etc., in future videos.
+E esse é o lugar onde colocaremos os caixotes e as docas, etc., em vídeos futuros.
 
 07:03.450 --> 07:04.110
-But that's it.
+Mas é só isso.
 
 07:04.140 --> 07:05.100
-Thanks very much.
+Muito obrigado.
 
 07:07.890 --> 07:12.240
-In the next video, we'll handle creating the player and input.
+No próximo vídeo, trataremos da criação do player e da entrada.

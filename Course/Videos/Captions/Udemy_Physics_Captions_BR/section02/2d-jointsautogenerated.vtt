@@ -1,238 +1,238 @@
 WEBVTT
 
 00:01.720 --> 00:04.630
-In this video, we'll cover two D joints.
+Neste vídeo, trataremos de duas articulações em D.
 
 00:04.630 --> 00:09.940
-We'll look at what is the joint two RD component and different types of joint to DS.
+Veremos o que é a junta de dois componentes RD e os diferentes tipos de junta para DS.
 
 00:09.940 --> 00:12.550
-Then we'll play with these inside the unity ed.
+Em seguida, brincaremos com elas dentro da unidade ed.
 
 00:13.090 --> 00:21.070
-A joint is the component that maintains a relationship either positional or rotational with one or more
+Uma junta é o componente que mantém uma relação posicional ou rotacional com um ou mais
 
 00:21.070 --> 00:22.030
-game objects.
+objetos do jogo.
 
 00:22.030 --> 00:26.740
-You can attach your joints to either a game object with a rigid body.
+Você pode conectar suas articulações a um objeto do jogo com um corpo rígido.
 
 00:26.740 --> 00:30.460
-This is common or to a fixed position in world space.
+Isso é comum ou a uma posição fixa no espaço mundial.
 
 00:30.460 --> 00:32.290
-You can see the setup here in the picture.
+Você pode ver a configuração aqui na figura.
 
 00:32.290 --> 00:37.960
-We've got a game object with three different components the transform and rigid body as we've seen before,
+Temos um objeto de jogo com três componentes diferentes, a transformação e o corpo rígido, como vimos anteriormente,
 
 00:37.960 --> 00:39.910
-and then we've added the joint component.
+e depois adicionamos o componente de articulação.
 
 00:40.700 --> 00:42.950
-When should my game use joints?
+Quando meu jogo deve usar articulações?
 
 00:43.630 --> 00:45.770
-Let's talk about some uses for joints.
+Vamos falar sobre alguns usos das articulações.
 
 00:45.980 --> 00:53.210
-Typically, physic joints are useful in gaming to maintain a relationship, either positional or rotational
+Normalmente, as articulações físicas são úteis nos jogos para manter uma relação, seja de posição ou de rotação
 
 00:53.210 --> 00:55.320
-between two or more game objects.
+entre dois ou mais objetos do jogo.
 
 00:55.340 --> 00:58.790
-Use joints to mimic reality or to add gameplay.
+Use as articulações para imitar a realidade ou para adicionar jogabilidade.
 
 00:58.940 --> 01:03.020
-Imagine creating a hanging chain like the picture we see on the right there.
+Imagine criar uma corrente suspensa como a imagem que vemos à direita.
 
 01:03.020 --> 01:07.340
-You can do that with several different game objects connected with hinge joints.
+Você pode fazer isso com vários objetos de jogo diferentes conectados com juntas de articulação.
 
 01:07.340 --> 01:08.750
-The hinge is very useful.
+A dobradiça é muito útil.
 
 01:08.750 --> 01:13.310
-You could also create a bouncy wooden bridge or a door connected to a wall.
+Você também pode criar uma ponte de madeira saltitante ou uma porta conectada a uma parede.
 
 01:13.310 --> 01:18.660
-If you wanted a vehicle with suspension, you could use the spring joint and the wheel joint.
+Se você quisesse um veículo com suspensão, poderia usar a junta da mola e a junta da roda.
 
 01:18.680 --> 01:21.170
-There are many types of joints in 2D.
+Há muitos tipos de juntas em 2D.
 
 01:21.290 --> 01:23.240
-Let's talk about a few of the types.
+Vamos falar sobre alguns desses tipos.
 
 01:23.240 --> 01:25.520
-First of all, there's distance joint to DX.
+Em primeiro lugar, há a articulação de distância para DX.
 
 01:25.550 --> 01:30.530
-This is a very simple joint that maintains a certain relationship between two game objects.
+Trata-se de uma articulação muito simples que mantém uma determinada relação entre dois objetos do jogo.
 
 01:30.530 --> 01:33.710
-That relationship could be the distance between their positions.
+Essa relação pode ser a distância entre suas posições.
 
 01:33.710 --> 01:39.800
-It's similar to parenting one game object under another only you don't have this restriction of parenting.
+É semelhante à criação de um objeto de jogo sob outro, só que você não tem essa restrição de criação.
 
 01:39.980 --> 01:45.980
-The hinge joint two d fixes a game object to a point in space and allows rotation.
+A junta de articulação dois d fixa um game object em um ponto no espaço e permite a rotação.
 
 01:46.250 --> 01:52.340
-You can think of a bridge like the image in the lower right or a typical door that opens and closes
+Você pode pensar em uma ponte como a imagem no canto inferior direito ou em uma porta típica que abre e fecha
 
 01:52.340 --> 01:53.180
-on a hinge.
+em uma dobradiça.
 
 01:53.180 --> 01:56.960
-There's many types of joints, so how strong is a joint?
+Há muitos tipos de juntas, então qual é a resistência de uma junta?
 
 01:57.470 --> 01:59.240
-It's possible to break joints.
+É possível quebrar as articulações.
 
 01:59.240 --> 02:03.740
-There's something called a constraint, which is a rule which the joint will try to follow.
+Há algo chamado restrição, que é uma regra que a articulação tentará seguir.
 
 02:03.740 --> 02:09.980
-Some constraints limit behavior such as ensuring a rigid body stays in a certain position.
+Algumas restrições limitam o comportamento, como garantir que um corpo rígido permaneça em uma determinada posição.
 
 02:09.980 --> 02:16.520
-When the rule is broken temporarily, the joint will apply corrective forces so it can again follow.
+Quando a regra é quebrada temporariamente, a articulação aplicará forças corretivas para que ela possa ser seguida novamente.
 
 02:16.520 --> 02:21.230
-The rule breaking is possible when the corrective force needed is too great.
+A quebra da regra é possível quando a força corretiva necessária é muito grande.
 
 02:21.230 --> 02:26.840
-The joint will permanently break the individual joints, stops working forever in your game.
+A articulação quebrará permanentemente as articulações individuais, parando de funcionar para sempre em seu jogo.
 
 02:26.840 --> 02:31.000
-You have to stop and start the scene or the game in order to have it work again.
+Você precisa parar e iniciar a cena ou o jogo para que ela volte a funcionar.
 
 02:31.010 --> 02:33.920
-Excessive linear force is called a brake force.
+A força linear excessiva é chamada de força de freio.
 
 02:33.920 --> 02:36.860
-Excessive torque force is called a brake torque.
+A força de torque excessiva é chamada de torque de freio.
 
 02:37.040 --> 02:43.910
-The brake force property, it's set to infinity by default so that the joint will never break to allow
+A propriedade da força de frenagem é definida como infinita por padrão para que a junta nunca se quebre para permitir
 
 02:43.910 --> 02:47.060
-breakage, set it to a lower finite value.
+a quebra, defina-a para um valor finito mais baixo.
 
 02:47.060 --> 02:48.860
-For example, 5000.
+Por exemplo, 5000.
 
 02:48.860 --> 02:51.650
-Sometimes we want our joints to break.
+Às vezes queremos que nossas juntas se quebrem.
 
 02:51.650 --> 02:52.280
-Now why?
+Por que agora?
 
 02:52.310 --> 02:57.740
-First of all, maybe we're mimicking something in reality that is not infinitely strong and we want
+Em primeiro lugar, talvez estejamos imitando algo na realidade que não é infinitamente forte e queremos
 
 02:57.740 --> 03:01.610
-it to break or breaking could add to your gameplay experience.
+que ele se quebre ou que a quebra possa acrescentar à sua experiência de jogo.
 
 03:01.610 --> 03:07.280
-Perhaps your character swings on a chain, but if you swings too strongly, the chain will break.
+Talvez o seu personagem se balance em uma corrente, mas se ele se balançar com muita força, a corrente se quebrará.
 
 03:07.980 --> 03:09.710
-Let's do some demos together.
+Vamos fazer algumas demonstrações juntos.
 
 03:09.720 --> 03:16.350
-The hinge joint to begin scene will create five planks for a bouncy wooden bridge will create a hinge
+A junta da dobradiça para iniciar a cena criará cinco tábuas para uma ponte de madeira saltitante criará uma dobradiça
 
 03:16.350 --> 03:16.710
-joint.
+articulação.
 
 03:16.710 --> 03:23.040
-Two rd between each plank will create a hinge joint to RD at each end of the bridge to hold it to the
+Duas rd entre cada tábua criarão uma junta de articulação para a RD em cada extremidade da ponte para prendê-la ao
 
 03:23.040 --> 03:23.730
-columns.
+colunas.
 
 03:23.730 --> 03:26.370
-And then we'll play the scene and see how it goes.
+Em seguida, reproduziremos a cena e veremos como ela se comporta.
 
 03:26.520 --> 03:27.810
-A bonus assignment.
+Uma tarefa bônus.
 
 03:27.810 --> 03:31.860
-If you want to get deeper into learning about joints, take a look at this scene.
+Se quiser se aprofundar no aprendizado sobre articulações, dê uma olhada nesta cena.
 
 03:31.860 --> 03:33.870
-The target joint to begin.
+A articulação alvo para começar.
 
 03:33.870 --> 03:36.420
-Create a target joint to DH on the crate.
+Crie uma articulação de destino para DH no caixote.
 
 03:36.420 --> 03:43.410
-Create your own script called something like Target Joint follows Mouse Play the scene, move your mouse
+Crie seu próprio script chamado algo como Target Joint follows Mouse Reproduza a cena, mova o mouse
 
 03:43.410 --> 03:44.550
-and observe the result.
+e observe o resultado.
 
 03:44.550 --> 03:47.070
-Did you get the crate to follow the mouse?
+Você conseguiu que o caixote seguisse o mouse?
 
 03:47.070 --> 03:52.980
-You can set the brake force to 5000 to break the joint if you want help or you want to see the finished
+Você pode definir a força de frenagem para 5000 para quebrar a junta se quiser ajuda ou se quiser ver o resultado final
 
 03:52.980 --> 03:57.150
-result or the created script of Target Joint follows Mouse.
+ou o script criado de Target Joint segue o Mouse.
 
 03:57.150 --> 04:01.770
-Take a look at the target joint to DH underscore complete scene.
+Dê uma olhada na articulação de destino para a cena completa do DH underscore.
 
 04:01.770 --> 04:03.870
-Everything's there for you to take a look at.
+Tudo está lá para você dar uma olhada.
 
 04:06.790 --> 04:10.150
-Let's open up our next scene, the hinge joint to begin.
+Vamos abrir nossa próxima cena, a articulação da dobradiça, para começar.
 
 04:11.130 --> 04:13.460
-Here we have a ground set up with a couple of columns.
+Aqui temos um terreno montado com algumas colunas.
 
 04:13.470 --> 04:15.090
-We're going to add a new plank.
+Vamos acrescentar uma nova tábua.
 
 04:15.120 --> 04:19.710
-Duplicate it five times and use the hinge joint to RD to make a wooden bridge.
+Duplique-a cinco vezes e use a junta de articulação para fazer uma ponte de madeira.
 
 04:23.150 --> 04:28.040
-Under the Planck sprite will add the rigid body and the collider and the hinge joint.
+Sob o sprite Planck, adicione o corpo rígido, o colisor e a articulação da dobradiça.
 
 04:35.340 --> 04:38.220
-We'll set the hinge joints anchor to its left side.
+Definiremos a âncora das juntas de articulação para o lado esquerdo.
 
 04:42.870 --> 04:47.610
-We'll place one plank far to the left and then we'll duplicate five times total.
+Colocaremos uma tábua bem à esquerda e depois a duplicaremos cinco vezes no total.
 
 04:47.610 --> 04:49.350
-So we have some on the right.
+Portanto, temos algumas à direita.
 
 04:55.280 --> 05:01.940
-The leftmost plank will leave its connected rigid body set to none, so it's anchored in space for the
+A prancha mais à esquerda deixará seu corpo rígido conectado definido como nenhum, de modo que ficará ancorada no espaço para a
 
 05:01.940 --> 05:05.060
-others will connect to its nearest neighbor on the left.
+As outras se conectarão ao seu vizinho mais próximo à esquerda.
 
 05:14.170 --> 05:18.580
-And for the rightmost plank, we'll add a second hinge joint hinging it to space.
+E para a prancha mais à direita, adicionaremos uma segunda junta articulada que a liga ao espaço.
 
 05:21.970 --> 05:24.130
-And adjusting its anchor to the right side.
+E ajustando sua âncora para o lado direito.
 
 05:26.550 --> 05:28.050
-Let's add some extras.
+Vamos acrescentar alguns extras.
 
 05:29.260 --> 05:30.280
-And give it a try.
+E experimentar.
 
 05:36.990 --> 05:40.500
-In the next video, we'll look at physics for unity sprite shape.
+No próximo vídeo, veremos a física para a forma do sprite da unidade.

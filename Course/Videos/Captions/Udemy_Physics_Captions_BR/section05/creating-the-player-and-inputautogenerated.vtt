@@ -1,214 +1,214 @@
 WEBVTT
 
 00:01.800 --> 00:08.190
-Creating the player and input in this video will cover capturing mouse input from the user and using
+A criação do player e da entrada neste vídeo abordará a captura da entrada do mouse do usuário e o uso de
 
 00:08.190 --> 00:11.170
-a target joint to restrict the asteroid's movement.
+uma articulação de alvo para restringir o movimento do asteroide.
 
 00:11.190 --> 00:15.570
-Then we'll use rigid body add force for the projectile motion of the asteroid.
+Em seguida, usaremos a força de adição de corpo rígido para o movimento de projétil do asteroide.
 
 00:16.110 --> 00:19.820
-The task breakdown here we have this is our screenshot goal.
+O detalhamento da tarefa aqui é o nosso objetivo de captura de tela.
 
 00:19.830 --> 00:26.760
-We'll add a catapult prefab, add the catapult script, add the asteroid that will go in the catapult
+Adicionaremos um pré-fabricado de catapulta, adicionaremos o script de catapulta, adicionaremos o asteroide que irá para a catapulta
 
 00:26.760 --> 00:28.260
-and fly across the sky.
+e voará pelo céu.
 
 00:28.290 --> 00:29.130
-An asteroid.
+Um asteroide.
 
 00:29.130 --> 00:30.270
-C-sharp Script.
+Script em dó sustenido.
 
 00:31.130 --> 00:32.730
-Let's open up Section five.
+Vamos abrir a Seção cinco.
 
 00:32.750 --> 00:33.650
-Video two.
+Vídeo dois.
 
 00:33.650 --> 00:34.940
-Upset Ducks two.
+Upset Ducks dois.
 
 00:36.950 --> 00:38.900
-We're going to open up upset ducks to.
+Vamos abrir o upset ducks para.
 
 00:39.860 --> 00:40.910
-And give it a play.
+E dar uma jogada.
 
 00:43.760 --> 00:49.910
-We see the addition here as a catapult and the asteroid we can mouse drag around and when we release
+Vemos a adição aqui como uma catapulta e o asteroide que podemos arrastar com o mouse e quando o soltamos
 
 00:49.910 --> 00:57.230
-it shoots and we can hit spacebar to reset and choose any angle and it shoots.
+ele dispara e podemos pressionar a barra de espaço para reiniciar e escolher qualquer ângulo e ele dispara.
 
 00:57.560 --> 00:59.270
-So let's create that from scratch.
+Então, vamos criar isso do zero.
 
 01:00.800 --> 01:03.320
-First, we'll get rid of the stuff that we're planning to create.
+Primeiro, vamos nos livrar do material que estamos planejando criar.
 
 01:03.320 --> 01:07.700
-This video, the asteroid, the catapult, the two scripts.
+Este vídeo, o asteroide, a catapulta, os dois scripts.
 
 01:12.780 --> 01:13.890
-And here we are.
+E aqui estamos nós.
 
 01:14.310 --> 01:17.460
-So as a starting point, first thing we're going to create is the asteroid.
+Então, como ponto de partida, a primeira coisa que vamos criar é o asteroide.
 
 01:27.690 --> 01:29.130
-We'll bring out that sprite.
+Vamos exibir esse sprite.
 
 01:29.340 --> 01:32.700
-It looks like it's sized well already, so we don't have to scale it.
+Parece que ele já está bem dimensionado, portanto não precisamos dimensioná-lo.
 
 01:32.820 --> 01:37.320
-And we'll go ahead and add a rigid body circle collider and a target joint.
+Vamos adicionar um colisor circular de corpo rígido e uma articulação de alvo.
 
 01:52.100 --> 01:54.320
-The target joint will turn off initially.
+A articulação de destino será desligada inicialmente.
 
 01:55.630 --> 01:58.330
-Then we're going to add our own custom script of asteroid.
+Em seguida, adicionaremos nosso próprio script personalizado de asteroide.
 
 02:08.270 --> 02:10.520
-Then selecting the asteroid sprite.
+Em seguida, selecionando o sprite do asteroide.
 
 02:12.680 --> 02:16.220
-We'll rename it to simply asteroid and add our new script.
+Vamos renomeá-lo para simplesmente asteroide e adicionar nosso novo script.
 
 02:21.620 --> 02:22.910
-That's the basic setup.
+Essa é a configuração básica.
 
 02:22.910 --> 02:27.950
-Let's make that a prefab and then let's look at our asteroid script and start coding it.
+Vamos transformar isso em um pré-fabricado e depois vamos dar uma olhada no nosso script de asteroide e começar a codificá-lo.
 
 02:34.490 --> 02:36.440
-We'll double click the asteroid script.
+Vamos clicar duas vezes no script do asteroide.
 
 02:37.070 --> 02:39.510
-Now, this is what Unity gives us from the beginning.
+Agora, isto é o que o Unity nos dá desde o início.
 
 02:39.530 --> 02:43.280
-I'm going to jump in and paste in what I've already created for us.
+Vou entrar e colar o que já criei para nós.
 
 02:49.870 --> 02:50.980
-Let's take a look.
+Vamos dar uma olhada.
 
 02:51.980 --> 02:58.220
-So we've extended mono behavior and I've used a few additional features to capture mouse clicks.
+Então, estendemos o comportamento mono e eu usei alguns recursos adicionais para capturar os cliques do mouse.
 
 02:58.790 --> 03:02.900
-Then I've got some public properties of rigid body and target.
+Em seguida, tenho algumas propriedades públicas de corpo rígido e alvo.
 
 03:03.140 --> 03:08.900
-I keep track of if we've released this into the air or not, how far we're able to drag it.
+Eu mantenho o controle se liberamos o objeto no ar ou não e até onde podemos arrastá-lo.
 
 03:09.770 --> 03:11.630
-Some serialized fields there.
+Alguns campos serializados aqui.
 
 03:12.410 --> 03:18.440
-We can also use a serialized flight speed, which we can set from the inspector to change how fast it
+Também podemos usar uma velocidade de voo serializada, que pode ser definida no inspetor para alterar a velocidade
 
 03:18.440 --> 03:19.760
-should move through the sky.
+deve se mover pelo céu.
 
 03:20.960 --> 03:24.920
-Then down here on update is how I handle the mouse input.
+Depois, aqui embaixo, na atualização, é como eu lido com a entrada do mouse.
 
 03:26.780 --> 03:31.100
-And on mouse down, I set that we're dragging and I turn the target joint.
+E ao baixar o mouse, eu defino que estamos arrastando e giro a articulação alvo.
 
 03:31.100 --> 03:35.840
-On the target joint is what's going to restrict our movement so it doesn't let us drag too far.
+A articulação de destino é o que restringirá o nosso movimento para que não nos deixe arrastar muito longe.
 
 03:36.320 --> 03:39.020
-And on pointer up, I release that.
+E no ponteiro para cima, eu o libero.
 
 03:40.340 --> 03:45.110
-And in the release is when I add the physics force, we'll see that familiar add force.
+E na liberação é quando eu adiciono a força física, veremos que o familiar adiciona força.
 
 03:48.710 --> 03:49.820
-Let's play the scene.
+Vamos reproduzir a cena.
 
 03:52.700 --> 03:53.270
-Great.
+Ótimo.
 
 03:54.700 --> 03:56.230
-Now let's add the catapult.
+Agora vamos adicionar a catapulta.
 
 04:49.190 --> 04:50.960
-And we'll create a catapult script.
+E vamos criar um script de catapulta.
 
 05:05.540 --> 05:08.600
-We open that up and let's paste in what I've created for us.
+Vamos abri-lo e colar o que eu criei para nós.
 
 05:15.780 --> 05:17.640
-So here we've got the catapult.
+Então, aqui temos a catapulta.
 
 05:18.360 --> 05:24.150
-I'm going to have an asteroid prefab the asteroid parent where it should be connected.
+Vou ter um asteroide pré-fabricado, o asteroide pai onde ele deve ser conectado.
 
 05:24.150 --> 05:27.420
-And the center point, the position it should be connected to.
+E o ponto central, a posição à qual ele deve ser conectado.
 
 05:27.900 --> 05:29.730
-When we wake up, I'll add an asteroid.
+Quando acordarmos, adicionarei um asteroide.
 
 05:29.730 --> 05:35.640
-And what I do here is I instantiate a new asteroid game object from the prefab and set it in the right
+E o que faço aqui é instanciar um novo objeto de jogo asteroide a partir do pré-fabricado e colocá-lo na posição correta
 
 05:35.640 --> 05:36.390
-position.
+posição correta.
 
 05:36.600 --> 05:39.780
-Notice down here I turn the target joint on Finally There.
+Observe que, aqui embaixo, eu coloco a junta do alvo em Finally There.
 
 05:39.780 --> 05:41.190
-That's what does the restriction.
+É isso que faz a restrição.
 
 05:41.460 --> 05:42.840
-Let's go ahead and wire that up.
+Vamos em frente e conectar isso.
 
 06:13.450 --> 06:15.400
-And finally, we'll put it in the position.
+E, finalmente, vamos colocá-lo na posição.
 
 06:27.040 --> 06:29.080
-And let's give it a play.
+E vamos dar uma olhada.
 
 06:37.010 --> 06:45.980
-You know, I can see on the asteroid I'm missing a reference to the target joint and the rigid body.
+Sabe, posso ver que no asteroide está faltando uma referência para a articulação alvo e o corpo rígido.
 
 06:55.420 --> 06:56.260
-Looks good.
+Parece bom.
 
 06:57.210 --> 06:59.070
-The centre point is a bit off.
+O ponto central está um pouco fora.
 
 06:59.070 --> 07:00.300
-We'll raise that up.
+Vamos aumentar isso.
 
 07:05.340 --> 07:06.320
-Then give it a play.
+Em seguida, vamos tocar.
 
 07:11.540 --> 07:12.800
-Looks really good.
+Parece muito bom.
 
 07:13.520 --> 07:20.360
-As a last adjustment, I see that the front Sprite needs to be a higher number than the asteroid itself.
+Como último ajuste, vejo que o Sprite frontal precisa ter um número maior do que o próprio asteroide.
 
 07:23.080 --> 07:26.620
-So now the asteroid believably is between the two pieces of wood.
+Portanto, agora o asteroide está entre os dois pedaços de madeira.
 
 07:27.250 --> 07:27.940
-And that's it.
+E é isso.
 
 07:27.970 --> 07:28.990
-Thanks very much.
+Muito obrigado.
 
 07:31.520 --> 07:35.060
-In the next video, we'll work on creating the obstacles.
+No próximo vídeo, trabalharemos na criação dos obstáculos.

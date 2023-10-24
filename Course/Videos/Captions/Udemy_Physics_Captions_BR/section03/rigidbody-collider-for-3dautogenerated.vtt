@@ -1,148 +1,148 @@
 WEBVTT
 
 00:01.780 --> 00:03.850
-Unity three d Physics components.
+Unity três componentes d Physics.
 
 00:03.850 --> 00:07.940
-In this section, we'll review the core principles of three D physics.
+Nesta seção, revisaremos os princípios fundamentais da física tridimensional.
 
 00:07.960 --> 00:16.120
-Then we'll dive into physics, Material Asset Ragdoll and train a recap of Rigid Body and Collider for
+Em seguida, mergulharemos na física, no Material Asset Ragdoll e treinaremos uma recapitulação do Rigid Body e do Collider para
 
 00:16.120 --> 00:16.840
-three D.
+três D.
 
 00:17.050 --> 00:22.720
-In this video, we'll cover Rigid Body and Collider specifically for three D.
+Neste vídeo, abordaremos o Rigid Body e o Collider especificamente para o three D.
 
 00:22.870 --> 00:26.260
-And then we'll take a look at these inside the Unity Editor.
+E depois daremos uma olhada neles dentro do Unity Editor.
 
 00:26.860 --> 00:34.300
-A note about two D verses three D Unity has two separate physics systems to RD and three D The principles
+Uma observação sobre dois D versus três D O Unity tem dois sistemas de física separados para RD e três D Os princípios
 
 00:34.300 --> 00:39.130
-components naming and C-sharp code for each is similar, but not identical.
+A nomenclatura dos componentes e o código C-sharp de cada um são semelhantes, mas não idênticos.
 
 00:39.130 --> 00:46.240
-For example, in two D, a game object uses a rigid body two d component, yet in 3da game object uses
+Por exemplo, em dois D, um objeto de jogo usa um componente de corpo rígido de dois d, mas em 3da o objeto de jogo usa
 
 00:46.240 --> 00:51.100
-a rigid body component without the three d in its name for consistency.
+um componente de corpo rígido sem o três d em seu nome para fins de consistência.
 
 00:51.100 --> 00:56.320
-In this course we refer to rigid body as it relates to both 2D and 3D.
+Neste curso, nos referimos ao corpo rígido no que se refere tanto ao 2D quanto ao 3D.
 
 00:56.920 --> 01:04.450
-Recommended viewing Section two Unity two D Physics components introduces core fundamentals of physics,
+Visualização recomendada Seção dois Unidade dois D Os componentes de Física introduzem os fundamentos básicos da física,
 
 01:04.450 --> 01:06.310
-which also applies to three D.
+que também se aplica ao three D.
 
 01:06.460 --> 01:10.120
-It is suggested that you watch Section two before a Section three.
+Sugere-se que você assista à Seção dois antes da Seção três.
 
 01:10.570 --> 01:12.130
-Let's look at rigid body.
+Vamos dar uma olhada no corpo rígido.
 
 01:12.860 --> 01:16.720
-Starting with the transform component, the most basic component in unity.
+Começando com o componente de transformação, o componente mais básico da unidade.
 
 01:16.730 --> 01:22.070
-This component is what enables position, rotation and scale for a game object.
+Esse componente é o que permite a posição, rotação e escala de um objeto de jogo.
 
 01:22.100 --> 01:26.330
-This is the only component which is automatically added to every game object.
+Este é o único componente que é adicionado automaticamente a todos os objetos do jogo.
 
 01:26.450 --> 01:27.620
-Rigid body.
+Corpo rígido.
 
 01:27.620 --> 01:33.380
-This is the component that enables physical behavior for a game object with a rigid body attached.
+Este é o componente que ativa o comportamento físico de um objeto de jogo com um corpo rígido anexado.
 
 01:33.380 --> 01:36.050
-The object will immediately respond to gravity.
+O objeto responderá imediatamente à gravidade.
 
 01:36.560 --> 01:38.120
-Let's look at the collider.
+Vamos dar uma olhada no colisor.
 
 01:38.630 --> 01:44.780
-The collider is the component that defines the shape of an object for the purposes of physical collisions.
+O colisor é o componente que define a forma de um objeto para fins de colisões físicas.
 
 01:45.290 --> 01:47.180
-Types of colliders in 3D.
+Tipos de colisores em 3D.
 
 01:47.300 --> 01:50.450
-The Sphere Collider for Spherical Areas.
+O colisor de esfera para áreas esféricas.
 
 01:50.450 --> 01:53.630
-The box Collider for box shaped areas.
+O Box Collider para áreas em forma de caixa.
 
 01:53.630 --> 01:57.560
-These two are very common, as you can see in the illustrations.
+Esses dois são muito comuns, como você pode ver nas ilustrações.
 
 01:57.560 --> 01:58.670
-That's their shape.
+Essa é a forma deles.
 
 01:58.670 --> 02:02.330
-The Capsule Collider and the Mesh Collider are also available.
+O Colisor de Cápsula e o Colisor de Malha também estão disponíveis.
 
 02:02.540 --> 02:04.820
-Select a game object with rigid body.
+Selecione um objeto do jogo com corpo rígido.
 
 02:04.850 --> 02:07.610
-Open the inspector window to see all of its components.
+Abra a janela do inspetor para ver todos os seus componentes.
 
 02:07.610 --> 02:08.990
-Browse the properties.
+Navegue pelas propriedades.
 
 02:09.230 --> 02:10.580
-There's a lot of properties.
+Há muitas propriedades.
 
 02:10.580 --> 02:18.080
-Our focus will be is trigger material mass drag use gravity and is kinematic.
+Nosso foco será o acionamento da massa do material, o arrasto, o uso da gravidade e a cinemática.
 
 02:18.440 --> 02:23.420
-See section two For more info on these properties, let's take a look at a demo.
+Consulte a seção dois Para obter mais informações sobre essas propriedades, vamos dar uma olhada em uma demonstração.
 
 02:23.990 --> 02:25.850
-We'll open up three D Pyramid.
+Vamos abrir três D Pyramid.
 
 02:25.970 --> 02:27.350
-We'll play the scene.
+Vamos reproduzir a cena.
 
 02:27.350 --> 02:33.290
-Select one of the cubes in the scene to see its rigid body and its collider in the inspector.
+Selecione um dos cubos na cena para ver seu corpo rígido e seu colisor no inspetor.
 
 02:34.210 --> 02:35.990
-Let's open up our scene here.
+Vamos abrir a nossa cena aqui.
 
 02:36.010 --> 02:38.230
-We're going to look at the three D pyramid.
+Vamos dar uma olhada na pirâmide de três D.
 
 02:40.180 --> 02:43.300
-If we explore this scene, we've got a series of cubes.
+Se explorarmos esta cena, temos uma série de cubos.
 
 02:43.930 --> 02:49.180
-And the part that is important to see here is the components on each cube.
+E a parte que é importante ver aqui são os componentes em cada cubo.
 
 02:49.330 --> 02:54.430
-In order to have full physics, we have a collider and then also a rigid body.
+Para termos uma física completa, temos um colisor e também um corpo rígido.
 
 02:55.320 --> 03:01.710
-And the rigid body we have used gravity set and we have is kinematic not set.
+E no corpo rígido usamos o conjunto de gravidade e temos o conjunto cinemático não definido.
 
 03:01.950 --> 03:06.090
-So when we run the scene, we'll have a realistic physics interaction.
+Assim, quando executarmos a cena, teremos uma interação física realista.
 
 03:08.560 --> 03:10.810
-The objects fall quite subtly.
+Os objetos caem de forma bastante sutil.
 
 03:10.810 --> 03:16.720
-But if I go ahead and manipulate a few of the objects, we'll see a realistic physics interaction.
+Mas se eu for em frente e manipular alguns dos objetos, veremos uma interação física realista.
 
 03:20.510 --> 03:27.080
-In the next video, the physical material asset will take a look at what is physic material, what are
+No próximo vídeo, o ativo material físico dará uma olhada no que é material físico, o que é
 
 03:27.080 --> 03:31.790
-the most important properties, and then we'll take a look at it inside the unity ed.
+as propriedades mais importantes e, em seguida, daremos uma olhada nele dentro do unity ed.

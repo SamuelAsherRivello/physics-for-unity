@@ -1,346 +1,346 @@
 WEBVTT
 
 00:01.700 --> 00:02.900
-Ragdoll physics.
+Física do Ragdoll.
 
 00:02.900 --> 00:06.890
-In this video, we'll cover what is ragdoll physics and how do we set it up.
+Neste vídeo, falaremos sobre o que é a física de ragdoll e como configurá-la.
 
 00:06.920 --> 00:11.480
-Then we'll open up unity and we'll create a ragdoll character using the Unity editor.
+Em seguida, abriremos o Unity e criaremos um personagem ragdoll usando o editor do Unity.
 
 00:12.170 --> 00:13.730
-So what is ragdoll physics?
+Então, o que é a física do ragdoll?
 
 00:13.760 --> 00:19.940
-Well, it's common in video games to include humanoid characters walking on two feet, having two arms,
+Bem, é comum nos videogames incluir personagens humanóides que andam sobre dois pés e têm dois braços,
 
 00:19.940 --> 00:20.810
-for example.
+por exemplo.
 
 00:20.810 --> 00:25.030
-And those characters may die in the course of game play or get knocked unconscious.
+E esses personagens podem morrer no decorrer do jogo ou ficar inconscientes.
 
 00:25.040 --> 00:30.710
-The realistic physics movement of their character bodies, when they perhaps get shot in the first person
+O movimento físico realista dos corpos de seus personagens, quando eles talvez sejam baleados na primeira pessoa
 
 00:30.710 --> 00:35.180
-shooter or get knocked unconscious in some sort of a melee fighting game.
+ou são deixados inconscientes em algum tipo de jogo de luta corpo a corpo.
 
 00:35.190 --> 00:39.770
-The character's unconscious Falling movement is what we call ragdoll physics.
+O movimento de queda inconsciente do personagem é o que chamamos de física ragdoll.
 
 00:40.600 --> 00:42.550
-Here's an example without ragdoll.
+Aqui está um exemplo sem ragdoll.
 
 00:42.760 --> 00:44.590
-We have a humanoid model.
+Temos um modelo humanoide.
 
 00:44.800 --> 00:48.190
-There's one box collider for the entire character.
+Há um box collider para todo o personagem.
 
 00:48.550 --> 00:53.650
-As you can see, the character falls looking like a mannequin one rigid piece.
+Como você pode ver, o personagem cai parecendo um manequim com uma peça rígida.
 
 00:53.680 --> 00:59.560
-The results are predictable and don't have the variety or lifelike nature we want in a game.
+Os resultados são previsíveis e não têm a variedade ou a natureza realista que queremos em um jogo.
 
 01:00.040 --> 01:04.720
-With ragdoll, we have the same model, but there's many colliders.
+Com o ragdoll, temos o mesmo modelo, mas há muitos colisores.
 
 01:04.720 --> 01:07.130
-We have collider per body part.
+Temos um colisor por parte do corpo.
 
 01:07.150 --> 01:09.820
-There's lots of them in the case of a humanoid model.
+Há muitos deles no caso de um modelo humanoide.
 
 01:09.850 --> 01:14.440
-The results appear more loose and more random, and we like that.
+Os resultados parecem mais soltos e mais aleatórios, e isso nos agrada.
 
 01:14.650 --> 01:21.910
-This is a looping video of the exact same take, but if we were to repeat this live and in gameplay
+Este é um vídeo em loop da mesma tomada exata, mas se fôssemos repetir isso ao vivo e no jogo
 
 01:21.910 --> 01:23.380
-we would see subtle movements.
+veríamos movimentos sutis.
 
 01:23.380 --> 01:27.970
-The character would flip various different ways based on the surface he or she's on.
+O personagem giraria de várias maneiras diferentes com base na superfície em que estivesse.
 
 01:27.970 --> 01:28.930
-And we like that.
+E nós gostamos disso.
 
 01:29.920 --> 01:34.060
-So comparing the two, we like the left result better with ragdoll.
+Então, comparando os dois, gostamos mais do resultado da esquerda com o ragdoll.
 
 01:34.150 --> 01:36.220
-We get a more loose feeling.
+Temos uma sensação mais solta.
 
 01:36.220 --> 01:41.470
-We get something more lifelike than using without ragdoll with one giant collider.
+Obtemos algo mais realista do que usar sem ragdoll com um colisor gigante.
 
 01:42.620 --> 01:44.210
-So let's set up the ragdoll.
+Então, vamos montar o ragdoll.
 
 01:44.360 --> 01:48.390
-The process was like this We're going to set up a3d character model.
+O processo foi o seguinte Vamos configurar um modelo de personagem 3D.
 
 01:48.410 --> 01:50.570
-Then we'd have to add many colliders.
+Em seguida, teríamos de adicionar muitos colliders.
 
 01:50.570 --> 01:56.270
-You can see in the screenshot that the Ethan Skeleton character, which we have in the scene, has a
+Você pode ver na captura de tela que o personagem Ethan Skeleton, que temos na cena, tem um
 
 01:56.270 --> 01:57.590
-lot of parts.
+muitas partes.
 
 01:57.740 --> 02:02.900
-We have the hand, we have the forearm, we have the forearm in the upper arm, etc. and we would need
+Temos a mão, temos o antebraço, temos o antebraço na parte superior do braço, etc. e precisaríamos de
 
 02:02.900 --> 02:07.550
-to put a joint between every one of those rigid body and collider pairs.
+colocar uma junta entre cada um desses corpos rígidos e pares de colisores.
 
 02:07.550 --> 02:09.890
-Then we'd save it as a prefab and we'd be done.
+Depois, salvamos como um pré-fabricado e pronto.
 
 02:09.920 --> 02:15.860
-Now, there was a time when you had to do this, but luckily Unity has a editor that we can use to do
+Houve um tempo em que você tinha que fazer isso, mas felizmente o Unity tem um editor que podemos usar para fazer
 
 02:15.860 --> 02:17.090
-this much more quickly.
+isso muito mais rapidamente.
 
 02:17.090 --> 02:18.920
-So this is the rag doll wizard.
+Portanto, este é o assistente de boneca de pano.
 
 02:18.920 --> 02:25.430
-We can open up the Unity menu from Game Object three, Object Ragdoll and we see the menu that we've
+Podemos abrir o menu Unity a partir do Game Object três, Object Ragdoll e veremos o menu que temos
 
 02:25.430 --> 02:26.700
-got here in the screenshot.
+que temos aqui na captura de tela.
 
 02:26.720 --> 02:33.800
-What you do then is drag each part of that intricate hierarchy we saw in the last screenshot dragging
+O que você faz então é arrastar cada parte da intrincada hierarquia que vimos na última captura de tela, arrastando
 
 02:33.800 --> 02:39.470
-the pelvis, the left hips, the left knee, etc. You have to be careful because depending where you
+a pélvis, os quadris esquerdos, o joelho esquerdo, etc. É preciso ter cuidado porque, dependendo de onde você
 
 02:39.470 --> 02:44.420
-get your model or if you build your model, the parts might not be named this way.
+ou se você construir o seu modelo, as partes podem não ser nomeadas dessa forma.
 
 02:44.420 --> 02:49.880
-But this is pretty standard convention for humanoid character to have at least this many parts.
+Mas essa é uma convenção bastante comum para que um personagem humanoide tenha pelo menos essa quantidade de partes.
 
 02:49.880 --> 02:53.480
-So you drag them all in there and then there's a few properties to set.
+Então, você arrasta todas elas para lá e depois há algumas propriedades a serem definidas.
 
 02:53.480 --> 02:56.150
-The properties will focus on our total mass.
+As propriedades se concentrarão em nossa massa total.
 
 02:56.150 --> 02:59.510
-This is the value distributed logically across all the joints.
+Esse é o valor distribuído logicamente por todas as juntas.
 
 02:59.510 --> 03:05.630
-So if you give it a value of default of 20, then the total mass of 20 is spread across those joints.
+Portanto, se você atribuir a ele um valor padrão de 20, a massa total de 20 será distribuída entre essas juntas.
 
 03:05.840 --> 03:08.600
-The strength is the resistance of the joints.
+A força é a resistência das juntas.
 
 03:08.600 --> 03:11.950
-If you have a higher value, it's less likely to break apart.
+Se você tiver um valor mais alto, é menos provável que ele se quebre.
 
 03:11.960 --> 03:15.260
-You don't want your character to have body parts to break apart.
+Você não quer que seu personagem tenha partes do corpo que se quebrem.
 
 03:15.260 --> 03:17.960
-So it's common to keep the value there pretty high.
+Portanto, é comum manter o valor bem alto.
 
 03:17.990 --> 03:19.040
-Flip forward.
+Avançar.
 
 03:19.040 --> 03:25.910
-If you set it to true, then if the model was created kind of backwards, then it will compensate for
+Se você definir esse valor como verdadeiro, se o modelo tiver sido criado um pouco ao contrário, ele compensará
 
 03:25.940 --> 03:26.210
-that.
+isso.
 
 03:26.210 --> 03:30.380
-But typically, if you just drag the model out into the world and if it's looking forward toward the
+Mas, normalmente, se você arrastar o modelo para o mundo e ele estiver olhando para a frente, na direção do
 
 03:30.380 --> 03:34.070
-camera, probably you want to use the default value, but you could experiment.
+câmera, provavelmente você vai querer usar o valor padrão, mas pode fazer experiências.
 
 03:35.320 --> 03:37.450
-So let's set up a ragdoll Inside Unity.
+Então, vamos configurar um ragdoll dentro do Unity.
 
 03:38.170 --> 03:40.760
-We'll open up the ragdoll begin scene.
+Vamos abrir a cena de início da boneca de pano.
 
 03:40.780 --> 03:44.950
-We'll play the scene to see that we don't yet have our ragdoll added.
+Vamos reproduzir a cena para ver que ainda não temos a nossa ragdoll adicionada.
 
 03:44.980 --> 03:47.300
-Then we'll use the wizard to add the ragdoll.
+Em seguida, usaremos o assistente para adicionar o ragdoll.
 
 03:47.320 --> 03:49.870
-Play the scene again and see the completed effect.
+Reproduza a cena novamente e veja o efeito concluído.
 
 03:50.750 --> 03:52.340
-All right, Let's open up the next scene.
+Muito bem, vamos abrir a próxima cena.
 
 03:53.380 --> 03:53.560
-Here.
+Aqui.
 
 03:53.560 --> 03:55.630
-We're going to be looking at Ragdoll Begin.
+Vamos dar uma olhada no Ragdoll Begin.
 
 03:56.560 --> 04:00.290
-We've got a series of cubes which we know from our pyramid of cubes.
+Temos uma série de cubos que conhecemos de nossa pirâmide de cubos.
 
 04:01.540 --> 04:03.210
-We've added on top of model.
+Acrescentamos um modelo em cima do outro.
 
 04:03.210 --> 04:07.680
-This character model is called Ethan, and I've marked it Ethan without ragdoll.
+Esse modelo de personagem se chama Ethan e eu o marquei como Ethan sem ragdoll.
 
 04:08.310 --> 04:10.140
-If we take a look at the model here.
+Se dermos uma olhada no modelo aqui.
 
 04:11.070 --> 04:14.820
-We can see that he's got a skeleton.
+Podemos ver que ele tem um esqueleto.
 
 04:15.510 --> 04:17.010
-With many parts.
+Com muitas partes.
 
 04:17.040 --> 04:21.420
-I'll even expand our view so we can get a better idea.
+Vou até ampliar nossa visão para que possamos ter uma ideia melhor.
 
 04:28.010 --> 04:29.840
-So we can see we've got a lot of parts here.
+Assim, podemos ver que temos muitas partes aqui.
 
 04:29.840 --> 04:36.470
-If we just play the scene, nothing will happen because we don't yet have any physics, added the cubes.
+Se apenas reproduzirmos a cena, nada acontecerá porque ainda não temos nenhuma física, acrescentamos os cubos.
 
 04:36.470 --> 04:41.510
-Settle as we would expect them to, but our character floats in the air because he's got no physics
+Eles se acomodam como esperamos, mas nosso personagem flutua no ar porque não tem física
 
 04:41.510 --> 04:42.520
-components yet.
+ainda não tem componentes físicos.
 
 04:42.530 --> 04:45.950
-Let's go ahead and use the wizard for creating the ragdoll.
+Vamos continuar e usar o assistente para criar a boneca de pano.
 
 04:49.810 --> 04:54.170
-Now as it instructs we drag all bones from the hierarchy into their slots.
+Agora, conforme as instruções, arrastamos todos os ossos da hierarquia para os respectivos espaços.
 
 04:54.190 --> 04:56.770
-Make sure your character is in a PT stand.
+Certifique-se de que o seu personagem está em um suporte PT.
 
 04:56.860 --> 04:59.320
-That's what we call this position the characters in.
+É assim que chamamos essa posição em que os personagens se encontram.
 
 04:59.350 --> 05:06.310
-Now, typically 3D modelers and animators use this position with the arms extended out and the body
+Agora, normalmente os modeladores e animadores 3D usam essa posição com os braços estendidos e o corpo
 
 05:06.310 --> 05:09.640
-relatively straight looks something like the letter T.
+relativamente reto, parecido com a letra T.
 
 05:09.790 --> 05:11.890
-So let's go ahead and drag in.
+Então vamos em frente e arrastá-lo.
 
 05:22.410 --> 05:25.410
-Now notice that some of the naming from this model is different.
+Agora observe que alguns dos nomes deste modelo são diferentes.
 
 05:25.410 --> 05:32.760
-It doesn't necessarily say pelvis, left hips, etc. It may take some experimenting, of course, depending
+Ele não diz necessariamente pélvis, quadril esquerdo, etc. Pode ser necessário fazer alguns experimentos, é claro, dependendo
 
 05:32.760 --> 05:35.730
-who made the model or even if you made it yourself.
+de quem fez o modelo ou até mesmo se você mesmo o fez.
 
 05:36.030 --> 05:38.760
-Each person has free reign over naming these parts.
+Cada pessoa tem liberdade para nomear essas partes.
 
 05:38.850 --> 05:45.000
-We hope that there's a 1 to 1 relationship between the structure that the rag doll wizard wants and
+Esperamos que haja uma relação de 1 para 1 entre a estrutura que o mago da boneca de pano deseja e
 
 05:45.000 --> 05:46.510
-the structure of the model.
+a estrutura do modelo.
 
 05:46.530 --> 05:49.800
-Here it seems like we have that now as the last step.
+Aqui parece que temos isso agora como o último passo.
 
 05:49.800 --> 05:53.790
-We can set the total mass, the strength and the flip forward.
+Podemos definir a massa total, a força e a virada para frente.
 
 05:54.090 --> 05:56.970
-I'm going to change the total mass to a higher value.
+Vou alterar a massa total para um valor mais alto.
 
 05:57.300 --> 05:59.660
-I'm going to try 100 for the strength.
+Vou tentar 100 para a força.
 
 05:59.670 --> 06:01.200
-I'll set a value of one.
+Vou definir o valor de um.
 
 06:01.470 --> 06:02.820
-And flip forward.
+E virar para frente.
 
 06:02.820 --> 06:04.020
-I'll set it true.
+Vou definir como verdadeiro.
 
 06:04.650 --> 06:06.180
-It's actually giving me an error here.
+Na verdade, está me dando um erro aqui.
 
 06:06.180 --> 06:09.810
-Right elbow and left elbow may not be assigned to the same.
+O cotovelo direito e o cotovelo esquerdo não podem ser atribuídos ao mesmo.
 
 06:09.810 --> 06:11.010
-So let me see.
+Então, deixe-me ver.
 
 06:13.260 --> 06:18.270
-I've accidentally set that wrong, so I will use right.
+Acidentalmente, configurei isso errado, portanto, usarei o direito.
 
 06:19.530 --> 06:19.920
-Great.
+Ótimo.
 
 06:19.920 --> 06:20.730
-No errors.
+Sem erros.
 
 06:20.730 --> 06:22.260
-And I can use the create button.
+E posso usar o botão de criação.
 
 06:23.000 --> 06:23.880
-And done.
+E pronto.
 
 06:23.900 --> 06:25.790
-Now if we explore the model.
+Agora, se explorarmos o modelo.
 
 06:26.720 --> 06:28.880
-Clicking through some key pieces here.
+Clicando em algumas peças-chave aqui.
 
 06:29.210 --> 06:35.090
-Let's say that the left arm, for example, we can see we have a character joint set up and a rigid
+Digamos que o braço esquerdo, por exemplo, podemos ver que temos uma articulação de caráter configurada e uma articulação rígida
 
 06:35.090 --> 06:35.680
-body.
+corpo.
 
 06:35.690 --> 06:38.090
-So each of these have been set up properly.
+Portanto, cada um deles foi configurado corretamente.
 
 06:38.090 --> 06:39.830
-Let's run the scene and see the result.
+Vamos executar a cena e ver o resultado.
 
 06:43.940 --> 06:44.720
-Looks good.
+Parece bom.
 
 06:45.320 --> 06:50.870
-I'll use the space bar shortcut available in all the packed pub scenes and watch it several times.
+Usarei o atalho da barra de espaço disponível em todas as cenas de pubs lotados e assistirei várias vezes.
 
 06:55.210 --> 07:00.520
-Now, because I've set his mass to 100, he falls, forcing the cubes out of the way.
+Agora, como eu defini sua massa para 100, ele cai, forçando os cubos a saírem do caminho.
 
 07:02.760 --> 07:08.910
-If I had set a different value, perhaps lower like the default 20, you might fall around the cubes.
+Se eu tivesse definido um valor diferente, talvez mais baixo, como o padrão 20, você poderia cair ao redor dos cubos.
 
 07:08.910 --> 07:12.330
-But here he's relatively heavy, relatively massive.
+Mas aqui ele é relativamente pesado, relativamente maciço.
 
 07:15.120 --> 07:17.580
-In the next video, we'll cover terrain physics.
+No próximo vídeo, abordaremos a física do terreno.

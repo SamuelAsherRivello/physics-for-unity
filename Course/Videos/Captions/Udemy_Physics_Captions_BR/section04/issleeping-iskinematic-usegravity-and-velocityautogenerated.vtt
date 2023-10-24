@@ -1,331 +1,331 @@
 WEBVTT
 
 00:00.840 --> 00:04.980
-Is sleeping is kinematic use, gravity and velocity.
+O sono é o uso cinemático, a gravidade e a velocidade.
 
 00:05.010 --> 00:09.480
-In this video, we'll cover these very powerful, useful physics properties.
+Neste vídeo, abordaremos essas propriedades físicas muito poderosas e úteis.
 
 00:09.480 --> 00:13.380
-We'll learn about turning on and off physics for each game object.
+Aprenderemos a ativar e desativar a física para cada objeto do jogo.
 
 00:13.470 --> 00:15.720
-We'll learn why we want to do that sometimes.
+Aprenderemos por que queremos fazer isso às vezes.
 
 00:15.720 --> 00:17.490
-Then we'll open up the Unity editor.
+Em seguida, abriremos o editor Unity.
 
 00:17.510 --> 00:19.020
-We'll play with these properties.
+Vamos brincar com estas propriedades.
 
 00:19.020 --> 00:21.820
-Let's recap some of the important physics properties.
+Vamos recapitular algumas das propriedades físicas importantes.
 
 00:21.840 --> 00:25.370
-Imagine we've got a stack of cubes and one of those cubes is selected.
+Imagine que temos uma pilha de cubos e um desses cubos é selecionado.
 
 00:25.380 --> 00:30.750
-It's got a box collider with some properties and a rigid body that has properties as well.
+Ele tem um colisor de caixa com algumas propriedades e um corpo rígido que também tem propriedades.
 
 00:30.960 --> 00:37.800
-Some of these properties are accessible from the inspector and also from code for example is kinematic
+Algumas dessas propriedades podem ser acessadas pelo inspetor e também pelo código, por exemplo, a cinemática
 
 00:37.800 --> 00:39.030
-and use gravity.
+e usar a gravidade.
 
 00:39.120 --> 00:45.480
-However, some properties are accessible only from code, for example is sleeping and velocity.
+No entanto, algumas propriedades só podem ser acessadas a partir do código, por exemplo, o sono e a velocidade.
 
 00:45.930 --> 00:48.510
-Let's take a look at rigid body is kinematic.
+Vamos dar uma olhada no corpo rígido é cinemático.
 
 00:48.510 --> 00:53.520
-This controls whether the physics in the system affects this rigid body or not.
+Isso controla se a física do sistema afeta ou não esse corpo rígido.
 
 00:53.640 --> 00:55.860
-By default it's set to false.
+Por padrão, está definido como falso.
 
 00:55.860 --> 00:58.800
-The game object will behave under physics control.
+O objeto do jogo se comportará sob o controle da física.
 
 00:58.920 --> 01:05.580
-Sometimes we want to set it to true, and then the physics forces collisions and joints will be ignored.
+Às vezes, queremos defini-la como true e, assim, as forças físicas, colisões e articulações serão ignoradas.
 
 01:06.060 --> 01:12.660
-Setting it to true will give our game object the opportunity to be driven by scripting instead of the
+Definir como true dará ao nosso objeto de jogo a oportunidade de ser conduzido por scripts em vez do
 
 01:12.660 --> 01:13.680
-physics system.
+sistema de física.
 
 01:13.680 --> 01:16.290
-We can even toggle it in certain scenarios.
+Podemos até mesmo alternar isso em determinados cenários.
 
 01:16.290 --> 01:20.310
-We could start with it true with a game object driven by scripting.
+Poderíamos começar com ele verdadeiro com um objeto de jogo acionado por script.
 
 01:20.400 --> 01:26.310
-And then when our character gets hit, for example, we could quickly turn it into a ragdoll and it
+E então, quando o nosso personagem for atingido, por exemplo, poderíamos transformá-lo rapidamente em um ragdoll e ele
 
 01:26.310 --> 01:28.260
-would fall believably to the ground.
+cairia de forma crível no chão.
 
 01:28.260 --> 01:32.850
-By setting is kinematic to false rigid body use gravity.
+Ao definir sua cinemática como falso corpo rígido, use a gravidade.
 
 01:32.850 --> 01:36.690
-This controls whether gravity affects this rigid body or not.
+Isso controla se a gravidade afeta ou não esse corpo rígido.
 
 01:37.110 --> 01:41.970
-By default it's set to true, and that allows the object to fall under the forces of gravity.
+Por padrão, está definido como true, o que permite que o objeto caia sob as forças da gravidade.
 
 01:42.120 --> 01:44.610
-Sometimes we want to set it to false.
+Às vezes, queremos defini-la como falsa.
 
 01:44.610 --> 01:50.580
-If we want to behave like we're in outer space where there's no gravity affected, or if we want more
+Se quisermos nos comportar como se estivéssemos no espaço sideral, onde a gravidade não é afetada, ou se quisermos mais
 
 01:50.580 --> 01:52.530
-manual control over the objects.
+controle manual sobre os objetos.
 
 01:52.530 --> 01:55.440
-Motion rigid body is sleeping.
+O corpo rígido de movimento está dormindo.
 
 01:55.740 --> 02:00.570
-While this is not actually a property, it's a method as seen by the parentheses.
+Embora isso não seja de fato uma propriedade, é um método, como se vê pelos parênteses.
 
 02:00.570 --> 02:04.020
-After it we can get the value just like a property.
+Depois disso, podemos obter o valor da mesma forma que uma propriedade.
 
 02:04.050 --> 02:06.930
-This lets us know is the rigid body sleeping?
+Isso nos permite saber se o corpo rígido está dormindo?
 
 02:06.930 --> 02:13.680
-When a rigid body is moving very slowly, the physics engine assumes it has come to a halt and it sets
+Quando um corpo rígido está se movendo muito lentamente, o mecanismo de física assume que ele parou e define
 
 02:13.680 --> 02:15.290
-it into a sleeping mode.
+em um modo de suspensão.
 
 02:15.300 --> 02:19.710
-This optimization saves processor time for most purposes.
+Essa otimização economiza tempo do processador para a maioria das finalidades.
 
 02:19.710 --> 02:26.130
-Sleeping and waking happens automatically, so we can just assume when it's in motion is sleeping is
+O modo de dormir e acordar acontece automaticamente, portanto, podemos presumir que quando ele está em movimento está dormindo.
 
 02:26.130 --> 02:29.880
-false and when it's finally at rest is sleeping is true.
+falso e que, quando finalmente está em repouso, o sono é verdadeiro.
 
 02:30.240 --> 02:36.090
-Our focus, for example, is to detect when our character has stopped moving or an item in the game
+Nosso foco, por exemplo, é detectar quando nosso personagem parou de se mover ou um item no jogo
 
 02:36.090 --> 02:37.080
-has stopped moving.
+parou de se mover.
 
 02:37.290 --> 02:43.230
-For example, if my character shoots an arrow at a target, the arrow flies through the air and eventually
+Por exemplo, se o meu personagem dispara uma flecha em um alvo, a flecha voa pelo ar e, eventualmente
 
 02:43.230 --> 02:44.400
-comes to a stop.
+pára.
 
 02:44.730 --> 02:48.030
-When it comes to a stop is sleeping would be true.
+Quando ela parar, o sono será verdadeiro.
 
 02:48.060 --> 02:52.980
-I could check that and know, okay, it's ready for another arrow to be shot.
+Eu poderia verificar isso e saber, ok, ele está pronto para disparar outra flecha.
 
 02:53.400 --> 02:55.110
-Rigid body velocity.
+Velocidade de corpo rígido.
 
 02:55.110 --> 03:00.990
-The velocity vector of the rigid body is held in this vector rigid body velocity.
+O vetor de velocidade do corpo rígido é mantido neste vetor rigid body velocity.
 
 03:00.990 --> 03:03.750
-This is the velocity vector of the rigid body.
+Este é o vetor de velocidade do corpo rígido.
 
 03:03.750 --> 03:06.040
-It's the direction and speed of movement.
+É a direção e a velocidade do movimento.
 
 03:06.060 --> 03:12.780
-In most cases, you should not modify the velocity directly as this can result in unrealistic behavior.
+Na maioria dos casos, você não deve modificar a velocidade diretamente, pois isso pode resultar em um comportamento não realista.
 
 03:12.780 --> 03:14.610
-However, there are exceptions.
+No entanto, há exceções.
 
 03:14.850 --> 03:20.700
-A typical usage is where you would change the velocity immediately in a first person shooter.
+Um uso típico é quando você altera a velocidade imediatamente em um jogo de tiro em primeira pessoa.
 
 03:20.700 --> 03:26.460
-When your character jumps, you want to have that quick change in velocity so you could set it directly.
+Quando o personagem pula, você quer ter essa mudança rápida na velocidade para que possa defini-la diretamente.
 
 03:26.640 --> 03:33.000
-Our focus is typically to access the value without setting it just to get the object speed.
+Nosso foco é, normalmente, acessar o valor sem defini-lo apenas para obter a velocidade do objeto.
 
 03:33.000 --> 03:39.810
-For example, if we want to show the speedometer of a physics based car onto the screen, we could get
+Por exemplo, se quisermos mostrar o velocímetro de um carro baseado em física na tela, podemos obter
 
 03:39.810 --> 03:40.710
-this value.
+esse valor.
 
 03:40.710 --> 03:43.320
-Let's talk about turning off the physics.
+Vamos falar sobre a desativação da física.
 
 03:43.320 --> 03:47.970
-Sometimes games may turn off physics for a specific object during gameplay.
+Às vezes, os jogos podem desativar a física de um objeto específico durante o jogo.
 
 03:47.970 --> 03:52.920
-For example, we want to move the objects with the mouse input instead of physics.
+Por exemplo, queremos mover os objetos com a entrada do mouse em vez da física.
 
 03:52.920 --> 03:59.220
-There's two properties we need to toggle here if we want to turn on and off the physics to turn it off,
+Há duas propriedades que precisamos alternar aqui se quisermos ativar e desativar a física para desativá-la,
 
 03:59.220 --> 04:03.660
-we set the use gravity to false and is kinematic to true.
+definimos o uso da gravidade como falso e a cinemática como verdadeira.
 
 04:03.660 --> 04:08.910
-Now we can control the movement of that rigid body with code When we're ready to turn movement back
+Agora podemos controlar o movimento desse corpo rígido com o código Quando estivermos prontos para voltar o movimento
 
 04:08.910 --> 04:15.000
-on for physics based control, we can set use gravity to true and is kinematic to false.
+para o controle baseado em física, podemos definir use gravity como true e is kinematic como false.
 
 04:15.000 --> 04:20.570
-Then it would fall back under gravity and behave with joints and physics forces, etc..
+Então, ele cairia sob a gravidade e se comportaria com articulações e forças físicas, etc.
 
 04:20.580 --> 04:25.620
-Let's create a demo that uses all of these properties we've talked about and see how they can work together.
+Vamos criar uma demonstração que use todas essas propriedades de que falamos e ver como elas podem funcionar juntas.
 
 04:25.620 --> 04:27.960
-I created a scene called the Dropper Game.
+Criei uma cena chamada Dropper Game.
 
 04:27.960 --> 04:29.160
-Let's play the scene.
+Vamos reproduzir a cena.
 
 04:29.160 --> 04:30.930
-It's a very simplistic game.
+É um jogo muito simples.
 
 04:30.930 --> 04:35.340
-We will inspect the code and we'll look at how these four properties are being used.
+Vamos inspecionar o código e ver como essas quatro propriedades estão sendo usadas.
 
 04:35.340 --> 04:37.470
-We wait for the user's next turn.
+Aguardamos a próxima vez do usuário.
 
 04:37.470 --> 04:38.880
-By using is sleeping.
+Ao usar está dormindo.
 
 04:38.880 --> 04:47.070
-We show the speed on a UI using the velocity and we use that combination of mouse drag versus falling
+Mostramos a velocidade em uma UI usando a velocidade e usamos essa combinação de arrastar o mouse versus cair
 
 04:47.070 --> 04:51.060
-By using the two properties is kinematic and use gravity.
+Usando as duas propriedades cinemáticas e usando a gravidade.
 
 04:52.110 --> 04:52.410
-All right.
+Muito bem.
 
 04:52.410 --> 04:53.760
-Here we are back in unity.
+Aqui estamos de volta à unidade.
 
 04:54.240 --> 04:57.120
-Let's take a look at the proper game scene.
+Vamos dar uma olhada na cena do jogo propriamente dita.
 
 04:58.260 --> 05:02.910
-And we'll see how these properties for physics are used in the gameplay.
+E veremos como essas propriedades para a física são usadas na jogabilidade.
 
 05:03.150 --> 05:04.320
-Let's go ahead and give it a play.
+Vamos continuar e jogar.
 
 05:10.350 --> 05:17.460
-So there's four properties we're talking about One as the as the dropper box drops, the velocity on
+Portanto, há quatro propriedades sobre as quais estamos falando: uma, quando a caixa do conta-gotas cai, a velocidade na
 
 05:17.460 --> 05:19.800
-screen is using the velocity property.
+tela está usando a propriedade velocity.
 
 05:20.160 --> 05:27.630
-Secondly, after the box drops and hits the rail at the bottom, the box, the next box becomes available
+Em segundo lugar, depois que a caixa cai e atinge o trilho na parte inferior, a caixa, a próxima caixa fica disponível
 
 05:27.630 --> 05:28.680
-for me to use.
+para eu usar.
 
 05:28.710 --> 05:33.390
-So you can see there's a couple of seconds dropping and then another box ready for me to use.
+Assim, você pode ver que há alguns segundos de intervalo e, em seguida, outra caixa está pronta para ser usada.
 
 05:33.600 --> 05:39.660
-The way that I handle that is I wait until the is sleeping is true for the following box.
+A maneira de lidar com isso é esperar até que a mensagem is sleeping seja verdadeira para a caixa seguinte.
 
 05:39.960 --> 05:42.600
-So it's sleeping is false.
+Então o "está dormindo" é falso.
 
 05:42.600 --> 05:47.040
-And then when it finally hits, their sleeping is true, and then it's my turn again.
+E então, quando finalmente chegar, seu sono é verdadeiro, e então é a minha vez novamente.
 
 05:47.130 --> 05:48.630
-So that's two of the properties.
+Portanto, essas são duas das propriedades.
 
 05:49.080 --> 05:52.710
-Also, notice how I can control the box with my mouse.
+Além disso, observe como posso controlar a caixa com o mouse.
 
 05:52.710 --> 05:58.650
-So while it's using a rigid body, I have settings set so that I can move it manually.
+Portanto, embora esteja usando um corpo rígido, tenho configurações definidas para que eu possa movê-lo manualmente.
 
 05:58.830 --> 06:01.980
-I turn gravity off and I turn is kinematic on.
+Desligo a gravidade e ligo a cinemática.
 
 06:01.980 --> 06:09.470
-And then once I click with my mouse, then I turn kinematic off and I turn gravity on.
+E depois que clico com o mouse, desligo a cinemática e ligo a gravidade.
 
 06:09.480 --> 06:11.040
-So let's take a look at the code for that.
+Então, vamos dar uma olhada no código para isso.
 
 06:16.740 --> 06:20.490
-So there's four spots where I access those one here.
+Portanto, há quatro pontos em que eu acesso esse aqui.
 
 06:20.490 --> 06:25.020
-Every time I add a new dropper, you can see the comment access physics properties.
+Toda vez que adiciono um novo conta-gotas, você pode ver o comentário acessando as propriedades físicas.
 
 06:25.020 --> 06:30.240
-What I'm doing there is I'm setting the gravity false kinematic true.
+O que estou fazendo aqui é definir a gravidade como falsa e cinemática como verdadeira.
 
 06:30.240 --> 06:31.980
-That lets me have mouse control.
+Isso me permite ter o controle do mouse.
 
 06:33.720 --> 06:41.400
-Then in the update, which is called every frame, I then if I click the mouse button, then I toggle
+Então, na atualização, que é chamada a cada quadro, se eu clicar no botão do mouse, eu alterno
 
 06:41.400 --> 06:44.700
-the gravity back on and turn kinematic to false.
+a gravidade de volta e torno a cinemática falsa.
 
 06:44.700 --> 06:47.610
-That lets it fall under the natural forces of gravity.
+Isso permite que ele caia sob as forças naturais da gravidade.
 
 06:48.300 --> 06:52.980
-Also, while it's falling in the update, eye check is sleeping.
+Além disso, enquanto ele está caindo na atualização, a verificação ocular está dormindo.
 
 06:53.250 --> 06:56.040
-If it is sleeping, then it's ready for the next turn.
+Se estiver dormindo, então está pronto para o próximo turno.
 
 06:56.040 --> 06:58.830
-So I score some points and then I go ahead and.
+Então, eu marco alguns pontos e vou em frente.
 
 06:59.840 --> 07:01.160
-Release the next dropper.
+Solto o próximo conta-gotas.
 
 07:02.570 --> 07:05.330
-And then finally, I.
+E, finalmente, eu.
 
 07:06.660 --> 07:14.190
-Capture the max velocity so that I reward points based on how fast the block was going at its fastest.
+Capturo a velocidade máxima para recompensar os pontos com base na velocidade que o bloco estava atingindo no momento mais rápido.
 
 07:14.400 --> 07:20.910
-It's a silly mechanic and it's an excuse to use velocity, but it rewards more points for dropping from
+É uma mecânica boba e é uma desculpa para usar a velocidade, mas recompensa mais pontos por cair de
 
 07:20.910 --> 07:21.750
-a higher height.
+uma altura maior.
 
 07:21.750 --> 07:22.650
-And that's it.
+E é isso.
 
 07:23.520 --> 07:29.010
-In the next video, we'll look at physics, recast and recast Command Schedule batch.
+No próximo vídeo, veremos a física, a reformulação e a reformulação do lote do Command Schedule.
 
 07:29.040 --> 07:33.450
-In this video, we'll cover what are spatial queries in a physics system.
+Neste vídeo, abordaremos o que são consultas espaciais em um sistema de física.
 
 07:33.450 --> 07:37.110
-How and why are they useful to us, and what do we do with them?
+Como e por que elas são úteis para nós e o que fazemos com elas?

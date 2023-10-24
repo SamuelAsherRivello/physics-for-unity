@@ -1,199 +1,199 @@
 WEBVTT
 
 00:01.670 --> 00:04.860
-Unity's physics system past, present and future.
+O sistema de física do Unity no passado, presente e futuro.
 
 00:04.880 --> 00:07.400
-In this video, we'll cover what is unity.
+Neste vídeo, abordaremos o que é o Unity.
 
 00:07.430 --> 00:11.600
-We'll take a step back and we'll look at what libraries, power, unity, physics today.
+Daremos um passo atrás e veremos o que são as bibliotecas, o poder, a unidade e a física hoje.
 
 00:11.600 --> 00:14.360
-And we'll also look to the future of unity physics.
+E também analisaremos o futuro do unity physics.
 
 00:14.360 --> 00:20.330
-Unity is the most widely used, real time interactive platform with tools to create rich projects in
+Unity é a plataforma interativa em tempo real mais amplamente utilizada, com ferramentas para criar projetos ricos em
 
 00:20.330 --> 00:21.580
-all sorts of platforms.
+todos os tipos de plataformas.
 
 00:21.590 --> 00:26.640
-Unity is powering games, of course, but also architecture, automotive, construction and more.
+A Unity está impulsionando os jogos, é claro, mas também a arquitetura, o setor automotivo, a construção e muito mais.
 
 00:26.660 --> 00:34.250
-Unity Version 1.0 was released in 2008, and since it's gained massive popularity as of 2019, 50% of
+A versão 1.0 do Unity foi lançada em 2008 e, desde então, ganhou enorme popularidade em 2019, 50% dos
 
 00:34.250 --> 00:36.080
-mobile games are powered by unity.
+jogos para celular são desenvolvidos pela Unity.
 
 00:36.080 --> 00:43.790
-Over 3 billion devices worldwide use unity software and 90% of AR and VR is powered by Unity as well.
+Mais de 3 bilhões de dispositivos em todo o mundo usam o software Unity e 90% da AR e VR também são alimentados pelo Unity.
 
 00:43.790 --> 00:46.750
-Unity supports cross-platform deployment.
+O Unity suporta a implantação de plataforma cruzada.
 
 00:46.760 --> 00:52.940
-Here's just some of the platforms that Unity supports, including PC console and cross platform mobile.
+Aqui estão apenas algumas das plataformas que o Unity suporta, incluindo console de PC e plataforma cruzada móvel.
 
 00:53.420 --> 00:57.200
-So what's built in unity at its core is a 3D rendering system.
+Então, o que é construído na unidade em seu núcleo é um sistema de renderização 3D.
 
 00:57.200 --> 01:02.990
-You can also create great 2D experiences with unity, and unity includes animation, audio rendering
+Você também pode criar excelentes experiências 2D com o unity, e o unity inclui animação, renderização de áudio
 
 01:02.990 --> 01:07.820
-and effects deployment to all those platforms, graphical rendering input and more.
+e implantação de efeitos para todas essas plataformas, entrada de renderização gráfica e muito mais.
 
 01:07.850 --> 01:10.760
-In this course, we'll focus on physics and scripting.
+Neste curso, vamos nos concentrar em física e scripts.
 
 01:10.760 --> 01:14.630
-Using Unity uses third party physics systems.
+O Unity usa sistemas de física de terceiros.
 
 01:14.630 --> 01:15.680
-Now, why do they do that?
+Agora, por que eles fazem isso?
 
 01:15.680 --> 01:19.190
-Because accelerated multi-platform physics is hard to do.
+Porque a física acelerada multiplataforma é difícil de fazer.
 
 01:19.190 --> 01:25.160
-Unity outsources the work to these third party libraries and raps their API to feel more consistent
+A Unity terceiriza o trabalho para essas bibliotecas de terceiros e aprimora sua API para parecer mais consistente
 
 01:25.160 --> 01:26.210
-and unity friendly.
+e amigável à unidade.
 
 01:26.210 --> 01:31.070
-Something of note is that it takes some time for unity to integrate the latest and greatest features
+É importante notar que leva algum tempo para a unidade integrar os recursos mais recentes e melhores
 
 01:31.070 --> 01:32.990
-when each of these libraries are updated.
+quando cada uma dessas bibliotecas é atualizada.
 
 01:33.900 --> 01:39.380
-In Unity version 1.0 Unity three D Physics was released using the Physics library.
+Na versão 1.0 do Unity, o Unity three D Physics foi lançado usando a biblioteca Physics.
 
 01:39.390 --> 01:46.260
-It wasn't until Unity 4.3 that many 2D features were added, including 2D physics with box two dx.
+Não foi até o Unity 4.3 que muitos recursos 2D foram adicionados, incluindo a física 2D com box two dx.
 
 01:46.290 --> 01:51.650
-In the future, unity will be powered by dots, physics or data oriented technology stack.
+No futuro, a unidade será alimentada por pontos, física ou pilha de tecnologia orientada a dados.
 
 01:51.660 --> 01:53.880
-There are features in public beta available.
+Há recursos disponíveis na versão beta pública.
 
 01:53.880 --> 01:55.740
-The future release is to be determined.
+A versão futura ainda não foi determinada.
 
 01:55.740 --> 02:01.560
-The future of Unity physics will be powered by unity and collaboration with third party library by having.
+O futuro da física do Unity será alimentado pelo Unity e pela colaboração com bibliotecas de terceiros.
 
 02:02.480 --> 02:04.950
-Let's look at the Physics three D library.
+Vamos dar uma olhada na biblioteca Physics three D.
 
 02:04.970 --> 02:09.650
-Physics is an open source, scalable multi platform physics solution.
+O Physics é uma solução de física multiplataforma escalável e de código aberto.
 
 02:09.650 --> 02:12.230
-Unity uses this for its three D physics.
+O Unity usa isso para sua física de três D.
 
 02:12.230 --> 02:18.590
-It's notable that while physics is on 4.0, unity is integrated only physics 3.4.
+É notável que enquanto a física está na versão 4.0, a Unity está integrada apenas à física 3.4.
 
 02:18.590 --> 02:22.340
-In the latest 2019 releases, you can see the delay there.
+Nas últimas versões de 2019, você pode ver o atraso.
 
 02:22.340 --> 02:27.260
-That unity takes some time to wrap the latest APIs, test them, integrate them and ship them.
+Essa unidade leva algum tempo para envolver as APIs mais recentes, testá-las, integrá-las e enviá-las.
 
 02:27.260 --> 02:29.480
-What Unity offers is very powerful.
+O que o Unity oferece é muito poderoso.
 
 02:29.510 --> 02:34.670
-Key features of physics include that it's open source multithreaded and has great memory management.
+As principais características da física incluem o fato de ser multithreaded de código aberto e ter um ótimo gerenciamento de memória.
 
 02:35.060 --> 02:37.820
-Box two RD powers unities to DX Physics.
+Caixa dois RD powers unities para o DX Physics.
 
 02:37.820 --> 02:43.280
-Its key feature is what's called a B or axis aligned bounding box.
+Sua principal característica é o que é chamado de B ou caixa delimitadora alinhada ao eixo.
 
 02:43.280 --> 02:48.920
-This is a very efficient way for unity to check collisions, so running two d games with two D physics
+Esta é uma forma muito eficiente de a unidade verificar as colisões, portanto, rodar dois jogos D com duas físicas D
 
 02:48.920 --> 02:51.890
-on even slower and older platforms performs well.
+em plataformas ainda mais lentas e antigas tem um bom desempenho.
 
 02:51.890 --> 02:58.220
-Some key features are continuous collision detection or accuracy, convex polygons and circles and collision
+Alguns dos principais recursos são a detecção ou precisão de colisão contínua, polígonos e círculos convexos e colisão
 
 02:58.220 --> 02:59.330
-groups and categories.
+grupos e categorias de colisão.
 
 02:59.330 --> 03:04.460
-The future of unity physics will be powered by dots or the data oriented technology stack.
+O futuro da física da unidade será alimentado por pontos ou pela pilha de tecnologia orientada a dados.
 
 03:04.460 --> 03:11.270
-At the Game Developer Conference 2019, Unity announced two new physics choices a first party unity
+Na Game Developer Conference 2019, a Unity anunciou duas novas opções de física para a primeira parte do unity
 
 03:11.270 --> 03:13.580
-solution and a third party havoc solution.
+e uma solução havoc de terceiros.
 
 03:13.580 --> 03:18.650
-Powered by Havoc, users will be able to toggle between each of these at any time because the APIs are
+Com a tecnologia Havoc, os usuários poderão alternar entre cada uma delas a qualquer momento, pois as APIs são
 
 03:18.650 --> 03:19.280
-identical.
+idênticas.
 
 03:19.280 --> 03:25.220
-The Unity physics system, which is now available in public beta, has editable C sharp source and is
+O sistema de física do Unity, que agora está disponível em versão beta pública, tem fonte editável em C sharp e é
 
 03:25.220 --> 03:27.230
-stateless with no caching.
+sem estado e sem cache.
 
 03:27.230 --> 03:32.990
-Thus it's very optimized for multiplayer and easier to understand, read and extend by development teams.
+Assim, ele é muito otimizado para multijogadores e mais fácil de entender, ler e estender pelas equipes de desenvolvimento.
 
 03:32.990 --> 03:39.740
-Havoc Physics which is in preview package coming soon, is stateful with caching thus has a much higher
+O Havoc Physics, que está em um pacote de pré-visualização em breve, tem estado com cache e, portanto, tem um desempenho muito mais alto.
 
 03:39.740 --> 03:43.580
-performance, but at the cost of complexity it's also higher fidelity.
+desempenho, mas ao custo da complexidade, também tem maior fidelidade.
 
 03:43.580 --> 03:46.220
-Thus the physics rendered is more accurate.
+Assim, a física renderizada é mais precisa.
 
 03:46.220 --> 03:47.960
-So which physics system is right?
+Então, qual é o sistema de física correto?
 
 03:47.960 --> 03:53.480
-Well, this course will focus on the traditional two rd and three D physics systems in section seven.
+Bem, este curso se concentrará nos sistemas físicos tradicionais de dois e três D na seção sete.
 
 03:53.480 --> 03:58.340
-We'll take a look at some advanced topics, including briefly covering dots, physics.
+Daremos uma olhada em alguns tópicos avançados, incluindo uma breve cobertura de pontos, física.
 
 03:58.340 --> 04:02.660
-Each of these systems has a lot of different benefits and drawbacks.
+Cada um desses sistemas tem muitas vantagens e desvantagens diferentes.
 
 04:02.660 --> 04:04.040
-Each will have a long future.
+Cada um deles terá um longo futuro.
 
 04:04.040 --> 04:08.720
-Within the physics platform, we can see that sections two and five will focus on two D physics.
+Na plataforma de física, podemos ver que as seções dois e cinco se concentrarão na física de dois D.
 
 04:08.720 --> 04:12.890
-Sections three, four and six will concentrate on three D physics.
+As seções três, quatro e seis se concentrarão na física três D.
 
 04:12.890 --> 04:18.320
-In each of those areas we'll create a complete game using two rd and three D in Section seven.
+Em cada uma dessas áreas, criaremos um jogo completo usando a física de dois e três D na Seção sete.
 
 04:18.320 --> 04:21.920
-We'll take a quick look at the future with Unity Dots Physics.
+Daremos uma olhada rápida no futuro com o Unity Dots Physics.
 
 04:23.780 --> 04:29.960
-In the next video, Unity's Physics Project settings we'll cover what are Unity Project settings and
+No próximo vídeo, Configurações de projeto de física do Unity, abordaremos o que são as configurações de projeto do Unity e
 
 04:29.960 --> 04:32.930
-which of the settings are most important to our physics needs.
+quais das configurações são mais importantes para nossas necessidades de física.
 
 04:33.200 --> 04:37.880
-And then we'll experiment with some of these settings inside the Unity editor to see the results.
+Em seguida, faremos experimentos com algumas dessas configurações dentro do editor Unity para ver os resultados.

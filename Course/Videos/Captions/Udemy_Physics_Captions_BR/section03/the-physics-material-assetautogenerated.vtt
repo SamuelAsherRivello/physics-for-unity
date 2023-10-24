@@ -1,184 +1,193 @@
 WEBVTT
 
-00:01.730 --> 00:03.650
-The physical material asset.
+00:01.750 --> 00:02.800
+Física do terreno.
 
-00:03.650 --> 00:09.260
-In this video, we'll cover what is the physical material, what are its most important properties,
+00:02.800 --> 00:05.760
+Neste vídeo, abordaremos o que é a unidade de terreno.
 
-00:09.260 --> 00:11.030
-and then we'll get a chance to use it.
+00:05.770 --> 00:08.850
+Aprenderemos como criar um terreno e adicionar física.
 
-00:11.030 --> 00:17.600
-Inside the Unity Editor A note about two D versus three D Unity has two separate physics systems in
+00:08.860 --> 00:13.930
+Por fim, criaremos um novo terreno dentro do unity editor e interagiremos com sua física.
 
-00:17.600 --> 00:23.090
-two D, the rigid body, two D references the physics material two RD asset.
+00:14.140 --> 00:15.460
+Antes de mais nada, o que é terreno?
 
-00:23.090 --> 00:30.350
-This has an SE in the title in three d The rigid body references the physic material without an se physic
+00:15.460 --> 00:19.870
+Bem, os videogames podem incluir áreas orgânicas como a superfície de um planeta.
 
-00:30.350 --> 00:36.860
-material asset in three d physic material is the asset that describes how to handle colliding objects,
+00:19.870 --> 00:25.060
+Nossos personagens do jogo e outros itens do jogo podem andar e interagir nessa superfície.
 
-00:36.860 --> 00:39.740
-specifically friction and bouncy ness.
+00:25.060 --> 00:28.000
+Por exemplo, nosso personagem principal, subindo uma montanha.
 
-00:39.740 --> 00:42.410
-The physical material to RD asset.
+00:28.000 --> 00:33.070
+A interação da física realista nessa superfície é o que chamamos de física do terreno.
 
-00:42.410 --> 00:44.090
-The same goes in to DX.
+00:33.070 --> 00:35.230
+Então, o que é o sistema de terreno do Unity?
 
-00:44.540 --> 00:46.910
-Let's take a look at an example in three D.
+00:35.230 --> 00:39.250
+O sistema de terreno do Unity permite que você adicione vastas paisagens ao seu jogo.
 
-00:47.880 --> 00:51.810
-Select a game object with a physic material in the inspector window.
+00:39.250 --> 00:45.100
+O editor do Unity oferece uma seleção de ferramentas para criar o terreno de forma rápida e fácil em tempo de execução.
 
-00:51.810 --> 00:53.560
-We can look at all the components.
+00:45.100 --> 00:48.430
+A renderização do terreno é altamente otimizada para eficiência.
 
-00:53.580 --> 00:55.200
-Let's browse the properties.
+00:48.730 --> 00:50.920
+As características do sistema de terreno.
 
-00:55.770 --> 00:58.560
-Our focus will be dynamic friction.
+00:50.920 --> 00:57.340
+Ele tem uma textura de superfície editável, geometria de superfície editável e um colisor de terreno automatizado.
 
-00:58.560 --> 01:01.010
-The friction used when already moving.
+00:58.150 --> 01:03.910
+Por exemplo, nesta cena aqui, há um terreno que eu criei e tenho uma série de diferentes
 
-01:01.020 --> 01:03.590
-Usually it's a value between zero and one.
+01:03.910 --> 01:09.670
+bolas caindo sobre a superfície e interagindo com ela como se fosse uma superfície física real.
 
-01:03.600 --> 01:07.470
-A value of zero feels like ice, static friction.
+01:11.160 --> 01:12.990
+O componente colisor de terreno.
 
-01:07.470 --> 01:11.790
-This is the friction that's used when an object is laying still on a surface.
+01:12.990 --> 01:17.730
+É o que define a superfície de colisão para a mesma forma do terreno.
 
-01:11.790 --> 01:14.220
-Usually it's a value from 0 to 1.
+01:18.000 --> 01:21.720
+Portanto, temos um objeto de jogo com nosso componente de transformação típico.
 
-01:14.220 --> 01:16.320
-A value of zero feels like ice.
+01:21.720 --> 01:27.180
+E, para configurar esse cenário, precisamos adicionar o componente de terreno, o Collider de terreno e
 
-01:16.410 --> 01:17.520
-Bouncy ness.
+01:27.180 --> 01:29.040
+depois o ativo de dados do terreno.
 
-01:17.520 --> 01:19.410
-How bouncy is the surface?
+01:30.340 --> 01:32.830
+Então, quais são as propriedades físicas do terreno?
 
-01:19.410 --> 01:21.810
-A value of zero will not bounce.
+01:33.160 --> 01:36.910
+Há muitas configurações aqui, mas vamos nos concentrar nas físicas do material.
 
-01:21.810 --> 01:25.200
-A value of one will bounce without any loss of energy.
+01:36.910 --> 01:42.370
+Essa é uma referência ao recurso que descreve como lidar com objetos que colidem por atrito e ricochete
 
-01:25.200 --> 01:25.800
-Friction.
+01:42.370 --> 01:42.740
+nós.
 
-01:25.800 --> 01:30.330
-Combine how the friction of two colliding objects is combined bounce.
+01:42.760 --> 01:45.850
+Os dados do terreno são algo que ainda não vimos.
 
-01:30.330 --> 01:34.230
-Combine how the bouncy ness of two objects is combined.
+01:45.850 --> 01:50.530
+Ele armazena a altura, os mapas ou a superfície de onde estão as montanhas e os vales.
 
-01:35.560 --> 01:36.950
-Let's take a look at a demo.
+01:50.560 --> 01:57.220
+As posições da malha de detalhes, quaisquer instâncias de árvores que você tenha adicionado, você pode adicionar árvores em cima do
 
-01:36.970 --> 01:43.210
-Sliding cubes begin will play the scene will create a physic material from scratch and we'll play with
+01:57.220 --> 02:03.430
+superfície para criar uma cena realista e os mapas alfa de textura do terreno permitem a colisão de árvores.
 
-01:43.210 --> 01:44.110
-its properties.
+02:03.430 --> 02:10.210
+Se você definir isso como verdadeiro, também incluirá a geometria das árvores nos cálculos de colisão.
 
-01:44.710 --> 01:48.430
-In this scene, let's open up our sliding cubes.
+02:10.210 --> 02:15.940
+Portanto, definir true aqui é mais caro, mas lhe dá o resultado realista que você pode querer, que
 
-01:48.430 --> 01:49.120
-Begin.
+02:15.940 --> 02:20.940
+é que o seu personagem e outros itens ricocheteiem nas árvores de forma crível.
 
-01:50.320 --> 01:54.940
-We'll give it a run and we'll see that the cubes interact in the same way.
+02:20.950 --> 02:26.230
+A propriedade thickness aqui determina a espessura do terreno na direção vertical quando
 
-01:56.070 --> 02:01.110
-They slowly fall down, turning over themselves with the default.
+02:26.230 --> 02:27.730
+usado com um colisor de terreno.
 
-02:01.380 --> 02:04.080
-We do not yet have physic materials applied.
+02:27.730 --> 02:33.820
+Quaisquer colisores encontrados dentro dessa superfície de espessura serão colocados no topo da superfície.
 
-02:04.110 --> 02:05.670
-Let's go ahead and create some.
+02:34.660 --> 02:37.060
+Então, vamos criar um terreno com física.
 
-02:05.760 --> 02:11.250
-We'll leave one of these cubes as the default and then we'll create a few experiments for the other
+02:37.510 --> 02:38.950
+Vamos abrir o terreno.
 
-02:11.250 --> 02:11.730
-two.
+02:38.950 --> 02:41.430
+A cena inicial criará um terreno.
 
-02:12.300 --> 02:16.320
-So if we right click on the folder we created.
+02:41.440 --> 02:43.120
+Aprenderemos a editá-lo.
 
-02:17.320 --> 02:24.250
-We can go to create and physic material because we're in a 3D scene, it's important that we pick physic
+02:43.150 --> 02:46.630
+Vamos criar alguns itens seguintes no topo para testar a física.
 
-02:24.250 --> 02:25.090
-material.
+02:47.350 --> 02:49.270
+Vamos usar o terrain begin.
 
-02:27.100 --> 02:28.630
-We'll call this one default.
+02:51.020 --> 02:51.200
+Aqui.
 
-02:29.560 --> 02:32.020
-And we'll leave it at those default settings.
+02:51.200 --> 02:52.760
+Temos uma câmera configurada.
 
-02:32.650 --> 02:34.120
-Now, let's create another one.
+02:52.760 --> 02:55.880
+Ainda não há terreno, então vamos em frente e criar o terreno.
 
-02:37.940 --> 02:40.220
-This one will make it very bouncy.
+02:56.390 --> 02:59.510
+Vamos usar o Game object three D object terrain.
 
-02:41.210 --> 02:48.170
-And we'll use the default values for the first, as I mentioned, and then the bouncy one will increase
+03:01.580 --> 03:03.710
+Isso cria um terreno no meio do mundo.
 
-02:48.170 --> 02:50.780
-the bouncy ness to the highest value of one.
+03:03.740 --> 03:07.880
+Agora, vamos adicionar algumas camadas na parte superior que podemos usar para pintar a textura.
 
-02:50.900 --> 02:54.170
-And now we'll create the third wheel right click.
+03:12.620 --> 03:13.940
+Criará três camadas.
 
-02:54.170 --> 03:02.270
-We create physical material and this one will make it a very slippery or slippy one.
+03:13.940 --> 03:15.170
+Uma para a rocha.
 
-03:03.420 --> 03:09.960
-That will be with no dynamic friction and no static friction to show an extreme.
+03:16.250 --> 03:17.990
+Uma para neve e outra para grama.
 
-03:11.200 --> 03:13.150
-We'll leave the bouncy ness at the default.
+03:21.760 --> 03:27.770
+Em seguida, vamos prosseguir e, em vez de pintar a textura, primeiro vamos elevar e abaixar o terreno.
 
-03:13.720 --> 03:15.010
-Now let's assign them.
+03:29.070 --> 03:32.370
+Tanto com os pincéis quanto com o terreno, podemos ajustar o tamanho e a opacidade.
 
-03:16.220 --> 03:19.700
-We can see the highlight here on the left one, we'll leave that as default.
+03:43.340 --> 03:45.830
+Em seguida, nas montanhas, pintaremos a textura correta.
 
-03:20.240 --> 03:25.700
-These are all set up identically, but I gave them a unique name just to hint where we should use so
+04:06.480 --> 04:06.750
+Pronto.
 
-03:25.700 --> 03:28.310
-bouncy we'll drag that into the box Collider.
+04:06.750 --> 04:11.910
+Temos algumas montanhas com um pouco de neve e algumas texturas diferentes, e vamos notar isso.
 
-03:28.580 --> 03:34.490
-And then group three, this one here, we will go ahead and we'll add the slippi.
+04:13.120 --> 04:13.930
+No terreno.
 
-03:35.700 --> 03:37.470
-Now let's play the scene again.
+04:13.930 --> 04:17.140
+Temos o cartão do terreno configurado automaticamente para nós.
 
-03:37.470 --> 03:40.980
-And we should see them fall in a different way.
+04:17.860 --> 04:19.510
+Vamos prosseguir e executar a cena.
 
-03:46.220 --> 03:48.110
-You can see that we got different results.
+04:20.990 --> 04:25.610
+Também vamos trazer o patrocinador que criei para colocar alguns objetos em cima e testar a física.
 
-03:50.150 --> 03:53.120
-In the next video, we'll take a look at three D joints.
+04:31.170 --> 04:37.350
+Podemos ver que nossos objetos amarelos gerados estão respondendo à superfície e coletando em pontos baixos, também
+
+04:37.350 --> 04:38.640
+caindo do terreno.
+
+04:39.600 --> 04:40.710
+Comportando-se com a física.
+
+04:45.460 --> 04:49.270
+Na próxima seção, veremos a programação de física do Unity C Sharp.
