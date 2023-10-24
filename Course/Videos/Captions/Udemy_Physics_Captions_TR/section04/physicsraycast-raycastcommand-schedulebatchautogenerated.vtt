@@ -1,316 +1,316 @@
 WEBVTT
 
 00:00.670 --> 00:04.450
-Physics Ray cast and Ray cast Command Schedule batch.
+Fizik Işın dökümü ve Işın dökümü Komut Programı toplu işi.
 
 00:04.660 --> 00:08.500
-In this video, we'll cover what are spatial queries in physics?
+Bu videoda fizikte uzamsal sorgular nelerdir konusunu ele alacağız.
 
 00:08.650 --> 00:10.870
-Why are they useful and how do we do them?
+Neden faydalıdırlar ve bunları nasıl yaparız?
 
 00:11.320 --> 00:13.900
-Then we'll open up the Unity editor and play with them.
+Sonra Unity editörünü açacağız ve onlarla oynayacağız.
 
 00:14.530 --> 00:15.810
-Let's take a step back.
+Bir adım geriye gidelim.
 
 00:15.820 --> 00:18.550
-What do we mean when we talk about a game physics system?
+Bir oyun fiziği sisteminden bahsederken ne demek istiyoruz?
 
 00:18.580 --> 00:20.140
-Well, there's two major parts.
+İki ana bölüm var.
 
 00:20.140 --> 00:23.980
-Most of this course so far has talked about rigid body simulation.
+Bu dersin şimdiye kadarki kısmında katı cisim simülasyonundan bahsedildi.
 
 00:24.280 --> 00:28.000
-This is the realistic movement and interaction between groups of objects.
+Bu, nesne grupları arasındaki gerçekçi hareket ve etkileşimdir.
 
 00:28.240 --> 00:31.120
-We haven't yet talked much about spatial queries.
+Henüz uzamsal sorgular hakkında fazla konuşmadık.
 
 00:31.330 --> 00:39.130
-This is projecting a ray or a collider through space to see about distance and check future collisions.
+Bu, mesafeyi görmek ve gelecekteki çarpışmaları kontrol etmek için uzayda bir ışın veya çarpıştırıcı yansıtıyor.
 
 00:39.400 --> 00:44.290
-For example, we could see is my gun pointing directly toward the enemy.
+Örneğin, silahımın doğrudan düşmana doğrultulmuş olduğunu görebiliriz.
 
 00:44.590 --> 00:49.090
-The physics class defines global physics, properties and helper methods.
+Physics sınıfı global fiziği, özellikleri ve yardımcı yöntemleri tanımlar.
 
 00:49.210 --> 00:55.270
-Our focus will be on physics recast one of the methods that gives us some great information we can learn.
+Odak noktamız, bize öğrenebileceğimiz bazı harika bilgiler veren yöntemlerden biri olan fiziği yeniden şekillendirmek olacak.
 
 00:55.270 --> 00:57.130
-Is there anything in front of my object?
+Nesnemin önünde bir şey var mı?
 
 00:57.130 --> 00:59.200
-What exactly is in front of my object?
+Nesnemin önünde tam olarak ne var?
 
 00:59.200 --> 00:59.620
-What?
+Ne?
 
 00:59.620 --> 01:02.260
-Empty space is in front of the object?
+Boş alan nesnenin önünde mi?
 
 01:02.440 --> 01:04.390
-So why do spatial queries?
+Peki neden uzamsal sorgular yapalım?
 
 01:04.540 --> 01:08.370
-Well, spatial queries can help us answer a lot of compelling questions.
+Mekânsal sorgular pek çok zorlayıcı soruyu yanıtlamamıza yardımcı olabilir.
 
 01:08.380 --> 01:09.970
-Is our enemy near a wall?
+Düşmanımız bir duvarın yanında mı?
 
 01:09.970 --> 01:11.830
-Well, the enemy could turn around.
+Düşman geri dönebilir.
 
 01:11.860 --> 01:13.540
-Is the enemy in our gun sights?
+Düşman görüş alanımızda mı?
 
 01:13.540 --> 01:17.300
-Well, we could indicate to us as the player that now is time to shoot.
+Oyuncu olarak bize şimdi ateş etme zamanı olduğunu gösterebiliriz.
 
 01:17.320 --> 01:18.640
-Can the enemy see me?
+Düşman beni görebilir mi?
 
 01:18.670 --> 01:19.780
-This could help the enemy.
+Bu düşmana yardımcı olabilir.
 
 01:19.780 --> 01:20.860
-AI alert.
+AI alarmı.
 
 01:20.860 --> 01:21.760
-Other enemy.
+Diğer düşman.
 
 01:21.760 --> 01:25.170
-AI is an object under my mouse position.
+AI fare konumumun altında bir nesne.
 
 01:25.180 --> 01:27.580
-This could help us select or drag the object.
+Bu, nesneyi seçmemize veya sürüklememize yardımcı olabilir.
 
 01:27.580 --> 01:30.970
-Where exactly within a collider did the collision occur?
+Çarpışma çarpıştırıcının tam olarak neresinde gerçekleşti?
 
 01:31.000 --> 01:36.940
-This could tell us the difference in points rewarded for a bull's eye shot at a target or a lower point
+Bu bize bir hedefe tam isabet atış veya daha düşük bir puan için ödüllendirilen puan farkını söyleyebilir
 
 01:36.940 --> 01:37.540
-value.
+değer.
 
 01:37.900 --> 01:39.520
-And there's much more possible.
+Ve çok daha fazlası mümkün.
 
 01:39.520 --> 01:41.260
-This is very useful stuff.
+Bu çok faydalı bir şey.
 
 01:41.260 --> 01:45.360
-The physics class that I mentioned has a lot of methods available for us.
+Bahsettiğim fizik dersinde bizim için pek çok yöntem mevcut.
 
 01:45.370 --> 01:47.080
-Let's talk about recast.
+Yeniden şekillendirme hakkında konuşalım.
 
 01:47.110 --> 01:48.800
-Take a look at the diagram here.
+Buradaki diyagrama bir göz atın.
 
 01:48.820 --> 01:55.330
-Imagine that we cast array from point one and we cast it in a direction toward the pink box.
+Diziyi birinci noktadan aldığımızı ve pembe kutuya doğru yönlendirdiğimizi düşünün.
 
 01:55.330 --> 02:00.980
-This is going to return us a ordered list of intersecting colliders in the scene.
+Bu bize sahnedeki kesişen çarpıştırıcıların sıralı bir listesini döndürecektir.
 
 02:01.000 --> 02:03.880
-In this case, it would return number three.
+Bu durumda, üç numarayı döndürecektir.
 
 02:03.910 --> 02:07.510
-Now, notice that we're not going to cast out into infinite space here.
+Şimdi, burada sonsuz uzaya çıkmayacağımıza dikkat edin.
 
 02:07.510 --> 02:13.090
-We're going to use a set finite distance that's an optimization that's going to help the calculations.
+Hesaplamalara yardımcı olacak bir optimizasyon olan bir dizi sonlu mesafe kullanacağız.
 
 02:13.090 --> 02:18.610
-So, for example, if we have the distance set to four, we would collide with the pink box, but not
+Örneğin, mesafeyi dört olarak ayarlarsak, pembe kutuyla çarpışırız, ancak
 
 02:18.610 --> 02:19.570
-the blue box.
+mavi kutu.
 
 02:19.600 --> 02:22.030
-A similar method would be box cast.
+Benzer bir yöntem kutu dökümü olabilir.
 
 02:22.030 --> 02:27.690
-This cast a shape out from the point one through to the pink cube, but not to the blue cube.
+Bu, bir noktasından pembe küpe doğru bir şekil oluşturur, ancak mavi küpe doğru değil.
 
 02:27.700 --> 02:32.770
-The distance here is instead of sending out a line or array, it's a thicker space.
+Buradaki mesafe, bir çizgi veya dizi göndermek yerine daha kalın bir alandır.
 
 02:32.770 --> 02:38.920
-The array cast, command schedule, batch functions, something like the physics recast, but it's much,
+Dizi dökümü, komut çizelgesi, toplu işlevler, fizik yeniden dökümü gibi bir şey, ama çok fazla,
 
 02:38.920 --> 02:39.940
-much faster.
+çok daha hızlı.
 
 02:39.940 --> 02:46.660
-The operations will be performed asynchronously and in parallel on parallel processors if they're available.
+İşlemler eşzamansız olarak ve varsa paralel işlemcilerde paralel olarak gerçekleştirilecektir.
 
 02:46.660 --> 02:48.940
-This gives us blazing fast speed.
+Bu bize inanılmaz bir hız kazandırır.
 
 02:49.120 --> 02:53.200
-It's a relatively new feature to unity, but it's publicly available.
+Unity için nispeten yeni bir özellik, ancak herkese açık.
 
 02:53.410 --> 02:54.670
-Let's see some demos.
+Biraz demo görelim.
 
 02:54.940 --> 02:57.130
-We'll take a look at the Ray cast demo.
+Ray cast demosuna bir göz atacağız.
 
 02:57.160 --> 02:59.800
-We'll play the scene and inspect the code.
+Sahneyi oynatacağız ve kodu inceleyeceğiz.
 
 03:03.000 --> 03:03.180
-Here.
+İşte.
 
 03:03.180 --> 03:05.520
-We're going to be looking at the recast demo.
+Yeniden düzenlenen demoya bakacağız.
 
 03:06.770 --> 03:08.010
-We run the scene.
+Olay yerine gidiyoruz.
 
 03:08.190 --> 03:16.410
-And this capsule, as we can see with the red guideline here, it is sending out a rate cast below it.
+Ve bu kapsül, burada kırmızı kılavuzla görebileceğimiz gibi, bunun altında bir oran gönderiyor.
 
 03:16.770 --> 03:20.850
-And then in the console window, it's showing us what it's colliding with.
+Ve sonra konsol penceresinde bize neyle çarpıştığını gösteriyor.
 
 03:21.240 --> 03:25.290
-So the red line, as you'd expect, it's saying the ramp is close below.
+Kırmızı çizgi, beklediğiniz gibi, rampanın aşağıya yakın olduğunu söylüyor.
 
 03:25.350 --> 03:31.690
-Now, if I manually move this off of the ramp, it then says the floor is close below.
+Şimdi, bunu rampanın dışına manuel olarak taşırsam, zeminin aşağıda yakın olduğunu söylüyor.
 
 03:31.710 --> 03:37.980
-So you can see we can detect which object is below us or in whatever direction we want and get some
+Böylece, hangi nesnenin altımızda veya istediğimiz yönde olduğunu tespit edebileceğimizi ve bazı
 
 03:37.980 --> 03:39.020
-information about it.
+Bu konuda bilgi.
 
 03:39.030 --> 03:40.200
-Let's see how that works.
+Bakalım nasıl olacak.
 
 03:44.590 --> 03:45.760
-In the update.
+Güncellemede.
 
 03:46.670 --> 03:52.220
-What we do is we use physics, recast, and we cast a ray in the direction of downward.
+Yaptığımız şey fiziği kullanmak, yeniden şekillendirmek ve aşağıya doğru bir ışın göndermektir.
 
 03:52.460 --> 03:57.200
-Then if there's a collider there that we've collided with, we'll check the layer of it.
+Sonra orada çarpıştığımız bir çarpıştırıcı varsa, onun katmanını kontrol edeceğiz.
 
 03:57.410 --> 04:00.890
-If it's a floor layer, in this case, we do a debug log.
+Eğer bu bir zemin katmanı ise, bu durumda bir hata ayıklama günlüğü tutarız.
 
 04:01.010 --> 04:07.570
-Perhaps your character's footsteps change sound when he's walking on a metal surface or on top of water.
+Belki de karakteriniz metal bir yüzeyde veya suyun üstünde yürürken ayak sesleri değişiyordur.
 
 04:07.580 --> 04:09.230
-You could do things like that.
+Bunun gibi şeyler yapabilirsiniz.
 
 04:09.560 --> 04:10.530
-And that's it.
+İşte bu kadar.
 
 04:10.550 --> 04:13.160
-We'll take a look at the Ray cast command demo.
+Ray cast komut demosuna bir göz atacağız.
 
 04:13.190 --> 04:15.800
-We'll play the scene and inspect the code.
+Sahneyi oynatacağız ve kodu inceleyeceğiz.
 
 04:16.770 --> 04:19.650
-All right, let's open up the Ray cast command demo.
+Pekala, Ray cast komut demosunu açalım.
 
 04:21.560 --> 04:21.830
-Here.
+İşte.
 
 04:21.830 --> 04:27.090
-We've got a familiar setup from our Recast demo, but with recast command.
+Recast demomuzdan tanıdık bir kurulumumuz var, ancak recast komutu ile.
 
 04:27.110 --> 04:32.030
-What we're going to do is a slightly different way to get the end result here.
+Yapacağımız şey, burada sonuca ulaşmak için biraz farklı bir yoldur.
 
 04:32.030 --> 04:37.760
-So similar to the last one we've got, ramp is close below in our console.
+Elimizdeki sonuncuya benzer şekilde, rampa konsolumuzda aşağıya yakındır.
 
 04:38.150 --> 04:43.370
-We move out, the floor is close below in our console, so we're detecting what's beneath us.
+Dışarı çıkıyoruz, zemin konsolumuza yakın, bu yüzden altımızda ne olduğunu tespit ediyoruz.
 
 04:43.600 --> 04:46.070
-Let's see that the implementation here is different.
+Buradaki uygulamanın farklı olduğunu görelim.
 
 04:47.070 --> 04:49.350
-Inside the recast command.
+Recast komutunun içinde.
 
 04:50.460 --> 04:53.940
-What we're doing is inside the update.
+Yaptığımız şey güncellemenin içinde.
 
 04:54.060 --> 05:01.790
-Every update, I'm creating a new recast command here, and I'm scheduling a batch of commands.
+Her güncellemede, burada yeni bir recast komutu oluşturuyorum ve bir grup komut planlıyorum.
 
 05:01.800 --> 05:08.310
-Now, in this simple example, what I'm doing here is I'm populating a list of commands with only one.
+Şimdi, bu basit örnekte, burada yaptığım şey, bir komut listesini yalnızca bir komutla doldurmaktır.
 
 05:08.310 --> 05:10.800
-I'm putting it the zero index one command.
+Sıfır indeks bir komutunu koyuyorum.
 
 05:10.800 --> 05:16.620
-But you can imagine if you had a complex scene where you happen to be doing a lot of recasting, we
+Ama hayal edebilirsiniz ki, karmaşık bir sahneniz varsa ve bu sahnede çok fazla yeniden çekim yapıyorsanız, biz
 
 05:16.620 --> 05:20.730
-could put them all into the same commands list and call schedule batch.
+hepsini aynı komut listesine koyabilir ve program toplu iş olarak adlandırabilir.
 
 05:20.730 --> 05:21.450
-Once.
+Bir kere.
 
 05:21.540 --> 05:27.030
-What we can do then is we can guarantee we're getting really fast results because this is going to happen
+O zaman yapabileceğimiz şey, gerçekten hızlı sonuçlar alacağımızı garanti edebiliriz çünkü bu gerçekleşecek
 
 05:27.030 --> 05:31.560
-asynchronously and it's also going to happen on multiple cores.
+eşzamansız olarak ve aynı zamanda birden fazla çekirdek üzerinde gerçekleşecek.
 
 05:31.560 --> 05:35.880
-If the computer or the device you're running on has multiple processing.
+Çalıştırdığınız bilgisayar veya cihaz birden fazla işleme sahipse.
 
 05:36.490 --> 05:42.490
-Then down here, similar to the last example, we just go through the hits that we've got and we see
+Sonra burada, son örneğe benzer şekilde, elimizdeki isabetleri gözden geçiriyoruz ve şunları görüyoruz
 
 05:42.490 --> 05:48.550
-if for any of the hits, if there's a collider present and if it's either the floor or the ramp, that's
+eğer herhangi bir vuruş için çarpıştırıcı varsa ve bu çarpışma zemin ya da rampa ise, bu
 
 05:48.550 --> 05:49.000
-it.
+o.
 
 05:49.150 --> 05:50.230
-A bonus assignment.
+Bonus ödev.
 
 05:50.230 --> 05:56.530
-If you want to get a bit deeper into Ray casting, check out the Ray cast drag and drop demo, play
+Ray dökümünü biraz daha derinlemesine incelemek istiyorsanız, Ray döküm sürükle ve bırak demosuna göz atın, oynatın
 
 05:56.530 --> 05:58.450
-the scene and inspect the code.
+sahneyi ve kodu inceleyin.
 
 05:59.140 --> 06:05.260
-In the next video we'll look at physics, debugging, debug, draw ray physics, debugger window and
+Bir sonraki videoda fizik, hata ayıklama, hata ayıklama, ışın fiziği çizme, hata ayıklayıcı penceresi ve
 
 06:05.260 --> 06:06.490
-profile a window.
+bir pencere profili.
 
 06:06.910 --> 06:09.790
-In this video we'll cover what is the bugging?
+Bu videoda dinleme nedir konusunu ele alacağız.
 
 06:09.790 --> 06:12.520
-What are the challenges of debugging physics?
+Fizikte hata ayıklamanın zorlukları nelerdir?
 
 06:12.520 --> 06:14.770
-What tools do we have that help us out?
+Bize yardımcı olacak ne gibi araçlarımız var?
 
 06:15.070 --> 06:18.580
-And finally, we'll open up the Unity editor and we'll play with all this.
+Ve son olarak, Unity editörünü açacağız ve tüm bunlarla oynayacağız.

@@ -1,253 +1,253 @@
 WEBVTT
 
 00:01.740 --> 00:07.570
-Adding extra polish in this video will cover adding programmatic animation for the collected coins.
+Bu videoda ekstra cila eklemek, toplanan paralar için programatik animasyon eklemeyi kapsayacaktır.
 
 00:07.590 --> 00:11.640
-We'll add sounds through the sound manager and we'll discuss level design.
+Ses yöneticisi aracılığıyla sesler ekleyeceğiz ve seviye tasarımını tartışacağız.
 
 00:11.850 --> 00:13.230
-So what is Polish?
+Peki Lehçe nedir?
 
 00:13.230 --> 00:13.640
-Polish?
+Polonyalı mı?
 
 00:13.830 --> 00:18.960
-Are the small details at the end of a project which take a good project and make it great?
+İyi bir projeyi alıp harika yapan, projenin sonundaki küçük ayrıntılar mıdır?
 
 00:18.990 --> 00:24.420
-Often they're visual and audio and animation and small gameplay tweaks to.
+Bunlar genellikle görsel, işitsel, animasyon ve küçük oynanış değişiklikleri oluyor.
 
 00:25.560 --> 00:29.370
-The tax break breakdown here will be to add animation to our spinning coins.
+Buradaki vergi indirimi, dönen paralarımıza animasyon eklemek olacaktır.
 
 00:29.370 --> 00:33.870
-So when we collect them, they fade in instead of instantly disappearing.
+Böylece onları topladığımızda, anında yok olmak yerine kaybolurlar.
 
 00:33.870 --> 00:38.670
-We'll add sounds to key events through the sound manager and we'll discuss level design.
+Ses yöneticisi aracılığıyla önemli olaylara sesler ekleyeceğiz ve seviye tasarımını tartışacağız.
 
 00:39.680 --> 00:45.000
-For the project, we'll open up section six Video five Crazy Ball five OC.
+Proje için, altıncı bölüm Video beş Crazy Ball beş OC'yi açacağız.
 
 00:45.050 --> 00:49.070
-Here we are inside Unity and we'll open up Crazy Ball five.
+İşte Unity'nin içindeyiz ve Crazy Ball beşi açacağız.
 
 00:49.850 --> 00:55.580
-Now here, we've added some polish, we've added some sounds, we've added some animation.
+Şimdi burada, biraz cila ekledik, biraz ses ekledik, biraz animasyon ekledik.
 
 00:55.580 --> 00:57.740
-And I also want to talk a bit about level design.
+Ayrıca biraz da seviye tasarımı hakkında konuşmak istiyorum.
 
 00:57.890 --> 01:02.180
-So let's start with the effect that we've added for when we collect coins.
+Madeni paraları topladığımız zaman için eklediğimiz efektle başlayalım.
 
 01:02.540 --> 01:07.370
-Now, before, when we collected a coin, it would instantly disappear.
+Önceden bir bozuk para topladığımızda anında kaybolurdu.
 
 01:07.880 --> 01:12.860
-And here what I've done is I have it scale from its full size down to zero.
+Ve burada yaptığım şey, tam boyutundan sıfıra kadar ölçeklendirmek.
 
 01:13.130 --> 01:14.120
-Very quickly.
+Çok hızlı.
 
 01:14.120 --> 01:15.620
-But I think the effect is nice.
+Ama bence etkisi güzel.
 
 01:15.620 --> 01:15.860
-Watch.
+İzle.
 
 01:15.860 --> 01:19.040
-When I collect this coin, it shrinks down.
+Bu parayı topladığımda, küçülüyor.
 
 01:19.040 --> 01:23.780
-It's subtle, but it's a really nice level of polish that just gives you a little bit of extra feeling
+Çok ince ama gerçekten hoş bir cila seviyesi, size biraz daha ekstra bir his veriyor.
 
 01:23.780 --> 01:26.790
-that there's some care in the game and it's a nice effect.
+Oyunda biraz özen var ve bu güzel bir etki.
 
 01:26.810 --> 01:28.700
-So let's see how we accomplish that.
+Bunu nasıl başaracağımızı görelim.
 
 01:29.460 --> 01:30.960
-We'll take a look at some code.
+Bazı kodlara bir göz atacağız.
 
 01:31.690 --> 01:38.230
-Here in the coin, we can see that in the destroy that we had set up before the destroy me public method
+Burada madalyonun içinde, destroy me public yönteminden önce kurduğumuz destroy'da şunu görebiliriz
 
 01:38.230 --> 01:42.990
-I flag the is a live false and then I used to immediately do a destroy.
+Canlı bir yanlış olduğunu işaretler ve ardından hemen bir yok etme işlemi yapardım.
 
 01:43.000 --> 01:49.180
-Now in number one here we can see that we're using the do scale operation and it's going to scale down
+Şimdi burada bir numarada do scale işlemini kullandığımızı ve aşağı ölçeklendireceğini görebiliriz
 
 01:49.180 --> 01:55.390
-to zero Over the course of about a fourth of a second, I'm able to set an easing to have it kind of
+saniyenin dörtte biri kadar bir süre boyunca, bir tür gevşeme ayarlayabiliyorum.
 
 01:55.390 --> 01:58.150
-bounce or do it quickly or accelerate as it goes.
+zıplar ya da hızlıca yapar ya da giderken hızlanır.
 
 01:58.150 --> 01:59.680
-You've got lots of options there.
+Orada birçok seçeneğiniz var.
 
 01:59.680 --> 02:01.960
-And then I set the on complete method.
+Ve sonra tamamlandı yöntemini ayarladım.
 
 02:01.960 --> 02:07.090
-What that does is waits till the end of the animation and then destroys the object.
+Bunun yaptığı şey animasyonun sonuna kadar beklemek ve ardından nesneyi yok etmektir.
 
 02:07.090 --> 02:12.700
-So instead of instantly destroying the object, it does this nice animation and about a quarter of a
+Böylece nesneyi anında yok etmek yerine, bu güzel animasyonu yapar ve yaklaşık dörtte bir
 
 02:12.700 --> 02:15.430
-second later it will be destroyed.
+bir saniye sonra yok olacak.
 
 02:15.430 --> 02:16.810
-We can see the settings here.
+Ayarları burada görebiliriz.
 
 02:16.810 --> 02:22.330
-I've got shrinks down to about zero and it does it over a quarter of a second, but you could tweak
+Ben sıfıra kadar küçülttüm ve bunu saniyenin çeyreğinde yapıyor, ama siz ayarlayabilirsiniz
 
 02:22.330 --> 02:22.720
-that.
+Bu.
 
 02:22.720 --> 02:25.870
-Now let's talk about the sound design inside the scene.
+Şimdi sahnenin içindeki ses tasarımı hakkında konuşalım.
 
 02:25.870 --> 02:27.280
-I've set up a sound manager.
+Bir ses yöneticisi kurdum.
 
 02:27.280 --> 02:28.390
-Let's take a look at that.
+Şuna bir göz atalım.
 
 02:29.630 --> 02:37.250
-So in the environment, we've got the sound manager here and it has all the sounds we want lined up
+Ortamda, burada ses yöneticimiz var ve istediğimiz tüm sesleri sıralamış durumda
 
 02:37.250 --> 02:38.900
-in there, dragged in from our project.
+Orada, projemizden sürüklenmiş.
 
 02:38.900 --> 02:42.920
-These are WAV files or M.P. threes that we can use to make some sounds.
+Bunlar bazı sesler çıkarmak için kullanabileceğimiz WAV dosyaları veya M.P. üçlüleridir.
 
 02:42.920 --> 02:50.000
-Then I can call by index and say play zero for the coin, play one for the collision, etc..
+Sonra indekse göre çağırabilir ve bozuk para için sıfır oynat, çarpışma için bir oynat vb. diyebilirim.
 
 02:50.090 --> 02:51.410
-Let's look at the code again.
+Koda tekrar bakalım.
 
 02:52.490 --> 02:59.780
-So what I do here inside the on trigger enter is after I know that I've got the coin and I start the
+Yani burada tetikleyici girişinin içinde yaptığım şey, madeni parayı aldığımı bildikten sonra
 
 02:59.780 --> 03:05.990
-shrinking operation with a destroy me call, I then play the sound I use sound manager instance play
+beni yok et çağrısı ile küçültme işlemi, daha sonra ses yöneticisi örneğini kullandığım sesi çalıyorum
 
 03:05.990 --> 03:09.320
-audio clip and I pass in the index of what I want to play.
+ses klibi ve oynatmak istediğim dizini giriyorum.
 
 03:09.680 --> 03:10.940
-Those are all stored here.
+Bunların hepsi burada saklanır.
 
 03:10.940 --> 03:14.930
-So now within the constants, I know exactly which sound I'm about to play.
+Şimdi sabitler içinde, tam olarak hangi sesi çalmak üzere olduğumu biliyorum.
 
 03:14.930 --> 03:18.110
-There's lots of ways to organize your sound in a project, but that way works.
+Bir projede sesinizi organize etmenin birçok yolu vardır, ancak bu yol işe yarar.
 
 03:18.110 --> 03:20.570
-Well, now let's talk about the game design.
+Şimdi de oyun tasarımı hakkında konuşalım.
 
 03:22.050 --> 03:25.770
-So if we zoom out a little bit and look at the world from a top.
+Eğer biraz uzaklaştırıp dünyaya tepeden bakarsak.
 
 03:27.430 --> 03:30.070
-This is how I originally designed the game.
+Oyunu ilk olarak bu şekilde tasarlamıştım.
 
 03:30.130 --> 03:35.400
-I thought from the beginning here in the game view, I want to be able to see the finish line.
+En başından beri oyun görünümünde bitiş çizgisini görebilmek istediğimi düşünmüştüm.
 
 03:35.410 --> 03:42.700
-So between the time UI, the score UI and visually connecting with the end goal, the user is led on
+Böylece zaman kullanıcı arayüzü, skor kullanıcı arayüzü ve nihai hedefle görsel bağlantı arasında kullanıcı yönlendirilir
 
 03:42.700 --> 03:45.340
-a clear path where they should go.
+gitmeleri gereken açık bir yol.
 
 03:45.550 --> 03:48.610
-Then as they play the game, they would.
+Sonra oyunu oynadıkça.
 
 03:49.430 --> 03:55.970
-Move across here, perhaps trying to get all the coins they could round the corner, come up, they
+Buradan karşıya geçip, belki de köşeyi dönerek alabildikleri tüm paraları almaya çalışıyorlardı.
 
 03:55.970 --> 04:01.070
-would see as they collect the coins that the score goes up so they get the connection.
+paraları topladıkça skorun arttığını görecekler ve böylece bağlantı kuracaklar.
 
 04:01.070 --> 04:05.750
-That points is a good thing in games typically, and they see that that increments when they collect
+Bu puanlar genellikle oyunlarda iyi bir şeydir ve topladıkları zaman arttığını görürler.
 
 04:05.750 --> 04:06.440
-coins.
+Paralar.
 
 04:06.440 --> 04:07.900
-So that works really well.
+Yani bu gerçekten iyi çalışıyor.
 
 04:07.910 --> 04:11.350
-I've created a very simple maze pattern here.
+Burada çok basit bir labirent modeli oluşturdum.
 
 04:11.360 --> 04:17.600
-Also allowing user who's interested in the best possible time to just be able to come right over this
+Ayrıca, mümkün olan en iyi zamanda ilgilenen kullanıcının doğrudan bunun üzerine gelebilmesine olanak tanır
 
 04:17.600 --> 04:21.560
-little hill and come around the corner and get the quickest score.
+ve köşeyi dönüp en hızlı skoru elde etmek.
 
 04:21.590 --> 04:25.370
-They would also see that they win, but they don't get the highest score.
+Ayrıca kazandıklarını görecekler, ancak en yüksek puanı alamayacaklar.
 
 04:25.370 --> 04:27.830
-So I'd imagine a player would look at it this way.
+Bir oyuncunun olaya bu şekilde bakacağını tahmin ediyorum.
 
 04:27.860 --> 04:33.950
-They'd play the game, probably fool around and lose the first time by hitting the time of zero.
+Oyunu oynarlar, muhtemelen dalga geçerler ve ilk seferde sıfır zamanına ulaşarak kaybederler.
 
 04:34.130 --> 04:39.320
-Then they'd play again, realizing maybe coins are good, but the finish line is the point.
+Sonra tekrar oynarlar, belki madeni paraların iyi olduğunu fark ederler, ama asıl önemli olan bitiş çizgisidir.
 
 04:39.320 --> 04:42.020
-Get to the finish line with a few points.
+Bitiş çizgisine birkaç puanla ulaş.
 
 04:42.020 --> 04:47.600
-Then on a third play they might try to get all of the coins possible within the time limit.
+Daha sonra üçüncü bir oyunda, zaman sınırı içinde mümkün olan tüm paraları toplamaya çalışabilirler.
 
 04:47.930 --> 04:49.100
-In this demo game.
+Bu demo oyunda.
 
 04:49.100 --> 04:54.320
-I've made that pretty simple to do, but you can imagine playing with the user and imagining the different
+Bunu yapmayı oldukça basit hale getirdim, ancak kullanıcıyla oynamayı ve farklı
 
 04:54.320 --> 04:58.550
-ways that they'd approach the game to encourage them to play again and again and again.
+onları tekrar tekrar oynamaya teşvik etmek için oyuna yaklaşma yolları.
 
 04:58.550 --> 05:03.680
-So it's just a little bit of a note on the gameplay design and also that adds to the good feeling of
+Yani bu sadece oyun tasarımı üzerine küçük bir not ve aynı zamanda
 
 05:03.680 --> 05:04.970
-Polish at the end of game.
+Oyun sonunda Lehçe.
 
 05:04.970 --> 05:05.530
-That's it.
+İşte bu kadar.
 
 05:05.540 --> 05:06.620
-Thanks very much.
+Çok teşekkürler.
 
 05:07.820 --> 05:10.400
-As a bonus assignment, you can add your own polish.
+Bonus ödev olarak, kendi cilanızı ekleyebilirsiniz.
 
 05:10.430 --> 05:11.750
-Here's some ideas.
+İşte bazı fikirler.
 
 05:11.750 --> 05:18.710
-More programmatic twinning sounds, obstacles, even larger levels or multiple levels and different
+Daha programatik eşleştirme sesleri, engeller, daha büyük seviyeler veya çoklu seviyeler ve farklı
 
 05:18.710 --> 05:19.940
-types of crazy balls.
+çılgın top türleri.
 
 05:21.810 --> 05:25.290
-In the next section, we'll handle advanced topics.
+Bir sonraki bölümde, gelişmiş konuları ele alacağız.

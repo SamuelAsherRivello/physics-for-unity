@@ -1,265 +1,265 @@
 WEBVTT
 
 00:01.540 --> 00:03.510
-Predicting physics trajectory.
+Fizik yörüngesini tahmin etmek.
 
 00:03.520 --> 00:08.050
-In this video, we'll see how we can predict physics movement before it happens.
+Bu videoda, fizik hareketini gerçekleşmeden önce nasıl tahmin edebileceğimizi göreceğiz.
 
 00:08.050 --> 00:13.090
-We'll learn how this can help our games and our game players, and then we'll open up unity and see
+Bunun oyunlarımıza ve oyuncularımıza nasıl yardımcı olabileceğini öğreneceğiz ve ardından Unity'yi açıp şunları göreceğiz
 
 00:13.090 --> 00:16.270
-a real world example of predicting trajectory.
+Yörüngeyi tahmin etmenin gerçek dünyadan bir örneği.
 
 00:16.270 --> 00:18.100
-So what is physics Prediction?
+Peki fizik tahmini nedir?
 
 00:18.100 --> 00:24.400
-Prediction is calculating the future properties, for example, position or rotation of objects within
+Tahmin, gelecekteki özelliklerin, örneğin nesnelerin konumunun veya rotasyonunun hesaplanmasıdır.
 
 00:24.400 --> 00:25.480
-your physics system.
+fizik sisteminiz.
 
 00:25.750 --> 00:33.280
-Some examples of this are visualization showing a line or arrow to suggest to the user where their bullet
+Bunun bazı örnekleri, kullanıcıya mermisinin nerede olduğunu göstermek için bir çizgi veya ok gösteren görselleştirmedir.
 
 00:33.280 --> 00:34.240
-will go.
+gidecek.
 
 00:34.240 --> 00:40.900
-Or I Doing this prediction gives more relevant input into the intelligence systems of our game.
+Ya da bu tahminin oyunumuzun zeka sistemlerine daha uygun bir girdi sağladığını düşünüyorum.
 
 00:41.970 --> 00:45.870
-Let's take an example from our Section five Upset Ducks game.
+Beşinci Bölüm Upset Ducks oyunumuzdan bir örnek alalım.
 
 00:45.870 --> 00:50.220
-Currently it's complete and playable, but it has no predictive physics.
+Şu anda tamamlanmış ve oynanabilir durumda, ancak öngörücü fiziği yok.
 
 00:50.220 --> 00:57.330
-An example of visualization would be to calculate the path of the asteroid and display an arrow as visualization.
+Görselleştirmeye bir örnek, asteroidin yolunu hesaplamak ve görselleştirme olarak bir ok görüntülemek olabilir.
 
 00:57.330 --> 01:02.220
-This would increase feedback for the user and give them a better connection to the game.
+Bu, kullanıcı için geri bildirimi artıracak ve onlara oyunla daha iyi bir bağlantı sağlayacaktır.
 
 01:02.220 --> 01:03.840
-A more positive game feel.
+Daha olumlu bir oyun hissi.
 
 01:03.840 --> 01:09.330
-The result would be helping our users make smarter choices before they even release the asteroid.
+Sonuç, kullanıcılarımızın asteroidi serbest bırakmadan önce daha akıllı seçimler yapmalarına yardımcı olacaktır.
 
 01:09.330 --> 01:11.400
-They would know more or less where it's headed.
+Nereye gittiğini az çok bilirler.
 
 01:11.430 --> 01:13.410
-Another example would be AI.
+Başka bir örnek de yapay zeka olabilir.
 
 01:13.440 --> 01:16.500
-We can calculate the path of the asteroid for the eye.
+Göz için asteroidin yolunu hesaplayabiliriz.
 
 01:16.530 --> 01:20.520
-We could have enemies react with fear as we aim right toward them.
+Onlara doğru nişan aldığımızda düşmanların korkuyla tepki vermesini sağlayabiliriz.
 
 01:20.520 --> 01:24.570
-Or we could have enemies that jump out of the way to avoid the collisions.
+Ya da çarpışmalardan kaçınmak için yoldan atlayan düşmanlarımız olabilir.
 
 01:24.810 --> 01:26.450
-Or, of course, we could do both.
+Ya da tabii ki ikisini de yapabiliriz.
 
 01:26.460 --> 01:29.820
-We could have visualization and updated AI.
+Görselleştirme ve güncellenmiş yapay zekaya sahip olabiliriz.
 
 01:30.450 --> 01:32.190
-So how do we predict physics?
+Peki fiziği nasıl tahmin edebiliriz?
 
 01:32.700 --> 01:37.200
-We create a primary scene and we set up an object with some physics forces.
+Birincil bir sahne oluşturuyoruz ve bazı fizik kuvvetlerine sahip bir nesne ayarlıyoruz.
 
 01:37.200 --> 01:40.450
-Then we create a secondary invisible physics scene.
+Ardından ikincil bir görünmez fizik sahnesi oluşturuyoruz.
 
 01:40.470 --> 01:47.940
-There we can add marker balls, and for each of the balls we can simulate Delta time with a unique Delta
+Burada işaretleyici toplar ekleyebilir ve her bir top için Delta zamanını benzersiz bir Delta ile simüle edebiliriz
 
 01:47.940 --> 01:52.860
-time kind of ticking through the arc of travel where that object would travel.
+zaman, o nesnenin seyahat edeceği yay boyunca ilerliyor.
 
 01:53.430 --> 01:54.790
-Let's take a look at a demo.
+Bir demoya göz atalım.
 
 01:54.810 --> 01:56.860
-Let's look at trajectory prediction.
+Yörünge tahminine bakalım.
 
 01:56.880 --> 01:58.080
-We'll play the scene.
+Sahneyi oynatacağız.
 
 01:58.080 --> 02:03.750
-Will view the inspector for the jumping Cube game object, will update its force, will view the prediction,
+Zıplayan Küp oyun nesnesi için denetçiyi görüntüleyecek, kuvvetini güncelleyecek, tahmini görüntüleyecektir,
 
 02:03.750 --> 02:05.160
-and will inspect the code.
+ve kodu inceleyecek.
 
 02:06.330 --> 02:06.570
-All right.
+Tamamdır.
 
 02:06.570 --> 02:11.800
-Here we are inside unity, jumping into trajectory prediction.
+İşte birlik içindeyiz, yörünge tahminine geçiyoruz.
 
 02:11.820 --> 02:14.700
-Now, in this project, what I've got set up is.
+Şimdi, bu projede, kurduğum şey şu.
 
 02:15.660 --> 02:18.050
-A cube that has a script on it.
+Üzerinde senaryo olan bir küp.
 
 02:18.060 --> 02:25.940
-And what this does is it illustrates where the physics force that is about to be applied is headed.
+Ve bunun yaptığı şey, uygulanmak üzere olan fizik kuvvetinin nereye gittiğini göstermektir.
 
 02:25.950 --> 02:31.970
-And you can see this arc of markers that is here in front of the cube.
+Ve burada küpün önündeki bu işaretleyici yayını görebilirsiniz.
 
 02:31.980 --> 02:36.810
-And what I'm able to do here is this is the physics force that's going to be applied.
+Ve burada yapabildiğim şey, uygulanacak olan fizik kuvvetidir.
 
 02:36.810 --> 02:41.550
-I use that same value to show where this will travel.
+Bunun nereye gideceğini göstermek için aynı değeri kullanıyorum.
 
 02:41.940 --> 02:46.520
-Now, one thing, while I was working on this, this is relatively new into unity.
+Şimdi, bir şey, ben bunun üzerinde çalışırken, bu unity'de nispeten yeni.
 
 02:46.530 --> 02:53.610
-It's a public feature, but still, I hadn't used it in in production before and I was disappointed
+Herkese açık bir özellik, ancak yine de daha önce üretimde kullanmamıştım ve hayal kırıklığına uğradım
 
 02:53.610 --> 02:55.200
-by the speed of this.
+bunun hızına göre.
 
 02:55.200 --> 03:01.440
-It's not actually that smooth and there could be some optimizations to be had, but it certainly works
+Aslında o kadar da pürüzsüz değil ve bazı optimizasyonlar yapılabilir, ancak kesinlikle işe yarıyor
 
 03:01.440 --> 03:02.310
-and it works well.
+ve iyi çalışıyor.
 
 03:02.310 --> 03:06.900
-So I'm able to move the forces there and then I've got a couple of buttons here that would be set up,
+Böylece kuvvetleri oraya taşıyabiliyorum ve burada ayarlanacak birkaç düğmem var,
 
 03:06.900 --> 03:10.250
-probably simulating the user input somehow to move.
+muhtemelen hareket etmek için kullanıcı girdisini bir şekilde simüle ediyor.
 
 03:10.260 --> 03:15.450
-I'll go ahead and use force and you can see it hops there and that follows the line perfectly.
+Devam edip güç kullanacağım ve orada zıpladığını ve çizgiyi mükemmel bir şekilde takip ettiğini görebilirsiniz.
 
 03:15.450 --> 03:21.150
-See, I've got a couple prediction sliders here so we can make more or less of those.
+Bakın, burada birkaç tahmin kaydırıcım var, böylece bunlardan daha fazla veya daha az yapabiliriz.
 
 03:22.520 --> 03:25.820
-More or less of these markers in the arc.
+Yaydaki bu işaretlerden az ya da çok.
 
 03:26.360 --> 03:29.540
-So let's take a look if I go into the code here.
+Şimdi buradaki koda bir göz atalım.
 
 03:30.590 --> 03:31.910
-Let's go through the important things.
+Önemli şeylerin üzerinden geçelim.
 
 03:31.910 --> 03:36.240
-So the serialized properties we just saw are there in the start.
+Yani az önce gördüğümüz serileştirilmiş özellikler başlangıçta var.
 
 03:36.260 --> 03:41.480
-What I'm doing is I'm creating new scene parameters and a new scene.
+Yaptığım şey, yeni sahne parametreleri ve yeni bir sahne oluşturmak.
 
 03:41.750 --> 03:44.440
-This is of a type called local physics.
+Bu, yerel fizik olarak adlandırılan bir türdür.
 
 03:44.450 --> 03:50.600
-So I'm creating a new scene that's going to run kind of transparently right next to our main scene.
+Bu yüzden ana sahnemizin hemen yanında şeffaf bir şekilde çalışacak yeni bir sahne oluşturuyorum.
 
 03:51.080 --> 03:53.000
-So I do that in the start.
+Bunu başlangıçta yapıyorum.
 
 03:53.510 --> 03:56.750
-Then down here in the.
+Sonra burada aşağıda.
 
 03:58.410 --> 03:59.640
-In the prediction.
+Tahminde.
 
 04:03.690 --> 04:05.200
-Me see here.
+Ben buraya bakıyorum.
 
 04:05.210 --> 04:08.330
-So what's really happening in the prediction?
+Peki tahminde gerçekten ne oluyor?
 
 04:09.230 --> 04:11.840
-As I'm calling this use markers.
+Bu kullanım işaretleri dediğim gibi.
 
 04:12.170 --> 04:14.570
-I've got a few timing iterations set up.
+Birkaç zamanlama yinelemesi ayarladım.
 
 04:14.570 --> 04:16.880
-So here's the bulk of the work, right?
+İşin büyük kısmı burada, değil mi?
 
 04:17.090 --> 04:18.210
-There's two steps.
+İki adım var.
 
 04:18.230 --> 04:23.960
-First, I rebuild the markers, so periodically when I update the inspector by tweaking some of the
+İlk olarak, işaretleyicileri yeniden oluşturuyorum, böylece denetçiyi periyodik olarak güncellediğimde bazı
 
 04:23.960 --> 04:25.610
-values, I'll rebuild the markers.
+değerleri, işaretleyicileri yeniden oluşturacağım.
 
 04:25.640 --> 04:29.690
-Again, this is regenerating those marker ball game objects.
+Yine, bu işaretleyici top oyunu nesnelerini yeniden üretiyor.
 
 04:30.200 --> 04:33.580
-And what I'm doing is just looping through and creating enough of them.
+Ve yaptığım şey sadece döngüye girmek ve bunlardan yeterince oluşturmak.
 
 04:33.590 --> 04:41.060
-So now that we've got enough of them and notice here in line 151, I'm moving these game objects to
+Şimdi bunlardan yeterince var ve 151. satıra dikkat edin, bu oyun nesnelerini
 
 04:41.060 --> 04:46.070
-the other scene, to that prediction scene that we created, and I'm giving them a name as well that
+diğer sahneyi, oluşturduğumuz tahmin sahnesine ekliyorum ve onlara da bir isim veriyorum.
 
 04:46.070 --> 04:47.660
-just helps me in the inspector.
+sadece müfettişte bana yardımcı oluyor.
 
 04:47.750 --> 04:51.590
-So after I've rebuilt the markers, I can actually do the prediction.
+İşaretleyicileri yeniden oluşturduktan sonra, aslında tahmin yapabilirim.
 
 04:51.590 --> 04:57.980
-So I take that same set of prediction iterations and I loop through them.
+Bu yüzden aynı tahmin yinelemeleri kümesini alıyorum ve bunlar arasında döngü yapıyorum.
 
 04:57.980 --> 05:04.700
-And in this for loop, what I'm doing is for each prediction that I'm doing, I'm simulating that scene's
+Ve bu for döngüsünde yaptığım şey, yaptığım her tahmin için o sahnenin
 
 05:04.700 --> 05:05.300
-physics.
+Fizik.
 
 05:05.300 --> 05:06.130
-One tick.
+Bir tik.
 
 05:06.820 --> 05:12.060
-So if I hadn't manually called simulate, there would be no physics simulation there.
+Yani simülasyonu manuel olarak çağırmamış olsaydım, orada fizik simülasyonu olmayacaktı.
 
 05:12.070 --> 05:19.210
-So what I'm able to do is loop through and tick it once and then move one of the markers to that spot.
+Yani yapabileceğim şey, döngü oluşturup bir kez işaretlemek ve ardından işaretleyicilerden birini o noktaya taşımak.
 
 05:19.210 --> 05:25.440
-Then I tick it again and I move the next marker to that spot and I proceed until I make the entire arc.
+Sonra tekrar işaretliyorum ve bir sonraki işaretleyiciyi o noktaya taşıyorum ve tüm yayı tamamlayana kadar devam ediyorum.
 
 05:25.450 --> 05:26.620
-And that's it.
+İşte bu kadar.
 
 05:27.460 --> 05:29.170
-The process works really well.
+Süreç gerçekten iyi işliyor.
 
 05:29.170 --> 05:31.140
-It's giving me just the result that I want.
+Bana tam istediğim sonucu veriyor.
 
 05:31.150 --> 05:37.690
-As I mentioned, it doesn't run so fast in a frame rate sort of way, but it still works really good.
+Bahsettiğim gibi, kare hızı açısından çok hızlı çalışmıyor, ancak yine de gerçekten iyi çalışıyor.
 
 05:38.110 --> 05:38.750
-That's it.
+Bu kadar.
 
 05:38.770 --> 05:39.730
-Thanks very much.
+Çok teşekkürler.
 
 05:41.950 --> 05:47.470
-In the next video, we'll take a look at the data oriented technology stack or dots for unity physics.
+Bir sonraki videoda, veri odaklı teknoloji yığınına veya unity physics için noktalara bir göz atacağız.

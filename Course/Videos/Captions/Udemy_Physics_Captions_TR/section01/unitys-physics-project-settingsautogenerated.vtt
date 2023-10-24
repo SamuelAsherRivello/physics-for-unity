@@ -1,289 +1,289 @@
 WEBVTT
 
 00:01.640 --> 00:04.290
-Unities physics project settings.
+Unities fizik proje ayarları.
 
 00:04.310 --> 00:07.880
-In this video we'll cover what are Unity Project settings?
+Bu videoda Unity Proje ayarlarının ne olduğunu ele alacağız.
 
 00:07.880 --> 00:10.550
-Which of these settings are most important to physics?
+Bu ayarlardan hangisi fizik için en önemlidir?
 
 00:10.550 --> 00:15.230
-And we'll experiment with these settings inside the Unity editor to see some results.
+Ve bazı sonuçları görmek için Unity editörünün içinde bu ayarları deneyeceğiz.
 
 00:15.860 --> 00:17.360
-Unity Project Settings.
+Unity Proje Ayarları.
 
 00:17.360 --> 00:23.390
-These are the high level settings we use to adjust major systems in unity, including graphics and physics
+Bunlar, grafik ve fizik dahil olmak üzere unity'deki ana sistemleri ayarlamak için kullandığımız yüksek seviye ayarlardır
 
 00:23.390 --> 00:24.290
-To open them.
+Açmak için.
 
 00:24.290 --> 00:26.730
-You use unity edit project settings.
+Unity proje düzenleme ayarlarını kullanırsınız.
 
 00:26.750 --> 00:31.370
-As the screenshot shows, there's a search box that you can filter through the settings.
+Ekran görüntüsünde görüldüğü gibi, ayarlar aracılığıyla filtreleyebileceğiniz bir arama kutusu vardır.
 
 00:31.370 --> 00:36.890
-There's settings organized by category and there's a details pane with the settings themselves that
+Kategoriye göre düzenlenmiş ayarlar ve ayarların kendilerinin bulunduğu bir ayrıntılar bölmesi vardır.
 
 00:36.890 --> 00:39.440
-will interact with the physics project.
+fizik projesi ile etkileşime girecek.
 
 00:39.440 --> 00:43.100
-Settings for three D include many different properties.
+Üç D için ayarlar birçok farklı özellik içerir.
 
 00:43.100 --> 00:45.020
-We'll focus on a few key ones.
+Birkaç kilit noktaya odaklanacağız.
 
 00:45.020 --> 00:46.310
-First of all, gravity.
+Her şeyden önce, yerçekimi.
 
 00:46.310 --> 00:52.670
-The default settings are simulating gravity on earth If you want to simulate other planets or different
+Varsayılan ayarlar dünya üzerindeki yerçekimini simüle eder Diğer gezegenleri veya farklı yerçekimlerini simüle etmek istiyorsanız
 
 00:52.670 --> 00:55.460
-scenarios in your game, you could tweak the gravity here.
+Oyununuzdaki senaryolarda, yerçekimini burada değiştirebilirsiniz.
 
 00:55.460 --> 01:01.010
-It should be noted that if you change the gravity drastically, you may want to also tweak the default
+Yerçekimini büyük ölçüde değiştirirseniz, varsayılan yerçekimi ayarını da değiştirmek isteyebileceğinizi unutmayın.
 
 01:01.010 --> 01:04.070
-solver iterations that'll give you more stable results.
+çözücü iterasyonları size daha istikrarlı sonuçlar verecektir.
 
 01:04.070 --> 01:09.320
-You can also set the default material in a later section will cover what physics materials are.
+Varsayılan malzemeyi daha sonraki bir bölümde fizik malzemelerinin ne olduğunu kapsayacak şekilde de ayarlayabilirsiniz.
 
 01:09.320 --> 01:14.120
-They allow each object in your world to have different properties of bouncy ness and friction.
+Bunlar dünyanızdaki her nesnenin farklı zıplama ve sürtünme özelliklerine sahip olmasını sağlar.
 
 01:14.120 --> 01:15.440
-If you want to set them globally.
+Eğer bunları global olarak ayarlamak istiyorsanız.
 
 01:15.440 --> 01:18.080
-Here you can do that and contact pair modes.
+Burada bunu yapabilir ve çift modlarıyla iletişime geçebilirsiniz.
 
 01:18.080 --> 01:22.520
-This is a setting you might want to tweak if you're moving kinematic Objects in a physics world.
+Bu, kinematik Nesneleri bir fizik dünyasında hareket ettiriyorsanız ince ayar yapmak isteyebileceğiniz bir ayardır.
 
 01:22.520 --> 01:25.550
-We'll talk about kinematic rigid body properties later.
+Kinematik katı cisim özellikleri hakkında daha sonra konuşacağız.
 
 01:25.550 --> 01:29.090
-Other properties that are interesting enable enhanced determinism.
+İlginç olan diğer özellikler gelişmiş determinizmi mümkün kılar.
 
 01:29.090 --> 01:34.130
-Now this mode will sacrifice some performance, meaning you'll need a more powerful device, but you'll
+Şimdi bu mod performanstan biraz ödün verecek, yani daha güçlü bir cihaza ihtiyacınız olacak, ancak
 
 01:34.130 --> 01:35.570
-get better determinism.
+daha iyi bir determinizm elde etmek.
 
 01:35.570 --> 01:41.630
-Determinism in physics means if you ran the same simulation again and again, you'd get the same result
+Fizikteki determinizm, aynı simülasyonu tekrar tekrar çalıştırırsanız aynı sonucu alacağınız anlamına gelir
 
 01:41.630 --> 01:43.520
-in some gameplay design.
+bazı oyun tasarımlarında.
 
 01:43.520 --> 01:44.480
-This is important.
+Bu önemli.
 
 01:44.480 --> 01:45.380
-Often it is not.
+Genellikle öyle değildir.
 
 01:45.380 --> 01:51.200
-The layer collision matrix defines which objects in your world collide with which other objects.
+Katman çarpışma matrisi, dünyanızdaki hangi nesnelerin hangi diğer nesnelerle çarpışacağını tanımlar.
 
 01:51.200 --> 01:54.950
-Now, by default, in unity, everything collides with everything.
+Şimdi, varsayılan olarak, unity'de her şey her şeyle çarpışır.
 
 01:54.950 --> 01:57.920
-It gives you the visual result and quick feedback you want.
+Size istediğiniz görsel sonucu ve hızlı geri bildirimi verir.
 
 01:57.920 --> 02:03.350
-When you're designing a game as an optimization, consider unchecking all of the collisions that don't
+Bir optimizasyon olarak bir oyun tasarlarken, oyun için gerekli olmayan tüm çarpışmaların işaretini kaldırmayı düşünün.
 
 02:03.350 --> 02:07.190
-occur in your game or that you do not want and you'll get better performance.
+ya da istemediğiniz şeyler ortaya çıkarsa daha iyi performans elde edersiniz.
 
 02:07.980 --> 02:09.400
-Let's take a look at a demo.
+Bir demoya göz atalım.
 
 02:09.420 --> 02:11.280
-We'll look at the three D Pyramids project.
+Üç D Piramidi projesine bakacağız.
 
 02:11.280 --> 02:11.730
-Again.
+Tekrar.
 
 02:11.730 --> 02:18.060
-We'll play with the gravity default material and the layer collision matrix inside Unity.
+Yerçekimi varsayılan malzemesi ve Unity içindeki katman çarpışma matrisi ile oynayacağız.
 
 02:18.060 --> 02:22.520
-Let's open up section one, Video two, three, D Pyramid.
+Birinci bölümü açalım, Video iki, üç, D Piramidi.
 
 02:22.530 --> 02:29.640
-We'll be reusing this scene to discuss the project settings in the edit window project settings.
+Bu sahneyi proje ayarlarını düzenleme penceresi proje ayarlarında tartışmak için tekrar kullanacağız.
 
 02:29.790 --> 02:34.560
-We're able to see all of the project settings for various things inside Unity.
+Unity içindeki çeşitli şeyler için tüm proje ayarlarını görebiliyoruz.
 
 02:34.620 --> 02:40.830
-We're interested in the Physics two D for our two D physics, and in this demo the physics for our three
+İki D fiziğimiz için iki D fiziği ile ilgileniyoruz ve bu demoda üç D fiziğimiz için
 
 02:40.830 --> 02:41.640
-D physics.
+D fiziği.
 
 02:41.640 --> 02:45.330
-Since we have a3d scene, let's go ahead and manipulate that one first.
+3d sahnemiz olduğu için, önce bunu manipüle edelim.
 
 02:45.330 --> 02:50.000
-Let's just start by playing the scene and we can see that these cubes settle on top of each other.
+Sahneyi oynatarak başlayalım ve bu küplerin birbirinin üzerine yerleştiğini görebiliriz.
 
 02:50.010 --> 02:55.710
-Now let's change it from a negative gravity that simulates Earth to a positive gravity.
+Şimdi Dünya'yı simüle eden negatif yerçekiminden pozitif yerçekimine geçelim.
 
 02:55.830 --> 03:00.000
-This would be something that creates gravity in an upwards direction.
+Bu, yukarı yönde yerçekimi yaratan bir şey olacaktır.
 
 03:00.000 --> 03:03.210
-Maybe your game needs that depending on the game mechanics you have.
+Belki de sahip olduğunuz oyun mekaniğine bağlı olarak oyununuzun buna ihtiyacı vardır.
 
 03:03.630 --> 03:07.560
-So we can see that these objects fly up in the air.
+Böylece bu nesnelerin havada uçtuğunu görebiliyoruz.
 
 03:07.560 --> 03:11.310
-It's a little bit silly for most of our examples, but you know, you can control that.
+Örneklerimizin çoğu için biraz aptalca ama bilirsiniz, bunu kontrol edebilirsiniz.
 
 03:11.310 --> 03:15.300
-They're inside this little cogwheel you can open this menu and hit reset.
+Bu küçük dişli çarkın içindeler, bu menüyü açabilir ve sıfırlamaya basabilirsiniz.
 
 03:15.370 --> 03:18.990
-That'll bring all the values in this particular window back to the defaults.
+Bu, bu penceredeki tüm değerleri varsayılan değerlere geri getirecektir.
 
 03:18.990 --> 03:21.110
-So there we've undone that change.
+İşte bu değişikliği geri aldık.
 
 03:21.120 --> 03:25.140
-Now let's look at the default material inside the project window.
+Şimdi proje penceresinin içindeki varsayılan malzemeye bakalım.
 
 03:25.140 --> 03:27.630
-We're able to create a physics material.
+Bir fizik malzemesi yaratabiliyoruz.
 
 03:27.630 --> 03:32.820
-Now we'll be talking more about this later, but we want to show you that if we create a physic material
+Bu konu hakkında daha sonra daha fazla konuşacağız, ancak size göstermek istediğimiz şey, eğer bir fizik malzemesi yaratırsak
 
 03:32.820 --> 03:38.490
-and we create it with a lot of bouncy ness, a bouncy ness of one, then we drag that in as the new
+ve onu çok fazla zıplama özelliğiyle, bir zıplama özelliğiyle oluşturuyoruz, sonra bunu yeni
 
 03:38.490 --> 03:39.570
-default material.
+varsayılan malzeme.
 
 03:39.570 --> 03:45.480
-And that says that if there's any objects in the scene that do not already have a material attached,
+Ve bu, sahnede zaten bir malzeme eklenmemiş herhangi bir nesne varsa bunu söylüyor,
 
 03:45.480 --> 03:47.940
-then this will be the new default material.
+o zaman bu yeni varsayılan malzeme olacaktır.
 
 03:47.940 --> 03:50.520
-So here we're giving them this one that's bouncy.
+Burada onlara zıplayan bir tane veriyoruz.
 
 03:50.520 --> 03:52.140
-So let's go ahead and play the scene.
+Şimdi devam edelim ve sahneyi oynatalım.
 
 03:53.890 --> 03:57.310
-And we can see that at least one of the boxes behaves a little wacky.
+Ve kutulardan en az birinin biraz tuhaf davrandığını görebiliyoruz.
 
 03:57.730 --> 04:03.100
-Now, if I go ahead and I move this, we can see that the ones that I've moved bounce around the scene
+Şimdi, devam edip bunu hareket ettirirsem, hareket ettirdiklerimin sahnenin etrafında zıpladığını görebiliriz
 
 04:03.670 --> 04:05.620
-with a high level of bouncy ness.
+yüksek düzeyde zıplama özelliğine sahip.
 
 04:05.650 --> 04:07.360
-Now they're all affected evenly.
+Şimdi hepsi eşit şekilde etkileniyor.
 
 04:07.360 --> 04:09.400
-Just depends on which one I manipulate.
+Sadece hangisini manipüle ettiğime bağlı.
 
 04:11.260 --> 04:13.720
-Now, if we stop the scene again and I reset.
+Şimdi, eğer sahneyi tekrar durdurursak ve sıfırlarsam.
 
 04:14.710 --> 04:17.660
-We can look down here and we see the layer collision matrix.
+Buradan aşağıya bakabilir ve katman çarpışma matrisini görebiliriz.
 
 04:17.680 --> 04:23.440
-This is showing that everything in the project collides with everything by layer.
+Bu, projedeki her şeyin katman bazında her şeyle çarpıştığını gösteriyor.
 
 04:23.470 --> 04:25.120
-Layers are set here.
+Katmanlar burada ayarlanır.
 
 04:25.390 --> 04:30.850
-At the top we can designate the layer for each of the objects in our scene so we can see that the cubes
+En üstte, sahnemizdeki nesnelerin her biri için katmanı belirleyebiliriz, böylece küpleri görebiliriz
 
 04:30.850 --> 04:32.590
-are designated as default.
+varsayılan olarak belirlenmiştir.
 
 04:33.550 --> 04:38.530
-And inside the environment, we've got floor designated as floor.
+Ve ortamın içinde, zemin olarak belirlenmiş bir zeminimiz var.
 
 04:38.920 --> 04:40.990
-So if I go ahead and play the scene.
+Eğer devam edip sahneyi oynatırsam.
 
 04:43.980 --> 04:47.310
-And then down here I can uncheck floor and default.
+Ve sonra burada zemin ve varsayılanın işaretini kaldırabilirim.
 
 04:47.310 --> 04:52.890
-And we'll see that Now our default cubes fall directly through the floor.
+Ve şimdi varsayılan küplerimizin doğrudan zemine düştüğünü göreceğiz.
 
 04:52.920 --> 04:55.920
-So you're able to control within that matrix.
+Yani bu matris içinde kontrol edebiliyorsunuz.
 
 04:56.220 --> 05:01.450
-Also, note that any changes we make during the scene may be reset once we stop the scene.
+Ayrıca, sahne sırasında yaptığımız herhangi bir değişikliğin sahneyi durdurduğumuzda sıfırlanabileceğini unutmayın.
 
 05:01.470 --> 05:03.450
-Within this window, it depends a bit.
+Bu pencere içinde, biraz değişir.
 
 05:03.450 --> 05:05.610
-Some of the settings stick and some do not.
+Bazı ayarlar yapışır ve bazıları yapışmaz.
 
 05:05.640 --> 05:08.070
-So just be conscious of when you make changes.
+Bu yüzden ne zaman değişiklik yaptığınızın bilincinde olun.
 
 05:08.070 --> 05:12.360
-If you're playing the scene, they might need to be reset after you stop the scene.
+Eğer sahneyi oynatıyorsanız, sahneyi durdurduktan sonra sıfırlanmaları gerekebilir.
 
 05:14.140 --> 05:17.830
-The physics project settings in 2D is a separate panel.
+2D'deki fizik projesi ayarları ayrı bir paneldir.
 
 05:17.830 --> 05:22.160
-Now most of the important properties in 2D are the same ones we just discussed in 3D.
+Şimdi 2D'deki önemli özelliklerin çoğu az önce 3D'de tartıştıklarımızla aynıdır.
 
 05:22.180 --> 05:24.820
-You can see them in the screenshot, but something of note.
+Bunları ekran görüntüsünde görebilirsiniz, ancak dikkat edilmesi gereken bir şey var.
 
 05:24.820 --> 05:30.910
-Now it is possible that your game project includes both 2D and 3D physics, but it's likely that you
+Şimdi, oyun projenizin hem 2D hem de 3D fizik içermesi mümkündür, ancak büyük olasılıkla
 
 05:30.910 --> 05:31.630
-choose one.
+Birini seç.
 
 05:31.630 --> 05:38.080
-So if your game is 2D and you have two D physics, be sure that when you're changing the physics settings,
+Yani oyununuz 2D ise ve iki D fiziğiniz varsa, fizik ayarlarını değiştirirken bundan emin olun,
 
 05:38.080 --> 05:41.050
-you're on the right panel here of physics 2D.
+Fizik 2D'nin sağ panelindesiniz.
 
 05:42.620 --> 05:47.770
-In the next video physics, life cycle physics, simulate and time dilation.
+Bir sonraki videoda fizik, yaşam döngüsü fiziği, simülasyon ve zaman genişlemesi.
 
 05:47.780 --> 05:50.330
-We'll look at the structure of unity projects.
+Birlik projelerinin yapısına bakacağız.
 
 05:50.330 --> 05:56.360
-We'll see the role of mono behaviors in unity, and we'll look at some code for behaviors regarding
+Unity'de mono davranışlarının rolünü göreceğiz ve davranışlarla ilgili bazı kodlara bakacağız
 
 05:56.360 --> 05:56.990
-physics.
+Fizik.

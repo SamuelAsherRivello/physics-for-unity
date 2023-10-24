@@ -1,463 +1,463 @@
 WEBVTT
 
 00:01.840 --> 00:03.150
-Optimizing physics.
+Fiziği optimize ediyorum.
 
 00:03.160 --> 00:06.810
-In this video, we'll take a look at a real world example of physics.
+Bu videoda gerçek dünyadan bir fizik örneğine göz atacağız.
 
 00:06.820 --> 00:09.220
-We'll experiment with some optimizations.
+Bazı optimizasyonları deneyeceğiz.
 
 00:09.220 --> 00:12.700
-Finally, we'll improve on the performance dramatically.
+Son olarak, performansı önemli ölçüde artıracağız.
 
 00:13.030 --> 00:14.530
-So let's optimize.
+Hadi optimize edelim.
 
 00:14.980 --> 00:19.560
-I created a demo with many instances of the same chain object.
+Aynı zincir nesnesinin birçok örneğini içeren bir demo oluşturdum.
 
 00:19.570 --> 00:22.810
-You can see here I'm spawning about 20,000.
+Burada yaklaşık 20.000 yumurtladığımı görebilirsiniz.
 
 00:23.260 --> 00:25.420
-The current performance is very low.
+Mevcut performans çok düşük.
 
 00:25.420 --> 00:28.420
-It's around three frames per second on my laptop.
+Dizüstü bilgisayarımda saniyede üç kare civarında.
 
 00:28.420 --> 00:31.900
-You might see different performance, of course, depending what machine you're on.
+Elbette hangi makinede olduğunuza bağlı olarak farklı performans görebilirsiniz.
 
 00:31.900 --> 00:36.100
-Let's set a goal for ourselves to get performance around 60 frames per second.
+Saniyede 60 kare civarında bir performans elde etmek için kendimize bir hedef belirleyelim.
 
 00:36.280 --> 00:38.500
-We'll see what we can do to optimize it.
+Bunu optimize etmek için ne yapabileceğimize bakacağız.
 
 00:40.620 --> 00:41.980
-Let's take a look at the demo.
+Demoya bir göz atalım.
 
 00:42.000 --> 00:44.720
-We'll use the optimized physics begin scene.
+Optimize edilmiş fizik başlangıç sahnesini kullanacağız.
 
 00:44.730 --> 00:50.430
-We'll play the scene and then we'll iterate on optimizations, will continually check the frame rate
+Sahneyi oynatacağız ve ardından optimizasyonları yineleyeceğiz, kare hızını sürekli kontrol edeceğiz
 
 00:50.430 --> 00:51.480
-and see how we do.
+ve nasıl yaptığımıza bakalım.
 
 00:52.110 --> 00:53.790
-All right, let's jump into the project.
+Pekala, projeye geçelim.
 
 00:54.300 --> 00:57.150
-So we're looking at the optimized begin scene.
+Yani optimize edilmiş başlangıç sahnesine bakıyoruz.
 
 00:57.540 --> 01:02.460
-What I have set up here is a series of links from a chain.
+Burada kurduğum şey bir zincirin bir dizi halkasıdır.
 
 01:02.640 --> 01:04.170
-It's not a chain with joints.
+Eklemleri olan bir zincir değil.
 
 01:04.170 --> 01:06.000
-I'm just using those pieces.
+Ben sadece bu parçaları kullanıyorum.
 
 01:06.000 --> 01:11.460
-And if I open this window up a little bit more Unity has some stats.
+Ve bu pencereyi biraz daha açarsam Unity'nin bazı istatistikleri var.
 
 01:12.420 --> 01:18.300
-With the statistics, we can see that as these pieces are falling and interacting with the flaw in each
+İstatistikler sayesinde, bu parçalar düştükçe ve her bir parçadaki kusurla etkileşime girdikçe
 
 01:18.300 --> 01:18.840
-other.
+Diğerleri.
 
 01:18.840 --> 01:25.200
-We're getting a frame rate around 2.8 to 3 frames per second, so this is very low.
+Saniyede 2,8 ila 3 kare civarında bir kare hızı elde ediyoruz, yani bu çok düşük.
 
 01:25.860 --> 01:28.840
-Let's shoot for a target of something like 60 frames a second.
+Saniyede 60 kare gibi bir hedef belirleyelim.
 
 01:28.890 --> 01:30.720
-See what kinds of changes we can make.
+Ne tür değişiklikler yapabileceğimize bakalım.
 
 01:32.070 --> 01:33.990
-So the scene setup is pretty simple.
+Yani sahne kurulumu oldukça basit.
 
 01:33.990 --> 01:35.040
-There's a floor.
+Bir zemin var.
 
 01:35.070 --> 01:40.680
-Then I have a in here, which I'm using to create about 20,000 objects, which is a lot.
+Sonra burada yaklaşık 20.000 nesne oluşturmak için kullandığım bir nesne var, ki bu çok fazla.
 
 01:41.010 --> 01:42.420
-Then I have a scene.
+O zaman bir sahnem var.
 
 01:43.350 --> 01:46.630
-Game object set up called Optimized Physics setup.
+Optimize Edilmiş Fizik kurulumu adlı oyun nesnesi kuruldu.
 
 01:46.650 --> 01:50.200
-It's a bunch of stuff that's comments or code that's commented out.
+Yorumlardan veya yorumlanmış kodlardan oluşan bir grup şey.
 
 01:50.220 --> 01:51.690
-Let's step through each of them.
+Her birinin üzerinden geçelim.
 
 01:51.780 --> 01:56.850
-First of all, as testing advice, this doesn't really make it a more efficient project, but it gives
+Her şeyden önce, test tavsiyesi olarak, bu gerçekten daha verimli bir proje yapmaz, ancak şunları verir
 
 01:56.850 --> 02:00.270
-us better frame rate readout in that screen UI.
+bu ekran kullanıcı arayüzünde daha iyi kare hızı okuması.
 
 02:00.390 --> 02:02.550
-We just set the V Sync count to zero.
+V Sync sayısını sıfıra ayarladık.
 
 02:02.550 --> 02:09.660
-So for the optimization itself, the first big step is always upgrade unity to the latest public version.
+Dolayısıyla optimizasyonun kendisi için ilk büyük adım her zaman unity'yi en son genel sürüme yükseltmektir.
 
 02:09.660 --> 02:14.670
-If you can, you're going to get better performance because unity is always updating their whole system
+Yapabilirseniz, daha iyi performans elde edersiniz çünkü unity her zaman tüm sistemlerini güncelliyor
 
 02:14.670 --> 02:18.510
-of rendering and physics, etc. so you get really great results.
+Böylece gerçekten harika sonuçlar elde edersiniz.
 
 02:18.600 --> 02:24.300
-Secondly, while you're testing, if the frame rate is very important to you, consider building to
+İkinci olarak, test ederken, kare hızı sizin için çok önemliyse
 
 02:24.300 --> 02:29.550
-your end device, whether it's a windows build or building it on iOS or Android and testing it closer
+Son cihazınız, ister bir Windows derlemesi olsun, ister iOS veya Android üzerinde oluşturulsun ve daha yakından test edilsin
 
 02:29.550 --> 02:37.080
-to the end users experience, you'll get performance that is either better or more close to what the
+Son kullanıcıların deneyimine göre, daha iyi veya daha yakın bir performans elde edersiniz.
 
 02:37.080 --> 02:39.510
-user will get, which is of course, important benchmark.
+kullanıcı elde edecektir, ki bu elbette önemli bir kriterdir.
 
 02:40.660 --> 02:43.390
-Let's start with some of the stuff that we can do within the project.
+Proje içinde yapabileceğimiz bazı şeylerle başlayalım.
 
 02:43.720 --> 02:48.190
-Number three, we can go ahead and turn the shadows off in the scene.
+Üç numara, devam edebilir ve sahnedeki gölgeleri kapatabiliriz.
 
 02:48.220 --> 02:52.450
-We can also set the floor in the scene to static, which is a physics change.
+Ayrıca sahnedeki zemini statik olarak ayarlayabiliriz, bu da bir fizik değişikliğidir.
 
 02:52.810 --> 03:00.100
-We can go to the thing prefab and we can set its mesh collider off and use a primitive like a box collider
+Şey prefabrikine gidebilir ve örgü çarpıştırıcısını kapatabilir ve kutu çarpıştırıcı gibi bir ilkel kullanabiliriz
 
 03:00.100 --> 03:00.700
-instead.
+onun yerine.
 
 03:00.730 --> 03:03.940
-Let's do those three steps and see what kinds of changes we get.
+Bu üç adımı uygulayalım ve ne tür değişiklikler elde ettiğimize bakalım.
 
 03:04.450 --> 03:06.070
-So first of all, with the lighting.
+Her şeyden önce, ışıklandırma ile.
 
 03:07.270 --> 03:10.660
-We've got a hard shadows which are.
+Elimizde sert gölgeler var.
 
 03:11.440 --> 03:13.630
-More efficient than the soft shadows.
+Yumuşak gölgelerden daha etkilidir.
 
 03:13.630 --> 03:15.370
-But let's try no shadows.
+Ama gölgesiz deneyelim.
 
 03:15.370 --> 03:16.930
-Let's see if we get any effect here.
+Bakalım burada bir etki görecek miyiz?
 
 03:16.930 --> 03:20.620
-So just we're going to step through in Some of these things might make a good difference, and some
+Bu yüzden, bu şeylerden bazılarının iyi bir fark yaratabileceğini ve bazılarının da
 
 03:20.620 --> 03:21.490
-of them might not.
+olmayabilir.
 
 03:21.880 --> 03:27.970
-So what we do is a mouse click here to kick off the spinner and.
+Yapacağımız şey, döndürücüyü başlatmak için buraya bir fare tıklaması yapmak ve.
 
 03:28.780 --> 03:30.190
-At least in the beginning.
+En azından başlangıçta.
 
 03:30.190 --> 03:34.330
-I mean, with more time, it's going to slow down because there's more and more calculations.
+Daha fazla zaman geçtikçe yavaşlayacaktır çünkü daha fazla hesaplama yapılacaktır.
 
 03:34.330 --> 03:36.490
-But I think it might be a little bit better.
+Ama bence biraz daha iyi olabilir.
 
 03:36.490 --> 03:41.170
-We're hovering closer to three than we were before, so consider that an option.
+Üçe daha önce olduğumuzdan daha yakınız, bu yüzden bunu bir seçenek olarak düşünün.
 
 03:42.180 --> 03:44.230
-Your game, of course, may require shadows.
+Oyununuz elbette gölge gerektirebilir.
 
 03:44.290 --> 03:45.150
-Maybe you can't do that.
+Belki bunu yapamazsın.
 
 03:45.150 --> 03:49.050
-But I just want to point out there's a non physics kind of go to solution there.
+Ancak burada fizik dışı bir çözüme gidildiğini belirtmek isterim.
 
 03:49.200 --> 03:54.120
-The next thing we're going to look at is setting the simple floor, which is under everything, setting
+Bakacağımız bir sonraki şey, her şeyin altında olan basit zemini ayarlamak, ayarlamak
 
 03:54.120 --> 03:55.020
-it to static.
+statik hale getir.
 
 03:55.820 --> 04:00.980
-In just doing that may optimize the rigid body, may be able to work more efficiently.
+Sadece bunu yaparak sert gövdeyi optimize edebilir, daha verimli çalışabilir.
 
 04:00.980 --> 04:02.030
-So let's take a look.
+Bir göz atalım.
 
 04:02.650 --> 04:05.660
-So remember, we were getting about three in the best.
+Hatırlayın, en iyi üçte alıyorduk.
 
 04:06.580 --> 04:07.780
-Here.
+İşte.
 
 04:10.280 --> 04:11.780
-It's more or less the same.
+Aşağı yukarı aynı.
 
 04:11.780 --> 04:16.010
-It's possible that there's little changes, but that's something to check out.
+Küçük değişiklikler olması mümkündür, ancak bu kontrol edilmesi gereken bir şeydir.
 
 04:16.640 --> 04:19.820
-If you had more objects, setting more of them static would be good.
+Daha fazla nesneniz varsa, daha fazlasını statik olarak ayarlamak iyi olacaktır.
 
 04:19.850 --> 04:21.960
-Next, let's look at the thing prefab.
+Şimdi de prefabrik şeye bakalım.
 
 04:21.980 --> 04:25.190
-So let's take this and bring it out into the world and zoom in.
+Şimdi bunu alalım ve dünyaya getirip yakınlaştıralım.
 
 04:25.190 --> 04:28.430
-And we can see here we've got a mesh collider on there.
+Ve burada bir ağ çarpıştırıcımız olduğunu görebiliyoruz.
 
 04:28.430 --> 04:35.540
-So if we turn off the mesh collider and instead add a box collider and we can see that the box collider
+Dolayısıyla, örgü çarpıştırıcıyı kapatır ve bunun yerine bir kutu çarpıştırıcı eklersek, kutu çarpıştırıcının
 
 04:35.540 --> 04:38.600
-does a pretty good job of estimating its shape anyway.
+şeklini tahmin etmede oldukça iyi bir iş çıkarıyor.
 
 04:38.600 --> 04:43.910
-Of course, the corners are not round anymore and depending on our game project that might actually
+Tabii ki, köşeler artık yuvarlak değil ve oyun projemize bağlı olarak bu aslında
 
 04:43.910 --> 04:47.000
-matter, might give us a different enough physics result.
+madde, bize yeterince farklı bir fizik sonucu verebilir.
 
 04:47.300 --> 04:52.910
-So now that I've made that change and saved it into the prefab, let's see how that works.
+Şimdi bu değişikliği yaptığıma ve prefabriğe kaydettiğime göre, nasıl çalıştığını görelim.
 
 04:55.830 --> 04:58.020
-So I click my mouse to give it a start.
+Bu yüzden başlatmak için fareme tıklıyorum.
 
 05:03.740 --> 05:05.350
-It's hovering around three.
+Üç civarında geziniyor.
 
 05:06.850 --> 05:09.670
-Then that that may not have made a big difference here.
+O halde bu, burada büyük bir fark yaratmamış olabilir.
 
 05:10.720 --> 05:16.360
-So I'm just going to double check actually that that is indeed a change has been done.
+Bu yüzden bunun gerçekten bir değişiklik olup olmadığını iki kez kontrol edeceğim.
 
 05:16.660 --> 05:17.880
-I have a box collider.
+Bir kutu çarpıştırıcım var.
 
 05:17.890 --> 05:19.570
-The mesh collider is off.
+Ağ çarpıştırıcı kapalı.
 
 05:19.780 --> 05:21.550
-I'm going to remove the mesh Collider.
+Çarpıştırıcı ağını kaldıracağım.
 
 05:21.850 --> 05:23.800
-I don't know if that even makes a difference, but.
+Bu bir fark yaratır mı bilmiyorum ama.
 
 05:24.800 --> 05:29.150
-Even though it was toggled off, because I'm surprised we're not getting a little bit of a frame jump
+Kapalı olmasına rağmen, çünkü biraz kare atlaması almadığımıza şaşırdım
 
 05:29.150 --> 05:31.730
-there, a little bit of improvement.
+orada, biraz gelişme var.
 
 05:35.810 --> 05:37.640
-And it doesn't look like that's made a big difference.
+Ve bu büyük bir fark yaratmış gibi görünmüyor.
 
 05:37.640 --> 05:39.440
-But maybe in your project it would.
+Ama belki sizin projenizde öyle olabilir.
 
 05:40.350 --> 05:41.490
-Let's go to the next steps.
+Sonraki adımlara geçelim.
 
 05:42.850 --> 05:43.390
-Here.
+İşte.
 
 05:43.390 --> 05:47.200
-There's several different time values that we're going to be able to tweak.
+Ayarlayabileceğimiz birkaç farklı zaman değeri var.
 
 05:47.410 --> 05:55.990
-Now, with each of these, you're going to look for a compromise between accurate physics or efficient
+Şimdi, bunların her biriyle, doğru fizik veya verimli fizik arasında bir uzlaşma arayacaksınız.
 
 05:55.990 --> 05:56.740
-frame rate.
+Kare hızı.
 
 05:56.980 --> 06:01.930
-So we're able to tweak these and they're going to be doing calculations still, but maybe less often
+Bu yüzden bunlarda ince ayar yapabiliyoruz ve hesaplamaları hala yapıyor olacaklar, ancak belki daha az sıklıkta
 
 06:01.930 --> 06:03.360
-or more often than before.
+ya da eskisinden daha sık.
 
 06:03.370 --> 06:08.110
-So just with those tweaks, these are some values that I fooled around with ahead of time and I got
+Sadece bu ince ayarlarla, bunlar önceden uğraştığım ve elde ettiğim bazı değerler
 
 06:08.110 --> 06:08.890
-some good results.
+Bazı iyi sonuçlar.
 
 06:08.890 --> 06:09.760
-So let's take a look.
+Bir göz atalım.
 
 06:10.800 --> 06:11.880
-I'm going to run here.
+Burada koşacağım.
 
 06:15.850 --> 06:16.810
-And give it a play.
+Ve bir oynayın.
 
 06:18.030 --> 06:21.570
-So this is making a huge difference.
+Yani bu büyük bir fark yaratıyor.
 
 06:21.570 --> 06:24.330
-I think in this case, this is really the key.
+Bence bu durumda, bu gerçekten anahtar.
 
 06:25.080 --> 06:28.830
-We could probably do only this change and an undo those other ones.
+Muhtemelen sadece bu değişikliği yapıp diğerlerini geri alabiliriz.
 
 06:28.830 --> 06:31.740
-Previously, we're up to 80, 80 some frames a second.
+Önceden saniyede 80, 80 küsur kareye kadar çıkıyorduk.
 
 06:31.740 --> 06:35.100
-So we've met our target of 60, which is fantastic.
+Yani hedefimiz olan 60'a ulaştık ki bu harika bir şey.
 
 06:35.220 --> 06:39.450
-So again, if you look at the documentation for those two properties, you can learn a little bit more
+Dolayısıyla, bu iki özelliğin belgelerine bakarsanız, biraz daha fazla bilgi edinebilirsiniz
 
 06:39.450 --> 06:41.700
-about what they do and why you can tweak them.
+ne yaptıklarını ve neden onları değiştirebileceğinizi anlatacağım.
 
 06:41.700 --> 06:46.800
-And depending on your project, maybe you can't tweak them exactly as as extremely as I did.
+Ve projenize bağlı olarak, belki de bunları tam olarak benim yaptığım kadar aşırı derecede değiştiremezsiniz.
 
 06:46.800 --> 06:49.920
-You might need the accuracy there.
+Orada doğruluğa ihtiyacınız olabilir.
 
 06:50.490 --> 06:53.790
-Then a couple of other things that I try that didn't really help me out.
+Sonra denediğim birkaç şey daha bana pek yardımcı olmadı.
 
 06:54.330 --> 07:01.530
-There's some physics settings that you can set here and setting them, and maybe the values I've chosen
+Burada ayarlayabileceğiniz bazı fizik ayarları var ve bunları ayarlamak ve belki de benim seçtiğim değerler
 
 07:01.530 --> 07:04.020
-didn't really give me a good difference.
+bana gerçekten iyi bir fark vermedi.
 
 07:04.020 --> 07:09.060
-So I'm not going to bring those into the party of this conversation, but just know that there are some
+Bu yüzden onları bu konuşmanın bir parçası haline getirmeyeceğim, ancak şunu bilin ki bazı
 
 07:09.060 --> 07:10.050
-other values tweak.
+diğer değerler ayarlanır.
 
 07:10.050 --> 07:13.320
-And lastly, there is something in the settings called Adaptive Force.
+Ve son olarak, ayarlarda Uyarlanabilir Kuvvet adı verilen bir şey var.
 
 07:13.320 --> 07:14.550
-I'll give that a try.
+Bunu bir deneyeceğim.
 
 07:15.300 --> 07:22.680
-In physics Project settings Physics enable adaptive force.
+Fizik Projesi ayarlarında Fizik uyarlanabilir kuvveti etkinleştirin.
 
 07:22.680 --> 07:25.110
-Oh, it's already enabled actually in our demo here.
+Oh, aslında buradaki demomuzda zaten etkinleştirilmiş durumda.
 
 07:25.110 --> 07:30.780
-So it is enables the force which improves the stability of large stacks.
+Böylece büyük yığınların stabilitesini artıran kuvveti mümkün kılar.
 
 07:30.780 --> 07:37.800
-So stability sounds like maybe it's better result but more slow because I imagine there's a calculation
+Bu yüzden stabilite daha iyi bir sonuç olabilir ama daha yavaştır çünkü bir hesaplama olduğunu hayal ediyorum
 
 07:37.800 --> 07:38.160
-there.
+Orada.
 
 07:38.160 --> 07:42.600
-Let's turn it off and let's see if we get worse Performance.
+Kapatalım ve daha kötü bir performans elde edip edemeyeceğimize bakalım.
 
 07:42.600 --> 07:44.250
-We're better performance.
+Daha iyi performans gösteriyoruz.
 
 07:46.400 --> 07:47.630
-Or maybe it'll be the same.
+Ya da belki aynısı olur.
 
 07:48.320 --> 07:50.840
-So we're looking good.
+Yani iyi görünüyoruz.
 
 07:52.970 --> 07:54.710
-Before.
+Daha önce.
 
 07:57.000 --> 07:59.230
-Yeah, I would say that this is better now.
+Evet, bunun şimdi daha iyi olduğunu söyleyebilirim.
 
 07:59.250 --> 08:03.840
-So not having the adaptive feature on is better.
+Yani uyarlanabilir özelliğin açık olmaması daha iyidir.
 
 08:04.380 --> 08:08.490
-It's hard to tell because as we let this play, there's more complexity in the scene.
+Bunu söylemek zor çünkü oynamasına izin verdikçe sahnede daha fazla karmaşıklık oluyor.
 
 08:08.490 --> 08:14.250
-So it's not scientific the way that we're just looking at the frame rate here and doing a visual gauge.
+Yani burada sadece kare hızına bakıp görsel bir ölçüm yapmamız bilimsel değil.
 
 08:14.250 --> 08:19.830
-But overall we see that we've gotten much better performance than we had before.
+Ancak genel olarak daha önce elde ettiğimizden çok daha iyi bir performans elde ettiğimizi görüyoruz.
 
 08:20.620 --> 08:20.890
-Now.
+Şimdi.
 
 08:20.890 --> 08:23.320
-And of course, we're with 20,000 objects.
+Ve tabii ki, 20.000 nesne ile birlikteyiz.
 
 08:23.320 --> 08:29.950
-So it's good in your game, too, if you're experiencing some frame rate problems, maybe complicate
+Bu yüzden oyununuzda da bazı kare hızı sorunları yaşıyorsanız, belki de karmaşıklaştırın
 
 08:29.950 --> 08:35.680
-the issue with more obstacles, more levels in your level design.
+seviye tasarımınızda daha fazla engel, daha fazla seviye ile ilgili sorun.
 
 08:36.160 --> 08:41.980
-See if you can make it slower then these each of these little changes will make a more dramatic frame
+Daha yavaş yapıp yapamayacağınıza bakın, o zaman bu küçük değişikliklerin her biri daha dramatik bir çerçeve oluşturacaktır
 
 08:41.980 --> 08:44.470
-rate change and then you'll understand.
+oran değişikliği ve sonra anlayacaksınız.
 
 08:44.470 --> 08:45.790
-Okay, this feature helps.
+Tamam, bu özellik yardımcı oluyor.
 
 08:45.790 --> 08:46.830
-This feature doesn't.
+Bu özellik yok.
 
 08:46.840 --> 08:51.880
-Then when you remove the complexity, you're back to a frame rate that's more stable and again, that
+Karmaşıklığı ortadan kaldırdığınızda, daha istikrarlı bir kare hızına geri dönersiniz ve yine bu
 
 08:51.880 --> 08:53.950
-represents the game that you want there.
+orada istediğiniz oyunu temsil eder.
 
 08:53.950 --> 08:55.090
-So that's it.
+İşte bu kadar.
 
 08:55.390 --> 09:00.520
-You can also take a look at the optimized physics complete scene to see the exact same end result.
+Aynı sonucu görmek için optimize edilmiş fiziğin tamamlandığı sahneye de bakabilirsiniz.
 
 09:00.520 --> 09:04.600
-But just as you're experimenting, if you want to jump in, play around and then compare yourself,
+Ama tıpkı deney yaparken olduğu gibi, atlamak istiyorsanız, oynayın ve sonra kendinizi karşılaştırın,
 
 09:04.600 --> 09:05.400
-you can do that.
+Bunu yapabilirsin.
 
 09:05.410 --> 09:06.140
-So that's it.
+İşte bu kadar.
 
 09:06.160 --> 09:07.030
-Thanks very much.
+Çok teşekkürler.
 
 09:09.720 --> 09:14.010
-In the next video, we'll take a look at predicting physics trajectory.
+Bir sonraki videoda, fizik yörüngesini tahmin etmeye bir göz atacağız.

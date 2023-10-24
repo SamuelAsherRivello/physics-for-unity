@@ -1,214 +1,214 @@
 WEBVTT
 
 00:01.710 --> 00:03.190
-Adding extra polish.
+Ekstra cila ekleniyor.
 
 00:03.210 --> 00:09.210
-In this video, we'll cover what is Polish and what features are best left to the end of development.
+Bu videoda, Lehçe'nin ne olduğunu ve hangi özelliklerin geliştirme sürecinin sonuna bırakılması gerektiğini ele alacağız.
 
 00:09.240 --> 00:15.210
-We'll add some explosion animations, physics, effectors and sounds for the explosions into our game
+Oyunumuza bazı patlama animasyonları, fizikler, efektörler ve patlamalar için sesler ekleyeceğiz
 
 00:15.210 --> 00:15.870
-as well.
+aynı zamanda.
 
 00:16.700 --> 00:18.030
-So what is Polish?
+Peki Lehçe nedir?
 
 00:18.050 --> 00:25.420
-Polish is the last steps of game play, typically before a big milestone or even before shipping.
+Lehçe, genellikle büyük bir kilometre taşından önce veya hatta sevkiyattan önce oyunun son adımlarıdır.
 
 00:25.430 --> 00:32.840
-When you spend your time and resources on making small differences to the graphics, the visuals, the
+Zamanınızı ve kaynaklarınızı grafiklerde, görsellerde, içerikte küçük farklılıklar yaratmaya harcadığınızda
 
 00:32.840 --> 00:37.310
-gameplay, things that take the game from being good to being great.
+Oynanış, oyunu iyi olmaktan harika olmaya taşıyan şeyler.
 
 00:37.430 --> 00:43.340
-In our game, the task breakdown for us is we're going to add some explosions when the crates disappear.
+Oyunumuzda, bizim için görev dağılımı, sandıklar kaybolduğunda bazı patlamalar ekleyeceğiz.
 
 00:43.730 --> 00:50.390
-Currently, when crates disappear is both a pretty big part of the gameplay and as well as it's not
+Şu anda, sandıklar kaybolduğunda hem oyunun oldukça büyük bir parçası hem de
 
 00:50.390 --> 00:51.830
-really that dramatic.
+gerçekten o kadar dramatik.
 
 00:51.830 --> 00:56.340
-So if we add some explosions, it helps to celebrate and add a bit of drama to that moment.
+Bu yüzden biraz patlama eklersek, o anı kutlamaya ve biraz drama katmaya yardımcı olur.
 
 00:56.360 --> 00:58.730
-We'll add in explosion animation.
+Patlama animasyonu ekleyeceğiz.
 
 00:58.730 --> 01:04.850
-We'll use an effector to DX so that objects near the explosion get moved just a little bit and then
+DX için bir efektör kullanacağız, böylece patlamanın yakınındaki nesneler biraz hareket edecek ve sonra
 
 01:04.850 --> 01:09.950
-we'll add a sound manager because the sound has been missing from our gameplay so far and we'll look
+Bir ses yöneticisi ekleyeceğiz çünkü ses şu ana kadar oyunumuzda eksikti ve
 
 01:09.950 --> 01:13.820
-at key events in the gameplay that need a little extra attention.
+Oynanışta biraz daha fazla dikkat gerektiren kilit olaylarda.
 
 01:14.120 --> 01:19.280
-We'll open up section five Video five Upset Ducks five for our project.
+Projemiz için beşinci bölüm olan Video beş Upset Ducks beşi açacağız.
 
 01:20.000 --> 01:24.830
-All right, let's jump inside Unity here and open up our Upset Dux five.
+Pekala, Unity'nin içine atlayalım ve Upset Dux beşlimizi açalım.
 
 01:25.130 --> 01:26.210
-We'll give it a play.
+Bir oynayalım.
 
 01:26.840 --> 01:29.420
-We'll notice a few different things that we've polished up.
+Parlattığımız birkaç farklı şeyi fark edeceğiz.
 
 01:29.720 --> 01:35.450
-Number one, whenever I restart the scene here by using the space bar, we can see that the asteroid
+Birincisi, burada boşluk tuşunu kullanarak sahneyi yeniden başlattığımda, asteroidin
 
 01:35.450 --> 01:40.040
-fades in from a zero scale to a one scale with a nice little bounce.
+sıfır ölçeğinden bir ölçeğine güzel bir sıçrama ile geçer.
 
 01:40.070 --> 01:44.780
-It's a little effect, but it's pretty cheap to add and it gives a little visual appeal.
+Küçük bir efekttir, ancak eklenmesi oldukça ucuzdur ve biraz görsel çekicilik sağlar.
 
 01:44.930 --> 01:47.840
-Also, when I shoot here, you'll see an explosion.
+Ayrıca buraya ateş ettiğimde bir patlama göreceksiniz.
 
 01:51.760 --> 01:53.760
-So the sound effect works really well.
+Yani ses efekti gerçekten iyi çalışıyor.
 
 01:53.770 --> 01:58.210
-The explosion makes it a lot more exciting when a crate is disappearing.
+Patlama, bir sandığın kaybolmasını çok daha heyecanlı hale getiriyor.
 
 01:58.210 --> 02:01.840
-And also we get a explosion physics force.
+Ve ayrıca bir patlama fizik gücü elde ediyoruz.
 
 02:01.840 --> 02:03.730
-So let's see how that stuff set up.
+Bakalım bu şey nasıl kurulmuş.
 
 02:03.790 --> 02:05.800
-First, let's take a look at that tween.
+İlk olarak, şu aralara bir göz atalım.
 
 02:06.470 --> 02:08.000
-So in the asteroid.
+Yani asteroitte.
 
 02:08.890 --> 02:10.210
-Inside of its start.
+Başlangıç noktasının içinde.
 
 02:10.660 --> 02:14.410
-I do programmatic animation scaling from 0 to 1.
+0'dan 1'e programatik animasyon ölçeklendirmesi yapıyorum.
 
 02:14.440 --> 02:19.800
-It's easy to add works using a free library that's called do tween.
+Do tween adı verilen ücretsiz bir kütüphane kullanarak iş eklemek kolaydır.
 
 02:19.810 --> 02:23.890
-And it's really fun to have these kind of effects added in throughout the game.
+Ve oyun boyunca bu tür efektlerin eklenmesi gerçekten eğlenceli.
 
 02:23.890 --> 02:25.090
-So that's first.
+Yani bu ilk.
 
 02:25.450 --> 02:29.350
-Then back in the game here, let's take a look at how the sounds are working.
+Oyuna geri döndüğümüzde, seslerin nasıl çalıştığına bir göz atalım.
 
 02:29.350 --> 02:34.240
-So inside the environment in this scene, we've got a sound manager added.
+Bu sahnedeki ortamın içine bir ses yöneticisi ekledik.
 
 02:34.570 --> 02:37.650
-And what I do is I cue up the sounds that I want.
+Ve yaptığım şey, istediğim sesleri işaretlemek.
 
 02:37.660 --> 02:43.600
-These are WAV files or MP threes that are added to the project and then I'm able to call them by passing
+Bunlar projeye eklenen WAV dosyaları veya MP üçlüleridir ve daha sonra bunları
 
 02:43.600 --> 02:44.860
-in the index.
+dizinde.
 
 02:44.860 --> 02:49.510
-Play zero, play one, play four, and I play the corresponding sound.
+Sıfır çal, bir çal, dört çal ve ben de ilgili sesi çalayım.
 
 02:49.660 --> 02:53.410
-So let's see where in our duck game we call that.
+Bakalım ördek oyunumuzda bunu nereye çağıracağız.
 
 02:53.800 --> 02:58.980
-So down here, when I destroy the crate, what happens is I first play that sound.
+Yani burada, sandığı yok ettiğimde, ilk olarak bu sesi çalıyorum.
 
 02:58.990 --> 03:01.030
-You can see the syntax is really easy.
+Sözdiziminin gerçekten kolay olduğunu görebilirsiniz.
 
 03:01.450 --> 03:03.550
-Then I create the explosion.
+Sonra patlamayı yaratıyorum.
 
 03:03.700 --> 03:06.460
-Creating the explosion just instantiates a prefab.
+Patlamayı oluşturmak sadece bir prefabrik oluşturur.
 
 03:06.460 --> 03:09.070
-We've done that before for the asteroid, for example.
+Örneğin bunu daha önce asteroit için yapmıştık.
 
 03:09.070 --> 03:14.650
-And then down here I remove the explosion after a few seconds.
+Ve burada birkaç saniye sonra patlamayı kaldırıyorum.
 
 03:14.650 --> 03:17.260
-So the explosion is up for maybe a half a second.
+Yani patlama yarım saniye kadar sürüyor.
 
 03:17.260 --> 03:21.760
-You could tweak that and have it stick around a little more, depending on how much visual impact you
+Bunu değiştirebilir ve ne kadar görsel etki yaratacağınıza bağlı olarak biraz daha etrafta kalmasını sağlayabilirsiniz.
 
 03:21.760 --> 03:22.600
-want to have there.
+Orada olmak istiyorum.
 
 03:23.440 --> 03:26.750
-And lastly, let's take a look at the explosion itself.
+Ve son olarak, patlamanın kendisine bir göz atalım.
 
 03:26.770 --> 03:28.240
-So here's the prefab.
+İşte prefabrik.
 
 03:28.880 --> 03:29.920
-Is what it looks like.
+Göründüğü gibi.
 
 03:30.310 --> 03:36.370
-And we can see we've got a circle collider here and it's this size collider that's going to have a physics
+Ve burada bir daire çarpıştırıcımız olduğunu görebiliyoruz ve bu boyutta bir fizik çarpıştırıcısı olacak
 
 03:36.370 --> 03:37.340
-force applied.
+kuvvet uygulandı.
 
 03:37.360 --> 03:42.260
-So it's this point effector that we've added that's going to have a force magnitude of five.
+Yani eklediğimiz bu nokta efektörü beş kuvvet büyüklüğüne sahip olacak.
 
 03:42.280 --> 03:47.230
-So you can see this is the magnitude of the force that's going to be applied positive is in an outward
+Böylece pozitif olarak uygulanacak kuvvetin büyüklüğünün dışa doğru olduğunu görebilirsiniz.
 
 03:47.230 --> 03:47.890
-direction.
+yön.
 
 03:47.890 --> 03:51.010
-So this explosion is going to push the boxes out a little bit.
+Yani bu patlama kutuları biraz dışarı itecek.
 
 03:51.160 --> 03:53.200
-So that's the setup for the Polish.
+Polonyalı için kurulum bu şekilde.
 
 03:53.200 --> 03:56.950
-And I think the game looks really great after these five videos.
+Ve bence bu beş videodan sonra oyun gerçekten harika görünüyor.
 
 03:58.730 --> 04:01.960
-As a bonus assignment, you can add your own polish to this project.
+Bonus ödev olarak, bu projeye kendi cilanızı ekleyebilirsiniz.
 
 04:01.970 --> 04:05.870
-You can add more programmatic tuning to have different effects in there.
+Burada farklı efektler elde etmek için daha fazla programatik ayar ekleyebilirsiniz.
 
 04:05.870 --> 04:10.100
-You can have more sound effects and obstacles, larger levels.
+Daha fazla ses efekti ve engele, daha büyük seviyelere sahip olabilirsiniz.
 
 04:10.100 --> 04:15.320
-With a scrolling camera or multiple levels, you could have different types of asteroids so that you
+Kaydırmalı bir kamera veya birden fazla seviye ile farklı asteroit türlerine sahip olabilirsiniz, böylece
 
 04:15.320 --> 04:20.390
-could shoot maybe ones that explode themselves or different types of upset ducks.
+belki kendi kendine patlayanları ya da farklı türde üzgün ördekleri vurabilir.
 
 04:20.390 --> 04:22.160
-Some that are smarter.
+Bazıları daha zeki.
 
 04:22.160 --> 04:28.700
-They can move out of the way, some that have more power, more defense, some that move and make them
+Yoldan çekilebilirler, bazıları daha fazla güce, daha fazla savunmaya sahiptir, bazıları hareket eder ve onları
 
 04:28.700 --> 04:29.870
-more difficult to hit.
+vurması daha zor.
 
 04:30.080 --> 04:34.970
-In the next section, we'll look at creating a Marble Madness clone three D game.
+Bir sonraki bölümde, Marble Madness klonu üç boyutlu bir oyun oluşturmaya bakacağız.

@@ -1,196 +1,196 @@
 WEBVTT
 
 00:01.860 --> 00:03.650
-Adding win loss conditions.
+Kazanma kaybetme koşulları ekleniyor.
 
 00:03.660 --> 00:10.230
-In this video we'll cover adding UI text for score and time will reward points for collecting the coins
+Bu videoda, puan için kullanıcı arayüzü metni eklemeyi ele alacağız ve zaman, madeni paraları toplamak için puanları ödüllendirecek
 
 00:10.410 --> 00:12.870
-and will create a timer for the loss condition.
+ve kayıp durumu için bir zamanlayıcı oluşturacaktır.
 
 00:12.990 --> 00:18.060
-For winning, we'll add the finish area which our crazy ball can reach and collide with.
+Kazanmak için, çılgın topumuzun ulaşabileceği ve çarpışabileceği bitiş alanını ekleyeceğiz.
 
 00:18.480 --> 00:19.980
-Here's the test breakdown.
+İşte test dökümü.
 
 00:19.980 --> 00:23.730
-We'll create the crazy ball UI prefab and C-sharp script.
+Crazy Ball UI prefabrik ve C-sharp betiğini oluşturacağız.
 
 00:23.850 --> 00:27.330
-Then we'll add the finish area prefab and see sharp script.
+Ardından bitiş alanı prefabriğini ekleyeceğiz ve keskin komut dosyasını göreceğiz.
 
 00:27.750 --> 00:32.500
-Then we'll add the crazy ball game, which will drive the high level logic for our gameplay.
+Daha sonra çılgın top oyununu ekleyeceğiz, bu da oyunumuz için üst düzey mantığı yönlendirecek.
 
 00:32.520 --> 00:36.010
-And between each of these, we'll add the win and loss conditions.
+Ve bunların her birinin arasına kazanma ve kaybetme koşullarını ekleyeceğiz.
 
 00:36.030 --> 00:42.390
-This screenshot represents our target goal for the project will open up section six, Video four and
+Bu ekran görüntüsü, proje için hedeflediğimiz altıncı bölüm, dördüncü video ve
 
 00:42.390 --> 00:44.130
-the scene Crazy Ball four.
+Çılgın Top 4 sahnesi.
 
 00:44.850 --> 00:48.780
-All right, here we are in unity and we're jumping into Crazy Ball four.
+Pekala, işte birlikteyiz ve Çılgın Top 4'e geçiyoruz.
 
 00:49.990 --> 00:56.320
-Now, what we've added here is the UI and the other code for the rules of the game.
+Şimdi, buraya eklediğimiz şey kullanıcı arayüzü ve oyunun kuralları için diğer kodlardır.
 
 00:56.320 --> 00:58.120
-This is the win and loss conditions.
+Bu kazanma ve kaybetme koşullarıdır.
 
 00:58.120 --> 00:59.290
-So let's take a look.
+Bir göz atalım.
 
 00:59.740 --> 01:01.810
-We've got this finish area set up.
+Bu bitiş alanını hazırladık.
 
 01:03.460 --> 01:04.810
-It looks like a checkerboard.
+Dama tahtasına benziyor.
 
 01:05.170 --> 01:08.200
-And we've got this collider here.
+Ve burada bu çarpıştırıcımız var.
 
 01:08.200 --> 01:13.660
-So when our ball interacts with that, we're able to trigger the game to be over.
+Yani topumuz bununla etkileşime girdiğinde, oyunun bitmesini tetikleyebiliyoruz.
 
 01:14.260 --> 01:20.980
-Then we've got the UI, which is the time and the score and a results text that's currently invisible,
+Ardından, zaman, skor ve şu anda görünmez olan bir sonuç metninden oluşan kullanıcı arayüzümüz var,
 
 01:20.980 --> 01:26.050
-ready to be populated with values of the current time and the current score, etc..
+mevcut zaman ve mevcut skor vb. değerlerle doldurulmaya hazırdır.
 
 01:26.260 --> 01:28.810
-And then we've got this new crazy ball game script.
+Ve sonra bu yeni çılgın top oyunu senaryomuz var.
 
 01:28.810 --> 01:30.730
-So let's take a look at each of those three.
+Şimdi bu üçünün her birine bir göz atalım.
 
 01:31.540 --> 01:32.890
-In the crazy ball UI.
+Çılgın top kullanıcı arayüzünde.
 
 01:32.890 --> 01:37.270
-If we wanted to add UI, we'd create a game object from scratch.
+Eğer kullanıcı arayüzü eklemek istersek, sıfırdan bir oyun nesnesi yaratırız.
 
 01:37.450 --> 01:45.070
-With a UI, we'd be able to create this by creating a game object and then creating the UI with different
+Bir kullanıcı arayüzü ile, bunu bir oyun nesnesi oluşturarak ve ardından kullanıcı arayüzünü farklı
 
 01:45.070 --> 01:45.940
-text values.
+metin değerleri.
 
 01:45.940 --> 01:48.400
-We'd go ahead and do that in position on the screen.
+Devam edelim ve bunu ekrandaki pozisyonda yapalım.
 
 01:48.910 --> 01:55.570
-Then we add a custom UI script here and drag in the references to each of the text fields that we want
+Ardından buraya özel bir UI komut dosyası ekliyoruz ve istediğimiz metin alanlarının her birine referansları sürüklüyoruz
 
 01:55.570 --> 01:56.600
-to be able to change.
+değiştirebilmek için.
 
 01:56.620 --> 02:00.130
-So let's start by taking a look at that crazy ball UI script.
+Şimdi şu çılgın top kullanıcı arayüzü betiğine bir göz atarak başlayalım.
 
 02:01.480 --> 02:07.810
-So what we do is we take in the different references as serialized fields and then simply have a public
+Yani yaptığımız şey, farklı referansları serileştirilmiş alanlar olarak almak ve sonra basitçe bir public
 
 02:07.810 --> 02:13.270
-method for each of them, one to show the time, one to show the score, and then in the end, one to
+Her biri için bir yöntem, biri zamanı göstermek için, biri skoru göstermek için ve sonunda biri
 
 02:13.270 --> 02:14.050
-show the result.
+Sonucu göster.
 
 02:14.050 --> 02:17.350
-Depending if you've won or lost, be able to show unique text there.
+Kazandığınıza veya kaybettiğinize bağlı olarak, orada benzersiz bir metin gösterebilirsiniz.
 
 02:17.800 --> 02:24.040
-The crazy ball game, which sits in the scene on its own game object, is able to hold the score and
+Sahnede kendi oyun nesnesi üzerinde duran çılgın top oyunu, skoru tutabilir ve
 
 02:24.040 --> 02:25.120
-hold the time.
+zamanı tut.
 
 02:25.120 --> 02:30.820
-And within each of those, when you set the score, for example, it just calls that show score method
+Ve bunların her birinde, örneğin skoru ayarladığınızda, sadece skoru göster yöntemini çağırır
 
 02:30.820 --> 02:32.680
-and calls the show time method.
+ve zamanı göster yöntemini çağırır.
 
 02:32.680 --> 02:37.660
-So you can see the interaction between the crazy ball game and the crazy ball UI.
+Böylece çılgın top oyunu ile çılgın top kullanıcı arayüzü arasındaki etkileşimi görebilirsiniz.
 
 02:38.620 --> 02:39.700
-Sit down here.
+Otur şuraya.
 
 02:39.700 --> 02:43.530
-We set the initial values of score and how much time we have left.
+Skorun başlangıç değerlerini ve ne kadar zamanımız kaldığını ayarlıyoruz.
 
 02:43.540 --> 02:45.790
-Those will get shown to the UI.
+Bunlar kullanıcı arayüzüne gösterilecektir.
 
 02:46.150 --> 02:49.030
-And then on update, we tick down the time.
+Ve sonra güncellemede zamanı işaretliyoruz.
 
 02:49.780 --> 02:51.970
-Down from 30 down to zero.
+30'dan sıfıra indi.
 
 02:51.970 --> 02:55.900
-And then if it reaches zero, we are able to set the end game.
+Ve sonra sıfıra ulaşırsa, oyunun sonunu belirleyebiliriz.
 
 02:55.900 --> 03:03.070
-And setting the end game will lock in that the game is over so that different systems in the game can
+Ve oyun sonunu ayarlamak oyunun bittiğini kilitleyecek, böylece oyundaki farklı sistemler
 
 03:03.070 --> 03:03.580
-stop.
+Dur.
 
 03:03.580 --> 03:08.170
-You no longer can have input, for example, and then show that result in the UI.
+Örneğin artık girdi alamazsınız ve ardından bu sonucu kullanıcı arayüzünde gösteremezsiniz.
 
 03:08.200 --> 03:10.390
-Then one more thing I want to show.
+Göstermek istediğim bir şey daha var.
 
 03:10.420 --> 03:15.190
-Inside the crazy ball itself, this is how we handle the finish area collision.
+Çılgın topun içinde, bitiş alanı çarpışmasını bu şekilde ele alıyoruz.
 
 03:15.190 --> 03:21.010
-It's quite simple again, because we don't want that bounding box of the finish area to feel like a
+Yine oldukça basit, çünkü bitiş alanının sınırlayıcı kutusunun bir
 
 03:21.010 --> 03:22.570
-box we can't penetrate.
+kutunun içine giremiyoruz.
 
 03:22.570 --> 03:30.280
-We use a trigger and the trigger allows us to go inside of that volume, but we're able to end the game
+Bir tetikleyici kullanıyoruz ve tetikleyici bu hacmin içine girmemize izin veriyor, ancak oyunu sonlandırabiliyoruz
 
 03:30.280 --> 03:32.260
-properly using the on trigger enter.
+tetikleyici girişini düzgün bir şekilde kullanarak.
 
 03:33.710 --> 03:34.700
-Let's give it a play.
+Hadi bir oynayalım.
 
 03:38.590 --> 03:40.390
-We can see the time ticking down.
+Zamanın ilerlediğini görebiliyoruz.
 
 03:41.280 --> 03:45.630
-We can see the score going up every time I get the coins.
+Paraları her aldığımda skorun yükseldiğini görebiliyoruz.
 
 03:46.170 --> 03:51.900
-And then if I make my way over to the finish area, the moment I enter that trigger volume, it says
+Ve sonra bitiş alanına doğru ilerlersem, o tetikleyici hacme girdiğim anda şöyle diyor
 
 03:51.900 --> 03:52.560
-I win.
+Ben kazandım.
 
 03:53.360 --> 03:58.040
-I'll hit spacebar to restart and we could let the timer fall all the way down.
+Yeniden başlatmak için boşluk tuşuna basacağım ve zamanlayıcının tamamen düşmesine izin verebiliriz.
 
 03:58.070 --> 04:04.630
-If it did, it would show a similar message to our UN, except it would say you lose.
+Eğer olsaydı, bizim BM'ye benzer bir mesaj gösterecekti, tek farkı kaybettiğinizi söyleyecekti.
 
 04:04.640 --> 04:05.780
-And that's the only difference.
+Ve tek fark bu.
 
 04:05.780 --> 04:09.560
-So there's all the win and loss conditions and our new scripting.
+İşte tüm kazanma ve kaybetme koşulları ve yeni senaryomuz.
 
 04:12.240 --> 04:15.120
-In the next video, we'll cover adding extra polish.
+Bir sonraki videoda, ekstra cila eklemeyi ele alacağız.

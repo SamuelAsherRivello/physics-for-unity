@@ -1,223 +1,223 @@
 WEBVTT
 
 00:01.520 --> 00:04.670
-Welcome to an Introduction to Game Physics Section one.
+Oyun Fiziğine Giriş birinci bölüme hoş geldiniz.
 
 00:04.700 --> 00:08.360
-In this section, we'll look at the benefits of creating physics based games.
+Bu bölümde, fizik tabanlı oyunlar yaratmanın faydalarına bakacağız.
 
 00:08.510 --> 00:14.060
-We'll look at the three major concerns of any physics system, and we'll see how those concerns apply
+Herhangi bir fizik sisteminin üç ana kaygısına bakacağız ve bu kaygıların nasıl uygulandığını göreceğiz
 
 00:14.060 --> 00:17.310
-to unity, Unity's physics system and project setup.
+Unity'ye, Unity'nin fizik sistemine ve proje kurulumuna.
 
 00:17.330 --> 00:20.180
-We'll also look at physics, life cycle and timing.
+Ayrıca fizik, yaşam döngüsü ve zamanlama konularına da bakacağız.
 
 00:20.360 --> 00:25.760
-In this video integration, collision detection and collision resolution, we'll see.
+Bu videoda entegrasyon, çarpışma algılama ve çarpışma çözünürlüğünü göreceğiz.
 
 00:25.760 --> 00:28.320
-These are the three major concerns of any physics system.
+Bunlar herhangi bir fizik sisteminin üç ana kaygısıdır.
 
 00:28.340 --> 00:30.650
-We'll see how unity handles each one.
+Unity'nin her birini nasıl ele aldığını göreceğiz.
 
 00:30.650 --> 00:34.310
-And we'll take a look at physics in the Unity editor for the first time.
+Ve Unity editöründe ilk kez fiziğe bir göz atacağız.
 
 00:34.550 --> 00:36.450
-So what do we mean by game physics?
+Peki oyun fiziği derken neyi kastediyoruz?
 
 00:36.470 --> 00:41.920
-Typically, when we think of game physics as a player, we think more of rigid body simulation.
+Tipik olarak, bir oyuncu olarak oyun fiziğini düşündüğümüzde, daha çok katı gövde simülasyonunu düşünürüz.
 
 00:41.930 --> 00:43.610
-These are the calculations.
+Bunlar hesaplamalar.
 
 00:43.610 --> 00:50.690
-For example, a stack of cubes on how cubes can stand on top of each other, collide, interact.
+Örneğin, küplerin üst üste nasıl durabileceği, çarpışabileceği ve etkileşime girebileceği üzerine bir küp yığını.
 
 00:50.840 --> 00:52.820
-But there's also spatial queries.
+Ancak uzamsal sorgular da vardır.
 
 00:52.820 --> 00:55.690
-Spatial queries are non visual.
+Mekânsal sorgular görsel değildir.
 
 00:55.700 --> 01:03.650
-They're examining the space in the 3D world, using physics to check distances by projecting a line
+Bir çizgi yansıtarak mesafeleri kontrol etmek için fiziği kullanarak 3B dünyadaki alanı inceliyorlar
 
 01:03.650 --> 01:09.350
-or a collider through space to judge where the obstacles are in the world.
+ya da dünyada engellerin nerede olduğuna karar vermek için uzayda bir çarpıştırıcı.
 
 01:09.350 --> 01:12.860
-You can also look ahead to see potential future collisions.
+Gelecekteki olası çarpışmaları görmek için ileriye de bakabilirsiniz.
 
 01:12.860 --> 01:19.910
-And for example, you could evaluate is my gun of my character pointing at the enemy and have the enemy
+Örneğin, karakterimin silahının düşmana doğrultulmuş olduğunu değerlendirebilir ve düşmanın
 
 01:19.910 --> 01:21.380
-with a reaction for that.
+bunun için bir tepki ile.
 
 01:21.590 --> 01:28.460
-The three major concerns of any physics system are integration, collision detection and collision resolution.
+Herhangi bir fizik sisteminin üç ana kaygısı entegrasyon, çarpışma tespiti ve çarpışma çözünürlüğüdür.
 
 01:28.460 --> 01:31.460
-Integration handles how physics fit into the game.
+Entegrasyon, fiziğin oyuna nasıl uyum sağlayacağını ele alır.
 
 01:31.460 --> 01:38.780
-World Collision detection is regarding how objects are overlapping and how the system detects that,
+Dünya Çarpışma tespiti, nesnelerin nasıl üst üste bindiği ve sistemin bunu nasıl algıladığı ile ilgilidir,
 
 01:38.780 --> 01:44.840
-and collision resolution is handling the reactions of those overlapping objects.
+ve çarpışma çözünürlüğü bu üst üste binen nesnelerin tepkilerini ele alıyor.
 
 01:44.840 --> 01:49.460
-For example, objects could bounce or move away from each other.
+Örneğin, nesneler sekebilir veya birbirlerinden uzaklaşabilir.
 
 01:49.520 --> 01:50.900
-Let's look at integration.
+Entegrasyona bakalım.
 
 01:50.900 --> 01:53.780
-Using physics in unity is optional.
+Unity'de fizik kullanmak isteğe bağlıdır.
 
 01:53.780 --> 02:00.680
-The way that unity projects are architected is game objects are in the three D space and each has one
+Unity projelerinin mimari şekli, oyun nesnelerinin üç boyutlu uzayda olması ve her birinin bir
 
 02:00.680 --> 02:02.300
-or more components on top.
+ya da daha fazla bileşen.
 
 02:02.540 --> 02:09.080
-For example, in the screenshot we see a game object with the transform component that is obligatory.
+Örneğin, ekran görüntüsünde zorunlu olan transform bileşenine sahip bir oyun nesnesi görüyoruz.
 
 02:09.080 --> 02:15.440
-If we want to add and integrate physics into this project, we just add a rigid body onto that same
+Bu projeye fizik eklemek ve entegre etmek istiyorsak, aynı projeye sert bir gövde ekleriz
 
 02:15.440 --> 02:16.160
-game object.
+oyun nesnesi.
 
 02:16.160 --> 02:19.130
-And now the game object is aware of its own space.
+Ve şimdi oyun nesnesi kendi alanının farkında.
 
 02:19.130 --> 02:20.810
-Inside the physics world.
+Fizik dünyasının içinde.
 
 02:20.960 --> 02:26.480
-Each frame, the physics system will review all the components related to physics and do the right updates
+Her karede, fizik sistemi fizikle ilgili tüm bileşenleri gözden geçirecek ve doğru güncellemeleri yapacaktır
 
 02:26.480 --> 02:27.590
-and calculations.
+ve hesaplamalar.
 
 02:27.890 --> 02:29.690
-Collision detection is the second.
+Çarpışma tespiti ikincisidir.
 
 02:29.720 --> 02:36.410
-It's the system that looks at all the physical based objects in the world and decides are they overlapping.
+Dünyadaki tüm fiziksel tabanlı nesnelere bakan ve örtüşüp örtüşmediklerine karar veren sistemdir.
 
 02:36.410 --> 02:42.260
-For example, in this image we see a blue square and a pink square overlapping by just a little bit.
+Örneğin, bu görüntüde mavi bir kare ile pembe bir karenin birazcık üst üste bindiğini görüyoruz.
 
 02:42.470 --> 02:47.060
-Collision resolution is handling that overlap in the same situation.
+Çarpışma çözünürlüğü, aynı durumda bu çakışmayı ele alır.
 
 02:47.060 --> 02:52.730
-The blue square and pink Square would be moved apart by the physics system because rigid bodies may
+Mavi kare ve pembe kare fizik sistemi tarafından birbirinden uzaklaştırılacaktır çünkü katı cisimler
 
 02:52.730 --> 02:53.720
-not overlap.
+çakışmıyor.
 
 02:54.260 --> 03:00.000
-After the physics system executes, there will be no overlapping rigid bodies in the entire world.
+Fizik sistemi yürütüldükten sonra, tüm dünyada üst üste binen katı cisimler olmayacaktır.
 
 03:00.020 --> 03:03.470
-Now, this happens so quickly that you don't perceive any overlap.
+Şimdi, bu o kadar hızlı gerçekleşir ki herhangi bir çakışma algılamazsınız.
 
 03:03.470 --> 03:05.540
-That's the ideal setup in a world.
+Dünyadaki ideal düzen budur.
 
 03:05.540 --> 03:10.550
-You see objects interacting as if they are solid and cannot pass through each other.
+Nesnelerin sanki katılarmış ve birbirlerinin içinden geçemezlermiş gibi etkileştiklerini görürsünüz.
 
 03:10.970 --> 03:12.890
-Now let's look at a demo Inside Unity.
+Şimdi Unity içinde bir demoya bakalım.
 
 03:12.890 --> 03:18.560
-If you've downloaded the asset files that come with this course, open the core project and browse to
+Bu kursla birlikte gelen varlık dosyalarını indirdiyseniz, çekirdek projeyi açın ve
 
 03:18.560 --> 03:19.310
-the folder.
+klasör.
 
 03:19.310 --> 03:20.240
-Section one.
+Birinci bölüm.
 
 03:20.240 --> 03:23.890
-Video two, you'll see a scene called three D Pyramid.
+İkinci videoda Üç D Piramidi adlı bir sahne göreceksiniz.
 
 03:23.900 --> 03:25.310
-We'll take a look at that together.
+Buna birlikte bir göz atacağız.
 
 03:25.310 --> 03:27.200
-You can follow along here.
+Buradan takip edebilirsiniz.
 
 03:27.200 --> 03:33.260
-We'll examine the differences of start, stop and step as we control the scene and we'll examine some
+Sahneyi kontrol ederken başlatma, durdurma ve adımlama arasındaki farkları inceleyeceğiz ve bazı
 
 03:33.260 --> 03:36.650
-of the objects in the scene to look for a rigid body and collider.
+sahnedeki nesnelerin sert bir gövde ve çarpıştırıcı aramak için.
 
 03:37.410 --> 03:38.890
-Here we are inside unity.
+İşte birliğin içindeyiz.
 
 03:38.910 --> 03:43.680
-If you download the course materials that come with this course, you'll see a project just like this.
+Bu kursla birlikte gelen kurs materyallerini indirirseniz, tıpkı buna benzer bir proje göreceksiniz.
 
 03:43.710 --> 03:48.300
-Inside, you can drill through the project window to find the related scene that we'll be touching.
+İçeride, dokunacağımız ilgili sahneyi bulmak için proje penceresini inceleyebilirsiniz.
 
 03:48.300 --> 03:51.390
-Or you can drill down through this menu here that I've created.
+Ya da burada oluşturduğum menüden aşağıya doğru inebilirsiniz.
 
 03:51.390 --> 03:53.190
-So if we go to Section one.
+Birinci bölüme gidersek.
 
 03:54.130 --> 03:56.820
-Video two, three, D Pyramid.
+Video iki, üç, D Piramidi.
 
 03:56.830 --> 04:01.290
-We open it up, we can hit, play, pause and step through the scene.
+Açıyoruz, oynat, duraklat ve sahne boyunca adım atabiliyoruz.
 
 04:01.300 --> 04:02.930
-Step goes frame by frame.
+Adım kare kare ilerliyor.
 
 04:02.970 --> 04:03.910
-Here we're going to play.
+Burada oynayacağız.
 
 04:03.920 --> 04:06.160
-We see these boxes settle upon each other.
+Bu kutuların birbirlerinin üzerine yerleştiğini görüyoruz.
 
 04:06.160 --> 04:11.680
-We can then manipulate the scene and we see real world physics interaction.
+Daha sonra sahneyi manipüle edebilir ve gerçek dünya fiziği etkileşimini görebiliriz.
 
 04:12.100 --> 04:17.470
-Each one of these cubes is set up in a similar way, and in the inspector window we can see we've got
+Bu küplerin her biri benzer şekilde ayarlanmıştır ve denetçi penceresinde şunları görebiliriz
 
 04:17.470 --> 04:19.780
-a box collider and a rigid body.
+bir kutu çarpıştırıcı ve bir katı cisim.
 
 04:19.780 --> 04:26.020
-We'll be learning about those two physics components in future lessons in the next video unities physics
+Bu iki fizik bileşenini gelecek derslerde, bir sonraki video unities physics'te öğreneceğiz
 
 04:26.020 --> 04:28.180
-system, past, present and future.
+sistemi, geçmiş, şimdiki ve gelecek.
 
 04:28.270 --> 04:29.890
-We'll look at what is unity.
+Birliğin ne olduğuna bakacağız.
 
 04:29.890 --> 04:32.350
-We'll take a step back and look at the system itself.
+Bir adım geri atıp sistemin kendisine bakacağız.
 
 04:32.350 --> 04:37.780
-We'll look at what libraries and power unity physics today, and we'll look into the future of unity
+Bugün kütüphanelerin ve güç birliği fiziğinin ne olduğuna bakacağız ve birliğin geleceğine bakacağız
 
 04:37.780 --> 04:38.440
-physics.
+Fizik.

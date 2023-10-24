@@ -1,193 +1,193 @@
 WEBVTT
 
 00:01.750 --> 00:02.800
-Terrain physics.
+Arazi fiziği.
 
 00:02.800 --> 00:05.760
-In this video, we'll cover what is unity terrain.
+Bu videoda unity terrain'in ne olduğunu ele alacağız.
 
 00:05.770 --> 00:08.850
-We'll learn how do we create terrain and add physics.
+Araziyi nasıl oluşturacağımızı ve fiziği nasıl ekleyeceğimizi öğreneceğiz.
 
 00:08.860 --> 00:13.930
-Finally, we'll create a new terrain inside the unity editor and interact with its physics.
+Son olarak, unity editörü içinde yeni bir arazi oluşturacağız ve fiziği ile etkileşime gireceğiz.
 
 00:14.140 --> 00:15.460
-First of all, what is terrain?
+Öncelikle, arazi nedir?
 
 00:15.460 --> 00:19.870
-Well, video games may include organic areas like a planet surface.
+Video oyunları, gezegen yüzeyi gibi organik alanlar içerebilir.
 
 00:19.870 --> 00:25.060
-Our game characters and other game items might walk around and interact on that surface.
+Oyun karakterlerimiz ve diğer oyun öğeleri bu yüzey üzerinde dolaşabilir ve etkileşime girebilir.
 
 00:25.060 --> 00:28.000
-For example, our main character, walking up a mountain.
+Örneğin, ana karakterimiz bir dağa doğru yürüyor.
 
 00:28.000 --> 00:33.070
-The realistic physics interaction on this surface is what we call terrain physics.
+Bu yüzeydeki gerçekçi fizik etkileşimi, arazi fiziği olarak adlandırdığımız şeydir.
 
 00:33.070 --> 00:35.230
-So what is Unity's terrain system?
+Peki Unity'nin arazi sistemi nedir?
 
 00:35.230 --> 00:39.250
-Unity's terrain system allows you to add vast landscapes to your game.
+Unity'nin arazi sistemi, oyununuza geniş manzaralar eklemenize olanak tanır.
 
 00:39.250 --> 00:45.100
-The Unity editor provides a selection of tools to create the terrain quickly and easily at runtime.
+Unity editörü, çalışma zamanında araziyi hızlı ve kolay bir şekilde oluşturmak için çeşitli araçlar sağlar.
 
 00:45.100 --> 00:48.430
-Terrain rendering is highly optimized for efficiency.
+Arazi işleme, verimlilik için son derece optimize edilmiştir.
 
 00:48.730 --> 00:50.920
-The characteristics of the terrain System.
+Arazi sisteminin özellikleri.
 
 00:50.920 --> 00:57.340
-It has an editable surface texture and editable surface geometry and an automated terrain collider.
+Düzenlenebilir bir yüzey dokusuna ve düzenlenebilir yüzey geometrisine ve otomatik bir arazi çarpıştırıcısına sahiptir.
 
 00:58.150 --> 01:03.910
-For example, in this scene here, there's a terrain that I created and I have a series of different
+Örneğin, buradaki sahnede, oluşturduğum bir arazi var ve bir dizi farklı
 
 01:03.910 --> 01:09.670
-balls falling on top of the surface and interacting with the surface like a real physics surface.
+toplar yüzeyin üstüne düşüyor ve gerçek bir fizik yüzeyi gibi yüzeyle etkileşime giriyor.
 
 01:11.160 --> 01:12.990
-The terrain collider component.
+Arazi çarpıştırıcı bileşeni.
 
 01:12.990 --> 01:17.730
-It's what defines the collision surface for the same shape as the terrain.
+Arazi ile aynı şekil için çarpışma yüzeyini tanımlayan şeydir.
 
 01:18.000 --> 01:21.720
-So we have a game object with our typical transform component.
+Yani tipik dönüşüm bileşenimize sahip bir oyun nesnemiz var.
 
 01:21.720 --> 01:27.180
-And then to set up this scenario, we need to add the terrain component, the terrain Collider, and
+Ve sonra bu senaryoyu kurmak için, arazi bileşenini, arazi Çarpıştırıcısını ve
 
 01:27.180 --> 01:29.040
-then the terrain data asset.
+sonra arazi veri varlığı.
 
 01:30.340 --> 01:32.830
-So what are the physical properties of terrain?
+Peki arazinin fiziksel özellikleri nelerdir?
 
 01:33.160 --> 01:36.910
-There's lots of settings here, but we'll focus on the physics ones of material.
+Burada pek çok ayar var, ancak biz fizikle ilgili olanlara odaklanacağız.
 
 01:36.910 --> 01:42.370
-That's a reference to the asset that describes how to handle colliding objects per friction and bouncing
+Bu, sürtünme ve zıplama başına çarpışan nesnelerin nasıl işleneceğini açıklayan varlığa bir referanstır
 
 01:42.370 --> 01:42.740
-us.
+Biz.
 
 01:42.760 --> 01:45.850
-The terrain data is something we haven't seen yet.
+Arazi verileri henüz görmediğimiz bir şey.
 
 01:45.850 --> 01:50.530
-It stores the height, maps or the surface of where the mountains and valleys are.
+Dağların ve vadilerin bulunduğu yerin yüksekliğini, haritalarını veya yüzeyini depolar.
 
 01:50.560 --> 01:57.220
-The detail mesh positions, Any tree instances you've added, you're able to add trees on top of the
+Detay ağ konumları, Eklediğiniz herhangi bir ağaç örneğinin üzerine ağaç ekleyebilirsiniz.
 
 01:57.220 --> 02:03.430
-surface to create a realistic scene and the terrain texture alpha maps enable tree colliders.
+gerçekçi bir sahne oluşturmak için yüzey ve arazi dokusu alfa haritaları ağaç çarpıştırıcılarını etkinleştirir.
 
 02:03.430 --> 02:10.210
-If you set it true, then you'll also include the geometry of the trees into the collision calculations.
+Bunu true olarak ayarlarsanız, ağaçların geometrisini de çarpışma hesaplamalarına dahil edersiniz.
 
 02:10.210 --> 02:15.940
-So setting true here is more expensive, but it gives you the realistic result you may want, which
+Dolayısıyla burada true ayarını yapmak daha pahalıdır, ancak size isteyebileceğiniz gerçekçi sonucu verir.
 
 02:15.940 --> 02:20.940
-is that your character and other items would bounce off the trees in a believable way.
+karakterinizin ve diğer eşyaların ağaçlardan inandırıcı bir şekilde sekmesidir.
 
 02:20.950 --> 02:26.230
-The thickness property here determines how thick the terrain will be in the vertical direction when
+Buradaki kalınlık özelliği, aşağıdaki durumlarda arazinin dikey yönde ne kadar kalın olacağını belirler
 
 02:26.230 --> 02:27.730
-used with a terrain collider.
+bir arazi çarpıştırıcısı ile kullanılır.
 
 02:27.730 --> 02:33.820
-Any colliders found within this surface of thickness will be placed on top of the surface.
+Bu kalınlık yüzeyi içinde bulunan tüm çarpıştırıcılar yüzeyin üstüne yerleştirilecektir.
 
 02:34.660 --> 02:37.060
-So let's create a terrain with physics.
+Öyleyse fizik ile bir arazi oluşturalım.
 
 02:37.510 --> 02:38.950
-We'll open up the terrain.
+Araziyi açacağız.
 
 02:38.950 --> 02:41.430
-Begin scene will create a terrain.
+Sahneye başla bir arazi oluşturacaktır.
 
 02:41.440 --> 02:43.120
-We'll learn about editing it.
+Düzenlemeyi öğreneceğiz.
 
 02:43.150 --> 02:46.630
-We'll create some following items on top to test out the physics.
+Fiziği test etmek için aşağıdaki bazı öğeleri oluşturacağız.
 
 02:47.350 --> 02:49.270
-We're going to be using terrain begin.
+Arazi başlangıcını kullanacağız.
 
 02:51.020 --> 02:51.200
-Here.
+İşte.
 
 02:51.200 --> 02:52.760
-We've got a camera set up.
+Bir kamera kurduk.
 
 02:52.760 --> 02:55.880
-No terrain yet, so let's go ahead and create the terrain.
+Henüz arazi yok, bu yüzden devam edelim ve araziyi oluşturalım.
 
 02:56.390 --> 02:59.510
-We're going to use Game object three D object terrain.
+Game object three D object terrain kullanacağız.
 
 03:01.580 --> 03:03.710
-This creates a terrain in the middle of the world.
+Bu, dünyanın ortasında bir arazi yaratır.
 
 03:03.740 --> 03:07.880
-Now we're going to add some layers on top that we can use to paint the texture.
+Şimdi dokuyu boyamak için kullanabileceğimiz bazı katmanlar ekleyeceğiz.
 
 03:12.620 --> 03:13.940
-Will create three layers.
+Üç katman oluşturacak.
 
 03:13.940 --> 03:15.170
-One for rock.
+Kaya için bir tane.
 
 03:16.250 --> 03:17.990
-One for snow and one for grass.
+Biri kar için, diğeri çim için.
 
 03:21.760 --> 03:27.770
-And then we'll go ahead and instead of painting texture, first, we will raise and lower terrain.
+Ve sonra devam edeceğiz ve doku boyamak yerine, önce araziyi yükseltip alçaltacağız.
 
 03:29.070 --> 03:32.370
-With both the brushes and the terrain, we can adjust the size and opacity.
+Hem fırçalar hem de arazi ile boyutu ve opaklığı ayarlayabiliriz.
 
 03:43.340 --> 03:45.830
-And then on to the mountains will paint the right texture.
+Ve sonra dağlar doğru dokuyu boyayacak.
 
 04:06.480 --> 04:06.750
-There.
+Orada.
 
 04:06.750 --> 04:11.910
-We've got some mountains with some snow and some different textures, and we'll notice that.
+Biraz karlı ve farklı dokulara sahip dağlarımız var ve bunu fark edeceğiz.
 
 04:13.120 --> 04:13.930
-On the terrain.
+Arazide.
 
 04:13.930 --> 04:17.140
-We have the terrain card or automatically set up for us.
+Arazi kartımız var ya da bizim için otomatik olarak ayarlandı.
 
 04:17.860 --> 04:19.510
-And let's go ahead and run the scene.
+Devam edelim ve sahneyi çalıştıralım.
 
 04:20.990 --> 04:25.610
-We'll also bring in the sponsor I have created to put some objects on top to test the physics.
+Ayrıca, fiziği test etmek için üstüne bazı nesneler koymak üzere oluşturduğum sponsoru da getireceğiz.
 
 04:31.170 --> 04:37.350
-We can see our yellow spawned objects are responding to the surface and collecting at low points, also
+Sarı yumurtlayan nesnelerimizin yüzeye tepki verdiğini ve alçak noktalarda toplandığını görebiliriz, ayrıca
 
 04:37.350 --> 04:38.640
-falling off the terrain.
+araziden düşüyor.
 
 04:39.600 --> 04:40.710
-Behaving with physics.
+Fiziğe uygun davranmak.
 
 04:45.460 --> 04:49.270
-In the next section, we'll look at Unity C Sharp physics programming.
+Bir sonraki bölümde, Unity C Sharp fizik programlamasına bakacağız.

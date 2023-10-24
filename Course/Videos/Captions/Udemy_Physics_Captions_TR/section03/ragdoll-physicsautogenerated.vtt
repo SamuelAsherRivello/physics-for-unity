@@ -1,346 +1,346 @@
 WEBVTT
 
 00:01.700 --> 00:02.900
-Ragdoll physics.
+Ragdoll fiziği.
 
 00:02.900 --> 00:06.890
-In this video, we'll cover what is ragdoll physics and how do we set it up.
+Bu videoda ragdoll fiziğinin ne olduğunu ve nasıl kurulduğunu ele alacağız.
 
 00:06.920 --> 00:11.480
-Then we'll open up unity and we'll create a ragdoll character using the Unity editor.
+Sonra unity'yi açacağız ve Unity editörünü kullanarak bir ragdoll karakteri yaratacağız.
 
 00:12.170 --> 00:13.730
-So what is ragdoll physics?
+Peki ragdoll fiziği nedir?
 
 00:13.760 --> 00:19.940
-Well, it's common in video games to include humanoid characters walking on two feet, having two arms,
+Video oyunlarında iki ayak üzerinde yürüyen, iki kolu olan insansı karakterler yaygındır,
 
 00:19.940 --> 00:20.810
-for example.
+Örneğin.
 
 00:20.810 --> 00:25.030
-And those characters may die in the course of game play or get knocked unconscious.
+Ve bu karakterler oyun sırasında ölebilir veya baygınlık geçirebilir.
 
 00:25.040 --> 00:30.710
-The realistic physics movement of their character bodies, when they perhaps get shot in the first person
+Karakterlerin vücutlarının gerçekçi fizik hareketleri, belki de birinci şahısta vurulduklarında
 
 00:30.710 --> 00:35.180
-shooter or get knocked unconscious in some sort of a melee fighting game.
+ya da bir tür yakın dövüş oyununda bayıltılmak.
 
 00:35.190 --> 00:39.770
-The character's unconscious Falling movement is what we call ragdoll physics.
+Karakterin bilinçsiz düşme hareketi, ragdoll fiziği dediğimiz şeydir.
 
 00:40.600 --> 00:42.550
-Here's an example without ragdoll.
+İşte ragdoll'suz bir örnek.
 
 00:42.760 --> 00:44.590
-We have a humanoid model.
+İnsansı bir modelimiz var.
 
 00:44.800 --> 00:48.190
-There's one box collider for the entire character.
+Tüm karakter için bir kutu çarpıştırıcı var.
 
 00:48.550 --> 00:53.650
-As you can see, the character falls looking like a mannequin one rigid piece.
+Gördüğünüz gibi, karakter tek parça manken gibi düşüyor.
 
 00:53.680 --> 00:59.560
-The results are predictable and don't have the variety or lifelike nature we want in a game.
+Sonuçlar tahmin edilebilir ve bir oyunda istediğimiz çeşitliliğe veya gerçeğe yakın doğaya sahip değil.
 
 01:00.040 --> 01:04.720
-With ragdoll, we have the same model, but there's many colliders.
+Ragdoll ile aynı modele sahibiz, ancak birçok çarpıştırıcı var.
 
 01:04.720 --> 01:07.130
-We have collider per body part.
+Vücut parçası başına çarpıştırıcımız var.
 
 01:07.150 --> 01:09.820
-There's lots of them in the case of a humanoid model.
+İnsansı bir model söz konusu olduğunda bunlardan çok sayıda vardır.
 
 01:09.850 --> 01:14.440
-The results appear more loose and more random, and we like that.
+Sonuçlar daha gevşek ve daha rastgele görünüyor ve biz bunu seviyoruz.
 
 01:14.650 --> 01:21.910
-This is a looping video of the exact same take, but if we were to repeat this live and in gameplay
+Bu, aynı çekimin döngüsel bir videosudur, ancak bunu canlı olarak ve oyunda tekrarlayacak olsaydık
 
 01:21.910 --> 01:23.380
-we would see subtle movements.
+ince hareketler görebiliriz.
 
 01:23.380 --> 01:27.970
-The character would flip various different ways based on the surface he or she's on.
+Karakter, üzerinde bulunduğu yüzeye göre farklı şekillerde dönebilir.
 
 01:27.970 --> 01:28.930
-And we like that.
+Ve biz bunu seviyoruz.
 
 01:29.920 --> 01:34.060
-So comparing the two, we like the left result better with ragdoll.
+Bu yüzden ikisini karşılaştırdığımızda, ragdoll ile soldaki sonucu daha çok seviyoruz.
 
 01:34.150 --> 01:36.220
-We get a more loose feeling.
+Daha gevşek bir his elde ederiz.
 
 01:36.220 --> 01:41.470
-We get something more lifelike than using without ragdoll with one giant collider.
+Dev bir çarpıştırıcı ile bez bebek kullanmaktan daha gerçekçi bir şey elde ederiz.
 
 01:42.620 --> 01:44.210
-So let's set up the ragdoll.
+Hadi ragdoll'u kuralım.
 
 01:44.360 --> 01:48.390
-The process was like this We're going to set up a3d character model.
+Süreç şu şekildeydi Bir 3D karakter modeli kuracağız.
 
 01:48.410 --> 01:50.570
-Then we'd have to add many colliders.
+O zaman birçok çarpıştırıcı eklememiz gerekir.
 
 01:50.570 --> 01:56.270
-You can see in the screenshot that the Ethan Skeleton character, which we have in the scene, has a
+Ekran görüntüsünde, sahnede sahip olduğumuz Ethan Skeleton karakterinin bir
 
 01:56.270 --> 01:57.590
-lot of parts.
+Bir sürü parça.
 
 01:57.740 --> 02:02.900
-We have the hand, we have the forearm, we have the forearm in the upper arm, etc. and we would need
+Elimiz var, ön kolumuz var, üst kolda ön kolumuz var, vb.
 
 02:02.900 --> 02:07.550
-to put a joint between every one of those rigid body and collider pairs.
+bu katı cisim ve çarpıştırıcı çiftlerinin her biri arasına bir bağlantı koymak için.
 
 02:07.550 --> 02:09.890
-Then we'd save it as a prefab and we'd be done.
+Sonra onu bir prefabrik olarak kaydederiz ve işimiz biter.
 
 02:09.920 --> 02:15.860
-Now, there was a time when you had to do this, but luckily Unity has a editor that we can use to do
+Şimdi, bunu yapmak zorunda olduğunuz bir zaman vardı, ama neyse ki Unity'nin bunu yapmak için kullanabileceğimiz bir editörü var
 
 02:15.860 --> 02:17.090
-this much more quickly.
+bu çok daha hızlı.
 
 02:17.090 --> 02:18.920
-So this is the rag doll wizard.
+Yani bu bez bebek büyücüsü.
 
 02:18.920 --> 02:25.430
-We can open up the Unity menu from Game Object three, Object Ragdoll and we see the menu that we've
+Oyun Nesnesi üç, Nesne Ragdoll'dan Unity menüsünü açabiliriz ve sahip olduğumuz menüyü görürüz
 
 02:25.430 --> 02:26.700
-got here in the screenshot.
+ekran görüntüsünde var.
 
 02:26.720 --> 02:33.800
-What you do then is drag each part of that intricate hierarchy we saw in the last screenshot dragging
+Daha sonra yapacağınız şey, son ekran görüntüsünde gördüğümüz karmaşık hiyerarşinin her bir parçasını sürüklemektir
 
 02:33.800 --> 02:39.470
-the pelvis, the left hips, the left knee, etc. You have to be careful because depending where you
+pelvis, sol kalça, sol diz, vs. Dikkatli olmalısınız çünkü nerede olduğunuza bağlı olarak
 
 02:39.470 --> 02:44.420
-get your model or if you build your model, the parts might not be named this way.
+modelinizi alırsanız ya da modelinizi inşa ederseniz, parçalar bu şekilde adlandırılmayabilir.
 
 02:44.420 --> 02:49.880
-But this is pretty standard convention for humanoid character to have at least this many parts.
+Ancak bu, insansı karakterin en azından bu kadar çok parçaya sahip olması için oldukça standart bir kuraldır.
 
 02:49.880 --> 02:53.480
-So you drag them all in there and then there's a few properties to set.
+Böylece hepsini buraya sürüklersiniz ve ardından ayarlamanız gereken birkaç özellik vardır.
 
 02:53.480 --> 02:56.150
-The properties will focus on our total mass.
+Özellikler toplam kütlemize odaklanacaktır.
 
 02:56.150 --> 02:59.510
-This is the value distributed logically across all the joints.
+Bu, tüm eklemlere mantıksal olarak dağıtılan değerdir.
 
 02:59.510 --> 03:05.630
-So if you give it a value of default of 20, then the total mass of 20 is spread across those joints.
+Dolayısıyla, 20'lik bir varsayılan değer verirseniz, 20'lik toplam kütle bu eklemlere yayılır.
 
 03:05.840 --> 03:08.600
-The strength is the resistance of the joints.
+Güç, eklemlerin direncidir.
 
 03:08.600 --> 03:11.950
-If you have a higher value, it's less likely to break apart.
+Daha yüksek bir değere sahipseniz, parçalanma olasılığı daha düşüktür.
 
 03:11.960 --> 03:15.260
-You don't want your character to have body parts to break apart.
+Karakterinizin vücut parçalarının birbirinden ayrılmasını istemezsiniz.
 
 03:15.260 --> 03:17.960
-So it's common to keep the value there pretty high.
+Bu yüzden oradaki değeri oldukça yüksek tutmak yaygındır.
 
 03:17.990 --> 03:19.040
-Flip forward.
+İleri sar.
 
 03:19.040 --> 03:25.910
-If you set it to true, then if the model was created kind of backwards, then it will compensate for
+Bunu true olarak ayarlarsanız, model bir tür geriye doğru oluşturulmuşsa, o zaman
 
 03:25.940 --> 03:26.210
-that.
+Bu.
 
 03:26.210 --> 03:30.380
-But typically, if you just drag the model out into the world and if it's looking forward toward the
+Ancak tipik olarak, modeli dünyaya sürüklerseniz ve eğer ileriye doğru bakıyorsa
 
 03:30.380 --> 03:34.070
-camera, probably you want to use the default value, but you could experiment.
+kamera, muhtemelen varsayılan değeri kullanmak istersiniz, ancak deneyebilirsiniz.
 
 03:35.320 --> 03:37.450
-So let's set up a ragdoll Inside Unity.
+Şimdi Unity içinde bir ragdoll kuralım.
 
 03:38.170 --> 03:40.760
-We'll open up the ragdoll begin scene.
+Ragdoll başlangıç sahnesini açacağız.
 
 03:40.780 --> 03:44.950
-We'll play the scene to see that we don't yet have our ragdoll added.
+Henüz ragdoll'umuzun eklenmediğini görmek için sahneyi oynatacağız.
 
 03:44.980 --> 03:47.300
-Then we'll use the wizard to add the ragdoll.
+Daha sonra ragdoll'u eklemek için sihirbazı kullanacağız.
 
 03:47.320 --> 03:49.870
-Play the scene again and see the completed effect.
+Sahneyi tekrar oynatın ve tamamlanan efekti görün.
 
 03:50.750 --> 03:52.340
-All right, Let's open up the next scene.
+Pekala, bir sonraki sahneyi açalım.
 
 03:53.380 --> 03:53.560
-Here.
+İşte.
 
 03:53.560 --> 03:55.630
-We're going to be looking at Ragdoll Begin.
+Ragdoll Begin'e bakacağız.
 
 03:56.560 --> 04:00.290
-We've got a series of cubes which we know from our pyramid of cubes.
+Küp piramidimizden bildiğimiz bir dizi küpümüz var.
 
 04:01.540 --> 04:03.210
-We've added on top of model.
+Modelin üstüne ekledik.
 
 04:03.210 --> 04:07.680
-This character model is called Ethan, and I've marked it Ethan without ragdoll.
+Bu karakter modelinin adı Ethan ve ben onu ragdoll'suz Ethan olarak işaretledim.
 
 04:08.310 --> 04:10.140
-If we take a look at the model here.
+Eğer buradaki modele bir göz atarsak.
 
 04:11.070 --> 04:14.820
-We can see that he's got a skeleton.
+İskeleti olduğunu görebiliyoruz.
 
 04:15.510 --> 04:17.010
-With many parts.
+Birçok parçası olan.
 
 04:17.040 --> 04:21.420
-I'll even expand our view so we can get a better idea.
+Hatta daha iyi bir fikir edinebilmemiz için görüş alanımızı genişleteceğim.
 
 04:28.010 --> 04:29.840
-So we can see we've got a lot of parts here.
+Gördüğünüz gibi burada çok fazla parça var.
 
 04:29.840 --> 04:36.470
-If we just play the scene, nothing will happen because we don't yet have any physics, added the cubes.
+Eğer sadece sahneyi oynatırsak, hiçbir şey olmayacaktır çünkü henüz küpleri ekleyen herhangi bir fiziğe sahip değiliz.
 
 04:36.470 --> 04:41.510
-Settle as we would expect them to, but our character floats in the air because he's got no physics
+Beklediğimiz gibi yerleşiyorlar, ancak karakterimiz havada süzülüyor çünkü fiziği yok
 
 04:41.510 --> 04:42.520
-components yet.
+bileşenler henüz.
 
 04:42.530 --> 04:45.950
-Let's go ahead and use the wizard for creating the ragdoll.
+Devam edelim ve ragdoll oluşturmak için sihirbazı kullanalım.
 
 04:49.810 --> 04:54.170
-Now as it instructs we drag all bones from the hierarchy into their slots.
+Şimdi talimat verdiği gibi hiyerarşideki tüm kemikleri yuvalarına sürüklüyoruz.
 
 04:54.190 --> 04:56.770
-Make sure your character is in a PT stand.
+Karakterinizin bir PT standında olduğundan emin olun.
 
 04:56.860 --> 04:59.320
-That's what we call this position the characters in.
+Karakterlerin bulunduğu bu konuma böyle diyoruz.
 
 04:59.350 --> 05:06.310
-Now, typically 3D modelers and animators use this position with the arms extended out and the body
+Şimdi, tipik olarak 3D modelleyiciler ve animatörler bu pozisyonu kollar dışarı uzatılmış ve vücut
 
 05:06.310 --> 05:09.640
-relatively straight looks something like the letter T.
+nispeten düz T harfine benziyor.
 
 05:09.790 --> 05:11.890
-So let's go ahead and drag in.
+Devam edelim ve sürükleyelim.
 
 05:22.410 --> 05:25.410
-Now notice that some of the naming from this model is different.
+Şimdi bu modeldeki bazı isimlendirmelerin farklı olduğuna dikkat edin.
 
 05:25.410 --> 05:32.760
-It doesn't necessarily say pelvis, left hips, etc. It may take some experimenting, of course, depending
+Leğen kemiği, sol kalça vs. demek zorunda değildir. Elbette biraz deneme yapmak gerekebilir.
 
 05:32.760 --> 05:35.730
-who made the model or even if you made it yourself.
+modeli kimin yaptığını ya da kendiniz yapmış olsanız bile.
 
 05:36.030 --> 05:38.760
-Each person has free reign over naming these parts.
+Her kişi bu parçalara isim verme konusunda serbesttir.
 
 05:38.850 --> 05:45.000
-We hope that there's a 1 to 1 relationship between the structure that the rag doll wizard wants and
+Umuyoruz ki bez bebek büyücüsünün istediği yapı ile
 
 05:45.000 --> 05:46.510
-the structure of the model.
+modelin yapısı.
 
 05:46.530 --> 05:49.800
-Here it seems like we have that now as the last step.
+İşte şimdi son adım olarak buna sahipmişiz gibi görünüyor.
 
 05:49.800 --> 05:53.790
-We can set the total mass, the strength and the flip forward.
+Toplam kütleyi, gücü ve ileri çevirmeyi ayarlayabiliriz.
 
 05:54.090 --> 05:56.970
-I'm going to change the total mass to a higher value.
+Toplam kütleyi daha yüksek bir değerle değiştireceğim.
 
 05:57.300 --> 05:59.660
-I'm going to try 100 for the strength.
+Güç için 100'ü deneyeceğim.
 
 05:59.670 --> 06:01.200
-I'll set a value of one.
+Değeri bir olarak ayarlayacağım.
 
 06:01.470 --> 06:02.820
-And flip forward.
+Ve ileri çevir.
 
 06:02.820 --> 06:04.020
-I'll set it true.
+Doğru olarak ayarlayacağım.
 
 06:04.650 --> 06:06.180
-It's actually giving me an error here.
+Aslında burada bir hata veriyor.
 
 06:06.180 --> 06:09.810
-Right elbow and left elbow may not be assigned to the same.
+Sağ dirsek ve sol dirsek aynı kişiye atanamaz.
 
 06:09.810 --> 06:11.010
-So let me see.
+Bir bakayım.
 
 06:13.260 --> 06:18.270
-I've accidentally set that wrong, so I will use right.
+Yanlışlıkla yanlış ayarlamışım, bu yüzden doğrusunu kullanacağım.
 
 06:19.530 --> 06:19.920
-Great.
+Harika.
 
 06:19.920 --> 06:20.730
-No errors.
+Hata yok.
 
 06:20.730 --> 06:22.260
-And I can use the create button.
+Ve oluştur düğmesini kullanabilirim.
 
 06:23.000 --> 06:23.880
-And done.
+Ve bitti.
 
 06:23.900 --> 06:25.790
-Now if we explore the model.
+Şimdi modeli incelersek.
 
 06:26.720 --> 06:28.880
-Clicking through some key pieces here.
+Burada bazı önemli parçalara tıklıyoruz.
 
 06:29.210 --> 06:35.090
-Let's say that the left arm, for example, we can see we have a character joint set up and a rigid
+Diyelim ki sol kol, örneğin, bir karakter eklemi kurulumu ve bir rijit eklemimiz olduğunu görebiliyoruz
 
 06:35.090 --> 06:35.680
-body.
+Vücut.
 
 06:35.690 --> 06:38.090
-So each of these have been set up properly.
+Yani bunların her biri düzgün bir şekilde ayarlandı.
 
 06:38.090 --> 06:39.830
-Let's run the scene and see the result.
+Sahneyi çalıştıralım ve sonucu görelim.
 
 06:43.940 --> 06:44.720
-Looks good.
+İyi görünüyor.
 
 06:45.320 --> 06:50.870
-I'll use the space bar shortcut available in all the packed pub scenes and watch it several times.
+Tüm dolu bar sahnelerinde mevcut olan boşluk çubuğu kısayolunu kullanacağım ve birkaç kez izleyeceğim.
 
 06:55.210 --> 07:00.520
-Now, because I've set his mass to 100, he falls, forcing the cubes out of the way.
+Şimdi, kütlesini 100 olarak ayarladığım için, küpleri yoldan çekmeye zorlayarak düşüyor.
 
 07:02.760 --> 07:08.910
-If I had set a different value, perhaps lower like the default 20, you might fall around the cubes.
+Farklı bir değer ayarlamış olsaydım, belki varsayılan 20 gibi daha düşük bir değer, küplerin etrafına düşebilirdiniz.
 
 07:08.910 --> 07:12.330
-But here he's relatively heavy, relatively massive.
+Ama burada nispeten ağır, nispeten iri.
 
 07:15.120 --> 07:17.580
-In the next video, we'll cover terrain physics.
+Bir sonraki videoda arazi fiziğini ele alacağız.

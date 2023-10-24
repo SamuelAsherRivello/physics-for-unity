@@ -1,199 +1,199 @@
 WEBVTT
 
 00:01.670 --> 00:04.860
-Unity's physics system past, present and future.
+Unity'nin fizik sisteminin geçmişi, bugünü ve geleceği.
 
 00:04.880 --> 00:07.400
-In this video, we'll cover what is unity.
+Bu videoda unity'nin ne olduğunu ele alacağız.
 
 00:07.430 --> 00:11.600
-We'll take a step back and we'll look at what libraries, power, unity, physics today.
+Bir adım geri atacağız ve bugün kütüphanelerin, gücün, birliğin, fiziğin ne olduğuna bakacağız.
 
 00:11.600 --> 00:14.360
-And we'll also look to the future of unity physics.
+Ayrıca birlik fiziğinin geleceğine de bakacağız.
 
 00:14.360 --> 00:20.330
-Unity is the most widely used, real time interactive platform with tools to create rich projects in
+Unity, zengin projeler oluşturmak için araçlara sahip, en yaygın kullanılan, gerçek zamanlı etkileşimli platformdur.
 
 00:20.330 --> 00:21.580
-all sorts of platforms.
+her türlü platform.
 
 00:21.590 --> 00:26.640
-Unity is powering games, of course, but also architecture, automotive, construction and more.
+Unity elbette oyunların yanı sıra mimari, otomotiv, inşaat ve daha birçok alanda da güç sağlıyor.
 
 00:26.660 --> 00:34.250
-Unity Version 1.0 was released in 2008, and since it's gained massive popularity as of 2019, 50% of
+Unity Sürüm 1.0 2008'de piyasaya sürüldü ve 2019 itibariyle büyük bir popülerlik kazandığından beri
 
 00:34.250 --> 00:36.080
-mobile games are powered by unity.
+mobil oyunlar unity tarafından desteklenmektedir.
 
 00:36.080 --> 00:43.790
-Over 3 billion devices worldwide use unity software and 90% of AR and VR is powered by Unity as well.
+Dünya çapında 3 milyardan fazla cihaz Unity yazılımını kullanıyor ve AR ve VR'nin %90'ı da Unity tarafından destekleniyor.
 
 00:43.790 --> 00:46.750
-Unity supports cross-platform deployment.
+Unity platformlar arası dağıtımı destekler.
 
 00:46.760 --> 00:52.940
-Here's just some of the platforms that Unity supports, including PC console and cross platform mobile.
+İşte Unity'nin PC konsolu ve çapraz platform mobil dahil olmak üzere desteklediği platformlardan bazıları.
 
 00:53.420 --> 00:57.200
-So what's built in unity at its core is a 3D rendering system.
+Yani unity'nin özünde bir 3D render sistemi var.
 
 00:57.200 --> 01:02.990
-You can also create great 2D experiences with unity, and unity includes animation, audio rendering
+Ayrıca unity ile harika 2D deneyimler oluşturabilirsiniz ve unity animasyon, ses işleme
 
 01:02.990 --> 01:07.820
-and effects deployment to all those platforms, graphical rendering input and more.
+ve tüm bu platformlara efekt dağıtımı, grafik işleme girişi ve daha fazlası.
 
 01:07.850 --> 01:10.760
-In this course, we'll focus on physics and scripting.
+Bu derste fizik ve senaryo yazımına odaklanacağız.
 
 01:10.760 --> 01:14.630
-Using Unity uses third party physics systems.
+Unity kullanımı üçüncü parti fizik sistemlerini kullanır.
 
 01:14.630 --> 01:15.680
-Now, why do they do that?
+Şimdi, bunu neden yapıyorlar?
 
 01:15.680 --> 01:19.190
-Because accelerated multi-platform physics is hard to do.
+Çünkü hızlandırılmış çoklu platform fiziği yapmak zordur.
 
 01:19.190 --> 01:25.160
-Unity outsources the work to these third party libraries and raps their API to feel more consistent
+Unity, işi bu üçüncü taraf kütüphanelere yaptırıyor ve daha tutarlı hissetmek için API'lerini düzenliyor
 
 01:25.160 --> 01:26.210
-and unity friendly.
+ve birlik dostu.
 
 01:26.210 --> 01:31.070
-Something of note is that it takes some time for unity to integrate the latest and greatest features
+Unity'nin en son ve en iyi özellikleri entegre etmesinin biraz zaman aldığı unutulmamalıdır
 
 01:31.070 --> 01:32.990
-when each of these libraries are updated.
+bu kütüphanelerin her biri güncellendiğinde.
 
 01:33.900 --> 01:39.380
-In Unity version 1.0 Unity three D Physics was released using the Physics library.
+Unity sürüm 1.0'da Unity üç D Physics, Physics kütüphanesi kullanılarak yayınlandı.
 
 01:39.390 --> 01:46.260
-It wasn't until Unity 4.3 that many 2D features were added, including 2D physics with box two dx.
+Unity 4.3'e kadar, kutu iki dx ile 2D fizik dahil olmak üzere birçok 2D özelliği eklenmedi.
 
 01:46.290 --> 01:51.650
-In the future, unity will be powered by dots, physics or data oriented technology stack.
+Gelecekte, unity noktalar, fizik veya veri odaklı teknoloji yığını tarafından desteklenecektir.
 
 01:51.660 --> 01:53.880
-There are features in public beta available.
+Halka açık beta sürümünde özellikler mevcuttur.
 
 01:53.880 --> 01:55.740
-The future release is to be determined.
+Gelecekteki sürüm belirlenecektir.
 
 01:55.740 --> 02:01.560
-The future of Unity physics will be powered by unity and collaboration with third party library by having.
+Unity fiziğinin geleceği, unity tarafından desteklenecek ve üçüncü parti kütüphanelerle işbirliğine sahip olacak.
 
 02:02.480 --> 02:04.950
-Let's look at the Physics three D library.
+Fizik üç D kütüphanesine bakalım.
 
 02:04.970 --> 02:09.650
-Physics is an open source, scalable multi platform physics solution.
+Physics açık kaynaklı, ölçeklenebilir çok platformlu bir fizik çözümüdür.
 
 02:09.650 --> 02:12.230
-Unity uses this for its three D physics.
+Unity bunu üç D fiziği için kullanır.
 
 02:12.230 --> 02:18.590
-It's notable that while physics is on 4.0, unity is integrated only physics 3.4.
+Fizik 4.0'da iken, unity'nin sadece fizik 3.4'ü entegre etmesi dikkat çekicidir.
 
 02:18.590 --> 02:22.340
-In the latest 2019 releases, you can see the delay there.
+En son 2019 sürümlerinde, buradaki gecikmeyi görebilirsiniz.
 
 02:22.340 --> 02:27.260
-That unity takes some time to wrap the latest APIs, test them, integrate them and ship them.
+Bu birliğin en son API'leri paketlemesi, test etmesi, entegre etmesi ve göndermesi biraz zaman alıyor.
 
 02:27.260 --> 02:29.480
-What Unity offers is very powerful.
+Unity'nin sunduğu şey çok güçlü.
 
 02:29.510 --> 02:34.670
-Key features of physics include that it's open source multithreaded and has great memory management.
+Physics'in temel özellikleri arasında açık kaynak kodlu çok iş parçacıklı olması ve mükemmel bellek yönetimine sahip olması yer alır.
 
 02:35.060 --> 02:37.820
-Box two RD powers unities to DX Physics.
+İki RD güç birliğini DX Fizik'e kutulayın.
 
 02:37.820 --> 02:43.280
-Its key feature is what's called a B or axis aligned bounding box.
+Temel özelliği B veya eksen hizalı sınırlayıcı kutu olarak adlandırılan şeydir.
 
 02:43.280 --> 02:48.920
-This is a very efficient way for unity to check collisions, so running two d games with two D physics
+Bu, unity'nin çarpışmaları kontrol etmesi için çok verimli bir yoldur, bu nedenle iki D fiziği ile iki d oyunu çalıştırmak
 
 02:48.920 --> 02:51.890
-on even slower and older platforms performs well.
+daha yavaş ve eski platformlarda bile iyi performans gösterir.
 
 02:51.890 --> 02:58.220
-Some key features are continuous collision detection or accuracy, convex polygons and circles and collision
+Bazı temel özellikler sürekli çarpışma algılama veya doğruluk, dışbükey çokgenler ve daireler ve çarpışma
 
 02:58.220 --> 02:59.330
-groups and categories.
+gruplar ve kategoriler.
 
 02:59.330 --> 03:04.460
-The future of unity physics will be powered by dots or the data oriented technology stack.
+Birlik fiziğinin geleceği noktalar veya veri odaklı teknoloji yığını tarafından desteklenecektir.
 
 03:04.460 --> 03:11.270
-At the Game Developer Conference 2019, Unity announced two new physics choices a first party unity
+Unity, 2019 Oyun Geliştirici Konferansı'nda iki yeni fizik seçeneğini duyurdu: birinci parti Unity
 
 03:11.270 --> 03:13.580
-solution and a third party havoc solution.
+ve üçüncü parti bir havoc çözümü.
 
 03:13.580 --> 03:18.650
-Powered by Havoc, users will be able to toggle between each of these at any time because the APIs are
+Havoc tarafından desteklenen API'ler sayesinde kullanıcılar istedikleri zaman bunların her biri arasında geçiş yapabilecekler
 
 03:18.650 --> 03:19.280
-identical.
+Aynı.
 
 03:19.280 --> 03:25.220
-The Unity physics system, which is now available in public beta, has editable C sharp source and is
+Şu anda halka açık beta sürümünde bulunan Unity fizik sistemi, düzenlenebilir C sharp kaynağına sahiptir ve
 
 03:25.220 --> 03:27.230
-stateless with no caching.
+önbelleğe alma olmadan durumsuz.
 
 03:27.230 --> 03:32.990
-Thus it's very optimized for multiplayer and easier to understand, read and extend by development teams.
+Böylece çok oyunculu oyun için optimize edilmiştir ve geliştirme ekipleri tarafından anlaşılması, okunması ve genişletilmesi daha kolaydır.
 
 03:32.990 --> 03:39.740
-Havoc Physics which is in preview package coming soon, is stateful with caching thus has a much higher
+Önizleme paketi yakında çıkacak olan Havoc Physics, önbellekleme ile durum bilgisine sahiptir, bu nedenle çok daha yüksek
 
 03:39.740 --> 03:43.580
-performance, but at the cost of complexity it's also higher fidelity.
+performans, ancak karmaşıklık pahasına aynı zamanda daha yüksek doğruluk.
 
 03:43.580 --> 03:46.220
-Thus the physics rendered is more accurate.
+Böylece oluşturulan fizik daha doğru olur.
 
 03:46.220 --> 03:47.960
-So which physics system is right?
+Peki hangi fizik sistemi doğru?
 
 03:47.960 --> 03:53.480
-Well, this course will focus on the traditional two rd and three D physics systems in section seven.
+Bu kurs, yedinci bölümde geleneksel iki ve üç boyutlu fizik sistemlerine odaklanacaktır.
 
 03:53.480 --> 03:58.340
-We'll take a look at some advanced topics, including briefly covering dots, physics.
+Noktaları ve fiziği kısaca ele almak da dahil olmak üzere bazı ileri düzey konulara göz atacağız.
 
 03:58.340 --> 04:02.660
-Each of these systems has a lot of different benefits and drawbacks.
+Bu sistemlerin her birinin birçok farklı avantajı ve dezavantajı vardır.
 
 04:02.660 --> 04:04.040
-Each will have a long future.
+Her birinin uzun bir geleceği olacak.
 
 04:04.040 --> 04:08.720
-Within the physics platform, we can see that sections two and five will focus on two D physics.
+Fizik platformunda, ikinci ve beşinci bölümlerin iki D fiziğine odaklanacağını görebiliriz.
 
 04:08.720 --> 04:12.890
-Sections three, four and six will concentrate on three D physics.
+Üçüncü, dördüncü ve altıncı bölümler üç D fiziğine odaklanacaktır.
 
 04:12.890 --> 04:18.320
-In each of those areas we'll create a complete game using two rd and three D in Section seven.
+Bu alanların her birinde, Bölüm yedide iki rd ve üç D kullanarak eksiksiz bir oyun oluşturacağız.
 
 04:18.320 --> 04:21.920
-We'll take a quick look at the future with Unity Dots Physics.
+Unity Dots Physics ile geleceğe hızlıca bir göz atacağız.
 
 04:23.780 --> 04:29.960
-In the next video, Unity's Physics Project settings we'll cover what are Unity Project settings and
+Bir sonraki videoda, Unity'nin Fizik Projesi ayarları, Unity Proje ayarlarının ne olduğunu ve
 
 04:29.960 --> 04:32.930
-which of the settings are most important to our physics needs.
+hangi ayarların fizik ihtiyaçlarımız için en önemli olduğunu.
 
 04:33.200 --> 04:37.880
-And then we'll experiment with some of these settings inside the Unity editor to see the results.
+Ve sonra sonuçları görmek için Unity editörünün içinde bu ayarlardan bazılarını deneyeceğiz.

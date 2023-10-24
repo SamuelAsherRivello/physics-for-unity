@@ -1,220 +1,220 @@
 WEBVTT
 
 00:01.590 --> 00:05.000
-Section two Unity two D physics components.
+İkinci bölüm Unity iki D fizik bileşeni.
 
 00:05.010 --> 00:10.440
-In this section we'll cover the rigid body, two RD component, the collider two RD component, and
+Bu bölümde rijit gövde, iki RD bileşeni, çarpıştırıcı iki RD bileşeni ve
 
 00:10.440 --> 00:13.290
-also two RD effectors and two D joints.
+Ayrıca iki RD efektörü ve iki D eklemi.
 
 00:13.290 --> 00:16.680
-We'll even discuss physics for Unity Sprite sheet.
+Unity Sprite sayfası için fiziği bile tartışacağız.
 
 00:17.250 --> 00:22.830
-In this video we'll cover the rigid body two RD component and its most important properties.
+Bu videoda rijit gövde iki RD bileşenini ve en önemli özelliklerini ele alacağız.
 
 00:22.830 --> 00:26.130
-We'll also play with this component inside the Unity editor.
+Bu bileşenle Unity editörünün içinde de oynayacağız.
 
 00:26.950 --> 00:29.570
-First, let's discuss the transform component.
+İlk olarak, dönüşüm bileşenini tartışalım.
 
 00:29.590 --> 00:33.480
-The transform component is the most basic component in unity.
+Dönüşüm bileşeni unity'deki en temel bileşendir.
 
 00:33.490 --> 00:38.000
-It enables position, rotation and scale for a game object.
+Bir oyun nesnesi için konum, döndürme ve ölçekleme sağlar.
 
 00:38.020 --> 00:41.850
-This is automatically attached to every game object in your world.
+Bu, dünyanızdaki her oyun nesnesine otomatik olarak eklenir.
 
 00:41.860 --> 00:44.860
-The rigid body component is also a component.
+Rijit gövde bileşeni de bir bileşendir.
 
 00:44.860 --> 00:50.650
-It is the component that enables physical behavior for a game object with a rigid body attached.
+Rijit bir gövdeye sahip bir oyun nesnesi için fiziksel davranış sağlayan bileşendir.
 
 00:50.650 --> 00:53.290
-The object will immediately respond to gravity.
+Nesne yerçekimine hemen tepki verecektir.
 
 00:53.290 --> 00:59.140
-Let's see the script reference for rigid body two D inside the script reference for rigid body two d.
+Rijit gövde iki D için kod referansını, rijit gövde iki d için kod referansının içinde görelim.
 
 00:59.140 --> 01:01.600
-We can see lots of great information.
+Pek çok harika bilgi görebiliriz.
 
 01:01.600 --> 01:06.820
-This is a resource you want to visit while you're in development with a game to understand the features
+Bu, özellikleri anlamak için bir oyun geliştirirken ziyaret etmek isteyeceğiniz bir kaynaktır
 
 01:06.820 --> 01:08.650
-that are there and how to use them.
+ve bunların nasıl kullanılacağı.
 
 01:08.720 --> 01:11.020
-You may even discover some optimizations.
+Hatta bazı optimizasyonlar bile keşfedebilirsiniz.
 
 01:11.020 --> 01:12.460
-There's the description.
+İşte açıklaması.
 
 01:12.910 --> 01:14.740
-There is properties as well.
+Özellikler de var.
 
 01:15.600 --> 01:17.730
-Public methods that you can call.
+Çağırabileceğiniz genel yöntemler.
 
 01:18.830 --> 01:23.120
-As well as inherited members and public methods from its super classes.
+Bunun yanı sıra üst sınıflardan miras alınan üyeler ve genel yöntemler.
 
 01:24.890 --> 01:26.710
-A note about two D versus three D.
+İki D'ye karşı üç D hakkında bir not.
 
 01:26.720 --> 01:29.510
-Unity has two completely separate systems.
+Unity'nin tamamen ayrı iki sistemi vardır.
 
 01:29.510 --> 01:36.200
-Sometimes during the course I may refer specifically to rigid body two D or more generically to rigid
+Kurs sırasında bazen özellikle rijit gövde iki D'ye veya daha genel olarak rijit gövde iki D'ye atıfta bulunabilirim.
 
 01:36.200 --> 01:36.740
-body.
+Vücut.
 
 01:36.740 --> 01:42.290
-I use rigid body to refer to both 2D and 3D since the concepts are the same.
+Kavramlar aynı olduğu için hem 2D hem de 3D'ye atıfta bulunmak için rijit gövdeyi kullanıyorum.
 
 01:43.530 --> 01:47.520
-Understanding the rigid body is critical to understanding unity physics.
+Katı cismi anlamak, birlik fiziğini anlamak için kritik öneme sahiptir.
 
 01:47.940 --> 01:53.850
-If we select a game object with rigid body attached, we'll see all of the properties of rigid body
+Sert gövde eklenmiş bir oyun nesnesi seçersek, sert gövdenin tüm özelliklerini görürüz
 
 01:53.850 --> 01:55.090
-inside the inspector.
+müfettişin içinde.
 
 01:55.110 --> 01:56.570
-Let's browse those properties.
+Bu özelliklere göz atalım.
 
 01:56.580 --> 01:58.260
-There's a lot of properties to see.
+Görülecek çok fazla özellik var.
 
 01:58.290 --> 02:00.150
-We'll focus on a few key ones.
+Birkaç kilit noktaya odaklanacağız.
 
 02:00.180 --> 02:02.040
-First of all, there's body type.
+Her şeyden önce, vücut tipi vardır.
 
 02:02.040 --> 02:05.070
-This controls the physical behavior of a rigid body.
+Bu, katı bir cismin fiziksel davranışını kontrol eder.
 
 02:05.070 --> 02:06.590
-There's three different options.
+Üç farklı seçenek var.
 
 02:06.600 --> 02:07.920
-First is dynamic.
+Birincisi dinamik.
 
 02:08.010 --> 02:11.830
-This is the most common when we set to rigid body into dynamic.
+Bu, rijit gövdeyi dinamiğe ayarladığımızda en yaygın olanıdır.
 
 02:11.850 --> 02:14.990
-This allows it to react to gravity and applied forces.
+Bu, yerçekimine ve uygulanan kuvvetlere tepki vermesini sağlar.
 
 02:15.000 --> 02:18.180
-We should never move this manually through its transform.
+Bunu asla dönüşümü boyunca elle hareket ettirmemeliyiz.
 
 02:18.180 --> 02:20.070
-We should always apply forces.
+Her zaman güç uygulamalıyız.
 
 02:20.160 --> 02:21.870
-Body type two is kinematic.
+İkinci vücut tipi kinematiktir.
 
 02:21.870 --> 02:26.940
-This does not respond to gravity or forces and we are allowed to move it manually.
+Bu, yerçekimine veya kuvvetlere tepki vermez ve onu manuel olarak hareket ettirmemize izin verilir.
 
 02:26.940 --> 02:31.950
-Body type three is static things like the floor in our world or the world itself.
+Üçüncü beden tipi, dünyamızdaki zemin veya dünyanın kendisi gibi statik şeylerdir.
 
 02:31.950 --> 02:35.400
-If we're building a planet, we don't want it respond to gravity.
+Eğer bir gezegen inşa ediyorsak, onun yerçekimine tepki vermesini istemeyiz.
 
 02:35.400 --> 02:40.920
-We want objects on top of it to fall and then to believably bounce and interact with the surface of
+Üstündeki nesnelerin düşmesini ve ardından inandırıcı bir şekilde zıplamasını ve yüzeyle etkileşime girmesini istiyoruz.
 
 02:40.920 --> 02:41.550
-the floor.
+Zemin.
 
 02:41.580 --> 02:44.340
-Other properties of our focus are material.
+Odak noktamızın diğer özellikleri maddidir.
 
 02:44.340 --> 02:49.590
-The physical material describes the friction and bouncing us, and we'll talk about this in depth later.
+Fiziksel malzeme sürtünmeyi ve sıçramayı tanımlar ve bu konu hakkında daha sonra derinlemesine konuşacağız.
 
 02:49.590 --> 02:52.860
-The drag value is the tendency for an object to slow down.
+Sürükleme değeri, bir nesnenin yavaşlama eğilimidir.
 
 02:52.860 --> 02:59.370
-You can think of a high linear drag as being something that's difficult to drag across a floor or move
+Yüksek doğrusal sürüklemeyi, bir zeminde sürüklenmesi veya hareket ettirilmesi zor olan bir şey olarak düşünebilirsiniz
 
 02:59.370 --> 03:00.300
-across the floor.
+zemin boyunca.
 
 03:00.300 --> 03:04.980
-You can think of high angular drag as something that's difficult to spin or rotate.
+Yüksek açısal sürtünmeyi, dönmesi veya döndürülmesi zor olan bir şey olarak düşünebilirsiniz.
 
 03:04.980 --> 03:07.500
-The mass of an object is incredibly important.
+Bir nesnenin kütlesi inanılmaz derecede önemlidir.
 
 03:07.500 --> 03:11.040
-The higher the mass, the more difficult it is to move it.
+Kütle ne kadar yüksekse, onu hareket ettirmek o kadar zordur.
 
 03:11.040 --> 03:17.250
-In our world, you can think of a bowling ball as having a high mass because on earth with Earth's gravity,
+Dünyamızda, bir bowling topunun yüksek bir kütleye sahip olduğunu düşünebilirsiniz çünkü Dünya'nın yerçekimi ile yeryüzünde,
 
 03:17.250 --> 03:20.820
-it would be difficult to pick up and also difficult to roll.
+toplanması ve yuvarlanması da zor olacaktır.
 
 03:20.820 --> 03:26.820
-Compared to a beach ball, which is very low mass, you can make a small movement touching the side
+Kütlesi çok düşük olan bir plaj topuyla karşılaştırıldığında, yan tarafa dokunarak küçük bir hareket yapabilirsiniz
 
 03:26.820 --> 03:31.230
-of a beach ball and expect it to move much further than a bowling ball.
+ve bir bowling topundan çok daha uzağa hareket etmesini beklersiniz.
 
 03:32.020 --> 03:34.490
-Let's take a look at a demo of two D mass.
+İki D kütlesinin demosuna bir göz atalım.
 
 03:34.510 --> 03:40.540
-We'll play the scene, inspect the mass values, and we'll create a new massive weight and interact
+Sahneyi oynatacağız, kütle değerlerini inceleyeceğiz ve yeni bir kütle ağırlığı oluşturup etkileşime gireceğiz
 
 03:40.540 --> 03:42.670
-with it, see how it behaves differently.
+nasıl farklı davrandığını görmek için.
 
 03:43.580 --> 03:45.920
-Let's open up the two RD mask project.
+İki RD maske projesini açalım.
 
 03:45.920 --> 03:47.720
-We're going to create a new.
+Yeni bir tane oluşturacağız.
 
 03:48.780 --> 03:50.720
-Very massive weight.
+Çok büyük bir ağırlık.
 
 03:50.730 --> 03:52.940
-We'll add to it a rigid body to D.
+D'ye sert bir gövde ekleyeceğiz.
 
 03:54.070 --> 03:55.360
-In a collider two rd.
+Çarpıştırıcıda 2.
 
 03:56.960 --> 04:01.280
-And we're going to add 100 for the mass value, which is a lot higher than the others.
+Ve diğerlerinden çok daha yüksek olan kütle değeri için 100 ekleyeceğiz.
 
 04:02.440 --> 04:06.450
-We can see when we run the scene here, they'll all fall with the same gravity.
+Burada sahneyi çalıştırdığımızda, hepsinin aynı yerçekimiyle düşeceğini görebiliriz.
 
 04:06.460 --> 04:11.170
-However, the very massive weight will squeeze the other objects out of the way.
+Bununla birlikte, çok büyük ağırlık diğer nesneleri yoldan çekecektir.
 
 04:11.170 --> 04:15.610
-It's so massive it really wants to return to the ground surface more than the others.
+O kadar büyük ki diğerlerinden daha fazla yer yüzeyine dönmek istiyor.
 
 04:20.380 --> 04:21.190
-And that's it.
+İşte bu kadar.
 
 04:23.790 --> 04:27.330
-In the next video, we'll take a look at the two D collider component.
+Bir sonraki videoda, iki D çarpıştırıcı bileşenine bir göz atacağız.

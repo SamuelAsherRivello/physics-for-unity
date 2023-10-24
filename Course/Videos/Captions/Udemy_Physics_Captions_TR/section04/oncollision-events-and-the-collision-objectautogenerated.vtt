@@ -1,277 +1,277 @@
 WEBVTT
 
 00:00.660 --> 00:01.770
-Section four.
+Dördüncü bölüm.
 
 00:01.930 --> 00:02.370
-Unity.
+Birlik.
 
 00:02.420 --> 00:04.170
-C-sharp Physics Programming.
+C-sharp Fizik Programlama.
 
 00:04.200 --> 00:10.470
-In this section, we'll cover handling physics events for collisions and triggers, adding physics forces
+Bu bölümde, çarpışmalar ve tetikleyiciler için fizik olaylarını ele almayı, fizik kuvvetleri eklemeyi ele alacağız
 
 00:10.470 --> 00:11.560
-to move objects.
+nesneleri hareket ettirmek için.
 
 00:11.580 --> 00:15.690
-We'll tackle the most common and useful physics properties and physics functions.
+En yaygın ve kullanışlı fizik özelliklerini ve fizik fonksiyonlarını ele alacağız.
 
 00:15.690 --> 00:20.940
-And we'll take a look at physics debugging on collision events and the collision object.
+Ve çarpışma olayları ve çarpışma nesnesi üzerinde fizik hata ayıklamasına bir göz atacağız.
 
 00:20.970 --> 00:24.300
-In this video, we'll cover physics Lifecycle recap.
+Bu videoda fizik Yaşam Döngüsü özetini ele alacağız.
 
 00:24.300 --> 00:26.700
-Then we'll jump into what our collision events.
+Daha sonra çarpışma olaylarımıza geçeceğiz.
 
 00:26.700 --> 00:28.020
-Why are they useful?
+Neden faydalıdırlar?
 
 00:28.020 --> 00:33.870
-And then we'll open the Unity editor and we'll play with collision events, Recommended viewing physics,
+Sonra Unity editörünü açacağız ve çarpışma olaylarıyla oynayacağız, Önerilen görüntüleme fiziği,
 
 00:33.870 --> 00:40.350
-life cycle physics, simulate and time dilation introduces the core fundamentals of physics, events,
+yaşam döngüsü fiziği, simülasyon ve zaman genişlemesi fiziğin temellerini, olayları tanıtır,
 
 00:40.620 --> 00:42.210
-physics, life cycle Recap.
+fizik, yaşam döngüsü özeti.
 
 00:42.210 --> 00:48.360
-As we saw in earlier sections, the on collision events are called When the collider intersects another
+Daha önceki bölümlerde gördüğümüz gibi, çarpışma olayları, çarpıştırıcı başka bir çarpışmayla kesiştiğinde çağrılır
 
 00:48.360 --> 00:55.560
-collider, we use the on collision enter method inside of a behavior, and we notice that we get past
+collider, on collision enter yöntemini bir davranışın içinde kullanırız ve fark ederiz ki
 
 00:55.560 --> 00:58.530
-the collision object on collision events.
+çarpışma olaylarında çarpışma nesnesi.
 
 00:58.530 --> 00:59.820
-Let's take a closer look.
+Daha yakından bakalım.
 
 00:59.820 --> 01:00.900
-Why do we use them?
+Bunları neden kullanıyoruz?
 
 01:00.900 --> 01:02.730
-First of all, on collision events?
+Öncelikle, çarpışma olayları hakkında?
 
 01:02.730 --> 01:05.640
-Give us more information about physics collisions.
+Bize fizik çarpışmaları hakkında daha fazla bilgi verin.
 
 01:05.640 --> 01:09.720
-These are collisions we're talking about between rigid bodies with colliders.
+Bunlar, çarpıştırıcılarla katı cisimler arasındaki çarpışmalardan bahsediyoruz.
 
 01:09.720 --> 01:11.580
-When is trigger is set to false?
+Tetikleyici ne zaman yanlış olarak ayarlanır?
 
 01:11.580 --> 01:16.980
-Some common examples would be when a bullet hits an enemy or when a character collects a coin.
+Bazı yaygın örnekler, bir merminin bir düşmana isabet etmesi veya bir karakterin bozuk para toplaması olabilir.
 
 01:16.980 --> 01:20.100
-Let's take a look at a scenario for an on collision event.
+Şimdi bir çarpışma olayı senaryosuna göz atalım.
 
 01:20.100 --> 01:24.450
-Let's imagine we have a pink cube falling downward toward a blue cube.
+Mavi bir küpe doğru düşen pembe bir küpümüz olduğunu düşünelim.
 
 01:24.450 --> 01:27.030
-Each of them has a rigid body and a collider.
+Her birinin bir katı gövdesi ve bir çarpıştırıcısı vardır.
 
 01:27.030 --> 01:29.220
-With collider is trigger set to false.
+Çarpıştırıcı ile tetikleyici yanlış olarak ayarlanmıştır.
 
 01:29.220 --> 01:30.480
-The pink is falling.
+Pembe düşüyor.
 
 01:30.480 --> 01:33.480
-Pink enters the collision, firing an on collision.
+Pembe çarpışmaya giriyor ve çarpışmayı ateşliyor.
 
 01:33.480 --> 01:35.730
-Enter pink stays in the collision.
+Pembe girin çarpışmada kalır.
 
 01:35.730 --> 01:42.810
-Now, for every frame that they're touching will get a on collision stay called when pink exits.
+Şimdi, dokundukları her kare için pembe çıktığında bir çarpışma kalışı çağrısı alacaklar.
 
 01:42.810 --> 01:45.600
-The collision will get a one time on collision exit.
+Çarpışma, çarpışma çıkışında bir kez gerçekleşecektir.
 
 01:45.600 --> 01:47.070
-Then pink continues to fall.
+Sonra pembe düşmeye devam ediyor.
 
 01:47.100 --> 01:49.490
-Our focus is really on the collision enter.
+Bizim odak noktamız gerçekten çarpışma girişi.
 
 01:49.500 --> 01:55.050
-This allows us to capture the bullet hits an enemy or the character collects a coin scenario.
+Bu, merminin bir düşmana isabet etmesini veya karakterin bir bozuk para toplama senaryosunu yakalamamızı sağlar.
 
 01:55.080 --> 02:00.570
-The collision object that comes into that method gives us more information about the collision.
+Bu yönteme gelen çarpışma nesnesi bize çarpışma hakkında daha fazla bilgi verir.
 
 02:00.570 --> 02:05.640
-We can ask Collision game object What did we hit or collision contacts?
+Collision oyun nesnesine neye çarptığımızı veya çarpışma temaslarını sorabiliriz?
 
 02:05.640 --> 02:08.700
-Where exactly in the 3D world did the collision happen?
+Çarpışma 3 boyutlu dünyanın tam olarak neresinde gerçekleşti?
 
 02:08.700 --> 02:10.620
-So let's take a look at what did we hit.
+Şimdi neye ulaştığımıza bir göz atalım.
 
 02:10.620 --> 02:15.990
-Well, we can check collision game object name and see if it matches the something we're looking for.
+Çarpışma oyun nesnesi adını kontrol edebilir ve aradığımız şeyle eşleşip eşleşmediğine bakabiliriz.
 
 02:16.020 --> 02:18.150
-That's good for very specific checks.
+Bu çok özel kontroller için iyidir.
 
 02:18.150 --> 02:21.540
-We can use the tag for a whole category of checking.
+Etiketi bütün bir kontrol kategorisi için kullanabiliriz.
 
 02:21.540 --> 02:22.440
-We can check.
+Kontrol edebiliriz.
 
 02:22.440 --> 02:26.700
-Is this colliding with any one of the coins which are tagged coin?
+Bu, madeni para olarak etiketlenmiş madeni paralardan herhangi biriyle çarpışıyor mu?
 
 02:26.700 --> 02:27.870
-An alternative?
+Bir alternatif mi?
 
 02:27.870 --> 02:31.470
-Also good for categorical checks is we can check the layer.
+Ayrıca kategorik kontroller için de iyi, katmanı kontrol edebiliriz.
 
 02:31.470 --> 02:35.760
-Did we hit anything with a layer set to floor tags and layers?
+Zemin etiketleri ve katmanlarına ayarlanmış bir katmanla herhangi bir şeye çarptık mı?
 
 02:35.760 --> 02:36.960
-Both can be used here.
+İkisi de burada kullanılabilir.
 
 02:36.960 --> 02:38.370
-Something to be noted.
+Dikkat edilmesi gereken bir şey var.
 
 02:38.370 --> 02:42.450
-We can have zero or one tags or layers on each of our objects.
+Nesnelerimizin her birinde sıfır veya bir etiket veya katman olabilir.
 
 02:42.450 --> 02:47.670
-However, we have unlimited tags in a project, but only 31 layers.
+Ancak, bir projede sınırsız etiketimiz var, ancak yalnızca 31 katmanımız var.
 
 02:47.760 --> 02:50.790
-Also notice that layers are much faster than tags.
+Ayrıca katmanların etiketlerden çok daha hızlı olduğuna dikkat edin.
 
 02:50.790 --> 02:56.040
-So if you don't have many layers and you want to get the speed increase, go ahead and use layers.
+Dolayısıyla, çok fazla katmanınız yoksa ve hız artışı elde etmek istiyorsanız, devam edin ve katmanları kullanın.
 
 02:56.040 --> 03:00.000
-If you have a lot of different combinations to check, maybe tags is better for you.
+Kontrol etmeniz gereken çok sayıda farklı kombinasyon varsa, etiketler sizin için daha iyi olabilir.
 
 03:00.000 --> 03:06.120
-You can open up and manage from menu unity, Edit Project Settings, Tags and Layers.
+Unity, Edit Project Settings, Tags ve Layers menülerinden açabilir ve yönetebilirsiniz.
 
 03:06.450 --> 03:08.190
-Let's jump into a demo now.
+Şimdi bir demoya geçelim.
 
 03:08.520 --> 03:12.540
-We'll take a look at the on collision events, one and two scenes.
+Çarpışma olaylarına, bir ve iki sahneye bir göz atacağız.
 
 03:12.540 --> 03:16.050
-We'll play the scene and inspect the code here.
+Sahneyi oynatacağız ve buradaki kodu inceleyeceğiz.
 
 03:16.080 --> 03:16.950
-Inside Unity.
+Unity'nin içinde.
 
 03:16.950 --> 03:20.010
-Let's open up our on collision events one.
+Çarpışma olayları bölümümüzü açalım.
 
 03:20.930 --> 03:22.190
-We've got a pink cube.
+Pembe bir küpümüz var.
 
 03:22.990 --> 03:24.010
-In the blue cube.
+Mavi küpün içinde.
 
 03:24.640 --> 03:26.110
-Pink cube is going to fall.
+Pembe küp düşecek.
 
 03:26.880 --> 03:27.930
-Let's see what happens.
+Bakalım ne olacak.
 
 03:30.760 --> 03:34.000
-It falls, collides and then continues falling.
+Düşer, çarpışır ve sonra düşmeye devam eder.
 
 03:35.020 --> 03:40.810
-We can see in the console window we have one enter several stay and one exit.
+Konsol penceresinde bir giriş birkaç kalış ve bir çıkış olduğunu görebiliriz.
 
 03:42.920 --> 03:48.590
-Looking at the code pretty straightforward using debug log to send out some simple text.
+Bazı basit metinleri göndermek için hata ayıklama günlüğünü kullanarak koda oldukça basit bir şekilde bakıyorum.
 
 03:49.100 --> 03:49.730
-That's it.
+Bu kadar.
 
 03:50.780 --> 03:52.730
-Let's take a look at collision events.
+Çarpışma olaylarına bir göz atalım.
 
 03:52.730 --> 03:53.510
-Two seen.
+İki tane görüldü.
 
 03:55.740 --> 03:57.060
-Same scenario.
+Aynı senaryo.
 
 03:57.180 --> 03:58.530
-At this time, we have a floor.
+Şu anda bir söz hakkımız var.
 
 03:59.220 --> 03:59.940
-Let's play.
+Hadi oynayalım.
 
 04:02.800 --> 04:04.090
-We see the collision.
+Çarpışmayı görüyoruz.
 
 04:04.090 --> 04:08.140
-And in each console line we also see what we're colliding with.
+Ve her konsol satırında neyle çarpıştığımızı da görüyoruz.
 
 04:08.590 --> 04:11.200
-The pink cube is colliding with Cube B.
+Pembe küp B küpü ile çarpışıyor.
 
 04:11.530 --> 04:13.780
-Notice it's not colliding with the floor.
+Zemine çarpmadığına dikkat edin.
 
 04:13.810 --> 04:15.040
-Let's see how that's done.
+Nasıl yapıldığını görelim.
 
 04:18.110 --> 04:19.370
-Inside each method.
+Her yöntemin içinde.
 
 04:19.370 --> 04:24.920
-We check if we're colliding with the floor and then we do not say the debug log statement.
+Zemine çarpıp çarpmadığımızı kontrol ediyoruz ve ardından hata ayıklama günlüğü ifadesini söylemiyoruz.
 
 04:25.100 --> 04:26.840
-So how does is floor work?
+Peki zemin nasıl çalışıyor?
 
 04:27.790 --> 04:29.800
-Down here, we simply check the layer.
+Burada, basitçe katmanı kontrol ediyoruz.
 
 04:29.920 --> 04:32.170
-And is it the floor layer now?
+Ve şimdi zemin katmanı mı?
 
 04:32.170 --> 04:34.780
-Floor layer constant just equals floor.
+Zemin katmanı sabiti sadece zemine eşittir.
 
 04:34.810 --> 04:37.240
-It's a simple way for me to store that variable.
+Bu değişkeni saklamak için basit bir yol.
 
 04:38.490 --> 04:44.160
-If we look in unity and we expect the floor, we see that the layer is set to floor.
+Unity'ye bakarsak ve zemini beklersek, katmanın zemine ayarlandığını görürüz.
 
 04:44.310 --> 04:46.290
-That's how this code knows.
+Bu kod böyle biliyor.
 
 04:46.290 --> 04:50.310
-Not to say debug log when we're colliding with the floor.
+Zemine çarparken hata ayıklama günlüğü dememek için.
 
 04:50.340 --> 04:51.090
-That's it.
+Bu kadar.
 
 04:52.180 --> 04:56.830
-In the next video, we'll take a look at on trigger events and the collider object.
+Bir sonraki videoda, tetikleyici olaylara ve çarpıştırıcı nesnesine bir göz atacağız.
 
 04:56.950 --> 05:01.510
-We'll cover what are trigger events, why are they useful in our game projects?
+Tetikleyici olayların ne olduğunu, oyun projelerimizde neden yararlı olduklarını ele alacağız.
 
 05:01.510 --> 05:04.750
-And we'll even open up unity and play with some trigger events.
+Ve hatta unity'yi açıp bazı tetikleyici olaylarla oynayacağız.

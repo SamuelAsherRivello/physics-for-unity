@@ -1,259 +1,259 @@
 WEBVTT
 
 00:01.650 --> 00:06.010
-Data oriented technology stack or dots for unity physics.
+Veri odaklı teknoloji yığını veya birlik fiziği için noktalar.
 
 00:06.030 --> 00:11.350
-In this video, we'll cover what is Unity dots and what are the three major features.
+Bu videoda Unity dots'un ne olduğunu ve üç ana özelliğini ele alacağız.
 
 00:11.370 --> 00:15.750
-We'll also look at how dots will impact the future of unity physics.
+Ayrıca noktaların birlik fiziğinin geleceğini nasıl etkileyeceğine de bakacağız.
 
 00:16.470 --> 00:17.820
-So what is dots?
+Peki nokta nedir?
 
 00:18.630 --> 00:22.890
-Dance is a project by unity that promises performance by default.
+Dance, unity'nin varsayılan olarak performans vaat eden bir projesidir.
 
 00:22.920 --> 00:30.360
-It takes advantage of today's multi core processors and Unity's new high performance system data oriented
+Günümüzün çok çekirdekli işlemcilerinden ve Unity'nin veri odaklı yeni yüksek performanslı sisteminden yararlanır
 
 00:30.360 --> 00:31.410
-technology stack.
+teknoloji yığını.
 
 00:31.440 --> 00:37.260
-Your games will run faster and your code will be easier to read and reuse across other projects.
+Oyunlarınız daha hızlı çalışacak ve kodunuzun okunması ve diğer projelerde yeniden kullanılması daha kolay olacaktır.
 
 00:37.290 --> 00:42.030
-Take a look at this screenshot from the free megacity demo by Unity Technologies.
+Unity Technologies'in ücretsiz megakent demosundan alınan bu ekran görüntüsüne bir göz atın.
 
 00:42.030 --> 00:46.380
-It's a really complex scene with lots going on in the megacity demo.
+Megakent demosunda pek çok şeyin yaşandığı gerçekten karmaşık bir sahne.
 
 00:46.380 --> 00:52.420
-It features four and a half million mesh renders and over 200,000 unique building objects.
+Dört buçuk milyon mesh render ve 200.000'den fazla benzersiz bina nesnesi içeriyor.
 
 00:52.440 --> 00:57.400
-It's so complex and would not be possible without dots to accomplish this.
+Bu çok karmaşık ve noktalar olmadan bunu başarmak mümkün olmazdı.
 
 00:57.420 --> 01:00.180
-Unity is rebuilding the core of the tool.
+Unity aracın çekirdeğini yeniden inşa ediyor.
 
 01:00.180 --> 01:05.040
-It's rebuilding each of the major systems with high performance multithreaded dots.
+Ana sistemlerin her birini yüksek performanslı çok iş parçacıklı noktalarla yeniden inşa ediyor.
 
 01:05.040 --> 01:11.970
-Features of this system are the C-sharp job system for running multithreaded code, the entity component
+Bu sistemin özellikleri, çok iş parçacıklı kod çalıştırmak için C-sharp iş sistemi, varlık bileşeni
 
 01:11.970 --> 01:18.720
-system for writing high performance code and finally the burst compiler for producing highly optimized
+yüksek performanslı kod yazmak için sistem ve son olarak yüksek oranda optimize edilmiş kod üretmek için burst derleyici
 
 01:18.720 --> 01:19.710
-native code.
+Yerel kod.
 
 01:20.520 --> 01:22.290
-So what is dots Physics.
+Peki nokta fiziği nedir?
 
 01:22.590 --> 01:27.270
-In the future, Dot's physics will be rebranded to just unity physics.
+Gelecekte, Dot'un fiziği sadece unity fiziği olarak yeniden markalanacak.
 
 01:27.270 --> 01:34.500
-The philosophy is complete deterministic, rigid body dynamics and spatial query system written in high
+Felsefe tamamen deterministik, katı cisim dinamiği ve yüksek teknoloji ile yazılmış uzamsal sorgulama sistemidir.
 
 01:34.500 --> 01:35.070
-performance.
+Performans.
 
 01:35.070 --> 01:41.160
-C-sharp It will be stateless unity Physics forgoes any caching in favor of simplicity.
+C-sharp Durumsuz bir birlik olacak Fizik, basitlik adına herhangi bir önbelleklemeden vazgeçiyor.
 
 01:41.160 --> 01:46.140
-It's modular, it's decoupled from other systems, and it encourages its re-use.
+Modülerdir, diğer sistemlerden ayrıştırılmıştır ve yeniden kullanımını teşvik eder.
 
 01:46.380 --> 01:47.550
-It's performant.
+Performanslı.
 
 01:47.550 --> 01:52.830
-It will meet or exceed the performance of any commercially available physics engine.
+Piyasada bulunan herhangi bir fizik motorunun performansını karşılayacak veya aşacaktır.
 
 01:52.830 --> 01:54.570
-So what does this mean for us?
+Peki bu bizim için ne anlama geliyor?
 
 01:54.570 --> 01:59.970
-The principles we cover in this course are relevant for today's physics, as well as the future with
+Bu derste ele aldığımız ilkeler günümüz fiziği için olduğu kadar gelecek için de geçerlidir.
 
 01:59.970 --> 02:06.090
-unity physics, The version of today's 2D and 3D physics that we cover will continue to exist.
+birlik fiziği, bugünün 2D ve 3D fiziğinin ele aldığımız versiyonu var olmaya devam edecek.
 
 02:06.090 --> 02:11.220
-Unity Physics will be an additional option for blazing fast speed improvements.
+Unity Physics, son derece hızlı hız iyileştirmeleri için ek bir seçenek olacak.
 
 02:11.930 --> 02:12.530
-Let's see.
+Bakalım.
 
 02:12.560 --> 02:12.880
-Dots.
+Noktalar.
 
 02:12.890 --> 02:14.030
-Physics in action.
+Fizik iş başında.
 
 02:14.300 --> 02:16.670
-The following steps have already been done for you.
+Aşağıdaki adımlar sizin için zaten yapıldı.
 
 02:16.670 --> 02:17.750
-But here's the steps.
+Ama işte adımlar.
 
 02:17.750 --> 02:21.800
-If you wanted to create a project from scratch, first, you check out this repo.
+Sıfırdan bir proje oluşturmak istiyorsanız, önce bu repoya göz atın.
 
 02:21.830 --> 02:27.160
-Then you open up the latest Unity editor and open up the Unity Physics Examples Project.
+Sonra en son Unity editörünü açın ve Unity Fizik Örnekleri Projesini açın.
 
 02:27.170 --> 02:30.950
-Then we have to make sure we have the right packages and update them.
+O zaman doğru paketlere sahip olduğumuzdan emin olmalı ve bunları güncellemeliyiz.
 
 02:30.950 --> 02:38.000
-So open up the package manager, click Advanced Click Show preview packages Verify you have the latest
+Bu yüzden paket yöneticisini açın, Gelişmiş'e tıklayın Önizleme paketlerini göster'e tıklayın En son paketlere sahip olduğunuzu doğrulayın
 
 02:38.000 --> 02:42.020
-version of the required packages, including Unity Physics.
+Unity Physics de dahil olmak üzere gerekli paketlerin sürümü.
 
 02:43.210 --> 02:44.720
-Let's take a look at a demo.
+Bir demoya göz atalım.
 
 02:44.740 --> 02:50.350
-Note that compared to every other demo in this course, this one is located in a separate project.
+Bu kurstaki diğer tüm demolarla karşılaştırıldığında, bunun ayrı bir projede yer aldığını unutmayın.
 
 02:50.350 --> 02:52.960
-That's because it has unique setup aspects.
+Bunun nedeni, benzersiz kurulum özelliklerine sahip olmasıdır.
 
 02:52.960 --> 02:55.930
-Play the scene and will inspect the scene together.
+Sahneyi oynatın ve sahneyi birlikte inceleyin.
 
 02:55.930 --> 02:59.950
-We'll see that the physics, shape and physics body are new components.
+Fizik, şekil ve fizik gövdesinin yeni bileşenler olduğunu göreceğiz.
 
 02:59.950 --> 03:06.730
-We'll check out my restart scene controller code and see how I had to tweak it specifically for dots.
+Yeniden başlatma sahnesi denetleyici koduma göz atacağız ve özellikle noktalar için nasıl ince ayar yapmak zorunda kaldığımı göreceğiz.
 
 03:06.730 --> 03:10.000
-As a bonus, I've added some spanners to the scene.
+Bonus olarak, sahneye bazı anahtarlar ekledim.
 
 03:10.000 --> 03:14.170
-We'll be able to add a lot of physics objects and see how the performance works.
+Çok sayıda fizik nesnesi ekleyebileceğiz ve performansın nasıl çalıştığını göreceğiz.
 
 03:14.620 --> 03:16.830
-All right, let's open up our Dots project here.
+Pekala, Dots projemizi burada açalım.
 
 03:16.840 --> 03:21.710
-Again, note that this is a different project than we've used for the rest of the course.
+Yine, bunun kursun geri kalanında kullandığımızdan farklı bir proje olduğunu unutmayın.
 
 03:21.730 --> 03:24.370
-That's because this needs some specific setup.
+Çünkü bunun için özel bir kurulum gerekiyor.
 
 03:24.930 --> 03:32.070
-But here in the Unity Physics Dots example, we'll run the scene and see a pretty similar setup.
+Ancak burada Unity Physics Dots örneğinde, sahneyi çalıştıracağız ve oldukça benzer bir kurulum göreceğiz.
 
 03:32.160 --> 03:36.810
-We've got a stack of cubes, something like our demos we've used before.
+Daha önce kullandığımız demolarımız gibi bir yığın küpümüz var.
 
 03:36.840 --> 03:41.910
-I can even hit the spacebar and reload the scene as we've been able to do before.
+Hatta daha önce yapabildiğimiz gibi boşluk tuşuna basıp sahneyi yeniden yükleyebilirim.
 
 03:42.180 --> 03:46.950
-And if we look into the scene, we'll notice that we have no cubes in here anymore.
+Ve eğer sahneye bakarsak, burada artık hiç küp olmadığını fark edeceğiz.
 
 03:47.370 --> 03:53.160
-There's a temporary, I think, unique aspect to dots in that once the scene starts, certain objects
+Noktaların geçici, bence benzersiz bir yönü var, sahne başladığında belirli nesneler
 
 03:53.160 --> 03:54.130
-will disappear.
+yok olacak.
 
 03:54.150 --> 03:55.200
-It's not a bug.
+Bu bir hata değil.
 
 03:55.200 --> 04:01.620
-It's just a way that the optimization works and in the future that will be represented in the hierarchy.
+Bu sadece optimizasyonun çalışma şeklidir ve gelecekte hiyerarşide temsil edilecektir.
 
 04:02.300 --> 04:08.000
-So if we look at one of the cubes, instead of seeing the familiar collider, we see physics shape.
+Yani küplerden birine bakarsak, tanıdık çarpıştırıcıyı görmek yerine fizik şeklini görürüz.
 
 04:08.150 --> 04:12.560
-And instead of seeing the familiar rigid body, we see physics body.
+Bildiğimiz katı cisim yerine fizik cisim görüyoruz.
 
 04:12.560 --> 04:14.930
-So there's a different naming scheme here.
+Yani burada farklı bir adlandırma şeması var.
 
 04:15.080 --> 04:20.900
-But a lot of the similar values we'd expect to see, including being able to have something like a physics
+Ancak, fizik gibi bir şeye sahip olabilmek de dahil olmak üzere, görmeyi beklediğimiz benzer değerlerin çoğu
 
 04:20.900 --> 04:23.030
-material for bouncing --, etc..
+zıplamak için malzeme --, vb.
 
 04:23.420 --> 04:29.120
-Something else I wanted to show is that I was able to restart the scene, but I had to add a little
+Göstermek istediğim başka bir şey de sahneyi yeniden başlatabildim, ancak biraz
 
 04:29.120 --> 04:31.820
-bit of something to the code down here.
+buradaki kodda bir şeyler var.
 
 04:31.820 --> 04:38.570
-In addition to reloading the scene which I did before here for dots, I have to restart the system by
+Daha önce burada noktalar için yaptığım sahneyi yeniden yüklemeye ek olarak, sistemi şu şekilde yeniden başlatmam gerekiyor
 
 04:38.570 --> 04:40.970
-destroying what are called entities in the scene.
+sahnedeki varlıkları yok etmek.
 
 04:40.970 --> 04:46.700
-So definitely a little bit more thinking I have to do when I had to do some simple steps here but works
+Yani burada bazı basit adımlar atmam gerektiğinde kesinlikle biraz daha fazla düşünmem gerekiyor ama işe yarıyor
 
 04:46.700 --> 04:47.180
-great.
+Harika.
 
 04:48.250 --> 04:54.160
-Lastly, I want to show I have a sponsor set up here that's going to spawn 3000 different objects in
+Son olarak, burada 3000 farklı nesne oluşturacak bir sponsorum olduğunu göstermek istiyorum.
 
 04:54.160 --> 04:54.760
-the world.
+Dünya.
 
 04:55.330 --> 04:57.190
-Let's see how well it performs.
+Bakalım ne kadar iyi performans gösterecek.
 
 04:57.520 --> 05:01.780
-I'm going to show just the game view here and give it a play.
+Burada sadece oyun görünümünü göstereceğim ve oynatacağım.
 
 05:02.230 --> 05:04.840
-I'm also going to turn on the frame rate counter.
+Ayrıca kare hızı sayacını da açacağım.
 
 05:05.170 --> 05:11.830
-You can see we're at about six frames, ten frames a second when the scene first starts and then it
+Sahne ilk başladığında saniyede yaklaşık altı kare, on kare çektiğimizi görebilirsiniz ve sonra
 
 05:11.830 --> 05:13.660
-quickly gains a lot of speed.
+hızla hız kazanıyor.
 
 05:13.690 --> 05:17.410
-I think it's the instantiation of items in the world that's expensive.
+Bence pahalı olan dünyadaki öğelerin örneklendirilmesi.
 
 05:17.410 --> 05:20.620
-But then the physics operation runs really well.
+Ama sonra fizik operasyonu gerçekten iyi çalışıyor.
 
 05:20.650 --> 05:25.900
-Here we have thousands of objects more than we can even see on screen, and I'm still able to interact
+Burada ekranda görebileceğimizden bile daha fazla binlerce nesne var ve ben hala etkileşime girebiliyorum
 
 05:25.900 --> 05:27.610
-with them with really good frame rate.
+onlarla gerçekten iyi kare hızıyla.
 
 05:27.640 --> 05:32.980
-I think this will continue to improve as the project matures, but we were already seeing really good
+Proje olgunlaştıkça bunun gelişmeye devam edeceğini düşünüyorum, ancak şimdiden gerçekten iyi
 
 05:32.980 --> 05:33.880
-performance.
+Performans.
 
 05:34.150 --> 05:35.040
-So that's it.
+İşte bu kadar.
 
 05:35.050 --> 05:37.210
-That's a quick overview of Unity Dots.
+Bu, Unity Dots'a hızlı bir genel bakış.
 
 05:38.290 --> 05:39.830
-This is the end of the course.
+Burası parkurun sonu.
 
 05:39.850 --> 05:41.380
-Thank you very much.
+Çok teşekkür ederim.

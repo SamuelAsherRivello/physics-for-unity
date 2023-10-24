@@ -1,205 +1,205 @@
 WEBVTT
 
 00:01.500 --> 00:08.190
-Creating the player and input in this video will cover taking keyboard input using rigid body add force
+Bu videoda oynatıcı ve giriş oluşturma, sert gövde ekleme kuvveti kullanarak klavye girişi almayı kapsayacaktır
 
 00:08.190 --> 00:11.440
-for motion and using pro grids to position the walls.
+ve duvarları konumlandırmak için profesyonel ızgaralar kullanmak.
 
 00:11.460 --> 00:12.840
-Here's the task breakdown.
+İşte görev dağılımı.
 
 00:12.840 --> 00:15.140
-We'll add the crazy ball C-sharp script.
+Çılgın top C-sharp senaryosunu ekleyeceğiz.
 
 00:15.150 --> 00:19.220
-We'll use pro grids to position the wall elements and we'll add those walls.
+Duvar öğelerini konumlandırmak için pro ızgaraları kullanacağız ve bu duvarları ekleyeceğiz.
 
 00:19.230 --> 00:21.570
-This screenshot represents our end target.
+Bu ekran görüntüsü nihai hedefimizi temsil etmektedir.
 
 00:22.390 --> 00:27.550
-For the project, we'll open up section six, Video two and the scene crazy ball to.
+Proje için altıncı bölüm, ikinci video ve çılgın top sahnesini açacağız.
 
 00:28.750 --> 00:34.270
-All right, let's open up unity here and we're going to go into Crazy Ball two if we play this scene
+Pekala, burada unity'yi açalım ve bu sahneyi oynarsak Crazy Ball 2'ye gireceğiz
 
 00:34.270 --> 00:34.780
-here.
+Buraya.
 
 00:37.070 --> 00:39.230
-We'll see that I'm able to take keyboard input.
+Klavye girdisi alabildiğimi göreceğiz.
 
 00:40.220 --> 00:42.000
-And bounce properly off the walls.
+Ve duvarlardan düzgün bir şekilde seker.
 
 00:42.020 --> 00:43.550
-So let's see how that set up.
+Şimdi nasıl kurulduğunu görelim.
 
 00:44.240 --> 00:46.370
-First of all, we've got a crazy ball here.
+Öncelikle, burada çılgın bir topumuz var.
 
 00:47.230 --> 00:48.250
-You know, the crazy ball.
+Bilirsin, çılgın top.
 
 00:48.250 --> 00:55.060
-It's just a sphere with a sphere collider, a rigid body with default settings, and then a custom crazy
+Sadece küre çarpıştırıcılı bir küre, varsayılan ayarlara sahip sert bir gövde ve ardından özel bir çılgın
 
 00:55.060 --> 00:55.930
-ball script.
+top senaryosu.
 
 00:55.960 --> 00:59.060
-Let's see how that works in the crazy ball script.
+Bunun çılgın top senaryosunda nasıl çalıştığını görelim.
 
 00:59.080 --> 01:01.750
-In the update, we capture the keyboard input.
+Güncellemede, klavye girdisini yakalıyoruz.
 
 01:01.750 --> 01:09.040
-We use Unity's input class, which automatically maps to the arrow keys on the keyboard and any gamepads
+Unity'nin klavyedeki ok tuşlarına ve herhangi bir gamepad'e otomatik olarak eşlenen giriş sınıfını kullanıyoruz
 
 01:09.040 --> 01:10.000
-that you have hooked up.
+bağladığınız.
 
 01:10.000 --> 01:11.560
-I'm just using the keyboard.
+Sadece klavyeyi kullanıyorum.
 
 01:11.890 --> 01:21.400
-Then I cache the last input and every update I use rigid body add force and I multiply the last input
+Sonra son girişi önbelleğe alıyorum ve her güncellemede sert gövde ekleme kuvveti kullanıyorum ve son girişi çarpıyorum
 
 01:21.400 --> 01:22.600
-times the speed.
+hızın katları.
 
 01:22.810 --> 01:28.570
-This way I can have more dramatic or less dramatic keyboard input depending on that speed value.
+Bu şekilde, hız değerine bağlı olarak daha dramatik veya daha az dramatik klavye girişi elde edebilirim.
 
 01:28.600 --> 01:29.830
-Let's see how it works.
+Nasıl çalıştığını görelim.
 
 01:30.680 --> 01:31.850
-When I run the scene.
+Sahneyi çalıştırdığımda.
 
 01:35.430 --> 01:37.500
-Now use the keyboard input here.
+Şimdi burada klavye girişini kullanın.
 
 01:37.500 --> 01:39.360
-I'm moving my character through the world.
+Karakterimi dünyada gezdiriyorum.
 
 01:39.540 --> 01:47.400
-If I change this to a value of 100 for speed, for example, I'll get much more maximum speed as well
+Örneğin, bunu hız için 100 değerine değiştirirsem, çok daha fazla maksimum hız elde edeceğim
 
 01:47.400 --> 01:48.660
-as acceleration.
+hızlanma olarak.
 
 01:50.470 --> 01:52.630
-This is a little bit too much power.
+Bu biraz fazla güç.
 
 01:52.660 --> 01:55.390
-Let's try a low value like five.
+Beş gibi düşük bir değer deneyelim.
 
 01:56.800 --> 01:57.250
-Here.
+İşte.
 
 01:57.250 --> 02:02.230
-The ball feels like it has a lot of weight to it and I really have to hold the keys in any direction
+Top çok ağırmış gibi geliyor ve tuşları herhangi bir yönde tutmam gerekiyor
 
 02:02.230 --> 02:05.110
-for a long period of time to correct its movement.
+hareketini düzeltmek için uzun bir süre boyunca.
 
 02:05.650 --> 02:07.750
-You can experiment with the values you like.
+İstediğiniz değerleri deneyebilirsiniz.
 
 02:07.780 --> 02:08.910
-I like 20.
+20'yi severim.
 
 02:08.920 --> 02:13.720
-I think it's a good mixture of feeling like I have enough control, but still respecting that there's
+Bence bu, yeterince kontrol sahibi olduğumu hissetmenin iyi bir karışımı, ancak yine de
 
 02:13.720 --> 02:15.400
-some mass and movement going on.
+biraz kütle ve hareket oluyor.
 
 02:16.560 --> 02:17.010
-Great.
+Harika.
 
 02:17.130 --> 02:19.140
-So now let's talk about this environment.
+Şimdi bu ortam hakkında konuşalım.
 
 02:19.500 --> 02:22.170
-We've got a series of walls here set up.
+Burada bir dizi duvarımız var.
 
 02:24.370 --> 02:30.310
-Each wall piece is about this big and already has a mesh collider on it.
+Her duvar parçası yaklaşık bu büyüklükte ve üzerinde zaten bir ağ çarpıştırıcısı var.
 
 02:30.310 --> 02:33.280
-So all we have to do is position these in the world where we want.
+Yani tek yapmamız gereken bunları dünyada istediğimiz yere yerleştirmek.
 
 02:33.490 --> 02:35.230
-Let's decide how we want to do that.
+Bunu nasıl yapmak istediğimize karar verelim.
 
 02:35.620 --> 02:38.560
-So first I'll get rid of the ones that we've got.
+Bu yüzden önce elimizdekilerden kurtulacağım.
 
 02:40.050 --> 02:41.610
-And I'll drag out a wall piece.
+Ve bir duvar parçası çıkaracağım.
 
 02:48.080 --> 02:48.680
-There you go.
+İşte oldu.
 
 02:49.270 --> 02:51.830
-Now, I could freely move these around.
+Şimdi, bunları serbestçe hareket ettirebilirim.
 
 02:51.850 --> 02:55.030
-You can see that I'm able to move them with a lot of accuracy.
+Onları büyük bir doğrulukla hareket ettirebildiğimi görebilirsiniz.
 
 02:55.720 --> 03:00.790
-But it's possible that I would set them up with a little gaps between them or possible overlaps.
+Ancak bunları aralarında küçük boşluklar veya olası çakışmalar olacak şekilde ayarlamam mümkün.
 
 03:00.790 --> 03:06.040
-So we're going to use a really nice tool that I've already imported called pro grids.
+Bu yüzden pro grids adında daha önce ithal ettiğim gerçekten güzel bir araç kullanacağız.
 
 03:06.610 --> 03:14.230
-When I turn pro grids on, it will automatically snap to one unit and with the on toggle, everything
+Pro ızgaraları açtığımda, otomatik olarak bir birime yapışacak ve açık geçişle her şey
 
 03:14.230 --> 03:17.140
-that I move will automatically be snapped.
+hareket ettirdiğim şey otomatik olarak yakalanacaktır.
 
 03:17.590 --> 03:22.000
-So when I start to move these around the world, you can see they snap in whole units.
+Bu yüzden bunları dünya üzerinde hareket ettirmeye başladığımda, tüm birimler halinde kırıldıklarını görebilirsiniz.
 
 03:22.300 --> 03:28.300
-Then I'll use control dx or command dx on the Mac to duplicate and move them out.
+Sonra bunları çoğaltmak ve taşımak için Mac'te control dx veya command dx tuşunu kullanacağım.
 
 03:29.530 --> 03:30.190
-This way.
+Bu taraftan.
 
 03:30.190 --> 03:33.390
-I know if I want a gap, it will be a whole unit.
+Eğer bir boşluk istiyorsam, bunun bir birim olacağını biliyorum.
 
 03:33.400 --> 03:36.250
-Otherwise, I know I'm snapping right to the edge of the object.
+Aksi takdirde, nesnenin kenarına doğru yapıştığımı biliyorum.
 
 03:36.860 --> 03:40.910
-So I can duplicate and add a whole line of those.
+Böylece bunları çoğaltabilir ve bir satır ekleyebilirim.
 
 03:41.210 --> 03:47.090
-Then I can duplicate and also use rotation, of course, to position these exactly where I want them.
+Daha sonra bunları tam olarak istediğim yere konumlandırmak için çoğaltabilir ve tabii ki döndürme özelliğini kullanabilirim.
 
 03:53.900 --> 03:56.210
-And you continue to make your level design like that.
+Ve seviye tasarımınızı bu şekilde yapmaya devam ediyorsunuz.
 
 04:00.850 --> 04:06.490
-And because they have automatically mesh gliders built onto them, you can see that we get the functionality
+Ve üzerlerinde otomatik olarak örgü planörlere sahip oldukları için, işlevselliği elde ettiğimizi görebilirsiniz
 
 04:06.490 --> 04:10.750
-we want, which is that my character collides and interacts with them.
+istediğimiz şey, karakterimin onlarla çarpışması ve etkileşime girmesi.
 
 04:18.910 --> 04:19.380
-That's it.
+Bu kadar.
 
 04:19.390 --> 04:22.420
-We've got the movement input and the walls.
+Hareket girdimiz ve duvarlarımız var.
 
 04:24.640 --> 04:30.550
-In the next video, we'll work on creating the obstacles we'll cover, creating movable and immovable
+Bir sonraki videoda, ele alacağımız engelleri oluşturmaya çalışacağız, hareketli ve hareketsiz
 
 04:30.550 --> 04:34.900
-objects, and adding spinning coins which are collectible by the player.
+nesneler ve oyuncu tarafından toplanabilen dönen paralar eklemek.

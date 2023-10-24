@@ -1,238 +1,238 @@
 WEBVTT
 
 00:01.720 --> 00:04.630
-In this video, we'll cover two D joints.
+Bu videoda iki D eklemini ele alacağız.
 
 00:04.630 --> 00:09.940
-We'll look at what is the joint two RD component and different types of joint to DS.
+Eklem iki RD bileşeninin ne olduğuna ve DS'ye farklı eklem türlerine bakacağız.
 
 00:09.940 --> 00:12.550
-Then we'll play with these inside the unity ed.
+Sonra bunlarla unity ed içinde oynayacağız.
 
 00:13.090 --> 00:21.070
-A joint is the component that maintains a relationship either positional or rotational with one or more
+Eklem, bir veya daha fazla eklem ile konumsal veya rotasyonel bir ilişki sürdüren bileşendir.
 
 00:21.070 --> 00:22.030
-game objects.
+oyun nesneleri.
 
 00:22.030 --> 00:26.740
-You can attach your joints to either a game object with a rigid body.
+Eklemlerinizi sert gövdeli bir oyun nesnesine bağlayabilirsiniz.
 
 00:26.740 --> 00:30.460
-This is common or to a fixed position in world space.
+Bu yaygındır veya dünya uzayında sabit bir konumdur.
 
 00:30.460 --> 00:32.290
-You can see the setup here in the picture.
+Buradaki resimde kurulumu görebilirsiniz.
 
 00:32.290 --> 00:37.960
-We've got a game object with three different components the transform and rigid body as we've seen before,
+Daha önce gördüğümüz gibi üç farklı bileşene sahip bir oyun nesnemiz var: dönüşüm ve sert gövde,
 
 00:37.960 --> 00:39.910
-and then we've added the joint component.
+ve sonra ortak bileşeni ekledik.
 
 00:40.700 --> 00:42.950
-When should my game use joints?
+Oyunum ne zaman eklem kullanmalı?
 
 00:43.630 --> 00:45.770
-Let's talk about some uses for joints.
+Eklemlerin bazı kullanım alanlarından bahsedelim.
 
 00:45.980 --> 00:53.210
-Typically, physic joints are useful in gaming to maintain a relationship, either positional or rotational
+Tipik olarak, fizik eklemler oyunlarda konumsal veya rotasyonel bir ilişkiyi sürdürmek için kullanışlıdır
 
 00:53.210 --> 00:55.320
-between two or more game objects.
+iki veya daha fazla oyun nesnesi arasında.
 
 00:55.340 --> 00:58.790
-Use joints to mimic reality or to add gameplay.
+Gerçekliği taklit etmek veya oynanış eklemek için eklemleri kullanın.
 
 00:58.940 --> 01:03.020
-Imagine creating a hanging chain like the picture we see on the right there.
+Sağ tarafta gördüğümüz resimdeki gibi asılı bir zincir oluşturduğunuzu hayal edin.
 
 01:03.020 --> 01:07.340
-You can do that with several different game objects connected with hinge joints.
+Bunu menteşe bağlantılarıyla birbirine bağlanmış birkaç farklı oyun nesnesiyle yapabilirsiniz.
 
 01:07.340 --> 01:08.750
-The hinge is very useful.
+Menteşe çok kullanışlıdır.
 
 01:08.750 --> 01:13.310
-You could also create a bouncy wooden bridge or a door connected to a wall.
+Ayrıca zıplayan ahşap bir köprü veya duvara bağlı bir kapı da oluşturabilirsiniz.
 
 01:13.310 --> 01:18.660
-If you wanted a vehicle with suspension, you could use the spring joint and the wheel joint.
+Süspansiyonlu bir araç istiyorsanız, yaylı mafsal ve tekerlek mafsalını kullanabilirsiniz.
 
 01:18.680 --> 01:21.170
-There are many types of joints in 2D.
+2D'de birçok eklem türü vardır.
 
 01:21.290 --> 01:23.240
-Let's talk about a few of the types.
+Şimdi birkaç tür hakkında konuşalım.
 
 01:23.240 --> 01:25.520
-First of all, there's distance joint to DX.
+Her şeyden önce, DX için mesafe bağlantısı var.
 
 01:25.550 --> 01:30.530
-This is a very simple joint that maintains a certain relationship between two game objects.
+Bu, iki oyun nesnesi arasındaki belirli bir ilişkiyi koruyan çok basit bir eklemdir.
 
 01:30.530 --> 01:33.710
-That relationship could be the distance between their positions.
+Bu ilişki, konumları arasındaki mesafe olabilir.
 
 01:33.710 --> 01:39.800
-It's similar to parenting one game object under another only you don't have this restriction of parenting.
+Bir oyun nesnesini diğerinin altında ebeveynleştirmeye benzer, ancak bu ebeveynlik kısıtlamasına sahip değilsiniz.
 
 01:39.980 --> 01:45.980
-The hinge joint two d fixes a game object to a point in space and allows rotation.
+Menteşe eklemi two d, bir oyun nesnesini uzayda bir noktaya sabitler ve dönmesine izin verir.
 
 01:46.250 --> 01:52.340
-You can think of a bridge like the image in the lower right or a typical door that opens and closes
+Sağ alttaki resimdeki gibi bir köprü veya açılıp kapanan tipik bir kapı düşünebilirsiniz
 
 01:52.340 --> 01:53.180
-on a hinge.
+bir menteşe üzerinde.
 
 01:53.180 --> 01:56.960
-There's many types of joints, so how strong is a joint?
+Birçok eklem türü vardır, peki bir eklem ne kadar güçlüdür?
 
 01:57.470 --> 01:59.240
-It's possible to break joints.
+Eklemleri kırmak mümkündür.
 
 01:59.240 --> 02:03.740
-There's something called a constraint, which is a rule which the joint will try to follow.
+Eklemin uymaya çalışacağı bir kural olan kısıtlama adı verilen bir şey vardır.
 
 02:03.740 --> 02:09.980
-Some constraints limit behavior such as ensuring a rigid body stays in a certain position.
+Bazı kısıtlamalar, katı bir cismin belirli bir konumda kalmasını sağlamak gibi davranışları sınırlar.
 
 02:09.980 --> 02:16.520
-When the rule is broken temporarily, the joint will apply corrective forces so it can again follow.
+Kural geçici olarak ihlal edildiğinde, eklem tekrar takip edebilmek için düzeltici kuvvetler uygulayacaktır.
 
 02:16.520 --> 02:21.230
-The rule breaking is possible when the corrective force needed is too great.
+Kural ihlali, ihtiyaç duyulan düzeltici güç çok büyük olduğunda mümkündür.
 
 02:21.230 --> 02:26.840
-The joint will permanently break the individual joints, stops working forever in your game.
+Eklem, tek tek eklemleri kalıcı olarak kıracak, oyununuzda sonsuza kadar çalışmayı durduracaktır.
 
 02:26.840 --> 02:31.000
-You have to stop and start the scene or the game in order to have it work again.
+Tekrar çalışmasını sağlamak için sahneyi veya oyunu durdurup başlatmanız gerekir.
 
 02:31.010 --> 02:33.920
-Excessive linear force is called a brake force.
+Aşırı doğrusal kuvvete fren kuvveti denir.
 
 02:33.920 --> 02:36.860
-Excessive torque force is called a brake torque.
+Aşırı tork kuvvetine fren torku denir.
 
 02:37.040 --> 02:43.910
-The brake force property, it's set to infinity by default so that the joint will never break to allow
+Fren kuvveti özelliği, varsayılan olarak sonsuza ayarlanmıştır, böylece eklem asla kırılmayacaktır.
 
 02:43.910 --> 02:47.060
-breakage, set it to a lower finite value.
+kırılma, daha düşük bir sonlu değere ayarlayın.
 
 02:47.060 --> 02:48.860
-For example, 5000.
+Örneğin, 5000.
 
 02:48.860 --> 02:51.650
-Sometimes we want our joints to break.
+Bazen eklemlerimizin kırılmasını isteriz.
 
 02:51.650 --> 02:52.280
-Now why?
+Şimdi neden?
 
 02:52.310 --> 02:57.740
-First of all, maybe we're mimicking something in reality that is not infinitely strong and we want
+Her şeyden önce, belki de gerçekte sonsuz güçlü olmayan bir şeyi taklit ediyoruz ve
 
 02:57.740 --> 03:01.610
-it to break or breaking could add to your gameplay experience.
+kırılması veya kırılması oyun deneyiminize katkıda bulunabilir.
 
 03:01.610 --> 03:07.280
-Perhaps your character swings on a chain, but if you swings too strongly, the chain will break.
+Belki de karakteriniz bir zincir üzerinde sallanıyor, ancak çok güçlü sallanırsanız zincir kırılacaktır.
 
 03:07.980 --> 03:09.710
-Let's do some demos together.
+Birlikte birkaç demo yapalım.
 
 03:09.720 --> 03:16.350
-The hinge joint to begin scene will create five planks for a bouncy wooden bridge will create a hinge
+Sahneye başlamak için menteşe eklemi, zıplayan ahşap bir köprü için beş kalas oluşturacak bir menteşe oluşturacaktır
 
 03:16.350 --> 03:16.710
-joint.
+Ortak.
 
 03:16.710 --> 03:23.040
-Two rd between each plank will create a hinge joint to RD at each end of the bridge to hold it to the
+Her bir kalas arasındaki iki rd, köprünün her iki ucunda RD'ye bir menteşe bağlantısı oluşturarak köprüyü
 
 03:23.040 --> 03:23.730
-columns.
+Sütunlar.
 
 03:23.730 --> 03:26.370
-And then we'll play the scene and see how it goes.
+Sonra da sahneyi oynayıp nasıl gittiğine bakacağız.
 
 03:26.520 --> 03:27.810
-A bonus assignment.
+Bonus ödev.
 
 03:27.810 --> 03:31.860
-If you want to get deeper into learning about joints, take a look at this scene.
+Eklemler hakkında daha derinlemesine bilgi edinmek istiyorsanız, bu sahneye bir göz atın.
 
 03:31.860 --> 03:33.870
-The target joint to begin.
+Hedef eklem başlayacak.
 
 03:33.870 --> 03:36.420
-Create a target joint to DH on the crate.
+Sandık üzerinde DH için bir hedef eklem oluşturun.
 
 03:36.420 --> 03:43.410
-Create your own script called something like Target Joint follows Mouse Play the scene, move your mouse
+Target Joint follows Mouse gibi bir adla kendi komut dosyanızı oluşturun Sahneyi oynatın, farenizi hareket ettirin
 
 03:43.410 --> 03:44.550
-and observe the result.
+ve sonucu gözlemleyin.
 
 03:44.550 --> 03:47.070
-Did you get the crate to follow the mouse?
+Sandığın fareyi takip etmesini sağladın mı?
 
 03:47.070 --> 03:52.980
-You can set the brake force to 5000 to break the joint if you want help or you want to see the finished
+Yardım istiyorsanız veya bitmiş halini görmek istiyorsanız eklemi kırmak için fren kuvvetini 5000'e ayarlayabilirsiniz
 
 03:52.980 --> 03:57.150
-result or the created script of Target Joint follows Mouse.
+sonucu veya Hedef Eklem'in oluşturulan komut dosyası Mouse'u takip eder.
 
 03:57.150 --> 04:01.770
-Take a look at the target joint to DH underscore complete scene.
+DH underscore tam sahne için hedef eklemine bir göz atın.
 
 04:01.770 --> 04:03.870
-Everything's there for you to take a look at.
+Bakmanız için her şey orada.
 
 04:06.790 --> 04:10.150
-Let's open up our next scene, the hinge joint to begin.
+Başlamak için bir sonraki sahnemiz olan menteşe eklemini açalım.
 
 04:11.130 --> 04:13.460
-Here we have a ground set up with a couple of columns.
+Burada birkaç sütunla oluşturulmuş bir zeminimiz var.
 
 04:13.470 --> 04:15.090
-We're going to add a new plank.
+Yeni bir tahta ekleyeceğiz.
 
 04:15.120 --> 04:19.710
-Duplicate it five times and use the hinge joint to RD to make a wooden bridge.
+Beş kez çoğaltın ve ahşap bir köprü yapmak için menteşe eklemini RD'de kullanın.
 
 04:23.150 --> 04:28.040
-Under the Planck sprite will add the rigid body and the collider and the hinge joint.
+Planck sprite'ının altına sert gövdeyi, çarpıştırıcıyı ve menteşe eklemini ekleyeceğiz.
 
 04:35.340 --> 04:38.220
-We'll set the hinge joints anchor to its left side.
+Menteşe bağlantı ankrajını sol tarafına ayarlayacağız.
 
 04:42.870 --> 04:47.610
-We'll place one plank far to the left and then we'll duplicate five times total.
+Bir tahtayı en sola yerleştireceğiz ve sonra toplam beş kez tekrarlayacağız.
 
 04:47.610 --> 04:49.350
-So we have some on the right.
+Sağ tarafta biraz var.
 
 04:55.280 --> 05:01.940
-The leftmost plank will leave its connected rigid body set to none, so it's anchored in space for the
+En soldaki tahta, bağlı rijit gövdesini hiçbiri olarak ayarlanmış olarak bırakacak, böylece
 
 05:01.940 --> 05:05.060
-others will connect to its nearest neighbor on the left.
+diğerleri soldaki en yakın komşusuna bağlanacaktır.
 
 05:14.170 --> 05:18.580
-And for the rightmost plank, we'll add a second hinge joint hinging it to space.
+Ve en sağdaki tahta için, onu boşluğa bağlayan ikinci bir menteşe eklemi ekleyeceğiz.
 
 05:21.970 --> 05:24.130
-And adjusting its anchor to the right side.
+Ve çapasını sağ tarafa ayarlıyor.
 
 05:26.550 --> 05:28.050
-Let's add some extras.
+Biraz ekstra ekleyelim.
 
 05:29.260 --> 05:30.280
-And give it a try.
+Ve bir deneyin.
 
 05:36.990 --> 05:40.500
-In the next video, we'll look at physics for unity sprite shape.
+Bir sonraki videoda, unity sprite şekli için fiziğe bakacağız.

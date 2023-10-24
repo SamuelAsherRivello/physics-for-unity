@@ -1,238 +1,238 @@
 WEBVTT
 
 00:00.700 --> 00:02.470
-Adding programatic forces.
+Programatik güçler ekleniyor.
 
 00:02.740 --> 00:08.720
-In this video, we'll cover movement in unity, both traditional movement and movement with physics.
+Bu videoda, hem geleneksel hareket hem de fizik ile hareket olmak üzere birlik içinde hareketi ele alacağız.
 
 00:08.740 --> 00:12.510
-We'll examine the types of forces we can use in physics movement.
+Fizik hareketlerinde kullanabileceğimiz kuvvet türlerini inceleyeceğiz.
 
 00:12.520 --> 00:15.220
-We'll open up unity and we'll play with those forces.
+Birliği açacağız ve bu güçlerle oynayacağız.
 
 00:15.400 --> 00:18.490
-Movement in Unity with traditional movement.
+Geleneksel Hareket ile Birlik İçinde Hareket.
 
 00:18.490 --> 00:22.060
-In unity, movement occurs via the transform component.
+Unity'de hareket, dönüştürme bileşeni aracılığıyla gerçekleşir.
 
 00:22.360 --> 00:25.600
-Take a look at the snippet on a update call.
+Güncelleme çağrısına ilişkin parçacığa bir göz atın.
 
 00:25.600 --> 00:32.260
-We check if the input is In this case, a right arrow key is held down and then we move the transform
+Bu durumda, bir sağ ok tuşu basılı tutulur ve ardından dönüşümü hareket ettiririz
 
 00:32.260 --> 00:35.290
-position to some other position.
+pozisyondan başka bir pozisyona.
 
 00:35.290 --> 00:40.870
-The steps are update input and use the transform movement.
+Adımlar girişi güncellemek ve dönüştürme hareketini kullanmaktır.
 
 00:40.870 --> 00:45.640
-In physics a little bit different Movement occurs via the rigid body component.
+Fizikte biraz daha farklı bir hareket katı cisim bileşeni aracılığıyla gerçekleşir.
 
 00:45.910 --> 00:53.140
-Crafting a very similar example here we're using fixed update, taking the input and then adding a force
+Burada çok benzer bir örnek oluşturarak sabit güncelleme kullanıyoruz, girdiyi alıyoruz ve ardından bir kuvvet ekliyoruz
 
 00:53.140 --> 00:54.310
-to the rigid body.
+sert gövdeye.
 
 00:54.520 --> 01:00.640
-Let's compare the two in traditional we use update and update is called one time per frame.
+İkisini geleneksel olarak karşılaştıralım, güncelleme kullanırız ve güncelleme çerçeve başına bir kez çağrılır.
 
 01:00.760 --> 01:06.760
-This depends on the frame rate, both the intended frame rate set by the developer and also the actual
+Bu, hem geliştirici tarafından belirlenen amaçlanan kare hızına hem de gerçek kare hızına bağlıdır.
 
 01:07.000 --> 01:12.970
-frame rate, which is variable and unpredictable depending on the device and how much computation is
+Kare hızı, cihaza ve ne kadar hesaplama yapıldığına bağlı olarak değişken ve öngörülemezdir.
 
 01:12.970 --> 01:14.470
-happening at the given moment.
+o anda gerçekleşiyor.
 
 01:14.470 --> 01:17.580
-Fixed update, on the other hand, is only for physics.
+Sabit güncelleme ise sadece fizik içindir.
 
 01:17.590 --> 01:22.870
-It's called zero or one or many times per frame, depending on your project setup.
+Proje kurulumunuza bağlı olarak kare başına sıfır veya bir veya birçok kez denir.
 
 01:22.870 --> 01:25.810
-It depends on the value called fixed time step.
+Sabit zaman adımı adı verilen değere bağlıdır.
 
 01:25.810 --> 01:27.610
-It's very predictable.
+Bu çok tahmin edilebilir.
 
 01:27.640 --> 01:29.170
-And note about fixed update.
+Ve sabit güncelleme hakkında not.
 
 01:29.170 --> 01:35.260
-Fixed update function is recommended as the place to apply forces and change rigid body settings as
+Kuvvetlerin uygulanacağı ve rijit gövde ayarlarının değiştirileceği yer olarak sabit güncelleme işlevi önerilir
 
 01:35.260 --> 01:39.310
-opposed to update, which is used for most other unity tasks.
+Diğer birçok unity görevi için kullanılan güncellemenin aksine.
 
 01:39.310 --> 01:45.700
-The reason for this is that physics update is carried out in a measured time step and it doesn't coincide
+Bunun nedeni, fizik güncellemesinin ölçülen bir zaman adımında gerçekleştirilmesi ve bu adımla çakışmamasıdır
 
 01:45.700 --> 01:46.870
-with the frame update.
+çerçeve güncellemesi ile.
 
 01:46.870 --> 01:53.260
-Fixed update is called immediately before each physics update, so any changes made there will be processed
+Sabit güncelleme her fizik güncellemesinden hemen önce çağrılır, bu nedenle burada yapılan tüm değişiklikler işlenecektir
 
 01:53.260 --> 01:53.920
-directly.
+Doğrudan.
 
 01:53.920 --> 01:58.900
-So we want to use physics update for any of our physics based operations.
+Bu yüzden fizik tabanlı işlemlerimiz için fizik güncellemesini kullanmak istiyoruz.
 
 01:58.900 --> 02:03.430
-Let's look at physics movement in unity, there's different types of forces we can apply.
+Birlik içinde fizik hareketine bakalım, uygulayabileceğimiz farklı kuvvet türleri vardır.
 
 02:03.460 --> 02:10.750
-There's lots If we want to change, the position will be changing the property called velocity, and
+Çok şey var Değiştirmek istiyorsak, konum hız adı verilen özelliği değiştirecek ve
 
 02:10.750 --> 02:15.610
-the methods that we can use are add force, add explosion force and more.
+kullanabileceğimiz yöntemler kuvvet ekleme, patlama kuvveti ekleme ve daha fazlasıdır.
 
 02:15.730 --> 02:21.220
-If we want to change rotation, we'll be changing the angular velocity and there's methods for that
+Dönüşü değiştirmek istiyorsak, açısal hızı değiştireceğiz ve bunun için yöntemler var
 
 02:21.220 --> 02:21.690
-too.
+çok.
 
 02:21.700 --> 02:25.090
-The most common ones are add force and add torque.
+En yaygın olanları kuvvet ekle ve tork ekle'dir.
 
 02:25.090 --> 02:27.280
-Really add force is the most common.
+Gerçekten kuvvet eklemek en yaygın olanıdır.
 
 02:27.400 --> 02:32.740
-If we look at a code snippet here, we see inside fixed update, we're adding a force and this object
+Burada bir kod parçacığına bakarsak, sabit güncellemenin içinde bir kuvvet ve bu nesneyi eklediğimizi görürüz
 
 02:32.740 --> 02:37.060
-would be moving in the x direction positive, which is toward the right.
+x yönünde pozitif, yani sağa doğru hareket ediyor olacaktır.
 
 02:37.240 --> 02:44.740
-If we were to add torque, we could use a similar setup and use the add torque method and apply a rotation
+Tork ekleyecek olsaydık, benzer bir kurulum kullanabilir ve tork ekleme yöntemini kullanabilir ve bir rotasyon uygulayabilirdik
 
 02:44.740 --> 02:45.690
-to that object.
+o nesneye.
 
 02:45.700 --> 02:52.240
-Now the force mode, which is passed in to the ADD force and add torque has different consequences.
+Şimdi ADD kuvvetine aktarılan kuvvet modunun ve tork eklemenin farklı sonuçları vardır.
 
 02:52.330 --> 02:54.730
-The default value is force.
+Varsayılan değer kuvvettir.
 
 02:54.820 --> 02:58.950
-There's also acceleration, impulse and velocity change.
+Ayrıca ivme, impuls ve hız değişimi de vardır.
 
 02:58.960 --> 03:04.300
-You can see that some of these are affected by the mass of the objects and some are not.
+Bunlardan bazılarının nesnelerin kütlesinden etkilendiğini, bazılarının ise etkilenmediğini görebilirsiniz.
 
 03:04.480 --> 03:11.320
-The typical one of force is a gradual and realistic movement, and that's the one you typically use
+Kuvvetin tipik olanı kademeli ve gerçekçi bir harekettir ve genellikle kullandığınız da budur
 
 03:11.320 --> 03:13.840
-for basic physics and games.
+temel fizik ve oyunlar için.
 
 03:13.930 --> 03:16.630
-But these other ones offer good alternatives.
+Ancak bu diğerleri iyi alternatifler sunuyor.
 
 03:16.870 --> 03:18.370
-Let's take a look at a demo.
+Bir demoya göz atalım.
 
 03:18.400 --> 03:24.340
-We'll open the ad force demo, we'll play the scene, we'll use the up and down arrow keys, which I
+Reklam gücü demosunu açacağız, sahneyi oynatacağız, yukarı ve aşağı ok tuşlarını kullanacağız, ki ben
 
 03:24.340 --> 03:29.380
-have set up similar to the snippets we've saw to add forces to different objects.
+farklı nesnelere kuvvet eklemek için gördüğümüz parçacıklara benzer şekilde kurduk.
 
 03:29.380 --> 03:34.600
-Then we'll check out the inspector and the source code and we'll play around with physic material,
+Daha sonra denetçiyi ve kaynak kodunu kontrol edeceğiz ve fizik materyaliyle oynayacağız,
 
 03:34.600 --> 03:35.080
-too.
+çok.
 
 03:35.770 --> 03:35.980
-All right.
+Tamamdır.
 
 03:35.980 --> 03:37.300
-Let's open up our next scene.
+Bir sonraki sahnemizi açalım.
 
 03:37.300 --> 03:39.280
-We'll take a look at the ad force demo.
+Reklam gücü demosuna bir göz atacağız.
 
 03:40.310 --> 03:44.270
-Now here we've got a series of cubes set up on ramps.
+Şimdi burada rampalar üzerine yerleştirilmiş bir dizi küpümüz var.
 
 03:44.480 --> 03:46.190
-Notice the highlights text.
+Vurgulanan metne dikkat edin.
 
 03:46.190 --> 03:51.560
-Here we've got a force, impulse velocity change and acceleration.
+Burada bir kuvvetimiz, itici hız değişimimiz ve ivmemiz var.
 
 03:53.010 --> 03:58.610
-If we look at the code that's on each of these we see in the inspector, we have an add force demo script.
+Denetçide gördüğümüz bu kodların her birinde bulunan koda bakacak olursak, bir add force demo betiğimiz olduğunu görürüz.
 
 03:58.620 --> 04:01.020
-We take an up arrow and a down arrows.
+Bir yukarı ok ve bir aşağı ok alıyoruz.
 
 04:01.020 --> 04:05.880
-Our input for all of them, we add the same force of 20 in the x direction.
+Hepsi için girdimiz, x yönünde 20'lik aynı kuvveti ekliyoruz.
 
 04:05.880 --> 04:09.450
-The force mode is different for each of the four cubes.
+Kuvvet modu dört küpün her biri için farklıdır.
 
 04:10.430 --> 04:12.380
-The one we have highlighted here is force.
+Burada vurguladığımız kuvvettir.
 
 04:12.380 --> 04:18.080
-Let's play the scene and see how differently they behave with the same scenario where the only difference
+Sahneyi oynayalım ve tek farkın şu olduğu aynı senaryoda ne kadar farklı davrandıklarını görelim
 
 04:18.080 --> 04:19.040
-is the force mode.
+kuvvet modudur.
 
 04:24.220 --> 04:26.380
-If they're falling under their own control.
+Eğer kendi kontrolleri altına giriyorlarsa.
 
 04:28.080 --> 04:30.030
-And then I'm going to hold the up key.
+Ve sonra yukarı tuşuna basacağım.
 
 04:34.710 --> 04:36.570
-And then I'm going to hold the down key.
+Ve sonra aşağı tuşunu basılı tutacağım.
 
 04:42.730 --> 04:48.310
-Notice that some accelerate much more quickly and also some have more of an unpredictable movement in
+Bazılarının çok daha hızlı ivmelendiğine ve bazılarının da daha öngörülemez bir harekete sahip olduğuna dikkat edin.
 
 04:48.310 --> 04:49.510
-the Y direction.
+Y yönünde.
 
 04:50.320 --> 04:51.610
-As a bonus assignment.
+Bonus ödev olarak.
 
 04:51.610 --> 04:57.640
-If you want to get deeper into this, there's another scene you can take a look at its ad talk demo.
+Bu konuda daha derine inmek isterseniz, reklam konuşması demosuna göz atabileceğiniz başka bir sahne daha var.
 
 04:57.670 --> 05:02.740
-You can play the scene, use the arrow keys and inspect the code to take a look.
+Sahneyi oynatabilir, ok tuşlarını kullanabilir ve bir göz atmak için kodu inceleyebilirsiniz.
 
 05:02.740 --> 05:04.930
-If you're interested to learn more about talk.
+Konuşma hakkında daha fazla bilgi edinmek istiyorsanız.
 
 05:05.410 --> 05:12.160
-In the next video we'll cover is Sleeping is kinematic use, gravity and velocity.
+Bir sonraki videoda Uyumak kinematik kullanım, yerçekimi ve hız konularını ele alacağız.
 
 05:12.250 --> 05:16.300
-These are common, useful physics properties that we can set with code.
+Bunlar, kodla ayarlayabileceğimiz yaygın ve kullanışlı fizik özellikleridir.
 
 05:16.330 --> 05:21.760
-We'll also take a look at turning on and off physics in your game objects and we'll learn why we want
+Ayrıca oyun nesnelerinizdeki fiziği açıp kapatmaya bir göz atacağız ve neden istediğimizi öğreneceğiz
 
 05:21.760 --> 05:22.180
-to do that.
+Bunu yapmak için.
 
 05:22.180 --> 05:26.800
-Sometimes we'll also play around with all these properties inside the Unity Editor.
+Bazen tüm bu özelliklerle Unity Editor içinde de oynayacağız.

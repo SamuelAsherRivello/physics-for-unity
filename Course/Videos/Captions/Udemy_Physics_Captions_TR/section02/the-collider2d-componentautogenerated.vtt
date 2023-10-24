@@ -1,181 +1,181 @@
 WEBVTT
 
 00:01.650 --> 00:03.450
-The collider two rd component.
+Çarpıştırıcı ikinci bileşen.
 
 00:03.450 --> 00:08.530
-In this video, we'll cover the collider, two RD component and its most important properties.
+Bu videoda çarpıştırıcıyı, iki RD bileşenini ve en önemli özelliklerini ele alacağız.
 
 00:08.550 --> 00:11.000
-We'll also play with this component in the editor.
+Bu bileşenle editörde de oynayacağız.
 
 00:11.010 --> 00:16.410
-Collider is the component that defines the shape of an object for the purposes of physical collisions.
+Çarpıştırıcı, fiziksel çarpışmalar amacıyla bir nesnenin şeklini tanımlayan bileşendir.
 
 00:16.530 --> 00:20.760
-As this diagram shows, we can have a game object with multiple components.
+Bu diyagramda gösterildiği gibi, birden fazla bileşene sahip bir oyun nesnemiz olabilir.
 
 00:20.760 --> 00:25.560
-In this example, we have a transform and rigid body, as we've discussed in previous videos.
+Bu örnekte, önceki videolarda tartıştığımız gibi bir dönüşümümüz ve katı cismimiz var.
 
 00:25.560 --> 00:29.510
-And then we also have a collider with both a rigid body and a collider.
+Ayrıca hem katı cisim hem de çarpıştırıcı içeren bir çarpıştırıcımız var.
 
 00:29.520 --> 00:35.970
-We can think of this object being physical in this game world and being able to interact and collide
+Bu nesnenin bu oyun dünyasında fiziksel olduğunu ve etkileşime girip çarpışabildiğini düşünebiliriz
 
 00:35.970 --> 00:36.750
-with others.
+diğerleriyle birlikte.
 
 00:36.870 --> 00:38.130
-Types of Colliders.
+Çarpıştırıcı Türleri.
 
 00:38.130 --> 00:44.310
-The most popular Circle Collider and box Collider as shown in the pictures they give you the area you'd
+En popüler Daire Çarpıştırıcı ve kutu Çarpıştırıcı resimlerde gösterildiği gibi size istediğiniz alanı verirler.
 
 00:44.310 --> 00:49.460
-expect a circle and a box, and that carries most of the examples that you'd want in a game.
+bir daire ve bir kutu beklersiniz ve bu bir oyunda isteyeceğiniz örneklerin çoğunu taşır.
 
 00:49.470 --> 00:55.770
-However, there's a variety of other ones for shapes that don't quite fit in one of those two polygons
+Bununla birlikte, bu iki çokgenden birine tam olarak uymayan şekiller için çeşitli başka çokgenler de vardır
 
 00:55.770 --> 00:57.660
-and Edge capsule.
+ve Edge kapsülü.
 
 00:57.660 --> 01:02.730
-And sometimes you want to have multiple colliders inside the same object.
+Ve bazen aynı nesnenin içinde birden fazla çarpıştırıcı olmasını istersiniz.
 
 01:02.730 --> 01:08.730
-Perhaps the shape of the object is quite complex, so you could add other colliders together using the
+Belki de nesnenin şekli oldukça karmaşıktır, bu nedenle diğer çarpıştırıcıları
 
 01:08.730 --> 01:09.920
-composite collider too.
+kompozit çarpıştırıcı da.
 
 01:09.930 --> 01:15.630
-DD If we were to select a game object in the scene with a collider, we can open up the inspector window
+DD Sahnede bir çarpıştırıcı ile bir oyun nesnesi seçersek, denetçi penceresini açabiliriz
 
 01:15.630 --> 01:17.110
-and look at all the components.
+ve tüm bileşenlere bakın.
 
 01:17.130 --> 01:20.640
-Let's browse the properties of an example Box Collider to DD.
+DD için örnek bir Kutu Çarpıştırıcının özelliklerine göz atalım.
 
 01:20.670 --> 01:24.030
-There's a lot of properties we'll focus on just a few.
+Çok sayıda özellik var, biz sadece birkaçına odaklanacağız.
 
 01:24.030 --> 01:29.370
-The most important, first of all, material physics material describes the friction and bouncy ness
+En önemlisi, her şeyden önce, malzeme fiziği malzeme sürtünmeyi ve zıplamayı açıklar
 
 01:29.370 --> 01:30.300
-of collisions.
+çarpışmaların.
 
 01:30.300 --> 01:35.250
-We'll cover this in a later section, but I want to note here that we've already seen this material
+Bunu daha sonraki bir bölümde ele alacağız, ancak burada bu materyali daha önce gördüğümüzü belirtmek istiyorum
 
 01:35.250 --> 01:36.990
-property inside rigid body.
+katı cisim içindeki özellik.
 
 01:36.990 --> 01:39.260
-So why does it exist in two places?
+Peki neden iki yerde var?
 
 01:39.270 --> 01:43.690
-Well, typically, most commonly we want to add it only to the rigid body.
+Tipik olarak, en yaygın olarak bunu yalnızca katı gövdeye eklemek isteriz.
 
 01:43.710 --> 01:50.190
-However, if you have multiple colliders and you want to have unique materials per collider, you can
+Ancak, birden fazla çarpıştırıcınız varsa ve her çarpıştırıcı için benzersiz malzemelere sahip olmak istiyorsanız
 
 01:50.190 --> 01:53.670
-also put it inside the box collider instead of the rigid body.
+ayrıca sert gövde yerine kutu çarpıştırıcısının içine koyun.
 
 01:53.820 --> 01:57.360
-Another important property is the is trigger boolean.
+Bir diğer önemli özellik de is trigger boolean özelliğidir.
 
 01:57.360 --> 01:59.940
-This determines if the collider behaves as a trigger.
+Bu, çarpıştırıcının bir tetikleyici olarak davranıp davranmayacağını belirler.
 
 01:59.940 --> 02:01.740
-The default value is false.
+Varsayılan değer yanlıştır.
 
 02:01.740 --> 02:03.720
-It behaves as a solid object.
+Katı bir nesne gibi davranır.
 
 02:03.720 --> 02:07.860
-It collides with other objects and it dispatches the on collision events.
+Diğer nesnelerle çarpışır ve çarpışma olaylarını gönderir.
 
 02:07.860 --> 02:11.000
-For example, did the bullet hit the character?
+Örneğin, kurşun karaktere isabet etti mi?
 
 02:11.010 --> 02:14.610
-However, some situations we want is trigger to be true.
+Ancak, bazı durumlarda tetikleyicinin doğru olmasını isteriz.
 
 02:14.610 --> 02:19.620
-This means it does not collide with other objects and it dispatches a different event called the on
+Bu, diğer nesnelerle çarpışmayacağı anlamına gelir ve on
 
 02:19.620 --> 02:20.280
-Trigger.
+Tetikleyici.
 
 02:20.280 --> 02:24.420
-And you could ask yourself in a game, did the hero enter the cave?
+Ve bir oyunda kendinize şunu sorabilirsiniz: Kahraman mağaraya girdi mi?
 
 02:24.420 --> 02:30.210
-We want to allow the character to enter the cave, but using a trigger, we're able to get a notification
+Karakterin mağaraya girmesine izin vermek istiyoruz, ancak bir tetikleyici kullanarak bir bildirim alabiliyoruz
 
 02:30.210 --> 02:32.790
-so we can have some game event occur.
+böylece bazı oyun olaylarının gerçekleşmesini sağlayabiliriz.
 
 02:32.790 --> 02:39.910
-When he enters by default, Unity usually places the collider to match the size of the graphics.
+Varsayılan olarak girdiğinde, Unity genellikle çarpıştırıcıyı grafiklerin boyutuna uyacak şekilde yerleştirir.
 
 02:39.960 --> 02:43.650
-However, we're free to adjust the Collider's position and scale.
+Ancak, Çarpıştırıcının konumunu ve ölçeğini ayarlamakta özgürüz.
 
 02:43.650 --> 02:48.870
-For example, you may want the collider to be larger than the graphics, so it detects collisions a
+Örneğin, çarpıştırıcının grafiklerden daha büyük olmasını isteyebilirsiniz, böylece çarpışmaları
 
 02:48.870 --> 02:49.740
-little earlier.
+biraz daha erken.
 
 02:49.740 --> 02:54.210
-Or maybe you want the collider to be smaller than the graphics, so it's a bit more forgiving.
+Ya da belki çarpıştırıcının grafiklerden daha küçük olmasını istersiniz, böylece biraz daha bağışlayıcı olur.
 
 02:54.210 --> 02:57.690
-Maybe it gives a game a different difficulty that you like.
+Belki de oyuna hoşunuza giden farklı bir zorluk katar.
 
 02:57.690 --> 03:02.940
-You can choose to edit the size of the collider using the edit collider button to adjust visually,
+Görsel olarak ayarlamak için çarpıştırıcıyı düzenle düğmesini kullanarak çarpıştırıcının boyutunu düzenlemeyi seçebilirsiniz,
 
 03:02.940 --> 03:09.180
-or you can adjust individual properties of offset size edge radius and you can adjust them numerically.
+veya ofset boyutu kenar yarıçapı özelliklerini tek tek ayarlayabilir ve bunları sayısal olarak ayarlayabilirsiniz.
 
 03:10.290 --> 03:14.670
-Let's look at a demo In the two D Pyramid scene will select a crate.
+Bir demoya bakalım İki D Piramit sahnesinde bir sandık seçeceğiz.
 
 03:14.700 --> 03:17.150
-We'll see the collider in the inspector window.
+Çarpıştırıcıyı denetçi penceresinde göreceğiz.
 
 03:17.160 --> 03:22.170
-We can edit the collider visually and numerically to give a feel for both of those options.
+Bu seçeneklerin her ikisi için de bir fikir vermek için çarpıştırıcıyı görsel ve sayısal olarak düzenleyebiliriz.
 
 03:22.170 --> 03:27.180
-And finally, we'll play with the is trigger value setting it true and false to observe the result.
+Son olarak, sonucu gözlemlemek için is trigger değerini true ve false olarak ayarlayarak oynayacağız.
 
 03:28.600 --> 03:33.820
-Let's open up the two D pyramid and we'll select one of the crates in the scene view.
+İki D piramidini açalım ve sahne görünümünde kasalardan birini seçelim.
 
 03:33.830 --> 03:40.180
-And we see here that we're able to edit the collider and then adjust either numerically.
+Ve burada çarpıştırıcıyı düzenleyebildiğimizi ve ardından sayısal olarak ayarlayabildiğimizi görüyoruz.
 
 03:41.540 --> 03:43.610
-And we can see in the scene view it's moving.
+Ve sahne görünümünde hareket ettiğini görebiliyoruz.
 
 03:44.780 --> 03:48.410
-The positioning of the offset or the size.
+Ofsetin veya boyutun konumlandırılması.
 
 03:49.310 --> 03:53.480
-Or we can actually use our mouse down here and do it visually.
+Ya da faremizi burada kullanabilir ve bunu görsel olarak yapabiliriz.
 
 03:55.760 --> 03:56.360
-That's it.
+İşte bu kadar.
 
 03:57.430 --> 03:59.680
-In the next video two rd Effectors.
+Bir sonraki videoda iki Efektör.
