@@ -1,0 +1,178 @@
+WEBVTT
+
+00:01.780 --> 00:05.070
+In this video, we'll cover physics for unity sprite shape.
+
+00:05.080 --> 00:08.740
+We'll learn what is a sprite shape and how to set it up and install it.
+
+00:08.740 --> 00:11.120
+Then we'll play with it inside the Unity Editor.
+
+00:11.140 --> 00:13.750
+This is a preview feature in public beta.
+
+00:14.290 --> 00:20.670
+The sprite shape works by tiling sprites along spline paths created in the scene as game objects.
+
+00:20.680 --> 00:26.230
+You can think of this like the platforms in an organic 2D platformer game.
+
+00:26.530 --> 00:31.200
+The game object set up with Transform and a Sprite shape controller.
+
+00:31.210 --> 00:34.660
+Then we link to a sprite shape profile asset.
+
+00:35.690 --> 00:41.660
+The spreadsheet app is a unity preview feature in public beta and must be manually added through the
+
+00:41.660 --> 00:43.250
+Unity Package manager.
+
+00:43.280 --> 00:48.680
+Now this is already done for you in our sample project, but for new projects let's learn how.
+
+00:48.800 --> 00:54.560
+First, open up the latest public release of Unity Unity 2019 one or greater.
+
+00:54.590 --> 00:56.430
+Open the Unity Menu.
+
+00:56.450 --> 00:58.460
+Window Package Manager.
+
+00:58.490 --> 01:00.230
+Select all Packages.
+
+01:00.230 --> 01:02.600
+Advanced Show Preview Packages.
+
+01:02.600 --> 01:04.370
+Select the 2D Sprite Shape.
+
+01:04.370 --> 01:08.360
+Now Select either download or update as it's shown for you.
+
+01:08.360 --> 01:13.970
+And then optionally, if you want, you can import samples to have a look at what unity provides.
+
+01:14.360 --> 01:16.920
+There's two steps to creating the spreadsheet.
+
+01:16.940 --> 01:19.730
+First, we create a sprite shape profile.
+
+01:19.760 --> 01:26.690
+The spreadsheet works by tiling sprites along a spline path created in the scene as game objects first
+
+01:26.690 --> 01:29.510
+set up an asset called the Sprite Shape Profile.
+
+01:29.510 --> 01:34.070
+It is used to define and store information about a particular type of shape.
+
+01:34.280 --> 01:37.040
+Open the menu in unity assets.
+
+01:37.040 --> 01:39.320
+Create sprite shape profile.
+
+01:39.320 --> 01:46.550
+You can choose between to the open shape, which is a long stripe platform or a close shape, like a
+
+01:46.550 --> 01:50.660
+bounded shape such as a ground or the background behind your characters.
+
+01:50.900 --> 01:56.510
+Select the created sprite shape profile and set the texture property now to create the sprite shape
+
+01:56.510 --> 01:57.150
+itself.
+
+01:57.170 --> 02:00.470
+Open the menu Unity Game object Sprite Shape.
+
+02:00.470 --> 02:03.590
+Select the created game object in the hierarchy window.
+
+02:03.590 --> 02:07.970
+Set the profile property to the sprite shape profile you just created.
+
+02:08.120 --> 02:09.890
+And now we can edit the spline.
+
+02:09.890 --> 02:14.930
+As you can see in the animation, we're able to add, move and delete different points.
+
+02:16.460 --> 02:21.440
+Now to add physics, select the game object again and add the following components.
+
+02:21.470 --> 02:24.670
+Edge Collider to DX Rigid body to DX.
+
+02:24.680 --> 02:30.140
+And if you don't want this piece to fall with gravity, set the body type to kinematic.
+
+02:30.960 --> 02:33.850
+Now let's take a look at a demo spreadsheet begin.
+
+02:33.880 --> 02:36.650
+Inside this scene will create a new spreadsheet.
+
+02:36.670 --> 02:39.520
+We'll play with the scene and see how it goes.
+
+02:40.760 --> 02:42.080
+Let's open up our next project.
+
+02:42.080 --> 02:44.130
+Here will be the spreadsheet.
+
+02:44.150 --> 02:44.810
+Begin.
+
+02:45.610 --> 02:47.500
+There's two steps to creating this bright shape.
+
+02:47.530 --> 02:52.030
+First, we'll create the sprite shape profile, and then we'll create the sprite shape itself.
+
+02:57.950 --> 02:59.270
+Let's add in a texture.
+
+03:02.800 --> 03:04.840
+And now let's create the sprite shape itself.
+
+03:10.620 --> 03:12.030
+We'll add in the profile.
+
+03:14.240 --> 03:17.430
+And now we see our profile working together with the sprite shape.
+
+03:17.450 --> 03:18.710
+Let's edit the spline.
+
+03:26.340 --> 03:27.660
+Now let's add physics.
+
+03:31.030 --> 03:35.140
+Will set the body type to kinematic so it doesn't fall with gravity.
+
+03:40.510 --> 03:42.520
+Now let's bring in a few test subjects.
+
+03:48.520 --> 03:49.150
+Looks great.
+
+03:49.150 --> 03:55.180
+We have an organic platforming environment with full physics and supporting these objects, being able
+
+03:55.180 --> 03:57.270
+to bounce off of them and interact nicely.
+
+03:57.280 --> 04:01.210
+You could duplicate this and create as many platforms as you want and reuse them.
+
+04:03.060 --> 04:07.170
+In the next section, we'll look at Unity three D physics components.

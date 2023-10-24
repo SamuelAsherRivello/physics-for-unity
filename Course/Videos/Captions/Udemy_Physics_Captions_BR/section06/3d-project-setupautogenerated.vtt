@@ -1,0 +1,217 @@
+WEBVTT
+
+00:01.770 --> 00:04.650
+Creating a Marble Madness clone 3D game.
+
+00:04.680 --> 00:08.710
+In this section we'll cover creating a complete 3D game from scratch.
+
+00:08.730 --> 00:11.290
+We'll use physics forces to move our character.
+
+00:11.310 --> 00:17.880
+We'll add rigid body obstacles, win loss conditions and extra Polish 3D project setup.
+
+00:17.910 --> 00:23.850
+In this video, we'll cover taking the inspiration for a new game project and translating that into
+
+00:23.850 --> 00:24.990
+key concepts.
+
+00:25.530 --> 00:27.030
+Planning a 3D Game.
+
+00:27.120 --> 00:31.860
+The inspiration for our new game is the 1980s classic Marble Madness.
+
+00:31.890 --> 00:33.660
+We'll call our game Crazy Ball.
+
+00:33.660 --> 00:37.620
+And here's a simple mockup graphics of the major game elements.
+
+00:37.620 --> 00:44.640
+Things will borrow from the original 3D physics motion with input, physics, collisions, time limit
+
+00:44.640 --> 00:47.370
+and a minimalistic futuristic art style.
+
+00:47.400 --> 00:49.600
+The rules of crazy ball will be like this.
+
+00:49.620 --> 00:52.470
+Race to the finish within the time limit to win.
+
+00:52.470 --> 00:54.120
+Collect coins for points.
+
+00:54.150 --> 00:58.290
+Navigate through the level design with movable and immovable objects.
+
+00:58.290 --> 01:02.570
+The physics breakdown is will be moving using rigid body add force.
+
+01:02.580 --> 01:08.280
+We'll collect coins with on collision events and we'll get the event of when we reach the finish line.
+
+01:08.280 --> 01:09.410
+Using on trigger.
+
+01:09.420 --> 01:15.150
+The task breakdown will be three d project setup, creating the characters and input, creating the
+
+01:15.150 --> 01:21.720
+obstacles, adding win loss conditions, and finally adding extra polish with sounds and animation.
+
+01:22.590 --> 01:24.300
+Package installation building.
+
+01:24.300 --> 01:27.030
+This type of game does not require any extra packages.
+
+01:27.030 --> 01:32.540
+However, I've chosen to use a couple to help us if you want to follow along, These are necessary.
+
+01:32.550 --> 01:36.350
+However, note that this is already done for you in our course demo project.
+
+01:36.360 --> 01:42.330
+These instructions are only if you want to start a new project completely from scratch outside of our
+
+01:42.330 --> 01:44.640
+work and get these same features.
+
+01:44.820 --> 01:49.260
+First, we'll use Cinema Machine to track the camera following our ball.
+
+01:49.260 --> 01:54.420
+Next, we'll use pro grids to help snap the objects as we're laying out and doing level design.
+
+01:55.180 --> 01:56.680
+Three D project setup.
+
+01:56.950 --> 01:59.410
+Here's the task breakdown for our first setup.
+
+01:59.410 --> 02:02.200
+This is a screenshot which represents our final target.
+
+02:02.200 --> 02:06.290
+We'll add the ground, we'll add the background, and we'll add the crazy ball prefab.
+
+02:06.310 --> 02:10.120
+Then we'll set up the cinema machine camera to follow our crazy ball.
+
+02:10.870 --> 02:17.260
+For the project, we'll open up section six, Video one and the scene Crazy Ball zero one.
+
+02:20.450 --> 02:21.680
+We'll open up our crazy ball.
+
+02:21.680 --> 02:28.010
+One scene we see we've got the crazy ball and some background elements and of course our cameras looking
+
+02:28.010 --> 02:28.910
+at the crazy ball.
+
+02:29.240 --> 02:33.980
+So if we look at the environment, we see a lot of similar things to our other scenes, including we've
+
+02:33.980 --> 02:39.740
+got a floor here and then we have a copy of the floor, uses the background, just have something behind
+
+02:39.740 --> 02:40.070
+it.
+
+02:40.890 --> 02:44.090
+We zoom into the crazy ball, we see we've just got a textured ball.
+
+02:44.100 --> 02:45.630
+Nothing too great there yet.
+
+02:46.680 --> 02:48.600
+But something new is this virtual camera.
+
+02:48.600 --> 02:52.050
+So let's learn how to set up a virtual camera using cinema machine.
+
+02:52.050 --> 02:57.450
+So I'll delete the camera, the virtual camera and the crazy ball, and we'll create these from scratch.
+
+03:06.390 --> 03:06.910
+Look.
+
+03:07.050 --> 03:11.520
+So we'll create a new D object sphere for our ball.
+
+03:12.210 --> 03:14.700
+We'll put it more or less in the center of the world.
+
+03:16.850 --> 03:18.300
+Maybe a little bit off the ground.
+
+03:18.320 --> 03:19.010
+Great.
+
+03:19.550 --> 03:21.770
+Then we'll create a new Unity camera.
+
+03:22.950 --> 03:23.910
+And then something new.
+
+03:23.910 --> 03:26.460
+We're going to create a cinema machine, virtual camera.
+
+03:26.940 --> 03:31.650
+Once we do that onto the camera, it's automatically added to cinema machine brain.
+
+03:31.680 --> 03:36.960
+Now the unity camera will be driven by the cinema machine system instead.
+
+03:37.110 --> 03:41.160
+And the beauty of that is that these cameras come with a lot of functionality.
+
+03:42.110 --> 03:45.110
+We'll do some tweaking on this virtual camera.
+
+03:45.530 --> 03:50.540
+We'll have it follow our sphere and we'll have it look at our sphere.
+
+03:51.330 --> 03:53.600
+Then down here we can choose some options.
+
+03:53.610 --> 03:59.010
+We'll have the body be offset using a transposon and we'll have the aim.
+
+03:59.810 --> 04:02.060
+Follow by a composer.
+
+04:02.450 --> 04:05.360
+Now, the offset, we just turn it a little bit up.
+
+04:06.440 --> 04:09.150
+Maybe we want to back off a little bit or zoom in.
+
+04:09.170 --> 04:11.660
+You can tweak that to the lawyer that you want.
+
+04:12.110 --> 04:17.780
+Then down here in the composer, we can choose to track the object a little high or a little low or
+
+04:17.780 --> 04:19.040
+just dead in the center.
+
+04:19.040 --> 04:20.660
+And that's all that we have to do.
+
+04:20.810 --> 04:26.420
+Now, when we play the scene, we can take that sphere manually and we can move it around and you can
+
+04:26.420 --> 04:29.630
+see that the cinema machine follows it perfectly.
+
+04:33.290 --> 04:39.230
+In the next video, we'll look at creating the player and input we'll cover taking keyboard input using
+
+04:39.230 --> 04:43.880
+rigid body, add force for motion and using pro grids to position the walls.

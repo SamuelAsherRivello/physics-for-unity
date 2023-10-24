@@ -1,0 +1,316 @@
+WEBVTT
+
+00:00.670 --> 00:04.450
+Physics Ray cast and Ray cast Command Schedule batch.
+
+00:04.660 --> 00:08.500
+In this video, we'll cover what are spatial queries in physics?
+
+00:08.650 --> 00:10.870
+Why are they useful and how do we do them?
+
+00:11.320 --> 00:13.900
+Then we'll open up the Unity editor and play with them.
+
+00:14.530 --> 00:15.810
+Let's take a step back.
+
+00:15.820 --> 00:18.550
+What do we mean when we talk about a game physics system?
+
+00:18.580 --> 00:20.140
+Well, there's two major parts.
+
+00:20.140 --> 00:23.980
+Most of this course so far has talked about rigid body simulation.
+
+00:24.280 --> 00:28.000
+This is the realistic movement and interaction between groups of objects.
+
+00:28.240 --> 00:31.120
+We haven't yet talked much about spatial queries.
+
+00:31.330 --> 00:39.130
+This is projecting a ray or a collider through space to see about distance and check future collisions.
+
+00:39.400 --> 00:44.290
+For example, we could see is my gun pointing directly toward the enemy.
+
+00:44.590 --> 00:49.090
+The physics class defines global physics, properties and helper methods.
+
+00:49.210 --> 00:55.270
+Our focus will be on physics recast one of the methods that gives us some great information we can learn.
+
+00:55.270 --> 00:57.130
+Is there anything in front of my object?
+
+00:57.130 --> 00:59.200
+What exactly is in front of my object?
+
+00:59.200 --> 00:59.620
+What?
+
+00:59.620 --> 01:02.260
+Empty space is in front of the object?
+
+01:02.440 --> 01:04.390
+So why do spatial queries?
+
+01:04.540 --> 01:08.370
+Well, spatial queries can help us answer a lot of compelling questions.
+
+01:08.380 --> 01:09.970
+Is our enemy near a wall?
+
+01:09.970 --> 01:11.830
+Well, the enemy could turn around.
+
+01:11.860 --> 01:13.540
+Is the enemy in our gun sights?
+
+01:13.540 --> 01:17.300
+Well, we could indicate to us as the player that now is time to shoot.
+
+01:17.320 --> 01:18.640
+Can the enemy see me?
+
+01:18.670 --> 01:19.780
+This could help the enemy.
+
+01:19.780 --> 01:20.860
+AI alert.
+
+01:20.860 --> 01:21.760
+Other enemy.
+
+01:21.760 --> 01:25.170
+AI is an object under my mouse position.
+
+01:25.180 --> 01:27.580
+This could help us select or drag the object.
+
+01:27.580 --> 01:30.970
+Where exactly within a collider did the collision occur?
+
+01:31.000 --> 01:36.940
+This could tell us the difference in points rewarded for a bull's eye shot at a target or a lower point
+
+01:36.940 --> 01:37.540
+value.
+
+01:37.900 --> 01:39.520
+And there's much more possible.
+
+01:39.520 --> 01:41.260
+This is very useful stuff.
+
+01:41.260 --> 01:45.360
+The physics class that I mentioned has a lot of methods available for us.
+
+01:45.370 --> 01:47.080
+Let's talk about recast.
+
+01:47.110 --> 01:48.800
+Take a look at the diagram here.
+
+01:48.820 --> 01:55.330
+Imagine that we cast array from point one and we cast it in a direction toward the pink box.
+
+01:55.330 --> 02:00.980
+This is going to return us a ordered list of intersecting colliders in the scene.
+
+02:01.000 --> 02:03.880
+In this case, it would return number three.
+
+02:03.910 --> 02:07.510
+Now, notice that we're not going to cast out into infinite space here.
+
+02:07.510 --> 02:13.090
+We're going to use a set finite distance that's an optimization that's going to help the calculations.
+
+02:13.090 --> 02:18.610
+So, for example, if we have the distance set to four, we would collide with the pink box, but not
+
+02:18.610 --> 02:19.570
+the blue box.
+
+02:19.600 --> 02:22.030
+A similar method would be box cast.
+
+02:22.030 --> 02:27.690
+This cast a shape out from the point one through to the pink cube, but not to the blue cube.
+
+02:27.700 --> 02:32.770
+The distance here is instead of sending out a line or array, it's a thicker space.
+
+02:32.770 --> 02:38.920
+The array cast, command schedule, batch functions, something like the physics recast, but it's much,
+
+02:38.920 --> 02:39.940
+much faster.
+
+02:39.940 --> 02:46.660
+The operations will be performed asynchronously and in parallel on parallel processors if they're available.
+
+02:46.660 --> 02:48.940
+This gives us blazing fast speed.
+
+02:49.120 --> 02:53.200
+It's a relatively new feature to unity, but it's publicly available.
+
+02:53.410 --> 02:54.670
+Let's see some demos.
+
+02:54.940 --> 02:57.130
+We'll take a look at the Ray cast demo.
+
+02:57.160 --> 02:59.800
+We'll play the scene and inspect the code.
+
+03:03.000 --> 03:03.180
+Here.
+
+03:03.180 --> 03:05.520
+We're going to be looking at the recast demo.
+
+03:06.770 --> 03:08.010
+We run the scene.
+
+03:08.190 --> 03:16.410
+And this capsule, as we can see with the red guideline here, it is sending out a rate cast below it.
+
+03:16.770 --> 03:20.850
+And then in the console window, it's showing us what it's colliding with.
+
+03:21.240 --> 03:25.290
+So the red line, as you'd expect, it's saying the ramp is close below.
+
+03:25.350 --> 03:31.690
+Now, if I manually move this off of the ramp, it then says the floor is close below.
+
+03:31.710 --> 03:37.980
+So you can see we can detect which object is below us or in whatever direction we want and get some
+
+03:37.980 --> 03:39.020
+information about it.
+
+03:39.030 --> 03:40.200
+Let's see how that works.
+
+03:44.590 --> 03:45.760
+In the update.
+
+03:46.670 --> 03:52.220
+What we do is we use physics, recast, and we cast a ray in the direction of downward.
+
+03:52.460 --> 03:57.200
+Then if there's a collider there that we've collided with, we'll check the layer of it.
+
+03:57.410 --> 04:00.890
+If it's a floor layer, in this case, we do a debug log.
+
+04:01.010 --> 04:07.570
+Perhaps your character's footsteps change sound when he's walking on a metal surface or on top of water.
+
+04:07.580 --> 04:09.230
+You could do things like that.
+
+04:09.560 --> 04:10.530
+And that's it.
+
+04:10.550 --> 04:13.160
+We'll take a look at the Ray cast command demo.
+
+04:13.190 --> 04:15.800
+We'll play the scene and inspect the code.
+
+04:16.770 --> 04:19.650
+All right, let's open up the Ray cast command demo.
+
+04:21.560 --> 04:21.830
+Here.
+
+04:21.830 --> 04:27.090
+We've got a familiar setup from our Recast demo, but with recast command.
+
+04:27.110 --> 04:32.030
+What we're going to do is a slightly different way to get the end result here.
+
+04:32.030 --> 04:37.760
+So similar to the last one we've got, ramp is close below in our console.
+
+04:38.150 --> 04:43.370
+We move out, the floor is close below in our console, so we're detecting what's beneath us.
+
+04:43.600 --> 04:46.070
+Let's see that the implementation here is different.
+
+04:47.070 --> 04:49.350
+Inside the recast command.
+
+04:50.460 --> 04:53.940
+What we're doing is inside the update.
+
+04:54.060 --> 05:01.790
+Every update, I'm creating a new recast command here, and I'm scheduling a batch of commands.
+
+05:01.800 --> 05:08.310
+Now, in this simple example, what I'm doing here is I'm populating a list of commands with only one.
+
+05:08.310 --> 05:10.800
+I'm putting it the zero index one command.
+
+05:10.800 --> 05:16.620
+But you can imagine if you had a complex scene where you happen to be doing a lot of recasting, we
+
+05:16.620 --> 05:20.730
+could put them all into the same commands list and call schedule batch.
+
+05:20.730 --> 05:21.450
+Once.
+
+05:21.540 --> 05:27.030
+What we can do then is we can guarantee we're getting really fast results because this is going to happen
+
+05:27.030 --> 05:31.560
+asynchronously and it's also going to happen on multiple cores.
+
+05:31.560 --> 05:35.880
+If the computer or the device you're running on has multiple processing.
+
+05:36.490 --> 05:42.490
+Then down here, similar to the last example, we just go through the hits that we've got and we see
+
+05:42.490 --> 05:48.550
+if for any of the hits, if there's a collider present and if it's either the floor or the ramp, that's
+
+05:48.550 --> 05:49.000
+it.
+
+05:49.150 --> 05:50.230
+A bonus assignment.
+
+05:50.230 --> 05:56.530
+If you want to get a bit deeper into Ray casting, check out the Ray cast drag and drop demo, play
+
+05:56.530 --> 05:58.450
+the scene and inspect the code.
+
+05:59.140 --> 06:05.260
+In the next video we'll look at physics, debugging, debug, draw ray physics, debugger window and
+
+06:05.260 --> 06:06.490
+profile a window.
+
+06:06.910 --> 06:09.790
+In this video we'll cover what is the bugging?
+
+06:09.790 --> 06:12.520
+What are the challenges of debugging physics?
+
+06:12.520 --> 06:14.770
+What tools do we have that help us out?
+
+06:15.070 --> 06:18.580
+And finally, we'll open up the Unity editor and we'll play with all this.

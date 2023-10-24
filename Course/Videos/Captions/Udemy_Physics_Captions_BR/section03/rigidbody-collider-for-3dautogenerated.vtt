@@ -1,0 +1,148 @@
+WEBVTT
+
+00:01.780 --> 00:03.850
+Unity three d Physics components.
+
+00:03.850 --> 00:07.940
+In this section, we'll review the core principles of three D physics.
+
+00:07.960 --> 00:16.120
+Then we'll dive into physics, Material Asset Ragdoll and train a recap of Rigid Body and Collider for
+
+00:16.120 --> 00:16.840
+three D.
+
+00:17.050 --> 00:22.720
+In this video, we'll cover Rigid Body and Collider specifically for three D.
+
+00:22.870 --> 00:26.260
+And then we'll take a look at these inside the Unity Editor.
+
+00:26.860 --> 00:34.300
+A note about two D verses three D Unity has two separate physics systems to RD and three D The principles
+
+00:34.300 --> 00:39.130
+components naming and C-sharp code for each is similar, but not identical.
+
+00:39.130 --> 00:46.240
+For example, in two D, a game object uses a rigid body two d component, yet in 3da game object uses
+
+00:46.240 --> 00:51.100
+a rigid body component without the three d in its name for consistency.
+
+00:51.100 --> 00:56.320
+In this course we refer to rigid body as it relates to both 2D and 3D.
+
+00:56.920 --> 01:04.450
+Recommended viewing Section two Unity two D Physics components introduces core fundamentals of physics,
+
+01:04.450 --> 01:06.310
+which also applies to three D.
+
+01:06.460 --> 01:10.120
+It is suggested that you watch Section two before a Section three.
+
+01:10.570 --> 01:12.130
+Let's look at rigid body.
+
+01:12.860 --> 01:16.720
+Starting with the transform component, the most basic component in unity.
+
+01:16.730 --> 01:22.070
+This component is what enables position, rotation and scale for a game object.
+
+01:22.100 --> 01:26.330
+This is the only component which is automatically added to every game object.
+
+01:26.450 --> 01:27.620
+Rigid body.
+
+01:27.620 --> 01:33.380
+This is the component that enables physical behavior for a game object with a rigid body attached.
+
+01:33.380 --> 01:36.050
+The object will immediately respond to gravity.
+
+01:36.560 --> 01:38.120
+Let's look at the collider.
+
+01:38.630 --> 01:44.780
+The collider is the component that defines the shape of an object for the purposes of physical collisions.
+
+01:45.290 --> 01:47.180
+Types of colliders in 3D.
+
+01:47.300 --> 01:50.450
+The Sphere Collider for Spherical Areas.
+
+01:50.450 --> 01:53.630
+The box Collider for box shaped areas.
+
+01:53.630 --> 01:57.560
+These two are very common, as you can see in the illustrations.
+
+01:57.560 --> 01:58.670
+That's their shape.
+
+01:58.670 --> 02:02.330
+The Capsule Collider and the Mesh Collider are also available.
+
+02:02.540 --> 02:04.820
+Select a game object with rigid body.
+
+02:04.850 --> 02:07.610
+Open the inspector window to see all of its components.
+
+02:07.610 --> 02:08.990
+Browse the properties.
+
+02:09.230 --> 02:10.580
+There's a lot of properties.
+
+02:10.580 --> 02:18.080
+Our focus will be is trigger material mass drag use gravity and is kinematic.
+
+02:18.440 --> 02:23.420
+See section two For more info on these properties, let's take a look at a demo.
+
+02:23.990 --> 02:25.850
+We'll open up three D Pyramid.
+
+02:25.970 --> 02:27.350
+We'll play the scene.
+
+02:27.350 --> 02:33.290
+Select one of the cubes in the scene to see its rigid body and its collider in the inspector.
+
+02:34.210 --> 02:35.990
+Let's open up our scene here.
+
+02:36.010 --> 02:38.230
+We're going to look at the three D pyramid.
+
+02:40.180 --> 02:43.300
+If we explore this scene, we've got a series of cubes.
+
+02:43.930 --> 02:49.180
+And the part that is important to see here is the components on each cube.
+
+02:49.330 --> 02:54.430
+In order to have full physics, we have a collider and then also a rigid body.
+
+02:55.320 --> 03:01.710
+And the rigid body we have used gravity set and we have is kinematic not set.
+
+03:01.950 --> 03:06.090
+So when we run the scene, we'll have a realistic physics interaction.
+
+03:08.560 --> 03:10.810
+The objects fall quite subtly.
+
+03:10.810 --> 03:16.720
+But if I go ahead and manipulate a few of the objects, we'll see a realistic physics interaction.
+
+03:20.510 --> 03:27.080
+In the next video, the physical material asset will take a look at what is physic material, what are
+
+03:27.080 --> 03:31.790
+the most important properties, and then we'll take a look at it inside the unity ed.
