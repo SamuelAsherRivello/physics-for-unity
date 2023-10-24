@@ -1,0 +1,265 @@
+WEBVTT
+
+00:01.860 --> 00:03.870
+Adding win loss conditions.
+
+00:03.900 --> 00:07.950
+In this video, we'll cover creating the high level rules for the game.
+
+00:08.190 --> 00:14.940
+We'll figure out how does the user win and how does the user lose, and we'll add UI and rules to support
+
+00:14.940 --> 00:15.390
+that.
+
+00:16.130 --> 00:23.270
+The task break down here is to add the upset ducks UI prefab and C-sharp script that will give us that
+
+00:23.270 --> 00:25.160
+text we see in the screenshot here.
+
+00:25.490 --> 00:32.630
+Then with the game class and the UI class together, we'll create the win and loss conditions so that
+
+00:32.630 --> 00:38.450
+we know when the user wins and when the user is done because they've lost the game.
+
+00:39.340 --> 00:43.410
+We'll open up project in Section five Video for Upset.
+
+00:43.420 --> 00:44.290
+Ducks four.
+
+00:44.680 --> 00:44.890
+All right.
+
+00:44.890 --> 00:46.330
+Let's jump into Unity here.
+
+00:46.480 --> 00:50.590
+We're going to be looking at the upset ducks for.
+
+00:51.630 --> 00:52.470
+Go ahead and run it.
+
+00:53.070 --> 00:54.750
+You can see now we have UI on the screen.
+
+00:54.750 --> 00:59.310
+We have text that shows we have three asteroids each time we shoot an asteroid.
+
+00:59.760 --> 01:03.960
+After the effect happens, the asteroid ticks from 3 to 2.
+
+01:04.080 --> 01:05.790
+Also, the score increases.
+
+01:05.790 --> 01:09.510
+This tells us how many of the ducks have we hit successfully.
+
+01:09.510 --> 01:11.880
+So we see we've got score two of three.
+
+01:12.940 --> 01:14.770
+And let me see.
+
+01:14.770 --> 01:16.330
+I got one more shot.
+
+01:22.840 --> 01:23.620
+Didn't get him.
+
+01:25.970 --> 01:27.350
+And then the result is shown.
+
+01:27.470 --> 01:33.710
+So all that there, the asteroids, the score and the you lose results text is what we're going to work
+
+01:33.710 --> 01:34.310
+on now.
+
+01:34.640 --> 01:39.410
+So we're going to create a new upset duck's UI from scratch.
+
+01:41.050 --> 01:42.070
+So let's start.
+
+01:42.400 --> 01:44.710
+We'll create an empty game object.
+
+01:51.580 --> 01:53.650
+Just make sure we're at zero there.
+
+01:55.460 --> 02:00.200
+And then to start adding UI, we'll simply right click that and we're going to add UI.
+
+02:00.230 --> 02:01.820
+We've got lots of different options.
+
+02:01.820 --> 02:08.600
+I'm going to just use the text here and you can see what we get here is text of a certain size.
+
+02:08.720 --> 02:17.840
+I'm going to bump it up to 30 and tweak the width and height.
+
+02:20.090 --> 02:21.800
+And the positioning.
+
+02:25.530 --> 02:26.460
+Near we go.
+
+02:26.820 --> 02:29.280
+For effect, you can also add an outline.
+
+02:31.070 --> 02:32.840
+And give that a color as well.
+
+02:34.280 --> 02:38.480
+And have it be black on white text or white on black text, however we like it.
+
+02:39.240 --> 02:43.230
+And then we'll just give this a name here and we'll have the score.
+
+02:46.230 --> 02:51.060
+And then we'll duplicate that for the asteroids text.
+
+02:55.050 --> 02:57.540
+And we'll move the score to one side.
+
+03:04.400 --> 03:06.770
+We'll add one more for the results text.
+
+03:20.140 --> 03:22.090
+Maybe we like that one to be a little bit bigger.
+
+03:32.410 --> 03:32.830
+All right.
+
+03:32.830 --> 03:35.890
+Now to that, we're going to add our existing UI script.
+
+03:36.610 --> 03:40.440
+I'm going to drag it from here to make sure I grab the right one.
+
+03:40.450 --> 03:41.890
+Upset duck's UI.
+
+03:42.160 --> 03:44.830
+Then I populate those references.
+
+03:48.950 --> 03:52.720
+Whoops asteroids goes in first results in they're the last.
+
+03:53.600 --> 03:55.610
+And then I'll play the scene.
+
+04:00.210 --> 04:04.410
+I see that the results script needs to start with no text inside of it.
+
+04:07.450 --> 04:07.870
+All right.
+
+04:07.870 --> 04:10.750
+So we can see that the values get populated here.
+
+04:11.020 --> 04:12.740
+And let's see how that happens.
+
+04:12.760 --> 04:16.840
+So let's take a look at the upset Docs UI script, first of all.
+
+04:17.440 --> 04:23.770
+So the one thing I want to show here is that I have a public method for populating each of these fields
+
+04:23.770 --> 04:26.590
+the asteroids, the score and the result.
+
+04:29.100 --> 04:32.970
+So in the game script, that's where we've set up the rules.
+
+04:32.970 --> 04:35.100
+Let's go through four key areas.
+
+04:36.700 --> 04:42.700
+First of all, inside the start, what I do is I loop through the list of all the world items in the
+
+04:42.700 --> 04:43.240
+scene.
+
+04:43.570 --> 04:45.970
+I do that to count how many ducks we have.
+
+04:45.970 --> 04:49.340
+That way I know what's the total score we want to hit?
+
+04:49.360 --> 04:50.980
+There's other ways I could do that.
+
+04:50.980 --> 04:55.600
+I could also hard code the value of three in this case, but this way is a little more flexible.
+
+04:55.600 --> 04:58.270
+So level designers could add as many ducks as they want.
+
+04:59.080 --> 05:01.970
+Secondly, I give our beginning gameplay values.
+
+05:01.990 --> 05:08.410
+I'll set the score to zero and I'll set the asteroids to a concert value, which is in our case, set
+
+05:08.410 --> 05:09.400
+to be three.
+
+05:09.550 --> 05:11.770
+And these are easily tweaked values.
+
+05:12.800 --> 05:17.540
+So now I know I've got a score of zero and I need two to hit three of the ducks.
+
+05:18.900 --> 05:20.370
+With three of the asteroids.
+
+05:20.490 --> 05:25.020
+Then down here, every update, I'll check to see if there's any dead ducks.
+
+05:25.020 --> 05:26.280
+So I do that here.
+
+05:26.280 --> 05:28.040
+I loop through all the world items.
+
+05:28.050 --> 05:33.630
+If it's a duck, then I check to see if it's currently alive, but its health is zero.
+
+05:33.630 --> 05:36.270
+Then it should be flagged as not alive anymore.
+
+05:36.270 --> 05:37.920
+And I increment some points.
+
+05:37.920 --> 05:39.990
+In this case I'm giving one point per duck.
+
+05:40.590 --> 05:43.590
+Then lastly, I checked to see if the game is ended.
+
+05:43.590 --> 05:49.110
+If the score that we have is greater or equal to the number of ducks we're trying to get, which is
+
+05:49.110 --> 05:55.830
+three, then I show the result of true and that result will show a you win.
+
+05:55.830 --> 05:58.920
+Or if in the case of a loss that you lose.
+
+05:58.920 --> 05:59.940
+So that's it.
+
+06:00.360 --> 06:05.600
+In this case, we've covered how the UI and the game rules were added into our project.
+
+06:05.610 --> 06:06.750
+Thanks very much.
+
+06:07.940 --> 06:11.030
+In the next video, we'll cover adding extra polish.
