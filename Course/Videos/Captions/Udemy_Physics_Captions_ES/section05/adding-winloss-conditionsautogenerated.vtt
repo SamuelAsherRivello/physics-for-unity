@@ -1,0 +1,265 @@
+WEBVTT
+
+00:01.860 --> 00:03.870
+Añadiendo condiciones de victoria y derrota.
+
+00:03.900 --> 00:07.950
+En este video, vamos a cubrir la creación de las reglas de alto nivel para el juego.
+
+00:08.190 --> 00:14.940
+Vamos a averiguar cómo el usuario gana y cómo el usuario pierde, y vamos a añadir la interfaz de usuario y las reglas para apoyar
+
+00:14.940 --> 00:15.390
+eso.
+
+00:16.130 --> 00:23.270
+El desglose de tareas aquí es añadir los patos molestos UI prefab y C-sharp script que nos dará que
+
+00:23.270 --> 00:25.160
+texto que vemos en la captura de pantalla.
+
+00:25.490 --> 00:32.630
+A continuación, con la clase de juego y la clase de interfaz de usuario juntos, vamos a crear las condiciones de ganar y perder para que
+
+00:32.630 --> 00:38.450
+sepamos cuando el usuario gana y cuando el usuario ha terminado porque ha perdido el juego.
+
+00:39.340 --> 00:43.410
+Abriremos el proyecto en la sección cinco Video para Upset.
+
+00:43.420 --> 00:44.290
+Ducks cuatro.
+
+00:44.680 --> 00:44.890
+De acuerdo.
+
+00:44.890 --> 00:46.330
+Vamos a saltar a Unity aquí.
+
+00:46.480 --> 00:50.590
+Vamos a ver los patos molestos para.
+
+00:51.630 --> 00:52.470
+Adelante, ejecútalo.
+
+00:53.070 --> 00:54.750
+Puedes ver ahora que tenemos UI en la pantalla.
+
+00:54.750 --> 00:59.310
+Tenemos un texto que muestra que tenemos tres asteroides cada vez que disparamos a un asteroide.
+
+00:59.760 --> 01:03.960
+Después de que ocurra el efecto, el asteroide pasa de 3 a 2.
+
+01:04.080 --> 01:05.790
+Además, la puntuación aumenta.
+
+01:05.790 --> 01:09.510
+Esto nos dice cuántos de los patos hemos golpeado con éxito.
+
+01:09.510 --> 01:11.880
+Vemos que tenemos la puntuación 2 de 3.
+
+01:12.940 --> 01:14.770
+Y déjame ver.
+
+01:14.770 --> 01:16.330
+Tengo un tiro más.
+
+01:22.840 --> 01:23.620
+No le di.
+
+01:25.970 --> 01:27.350
+Y entonces se muestra el resultado.
+
+01:27.470 --> 01:33.710
+Así que todo eso de ahí, los asteroides, la puntuación y el texto de resultados que pierdes es lo que vamos a trabajar
+
+01:33.710 --> 01:34.310
+ahora.
+
+01:34.640 --> 01:39.410
+Así que vamos a crear una nueva interfaz de usuario de pato molesto desde cero.
+
+01:41.050 --> 01:42.070
+Así que vamos a empezar.
+
+01:42.400 --> 01:44.710
+Crearemos un objeto de juego vacío.
+
+01:51.580 --> 01:53.650
+Asegúrate de que estamos en cero.
+
+01:55.460 --> 02:00.200
+Y luego para empezar a añadir la interfaz de usuario, simplemente haremos clic derecho y vamos a añadir la interfaz de usuario.
+
+02:00.230 --> 02:01.820
+Tenemos muchas opciones diferentes.
+
+02:01.820 --> 02:08.600
+Voy a usar el texto aquí y puedes ver que lo que obtenemos es un texto de cierto tamaño.
+
+02:08.720 --> 02:17.840
+Voy a aumentarlo a 30 y ajustar la anchura y la altura.
+
+02:20.090 --> 02:21.800
+Y el posicionamiento.
+
+02:25.530 --> 02:26.460
+Cerca.
+
+02:26.820 --> 02:29.280
+Para dar efecto, también puedes añadir un contorno.
+
+02:31.070 --> 02:32.840
+Y darle un color también.
+
+02:34.280 --> 02:38.480
+Y que sea negro sobre texto blanco o blanco sobre texto negro, como más nos guste.
+
+02:39.240 --> 02:43.230
+Y luego le daremos un nombre aquí y tendremos la puntuación.
+
+02:46.230 --> 02:51.060
+Y luego duplicaremos eso para el texto de los asteroides.
+
+02:55.050 --> 02:57.540
+Y moveremos la puntuación a un lado.
+
+03:04.400 --> 03:06.770
+Añadiremos uno más para el texto de resultados.
+
+03:20.140 --> 03:22.090
+Tal vez nos guste que ese sea un poco más grande.
+
+03:32.410 --> 03:32.830
+De acuerdo.
+
+03:32.830 --> 03:35.890
+Ahora vamos a añadir nuestro script de interfaz de usuario.
+
+03:36.610 --> 03:40.440
+Voy a arrastrarlo desde aquí para asegurarme de que cojo el correcto.
+
+03:40.450 --> 03:41.890
+UI del pato molesto.
+
+03:42.160 --> 03:44.830
+Luego relleno esas referencias.
+
+03:48.950 --> 03:52.720
+Whoops asteroides entra primero resulta que son los últimos.
+
+03:53.600 --> 03:55.610
+Y luego reproduzco la escena.
+
+04:00.210 --> 04:04.410
+Veo que el script de resultados tiene que empezar sin texto dentro.
+
+04:07.450 --> 04:07.870
+De acuerdo.
+
+04:07.870 --> 04:10.750
+Así que podemos ver que los valores se rellenan aquí.
+
+04:11.020 --> 04:12.740
+Y veamos cómo sucede.
+
+04:12.760 --> 04:16.840
+Así que vamos a echar un vistazo a la molesta Docs UI script, en primer lugar.
+
+04:17.440 --> 04:23.770
+Lo que quiero mostrar aquí es que tengo un método público para rellenar cada uno de estos campos
+
+04:23.770 --> 04:26.590
+los asteroides, la puntuación y el resultado.
+
+04:29.100 --> 04:32.970
+Así que en el script del juego, es donde hemos establecido las reglas.
+
+04:32.970 --> 04:35.100
+Vamos a repasar cuatro áreas clave.
+
+04:36.700 --> 04:42.700
+En primer lugar, dentro de la puesta en marcha, lo que hago es un bucle a través de la lista de todos los elementos del mundo en el
+
+04:42.700 --> 04:43.240
+escena.
+
+04:43.570 --> 04:45.970
+Lo hago para contar cuantos patos tenemos.
+
+04:45.970 --> 04:49.340
+Así sé cuál es la puntuación total que queremos alcanzar...
+
+04:49.360 --> 04:50.980
+Hay otras formas de hacerlo.
+
+04:50.980 --> 04:55.600
+También podría codificar el valor de tres en este caso, pero esta forma es un poco más flexible.
+
+04:55.600 --> 04:58.270
+Así los diseñadores de niveles podrían añadir tantos patos como quisieran.
+
+04:59.080 --> 05:01.970
+En segundo lugar, doy nuestros valores iniciales de juego.
+
+05:01.990 --> 05:08.410
+Pondré la puntuación a cero y pondré los asteroides a un valor de concierto, que es en nuestro caso, poner
+
+05:08.410 --> 05:09.400
+a tres.
+
+05:09.550 --> 05:11.770
+Y estos son valores fáciles de ajustar.
+
+05:12.800 --> 05:17.540
+Así que ahora sé que tengo una puntuación de cero y necesito dos para acertar tres de los patos.
+
+05:18.900 --> 05:20.370
+Con tres de los asteroides.
+
+05:20.490 --> 05:25.020
+Entonces aquí abajo, en cada actualización, comprobaré si hay algún pato muerto.
+
+05:25.020 --> 05:26.280
+Así que lo hago aquí.
+
+05:26.280 --> 05:28.040
+Recorro todos los elementos del mundo.
+
+05:28.050 --> 05:33.630
+Si es un pato, compruebo si está vivo, pero su salud es cero.
+
+05:33.630 --> 05:36.270
+Entonces debería marcarse como que ya no está vivo.
+
+05:36.270 --> 05:37.920
+E incremento algunos puntos.
+
+05:37.920 --> 05:39.990
+En este caso doy un punto por pato.
+
+05:40.590 --> 05:43.590
+Por último, compruebo si el juego ha terminado.
+
+05:43.590 --> 05:49.110
+Si la puntuación que tenemos es mayor o igual que el número de patos que estamos tratando de conseguir, que es
+
+05:49.110 --> 05:55.830
+tres, entonces muestro el resultado de verdadero y que el resultado mostrará un usted gana.
+
+05:55.830 --> 05:58.920
+O si en el caso de una pérdida que usted pierde.
+
+05:58.920 --> 05:59.940
+Así que eso es todo.
+
+06:00.360 --> 06:05.600
+En este caso, hemos cubierto cómo la interfaz de usuario y las reglas del juego se añadieron a nuestro proyecto.
+
+06:05.610 --> 06:06.750
+Muchas gracias.
+
+06:07.940 --> 06:11.030
+En el próximo video, vamos a cubrir la adición de pulido adicional.

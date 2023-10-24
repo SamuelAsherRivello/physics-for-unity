@@ -1,0 +1,440 @@
+WEBVTT
+
+00:00.840 --> 00:04.980
+Está durmiendo es el uso cinemático, la gravedad y la velocidad.
+
+
+00:05.010 --> 00:09.480
+En este vídeo, cubriremos estas propiedades físicas tan potentes y útiles.
+
+
+00:09.480 --> 00:13.380
+Aprenderemos a activar y desactivar la física para cada objeto del juego.
+
+
+00:13.470 --> 00:15.720
+Aprenderemos por qué queremos hacer eso a veces.
+
+
+00:15.720 --> 00:17.490
+Luego abriremos el editor de Unity.
+
+
+00:17.510 --> 00:19.020
+Jugaremos con estas propiedades.
+
+
+00:19.020 --> 00:21.820
+Vamos a recapitular algunas de las propiedades físicas importantes.
+
+
+00:21.840 --> 00:25.370
+Imagina que tenemos una pila de cubos y uno de ellos está seleccionado.
+
+
+00:25.380 --> 00:30.750
+Tiene una caja colisionadora con algunas propiedades y un cuerpo rígido que también tiene propiedades.
+
+
+00:30.960 --> 00:37.800
+Algunas de estas propiedades son accesibles desde el inspector y también desde código por ejemplo es cinemática
+
+
+00:37.800 --> 00:39.030
+y utilizar la gravedad.
+
+
+00:39.120 --> 00:45.480
+Sin embargo, algunas propiedades son accesibles sólo desde código, por ejemplo es dormir y velocidad.
+
+
+00:45.930 --> 00:48.510
+Echemos un vistazo a cuerpo rígido es cinemática.
+
+
+00:48.510 --> 00:53.520
+Esto controla si la física en el sistema afecta a este cuerpo rígido o no.
+
+
+00:53.640 --> 00:55.860
+Por defecto está en false.
+
+
+00:55.860 --> 00:58.800
+El objeto del juego se comportará bajo control físico.
+
+
+00:58.920 --> 01:05.580
+A veces queremos ponerlo a true, y entonces las fuerzas físicas colisiones y articulaciones serán ignoradas.
+
+
+01:06.060 --> 01:12.660
+Poniéndolo a true le daremos a nuestro objeto de juego la oportunidad de ser manejado por scripts en lugar de por la física.
+
+
+01:12.660 --> 01:13.680
+sistema de física.
+
+
+01:13.680 --> 01:16.290
+Incluso podemos alternarlo en ciertos escenarios.
+
+
+01:16.290 --> 01:20.310
+Podríamos empezar con él de verdad con un objeto de juego manejado por scripting.
+
+
+01:20.400 --> 01:26.310
+Y luego, cuando nuestro personaje es golpeado, por ejemplo, podríamos convertirlo rápidamente en un ragdoll y que
+
+
+01:26.310 --> 01:28.260
+caería al suelo de forma creíble.
+
+
+01:28.260 --> 01:32.850
+Poniendo la cinemática en falso cuerpo rígido usa la gravedad.
+
+
+01:32.850 --> 01:36.690
+Esto controla si la gravedad afecta a este cuerpo rígido o no.
+
+
+01:37.110 --> 01:41.970
+Por defecto está en true, y eso permite que el objeto caiga bajo las fuerzas de la gravedad.
+
+
+01:42.120 --> 01:44.610
+A veces queremos ponerlo en falso.
+
+
+01:44.610 --> 01:50.580
+Si queremos comportarnos como si estuviéramos en el espacio exterior donde no hay gravedad afectada, o si queremos más
+
+
+01:50.580 --> 01:52.530
+control manual sobre los objetos.
+
+
+01:52.530 --> 01:55.440
+El cuerpo rígido en movimiento está durmiendo.
+
+
+01:55.740 --> 02:00.570
+Aunque esto no es realmente una propiedad, es un método como se ve por los paréntesis.
+
+
+02:00.570 --> 02:04.020
+Después de esto podemos obtener el valor como si fuera una propiedad.
+
+
+02:04.050 --> 02:06.930
+Esto nos permite saber si el cuerpo rígido está durmiendo.
+
+
+02:06.930 --> 02:13.680
+Cuando un cuerpo rígido se mueve muy lentamente, el motor de física asume que se ha detenido y establece
+
+
+02:13.680 --> 02:15.290
+en modo de reposo.
+
+
+02:15.300 --> 02:19.710
+Esta optimización ahorra tiempo de procesador para la mayoría de los propósitos.
+
+
+02:19.710 --> 02:26.130
+Dormir y despertar ocurre automáticamente, así que podemos asumir que cuando está en movimiento está durmiendo es
+
+
+02:26.130 --> 02:29.880
+falso y cuando finalmente está en reposo está durmiendo es verdadero.
+
+
+02:30.240 --> 02:36.090
+Nuestro objetivo, por ejemplo, es detectar cuando nuestro personaje ha dejado de moverse o un elemento del juego
+
+
+02:36.090 --> 02:37.080
+ha dejado de moverse.
+
+
+02:37.290 --> 02:43.230
+Por ejemplo, si mi personaje dispara una flecha a un objetivo, la flecha vuela por el aire y finalmente
+
+
+02:43.230 --> 02:44.400
+se detiene.
+
+
+02:44.730 --> 02:48.030
+Cuando se detiene está durmiendo sería cierto.
+
+
+02:48.060 --> 02:52.980
+Podría comprobarlo y saber, vale, está listo para lanzar otra flecha.
+
+
+02:53.400 --> 02:55.110
+Velocidad del cuerpo rígido.
+
+
+02:55.110 --> 03:00.990
+El vector velocidad del cuerpo rígido se mantiene en este vector velocidad del cuerpo rígido.
+
+
+03:00.990 --> 03:03.750
+Este es el vector velocidad del cuerpo rígido.
+
+
+03:03.750 --> 03:06.040
+Es la dirección y velocidad del movimiento.
+
+
+03:06.060 --> 03:12.780
+En la mayoría de los casos, no debes modificar la velocidad directamente ya que esto puede resultar en un comportamiento poco realista.
+
+
+03:12.780 --> 03:14.610
+Sin embargo, hay excepciones.
+
+
+03:14.850 --> 03:20.700
+Un uso típico es cambiar la velocidad inmediatamente en un juego de disparos en primera persona.
+
+
+03:20.700 --> 03:26.460
+Cuando tu personaje salta, quieres tener ese cambio rápido en la velocidad para poder establecerla directamente.
+
+
+03:26.640 --> 03:33.000
+Nuestro objetivo suele ser acceder al valor sin configurarlo sólo para obtener la velocidad del objeto.
+
+
+03:33.000 --> 03:39.810
+Por ejemplo, si queremos mostrar el velocímetro de un coche basado en la física en la pantalla, podríamos obtener
+
+
+03:39.810 --> 03:40.710
+este valor.
+
+
+03:40.710 --> 03:43.320
+Hablemos de desactivar la física.
+
+
+03:43.320 --> 03:47.970
+A veces los juegos pueden desactivar la física para un objeto específico durante el juego.
+
+
+03:47.970 --> 03:52.920
+Por ejemplo, queremos mover los objetos con la entrada del ratón en lugar de la física.
+
+
+03:52.920 --> 03:59.220
+Hay dos propiedades que tenemos que alternar aquí si queremos activar y desactivar la física para apagarla,
+
+
+03:59.220 --> 04:03.660
+ponemos el uso de la gravedad en falso y es cinemática a true.
+
+
+04:03.660 --> 04:08.910
+Ahora podemos controlar el movimiento de ese cuerpo rígido con código Cuando estemos listos para devolver el movimiento
+
+
+04:08.910 --> 04:15.000
+para el control basado en la física, podemos establecer use gravity a true y is kinematic a false.
+
+
+04:15.000 --> 04:20.570
+Entonces volvería a caer bajo la gravedad y se comportaría con las articulaciones y las fuerzas de la física, etc.
+
+
+04:20.580 --> 04:25.620
+Vamos a crear una demo que utilice todas estas propiedades de las que hemos hablado y veamos cómo pueden trabajar juntas.
+
+
+04:25.620 --> 04:27.960
+He creado una escena llamada Dropper Game.
+
+
+04:27.960 --> 04:29.160
+Vamos a jugar a la escena.
+
+
+04:29.160 --> 04:30.930
+Es un juego muy simplista.
+
+
+04:30.930 --> 04:35.340
+Vamos a inspeccionar el código y vamos a ver cómo se utilizan estas cuatro propiedades.
+
+
+04:35.340 --> 04:37.470
+Esperamos el siguiente turno del usuario.
+
+
+04:37.470 --> 04:38.880
+Usando está durmiendo.
+
+
+04:38.880 --> 04:47.070
+Mostramos la velocidad en una UI usando la velocidad y usamos esa combinación de arrastre del ratón contra caída
+
+
+04:47.070 --> 04:51.060
+Usando las dos propiedades es cinemática y usamos la gravedad.
+
+
+04:52.110 --> 04:52.410
+De acuerdo.
+
+
+04:52.410 --> 04:53.760
+Aquí estamos de vuelta en la unidad.
+
+
+04:54.240 --> 04:57.120
+Echemos un vistazo a la escena de juego propiamente dicha.
+
+
+04:58.260 --> 05:02.910
+Y veremos como se usan estas propiedades para la física en el juego.
+
+
+05:03.150 --> 05:04.320
+Vamos a darle al play.
+
+
+05:10.350 --> 05:17.460
+Así que hay cuatro propiedades que estamos hablando de Uno como el como la caja gotero cae, la velocidad en
+
+
+05:17.460 --> 05:19.800
+pantalla está utilizando la propiedad de velocidad.
+
+
+05:20.160 --> 05:27.630
+En segundo lugar, después de que la caja cae y golpea el riel en la parte inferior, la caja, la siguiente caja pasa a estar disponible
+
+
+05:27.630 --> 05:28.680
+para que yo la use.
+
+
+05:28.710 --> 05:33.390
+Así que usted puede ver que hay un par de segundos que caen y luego otra caja listo para que yo use.
+
+
+05:33.600 --> 05:39.660
+La forma en que manejo eso es esperar hasta que el "está durmiendo" sea verdadero para la siguiente caja.
+
+
+05:39.960 --> 05:42.600
+Así que "está durmiendo" es falso.
+
+
+05:42.600 --> 05:47.040
+Y cuando finalmente llega, su dormir es verdadero, y entonces es mi turno otra vez.
+
+
+05:47.130 --> 05:48.630
+Así que esas son dos de las propiedades.
+
+
+05:49.080 --> 05:52.710
+Además, fíjate cómo puedo controlar la caja con el ratón.
+
+
+05:52.710 --> 05:58.650
+Así que mientras está usando un cuerpo rígido, tengo la configuración establecida para que pueda moverlo manualmente.
+
+
+05:58.830 --> 06:01.980
+Desactivo la gravedad y activo la cinemática.
+
+
+06:01.980 --> 06:09.470
+Y una vez que hago click con el ratón, apago la cinemática y enciendo la gravedad.
+
+
+06:09.480 --> 06:11.040
+Echemos un vistazo al código.
+
+
+06:16.740 --> 06:20.490
+Así que hay cuatro puntos donde accedo a los que uno aquí.
+
+
+06:20.490 --> 06:25.020
+Cada vez que añado un nuevo cuentagotas, puedes ver que el comentario accede a las propiedades físicas.
+
+
+06:25.020 --> 06:30.240
+Lo que estoy haciendo ahí es establecer la gravedad falsa cinemática verdadera.
+
+
+06:30.240 --> 06:31.980
+Eso me permite tener el control del ratón.
+
+
+06:33.720 --> 06:41.400
+A continuación, en la actualización, que se llama cada fotograma, entonces si hago clic en el botón del ratón, entonces conmutar
+
+
+06:41.400 --> 06:44.700
+la gravedad y pongo la cinemática en falso.
+
+
+06:44.700 --> 06:47.610
+Eso permite que caiga bajo las fuerzas naturales de la gravedad.
+
+
+06:48.300 --> 06:52.980
+Además, mientras está cayendo en la actualización, la comprobación ocular está durmiendo.
+
+
+06:53.250 --> 06:56.040
+Si está durmiendo, entonces está listo para el siguiente turno.
+
+
+06:56.040 --> 06:58.830
+Entonces gano algunos puntos y sigo adelante y...
+
+
+06:59.840 --> 07:01.160
+Suelto el siguiente cuentagotas.
+
+
+07:02.570 --> 07:05.330
+Y finalmente, yo.
+
+
+07:06.660 --> 07:14.190
+Capturar la velocidad máxima para que me recompense con puntos en función de la velocidad a la que iba el bloque en su momento más rápido.
+
+
+07:14.400 --> 07:20.910
+Es una mecánica tonta y es una excusa para usar la velocidad, pero recompensa más puntos por bajar de
+
+
+07:20.910 --> 07:21.750
+una altura mayor.
+
+
+07:21.750 --> 07:22.650
+Y eso es todo.
+
+
+07:23.520 --> 07:29.010
+En el próximo vídeo, veremos la física, la refundición y el lote de programación de comandos de refundición.
+
+
+07:29.040 --> 07:33.450
+En este video, veremos qué son las consultas espaciales en un sistema de física.
+
+
+07:33.450 --> 07:37.110
+¿Cómo y por qué nos son útiles, y qué hacemos con ellas?

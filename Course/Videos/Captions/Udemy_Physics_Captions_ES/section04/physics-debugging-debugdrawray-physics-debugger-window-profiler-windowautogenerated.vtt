@@ -1,0 +1,444 @@
+WEBVTT
+
+00:00.650 --> 00:06.320
+Depuración de física dibujar física de rayos, ventana del depurador y ventana del perfilador.
+
+
+00:06.410 --> 00:11.660
+En este video vamos a cubrir lo que es la depuración y cuáles son los retos de la depuración de la física.
+
+
+00:11.690 --> 00:16.700
+Vamos a examinar las herramientas que tenemos para ayudarnos, y luego vamos a abrir la unidad y hacer frente a algunos comunes
+
+
+00:16.700 --> 00:17.490
+escenarios.
+
+
+00:17.510 --> 00:18.950
+¿Qué es la depuración?
+
+
+00:18.980 --> 00:21.170
+Un bug es un fallo de error.
+
+
+00:21.170 --> 00:23.860
+Fallo o fallo en programación informática.
+
+
+00:23.870 --> 00:28.070
+La depuración es el proceso de identificar y eliminar esos errores del software.
+
+
+00:28.070 --> 00:31.670
+¿Cuáles son los retos específicos de la depuración de la física?
+
+
+00:31.670 --> 00:38.200
+Bueno, la física es un sistema muy complejo y que consume muchos recursos, así que la optimización es importante.
+
+
+00:38.210 --> 00:45.470
+La física incluye un montón de ajustes de configuración, componentes, propiedades y más, así como su propia costumbre
+
+
+00:45.470 --> 00:48.860
+propiedades de código, controladores de eventos y más juntos.
+
+
+00:48.860 --> 00:50.480
+Esto es mucha complejidad.
+
+
+00:50.480 --> 00:55.760
+Ahora, por suerte, unity automáticamente hace mucho por ti con unity physics, eso es bueno.
+
+
+00:55.760 --> 01:00.200
+Pero debido a la complejidad del sistema, hay muchas cosas que pueden ir mal y eso es malo.
+
+
+01:00.200 --> 01:02.300
+¿Cuáles son las herramientas para la depuración general?
+
+
+01:02.300 --> 01:05.120
+La ventana de la consola de Unity es muy importante.
+
+
+01:05.120 --> 01:09.700
+Muestra los errores, advertencias y otros mensajes generados por Unity.
+
+
+01:09.710 --> 01:15.290
+También mostrará tus mensajes personalizados que generes con debug log para abrirlo.
+
+
+01:15.290 --> 01:16.940
+Usa la ventana unity.
+
+
+01:16.940 --> 01:20.870
+El uso general de la ventana de consola es sólo detectar.
+
+
+01:20.870 --> 01:22.760
+¿Ha llegado unity a esta línea de código?
+
+
+01:22.760 --> 01:29.000
+Y también puedes decir cuál es el valor específico de una propiedad o una variable que puedes ver en el código
+
+
+01:29.000 --> 01:36.710
+snippet debug log Hello world pasa ese mensaje a la consola breakpoints pause the game at a
+
+
+01:36.710 --> 01:41.660
+momento específico del código y te permite inspeccionar todas las variables que están en memoria.
+
+
+01:41.660 --> 01:47.360
+La configuración es que adjuntas la unidad del editor de código y estableces un punto de interrupción haciendo clic fuera en el margen.
+
+
+01:47.360 --> 01:51.650
+Ejecutas unity y lo reproduces normalmente, esperando a que unity haga una pausa.
+
+
+01:51.650 --> 01:54.890
+Cuando unity hace una pausa, te dice que estás en uno de tus puntos de interrupción.
+
+
+01:54.890 --> 02:01.160
+Inspeccione el editor de código y se puede continuar a lo largo o detener la sesión de depuración usos aquí o hizo Unity
+
+
+02:01.160 --> 02:02.510
+¿ha llegado a esta línea de código?
+
+
+02:02.510 --> 02:06.590
+¿Y cuáles son los valores específicos de muchas de las propiedades y variables?
+
+
+02:06.770 --> 02:08.600
+Código personalizado de depuración y dibujo.
+
+
+02:08.600 --> 02:13.250
+La API de Unity permite dibujar líneas y formas en el editor cuando y donde queramos.
+
+
+02:13.250 --> 02:17.810
+Puedes hacerlo para código que no sea de física también, pero aquí hay algunos ejemplos que he usado.
+
+
+02:17.810 --> 02:19.970
+¿Dónde se produjeron exactamente las colisiones?
+
+
+02:19.970 --> 02:25.340
+¿Dónde estaban los límites de mi objeto en un momento dado y cuál era la trayectoria de mi objeto a lo largo del tiempo?
+
+
+02:25.340 --> 02:26.870
+El código es bastante sencillo.
+
+
+02:26.870 --> 02:28.250
+Veamos una demostración.
+
+
+02:28.250 --> 02:34.310
+Miraremos la siguiente caja, reproduciremos la escena, inspeccionaremos el código, añadiremos nuestro propio debug log
+
+
+02:34.310 --> 02:38.090
+para verlo funcionar en la ventana de la consola, y luego añadiremos un punto de interrupción.
+
+
+02:38.210 --> 02:38.420
+De acuerdo.
+
+
+02:38.420 --> 02:40.820
+Echemos un vistazo a la siguiente escena.
+
+
+02:40.820 --> 02:42.950
+Vamos a ver la siguiente caja.
+
+
+02:42.970 --> 02:48.620
+Y lo que más me interesa aquí es la vista de la escena, porque tengo algo de código de depuración configurado.
+
+
+02:48.620 --> 02:52.430
+Va a dibujar algunas directrices útiles, así que voy a ejecutar la escena.
+
+
+02:53.450 --> 02:56.330
+Y mientras se reproduce, el cubo va cayendo.
+
+
+02:57.150 --> 02:59.820
+Toco d unas cuantas veces, voy a hacer una pausa ahí.
+
+
+02:59.940 --> 03:06.420
+Así que las líneas que somos capaces de ver aquí, verde para el contacto, azul para donde la caja se recorre en
+
+
+03:06.420 --> 03:11.190
+su tiempo de vida y blanco para algunos límites clave donde toqué la tecla.
+
+
+03:11.220 --> 03:13.760
+Ahora, tal vez no quieras pulsar una tecla.
+
+
+03:13.770 --> 03:18.000
+Quizás quieras que ocurra basándote en alguna situación programática.
+
+
+03:18.000 --> 03:23.780
+Pero sólo quería mostrar que esto se basa en la colisión, basado en la posición, el desplazamiento o la entrada del usuario.
+
+
+03:23.790 --> 03:26.250
+Esto sólo es visible para nosotros como desarrolladores.
+
+
+03:26.250 --> 03:27.630
+No es para el usuario final.
+
+
+03:27.790 --> 03:29.790
+Echemos un vistazo al código.
+
+
+03:29.790 --> 03:33.810
+Puedes imaginar algunos escenarios donde esto sería útil para depurar información.
+
+
+03:34.140 --> 03:40.350
+Así que en primer lugar, cuando tenemos una colisión, recorremos el contexto de colisión y dibujamos el array.
+
+
+03:40.380 --> 03:42.420
+Así es como obtenemos esas pequeñas líneas verdes.
+
+
+03:43.070 --> 03:51.110
+Luego, cada vez que pulso la tecla, recojo una lista de las posiciones y en cada fotograma las redibujo todas
+
+
+03:51.110 --> 03:54.950
+pequeños recuadros blancos basándome en cómo funciona el gizmo, el cajón, el cubo de alambre.
+
+
+03:54.950 --> 03:59.300
+Tengo que redibujarlos en cada fotograma, entonces para dibujar todo el camino.
+
+
+03:59.300 --> 04:00.170
+Bastante simple.
+
+
+04:00.170 --> 04:06.860
+Solo capturo al inicio la posición y luego en cada actualización hago un debug dibujar una línea desde la última posición
+
+
+04:06.860 --> 04:08.120
+a la posición actual.
+
+
+04:08.120 --> 04:12.440
+Y así es como obtengo esa larga línea azul de donde ha estado la caja en su vida.
+
+
+04:12.740 --> 04:13.250
+Y ya está.
+
+
+04:13.250 --> 04:14.030
+Bastante simple.
+
+
+04:14.030 --> 04:18.350
+Entonces, ¿cuáles son las herramientas diseñadas específicamente para la física, la depuración y la unidad?
+
+
+04:18.380 --> 04:23.660
+Bueno, en primer lugar, si nos fijamos en el cuerpo rígido en el inspector, podemos ver que hay una información
+
+
+04:23.660 --> 04:29.200
+sección que podemos ampliar y podemos ver un montón de muy buenos valores que se actualizan periódicamente.
+
+
+04:29.210 --> 04:30.950
+Esto es super útil para depurar.
+
+
+04:30.950 --> 04:35.170
+Puedes verlo en directo o pausarlo en cualquier momento usando la pausa del editor de Unity.
+
+
+04:35.180 --> 04:38.450
+Fíjate que está en gris, así que no puedes editar estos valores.
+
+
+04:38.450 --> 04:44.390
+La ventana del depurador de física te permite inspeccionar rápidamente la geometría de los colisionadores de tu escena y
+
+
+04:44.390 --> 04:47.210
+puedes perfilar algunos escenarios comunes basados en la física.
+
+
+04:47.210 --> 04:53.270
+La ventana del perfilador muestra estadísticas sobre la física que ha sido procesada por el motor de física
+
+
+04:53.270 --> 04:53.960
+en tu escena.
+
+
+04:53.960 --> 05:00.560
+Esta información puede ayudarte a diagnosticar y resolver problemas de rendimiento o discrepancias inesperadas relacionadas con
+
+
+05:00.560 --> 05:01.550
+con tu escena física.
+
+
+05:01.550 --> 05:06.770
+Puedes abrirlo y como puedes ver en la captura de pantalla aquí, vemos una línea ascendente y descendente de cuánto
+
+
+05:06.770 --> 05:08.540
+potencia de cálculo se necesita.
+
+
+05:08.540 --> 05:14.150
+En el segundo, si buscamos puntos particularmente altos, podemos hacer una pausa allí y profundizar en el código y
+
+
+05:14.150 --> 05:15.890
+ver qué está causando el problema.
+
+
+05:16.370 --> 05:17.610
+Echemos un vistazo a una demo.
+
+
+05:17.630 --> 05:19.460
+Abriremos de nuevo el siguiente cuadro.
+
+
+05:19.460 --> 05:21.020
+Esta vez reproduciremos la escena.
+
+
+05:21.020 --> 05:22.970
+Veremos la información de los cuerpos rígidos.
+
+
+05:22.970 --> 05:27.470
+También abriremos estas ventanas, el depurador de física y el perfilador de física.
+
+
+05:27.940 --> 05:29.720
+Muy bien, echemos un vistazo a la siguiente escena.
+
+
+05:29.720 --> 05:32.030
+Vamos a ver de nuevo la caja cayendo.
+
+
+05:32.030 --> 05:37.670
+Y esta vez vamos a ver algunas cosas nuevas, una, mientras se reproduce la escena.
+
+
+05:39.630 --> 05:44.730
+Voy a pausarla aquí y echar un vistazo a la información del cuerpo rígido.
+
+
+05:45.150 --> 05:47.580
+Ahora, hay un montón de información útil aquí.
+
+
+05:47.580 --> 05:53.730
+En la información podemos ver la velocidad actual, la velocidad, diferentes valores del tensor, etc. que podrían ser muy
+
+
+05:53.730 --> 05:56.250
+útil para depurar tu código.
+
+
+05:56.730 --> 06:02.490
+Además, echemos un vistazo al análisis de ventanas y al perfilador.
+
+
+06:02.850 --> 06:09.960
+Aquí somos capaces de mirar el perfil de la física en el tiempo, ya que se está reproduciendo incluso se actualizará y
+
+
+06:09.960 --> 06:16.320
+y ser capaz de ver el número de colisionadores dinámicos que tenemos, cuerpos rígidos, etc que podría
+
+
+06:16.320 --> 06:18.060
+ayudarte a depurar tu escena.
+
+
+06:18.690 --> 06:25.140
+Además, vamos a echar un vistazo al depurador de análisis y física, y moveré esto aquí para
+
+
+06:25.140 --> 06:26.520
+un sexo para que podamos verlo.
+
+
+06:28.280 --> 06:34.310
+Y lo que podemos hacer aquí es mientras la escena se está reproduciendo o mientras está en pausa, podemos mirar
+
+
+06:34.310 --> 06:38.150
+todas las diferentes coloraciones que añade Swatch cuando lo cambio.
+
+
+06:38.660 --> 06:44.810
+Por mostrarnos mucha información diferente sobre los colisionadores de la escena y cuáles están durmiendo,
+
+
+06:44.810 --> 06:47.930
+etc. Así que todo eso junto es realmente útil.
+
+
+06:47.960 --> 06:48.680
+Ya está.
+
+
+06:49.600 --> 06:54.480
+En la siguiente sección, crearemos un proyecto, algo así como el juego Angry Birds.
+
+
+06:54.490 --> 06:57.670
+Este será un juego 2D completo que crearemos desde cero.
+
+
+06:57.670 --> 07:01.570
+Lo crearemos usando física, movimiento de proyectiles, usando input.
+
+
+07:01.570 --> 07:05.260
+Crearemos obstáculos de juego que interactúen con dinámicas de cuerpo rígido.
+
+
+07:05.260 --> 07:08.950
+Añadiremos condiciones de pérdida de viento e incluso añadiremos algo de pulido al final.

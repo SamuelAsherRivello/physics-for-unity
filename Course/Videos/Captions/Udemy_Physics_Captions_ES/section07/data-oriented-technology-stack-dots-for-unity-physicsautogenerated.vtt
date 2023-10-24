@@ -1,0 +1,259 @@
+WEBVTT
+
+00:01.650 --> 00:06.010
+Pila de tecnología orientada a datos o puntos para la física de la unidad.
+
+00:06.030 --> 00:11.350
+En este video, vamos a cubrir lo que es Unity dots y cuáles son las tres características principales.
+
+00:11.370 --> 00:15.750
+También veremos cómo los dots impactarán en el futuro de la física de Unity.
+
+00:16.470 --> 00:17.820
+¿Qué es dots?
+
+00:18.630 --> 00:22.890
+Dots es un proyecto de unity que promete rendimiento por defecto.
+
+00:22.920 --> 00:30.360
+Aprovecha los procesadores multi core actuales y el nuevo sistema de alto rendimiento de Unity orientado a datos
+
+00:30.360 --> 00:31.410
+orientado a datos.
+
+00:31.440 --> 00:37.260
+Tus juegos se ejecutarán más rápido y tu código será más fácil de leer y reutilizar en otros proyectos.
+
+00:37.290 --> 00:42.030
+Echa un vistazo a esta captura de pantalla de la demo gratuita megacity de Unity Technologies.
+
+00:42.030 --> 00:46.380
+Es una escena realmente compleja con muchas cosas sucediendo en la demo de la megaciudad.
+
+00:46.380 --> 00:52.420
+Cuenta con cuatro millones y medio de mallas renderizadas y más de 200.000 objetos de construcción únicos.
+
+00:52.440 --> 00:57.400
+Es muy complejo y no sería posible sin puntos para lograrlo.
+
+00:57.420 --> 01:00.180
+Unity está reconstruyendo el núcleo de la herramienta.
+
+01:00.180 --> 01:05.040
+Está reconstruyendo cada uno de los sistemas principales con dots multihilo de alto rendimiento.
+
+01:05.040 --> 01:11.970
+Las características de este sistema son el sistema de trabajo C-sharp para ejecutar código multihilo, el componente de entidad
+
+01:11.970 --> 01:18.720
+para escribir código de alto rendimiento y, por último, el compilador de ráfaga para producir altamente optimizado
+
+01:18.720 --> 01:19.710
+altamente optimizado.
+
+01:20.520 --> 01:22.290
+¿Qué es la Física de puntos?
+
+01:22.590 --> 01:27.270
+En el futuro, la física de Dot será renombrada a sólo la física de la unidad.
+
+01:27.270 --> 01:34.500
+La filosofía es determinista completa, la dinámica de cuerpo rígido y el sistema de consulta espacial escrito en alta
+
+01:34.500 --> 01:35.070
+rendimiento.
+
+01:35.070 --> 01:41.160
+C-sharp Será unidad sin estado Física renuncia a cualquier almacenamiento en caché en favor de la simplicidad.
+
+01:41.160 --> 01:46.140
+Es modular, está desacoplada de otros sistemas y fomenta su reutilización.
+
+01:46.380 --> 01:47.550
+Es eficiente.
+
+01:47.550 --> 01:52.830
+Alcanzará o superará el rendimiento de cualquier motor de física disponible en el mercado.
+
+01:52.830 --> 01:54.570
+¿Qué significa esto para nosotros?
+
+01:54.570 --> 01:59.970
+Los principios que cubrimos en este curso son relevantes para la física actual, así como para el futuro con
+
+01:59.970 --> 02:06.090
+La versión de la física actual en 2D y 3D que cubrimos seguirá existiendo.
+
+02:06.090 --> 02:11.220
+Unity Physics será una opción adicional para mejorar la velocidad.
+
+02:11.930 --> 02:12.530
+Veamos.
+
+02:12.560 --> 02:12.880
+Puntos.
+
+02:12.890 --> 02:14.030
+Física en acción.
+
+02:14.300 --> 02:16.670
+Los siguientes pasos ya se han hecho por ti.
+
+02:16.670 --> 02:17.750
+Pero aquí están los pasos.
+
+02:17.750 --> 02:21.800
+Si quieres crear un proyecto desde cero, primero, echa un vistazo a este repositorio.
+
+02:21.830 --> 02:27.160
+Luego abres el último editor de Unity y abres el Unity Physics Examples Project.
+
+02:27.170 --> 02:30.950
+Luego tenemos que asegurarnos de que tenemos los paquetes correctos y actualizarlos.
+
+02:30.950 --> 02:38.000
+Así que abre el gestor de paquetes, haz clic en Advanced Haz clic en Show preview packages Verifica que tienes los últimos
+
+02:38.000 --> 02:42.020
+de los paquetes necesarios, incluyendo Unity Physics.
+
+02:43.210 --> 02:44.720
+Echemos un vistazo a una demo.
+
+02:44.740 --> 02:50.350
+Tenga en cuenta que en comparación con todos los demás demo en este curso, éste se encuentra en un proyecto independiente.
+
+02:50.350 --> 02:52.960
+Eso es porque tiene aspectos de configuración únicos.
+
+02:52.960 --> 02:55.930
+Reproducir la escena e inspeccionar la escena juntos.
+
+02:55.930 --> 02:59.950
+Veremos que la física, la forma y el cuerpo físico son componentes nuevos.
+
+02:59.950 --> 03:06.730
+Veremos el código de mi controlador de escena de reinicio y veremos cómo tuve que ajustarlo específicamente para los puntos.
+
+03:06.730 --> 03:10.000
+Como extra, he añadido algunas llaves inglesas a la escena.
+
+03:10.000 --> 03:14.170
+Podremos añadir un montón de objetos de física y ver cómo funciona el rendimiento.
+
+03:14.620 --> 03:16.830
+Muy bien, vamos a abrir nuestro proyecto Dots aquí.
+
+03:16.840 --> 03:21.710
+De nuevo, ten en cuenta que este es un proyecto diferente al que hemos utilizado durante el resto del curso.
+
+03:21.730 --> 03:24.370
+Esto se debe a que necesita una configuración específica.
+
+03:24.930 --> 03:32.070
+Pero aquí en el ejemplo de Unity Physics Dots, ejecutaremos la escena y veremos una configuración bastante similar.
+
+03:32.160 --> 03:36.810
+Tenemos una pila de cubos, algo parecido a las demos que hemos usado antes.
+
+03:36.840 --> 03:41.910
+Incluso puedo pulsar la barra espaciadora y recargar la escena como hemos podido hacer antes.
+
+03:42.180 --> 03:46.950
+Y si miramos en la escena, nos daremos cuenta de que ya no tenemos cubos aquí.
+
+03:47.370 --> 03:53.160
+Hay un aspecto temporal, creo, único de los puntos en que una vez que la escena comienza, ciertos objetos
+
+03:53.160 --> 03:54.130
+desaparecerán.
+
+03:54.150 --> 03:55.200
+No es un error.
+
+03:55.200 --> 04:01.620
+Es sólo una forma en que funciona la optimización y en el futuro se representará en la jerarquía.
+
+04:02.300 --> 04:08.000
+Así que si miramos uno de los cubos, en lugar de ver el familiar colisionador, vemos la forma física.
+
+04:08.150 --> 04:12.560
+Y en lugar de ver el familiar cuerpo rígido, vemos el cuerpo físico.
+
+04:12.560 --> 04:14.930
+Así que hay un esquema de nomenclatura diferente aquí.
+
+04:15.080 --> 04:20.900
+Pero muchos de los valores similares que esperaríamos ver, incluyendo la posibilidad de tener algo como una física
+
+04:20.900 --> 04:23.030
+material para rebotar --, etc.
+
+04:23.420 --> 04:29.120
+Otra cosa que quería mostrar es que pude reiniciar la escena, pero tuve que añadir un poco de
+
+04:29.120 --> 04:31.820
+algo al código de aquí abajo.
+
+04:31.820 --> 04:38.570
+Además de recargar la escena que hice antes aquí para los puntos, tengo que reiniciar el sistema por
+
+04:38.570 --> 04:40.970
+destruyendo lo que se llaman entidades en la escena.
+
+04:40.970 --> 04:46.700
+Así que definitivamente un poco más de pensar que tengo que hacer cuando tuve que hacer algunos pasos simples aquí, pero funciona
+
+04:46.700 --> 04:47.180
+genial.
+
+04:48.250 --> 04:54.160
+Por último, quiero mostrar que tengo un patrocinador establecido aquí que va a desovar 3000 objetos diferentes en
+
+04:54.160 --> 04:54.760
+en el mundo.
+
+04:55.330 --> 04:57.190
+Veamos qué tal funciona.
+
+04:57.520 --> 05:01.780
+Voy a mostrar sólo la vista del juego aquí y darle una oportunidad.
+
+05:02.230 --> 05:04.840
+También voy a activar el contador de velocidad de fotogramas.
+
+05:05.170 --> 05:11.830
+Puedes ver que estamos a unos seis fotogramas, diez fotogramas por segundo cuando empieza la escena y luego
+
+05:11.830 --> 05:13.660
+rápidamente gana mucha velocidad.
+
+05:13.690 --> 05:17.410
+Creo que es la instanciación de elementos en el mundo lo que es costoso.
+
+05:17.410 --> 05:20.620
+Pero entonces la operación física funciona realmente bien.
+
+05:20.650 --> 05:25.900
+Aquí tenemos miles de objetos más de los que podemos ver en pantalla, y todavía soy capaz de interactuar
+
+05:25.900 --> 05:27.610
+con ellos con una velocidad de fotogramas realmente buena.
+
+05:27.640 --> 05:32.980
+Creo que esto seguirá mejorando a medida que el proyecto madura, pero ya estábamos viendo muy buena
+
+05:32.980 --> 05:33.880
+rendimiento.
+
+05:34.150 --> 05:35.040
+Eso es todo.
+
+05:35.050 --> 05:37.210
+Esa es una rápida visión general de Unity Dots.
+
+05:38.290 --> 05:39.830
+Este es el final del curso.
+
+05:39.850 --> 05:41.380
+Muchas gracias a todos.

@@ -1,0 +1,214 @@
+WEBVTT
+
+00:01.800 --> 00:08.190
+La creación del reproductor y la entrada en este video cubrirá la captura de la entrada del ratón del usuario y el uso de
+
+00:08.190 --> 00:11.170
+una articulación objetivo para restringir el movimiento del asteroide.
+
+00:11.190 --> 00:15.570
+Luego usaremos la fuerza de adición de cuerpo rígido para el movimiento de proyectil del asteroide.
+
+00:16.110 --> 00:19.820
+El desglose de tareas que tenemos aquí es nuestro objetivo de la captura de pantalla.
+
+00:19.830 --> 00:26.760
+Añadiremos un prefab de catapulta, añadiremos el script de catapulta, añadiremos el asteroide que irá en la catapulta
+
+00:26.760 --> 00:28.260
+y volará por el cielo.
+
+00:28.290 --> 00:29.130
+Un asteroide.
+
+00:29.130 --> 00:30.270
+Guión Do sostenido.
+
+00:31.130 --> 00:32.730
+Abramos la sección cinco.
+
+00:32.750 --> 00:33.650
+Video dos.
+
+00:33.650 --> 00:34.940
+Upset Ducks dos.
+
+00:36.950 --> 00:38.900
+Vamos a abrir patos trastornados a.
+
+00:39.860 --> 00:40.910
+Y darle al play.
+
+00:43.760 --> 00:49.910
+Vemos el añadido aquí como una catapulta y el asteroide lo podemos arrastrar con el ratón y cuando lo soltamos
+
+00:49.910 --> 00:57.230
+se dispara y podemos pulsar la barra espaciadora para reiniciar y elegir cualquier ángulo y se dispara.
+
+00:57.560 --> 00:59.270
+Así que vamos a crearlo desde cero.
+
+01:00.800 --> 01:03.320
+Primero, nos desharemos de las cosas que estamos planeando crear.
+
+01:03.320 --> 01:07.700
+Este video, el asteroide, la catapulta, los dos scripts.
+
+01:12.780 --> 01:13.890
+Y aquí estamos.
+
+01:14.310 --> 01:17.460
+Así que como punto de partida, lo primero que vamos a crear es el asteroide.
+
+01:27.690 --> 01:29.130
+Sacaremos ese sprite.
+
+01:29.340 --> 01:32.700
+Parece que ya está bien dimensionado, así que no tenemos que escalarlo.
+
+01:32.820 --> 01:37.320
+Y seguiremos adelante y añadiremos un colisionador circular de cuerpo rígido y una articulación objetivo.
+
+01:52.100 --> 01:54.320
+La articulación objetivo se apagará inicialmente.
+
+01:55.630 --> 01:58.330
+Luego vamos a añadir nuestro propio script personalizado de asteroide.
+
+02:08.270 --> 02:10.520
+Luego seleccionamos el sprite del asteroide.
+
+02:12.680 --> 02:16.220
+Lo renombraremos a simplemente asteroide y añadiremos nuestro nuevo script.
+
+02:21.620 --> 02:22.910
+Esa es la configuración básica.
+
+02:22.910 --> 02:27.950
+Hagamos eso un prefab y luego miremos nuestro script asteroide y empecemos a codificarlo.
+
+02:34.490 --> 02:36.440
+Haremos doble click en el script del asteroide.
+
+02:37.070 --> 02:39.510
+Ahora, esto es lo que Unity nos da desde el principio.
+
+02:39.530 --> 02:43.280
+Voy a saltar y pegar lo que ya he creado para nosotros.
+
+02:49.870 --> 02:50.980
+Echemos un vistazo.
+
+02:51.980 --> 02:58.220
+Así que hemos extendido el comportamiento mono y he utilizado algunas características adicionales para capturar los clics del ratón.
+
+02:58.790 --> 03:02.900
+Luego tengo algunas propiedades públicas de cuerpo rígido y objetivo.
+
+03:03.140 --> 03:08.900
+Llevo la cuenta de si hemos soltado esto en el aire o no, hasta dónde somos capaces de arrastrarlo.
+
+03:09.770 --> 03:11.630
+Algunos campos serializados aquí.
+
+03:12.410 --> 03:18.440
+También podemos utilizar una velocidad de vuelo serializado, que podemos establecer desde el inspector para cambiar la rapidez con que
+
+03:18.440 --> 03:19.760
+debe moverse por el cielo.
+
+03:20.960 --> 03:24.920
+Luego aquí abajo en la actualización es como manejo la entrada del ratón.
+
+03:26.780 --> 03:31.100
+Y al bajar el ratón, establezco que estamos arrastrando y giro la articulación objetivo.
+
+03:31.100 --> 03:35.840
+En la articulación objetivo es lo que va a restringir nuestro movimiento para que no nos deje arrastrar demasiado.
+
+03:36.320 --> 03:39.020
+Y en el puntero hacia arriba, lo suelto.
+
+03:40.340 --> 03:45.110
+Y en la liberación es cuando añado la fuerza física, veremos que familiar añadir fuerza.
+
+03:48.710 --> 03:49.820
+Vamos a reproducir la escena.
+
+03:52.700 --> 03:53.270
+Genial.
+
+03:54.700 --> 03:56.230
+Ahora vamos a añadir la catapulta.
+
+04:49.190 --> 04:50.960
+Y crearemos un script de catapulta.
+
+05:05.540 --> 05:08.600
+Abrimos eso y vamos a pegar lo que he creado para nosotros.
+
+05:15.780 --> 05:17.640
+Aquí tenemos la catapulta.
+
+05:18.360 --> 05:24.150
+Voy a tener un asteroide prefab el asteroide padre donde debe ser conectado.
+
+05:24.150 --> 05:27.420
+Y el punto central, la posición a la que debería estar conectado.
+
+05:27.900 --> 05:29.730
+Cuando despertemos, añadiré un asteroide.
+
+05:29.730 --> 05:35.640
+Y lo que hago aquí es instanciar un nuevo objeto de juego asteroide desde el prefab y establecerlo en la derecha
+
+05:35.640 --> 05:36.390
+correcta.
+
+05:36.600 --> 05:39.780
+Fíjate que aquí abajo pongo la articulación del objetivo en Finally There.
+
+05:39.780 --> 05:41.190
+Eso es lo que hace la restricción.
+
+05:41.460 --> 05:42.840
+Sigamos adelante y conéctalo.
+
+06:13.450 --> 06:15.400
+Y finalmente, lo pondremos en la posición.
+
+06:27.040 --> 06:29.080
+Y vamos a darle una vuelta.
+
+06:37.010 --> 06:45.980
+Veo que en el asteroide me falta una referencia a la articulación objetivo y al cuerpo rígido.
+
+06:55.420 --> 06:56.260
+Se ve bien.
+
+06:57.210 --> 06:59.070
+El punto central está un poco desviado.
+
+06:59.070 --> 07:00.300
+Lo subiremos.
+
+07:05.340 --> 07:06.320
+Entonces dale un toque.
+
+07:11.540 --> 07:12.800
+Se ve muy bien.
+
+07:13.520 --> 07:20.360
+Como último ajuste, veo que el Sprite frontal necesita ser un número más alto que el propio asteroide.
+
+07:23.080 --> 07:26.620
+Así que ahora el asteroide está creíblemente entre los dos trozos de madera.
+
+07:27.250 --> 07:27.940
+Y eso es todo.
+
+07:27.970 --> 07:28.990
+Muchas gracias.
+
+07:31.520 --> 07:35.060
+En el próximo video, trabajaremos en la creación de los obstáculos.

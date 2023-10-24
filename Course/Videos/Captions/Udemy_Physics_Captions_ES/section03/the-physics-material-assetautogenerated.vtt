@@ -1,0 +1,184 @@
+WEBVTT
+
+00:01.730 --> 00:03.650
+El activo material físico.
+
+00:03.650 --> 00:09.260
+En este vídeo, trataremos qué es el material físico, cuáles son sus propiedades más importantes,
+
+00:09.260 --> 00:11.030
+y luego tendremos la oportunidad de usarlo.
+
+00:11.030 --> 00:17.600
+Dentro del Editor de Unity Una nota sobre dos D versus tres D Unity tiene dos sistemas de física separados en
+
+00:17.600 --> 00:23.090
+dos D, el cuerpo rígido, dos D hace referencia al material físico dos RD asset.
+
+00:23.090 --> 00:30.350
+Esto tiene un SE en el título en tres d El cuerpo rígido hace referencia al material physic sin un se physic
+
+00:30.350 --> 00:36.860
+material asset en tres d physic material es el asset que describe como manejar la colisión de objetos,
+
+00:36.860 --> 00:39.740
+específicamente la fricción y el rebote.
+
+00:39.740 --> 00:42.410
+El material físico del activo RD.
+
+00:42.410 --> 00:44.090
+Lo mismo ocurre con DX.
+
+00:44.540 --> 00:46.910
+Veamos un ejemplo en tres D.
+
+00:47.880 --> 00:51.810
+Selecciona un objeto del juego con un material físico en la ventana del inspector.
+
+00:51.810 --> 00:53.560
+Podemos ver todos los componentes.
+
+00:53.580 --> 00:55.200
+Naveguemos por las propiedades.
+
+00:55.770 --> 00:58.560
+Nos centraremos en la fricción dinámica.
+
+00:58.560 --> 01:01.010
+La fricción utilizada cuando ya está en movimiento.
+
+01:01.020 --> 01:03.590
+Normalmente es un valor entre cero y uno.
+
+01:03.600 --> 01:07.470
+Un valor de cero se siente como hielo, fricción estática.
+
+01:07.470 --> 01:11.790
+Es la fricción que se produce cuando un objeto está quieto sobre una superficie.
+
+01:11.790 --> 01:14.220
+Normalmente es un valor de 0 a 1.
+
+01:14.220 --> 01:16.320
+Un valor de cero se siente como el hielo.
+
+01:16.410 --> 01:17.520
+Sensación de rebote.
+
+01:17.520 --> 01:19.410
+¿Cuál es el rebote de la superficie?
+
+01:19.410 --> 01:21.810
+Un valor de cero no rebota.
+
+01:21.810 --> 01:25.200
+Un valor de uno rebotará sin pérdida de energía.
+
+01:25.200 --> 01:25.800
+Fricción.
+
+01:25.800 --> 01:30.330
+Combina cómo la fricción de dos objetos que chocan se combina rebote.
+
+01:30.330 --> 01:34.230
+Combina cómo se combina el rebote de dos objetos.
+
+01:35.560 --> 01:36.950
+Veamos una demostración.
+
+01:36.970 --> 01:43.210
+Empezaremos deslizando cubos la escena creará un material físico desde cero y jugaremos con
+
+01:43.210 --> 01:44.110
+sus propiedades.
+
+01:44.710 --> 01:48.430
+En esta escena, vamos a abrir nuestros cubos deslizantes.
+
+01:48.430 --> 01:49.120
+Comienza.
+
+01:50.320 --> 01:54.940
+Vamos a darle una vuelta y veremos que los cubos interactúan de la misma manera.
+
+01:56.070 --> 02:01.110
+Caen lentamente, girando sobre sí mismos con el defecto.
+
+02:01.380 --> 02:04.080
+Aún no tenemos materiales físicos aplicados.
+
+02:04.110 --> 02:05.670
+Vamos a crear algunos.
+
+02:05.760 --> 02:11.250
+Dejaremos uno de estos cubos como predeterminado y luego crearemos algunos experimentos para el otro
+
+02:11.250 --> 02:11.730
+dos.
+
+02:12.300 --> 02:16.320
+Así que si hacemos clic derecho en la carpeta que hemos creado.
+
+02:17.320 --> 02:24.250
+Podemos ir a create y physic material porque estamos en una escena 3D, es importante que elijamos physic
+
+02:24.250 --> 02:25.090
+material.
+
+02:27.100 --> 02:28.630
+A este lo llamaremos por defecto.
+
+02:29.560 --> 02:32.020
+Y lo dejaremos con esos valores por defecto.
+
+02:32.650 --> 02:34.120
+Ahora, vamos a crear otra.
+
+02:37.940 --> 02:40.220
+Este hará que rebote mucho.
+
+02:41.210 --> 02:48.170
+Y vamos a utilizar los valores por defecto para la primera, como he mencionado, y luego el rebote se incrementará
+
+02:48.170 --> 02:50.780
+el rebote hasta el valor más alto de uno.
+
+02:50.900 --> 02:54.170
+Y ahora crearemos la tercera rueda con el botón derecho.
+
+02:54.170 --> 03:02.270
+Creamos el material físico y este lo haremos muy resbaladizo o deslizante.
+
+03:03.420 --> 03:09.960
+Esto será sin fricción dinámica y sin fricción estática para mostrar un extremo.
+
+03:11.200 --> 03:13.150
+Dejaremos el rebote por defecto.
+
+03:13.720 --> 03:15.010
+Ahora vamos a asignarlos.
+
+03:16.220 --> 03:19.700
+Podemos ver el resalte aquí en la izquierda, lo dejaremos por defecto.
+
+03:20.240 --> 03:25.700
+Estos están todos configurados de forma idéntica, pero les di un nombre único sólo para dar una pista donde debemos utilizar lo que
+
+03:25.700 --> 03:28.310
+bouncy lo arrastraremos a la caja Collider.
+
+03:28.580 --> 03:34.490
+Y luego el grupo tres, este de aquí, vamos a seguir adelante y vamos a añadir el slippi.
+
+03:35.700 --> 03:37.470
+Ahora vamos a reproducir la escena de nuevo.
+
+03:37.470 --> 03:40.980
+Y deberíamos verlos caer de una forma diferente.
+
+03:46.220 --> 03:48.110
+Puedes ver que tenemos resultados diferentes.
+
+03:50.150 --> 03:53.120
+En el siguiente vídeo, veremos tres articulaciones en D.

@@ -1,0 +1,204 @@
+WEBVTT
+
+00:01.060 --> 00:03.670
+Sobre los eventos de disparo y el objeto colisionador.
+
+
+00:03.760 --> 00:08.470
+En este video, vamos a cubrir lo que nuestros eventos de disparo y por qué son útiles en nuestro juego.
+
+
+00:08.740 --> 00:12.280
+También abriremos el editor de Unity y jugaremos con los eventos de disparo.
+
+
+00:12.790 --> 00:14.890
+¿Por qué usar eventos de disparo?
+
+
+00:15.220 --> 00:19.210
+Estos eventos nos dan más información sobre las intersecciones físicas.
+
+
+00:19.510 --> 00:22.630
+Estos son entre objetos del juego con colliders.
+
+
+00:22.630 --> 00:24.790
+Cuando el trigger está en true.
+
+
+00:25.150 --> 00:26.500
+Esto es útil en un juego.
+
+
+00:26.500 --> 00:29.980
+Por ejemplo, cuando un personaje entra en una sala de una mazmorra.
+
+
+00:30.460 --> 00:33.730
+Veamos un escenario con un evento no disparado.
+
+
+00:34.180 --> 00:37.300
+Un cubo rosa sigue hacia un volumen de disparo.
+
+
+00:37.510 --> 00:43.120
+El rosa tiene un cuerpo rígido y un colisionador para que caiga y detecte dónde están sus límites.
+
+
+00:43.120 --> 00:47.350
+Y el verde tiene un collider con collider is trigger puesto a true.
+
+
+00:47.620 --> 00:55.450
+Así que rosa está cayendo, rosa entra en el volumen de disparo, obtenemos el en el gatillo entrar una vez, mientras que rosa
+
+
+00:55.450 --> 00:57.640
+está en el volumen de disparo.
+
+
+00:57.640 --> 01:01.900
+Mientras permanezca ahí, recibiremos una llamada repetida al on trigger stay.
+
+
+01:02.080 --> 01:04.840
+Esperaremos que esto sea llamado muchas veces.
+
+
+01:05.570 --> 01:12.560
+Cuando el rosa sale, el volumen de disparo será llamado una vez on trigger exit y luego el rosa continua
+
+
+01:12.560 --> 01:13.220
+cayendo.
+
+
+01:13.610 --> 01:16.740
+Nuestro enfoque aquí es realmente sobre el gatillo de entrada.
+
+
+01:16.760 --> 01:21.530
+Esta información suele ser suficiente para obtener lo que necesitamos de la llamada de retorno.
+
+
+01:21.620 --> 01:27.800
+Por ejemplo, de nuevo, cuando un personaje entra en una sala de la mazmorra, se nos notificaría que el personaje
+
+
+01:27.800 --> 01:34.040
+ha entrado en algo y entonces podemos inspeccionar el objeto collider para averiguar si es la sala de la mazmorra.
+
+
+01:34.310 --> 01:40.460
+Así que el objeto collider en sí es el componente que define la forma de un objeto para los propósitos
+
+
+01:40.460 --> 01:41.700
+de colisión física.
+
+
+01:41.720 --> 01:47.210
+Hemos utilizado colliders antes, por supuesto, y vamos a centrarnos en una propiedad aquí, el collider
+
+
+01:47.420 --> 01:51.510
+objeto de juego que nos va a decir para el colisionador que estamos golpeando.
+
+
+01:51.530 --> 01:53.600
+¿En qué objeto del juego está?
+
+
+01:53.990 --> 01:57.380
+Echemos un vistazo a una demo que veremos sobre eventos de disparo.
+
+
+01:57.380 --> 02:03.290
+Uno, reproduciremos la escena, inspeccionaremos el código, y como extra, echaremos un vistazo a la consola
+
+
+02:03.290 --> 02:05.360
+Característica de Windows llamada Contraer.
+
+
+02:06.600 --> 02:07.610
+Aquí estamos en unity.
+
+
+02:07.620 --> 02:09.150
+Abramos la siguiente escena.
+
+
+02:12.660 --> 02:19.260
+Los eventos de disparo en, número uno, y nos daremos cuenta de que q b aquí está configurado con un colisionador de caja con
+
+
+02:19.260 --> 02:21.480
+está activado.
+
+
+02:21.780 --> 02:23.430
+Tampoco hay cuerpo rígido.
+
+
+02:23.640 --> 02:27.030
+Cuando reproducimos la escena, esperamos que la rosa caiga a través de ella.
+
+
+02:27.180 --> 02:28.020
+Veamos.
+
+
+02:32.280 --> 02:32.650
+Sip.
+
+
+02:32.760 --> 02:34.770
+Se comporta exactamente como esperábamos.
+
+
+02:34.860 --> 02:42.110
+Y si miramos la consola vemos que tenemos una entrada muchas estancias y una salida.
+
+
+02:42.120 --> 02:43.230
+Miremos el código.
+
+
+02:46.790 --> 02:47.390
+En el disparador.
+
+
+02:47.390 --> 02:48.560
+Entrar en azúcar.
+
+
+02:48.560 --> 02:49.830
+Permanecer y en azúcar.
+
+
+02:49.850 --> 02:50.330
+Salir.
+
+
+02:50.330 --> 02:51.600
+Como era de esperar.
+
+
+02:51.620 --> 02:52.430
+Ya está.
+
+
+02:53.600 --> 02:57.320
+En el próximo video, veremos cómo agregar fuerzas programáticas.
+
+
+02:57.920 --> 03:04.880
+Cubriremos el movimiento y la unidad desde un sentido tradicional movimiento en la unidad para la física específicamente.
+
+
+03:04.970 --> 03:10.100
+Veremos los tipos de fuerzas y luego abriremos el editor de unity y jugaremos con esas fuerzas.

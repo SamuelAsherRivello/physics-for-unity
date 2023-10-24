@@ -1,0 +1,253 @@
+WEBVTT
+
+00:01.740 --> 00:07.570
+Añadiendo pulido extra en este video se cubrirá la adición de animación programática para las monedas recogidas.
+
+00:07.590 --> 00:11.640
+Añadiremos sonidos a través del gestor de sonido y hablaremos del diseño de niveles.
+
+00:11.850 --> 00:13.230
+¿Qué es el polaco?
+
+00:13.230 --> 00:13.640
+¿Polaco?
+
+00:13.830 --> 00:18.960
+¿Son los pequeños detalles al final de un proyecto los que hacen que un buen proyecto sea genial?
+
+00:18.990 --> 00:24.420
+A menudo son visuales, de audio, de animación y pequeños retoques en la jugabilidad.
+
+00:25.560 --> 00:29.370
+El desglose de impuestos aquí será añadir animación a nuestras monedas giratorias.
+
+00:29.370 --> 00:33.870
+Así, cuando las recojamos, se desvanecerán en lugar de desaparecer instantáneamente.
+
+00:33.870 --> 00:38.670
+Añadiremos sonidos a los eventos clave a través del gestor de sonido y hablaremos del diseño de niveles.
+
+00:39.680 --> 00:45.000
+Para el proyecto, abriremos la sección seis Video cinco Crazy Ball cinco OC.
+
+00:45.050 --> 00:49.070
+Aquí estamos dentro de Unity y abriremos la Bola Loca cinco.
+
+00:49.850 --> 00:55.580
+Ahora aquí, hemos añadido algunos pulidos, hemos añadido algunos sonidos, hemos añadido algunas animaciones.
+
+00:55.580 --> 00:57.740
+Y también quiero hablar un poco sobre el diseño de niveles.
+
+00:57.890 --> 01:02.180
+Así que vamos a empezar con el efecto que hemos añadido para cuando recogemos monedas.
+
+01:02.540 --> 01:07.370
+Antes, cuando recogíamos una moneda, desaparecía instantáneamente.
+
+01:07.880 --> 01:12.860
+Y aquí lo que he hecho es escalarla desde su tamaño completo hasta cero.
+
+01:13.130 --> 01:14.120
+Muy rápido.
+
+01:14.120 --> 01:15.620
+Pero creo que el efecto es bonito.
+
+01:15.620 --> 01:15.860
+Mira.
+
+01:15.860 --> 01:19.040
+Cuando recojo esta moneda, se encoge.
+
+01:19.040 --> 01:23.780
+Es sutil, pero es un nivel de pulido realmente agradable que te da un poco de sensación extra
+
+01:23.780 --> 01:26.790
+de que hay algo de cuidado en el juego y es un bonito efecto.
+
+01:26.810 --> 01:28.700
+Veamos cómo lo conseguimos.
+
+01:29.460 --> 01:30.960
+Vamos a ver algo de código.
+
+01:31.690 --> 01:38.230
+Aquí en la moneda, podemos ver que en el destroy que habíamos establecido antes del método destroy me public
+
+01:38.230 --> 01:42.990
+he marcado el es un falso vivo y luego he utilizado para hacer inmediatamente un destroy.
+
+01:43.000 --> 01:49.180
+Ahora en el número uno aquí podemos ver que estamos utilizando la operación do scale y va a escalar hacia abajo
+
+01:49.180 --> 01:55.390
+a cero En el transcurso de aproximadamente un cuarto de segundo, soy capaz de establecer un easing para tenerlo tipo de
+
+01:55.390 --> 01:58.150
+rebote o lo haga rápidamente o acelere a medida que avanza.
+
+01:58.150 --> 01:59.680
+Tienes muchas opciones.
+
+01:59.680 --> 02:01.960
+Y luego pongo el método on complete.
+
+02:01.960 --> 02:07.090
+Lo que hace es esperar hasta el final de la animación y luego destruye el objeto.
+
+02:07.090 --> 02:12.700
+Así que en vez de destruir instantáneamente el objeto, hace esta bonita animación y aproximadamente un cuarto de
+
+02:12.700 --> 02:15.430
+segundo después será destruido.
+
+02:15.430 --> 02:16.810
+Podemos ver los ajustes aquí.
+
+02:16.810 --> 02:22.330
+He bajado la contracción a cero y lo hace en un cuarto de segundo, pero puedes ajustar
+
+02:22.330 --> 02:22.720
+eso.
+
+02:22.720 --> 02:25.870
+Ahora hablemos del diseño de sonido dentro de la escena.
+
+02:25.870 --> 02:27.280
+He creado un gestor de sonido.
+
+02:27.280 --> 02:28.390
+Vamos a echarle un vistazo.
+
+02:29.630 --> 02:37.250
+Así que en el entorno, tenemos el gestor de sonido aquí y tiene todos los sonidos que queremos alineados
+
+02:37.250 --> 02:38.900
+arrastrados desde nuestro proyecto.
+
+02:38.900 --> 02:42.920
+Estos son archivos WAV o M.P. de tres que podemos usar para hacer algunos sonidos.
+
+02:42.920 --> 02:50.000
+Entonces puedo llamar por índice y decir toca cero para la moneda, toca uno para la colisión, etc..
+
+02:50.090 --> 02:51.410
+Veamos el código de nuevo.
+
+02:52.490 --> 02:59.780
+Así que lo que hago aquí dentro del gatillo on enter es después de saber que tengo la moneda y empiezo el
+
+02:59.780 --> 03:05.990
+operación de contracción con una llamada destroy me, entonces reproduzco el sonido que uso sound manager instance play
+
+03:05.990 --> 03:09.320
+y le paso el índice de lo que quiero reproducir.
+
+03:09.680 --> 03:10.940
+Todo esto se almacena aquí.
+
+03:10.940 --> 03:14.930
+Así que ahora dentro de las constantes, sé exactamente qué sonido voy a reproducir.
+
+03:14.930 --> 03:18.110
+Hay muchas formas de organizar el sonido en un proyecto, pero esta funciona.
+
+03:18.110 --> 03:20.570
+Bien, ahora hablemos del diseño del juego.
+
+03:22.050 --> 03:25.770
+Así que si nos alejamos un poco y miramos el mundo desde arriba.
+
+03:27.430 --> 03:30.070
+Así es como diseñé originalmente el juego.
+
+03:30.130 --> 03:35.400
+Pensé desde el principio aquí en la vista del juego, quiero ser capaz de ver la línea de meta.
+
+03:35.410 --> 03:42.700
+Así que entre la UI de tiempo, la UI de puntuación y la conexión visual con el objetivo final, el usuario es guiado en
+
+03:42.700 --> 03:45.340
+un camino claro hacia donde debe ir.
+
+03:45.550 --> 03:48.610
+Luego, a medida que juegan, lo harían.
+
+03:49.430 --> 03:55.970
+Moverse por aquí, quizás intentando conseguir todas las monedas que pudieran doblar la esquina, subir, ellos
+
+03:55.970 --> 04:01.070
+verían, a medida que recogen las monedas, que la puntuación sube, así que consiguen la conexión.
+
+04:01.070 --> 04:05.750
+Que los puntos son algo bueno en los juegos normalmente, y ven que eso se incrementa cuando recogen
+
+04:05.750 --> 04:06.440
+monedas.
+
+04:06.440 --> 04:07.900
+Así que funciona muy bien.
+
+04:07.910 --> 04:11.350
+He creado un patrón de laberinto muy simple aquí.
+
+04:11.360 --> 04:17.600
+También permite al usuario que esté interesado en el mejor tiempo posible ser capaz de venir a la derecha sobre esto
+
+04:17.600 --> 04:21.560
+pequeña colina y dar la vuelta a la esquina y conseguir la puntuación más rápida.
+
+04:21.590 --> 04:25.370
+También verían que ganan, pero no obtienen la puntuación más alta.
+
+04:25.370 --> 04:27.830
+Así que me imagino que un jugador lo vería de esta manera.
+
+04:27.860 --> 04:33.950
+Jugarían el juego, probablemente harían el tonto y perderían la primera vez al llegar al tiempo de cero.
+
+04:34.130 --> 04:39.320
+Luego volverían a jugar, dándose cuenta de que tal vez las monedas son buenas, pero la meta es lo importante.
+
+04:39.320 --> 04:42.020
+Llegar a la meta con algunos puntos.
+
+04:42.020 --> 04:47.600
+Luego, en una tercera jugada, podrían intentar conseguir todas las monedas posibles dentro del tiempo límite.
+
+04:47.930 --> 04:49.100
+En este juego de demostración.
+
+04:49.100 --> 04:54.320
+Lo he hecho bastante sencillo de hacer, pero puedes imaginarte jugando con el usuario e imaginando las diferentes
+
+04:54.320 --> 04:58.550
+formas en que se acercarían al juego para animarles a jugar una y otra vez.
+
+04:58.550 --> 05:03.680
+Así que es sólo una pequeña nota sobre el diseño del juego y también que se suma a la buena sensación de
+
+05:03.680 --> 05:04.970
+polaco al final del juego.
+
+05:04.970 --> 05:05.530
+Eso es.
+
+05:05.540 --> 05:06.620
+Muchas gracias.
+
+05:07.820 --> 05:10.400
+Como tarea extra, puedes añadir tu propio pulido.
+
+05:10.430 --> 05:11.750
+Aquí tienes algunas ideas.
+
+05:11.750 --> 05:18.710
+Más sonidos de hermanamiento programático, obstáculos, niveles aún más grandes o múltiples niveles y diferentes
+
+05:18.710 --> 05:19.940
+tipos de bolas locas.
+
+05:21.810 --> 05:25.290
+En la siguiente sección, trataremos temas avanzados.

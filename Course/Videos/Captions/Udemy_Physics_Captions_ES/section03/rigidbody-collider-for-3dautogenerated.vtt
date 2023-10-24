@@ -1,0 +1,196 @@
+WEBVTT
+
+00:01.780 --> 00:03.850
+Unidad tres componentes d Física.
+
+
+00:03.850 --> 00:07.940
+En esta sección, repasaremos los principios básicos de la física en tres D.
+
+
+00:07.960 --> 00:16.120
+A continuación, vamos a sumergirnos en la física, Material Asset Ragdoll y entrenar una recapitulación de Rigid Body y Collider para
+
+
+00:16.120 --> 00:16.840
+tres D.
+
+
+00:17.050 --> 00:22.720
+En este video, cubriremos Cuerpo Rígido y Colisionador específicamente para tres D.
+
+
+00:22.870 --> 00:26.260
+Y luego vamos a echar un vistazo a estos dentro del Editor de Unity.
+
+
+00:26.860 --> 00:34.300
+Una nota acerca de dos D versos tres D Unity tiene dos sistemas de física separados a RD y tres D Los principios
+
+
+00:34.300 --> 00:39.130
+de nomenclatura de los componentes y el código C-sharp para cada uno son similares, pero no idénticos.
+
+
+00:39.130 --> 00:46.240
+Por ejemplo, en dos D, un objeto de juego utiliza un cuerpo rígido dos d componente, sin embargo, en 3da objeto de juego utiliza
+
+
+00:46.240 --> 00:51.100
+un componente de cuerpo rígido sin las tres d en su nombre por coherencia.
+
+
+00:51.100 --> 00:56.320
+En este curso nos referiremos a cuerpo rígido tanto en 2D como en 3D.
+
+
+00:56.920 --> 01:04.450
+Visionado recomendado Sección dos Unidad dos D Componentes de física introduce los fundamentos básicos de la física,
+
+
+01:04.450 --> 01:06.310
+que también se aplica a tres D.
+
+
+01:06.460 --> 01:10.120
+Se sugiere ver la sección dos antes de la tres.
+
+
+01:10.570 --> 01:12.130
+Veamos cuerpo rígido.
+
+
+01:12.860 --> 01:16.720
+Comenzando con el componente de transformación, el componente más básico en Unity.
+
+
+01:16.730 --> 01:22.070
+Este componente es el que permite la posición, rotación y escala de un objeto del juego.
+
+
+01:22.100 --> 01:26.330
+Este es el único componente que se añade automáticamente a cada objeto del juego.
+
+
+01:26.450 --> 01:27.620
+Cuerpo rígido.
+
+
+01:27.620 --> 01:33.380
+Este es el componente que permite el comportamiento físico de un objeto de juego con un cuerpo rígido unido.
+
+
+01:33.380 --> 01:36.050
+El objeto responderá inmediatamente a la gravedad.
+
+
+01:36.560 --> 01:38.120
+Veamos el colisionador.
+
+
+01:38.630 --> 01:44.780
+El colisionador es el componente que define la forma de un objeto a efectos de colisiones físicas.
+
+
+01:45.290 --> 01:47.180
+Tipos de colisionadores en 3D.
+
+
+01:47.300 --> 01:50.450
+El Sphere Collider para áreas esféricas.
+
+
+01:50.450 --> 01:53.630
+El Collider caja para áreas en forma de caja.
+
+
+01:53.630 --> 01:57.560
+Estos dos son muy comunes, como puedes ver en las ilustraciones.
+
+
+01:57.560 --> 01:58.670
+Esa es su forma.
+
+
+01:58.670 --> 02:02.330
+También están disponibles el Capsule Collider y el Mesh Collider.
+
+
+02:02.540 --> 02:04.820
+Selecciona un objeto del juego con cuerpo rígido.
+
+
+02:04.850 --> 02:07.610
+Abre la ventana del inspector para ver todos sus componentes.
+
+
+02:07.610 --> 02:08.990
+Navega por las propiedades.
+
+
+02:09.230 --> 02:10.580
+Hay muchas propiedades.
+
+
+02:10.580 --> 02:18.080
+Nuestro enfoque será es material de disparo masa de arrastre uso de la gravedad y es cinemática.
+
+
+02:18.440 --> 02:23.420
+Ver sección dos Para más información sobre estas propiedades, echemos un vistazo a una demo.
+
+
+02:23.990 --> 02:25.850
+Abriremos tres pirámides D.
+
+
+02:25.970 --> 02:27.350
+Reproduciremos la escena.
+
+
+02:27.350 --> 02:33.290
+Seleccionaremos uno de los cubos de la escena para ver su cuerpo rígido y su colisionador en el inspector.
+
+
+02:34.210 --> 02:35.990
+Abramos nuestra escena aquí.
+
+
+02:36.010 --> 02:38.230
+Vamos a ver la pirámide de tres D.
+
+
+02:40.180 --> 02:43.300
+Si exploramos esta escena, tenemos una serie de cubos.
+
+
+02:43.930 --> 02:49.180
+Y la parte que es importante ver aquí son los componentes de cada cubo.
+
+
+02:49.330 --> 02:54.430
+Para tener una física completa, tenemos un colisionador y también un cuerpo rígido.
+
+
+02:55.320 --> 03:01.710
+Y el cuerpo rígido hemos utilizado la gravedad establecido y tenemos es cinemática no establecido.
+
+
+03:01.950 --> 03:06.090
+Así que cuando ejecutemos la escena, tendremos una interacción física realista.
+
+
+03:08.560 --> 03:10.810
+Los objetos caen de forma bastante sutil.
+
+
+03:10.810 --> 03:16.720
+Pero si sigo adelante y manipulo algunos de los objetos, veremos una interacción física realista.
+
+
+03:20.510 --> 03:27.080
+En el siguiente video, el activo material físico echaremos un vistazo a lo que es material físico, lo que son
+
+
+03:27.080 --> 03:31.790
+las propiedades más importantes, y luego vamos a echar un vistazo dentro de la unidad ed.

@@ -1,0 +1,238 @@
+WEBVTT
+
+00:01.600 --> 00:02.960
+Dos efectores RD.
+
+00:02.980 --> 00:09.310
+En este video, cubriremos el componente efector RD dos y los diferentes tipos de efectores DS dos.
+
+00:09.430 --> 00:13.000
+También jugaremos con efectores RD dos dentro del Unity ED.
+
+00:13.180 --> 00:17.620
+El efector es el componente que dirige las fuerzas de la física en tu proyecto.
+
+00:17.620 --> 00:21.000
+Cuando los colisionadores de los objetos del juego entran en contacto entre sí.
+
+00:21.010 --> 00:26.770
+Como puedes ver en esta configuración, tenemos un transformador, un colisionador y un componente efector, todos añadidos
+
+00:26.770 --> 00:28.030
+al mismo objeto del juego.
+
+00:28.450 --> 00:34.690
+Algunos de los comunes que utilizo en este curso son el efector de flotación para hacer que los objetos floten, como en la
+
+00:34.690 --> 00:41.350
+primera ilustración, y el efector de superficie para crear una sensación de cinta transportadora, como se ve en la segunda
+
+00:41.350 --> 00:46.360
+imagen, estas flechas verdes indican más o menos la dirección del movimiento que se aplica a los
+
+00:46.360 --> 00:47.080
+objetos.
+
+00:47.080 --> 00:54.040
+También puedes usar otros efectores, como el efector de área, el efector de plataforma, el efector de punto, para diferentes tipos de efectos.
+
+00:54.130 --> 00:58.750
+Si seleccionamos un objeto del juego con un efector, podemos abrir la ventana del inspector para ver todos sus
+
+00:58.750 --> 00:59.560
+componentes.
+
+00:59.560 --> 01:03.260
+Si miramos el efector de punto RD, podemos explorar sus propiedades.
+
+01:03.310 --> 01:05.290
+Hay muchas propiedades diferentes ahora.
+
+01:05.290 --> 01:10.840
+Cada tipo de efector tiene propiedades únicas, pero echemos un vistazo al efector de punto RD.
+
+01:10.930 --> 01:13.870
+Primero, echemos un vistazo al colisionador en sí.
+
+01:13.870 --> 01:19.270
+Debemos establecer que "is trigger" sea verdadero y "used by effector" sea verdadero.
+
+01:19.300 --> 01:24.700
+Esto permitirá que el colisionador funcione junto con nuestro efector de punto RD.
+
+01:24.940 --> 01:28.990
+Cuando nos centramos en el propio efector, tenemos una máscara de colisionador.
+
+01:28.990 --> 01:35.320
+La máscara, que es opcional, se utiliza para seleccionar qué capas específicas serán afectadas.
+
+01:35.320 --> 01:40.840
+Así que puedes hacer que este efecto ocurra solo en algunos grupos de tus objetos y fuerza.
+
+01:40.840 --> 01:45.640
+Esto es la magnitud de las distancias y otros detalles de la fuerza que se aplicará.
+
+01:46.030 --> 01:48.280
+Hagamos algunas demostraciones primero.
+
+01:48.280 --> 01:51.490
+Echemos un vistazo al efector de punto RD Inicio.
+
+01:51.490 --> 01:53.740
+Visto en algunas de las escenas de este curso.
+
+01:53.740 --> 01:55.270
+Tienen un guión bajo (underscore) al principio.
+
+01:55.270 --> 02:02.980
+Este es nuestro punto de partida y agregaremos un poco de código y algunos activos a medida que avanzamos para cada escena con un guión bajo (underscore)
+
+02:02.980 --> 02:03.580
+al principio.
+
+02:03.580 --> 02:09.550
+Hay una escena equivalente con guión bajo (underscore) completo y puedes verla para ver los resultados finales
+
+02:09.550 --> 02:10.360
+en esta escena.
+
+02:10.360 --> 02:11.290
+Lo reproduciremos.
+
+02:11.290 --> 02:17.830
+Crearemos un nuevo Sprite BOM, agregaremos el efector de punto RD y el Colisionador de Círculo RD, activaremos el
+
+02:17.830 --> 02:22.940
+efector de punto RD cuando hagamos clic en el ratón y luego reproduciremos la escena de nuevo para ver el resultado final.
+
+02:22.960 --> 02:25.030
+En este video tenemos una tarea adicional.
+
+02:25.300 --> 02:29.470
+Esto es algo en lo que puedes profundizar si quieres, en este.
+
+02:29.470 --> 02:31.330
+Hay una escena de varios efectores.
+
+02:31.330 --> 02:37.030
+Puedes reproducir la escena, ver el guión en español, los detalles están fuera del alcance de este curso,
+
+02:37.030 --> 02:37.900
+pero échale un vistazo.
+
+02:38.020 --> 02:44.050
+Generará nuevos objetos cada pocos segundos solo para poblar nuestra escena y crear un poco de caos.
+
+02:44.050 --> 02:47.380
+Puedes experimentar con las propiedades de cada uno de los efectores DS dos.
+
+02:49.160 --> 02:51.050
+Abramos la siguiente escena.
+
+02:51.050 --> 02:52.850
+Efector de punto RD Inicio.
+
+02:54.010 --> 02:58.510
+Lo que vamos a hacer es crear un nuevo Sprite de bomba con un efector de punto en él, y
+
+02:58.510 --> 03:02.020
+luego permitiremos que nuestro clic de ratón active la explosión.
+
+03:15.170 --> 03:21.320
+Lo que hemos añadido es un cuerpo rígido DD y dos colisionadores de círculo diferentes. Un colisionador de círculo será
+
+03:21.320 --> 03:23.300
+para la detección de colisiones.
+
+03:23.540 --> 03:27.800
+El otro colisionador de círculo se utilizará como activador para el efector de punto.
+
+03:31.730 --> 03:34.670
+Estableceremos la magnitud de la fuerza aquí en algo alto.
+
+03:35.400 --> 03:38.580
+Y luego haremos que el activador sea lo suficientemente grande.
+
+03:48.130 --> 03:52.690
+Ahora, el colisionador es lo suficientemente grande como para causar daño a todo lo que esté dentro del colisionador.
+
+03:52.720 --> 03:54.820
+Vamos a ejecutar la escena tal como está.
+
+03:56.610 --> 04:03.450
+Inmediatamente vemos que hay una explosión masiva porque estos objetos estaban dentro del colisionador de círculo
+
+04:03.450 --> 04:06.990
+y recibieron inmediatamente un gran impulso de fuerza constante.
+
+04:07.260 --> 04:11.670
+Vamos a apagar la fuerza y en su lugar usaremos el ratón para activar la explosión.
+
+04:19.210 --> 04:21.170
+Este es un guión personalizado que he creado.
+
+04:21.190 --> 04:25.390
+Toma el efector de punto RD y luego tiene una serie de booleanos.
+
+04:27.910 --> 04:33.520
+Primero, queremos desactivar el efector de punto al despertar, así que lo dejaremos sin marcar.
+
+04:33.730 --> 04:38.840
+Y luego cada vez que lo disparemos, queremos que se active automáticamente de nuevo.
+
+04:38.860 --> 04:42.080
+De esa manera, la explosión ocurre en el transcurso de un solo fotograma.
+
+04:42.100 --> 04:43.210
+Demosle una oportunidad.
+
+04:47.890 --> 04:49.330
+Todavía no hay explosión.
+
+04:49.840 --> 04:52.600
+Y cuando hago clic, obtendremos una explosión en un solo fotograma.
+
+04:54.090 --> 04:55.590
+Es sutil, pero funciona.
+
+04:55.590 --> 04:56.760
+Puedo hacer clic de nuevo.
+
+04:57.900 --> 04:58.770
+Y más.
+
+04:59.430 --> 05:02.910
+Eventualmente, los objetos estarán fuera del colisionador.
+
+05:03.030 --> 05:03.630
+Eso es todo.
+
+05:03.750 --> 05:05.040
+Echemos un vistazo al código.
+
+05:06.940 --> 05:08.650
+Este es un guión personalizado que he creado.
+
+05:08.650 --> 05:11.630
+Así que tomamos el efector de punto RD y los pocos booleanos.
+
+05:11.650 --> 05:16.810
+Dentro del despertar, activamos o desactivamos según nuestros booleanos.
+
+05:16.810 --> 05:19.660
+Cuando está desactivado, el efector no funciona.
+
+05:19.660 --> 05:25.700
+Luego, en la actualización, escuchamos el clic del ratón y, cuando ocurre el clic del ratón, alternamos el efector.
+
+05:25.720 --> 05:26.500
+Eso es todo.
+
+05:28.860 --> 05:31.230
+En el próximo video, dos uniones D.
+
+05:31.230 --> 05:36.090
+Cubriremos el componente de unión D y los diferentes tipos de uniones D.
+
+05:36.090 --> 05:38.910
+También jugaremos con ellos dentro del Unity Editor.

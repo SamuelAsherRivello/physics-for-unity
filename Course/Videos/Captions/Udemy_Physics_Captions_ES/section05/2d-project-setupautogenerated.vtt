@@ -1,0 +1,346 @@
+WEBVTT
+
+00:01.380 --> 00:04.860
+Creando un clon de Angry Birds para el juego DH.
+
+00:04.860 --> 00:09.330
+Bueno, después de todo lo que hemos aprendido en las secciones anteriores, aquí estamos.
+
+00:09.330 --> 00:11.640
+Vamos a hacer un juego completo desde cero.
+
+00:11.880 --> 00:14.920
+Vamos a crear el movimiento de proyectiles con entrada.
+
+00:14.940 --> 00:17.610
+Añade los obstáculos del juego al mundo.
+
+00:17.670 --> 00:23.970
+Añade las condiciones de victoria y derrota y una interfaz de usuario para reflejarlo en la pantalla e incluso tendremos tiempo para añadir algunos...
+
+00:23.970 --> 00:25.050
+pulido extra.
+
+00:26.760 --> 00:28.180
+Configuración de dos proyectos RD.
+
+00:28.200 --> 00:33.750
+En este video, vamos a cubrir lo que es la inspiración para un nuevo proyecto de juego y cómo se traduce que
+
+00:33.750 --> 00:38.820
+inspiración en los conceptos clave y los conceptos de física que necesitaremos para el juego?
+
+00:38.820 --> 00:41.020
+Entonces abriremos unity y empezaremos.
+
+00:41.040 --> 00:46.560
+Una nota sobre toda la sección cinco es que pasaremos mucho más tiempo dentro de Unity.
+
+00:47.500 --> 00:49.060
+Planeando un juego de dos DR.
+
+00:50.090 --> 00:51.720
+Tomemos Angry Birds.
+
+00:51.740 --> 00:54.860
+Un popular juego de física para móviles como inspiración.
+
+00:54.860 --> 01:01.130
+Aquí hay una captura de pantalla muy básica que muestra algunas ilustraciones de dónde estarán las partes principales de la pantalla.
+
+01:01.160 --> 01:03.200
+Vamos a mantener el juego en 2D.
+
+01:03.200 --> 01:05.300
+Vamos a utilizar el movimiento de proyectiles.
+
+01:05.300 --> 01:09.650
+Esa bola azul volará por el aire hacia el personaje amarillo de Pac-Man.
+
+01:09.650 --> 01:14.060
+Tendremos colisiones físicas con el suelo verde y las cajas que son marrones.
+
+01:14.060 --> 01:17.650
+Tendremos explosiones y un estilo artístico ligero y divertido.
+
+01:17.660 --> 01:20.750
+Esto representa los gráficos finales a los que aspiramos.
+
+01:20.780 --> 01:23.060
+El juego que creemos tendrá este aspecto.
+
+01:23.060 --> 01:26.720
+Las reglas de nuestro juego, lo llamaremos patos molestos.
+
+01:26.990 --> 01:30.770
+Las reglas son matar a todos los patos usando asteroides limitados para ganar.
+
+01:30.770 --> 01:34.600
+Creo que te daremos tres asteroides y tú intentas golpear a tres patos.
+
+01:34.610 --> 01:36.590
+Arrastra el ratón para disparar un asteroide.
+
+01:36.590 --> 01:42.410
+A medida que el asteroide colisione con los objetos, quitará salud a los patos y crujirá la salud de los patos.
+
+01:42.410 --> 01:45.290
+Cuando llegue a cero, el pato morirá y te dará puntos.
+
+01:45.290 --> 01:46.340
+La salud de la caja.
+
+01:46.340 --> 01:50.840
+Cuando llegue a cero, explotará y eso ayudará a despejar el nivel para que puedas golpear el
+
+01:50.840 --> 01:51.520
+patos.
+
+01:51.530 --> 01:53.120
+Hablemos de la física implicada.
+
+01:53.120 --> 01:54.380
+Hay tres pasos principales.
+
+01:54.380 --> 01:56.840
+Como puedes ver, tenemos un asteroide dentro de una catapulta.
+
+01:56.840 --> 02:01.070
+Vamos a usar Target joint para tirar de él hacia atrás con el ratón y soltarlo.
+
+02:01.070 --> 02:03.050
+El asteroide vuela por el aire.
+
+02:03.050 --> 02:06.110
+Usaremos la física, añadiremos fuerza y gravedad.
+
+02:06.110 --> 02:11.570
+Cuando se produzcan las colisiones, los patos y las cajas usarán eventos de colisión para comprobarlo.
+
+02:11.570 --> 02:13.130
+¿A qué velocidad me has golpeado?
+
+02:13.130 --> 02:19.310
+Cuánto daño debería causar, etc. Y como extra, tendremos explosiones usando dos efectores rd.
+
+02:20.100 --> 02:21.840
+Hablemos del desglose de tareas.
+
+02:21.840 --> 02:23.110
+Necesitamos terminar esto.
+
+02:23.130 --> 02:27.150
+Esto es también lo que cubriremos en cada uno de los cinco vídeos de esta sección.
+
+02:27.180 --> 02:32.820
+En cinco uno, vamos a hacer el proyecto de dos D configurar en cinco dos, vamos a manejar la catapulta y el asteroide
+
+02:32.820 --> 02:33.930
+y cómo manejar la entrada.
+
+02:33.930 --> 02:39.810
+En cinco tres, vamos a crear las cajas y los documentos molestos en cinco cuatro añadirá ganar las condiciones de pérdida,
+
+02:39.810 --> 02:45.960
+incluyendo la interfaz de usuario que se ve en el texto y en cinco cinco añadirá pulido extra como el efecto de explosión
+
+02:45.960 --> 02:47.310
+y también algunos sonidos.
+
+02:48.280 --> 02:49.810
+La configuración del proyecto de dos RD.
+
+02:50.350 --> 02:53.220
+Usemos esta captura de pantalla como nuestro objetivo.
+
+02:53.230 --> 02:58.220
+Configuraremos las carpetas, la cámara, el suelo y el fondo.
+
+02:58.240 --> 03:02.650
+Hablaremos un poco de la configuración de la cámara y también de los píxeles por unidad en los sprites.
+
+03:03.370 --> 03:04.960
+Vamos a abrir el proyecto.
+
+03:04.990 --> 03:10.770
+Será en la sección cinco, Video uno y esta escena se verá es molesto Dux uno.
+
+03:10.780 --> 03:16.930
+También a lo largo de esta sección, a veces vamos a saltar en una escena y ver el resultado final, y luego voy a
+
+03:16.930 --> 03:19.060
+empezar a codificar desde cero para llegar allí.
+
+03:19.060 --> 03:25.030
+Otras veces utilizaremos el vídeo anterior como punto de partida para el siguiente vídeo para que puedas seguir
+
+03:25.030 --> 03:28.660
+desde el cinco uno hasta el cinco cinco y completar el juego.
+
+03:30.340 --> 03:32.260
+Muy bien, abramos unity y empecemos.
+
+03:33.110 --> 03:36.860
+Vamos a echar un vistazo al dux molesto, uno visto como nuestra inspiración.
+
+03:36.860 --> 03:38.500
+Vamos a recrear esto.
+
+03:38.580 --> 03:45.110
+Puedes ver que tenemos el fondo Sky Sprite, el sprite de hierba para el suelo y estas cajas negras
+
+03:45.110 --> 03:50.000
+en el exterior, que atraparán el disparo si lo haces demasiado lejos de la pantalla.
+
+03:50.000 --> 03:51.080
+Está justo ahí.
+
+03:51.080 --> 03:54.170
+No para que el usuario lo vea, sino por simple física.
+
+03:54.410 --> 04:00.980
+Así que podemos ver la configuración de carpetas que tenemos aquí: animación, material físico, escenas prefabricadas, scripts.
+
+04:00.980 --> 04:02.900
+Así que vamos a replicar eso desde cero.
+
+04:02.900 --> 04:09.770
+En realidad voy a mantener estas carpetas y voy a eliminar lo que tenemos aquí y crear una nueva escena
+
+04:09.770 --> 04:11.030
+desde cero.
+
+04:14.230 --> 04:15.340
+Le daré el mismo nombre.
+
+04:15.370 --> 04:17.800
+Upset Ducks uno.
+
+04:19.420 --> 04:23.200
+Bueno, en realidad va a cambiarle el nombre por mí, así que voy a borrar el original.
+
+04:24.480 --> 04:26.580
+Y aquí tenemos esto.
+
+04:29.960 --> 04:31.760
+Ok, entonces tenemos una escena vacía.
+
+04:32.000 --> 04:32.900
+Estamos listos.
+
+04:33.140 --> 04:36.740
+Así que lo primero que voy a hacer es buscar algunos de los activos que necesitamos.
+
+04:40.770 --> 04:42.180
+Sprite del azulejo del cielo.
+
+04:45.370 --> 04:46.600
+Grasp, ¿verdad?
+
+04:47.770 --> 04:49.210
+Sácalos al mundo.
+
+04:49.960 --> 04:52.680
+Entonces podré moverlos.
+
+04:52.690 --> 04:56.270
+Notarás que la hierba está detrás del cielo.
+
+04:56.290 --> 05:02.230
+Así que para los renders de los sprites, uno de los ajustes que queremos modificar es el orden en la propiedad de las capas.
+
+05:02.860 --> 05:03.760
+Podemos hacerlo.
+
+05:06.220 --> 05:10.720
+Y crear uno aquí, entonces esto va a ser nuestra tierra con la física.
+
+05:10.720 --> 05:11.890
+Así que necesitamos un colisionador.
+
+05:14.690 --> 05:16.160
+Y si editamos el colisionador
+
+05:18.920 --> 05:23.030
+Haremos que un poco de hierba sobresalga por encima del colisionador.
+
+05:24.040 --> 05:25.810
+Entonces voy a querer duplicar eso.
+
+05:29.350 --> 05:31.420
+Así que tenemos que hacerlo.
+
+05:32.300 --> 05:35.270
+Y mover el fondo un poco también.
+
+05:36.070 --> 05:39.400
+Así que estamos bien ahora para crear esas otras partes.
+
+05:41.480 --> 05:43.820
+Arrastra una caja negra aquí.
+
+05:45.260 --> 05:46.730
+Cambia su tamaño.
+
+05:48.780 --> 05:50.010
+En un colisionador.
+
+05:56.680 --> 05:58.960
+Y aún no es demasiado importante dónde van estos.
+
+06:10.210 --> 06:12.040
+La idea es captar esos disparos.
+
+06:12.040 --> 06:13.360
+Podremos ajustarlo más tarde.
+
+06:13.870 --> 06:14.560
+Allá vamos.
+
+06:14.560 --> 06:20.170
+Tenemos una pantalla de buen aspecto con la hierba, el cielo, y estas cajas negras sólo para coger
+
+06:20.170 --> 06:21.970
+los disparos que van demasiado lejos.
+
+06:22.240 --> 06:24.070
+Ahora, empaquetémoslo todo junto.
+
+06:27.350 --> 06:29.090
+Sólo para tener una vista limpia aquí.
+
+06:29.600 --> 06:30.920
+Pondremos a cero.
+
+06:32.370 --> 06:33.900
+Crear un entorno.
+
+06:37.320 --> 06:39.180
+Y pondremos todo en él.
+
+06:42.010 --> 06:44.560
+Y lo arrastraremos aquí a nuestros prefabricados.
+
+06:45.390 --> 06:46.530
+Así que estamos listos.
+
+06:46.530 --> 06:49.620
+Así podremos reutilizar este prefabricado entre escenas si queremos.
+
+06:49.770 --> 06:53.370
+Y también empecé con otro elemento del mundo.
+
+06:55.040 --> 06:56.300
+Objeto de juego aquí.
+
+06:58.350 --> 07:03.150
+Y este es el lugar donde pondremos las cajas y los muelles, etc., en futuros videos.
+
+07:03.450 --> 07:04.110
+Pero eso es todo.
+
+07:04.140 --> 07:05.100
+Muchas gracias.
+
+07:07.890 --> 07:12.240
+En el próximo video, nos ocuparemos de crear el reproductor y la entrada.

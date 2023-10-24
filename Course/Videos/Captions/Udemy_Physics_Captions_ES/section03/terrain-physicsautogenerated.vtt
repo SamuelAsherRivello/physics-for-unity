@@ -1,0 +1,193 @@
+WEBVTT
+
+00:01.750 --> 00:02.800
+Física del terreno.
+
+00:02.800 --> 00:05.760
+En este video, vamos a cubrir lo que es unity terrain.
+
+00:05.770 --> 00:08.850
+Aprenderemos como crear un terreno y agregarle física.
+
+00:08.860 --> 00:13.930
+Finalmente, crearemos un nuevo terreno dentro del editor de unity e interactuaremos con su física.
+
+00:14.140 --> 00:15.460
+En primer lugar, ¿qué es un terreno?
+
+00:15.460 --> 00:19.870
+Bueno, los videojuegos pueden incluir áreas orgánicas como la superficie de un planeta.
+
+00:19.870 --> 00:25.060
+Nuestros personajes y otros elementos del juego pueden caminar e interactuar sobre esa superficie.
+
+00:25.060 --> 00:28.000
+Por ejemplo, nuestro personaje principal, caminando por una montaña.
+
+00:28.000 --> 00:33.070
+La interacción física realista en esta superficie es lo que llamamos física del terreno.
+
+00:33.070 --> 00:35.230
+¿Qué es el sistema de terreno de Unity?
+
+00:35.230 --> 00:39.250
+El sistema de terreno de Unity te permite añadir vastos paisajes a tu juego.
+
+00:39.250 --> 00:45.100
+El editor de Unity proporciona una selección de herramientas para crear el terreno rápida y fácilmente en tiempo de ejecución.
+
+00:45.100 --> 00:48.430
+El renderizado del terreno está altamente optimizado para una mayor eficiencia.
+
+00:48.730 --> 00:50.920
+Las características del terreno Sistema.
+
+00:50.920 --> 00:57.340
+Tiene una textura de superficie editable y geometría de superficie editable y un colisionador de terreno automatizado.
+
+00:58.150 --> 01:03.910
+Por ejemplo, en esta escena de aquí, hay un terreno que he creado y tengo una serie de diferentes
+
+01:03.910 --> 01:09.670
+bolas cayendo sobre la superficie e interactuando con ella como en una superficie física real.
+
+01:11.160 --> 01:12.990
+El componente colisionador del terreno.
+
+01:12.990 --> 01:17.730
+Es lo que define la superficie de colisión para la misma forma que el terreno.
+
+01:18.000 --> 01:21.720
+Así que tenemos un objeto de juego con nuestro típico componente de transformación.
+
+01:21.720 --> 01:27.180
+Y luego para configurar este escenario, tenemos que añadir el componente terreno, el Collider terreno, y
+
+01:27.180 --> 01:29.040
+el activo de datos del terreno.
+
+01:30.340 --> 01:32.830
+¿Cuáles son las propiedades físicas del terreno?
+
+01:33.160 --> 01:36.910
+Hay un montón de configuraciones aquí, pero nos centraremos en las físicas del material.
+
+01:36.910 --> 01:42.370
+Esa es una referencia al activo que describe cómo manejar la colisión de objetos por fricción y rebote
+
+01:42.370 --> 01:42.740
+nosotros.
+
+01:42.760 --> 01:45.850
+Los datos del terreno es algo que aún no hemos visto.
+
+01:45.850 --> 01:50.530
+Almacena la altura, los mapas o la superficie de dónde están las montañas y los valles.
+
+01:50.560 --> 01:57.220
+Las posiciones de la malla de detalle, Cualquier instancia de árbol que hayas añadido, puedes añadir árboles encima de la malla de detalle.
+
+01:57.220 --> 02:03.430
+superficie para crear una escena realista y los mapas alfa de la textura del terreno habilitan los colisionadores de árboles.
+
+02:03.430 --> 02:10.210
+Si lo configuras como true, también incluirás la geometría de los árboles en los cálculos de colisión.
+
+02:10.210 --> 02:15.940
+Así que poner true aquí es más caro, pero te da el resultado realista que puedes querer, que
+
+02:15.940 --> 02:20.940
+es que tu personaje y otros objetos reboten en los árboles de forma creíble.
+
+02:20.950 --> 02:26.230
+La propiedad thickness determina el grosor del terreno en la dirección vertical cuando
+
+02:26.230 --> 02:27.730
+con un colisionador de terreno.
+
+02:27.730 --> 02:33.820
+Cualquier colisionador que se encuentre dentro de esta superficie de espesor será colocado encima de la superficie.
+
+02:34.660 --> 02:37.060
+Así que vamos a crear un terreno con física.
+
+02:37.510 --> 02:38.950
+Abriremos el terreno.
+
+02:38.950 --> 02:41.430
+Comenzar escena creará un terreno.
+
+02:41.440 --> 02:43.120
+Aprenderemos a editarlo.
+
+02:43.150 --> 02:46.630
+Crearemos algunos objetos siguientes encima para probar la física.
+
+02:47.350 --> 02:49.270
+Vamos a utilizar terrain begin.
+
+02:51.020 --> 02:51.200
+Aquí.
+
+02:51.200 --> 02:52.760
+Tenemos una cámara preparada.
+
+02:52.760 --> 02:55.880
+Todavía no hay terreno, así que vamos a crear el terreno.
+
+02:56.390 --> 02:59.510
+Vamos a utilizar el Game object tres D object terrain.
+
+03:01.580 --> 03:03.710
+Esto crea un terreno en el centro del mundo.
+
+03:03.740 --> 03:07.880
+Ahora vamos a añadir algunas capas en la parte superior que podemos utilizar para pintar la textura.
+
+03:12.620 --> 03:13.940
+Crearemos tres capas.
+
+03:13.940 --> 03:15.170
+Una para la roca.
+
+03:16.250 --> 03:17.990
+Una para nieve y otra para hierba.
+
+03:21.760 --> 03:27.770
+Y luego vamos a seguir adelante y en lugar de pintar la textura, en primer lugar, vamos a subir y bajar el terreno.
+
+03:29.070 --> 03:32.370
+Tanto con los pinceles como con el terreno, podemos ajustar el tamaño y la opacidad.
+
+03:43.340 --> 03:45.830
+Y luego sobre las montañas pintaremos la textura adecuada.
+
+04:06.480 --> 04:06.750
+Listo.
+
+04:06.750 --> 04:11.910
+Tenemos unas montañas con algo de nieve y diferentes texturas, y nos daremos cuenta.
+
+04:13.120 --> 04:13.930
+En el terreno.
+
+04:13.930 --> 04:17.140
+Tenemos la tarjeta de terreno o automáticamente configurado para nosotros.
+
+04:17.860 --> 04:19.510
+Y vamos a seguir adelante y ejecutar la escena.
+
+04:20.990 --> 04:25.610
+También vamos a traer el patrocinador que he creado para poner algunos objetos en la parte superior para probar la física.
+
+04:31.170 --> 04:37.350
+Podemos ver que nuestros objetos spawned amarillos responden a la superficie y se acumulan en los puntos bajos, también
+
+04:37.350 --> 04:38.640
+cayendo del terreno.
+
+04:39.600 --> 04:40.710
+Comportándose con la física.
+
+04:45.460 --> 04:49.270
+En la siguiente sección, veremos la programación de física en Unity C Sharp.

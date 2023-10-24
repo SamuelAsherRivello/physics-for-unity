@@ -1,0 +1,346 @@
+WEBVTT
+
+00:01.700 --> 00:02.900
+Física Ragdoll.
+
+00:02.900 --> 00:06.890
+En este vídeo veremos qué es la física ragdoll y cómo configurarla.
+
+00:06.920 --> 00:11.480
+Luego abriremos unity y crearemos un personaje ragdoll usando el editor de Unity.
+
+00:12.170 --> 00:13.730
+¿Qué es la física ragdoll?
+
+00:13.760 --> 00:19.940
+Bueno, es común en los videojuegos incluir personajes humanoides que caminan sobre dos pies y tienen dos brazos,
+
+00:19.940 --> 00:20.810
+por ejemplo.
+
+00:20.810 --> 00:25.030
+Y esos personajes pueden morir en el transcurso del juego o quedar inconscientes.
+
+00:25.040 --> 00:30.710
+El movimiento físico realista de los cuerpos de sus personajes, cuando tal vez reciben un disparo en primera persona
+
+00:30.710 --> 00:35.180
+o quedan inconscientes en un juego de lucha cuerpo a cuerpo.
+
+00:35.190 --> 00:39.770
+El movimiento de caída inconsciente del personaje es lo que llamamos física ragdoll.
+
+00:40.600 --> 00:42.550
+Aquí hay un ejemplo sin ragdoll.
+
+00:42.760 --> 00:44.590
+Tenemos un modelo humanoide.
+
+00:44.800 --> 00:48.190
+Hay un box collider para todo el personaje.
+
+00:48.550 --> 00:53.650
+Como puedes ver, el personaje cae como un maniquí de una pieza rígida.
+
+00:53.680 --> 00:59.560
+Los resultados son predecibles y no tienen la variedad o realismo que queremos en un juego.
+
+01:00.040 --> 01:04.720
+Con ragdoll, tenemos el mismo modelo, pero hay muchos colisionadores.
+
+01:04.720 --> 01:07.130
+Tenemos collider por parte del cuerpo.
+
+01:07.150 --> 01:09.820
+Hay muchos en el caso de un modelo humanoide.
+
+01:09.850 --> 01:14.440
+Los resultados parecen más sueltos y aleatorios, y eso nos gusta.
+
+01:14.650 --> 01:21.910
+Este es un vídeo en bucle de exactamente la misma toma, pero si repitiéramos esto en vivo y en directo
+
+01:21.910 --> 01:23.380
+veríamos movimientos sutiles.
+
+01:23.380 --> 01:27.970
+El personaje voltearía de varias formas diferentes en función de la superficie en la que se encuentre.
+
+01:27.970 --> 01:28.930
+Y eso nos gusta.
+
+01:29.920 --> 01:34.060
+Así que comparando los dos, nos gusta más el resultado de la izquierda con ragdoll.
+
+01:34.150 --> 01:36.220
+Conseguimos una sensación más suelta.
+
+01:36.220 --> 01:41.470
+Conseguimos algo más realista que usando sin ragdoll con un colisionador gigante.
+
+01:42.620 --> 01:44.210
+Así que vamos a montar el ragdoll.
+
+01:44.360 --> 01:48.390
+El proceso fue así Vamos a configurar un modelo de personaje3d.
+
+01:48.410 --> 01:50.570
+Luego tendremos que añadir muchos colliders.
+
+01:50.570 --> 01:56.270
+Puedes ver en la captura de pantalla que el personaje Ethan Skeleton, que tenemos en la escena, tiene un
+
+01:56.270 --> 01:57.590
+muchas partes.
+
+01:57.740 --> 02:02.900
+Tenemos la mano, tenemos el antebrazo, tenemos el antebrazo en la parte superior del brazo, etc. y necesitaríamos
+
+02:02.900 --> 02:07.550
+poner una articulación entre cada uno de esos pares de cuerpo rígido y colisionador.
+
+02:07.550 --> 02:09.890
+Luego lo guardaríamos como prefabricado y habríamos terminado.
+
+02:09.920 --> 02:15.860
+Ahora, hubo un tiempo en que tenías que hacer esto, pero por suerte Unity tiene un editor que podemos usar para hacer
+
+02:15.860 --> 02:17.090
+esto mucho más rápido.
+
+02:17.090 --> 02:18.920
+Así que este es el asistente de la muñeca de trapo.
+
+02:18.920 --> 02:25.430
+Podemos abrir el menú de Unity desde Game Object tres, Object Ragdoll y vemos el menú que hemos
+
+02:25.430 --> 02:26.700
+tenemos aquí en la captura de pantalla.
+
+02:26.720 --> 02:33.800
+Lo que hacemos entonces es arrastrar cada parte de esa intrincada jerarquía que vimos en la última captura de pantalla arrastrando
+
+02:33.800 --> 02:39.470
+la pelvis, la cadera izquierda, la rodilla izquierda, etc. Tienes que tener cuidado porque dependiendo de donde
+
+02:39.470 --> 02:44.420
+consigues tu modelo o si construyes tu modelo, las partes pueden no estar nombradas de esta manera.
+
+02:44.420 --> 02:49.880
+Pero esta es una convención bastante estándar para que un personaje humanoide tenga al menos esta cantidad de partes.
+
+02:49.880 --> 02:53.480
+Así que las arrastras todas aquí y luego hay algunas propiedades que establecer.
+
+02:53.480 --> 02:56.150
+Las propiedades se centrarán en nuestra masa total.
+
+02:56.150 --> 02:59.510
+Este es el valor distribuido lógicamente entre todas las articulaciones.
+
+02:59.510 --> 03:05.630
+Así que si le damos un valor por defecto de 20, entonces la masa total de 20 se distribuye a través de esas articulaciones.
+
+03:05.840 --> 03:08.600
+La fuerza es la resistencia de las juntas.
+
+03:08.600 --> 03:11.950
+Si tiene un valor más alto, es menos probable que se rompa.
+
+03:11.960 --> 03:15.260
+No querrás que tu personaje tenga partes del cuerpo que se rompan.
+
+03:15.260 --> 03:17.960
+Así que es común mantener el valor bastante alto.
+
+03:17.990 --> 03:19.040
+Voltea hacia adelante.
+
+03:19.040 --> 03:25.910
+Si se establece en verdadero, entonces si el modelo fue creado tipo de marcha atrás, entonces se compensará por
+
+03:25.940 --> 03:26.210
+eso.
+
+03:26.210 --> 03:30.380
+Pero normalmente, si arrastras el modelo al mundo y está mirando hacia delante, hacia el
+
+03:30.380 --> 03:34.070
+cámara, probablemente quieras usar el valor por defecto, pero puedes experimentar.
+
+03:35.320 --> 03:37.450
+Así que vamos a configurar un muñeco de trapo dentro de Unity.
+
+03:38.170 --> 03:40.760
+Abriremos la escena "ragdoll begin".
+
+03:40.780 --> 03:44.950
+Reproduciremos la escena para ver que aún no tenemos nuestro ragdoll añadido.
+
+03:44.980 --> 03:47.300
+Luego usaremos el asistente para añadir el ragdoll.
+
+03:47.320 --> 03:49.870
+Reproduce la escena de nuevo y verás el efecto completado.
+
+03:50.750 --> 03:52.340
+Muy bien, abramos la siguiente escena.
+
+03:53.380 --> 03:53.560
+Aquí.
+
+03:53.560 --> 03:55.630
+Vamos a ver Ragdoll Begin.
+
+03:56.560 --> 04:00.290
+Tenemos una serie de cubos que conocemos de nuestra pirámide de cubos.
+
+04:01.540 --> 04:03.210
+Hemos añadido encima del modelo.
+
+04:03.210 --> 04:07.680
+Este modelo de personaje se llama Ethan, y lo he marcado Ethan sin ragdoll.
+
+04:08.310 --> 04:10.140
+Si echamos un vistazo al modelo aquí.
+
+04:11.070 --> 04:14.820
+Podemos ver que tiene un esqueleto.
+
+04:15.510 --> 04:17.010
+Con muchas partes.
+
+04:17.040 --> 04:21.420
+Incluso ampliaré nuestra vista para que podamos hacernos una mejor idea.
+
+04:28.010 --> 04:29.840
+Así que podemos ver que tenemos muchas partes aquí.
+
+04:29.840 --> 04:36.470
+Si sólo reproducimos la escena, no pasará nada porque aún no tenemos ninguna física, añadidos los cubos.
+
+04:36.470 --> 04:41.510
+Se asientan como esperaríamos que lo hicieran, pero nuestro personaje flota en el aire porque no tiene física
+
+04:41.510 --> 04:42.520
+componentes todavía.
+
+04:42.530 --> 04:45.950
+Sigamos adelante y utilicemos el asistente para crear el muñeco de trapo.
+
+04:49.810 --> 04:54.170
+Ahora como nos indica arrastramos todos los huesos de la jerarquía a sus ranuras.
+
+04:54.190 --> 04:56.770
+Asegúrate de que tu personaje está en un soporte PT.
+
+04:56.860 --> 04:59.320
+Así es como llamamos a esta posición en la que están los personajes.
+
+04:59.350 --> 05:06.310
+Ahora, típicamente los modeladores y animadores 3D usan esta posición con los brazos extendidos y el cuerpo
+
+05:06.310 --> 05:09.640
+relativamente recto se parece a la letra T.
+
+05:09.790 --> 05:11.890
+Así que sigamos adelante y arrastremos.
+
+05:22.410 --> 05:25.410
+Ahora note que algunos de los nombres de este modelo es diferente.
+
+05:25.410 --> 05:32.760
+No dice necesariamente pelvis, cadera izquierda, etc. Puede que haya que experimentar, por supuesto, dependiendo...
+
+05:32.760 --> 05:35.730
+de quién haya hecho el modelo o incluso si lo has hecho tú mismo.
+
+05:36.030 --> 05:38.760
+Cada persona tiene libertad para nombrar estas piezas.
+
+05:38.850 --> 05:45.000
+Esperamos que haya una relación de 1 a 1 entre la estructura que quiere el mago del muñeco de trapo y
+
+05:45.000 --> 05:46.510
+la estructura del modelo.
+
+05:46.530 --> 05:49.800
+Aquí parece que tenemos que ahora como el último paso.
+
+05:49.800 --> 05:53.790
+Podemos establecer la masa total, la fuerza y el giro hacia adelante.
+
+05:54.090 --> 05:56.970
+Voy a cambiar la masa total a un valor más alto.
+
+05:57.300 --> 05:59.660
+Voy a probar con 100 para la fuerza.
+
+05:59.670 --> 06:01.200
+Voy a poner un valor de 1.
+
+06:01.470 --> 06:02.820
+Y giro hacia adelante.
+
+06:02.820 --> 06:04.020
+Lo pondré en verdadero.
+
+06:04.650 --> 06:06.180
+Me está dando un error aquí.
+
+06:06.180 --> 06:09.810
+El codo derecho y el codo izquierdo no pueden estar asignados al mismo.
+
+06:09.810 --> 06:11.010
+Déjame ver.
+
+06:13.260 --> 06:18.270
+Accidentalmente lo he puesto mal, así que usaré el derecho.
+
+06:19.530 --> 06:19.920
+Estupendo.
+
+06:19.920 --> 06:20.730
+Sin errores.
+
+06:20.730 --> 06:22.260
+Y puedo usar el botón de crear.
+
+06:23.000 --> 06:23.880
+Y listo.
+
+06:23.900 --> 06:25.790
+Ahora si exploramos el modelo.
+
+06:26.720 --> 06:28.880
+Haciendo clic a través de algunas piezas clave aquí.
+
+06:29.210 --> 06:35.090
+Digamos que el brazo izquierdo, por ejemplo, podemos ver que tenemos una articulación de carácter establecido y un rígido
+
+06:35.090 --> 06:35.680
+cuerpo.
+
+06:35.690 --> 06:38.090
+Así que cada uno de estos se han configurado correctamente.
+
+06:38.090 --> 06:39.830
+Vamos a ejecutar la escena y ver el resultado.
+
+06:43.940 --> 06:44.720
+Se ve bien.
+
+06:45.320 --> 06:50.870
+Usaré el atajo de la barra espaciadora disponible en todas las escenas de pubs llenos y la veré varias veces.
+
+06:55.210 --> 07:00.520
+Ahora, como he puesto su masa a 100, cae, obligando a los cubos a apartarse.
+
+07:02.760 --> 07:08.910
+Si hubiera puesto un valor diferente, quizás más bajo como el 20 por defecto, podría caer alrededor de los cubos.
+
+07:08.910 --> 07:12.330
+Pero aquí es relativamente pesado, relativamente masivo.
+
+07:15.120 --> 07:17.580
+En el próximo video, cubriremos la física del terreno.

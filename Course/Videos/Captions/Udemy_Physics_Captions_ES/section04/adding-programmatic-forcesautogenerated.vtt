@@ -1,0 +1,238 @@
+WEBVTT
+
+00:00.700 --> 00:02.470
+Añadiendo fuerzas programáticas.
+
+00:02.740 --> 00:08.720
+En este video, cubriremos el movimiento en unity, tanto el movimiento tradicional como el movimiento con física.
+
+00:08.740 --> 00:12.510
+Examinaremos los tipos de fuerzas que podemos utilizar en el movimiento con física.
+
+00:12.520 --> 00:15.220
+Abriremos la unidad y jugaremos con esas fuerzas.
+
+00:15.400 --> 00:18.490
+Movimiento en Unity con movimiento tradicional.
+
+00:18.490 --> 00:22.060
+En unity, el movimiento se produce a través del componente transform.
+
+00:22.360 --> 00:25.600
+Echa un vistazo al fragmento de una llamada de actualización.
+
+00:25.600 --> 00:32.260
+Comprobamos si la entrada es En este caso, se mantiene pulsada una tecla de flecha hacia la derecha y luego movemos la transformación
+
+00:32.260 --> 00:35.290
+a otra posición.
+
+00:35.290 --> 00:40.870
+Los pasos son actualizar la entrada y usar el movimiento de transformación.
+
+00:40.870 --> 00:45.640
+En física un poco diferente El movimiento se produce a través del componente de cuerpo rígido.
+
+00:45.910 --> 00:53.140
+Haciendo un ejemplo muy similar aquí estamos usando actualización fija, tomando la entrada y luego añadiendo una fuerza
+
+00:53.140 --> 00:54.310
+al cuerpo rígido.
+
+00:54.520 --> 01:00.640
+Vamos a comparar los dos en tradicional utilizamos actualización y la actualización se llama una vez por fotograma.
+
+01:00.760 --> 01:06.760
+Esto depende de la velocidad de fotogramas, tanto la prevista por el desarrollador como la real.
+
+01:07.000 --> 01:12.970
+que es variable e impredecible en función del dispositivo y de la cantidad de cálculos que se realicen.
+
+01:12.970 --> 01:14.470
+en un momento dado.
+
+01:14.470 --> 01:17.580
+La actualización fija, por otro lado, es sólo para la física.
+
+01:17.590 --> 01:22.870
+Se llama cero o una o muchas veces por fotograma, dependiendo de la configuración de tu proyecto.
+
+01:22.870 --> 01:25.810
+Depende del valor llamado paso de tiempo fijo.
+
+01:25.810 --> 01:27.610
+Es muy predecible.
+
+01:27.640 --> 01:29.170
+Y nota sobre la actualización fija.
+
+01:29.170 --> 01:35.260
+La función de actualización fija se recomienda como el lugar para aplicar fuerzas y cambiar la configuración del cuerpo rígido como
+
+01:35.260 --> 01:39.310
+a diferencia de update, que se utiliza para la mayoría de las otras tareas de unity.
+
+01:39.310 --> 01:45.700
+La razón de esto es que la actualización de la física se lleva a cabo en un paso de tiempo medido y no coincide
+
+01:45.700 --> 01:46.870
+con la actualización del cuadro.
+
+01:46.870 --> 01:53.260
+La actualización fija se llama inmediatamente antes de cada actualización de la física, por lo que cualquier cambio realizado allí será procesado
+
+01:53.260 --> 01:53.920
+directamente.
+
+01:53.920 --> 01:58.900
+Así que queremos utilizar la actualización de la física para cualquiera de nuestras operaciones basadas en la física.
+
+01:58.900 --> 02:03.430
+Veamos el movimiento físico en Unity, hay diferentes tipos de fuerzas que podemos aplicar.
+
+02:03.460 --> 02:10.750
+Hay muchos Si queremos cambiar, la posición será cambiar la propiedad llamada velocidad, y
+
+02:10.750 --> 02:15.610
+los métodos que podemos usar son añadir fuerza, añadir fuerza de explosión y más.
+
+02:15.730 --> 02:21.220
+Si queremos cambiar la rotación, estaremos cambiando la velocidad angular y hay métodos para eso
+
+02:21.220 --> 02:21.690
+también.
+
+02:21.700 --> 02:25.090
+Los más comunes son agregar fuerza y agregar torque.
+
+02:25.090 --> 02:27.280
+Realmente añadir fuerza es el más común.
+
+02:27.400 --> 02:32.740
+Si nos fijamos en un fragmento de código aquí, vemos dentro de actualización fija, estamos añadiendo una fuerza y este objeto
+
+02:32.740 --> 02:37.060
+se estaría moviendo en la dirección x positiva, que es hacia la derecha.
+
+02:37.240 --> 02:44.740
+Si tuviéramos que añadir torsión, podríamos utilizar una configuración similar y utilizar el método de añadir torsión y aplicar una rotación
+
+02:44.740 --> 02:45.690
+a ese objeto.
+
+02:45.700 --> 02:52.240
+Ahora el modo de fuerza, que se pasa al método ADD force y add torque tiene diferentes consecuencias.
+
+02:52.330 --> 02:54.730
+El valor por defecto es fuerza.
+
+02:54.820 --> 02:58.950
+También hay aceleración, impulso y cambio de velocidad.
+
+02:58.960 --> 03:04.300
+Puedes ver que algunos de ellos se ven afectados por la masa de los objetos y otros no.
+
+03:04.480 --> 03:11.320
+El típico de fuerza es un movimiento gradual y realista, y es el que se suele utilizar
+
+03:11.320 --> 03:13.840
+para la física básica y los juegos.
+
+03:13.930 --> 03:16.630
+Pero estos otros ofrecen buenas alternativas.
+
+03:16.870 --> 03:18.370
+Veamos una demo.
+
+03:18.400 --> 03:24.340
+Abriremos la demo de ad force, reproduciremos la escena, usaremos las teclas de flecha arriba y abajo, que yo
+
+03:24.340 --> 03:29.380
+he configurado de forma similar a los fragmentos que hemos visto para añadir fuerzas a los diferentes objetos.
+
+03:29.380 --> 03:34.600
+A continuación vamos a ver el inspector y el código fuente y vamos a jugar un poco con el material físico,
+
+03:34.600 --> 03:35.080
+también.
+
+03:35.770 --> 03:35.980
+De acuerdo.
+
+03:35.980 --> 03:37.300
+Abramos nuestra siguiente escena.
+
+03:37.300 --> 03:39.280
+Vamos a echar un vistazo a la demostración de fuerza publicitaria.
+
+03:40.310 --> 03:44.270
+Aquí tenemos una serie de cubos colocados en rampas.
+
+03:44.480 --> 03:46.190
+Fíjate en el texto resaltado.
+
+03:46.190 --> 03:51.560
+Aquí tenemos una fuerza, un cambio de velocidad de impulso y una aceleración.
+
+03:53.010 --> 03:58.610
+Si miramos el código que hay en cada uno de estos vemos en el inspector, que tenemos un script de demostración de añadir fuerza.
+
+03:58.620 --> 04:01.020
+Cogemos una flecha arriba y una flecha abajo.
+
+04:01.020 --> 04:05.880
+Nuestra entrada para todos ellos, añadimos la misma fuerza de 20 en la dirección x.
+
+04:05.880 --> 04:09.450
+El modo de fuerza es diferente para cada uno de los cuatro cubos.
+
+04:10.430 --> 04:12.380
+El que hemos resaltado aquí es el de fuerza.
+
+04:12.380 --> 04:18.080
+Vamos a reproducir la escena y ver lo diferente que se comportan con el mismo escenario donde la única diferencia
+
+04:18.080 --> 04:19.040
+es el modo de fuerza.
+
+04:24.220 --> 04:26.380
+Si caen bajo su propio control.
+
+04:28.080 --> 04:30.030
+Y luego voy a mantener pulsada la tecla de arriba.
+
+04:34.710 --> 04:36.570
+Y luego voy a mantener pulsada la tecla abajo.
+
+04:42.730 --> 04:48.310
+Observa que algunos aceleran mucho más rápido y también algunos tienen un movimiento más impredecible en
+
+04:48.310 --> 04:49.510
+la dirección Y.
+
+04:50.320 --> 04:51.610
+Como tarea extra.
+
+04:51.610 --> 04:57.640
+Si quieres profundizar en esto, hay otra escena a la que puedes echar un vistazo en su demo de charla publicitaria.
+
+04:57.670 --> 05:02.740
+Puedes reproducir la escena, usar las teclas de flecha e inspeccionar el código para echar un vistazo.
+
+05:02.740 --> 05:04.930
+Si estás interesado en aprender más sobre talk.
+
+05:05.410 --> 05:12.160
+En el siguiente video cubriremos el uso de la cinemática, la gravedad y la velocidad.
+
+05:12.250 --> 05:16.300
+Estas son propiedades de física comunes y útiles que podemos establecer con código.
+
+05:16.330 --> 05:21.760
+También vamos a echar un vistazo a la activación y desactivación de la física en los objetos del juego y vamos a aprender por qué queremos
+
+05:21.760 --> 05:22.180
+hacer eso.
+
+05:22.180 --> 05:26.800
+A veces también jugaremos con todas estas propiedades dentro del Editor de Unity.

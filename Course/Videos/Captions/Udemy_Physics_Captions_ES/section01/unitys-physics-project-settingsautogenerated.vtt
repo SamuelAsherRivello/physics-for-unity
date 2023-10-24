@@ -1,0 +1,261 @@
+WEBVTT
+
+00:01.640 --> 00:04.290
+Configuración del proyecto de física de Unity.
+
+00:04.310 --> 00:07.880
+En este video, cubriremos ¿qué son las configuraciones del proyecto de Unity?
+
+00:07.880 --> 00:10.550
+¿Cuáles de estas configuraciones son más importantes para la física?
+
+00:10.550 --> 00:15.230
+Y experimentaremos con estas configuraciones dentro del editor de Unity para ver algunos resultados.
+
+00:15.860 --> 00:17.360
+Configuración del Proyecto de Unity.
+
+00:17.360 --> 00:23.390
+Estas son las configuraciones de alto nivel que usamos para ajustar los principales sistemas en Unity, incluyendo gráficos y física.
+
+00:23.390 --> 00:24.290
+Para abrirlas.
+
+00:24.290 --> 00:26.730
+Usa la opción "Editar configuración del proyecto" en Unity.
+
+00:26.750 --> 00:31.370
+Como muestra la captura de pantalla, hay un cuadro de búsqueda para filtrar las configuraciones.
+
+00:31.370 --> 00:36.890
+Las configuraciones están organizadas por categoría y hay un panel de detalles con las propias configuraciones que
+
+00:36.890 --> 00:39.440
+interactuarán con el proyecto de física.
+
+00:39.440 --> 00:43.100
+Las configuraciones para 3D incluyen muchas propiedades diferentes.
+
+00:43.100 --> 00:45.020
+Nos centraremos en algunas clave.
+
+00:45.020 --> 00:46.310
+En primer lugar, la gravedad.
+
+00:46.310 --> 00:52.670
+Las configuraciones predeterminadas simulan la gravedad en la Tierra. Si deseas simular otros planetas o escenarios diferentes en tu juego, puedes ajustar la gravedad aquí.
+
+00:52.670 --> 00:55.460
+Es importante tener en cuenta que si cambias drásticamente la gravedad, es posible que también quieras ajustar las iteraciones predeterminadas del solucionador para obtener resultados más estables.
+
+00:55.460 --> 01:01.010
+También puedes configurar el material predeterminado, en una sección posterior, cubriremos qué son los materiales de física.
+
+01:01.010 --> 01:14.120
+Permiten que cada objeto en tu mundo tenga diferentes propiedades de elasticidad y fricción.
+
+01:14.120 --> 01:15.440
+Si deseas configurarlos globalmente.
+
+01:15.440 --> 01:18.080
+Aquí puedes hacerlo y modos de pares de contacto.
+
+01:18.080 --> 01:22.520
+Esta es una configuración que tal vez quieras ajustar si estás moviendo objetos cinemáticos en un mundo de física.
+
+01:22.520 --> 01:25.550
+Hablaremos de las propiedades de los cuerpos rígidos cinemáticos más adelante.
+
+01:25.550 --> 01:29.090
+Otras propiedades interesantes permiten una determinación mejorada.
+
+01:29.090 --> 01:34.130
+Ahora, este modo sacrificará algo de rendimiento, lo que significa que necesitarás un dispositivo más potente, pero obtendrás una mejor determinación.
+
+01:34.130 --> 01:35.570
+La determinación en la física significa que si ejecutas la misma simulación una y otra vez, obtendrás el mismo resultado.
+
+01:35.570 --> 01:51.200
+En algunos diseños de juego, esto es importante. A menudo, no lo es.
+
+01:51.200 --> 01:54.950
+La matriz de colisiones por capa define qué objetos en tu mundo chocan con otros objetos.
+
+01:54.950 --> 01:57.920
+Por defecto, en Unity, todo choca con todo.
+
+01:57.920 --> 02:03.350
+Cuando diseñes un juego como optimización, considera desmarcar todas las colisiones que no ocurren en tu juego o que no deseas, y obtendrás un mejor rendimiento.
+
+02:03.350 --> 02:07.190
+Vamos a ver una demostración.
+
+02:09.420 --> 02:11.280
+Vamos a ver el proyecto de Pirámides en 3D.
+
+02:11.280 --> 02:11.730
+Nuevamente.
+
+02:11.730 --> 02:18.060
+Jugaremos con la gravedad, el material predeterminado y la matriz de colisión de capas dentro de Unity.
+
+02:18.060 --> 02:22.520
+Abramos la sección uno, Video dos, Pirámide en 3D.
+
+02:22.530 --> 02:29.640
+Reutilizaremos esta escena para hablar de las configuraciones del proyecto en la ventana de edición de configuración del proyecto.
+
+02:29.790 --> 02:34.560
+Podemos ver todas las configuraciones del proyecto para varias cosas dentro de Unity.
+
+02:34.620 --> 02:40.830
+Estamos interesados en la Física 2D para nuestra física en 2D, y en esta demostración, la física para nuestra física en 3D.
+
+02:40.830 --> 02:45.330
+Dado que tenemos una escena en 3D, manipulémosla primero.
+
+02:45.330 --> 02:50.000
+Comencemos jugando la escena y veremos que estos cubos se asientan uno encima del otro.
+
+02:50.010 --> 02:55.710
+Ahora cambiemos la gravedad de negativa que simula la Tierra a una gravedad positiva.
+
+02:55.830 --> 03:00.000
+Esto crearía gravedad en una dirección ascendente.
+
+03:00.000 --> 03:03.210
+Tal vez tu juego lo requiera dependiendo de las mecánicas del juego que tengas.
+
+03:03.630 --> 03:07.560
+Entonces, vemos que estos objetos vuelan por el aire.
+
+03:07.560 --> 03:11.310
+Es un poco tonto para la mayoría de nuestros ejemplos, pero puedes controlarlo.
+
+03:11.310 --> 03:15.300
+Están dentro de esta pequeña rueda dentada, puedes abrir este menú y hacer clic en "Restablecer".
+
+03:15.370 --> 03:18.990
+Eso devolverá todos los valores de esta ventana en particular a los valores predeterminados
+
+.
+
+03:18.990 --> 03:21.110
+Entonces hemos deshecho ese cambio.
+
+03:21.120 --> 03:25.140
+Ahora veamos el material predeterminado en la ventana del proyecto.
+
+03:25.140 --> 03:27.630
+Podemos crear un material de física.
+
+03:27.630 --> 03:32.820
+Hablaremos más sobre esto más adelante, pero queremos mostrarte que si creamos un material de física
+
+03:32.820 --> 03:38.490
+y lo creamos con mucha elasticidad, una elasticidad de uno, luego lo arrastramos como el nuevo
+
+03:38.490 --> 03:39.570
+material predeterminado.
+
+03:39.570 --> 03:45.480
+Eso significa que si hay objetos en la escena que aún no tienen un material adjunto,
+
+03:45.480 --> 03:47.940
+este será el nuevo material predeterminado.
+
+03:47.940 --> 03:50.520
+Así que aquí les estamos dando este que es elástico.
+
+03:50.520 --> 03:52.140
+Así que vamos a jugar la escena.
+
+03:53.890 --> 03:57.310
+Y podemos ver que al menos una de las cajas se comporta de manera un poco extraña.
+
+03:57.730 --> 04:03.100
+Ahora, si adelanto y muevo esto, podemos ver que las que he movido rebotan alrededor de la escena
+
+04:03.670 --> 04:05.620
+con un alto nivel de elasticidad.
+
+04:05.650 --> 04:07.360
+Ahora todas son afectadas por igual.
+
+04:07.360 --> 04:09.400
+Depende de cuál manipulo.
+
+04:11.260 --> 04:13.720
+Ahora, si detenemos la escena nuevamente y reiniciamos.
+
+04:14.710 --> 04:17.660
+Podemos mirar aquí abajo y vemos la matriz de colisión por capas.
+
+04:17.680 --> 04:23.440
+Esto muestra que todo en el proyecto choca con todo por capa.
+
+04:23.470 --> 04:25.120
+Las capas se establecen aquí.
+
+04:25.390 --> 04:30.850
+En la parte superior, podemos designar la capa para cada uno de los objetos en nuestra escena, por lo que podemos ver que los cubos
+
+04:30.850 --> 04:32.590
+están designados como "default".
+
+04:33.550 --> 04:38.530
+Y dentro del entorno, tenemos el suelo designado como "floor".
+
+04:38.920 --> 04:40.990
+Entonces, si juego la escena.
+
+04:43.980 --> 04:47.310
+Y luego aquí abajo puedo desmarcar "floor" y "default".
+
+04:47.310 --> 04:52.890
+Y veremos que ahora nuestros cubos predeterminados caen directamente a través del suelo.
+
+04:52.920 --> 04:55.920
+Así que puedes controlar eso dentro de esa matriz.
+
+04:56.220 --> 05:01.450
+También ten en cuenta que cualquier cambio que hagamos durante la escena puede restablecerse una vez que detengamos la escena.
+
+05:01.470 --> 05:03.450
+Dentro de esta ventana, depende un poco.
+
+05:03.450 --> 05:05.610
+Algunas de las configuraciones se mantienen y otras no.
+
+05:05.640 --> 05:08.070
+Así que ten en cuenta cuándo haces cambios.
+
+05:08.070 --> 05:12.360
+Si estás jugando la escena, es posible que debas restablecerlos después de detener la escena.
+
+05:14.140 --> 05:17.830
+Las configuraciones del proyecto de física en 2D son un panel separado.
+
+05:17.830 --> 05:22.160
+Ahora, la mayoría de las propiedades importantes en 2D son las mismas que acabamos de discutir en 3D.
+
+05:22.180 --> 05:24.820
+Puedes verlas en la captura de pantalla, pero algo a tener en cuenta.
+
+05:24.820 --> 05:30.910
+Es posible que tu proyecto de juego incluya tanto física en 2D como en 3D, pero es probable que elijas una.
+
+05:30.910 --> 05:31.630
+Así que si tu juego es en 2D y tienes física en 2D, asegúrate de que cuando cambies las configuraciones de física,
+
+05:31.630 --> 05:38.080
+estés en el panel correcto de "Física 2D" aquí.
+
+05:42.620 --> 05:47.770
+En el próximo video de física, ciclo de vida de la física, simulación y dilatación del tiempo.
+
+05:47.780 --> 05:50.330
+Veremos la estructura de los proyectos de Unity.
+
+05:50.330 --> 05:56.360
+Veremos el papel de los comportamientos mono en Unity y veremos algo de código relacionado con la física.

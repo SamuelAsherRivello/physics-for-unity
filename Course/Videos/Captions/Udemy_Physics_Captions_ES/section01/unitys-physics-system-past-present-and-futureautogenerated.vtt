@@ -1,0 +1,199 @@
+00:01.670 --> 00:04.860
+El sistema de física de Unity: pasado, presente y futuro.
+
+00:04.880 --> 00:07.400
+En este video, cubriremos qué es Unity.
+
+00:07.430 --> 00:11.600
+Daremos un paso atrás y veremos qué bibliotecas alimentan la física de Unity hoy.
+
+00:11.600 --> 00:14.360
+También echaremos un vistazo al futuro de la física de Unity.
+
+00:14.360 --> 00:20.330
+Unity es la plataforma interactiva en tiempo real más utilizada con herramientas para crear proyectos sólidos en
+
+00:20.330 --> 00:21.580
+todo tipo de plataformas.
+
+00:21.590 --> 00:26.640
+Unity impulsa los juegos, por supuesto, pero también la arquitectura, la automoción, la construcción y más.
+
+00:26.660 --> 00:34.250
+La versión 1.0 de Unity se lanzó en 2008 y desde entonces ha ganado una gran popularidad. En 2019, el 50% de
+
+00:34.250 --> 00:36.080
+los juegos móviles funcionaban con Unity.
+
+00:36.080 --> 00:43.790
+Más de 3 mil millones de dispositivos en todo el mundo utilizan el software de Unity y el 90% de la RA y RV también funciona con Unity.
+
+00:43.790 --> 00:46.750
+Unity admite implementación multiplataforma.
+
+00:46.760 --> 00:52.940
+Estas son algunas de las plataformas que admite Unity, incluyendo consolas de PC y móviles multiplataforma.
+
+00:53.420 --> 00:57.200
+Entonces, lo que se construye en Unity en su núcleo es un sistema de renderización 3D.
+
+00:57.200 --> 01:02.990
+También puedes crear grandes experiencias en 2D con Unity, y Unity incluye animación, renderización de audio
+
+01:02.990 --> 01:07.820
+y despliegue de efectos en todas esas plataformas, entrada de renderizado gráfico y más.
+
+01:07.850 --> 01:10.760
+En este curso, nos centraremos en la física y la programación.
+
+01:10.760 --> 01:14.630
+Unity utiliza sistemas de física de terceros.
+
+01:14.630 --> 01:15.680
+Ahora, ¿por qué hacen eso?
+
+01:15.680 --> 01:19.190
+Porque la física acelerada multiplataforma es difícil de hacer.
+
+01:19.190 --> 01:25.160
+Unity subcontrata el trabajo a estas bibliotecas de terceros y adapta su API para que sea más coherente
+
+01:25.160 --> 01:26.210
+y amigable con Unity.
+
+01:26.210 --> 01:31.070
+Algo a tener en cuenta es que lleva tiempo a Unity integrar las últimas y mejores características
+
+01:31.070 --> 01:32.990
+cuando se actualizan estas bibliotecas.
+
+01:33.900 --> 01:39.380
+En la versión 1.0 de Unity se lanzó Unity 3D Physics utilizando la biblioteca Physics.
+
+01:39.390 --> 01:46.260
+No fue hasta Unity 4.3 que se añadieron muchas características en 2D, incluyendo la física en 2D con Box2D.
+
+01:46.290 --> 01:51.650
+En el futuro, Unity funcionará con DOTS, física o una pila de tecnología orientada a datos.
+
+01:51.660 --> 01:53.880
+Hay características en versión beta pública disponibles.
+
+01:53.880 --> 01:55.740
+La fecha de lanzamiento futura está por determinar.
+
+01:55.740 --> 02:01.560
+El futuro de la física de Unity será impulsado por Unity y la colaboración con bibliotecas de terceros.
+
+02:02.480 --> 02:04.950
+Veamos la biblioteca Physics 3D.
+
+02:04.970 --> 02:09.650
+Physics es una solución de física multiplataforma de código abierto y escalable.
+
+02:09.650 --> 02:12.230
+Unity utiliza esto para su física 3D.
+
+02:12.230 --> 02:18.590
+Es notable que mientras Physics está en la versión 4.0, Unity solo ha integrado Physics 3.4.
+
+02:18.590 --> 02:22.340
+En las últimas versiones de 2019, puedes ver la demora allí.
+
+02:22.340 --> 02:27.260
+Unity se toma su tiempo para adaptar las API más recientes, probarlas, integrarlas y enviarlas.
+
+02:27.260 --> 02:29.480
+Lo que Unity ofrece es muy poderoso.
+
+02:29.510 --> 02:34.670
+Las características clave de la física incluyen que es de código abierto, multihilo y tiene una gran gestión de memoria.
+
+02:35.060 --> 02:37.820
+Box2D impulsa la física 2D de Unity.
+
+02:37.820 --> 02:43.280
+Su característica clave es lo que se llama una caja delimitadora alineada con el eje B o AABB.
+
+02:43.280 --> 02:48.920
+Esta es una forma muy eficiente para que Unity verifique colisiones, por lo que los juegos 2D con física 2D
+
+02:48.920 --> 02:51.890
+incluso en plataformas más lentas y antiguas funcionan bien.
+
+02:51.890 --> 02:58.220
+Algunas características clave son la detección continua de colisiones o precisión, polígonos convexos y círculos y colisiones
+
+02:58.220 --> 02:59.330
+grupos y categorías.
+
+02:59.330 --> 03:04.460
+El futuro de la física de Unity será impulsado por DOTS o la tecnología orientada a datos.
+
+03:04.460 --> 03:11.270
+En la Conferencia de Desarrolladores de Juegos 2019, Unity anunció dos nuevas opciones de física: una solución de Unity de primera parte
+
+03:11.270 --> 03:13.580
+y una solución
+
+ de Havok de terceros.
+
+03:13.580 --> 03:18.650
+Impulsado por Havok, los usuarios podrán alternar entre ambas en cualquier momento porque las API son
+
+03:18.650 --> 03:19.280
+idénticas.
+
+03:19.280 --> 03:25.220
+El sistema de física de Unity, que ahora está disponible en beta pública, tiene código fuente editable en C# y es
+
+03:25.220 --> 03:27.230
+sin estado y sin almacenamiento en caché.
+
+03:27.230 --> 03:32.990
+Por lo tanto, está muy optimizado para el multijugador y es más fácil de entender, leer y ampliar por los equipos de desarrollo.
+
+03:32.990 --> 03:39.740
+Havok Physics, que está en paquete de vista previa, está en estado activo con almacenamiento en caché, por lo que tiene un rendimiento mucho mayor.
+
+03:39.740 --> 03:43.580
+complejidad es también mayor fidelidad.
+
+03:43.580 --> 03:46.220
+Por lo tanto, la física representada es más precisa.
+
+03:46.220 --> 03:47.960
+Entonces, ¿qué sistema de física es el correcto?
+
+03:47.960 --> 03:53.480
+Bueno, este curso se centrará en los sistemas de física tradicionales en 2D y 3D en la sección siete.
+
+03:53.480 --> 03:58.340
+Echaremos un vistazo a algunos temas avanzados, incluyendo una breve introducción a la física de DOTS.
+
+03:58.340 --> 04:02.660
+Cada uno de estos sistemas tiene muchos beneficios y desventajas diferentes.
+
+04:02.660 --> 04:04.040
+Cada uno tendrá un largo futuro.
+
+04:04.040 --> 04:08.720
+Dentro de la plataforma de física, podemos ver que las secciones dos y cinco se centrarán en la física en 2D.
+
+04:08.720 --> 04:12.890
+Las secciones tres, cuatro y seis se centrarán en la física en 3D.
+
+04:12.890 --> 04:18.320
+En cada una de estas áreas, crearemos un juego completo en 2D y 3D en la sección siete.
+
+04:18.320 --> 04:21.920
+Echaremos un vistazo rápido al futuro con la física de Unity DOTS.
+
+04:23.780 --> 04:29.960
+En el próximo video, Configuración de proyectos de física de Unity, cubriremos qué son las configuraciones de proyectos de Unity y
+
+04:29.960 --> 04:32.930
+cuáles de las configuraciones son más importantes para nuestras necesidades de física.
+
+04:33.200 --> 04:37.880
+Y luego experimentaremos con algunas de estas configuraciones dentro del editor de Unity para ver los resultados.

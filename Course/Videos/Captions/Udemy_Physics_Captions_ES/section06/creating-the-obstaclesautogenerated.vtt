@@ -1,0 +1,298 @@
+WEBVTT
+
+00:01.780 --> 00:03.200
+Creando los obstáculos.
+
+00:03.220 --> 00:08.950
+En este video, vamos a cubrir la creación de objetos móviles e inmóviles, y vamos a añadir monedas giratorias que
+
+00:08.950 --> 00:10.650
+son coleccionables por el jugador.
+
+00:10.660 --> 00:12.100
+Este es el desglose de tareas.
+
+00:12.100 --> 00:18.140
+Añadiremos el prefab del cubo movible, y añadiremos el prefab del cubo inamovible junto con su script.
+
+00:18.160 --> 00:23.260
+Añadiremos un prefab de moneda y su script para que gire y sea recogida por el jugador.
+
+00:23.410 --> 00:27.190
+Para el proyecto, abriremos la sección seis, Video tres y la escena.
+
+00:27.190 --> 00:28.390
+Bola loca tres.
+
+00:28.780 --> 00:30.310
+Muy bien, aquí estamos dentro de Unity.
+
+00:30.670 --> 00:33.890
+Sigamos adelante y abramos nuestra escena Bola loca tres.
+
+00:33.910 --> 00:34.810
+Dale al play.
+
+00:35.470 --> 00:38.980
+La novedad es que tenemos objetos dentro de las paredes.
+
+00:38.980 --> 00:40.870
+Tenemos diferentes plataformas.
+
+00:40.870 --> 00:44.350
+Tenemos diferentes objetos móviles e inmóviles.
+
+00:44.350 --> 00:49.090
+Así que los cubos más oscuros no los puedo mover y los más claros sí.
+
+00:49.090 --> 00:51.070
+Esto da un poco de variedad visual.
+
+00:51.280 --> 00:56.170
+Además, mientras recojo estas monedas, puedes ver que choco con ellas y desaparecen.
+
+00:56.290 --> 00:58.240
+Así que desaparecen instantáneamente.
+
+00:58.240 --> 01:01.990
+Y por supuesto están girando alrededor sólo para un bonito efecto visual.
+
+01:02.540 --> 01:04.850
+Y también proyectan sombras, lo que es genial.
+
+01:04.870 --> 01:08.500
+Centrémonos en cómo está colocada la moneda.
+
+01:08.530 --> 01:10.570
+Hagámoslo juntos desde cero.
+
+01:10.690 --> 01:12.580
+Así que aquí estamos.
+
+01:12.790 --> 01:15.040
+Echemos un vistazo al.
+
+01:18.290 --> 01:20.030
+Recoger objeto prototipo.
+
+01:20.660 --> 01:21.440
+Compruébalo dos veces.
+
+01:21.440 --> 01:24.350
+Cuando veamos esto, voy a arrastrar el correcto.
+
+01:26.390 --> 01:30.410
+Bien, entonces hablemos de convertir esto en nuestra moneda.
+
+01:31.070 --> 01:34.400
+Lo primero, queremos que esté un poco más alto del suelo.
+
+01:35.350 --> 01:36.460
+Uh, podrías hacer una llamada.
+
+01:36.460 --> 01:40.510
+Si este es el tamaño adecuado para nosotros, voy a decir que queremos que sea un poco más pequeño.
+
+01:42.270 --> 01:43.920
+Así que lo reduzco.
+
+01:45.130 --> 01:48.290
+Comprobando la escala con el tamaño de nuestro personaje.
+
+01:49.230 --> 01:50.550
+Creo que se ve bastante bien.
+
+01:50.850 --> 01:52.830
+Entonces tengo una textura dorada preparada.
+
+01:52.830 --> 01:53.910
+Podríamos usar eso.
+
+01:54.870 --> 01:58.050
+A menudo en los juegos queremos que nuestras monedas parezcan de oro.
+
+01:58.050 --> 02:00.270
+Así que usaremos ese mismo aspecto.
+
+02:01.170 --> 02:03.480
+Y luego vamos a poner en marcha el código.
+
+02:03.480 --> 02:07.710
+Así que ya he creado un script para.
+
+02:08.970 --> 02:10.770
+La reina.
+
+02:11.430 --> 02:14.100
+Y para hacerlo, necesitaremos también un colisionador.
+
+02:15.620 --> 02:21.890
+Así que voy a añadir un colisionador caja y puedo seguir adelante y dar un vistazo a la colisionador caja sólo para hacer
+
+02:21.890 --> 02:22.670
+que tiene el tamaño adecuado.
+
+02:22.670 --> 02:23.000
+¿Correcto?
+
+02:23.000 --> 02:24.740
+Pero a mí me parece que está bastante bien.
+
+02:25.340 --> 02:28.220
+Y ahora echemos un vistazo a nuestro script de monedas.
+
+02:28.640 --> 02:31.460
+Este es realmente el grueso de nuestro trabajo aquí, algunos scripts.
+
+02:31.820 --> 02:37.820
+Así que en la moneda, en primer lugar, hago un seguimiento de si está viva o no, la pongo viva a true.
+
+02:37.850 --> 02:42.920
+Ahora, por lo general puede mantener la cantidad de comportamiento vivo y simplemente eliminarlo cuando esté listo para ello
+
+02:42.920 --> 02:43.810
+no esté vivo.
+
+02:43.820 --> 02:46.580
+Pero aquí necesitaba este toro por una razón extra.
+
+02:46.860 --> 02:47.990
+Hablaremos de ello en un segundo.
+
+02:48.290 --> 02:51.010
+Así que en la actualización, giro los gráficos.
+
+02:51.020 --> 02:55.610
+Hago la rotación basándome en cuánto quiero que rote por fotograma.
+
+02:55.610 --> 02:58.920
+Y estoy usando una clase de constantes de bola loca para manejar eso.
+
+02:58.970 --> 03:03.630
+Así que aquí tengo algunas variables aisladas para que sea realmente fácil de ajustar.
+
+03:03.650 --> 03:09.080
+Así que usted puede ver que va a unidades en la dirección Y cada fotograma entonces.
+
+03:10.060 --> 03:11.140
+De vuelta en la moneda.
+
+03:12.820 --> 03:16.840
+Escuchar algo desde el exterior va a llamar a este público, destruirme.
+
+03:16.840 --> 03:22.090
+Y lo que va a suceder en el interior es que voy a utilizar que está vivo para comercializar falsa, y entonces yo inmediatamente
+
+03:22.090 --> 03:23.410
+destruir el objeto de juego.
+
+03:23.440 --> 03:29.530
+No es muy obvio todavía por qué estoy usando esto como un vivo, pero en un vídeo futuro vamos a ver que
+
+03:29.530 --> 03:31.450
+en lugar de destruirlo instantáneamente.
+
+03:31.450 --> 03:36.400
+Al igual que ahora, voy a utilizar un movimiento programático para que se desvanezca lentamente para darle un poco de brillo.
+
+03:36.400 --> 03:38.260
+Así que esto es sólo la configuración para eso.
+
+03:38.260 --> 03:41.920
+Ahora, ¿cómo detectamos la bola y la moneda?
+
+03:41.920 --> 03:47.710
+Bueno, he optado por poner que dentro de la bola loca aquí, así que vamos a utilizar trigger enter.
+
+03:47.710 --> 03:54.520
+Así que es importante que luego voy a las monedas Collider y me puse es disparador.
+
+03:54.520 --> 04:00.850
+Así que mediante el establecimiento de este disparador aquí, entonces la bola loca, cuando va a entrar en el mismo colisionador
+
+04:00.850 --> 04:04.210
+que la moneda, el gatillo se disparará.
+
+04:04.210 --> 04:09.340
+Puedo elegir poner este código de disparo, enter dentro de la moneda o dentro de la bola.
+
+04:09.340 --> 04:10.630
+Cualquiera de los dos está bien.
+
+04:10.630 --> 04:16.750
+Sé que en el futuro de este juego quiero que la bola loca choque con múltiples tipos diferentes de
+
+04:16.750 --> 04:17.380
+objetos.
+
+04:17.380 --> 04:19.840
+Así que voy a poner todo eso aquí en el mismo lugar.
+
+04:19.840 --> 04:21.640
+Así que este es el lugar adecuado para mí.
+
+04:21.640 --> 04:24.100
+Así que aquí detecto y recojo la moneda.
+
+04:24.190 --> 04:28.330
+Compruebo la etiqueta de aquello con lo que estoy colisionando para asegurarme de que es la etiqueta de la moneda.
+
+04:28.480 --> 04:30.250
+Echo un vistazo a esa variable.
+
+04:30.250 --> 04:31.600
+Es sólo coin.
+
+04:31.600 --> 04:37.120
+Y cuando voy aquí y configuro este mundo, es importante que ponga la etiqueta coin.
+
+04:38.150 --> 04:45.320
+Luego aquí en la bola loca, compruebo si el objeto de juego con el que colisiona tiene la etiqueta
+
+04:45.320 --> 04:47.930
+componente del objeto de juego llamado moneda?
+
+04:47.960 --> 04:52.700
+Por supuesto que sí debido a cómo he construido esto, pero es una buena idea para comprobar si es
+
+04:52.700 --> 04:56.000
+nulo y luego compruebo si sigue vivo?
+
+04:56.000 --> 04:57.940
+Si es así, destrúyeme de esa manera.
+
+04:57.950 --> 05:05.330
+Una vez que añadamos un efecto programático mientras la moneda se disuelve, quizás encogiéndose, no quiero
+
+05:05.330 --> 05:08.300
+chocar con ella una y otra vez mientras se encoge.
+
+05:08.300 --> 05:09.260
+Así que etiqueto.
+
+05:09.260 --> 05:10.640
+Es un falso vivo.
+
+05:10.640 --> 05:13.310
+Entonces no activaré esto una y otra vez.
+
+05:13.310 --> 05:16.580
+Así que destrúyeme ejecuta exactamente una vez para cada uno.
+
+05:16.580 --> 05:17.630
+¿Ya está?
+
+05:17.630 --> 05:18.890
+Así es como está configurado.
+
+05:18.890 --> 05:21.290
+Puedo seguir adelante y ejecutar la escena ahora.
+
+05:23.840 --> 05:27.800
+Y correr dentro y desaparece perfectamente.
+
+05:29.270 --> 05:29.960
+Ya está.
+
+05:32.070 --> 05:35.370
+En el próximo video, cubriremos la adición de condiciones de ganar-perder.

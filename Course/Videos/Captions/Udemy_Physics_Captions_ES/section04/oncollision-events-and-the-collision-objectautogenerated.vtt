@@ -1,0 +1,368 @@
+WEBVTT
+
+00:00.660 --> 00:01.770
+Sección cuatro.
+
+
+00:01.930 --> 00:02.370
+Unidad.
+
+
+00:02.420 --> 00:04.170
+Programación Física en C-sharp.
+
+
+00:04.200 --> 00:10.470
+En esta sección, vamos a cubrir el manejo de eventos de física para las colisiones y los disparadores, la adición de fuerzas de física
+
+
+00:10.470 --> 00:11.560
+para mover objetos.
+
+
+00:11.580 --> 00:15.690
+Abordaremos las propiedades y funciones físicas más comunes y útiles.
+
+
+00:15.690 --> 00:20.940
+Y echaremos un vistazo a la depuración de física en eventos de colisión y el objeto de colisión.
+
+
+00:20.970 --> 00:24.300
+En este video, cubriremos la recapitulación del ciclo de vida de la física.
+
+
+00:24.300 --> 00:26.700
+A continuación, vamos a saltar en lo que nuestros eventos de colisión.
+
+
+00:26.700 --> 00:28.020
+¿Por qué son útiles?
+
+
+00:28.020 --> 00:33.870
+Y luego abriremos el editor de Unity y jugaremos con los eventos de colisión, Física de visualización recomendada,
+
+
+00:33.870 --> 00:40.350
+física del ciclo de vida, simulación y dilatación del tiempo introduce los fundamentos básicos de la física, eventos,
+
+
+00:40.620 --> 00:42.210
+física, recapitulación del ciclo de vida.
+
+
+00:42.210 --> 00:48.360
+Como vimos en secciones anteriores, los eventos de colisión se llaman Cuando el colisionador se cruza con otro
+
+
+00:48.360 --> 00:55.560
+colisionador, utilizamos el método on collision enter dentro de un comportamiento, y nos damos cuenta de que pasamos de
+
+
+00:55.560 --> 00:58.530
+el objeto de colisión en los eventos de colisión.
+
+
+00:58.530 --> 00:59.820
+Echemos un vistazo más de cerca.
+
+
+00:59.820 --> 01:00.900
+¿Por qué los usamos?
+
+
+01:00.900 --> 01:02.730
+En primer lugar, ¿en caso de colisión?
+
+
+01:02.730 --> 01:05.640
+Danos más información sobre las colisiones físicas.
+
+
+01:05.640 --> 01:09.720
+Estamos hablando de colisiones entre cuerpos rígidos con colisionadores.
+
+
+01:09.720 --> 01:11.580
+¿Cuando el trigger está en false?
+
+
+01:11.580 --> 01:16.980
+Algunos ejemplos comunes serían cuando una bala golpea a un enemigo o cuando un personaje recoge una moneda.
+
+
+01:16.980 --> 01:20.100
+Echemos un vistazo a un escenario para un evento de colisión.
+
+
+01:20.100 --> 01:24.450
+Imaginemos que tenemos un cubo rosa que cae hacia un cubo azul.
+
+
+01:24.450 --> 01:27.030
+Cada uno de ellos tiene un cuerpo rígido y un colisionador.
+
+
+01:27.030 --> 01:29.220
+Con el colisionador se dispara en falso.
+
+
+01:29.220 --> 01:30.480
+La rosa está cayendo.
+
+
+01:30.480 --> 01:33.480
+El rosa entra en colisión, disparando un on collision.
+
+
+01:33.480 --> 01:35.730
+El rosa entra se queda en la colisión.
+
+
+01:35.730 --> 01:42.810
+Ahora, por cada fotograma que se estén tocando se llamará a una estancia on collision cuando pink salga.
+
+
+01:42.810 --> 01:45.600
+La colisión obtendrá una salida on collision una vez.
+
+
+01:45.600 --> 01:47.070
+Entonces rosa continua cayendo.
+
+
+01:47.100 --> 01:49.490
+Nuestra atención se centra realmente en la entrada de la colisión.
+
+
+01:49.500 --> 01:55.050
+Esto nos permite capturar la bala golpea a un enemigo o el personaje recoge una moneda escenario.
+
+
+01:55.080 --> 02:00.570
+El objeto de colisión que entra en ese método nos da más información sobre la colisión.
+
+
+02:00.570 --> 02:05.640
+Podemos preguntar al objeto de juego Colisión ¿Con qué chocamos o colisionamos?
+
+
+02:05.640 --> 02:08.700
+¿En qué lugar exacto del mundo 3D se produjo la colisión?
+
+
+02:08.700 --> 02:10.620
+Echemos un vistazo a lo que chocamos.
+
+
+02:10.620 --> 02:15.990
+Bien, podemos comprobar el nombre del objeto de juego de la colisión y ver si coincide con lo que estamos buscando.
+
+
+02:16.020 --> 02:18.150
+Eso es bueno para comprobaciones muy específicas.
+
+
+02:18.150 --> 02:21.540
+Podemos usar la etiqueta para toda una categoría de comprobaciones.
+
+
+02:21.540 --> 02:22.440
+Podemos comprobar.
+
+
+02:22.440 --> 02:26.700
+¿Colisiona con alguna de las monedas etiquetadas como moneda?
+
+
+02:26.700 --> 02:27.870
+¿Una alternativa?
+
+
+02:27.870 --> 02:31.470
+También es bueno para las comprobaciones categóricas podemos comprobar la capa.
+
+
+02:31.470 --> 02:35.760
+¿Hemos encontrado algo con una capa establecida en etiquetas de suelo y capas?
+
+
+02:35.760 --> 02:36.960
+Ambas pueden ser usadas aquí.
+
+
+02:36.960 --> 02:38.370
+Algo a tener en cuenta.
+
+
+02:38.370 --> 02:42.450
+Podemos tener cero o una etiquetas o capas en cada uno de nuestros objetos.
+
+
+02:42.450 --> 02:47.670
+Sin embargo, tenemos etiquetas ilimitadas en un proyecto, pero sólo 31 capas.
+
+
+02:47.760 --> 02:50.790
+Observa también que las capas son mucho más rápidas que las etiquetas.
+
+
+02:50.790 --> 02:56.040
+Así que si usted no tiene muchas capas y desea obtener el aumento de velocidad, seguir adelante y utilizar capas.
+
+
+02:56.040 --> 03:00.000
+Si usted tiene un montón de diferentes combinaciones para comprobar, tal vez las etiquetas es mejor para usted.
+
+
+03:00.000 --> 03:06.120
+Puedes abrir y gestionar desde el menú Unidad, Editar Configuración del Proyecto, Etiquetas y Capas.
+
+
+03:06.450 --> 03:08.190
+Pasemos ahora a una demo.
+
+
+03:08.520 --> 03:12.540
+Vamos a echar un vistazo a los eventos de colisión, una y dos escenas.
+
+
+03:12.540 --> 03:16.050
+Reproduciremos la escena e inspeccionaremos el código aquí.
+
+
+03:16.080 --> 03:16.950
+Dentro de Unity.
+
+
+03:16.950 --> 03:20.010
+Vamos a abrir nuestro on collision events one.
+
+
+03:20.930 --> 03:22.190
+Tenemos un cubo rosa.
+
+
+03:22.990 --> 03:24.010
+En el cubo azul.
+
+
+03:24.640 --> 03:26.110
+El cubo rosa va a caer.
+
+
+03:26.880 --> 03:27.930
+Veamos qué pasa.
+
+
+03:30.760 --> 03:34.000
+Cae, choca y sigue cayendo.
+
+
+03:35.020 --> 03:40.810
+Podemos ver en la ventana de la consola que tenemos una entrada varias permanencias y una salida.
+
+
+03:42.920 --> 03:48.590
+Mirando el código bastante sencillo usando debug log para enviar algún texto simple.
+
+
+03:49.100 --> 03:49.730
+Ya está.
+
+
+03:50.780 --> 03:52.730
+Echemos un vistazo a los eventos de colisión.
+
+
+03:52.730 --> 03:53.510
+Dos vistos.
+
+
+03:55.740 --> 03:57.060
+Mismo escenario.
+
+
+03:57.180 --> 03:58.530
+En este momento, tenemos un suelo.
+
+
+03:59.220 --> 03:59.940
+Vamos a jugar.
+
+
+04:02.800 --> 04:04.090
+Vemos la colisión.
+
+
+04:04.090 --> 04:08.140
+Y en cada línea de la consola vemos también con qué estamos colisionando.
+
+
+04:08.590 --> 04:11.200
+El cubo rosa está colisionando con el cubo B.
+
+
+04:11.530 --> 04:13.780
+Observa que no colisiona con el suelo.
+
+
+04:13.810 --> 04:15.040
+Veamos cómo se hace.
+
+
+04:18.110 --> 04:19.370
+Dentro de cada método.
+
+
+04:19.370 --> 04:24.920
+Comprobamos si estamos colisionando con el suelo y entonces no decimos la declaración del registro de depuración.
+
+
+04:25.100 --> 04:26.840
+¿Cómo funciona el suelo?
+
+
+04:27.790 --> 04:29.800
+Aquí abajo, simplemente comprobamos la capa.
+
+
+04:29.920 --> 04:32.170
+¿Y ahora es la capa del suelo?
+
+
+04:32.170 --> 04:34.780
+La constante de la capa del suelo es igual al suelo.
+
+
+04:34.810 --> 04:37.240
+Es una forma sencilla de almacenar esa variable.
+
+
+04:38.490 --> 04:44.160
+Si miramos en unity y esperamos el suelo, vemos que la capa se establece en suelo.
+
+
+04:44.310 --> 04:46.290
+Así es como lo sabe este código.
+
+
+04:46.290 --> 04:50.310
+Por no decir debug log cuando colisionamos con el suelo.
+
+
+04:50.340 --> 04:51.090
+Ya está.
+
+
+04:52.180 --> 04:56.830
+En el siguiente video, echaremos un vistazo a los eventos de disparo y al objeto collider.
+
+
+04:56.950 --> 05:01.510
+Vamos a cubrir lo que son los eventos de disparo, ¿por qué son útiles en nuestros proyectos de juego?
+
+
+05:01.510 --> 05:04.750
+E incluso abriremos unity y jugaremos con algunos trigger events.

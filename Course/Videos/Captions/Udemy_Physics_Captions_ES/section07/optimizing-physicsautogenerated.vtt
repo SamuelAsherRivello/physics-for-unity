@@ -1,0 +1,463 @@
+WEBVTT
+
+00:01.840 --> 00:03.150
+Optimizando la física.
+
+00:03.160 --> 00:06.810
+En este video, vamos a echar un vistazo a un ejemplo del mundo real de la física.
+
+00:06.820 --> 00:09.220
+Experimentaremos con algunas optimizaciones.
+
+00:09.220 --> 00:12.700
+Finalmente, mejoraremos el rendimiento drásticamente.
+
+00:13.030 --> 00:14.530
+Así que vamos a optimizar.
+
+00:14.980 --> 00:19.560
+He creado una demo con muchas instancias del mismo objeto cadena.
+
+00:19.570 --> 00:22.810
+Puedes ver aquí que estoy generando unas 20.000.
+
+00:23.260 --> 00:25.420
+El rendimiento actual es muy bajo.
+
+00:25.420 --> 00:28.420
+Está alrededor de tres fotogramas por segundo en mi portátil.
+
+00:28.420 --> 00:31.900
+Puedes ver un rendimiento diferente, por supuesto, dependiendo de la máquina en la que estés.
+
+00:31.900 --> 00:36.100
+Pongámonos como objetivo conseguir un rendimiento en torno a los 60 fotogramas por segundo.
+
+00:36.280 --> 00:38.500
+Veremos qué podemos hacer para optimizarlo.
+
+00:40.620 --> 00:41.980
+Echemos un vistazo a la demo.
+
+00:42.000 --> 00:44.720
+Usaremos la escena de inicio de física optimizada.
+
+00:44.730 --> 00:50.430
+Reproduciremos la escena y luego iteraremos sobre las optimizaciones, comprobaremos continuamente el frame rate
+
+00:50.430 --> 00:51.480
+y veremos cómo lo hacemos.
+
+00:52.110 --> 00:53.790
+Muy bien, entremos en el proyecto.
+
+00:54.300 --> 00:57.150
+Así que estamos viendo la escena de inicio optimizada.
+
+00:57.540 --> 01:02.460
+Lo que he configurado aquí es una serie de enlaces de una cadena.
+
+01:02.640 --> 01:04.170
+No es una cadena con articulaciones.
+
+01:04.170 --> 01:06.000
+Sólo estoy usando esas piezas.
+
+01:06.000 --> 01:11.460
+Y si abro esta ventana un poco más Unity tiene algunas estadísticas.
+
+01:12.420 --> 01:18.300
+Con las estadísticas, podemos ver que a medida que estas piezas están cayendo e interactuando con el defecto de cada uno
+
+01:18.300 --> 01:18.840
+otra.
+
+01:18.840 --> 01:25.200
+Estamos obteniendo una tasa de fotogramas de alrededor de 2,8 a 3 fotogramas por segundo, por lo que es muy baja.
+
+01:25.860 --> 01:28.840
+Apuntemos a un objetivo de algo así como 60 fotogramas por segundo.
+
+01:28.890 --> 01:30.720
+Veamos qué tipo de cambios podemos hacer.
+
+01:32.070 --> 01:33.990
+Así que la configuración de la escena es bastante simple.
+
+01:33.990 --> 01:35.040
+Hay un suelo.
+
+01:35.070 --> 01:40.680
+Luego tengo un en aquí, que estoy usando para crear unos 20.000 objetos, que es mucho.
+
+01:41.010 --> 01:42.420
+Luego tengo una escena.
+
+01:43.350 --> 01:46.630
+Objeto de juego configurado llamado Optimized Physics setup.
+
+01:46.650 --> 01:50.200
+Es un montón de cosas que son comentarios o código comentado.
+
+01:50.220 --> 01:51.690
+Veamos cada uno de ellos.
+
+01:51.780 --> 01:56.850
+En primer lugar, como consejo de prueba, esto realmente no lo hace un proyecto más eficiente, pero da
+
+01:56.850 --> 02:00.270
+una mejor lectura de la velocidad de fotogramas en esa pantalla UI.
+
+02:00.390 --> 02:02.550
+Ponemos el contador de V Sync a cero.
+
+02:02.550 --> 02:09.660
+Así que para la optimización en sí, el primer gran paso es siempre actualizar unity a la última versión pública.
+
+02:09.660 --> 02:14.670
+Si puedes, vas a obtener un mejor rendimiento porque unity siempre está actualizando todo su sistema
+
+02:14.670 --> 02:18.510
+de renderizado y física, etc. para que obtengas resultados realmente buenos.
+
+02:18.600 --> 02:24.300
+En segundo lugar, mientras haces pruebas, si la tasa de fotogramas es muy importante para ti, considera construir a
+
+02:24.300 --> 02:29.550
+su dispositivo final, ya sea un Windows construir o construir en iOS o Android y las pruebas más cerca de
+
+02:29.550 --> 02:37.080
+a la experiencia de los usuarios finales, obtendrás un rendimiento que es mejor o más cercano a lo que el
+
+02:37.080 --> 02:39.510
+obtendrá el usuario, lo cual es, por supuesto, un punto de referencia importante.
+
+02:40.660 --> 02:43.390
+Empecemos con algunas de las cosas que podemos hacer dentro del proyecto.
+
+02:43.720 --> 02:48.190
+Número tres, podemos seguir adelante y desactivar las sombras en la escena.
+
+02:48.220 --> 02:52.450
+También podemos poner el suelo de la escena en estático, que es un cambio de física.
+
+02:52.810 --> 03:00.100
+Podemos ir al prefab de la cosa y desactivar su colisionador de malla y usar una primitiva como un colisionador de caja
+
+03:00.100 --> 03:00.700
+en su lugar.
+
+03:00.730 --> 03:03.940
+Hagamos esos tres pasos y veamos qué tipo de cambios obtenemos.
+
+03:04.450 --> 03:06.070
+Primero, con la iluminación.
+
+03:07.270 --> 03:10.660
+Tenemos unas sombras duras que son.
+
+03:11.440 --> 03:13.630
+más eficientes que las sombras suaves.
+
+03:13.630 --> 03:15.370
+Pero probemos sin sombras.
+
+03:15.370 --> 03:16.930
+Veamos si conseguimos algún efecto aquí.
+
+03:16.930 --> 03:20.620
+Así que vamos a pasar en Algunas de estas cosas pueden hacer una buena diferencia, y algunos
+
+03:20.620 --> 03:21.490
+puede que no.
+
+03:21.880 --> 03:27.970
+Así que lo que hacemos es un clic del ratón aquí para poner en marcha el spinner y.
+
+03:28.780 --> 03:30.190
+Al menos al principio.
+
+03:30.190 --> 03:34.330
+Quiero decir, con más tiempo, se va a ralentizar porque hay más y más cálculos.
+
+03:34.330 --> 03:36.490
+Pero creo que podría ser un poco mejor.
+
+03:36.490 --> 03:41.170
+Estamos más cerca del tres que antes, así que considéralo una opción.
+
+03:42.180 --> 03:44.230
+Tu juego, por supuesto, puede requerir sombras.
+
+03:44.290 --> 03:45.150
+Tal vez no puedas hacerlo.
+
+03:45.150 --> 03:49.050
+Pero sólo quiero señalar que hay un tipo de solución no física.
+
+03:49.200 --> 03:54.120
+Lo siguiente que vamos a ver es el establecimiento de la simple suelo, que está por debajo de todo, el establecimiento de
+
+03:54.120 --> 03:55.020
+a estático.
+
+03:55.820 --> 04:00.980
+Sólo haciendo eso puede optimizar el cuerpo rígido, puede ser capaz de trabajar más eficientemente.
+
+04:00.980 --> 04:02.030
+Así que echemos un vistazo.
+
+04:02.650 --> 04:05.660
+Así que recuerda, estábamos consiguiendo alrededor de tres en el mejor.
+
+04:06.580 --> 04:07.780
+Aquí.
+
+04:10.280 --> 04:11.780
+Es más o menos lo mismo.
+
+04:11.780 --> 04:16.010
+Es posible que haya pequeños cambios, pero es algo que hay que comprobar.
+
+04:16.640 --> 04:19.820
+Si tuvieras más objetos, sería bueno poner más de ellos estáticos.
+
+04:19.850 --> 04:21.960
+A continuación, echemos un vistazo al prefabricado cosa.
+
+04:21.980 --> 04:25.190
+Tomemos esto y llevémoslo al mundo y acerquémoslo.
+
+04:25.190 --> 04:28.430
+Y podemos ver aquí que tenemos un colisionador de malla.
+
+04:28.430 --> 04:35.540
+Así que si desactivamos el colisionador de malla y en su lugar añadimos un colisionador de caja y podemos ver que el colisionador de caja
+
+04:35.540 --> 04:38.600
+hace un buen trabajo de estimación de su forma de todos modos.
+
+04:38.600 --> 04:43.910
+Por supuesto, las esquinas no son redondas más y dependiendo de nuestro proyecto de juego que en realidad podría
+
+04:43.910 --> 04:47.000
+puede darnos un resultado físico bastante diferente.
+
+04:47.300 --> 04:52.910
+Así que ahora que he hecho ese cambio y lo he guardado en el prefab, vamos a ver cómo funciona.
+
+04:55.830 --> 04:58.020
+Así que hago clic con el ratón para iniciarlo.
+
+05:03.740 --> 05:05.350
+Está rondando el tres.
+
+05:06.850 --> 05:09.670
+Entonces eso puede no haber hecho una gran diferencia aquí.
+
+05:10.720 --> 05:16.360
+Así que sólo voy a volver a comprobar en realidad que es de hecho un cambio se ha hecho.
+
+05:16.660 --> 05:17.880
+Tengo un box collider.
+
+05:17.890 --> 05:19.570
+El colisionador de malla está desactivado.
+
+05:19.780 --> 05:21.550
+Voy a quitar el colisionador de malla.
+
+05:21.850 --> 05:23.800
+No sé si eso hace alguna diferencia, pero.
+
+05:24.800 --> 05:29.150
+A pesar de que fue desactivado, porque me sorprende que no estamos recibiendo un poco de un salto de fotogramas
+
+05:29.150 --> 05:31.730
+un poco de mejora.
+
+05:35.810 --> 05:37.640
+Y no parece que eso haya supuesto una gran diferencia.
+
+05:37.640 --> 05:39.440
+Pero quizás en tu proyecto sí.
+
+05:40.350 --> 05:41.490
+Vayamos a los siguientes pasos.
+
+05:42.850 --> 05:43.390
+Aquí.
+
+05:43.390 --> 05:47.200
+Hay varios valores de tiempo diferentes que vamos a poder ajustar.
+
+05:47.410 --> 05:55.990
+Ahora, con cada uno de estos, vas a buscar un compromiso entre la física precisa o eficiente
+
+05:55.990 --> 05:56.740
+velocidad de fotogramas.
+
+05:56.980 --> 06:01.930
+Así que somos capaces de ajustar estos y van a estar haciendo cálculos todavía, pero tal vez con menos frecuencia
+
+06:01.930 --> 06:03.360
+o más a menudo que antes.
+
+06:03.370 --> 06:08.110
+Así que sólo con esos ajustes, estos son algunos valores con los que jugué antes de tiempo y obtuve
+
+06:08.110 --> 06:08.890
+algunos buenos resultados.
+
+06:08.890 --> 06:09.760
+Echemos un vistazo.
+
+06:10.800 --> 06:11.880
+Voy a correr aquí.
+
+06:15.850 --> 06:16.810
+Y dale al play.
+
+06:18.030 --> 06:21.570
+Así que esto está haciendo una gran diferencia.
+
+06:21.570 --> 06:24.330
+Creo que en este caso, esta es realmente la clave.
+
+06:25.080 --> 06:28.830
+Probablemente podríamos hacer sólo este cambio y deshacer los otros.
+
+06:28.830 --> 06:31.740
+Previamente, hemos llegado a 80, 80 fotogramas por segundo.
+
+06:31.740 --> 06:35.100
+Así que hemos alcanzado nuestro objetivo de 60, lo que es fantástico.
+
+06:35.220 --> 06:39.450
+Así que de nuevo, si nos fijamos en la documentación de esas dos propiedades, se puede aprender un poco más
+
+06:39.450 --> 06:41.700
+sobre lo que hacen y por qué puedes modificarlas.
+
+06:41.700 --> 06:46.800
+Y dependiendo de tu proyecto, quizás no puedas modificarlos tan extremadamente como yo lo hice.
+
+06:46.800 --> 06:49.920
+Puede que necesites precisión.
+
+06:50.490 --> 06:53.790
+Entonces un par de otras cosas que intento que realmente no me ayudaron.
+
+06:54.330 --> 07:01.530
+Hay algunos ajustes de física que puedes configurar aquí y configurarlos, y tal vez los valores que he elegido
+
+07:01.530 --> 07:04.020
+no me dieron realmente una buena diferencia.
+
+07:04.020 --> 07:09.060
+Así que no voy a traer a los de la fiesta de esta conversación, pero sólo sé que hay algunos
+
+07:09.060 --> 07:10.050
+otros valores de ajuste.
+
+07:10.050 --> 07:13.320
+Y por último, hay algo en los ajustes llamado Fuerza Adaptativa.
+
+07:13.320 --> 07:14.550
+Lo probaré.
+
+07:15.300 --> 07:22.680
+En los ajustes del proyecto de física, activa la fuerza adaptativa.
+
+07:22.680 --> 07:25.110
+Oh, ya está activado en nuestra demo.
+
+07:25.110 --> 07:30.780
+Así que se activa la fuerza que mejora la estabilidad de grandes pilas.
+
+07:30.780 --> 07:37.800
+Así que la estabilidad suena como tal vez es mejor resultado, pero más lento porque me imagino que hay un cálculo
+
+07:37.800 --> 07:38.160
+allí.
+
+07:38.160 --> 07:42.600
+Apaguémoslo y veamos si obtenemos peor resultado.
+
+07:42.600 --> 07:44.250
+Tenemos mejor rendimiento.
+
+07:46.400 --> 07:47.630
+O puede que sea igual.
+
+07:48.320 --> 07:50.840
+Así que vamos bien.
+
+07:52.970 --> 07:54.710
+Antes.
+
+07:57.000 --> 07:59.230
+Sí, yo diría que esto está mejor ahora.
+
+07:59.250 --> 08:03.840
+Así que no tener la función adaptativa activada es mejor.
+
+08:04.380 --> 08:08.490
+Es difícil de decir porque a medida que dejamos que esto se reproduzca, hay más complejidad en la escena.
+
+08:08.490 --> 08:14.250
+Así que no es científica la forma en que sólo estamos mirando la velocidad de fotogramas aquí y haciendo un indicador visual.
+
+08:14.250 --> 08:19.830
+Pero en general vemos que hemos conseguido un rendimiento mucho mejor que el que teníamos antes.
+
+08:20.620 --> 08:20.890
+Ahora.
+
+08:20.890 --> 08:23.320
+Y por supuesto, estamos con 20.000 objetos.
+
+08:23.320 --> 08:29.950
+Así que es bueno en su juego, también, si usted está experimentando algunos problemas de velocidad de fotogramas, tal vez complicar
+
+08:29.950 --> 08:35.680
+el problema con más obstáculos, más niveles en tu diseño de niveles.
+
+08:36.160 --> 08:41.980
+Mira a ver si puedes hacerlo más lento, entonces cada uno de estos pequeños cambios hará un marco más dramático
+
+08:41.980 --> 08:44.470
+y entonces lo entenderás.
+
+08:44.470 --> 08:45.790
+Bien, esta función ayuda.
+
+08:45.790 --> 08:46.830
+Esta característica no.
+
+08:46.840 --> 08:51.880
+Entonces, cuando eliminas la complejidad, vuelves a una velocidad de fotogramas que es más estable y, de nuevo, que
+
+08:51.880 --> 08:53.950
+representa el juego que quieres.
+
+08:53.950 --> 08:55.090
+Eso es.
+
+08:55.390 --> 09:00.520
+También puede echar un vistazo a la escena completa de física optimizada para ver exactamente el mismo resultado final.
+
+09:00.520 --> 09:04.600
+Pero ya que estás experimentando, si quieres lanzarte, juega un poco y luego compara tú mismo,
+
+09:04.600 --> 09:05.400
+puedes hacerlo.
+
+09:05.410 --> 09:06.140
+Eso es todo.
+
+09:06.160 --> 09:07.030
+Muchas gracias.
+
+09:09.720 --> 09:14.010
+En el próximo video, echaremos un vistazo a la predicción de la trayectoria física.

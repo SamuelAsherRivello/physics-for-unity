@@ -1,0 +1,220 @@
+WEBVTT
+
+00:01.590 --> 00:05.000
+Sección dos Unidad dos componentes físicos D.
+
+00:05.010 --> 00:10.440
+En esta sección cubriremos el cuerpo rígido, dos componentes RD, el colisionador dos componentes RD, y
+
+00:10.440 --> 00:13.290
+también dos efectores RD y dos articulaciones D.
+
+00:13.290 --> 00:16.680
+Incluso vamos a discutir la física para Unity Sprite hoja.
+
+00:17.250 --> 00:22.830
+En este video cubriremos el componente de cuerpo rígido dos RD y sus propiedades más importantes.
+
+00:22.830 --> 00:26.130
+También jugaremos con este componente dentro del editor de Unity.
+
+00:26.950 --> 00:29.570
+En primer lugar, vamos a discutir el componente de transformación.
+
+00:29.590 --> 00:33.480
+El componente de transformación es el componente más básico en Unity.
+
+00:33.490 --> 00:38.000
+Permite la posición, rotación y escala de un objeto del juego.
+
+00:38.020 --> 00:41.850
+Se adjunta automáticamente a cada objeto del juego en su mundo.
+
+00:41.860 --> 00:44.860
+El componente de cuerpo rígido también es un componente.
+
+00:44.860 --> 00:50.650
+Es el componente que permite el comportamiento físico de un objeto de juego con un cuerpo rígido unido.
+
+00:50.650 --> 00:53.290
+El objeto responderá inmediatamente a la gravedad.
+
+00:53.290 --> 00:59.140
+Veamos la referencia de script para el cuerpo rígido dos D dentro de la referencia de script para el cuerpo rígido dos d.
+
+00:59.140 --> 01:01.600
+Podemos ver mucha información.
+
+01:01.600 --> 01:06.820
+Este es un recurso que quieres visitar mientras estás en desarrollo con un juego para entender las características
+
+01:06.820 --> 01:08.650
+y cómo usarlas.
+
+01:08.720 --> 01:11.020
+Puede que incluso descubras algunas optimizaciones.
+
+01:11.020 --> 01:12.460
+Ahí está la descripción.
+
+01:12.910 --> 01:14.740
+También están las propiedades.
+
+01:15.600 --> 01:17.730
+Métodos públicos que puedes llamar.
+
+01:18.830 --> 01:23.120
+Así como miembros heredados y métodos públicos de sus superclases.
+
+01:24.890 --> 01:26.710
+Una nota sobre dos D frente a tres D.
+
+01:26.720 --> 01:29.510
+Unity tiene dos sistemas completamente separados.
+
+01:29.510 --> 01:36.200
+A veces durante el curso puedo referirme específicamente a cuerpo rígido dos D o más genéricamente a rígido
+
+01:36.200 --> 01:36.740
+cuerpo.
+
+01:36.740 --> 01:42.290
+Utilizo cuerpo rígido para referirme tanto a 2D como a 3D, ya que los conceptos son los mismos.
+
+01:43.530 --> 01:47.520
+Comprender el cuerpo rígido es fundamental para entender la física de la unidad.
+
+01:47.940 --> 01:53.850
+Si seleccionamos un objeto del juego con un cuerpo rígido adjunto, veremos todas las propiedades del cuerpo rígido
+
+01:53.850 --> 01:55.090
+dentro del inspector.
+
+01:55.110 --> 01:56.570
+Naveguemos por esas propiedades.
+
+01:56.580 --> 01:58.260
+Hay muchas propiedades que ver.
+
+01:58.290 --> 02:00.150
+Nos centraremos en algunas de las más importantes.
+
+02:00.180 --> 02:02.040
+En primer lugar, está el tipo de cuerpo.
+
+02:02.040 --> 02:05.070
+Esto controla el comportamiento físico de un cuerpo rígido.
+
+02:05.070 --> 02:06.590
+Hay tres opciones diferentes.
+
+02:06.600 --> 02:07.920
+La primera es dinámica.
+
+02:08.010 --> 02:11.830
+Esta es la más común cuando ponemos cuerpo rígido en dinámico.
+
+02:11.850 --> 02:14.990
+Esto le permite reaccionar a la gravedad y a las fuerzas aplicadas.
+
+02:15.000 --> 02:18.180
+Nunca debemos mover esto manualmente a través de su transformación.
+
+02:18.180 --> 02:20.070
+Siempre debemos aplicar fuerzas.
+
+02:20.160 --> 02:21.870
+El tipo de cuerpo dos es cinemático.
+
+02:21.870 --> 02:26.940
+No responde a la gravedad ni a las fuerzas y podemos moverlo manualmente.
+
+02:26.940 --> 02:31.950
+El tipo de cuerpo tres son cosas estáticas como el suelo de nuestro mundo o el propio mundo.
+
+02:31.950 --> 02:35.400
+Si estamos construyendo un planeta, no queremos que responda a la gravedad.
+
+02:35.400 --> 02:40.920
+Queremos que los objetos que están encima caigan y luego reboten de forma creíble e interactúen con la superficie de
+
+02:40.920 --> 02:41.550
+del suelo.
+
+02:41.580 --> 02:44.340
+Otras propiedades de nuestro foco son materiales.
+
+02:44.340 --> 02:49.590
+El material físico describe la fricción y el rebote nosotros, y hablaremos de esto en profundidad más adelante.
+
+02:49.590 --> 02:52.860
+El valor de arrastre es la tendencia de un objeto a frenarse.
+
+02:52.860 --> 02:59.370
+Se puede pensar en un arrastre lineal alto como algo que es difícil de arrastrar por el suelo o mover
+
+02:59.370 --> 03:00.300
+por el suelo.
+
+03:00.300 --> 03:04.980
+Puedes pensar en un alto arrastre angular como algo que es difícil de girar o rotar.
+
+03:04.980 --> 03:07.500
+La masa de un objeto es increíblemente importante.
+
+03:07.500 --> 03:11.040
+Cuanto mayor sea la masa, más difícil será moverlo.
+
+03:11.040 --> 03:17.250
+En nuestro mundo, se puede pensar que una bola de bolos tiene una masa elevada porque en la Tierra con la gravedad terrestre,
+
+03:17.250 --> 03:20.820
+sería difícil de coger y también de hacer rodar.
+
+03:20.820 --> 03:26.820
+En comparación con una pelota de playa, que tiene muy poca masa, se puede hacer un pequeño movimiento tocando el lado
+
+03:26.820 --> 03:31.230
+de una pelota de playa y esperar que se mueva mucho más lejos que una bola de bolos.
+
+03:32.020 --> 03:34.490
+Veamos una demostración de dos masas D.
+
+03:34.510 --> 03:40.540
+Reproduciremos la escena, inspeccionaremos los valores de masa, y crearemos un nuevo peso masivo e interactuaremos
+
+03:40.540 --> 03:42.670
+con él, para ver cómo se comporta de forma diferente.
+
+03:43.580 --> 03:45.920
+Abramos el proyecto de las dos máscaras RD.
+
+03:45.920 --> 03:47.720
+Vamos a crear una nueva.
+
+03:48.780 --> 03:50.720
+Peso muy masivo.
+
+03:50.730 --> 03:52.940
+Le añadiremos un cuerpo rígido a D.
+
+03:54.070 --> 03:55.360
+En un colisionador dos rd.
+
+03:56.960 --> 04:01.280
+Y vamos a añadir 100 para el valor de la masa, que es mucho más alto que los otros.
+
+04:02.440 --> 04:06.450
+Podemos ver que cuando ejecutemos la escena aquí, todos caerán con la misma gravedad.
+
+04:06.460 --> 04:11.170
+Sin embargo, el peso muy masivo empujará a los otros objetos fuera del camino.
+
+04:11.170 --> 04:15.610
+Es tan masivo que realmente quiere volver a la superficie del suelo más que los otros.
+
+04:20.380 --> 04:21.190
+Y eso es todo.
+
+04:23.790 --> 04:27.330
+En el próximo vídeo, echaremos un vistazo al componente de dos colisionadores D.

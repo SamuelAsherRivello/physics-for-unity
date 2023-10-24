@@ -1,0 +1,181 @@
+WEBVTT
+
+00:01.650 --> 00:03.450
+El segundo componente del colisionador.
+
+00:03.450 --> 00:08.530
+En este video, cubriremos el componente collider, two RD y sus propiedades más importantes.
+
+00:08.550 --> 00:11.000
+También jugaremos con este componente en el editor.
+
+00:11.010 --> 00:16.410
+Collider es el componente que define la forma de un objeto a efectos de colisiones físicas.
+
+00:16.530 --> 00:20.760
+Como muestra este diagrama, podemos tener un objeto de juego con múltiples componentes.
+
+00:20.760 --> 00:25.560
+En este ejemplo, tenemos una transformación y un cuerpo rígido, como hemos comentado en vídeos anteriores.
+
+00:25.560 --> 00:29.510
+Y también tenemos un colisionador con un cuerpo rígido y un colisionador.
+
+00:29.520 --> 00:35.970
+Podemos pensar que este objeto es físico en este mundo de juego y es capaz de interactuar y colisionar
+
+00:35.970 --> 00:36.750
+con otros.
+
+00:36.870 --> 00:38.130
+Tipos de Colliders.
+
+00:38.130 --> 00:44.310
+Los más populares Circle Collider y box Collider como se muestra en las imágenes te dan el área que tendrías
+
+00:44.310 --> 00:49.460
+esperarías de un círculo y una caja, y eso lleva la mayoría de los ejemplos que querrías en un juego.
+
+00:49.470 --> 00:55.770
+Sin embargo, hay una variedad de otros para las formas que no encajan en uno de esos dos polígonos
+
+00:55.770 --> 00:57.660
+y la cápsula Edge.
+
+00:57.660 --> 01:02.730
+Y a veces quieres tener múltiples colisionadores dentro del mismo objeto.
+
+01:02.730 --> 01:08.730
+Tal vez la forma del objeto es bastante compleja, por lo que podría añadir otros colisionadores juntos utilizando la función
+
+01:08.730 --> 01:09.920
+colisionador compuesto.
+
+01:09.930 --> 01:15.630
+DD Si seleccionamos un objeto del juego en la escena con un collider, podemos abrir la ventana del inspector
+
+01:15.630 --> 01:17.110
+y ver todos los componentes.
+
+01:17.130 --> 01:20.640
+Naveguemos por las propiedades de un ejemplo de Box Collider a DD.
+
+01:20.670 --> 01:24.030
+Hay un montón de propiedades nos centraremos sólo en unas pocas.
+
+01:24.030 --> 01:29.370
+La más importante, en primer lugar, la física material describe la fricción y el rebote.
+
+01:29.370 --> 01:30.300
+de las colisiones.
+
+01:30.300 --> 01:35.250
+Cubriremos esto en una sección posterior, pero quiero señalar aquí que ya hemos visto este material
+
+01:35.250 --> 01:36.990
+dentro del cuerpo rígido.
+
+01:36.990 --> 01:39.260
+Entonces, ¿por qué existe en dos lugares?
+
+01:39.270 --> 01:43.690
+Bueno, normalmente, lo más común es que queramos añadirla sólo al cuerpo rígido.
+
+01:43.710 --> 01:50.190
+Sin embargo, si tienes múltiples colisionadores y quieres tener materiales únicos por colisionador, puedes
+
+01:50.190 --> 01:53.670
+también ponerlo dentro de la caja del colisionador en lugar del cuerpo rígido.
+
+01:53.820 --> 01:57.360
+Otra propiedad importante es la booleana is trigger.
+
+01:57.360 --> 01:59.940
+Esto determina si el collider se comporta como un trigger.
+
+01:59.940 --> 02:01.740
+El valor por defecto es falso.
+
+02:01.740 --> 02:03.720
+Se comporta como un objeto sólido.
+
+02:03.720 --> 02:07.860
+Colisiona con otros objetos y envía los eventos de colisión.
+
+02:07.860 --> 02:11.000
+Por ejemplo, ¿la bala golpeó al personaje?
+
+02:11.010 --> 02:14.610
+Sin embargo, en algunas situaciones queremos que el trigger sea verdadero.
+
+02:14.610 --> 02:19.620
+Esto significa que no colisiona con otros objetos y envía un evento diferente llamado on
+
+02:19.620 --> 02:20.280
+Disparador.
+
+02:20.280 --> 02:24.420
+Y podrías preguntarte en un juego, ¿entró el héroe en la cueva?
+
+02:24.420 --> 02:30.210
+Queremos permitir que el personaje entre en la cueva, pero usando un trigger, somos capaces de obtener una notificación
+
+02:30.210 --> 02:32.790
+para que ocurra algún evento del juego.
+
+02:32.790 --> 02:39.910
+Cuando entra por defecto, Unity suele colocar el collider para que coincida con el tamaño de los gráficos.
+
+02:39.960 --> 02:43.650
+Sin embargo, somos libres de ajustar la posición y la escala del Collider.
+
+02:43.650 --> 02:48.870
+Por ejemplo, puedes querer que el Collider sea más grande que los gráficos, para que detecte las colisiones a
+
+02:48.870 --> 02:49.740
+un poco antes.
+
+02:49.740 --> 02:54.210
+O quizás quieras que el colisionador sea más pequeño que los gráficos, para que sea un poco más indulgente.
+
+02:54.210 --> 02:57.690
+Tal vez le da a un juego una dificultad diferente que te gusta.
+
+02:57.690 --> 03:02.940
+Puedes elegir editar el tamaño del colisionador usando el botón editar colisionador para ajustarlo visualmente,
+
+03:02.940 --> 03:09.180
+o puede ajustar las propiedades individuales de radio de borde de tamaño de desplazamiento y puede ajustarlos numéricamente.
+
+03:10.290 --> 03:14.670
+Veamos una demostración En la escena de la Pirámide de dos D seleccionaremos una caja.
+
+03:14.700 --> 03:17.150
+Veremos el collider en la ventana del inspector.
+
+03:17.160 --> 03:22.170
+Podemos editar el collider visual y numéricamente para tener una idea de ambas opciones.
+
+03:22.170 --> 03:27.180
+Y por último, jugaremos con el valor is trigger poniéndolo true y false para observar el resultado.
+
+03:28.600 --> 03:33.820
+Vamos a abrir la pirámide de dos D y seleccionaremos una de las cajas en la vista de escena.
+
+03:33.830 --> 03:40.180
+Y vemos aquí que podemos editar el colisionador y ajustarlo numéricamente.
+
+03:41.540 --> 03:43.610
+Y podemos ver en la vista de escena que se está moviendo.
+
+03:44.780 --> 03:48.410
+El posicionamiento del desplazamiento o el tamaño.
+
+03:49.310 --> 03:53.480
+O podemos usar el ratón aquí abajo y hacerlo visualmente.
+
+03:55.760 --> 03:56.360
+Eso es.
+
+03:57.430 --> 03:59.680
+En el siguiente video dos Efectores rd.

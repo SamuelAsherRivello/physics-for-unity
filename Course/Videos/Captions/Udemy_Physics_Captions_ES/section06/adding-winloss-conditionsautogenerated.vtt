@@ -1,0 +1,196 @@
+WEBVTT
+
+00:01.860 --> 00:03.650
+Añadiendo condiciones de victoria y derrota.
+
+00:03.660 --> 00:10.230
+En este video vamos a cubrir la adición de texto de interfaz de usuario para la puntuación y el tiempo recompensará puntos para recoger las monedas
+
+00:10.410 --> 00:12.870
+y crearemos un temporizador para la condición de pérdida.
+
+00:12.990 --> 00:18.060
+Para ganar, añadiremos la zona de meta que nuestra bola loca puede alcanzar y con la que puede chocar.
+
+00:18.480 --> 00:19.980
+Aquí está el desglose de la prueba.
+
+00:19.980 --> 00:23.730
+Crearemos el prefab UI de la bola loca y el script C-sharp.
+
+00:23.850 --> 00:27.330
+Luego añadiremos el prefab del área de acabado y el script de see sharp.
+
+00:27.750 --> 00:32.500
+A continuación, vamos a añadir el juego de pelota loca, que impulsará la lógica de alto nivel para nuestro juego.
+
+00:32.520 --> 00:36.010
+Y entre cada uno de estos, vamos a añadir las condiciones de ganar y perder.
+
+00:36.030 --> 00:42.390
+Esta captura de pantalla representa nuestro objetivo para el proyecto se abrirá la sección seis, Video cuatro y
+
+00:42.390 --> 00:44.130
+la escena Bola loca cuatro.
+
+00:44.850 --> 00:48.780
+Muy bien, aquí estamos en la unidad y vamos a saltar a Crazy Ball cuatro.
+
+00:49.990 --> 00:56.320
+Ahora, lo que hemos añadido aquí es la interfaz de usuario y el otro código para las reglas del juego.
+
+00:56.320 --> 00:58.120
+Estas son las condiciones de victoria y derrota.
+
+00:58.120 --> 00:59.290
+Echemos un vistazo.
+
+00:59.740 --> 01:01.810
+Tenemos esta zona de meta preparada.
+
+01:03.460 --> 01:04.810
+Parece un tablero de ajedrez.
+
+01:05.170 --> 01:08.200
+Y tenemos este colisionador aquí.
+
+01:08.200 --> 01:13.660
+Así que cuando nuestra bola interactúa con eso, somos capaces de desencadenar que el juego termine.
+
+01:14.260 --> 01:20.980
+Luego tenemos la interfaz de usuario, que es el tiempo y la puntuación y un texto de resultados que actualmente es invisible,
+
+01:20.980 --> 01:26.050
+listo para ser rellenado con los valores del tiempo actual y la puntuación actual, etc..
+
+01:26.260 --> 01:28.810
+Y entonces tenemos este nuevo script de juego de pelota loca.
+
+01:28.810 --> 01:30.730
+Así que echemos un vistazo a cada uno de esos tres.
+
+01:31.540 --> 01:32.890
+En la interfaz de usuario de la bola loca.
+
+01:32.890 --> 01:37.270
+Si quisiéramos añadir UI, crearíamos un objeto de juego desde cero.
+
+01:37.450 --> 01:45.070
+Con una UI, podríamos crearla creando un objeto de juego y luego creando la UI con diferentes
+
+01:45.070 --> 01:45.940
+valores de texto.
+
+01:45.940 --> 01:48.400
+Lo haríamos en posición en la pantalla.
+
+01:48.910 --> 01:55.570
+Luego añadimos un script UI personalizado aquí y arrastramos las referencias a cada uno de los campos de texto que queramos
+
+01:55.570 --> 01:56.600
+cambiar.
+
+01:56.620 --> 02:00.130
+Así que vamos a empezar echando un vistazo a ese script de interfaz de usuario de la bola loca.
+
+02:01.480 --> 02:07.810
+Así que lo que hacemos es tomar en las diferentes referencias como campos serializados y luego simplemente tener un público
+
+02:07.810 --> 02:13.270
+para cada uno de ellos, uno para mostrar el tiempo, uno para mostrar la puntuación, y luego, al final, uno para
+
+02:13.270 --> 02:14.050
+mostrar el resultado.
+
+02:14.050 --> 02:17.350
+Dependiendo de si has ganado o perdido, ser capaz de mostrar texto único allí.
+
+02:17.800 --> 02:24.040
+El juego de la pelota loca, que se encuentra en la escena en su propio objeto de juego, es capaz de mantener la puntuación y
+
+02:24.040 --> 02:25.120
+mantener el tiempo.
+
+02:25.120 --> 02:30.820
+Y dentro de cada uno de ellos, cuando se establece la puntuación, por ejemplo, sólo se llama a que mostrar puntuación método
+
+02:30.820 --> 02:32.680
+y llama al método show time.
+
+02:32.680 --> 02:37.660
+Así que puedes ver la interacción entre el juego de la bola loca y el UI de la bola loca.
+
+02:38.620 --> 02:39.700
+Siéntate aquí.
+
+02:39.700 --> 02:43.530
+Establecemos los valores iniciales de puntuación y cuánto tiempo nos queda.
+
+02:43.540 --> 02:45.790
+Estos se mostrarán a la interfaz de usuario.
+
+02:46.150 --> 02:49.030
+Y luego, en la actualización, marcamos el tiempo.
+
+02:49.780 --> 02:51.970
+De 30 a cero.
+
+02:51.970 --> 02:55.900
+Y entonces, si llega a cero, somos capaces de establecer el final del juego.
+
+02:55.900 --> 03:03.070
+Y el establecimiento de la final del juego se bloqueará en que el juego ha terminado de manera que los diferentes sistemas en el juego puede
+
+03:03.070 --> 03:03.580
+detenerse.
+
+03:03.580 --> 03:08.170
+Ya no se puede tener entrada, por ejemplo, y luego mostrar ese resultado en la interfaz de usuario.
+
+03:08.200 --> 03:10.390
+Entonces una cosa más que quiero mostrar.
+
+03:10.420 --> 03:15.190
+Dentro de la propia bola loca, así es como manejamos la colisión del área de llegada.
+
+03:15.190 --> 03:21.010
+Es bastante simple de nuevo, porque no queremos que la caja delimitadora de la zona de meta se sienta como un
+
+03:21.010 --> 03:22.570
+que no podemos penetrar.
+
+03:22.570 --> 03:30.280
+Usamos un gatillo y el gatillo nos permite entrar dentro de ese volumen, pero somos capaces de terminar el juego
+
+03:30.280 --> 03:32.260
+correctamente usando el "on trigger enter".
+
+03:33.710 --> 03:34.700
+Vamos a darle al play.
+
+03:38.590 --> 03:40.390
+Podemos ver como baja el tiempo.
+
+03:41.280 --> 03:45.630
+Podemos ver que la puntuación sube cada vez que cojo las monedas.
+
+03:46.170 --> 03:51.900
+Y luego, si me dirijo a la zona de meta, en el momento en que entro en ese volumen de disparo, dice
+
+03:51.900 --> 03:52.560
+Gano.
+
+03:53.360 --> 03:58.040
+Voy a pulsar la barra espaciadora para reiniciar y podemos dejar que el temporizador caiga hasta el final.
+
+03:58.070 --> 04:04.630
+Si lo hiciera, mostraría un mensaje similar al de nuestra ONU, excepto que diría que has perdido.
+
+04:04.640 --> 04:05.780
+Y esa es la única diferencia.
+
+04:05.780 --> 04:09.560
+Así que ahí están todas las condiciones de ganar y perder y nuestro nuevo scripting.
+
+04:12.240 --> 04:15.120
+En el próximo vídeo, veremos cómo añadir más brillo.

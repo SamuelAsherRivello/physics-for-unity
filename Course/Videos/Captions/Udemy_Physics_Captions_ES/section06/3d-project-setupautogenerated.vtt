@@ -1,0 +1,217 @@
+WEBVTT
+
+00:01.770 --> 00:04.650
+Creando un juego 3D clon de Marble Madness.
+
+00:04.680 --> 00:08.710
+En esta sección cubriremos la creación de un juego 3D completo desde cero.
+
+00:08.730 --> 00:11.290
+Usaremos fuerzas físicas para mover a nuestro personaje.
+
+00:11.310 --> 00:17.880
+Añadiremos obstáculos de cuerpo rígido, condiciones de victoria y derrota y una configuración extra del proyecto 3D polaco.
+
+00:17.910 --> 00:23.850
+En este video, vamos a cubrir la toma de la inspiración para un nuevo proyecto de juego y traducir eso en
+
+00:23.850 --> 00:24.990
+conceptos clave.
+
+00:25.530 --> 00:27.030
+Planificación de un juego en 3D.
+
+00:27.120 --> 00:31.860
+La inspiración para nuestro nuevo juego es el clásico de los 80 Marble Madness.
+
+00:31.890 --> 00:33.660
+Llamaremos a nuestro juego Crazy Ball.
+
+00:33.660 --> 00:37.620
+Y aquí tenemos una simple maqueta gráfica de los principales elementos del juego.
+
+00:37.620 --> 00:44.640
+Las cosas van a pedir prestado el movimiento original de la física 3D con la entrada, la física, las colisiones, límite de tiempo
+
+00:44.640 --> 00:47.370
+y un estilo artístico futurista minimalista.
+
+00:47.400 --> 00:49.600
+Las reglas de crazy ball serán así.
+
+00:49.620 --> 00:52.470
+Corre hasta la meta dentro del tiempo límite para ganar.
+
+00:52.470 --> 00:54.120
+Recoge monedas para ganar puntos.
+
+00:54.150 --> 00:58.290
+Navega por el diseño del nivel con objetos móviles e inamovibles.
+
+00:58.290 --> 01:02.570
+El desglose de la física se moverá utilizando cuerpo rígido añadir fuerza.
+
+01:02.580 --> 01:08.280
+Recogeremos monedas con eventos de colisión y obtendremos el evento de cuando lleguemos a la meta.
+
+01:08.280 --> 01:09.410
+Usando on trigger.
+
+01:09.420 --> 01:15.150
+El desglose de tareas será de tres d configuración del proyecto, la creación de los personajes y de entrada, la creación de la
+
+01:15.150 --> 01:21.720
+obstáculos, la adición de ganar la pérdida de las condiciones, y, finalmente, la adición de pulido extra con sonidos y animación.
+
+01:22.590 --> 01:24.300
+Construyendo la instalación del paquete.
+
+01:24.300 --> 01:27.030
+Este tipo de juego no requiere ningún paquete extra.
+
+01:27.030 --> 01:32.540
+Sin embargo, he optado por utilizar un par para ayudarnos si usted quiere seguir a lo largo, Estos son necesarios.
+
+01:32.550 --> 01:36.350
+Sin embargo, tenga en cuenta que esto ya está hecho para usted en nuestro proyecto de demostración del curso.
+
+01:36.360 --> 01:42.330
+Estas instrucciones son sólo si desea iniciar un nuevo proyecto completamente desde cero fuera de nuestro
+
+01:42.330 --> 01:44.640
+trabajo y obtener estas mismas características.
+
+01:44.820 --> 01:49.260
+Primero, usaremos Cinema Machine para rastrear la cámara siguiendo nuestra pelota.
+
+01:49.260 --> 01:54.420
+A continuación, vamos a utilizar pro grids para ayudar a encajar los objetos a medida que vamos colocando y haciendo el diseño del nivel.
+
+01:55.180 --> 01:56.680
+Configuración del proyecto Three D.
+
+01:56.950 --> 01:59.410
+Este es el desglose de tareas para nuestra primera configuración.
+
+01:59.410 --> 02:02.200
+Esta es una captura de pantalla que representa nuestro objetivo final.
+
+02:02.200 --> 02:06.290
+Añadiremos el suelo, añadiremos el fondo, y añadiremos el prefabricado de la bola loca.
+
+02:06.310 --> 02:10.120
+Luego configuraremos la cámara de la máquina de cine para que siga a nuestra bola loca.
+
+02:10.870 --> 02:17.260
+Para el proyecto, abriremos la sección seis, Video uno y la escena Bola loca cero uno.
+
+02:20.450 --> 02:21.680
+Abriremos nuestra bola loca.
+
+02:21.680 --> 02:28.010
+Una escena vemos que tenemos la bola loca y algunos elementos de fondo y por supuesto nuestras cámaras mirando
+
+02:28.010 --> 02:28.910
+a la bola loca.
+
+02:29.240 --> 02:33.980
+Así que si nos fijamos en el medio ambiente, vemos un montón de cosas similares a nuestras otras escenas, incluyendo hemos
+
+02:33.980 --> 02:39.740
+tenemos un suelo aquí y luego tenemos una copia del suelo, utiliza el fondo, sólo tiene algo detrás de
+
+02:39.740 --> 02:40.070
+de él.
+
+02:40.890 --> 02:44.090
+Hacemos zoom en la bola loca, vemos que solo tenemos una bola con textura.
+
+02:44.100 --> 02:45.630
+Todavía no hay nada demasiado grande.
+
+02:46.680 --> 02:48.600
+Pero algo nuevo es esta cámara virtual.
+
+02:48.600 --> 02:52.050
+Así que vamos a aprender a configurar una cámara virtual usando cinema machine.
+
+02:52.050 --> 02:57.450
+Así que borraré la cámara, la cámara virtual y la bola loca, y las crearemos desde cero.
+
+03:06.390 --> 03:06.910
+Mira.
+
+03:07.050 --> 03:11.520
+Así que vamos a crear una nueva esfera de objeto D para nuestra bola.
+
+03:12.210 --> 03:14.700
+La pondremos más o menos en el centro del mundo.
+
+03:16.850 --> 03:18.300
+Quizás un poco lejos del suelo.
+
+03:18.320 --> 03:19.010
+Estupendo.
+
+03:19.550 --> 03:21.770
+Entonces crearemos una nueva cámara Unity.
+
+03:22.950 --> 03:23.910
+Y luego algo nuevo.
+
+03:23.910 --> 03:26.460
+Vamos a crear una máquina de cine, cámara virtual.
+
+03:26.940 --> 03:31.650
+Una vez que hagamos eso en la cámara, se añadirá automáticamente a cinema machine brain.
+
+03:31.680 --> 03:36.960
+Ahora la cámara unity será controlada por el sistema cinema machine.
+
+03:37.110 --> 03:41.160
+Y lo mejor de esto es que estas cámaras vienen con un montón de funcionalidades.
+
+03:42.110 --> 03:45.110
+Vamos a hacer algunos ajustes en esta cámara virtual.
+
+03:45.530 --> 03:50.540
+Haremos que siga a nuestra esfera y que mire a nuestra esfera.
+
+03:51.330 --> 03:53.600
+Luego aquí abajo podemos elegir algunas opciones.
+
+03:53.610 --> 03:59.010
+Haremos que el cuerpo se desplace usando un transposón y tendremos la puntería.
+
+03:59.810 --> 04:02.060
+Seguido de un composón.
+
+04:02.450 --> 04:05.360
+Ahora, el desplazamiento, lo giramos un poco hacia arriba.
+
+04:06.440 --> 04:09.150
+Tal vez queramos retroceder un poco o hacer zoom.
+
+04:09.170 --> 04:11.660
+Puedes ajustarlo al abogado que quieras.
+
+04:12.110 --> 04:17.780
+Luego aquí abajo en el compositor, podemos elegir seguir el objeto un poco alto o un poco bajo o
+
+04:17.780 --> 04:19.040
+justo en el centro.
+
+04:19.040 --> 04:20.660
+Y eso es todo lo que tenemos que hacer.
+
+04:20.810 --> 04:26.420
+Ahora, cuando reproducimos la escena, podemos coger esa esfera manualmente y podemos moverla y puedes
+
+04:26.420 --> 04:29.630
+ver que la máquina de cine la sigue perfectamente.
+
+04:33.290 --> 04:39.230
+En el siguiente video, veremos como crear el reproductor y la entrada de datos, veremos como introducir datos con el teclado usando
+
+04:39.230 --> 04:43.880
+cuerpo rígido, añadir fuerza para el movimiento y el uso de rejillas pro para posicionar las paredes.

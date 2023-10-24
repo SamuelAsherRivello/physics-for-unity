@@ -1,0 +1,219 @@
+WEBVTT
+
+00:01.520 --> 00:04.670
+Bienvenidos a una Introducción a la Física de Juegos, Sección uno.
+
+00:04.700 --> 00:08.360
+En esta sección, veremos los beneficios de crear juegos basados en física.
+
+00:08.510 --> 00:14.060
+Veremos las tres preocupaciones principales de cualquier sistema de física y veremos cómo esas preocupaciones se aplican
+
+00:14.060 --> 00:17.310
+a Unity, el sistema de física de Unity y la configuración del proyecto.
+
+00:17.330 --> 00:20.180
+También veremos el ciclo de vida y el cronograma de la física.
+
+00:20.360 --> 00:25.760
+En este video, integración, detección de colisiones y resolución de colisiones, veremos.
+
+00:25.760 --> 00:28.320
+Estas son las tres preocupaciones principales de cualquier sistema de física.
+
+00:28.340 --> 00:30.650
+Veremos cómo Unity maneja cada una.
+
+00:30.650 --> 00:34.310
+Y echaremos un vistazo a la física en el editor de Unity por primera vez.
+
+00:34.550 --> 00:36.450
+Entonces, ¿qué queremos decir con física de juegos?
+
+00:36.470 --> 00:41.920
+Típicamente, cuando pensamos en física de juegos como jugadores, pensamos más en la simulación de cuerpos rígidos.
+
+00:41.930 --> 00:43.610
+Estos son los cálculos.
+
+00:43.610 --> 00:50.690
+Por ejemplo, una pila de cubos sobre cómo los cubos pueden estar uno encima del otro, colisionar, interactuar.
+
+00:50.840 --> 00:52.820
+Pero también hay consultas espaciales.
+
+00:52.820 --> 00:55.690
+Las consultas espaciales son no visuales.
+
+00:55.700 --> 01:03.650
+Examinan el espacio en el mundo 3D, utilizando la física para verificar distancias proyectando una línea
+
+01:03.650 --> 01:09.350
+o un colisionador a través del espacio para determinar dónde están los obstáculos en el mundo.
+
+01:09.350 --> 01:12.860
+También puedes anticipar colisiones futuras potenciales.
+
+01:12.860 --> 01:19.910
+Por ejemplo, podrías evaluar si mi arma está apuntando al enemigo y hacer que el enemigo reaccione en consecuencia.
+
+01:19.910 --> 01:21.380
+Las tres preocupaciones principales de cualquier sistema de física son la integración, la detección de colisiones y la resolución de colisiones.
+
+01:28.460 --> 01:31.460
+La integración se encarga de cómo encaja la física en el juego.
+
+01:31.460 --> 01:38.780
+La detección de colisiones en el mundo es sobre cómo se superponen los objetos y cómo el sistema lo detecta,
+
+01:38.780 --> 01:44.840
+y la resolución de colisiones se encarga de las reacciones de esos objetos superpuestos.
+
+01:44.840 --> 01:49.460
+Por ejemplo, los objetos podrían rebotar o alejarse el uno del otro.
+
+01:49.520 --> 01:50.900
+Veamos la integración.
+
+01:50.900 --> 01:53.780
+Usar la física en Unity es opcional.
+
+01:53.780 --> 02:00.680
+La forma en que están diseñados los proyectos de Unity es que los objetos del juego están en el espacio 3D y cada uno tiene uno
+
+02:00.680 --> 02:02.300
+o más componentes encima.
+
+02:02.540 --> 02:09.080
+Por ejemplo, en la captura de pantalla vemos un objeto de juego con el componente de transformación que es obligatorio.
+
+02:09.080 --> 02:15.440
+Si queremos agregar e integrar la física en este proyecto, simplemente agregamos un cuerpo rígido al mismo
+
+02:15.440 --> 02:16.160
+objeto del juego.
+
+02:16.160 --> 02:19.130
+Y ahora el objeto del juego es consciente de su propio espacio.
+
+02:19.130 --> 02:20.810
+Dentro del mundo de la física.
+
+02:20.960 --> 02:26.480
+Cada fotograma, el sistema de física revisará todos los componentes relacionados con la física y realizará las actualizaciones y cálculos adecuados.
+
+02:26.480 --> 02:27.590
+Detección de colisiones es la segunda.
+
+02:29.720 --> 02:36.410
+Es el sistema que examina todos los objetos basados en física en el mundo y decide si se superponen.
+
+02:36.410 --> 02:42.260
+Por ejemplo, en esta imagen vemos un cuadrado azul y un cuadrado rosa superponiéndose un poco.
+
+02:42.470 --> 02:47.060
+La resolución de colisiones es manejar esa superposición en la misma situación.
+
+02:47.060 --> 02:52.
+
+730
+El cuadrado azul y el cuadrado rosa se moverían aparte por el sistema de física porque los cuerpos rígidos no pueden
+
+02:52.730 --> 02:53.720
+superponerse.
+
+02:54.260 --> 03:00.000
+Después de que el sistema de física se ejecuta, no habrá superposición de cuerpos rígidos en todo el mundo.
+
+03:00.020 --> 03:03.470
+Esto sucede tan rápido que no percibes ninguna superposición.
+
+03:03.470 --> 03:05.540
+Esa es la configuración ideal en un mundo.
+
+03:05.540 --> 03:10.550
+Ves objetos interactuando como si fueran sólidos y no pudieran atravesarse entre sí.
+
+03:10.970 --> 03:12.890
+Ahora, veamos una demostración dentro de Unity.
+
+03:12.890 --> 03:18.560
+Si has descargado los archivos de activos que vienen con este curso, abre el proyecto base y navega hacia
+
+03:18.560 --> 03:19.310
+la carpeta.
+
+03:19.310 --> 03:20.240
+Sección uno.
+
+03:20.240 --> 03:23.890
+Video dos, verás una escena llamada Pirámide 3D.
+
+03:23.900 --> 03:25.310
+La veremos juntos.
+
+03:25.310 --> 03:27.200
+Puedes seguir aquí.
+
+03:27.200 --> 03:33.260
+Examinaremos las diferencias entre inicio, parada y paso mientras controlamos la escena y examinaremos algunos
+
+03:33.260 --> 03:36.650
+de los objetos en la escena en busca de un cuerpo rígido y un colisionador.
+
+03:37.410 --> 03:38.890
+Aquí estamos dentro de Unity.
+
+03:38.910 --> 03:43.680
+Si descargas los materiales del curso que vienen con este curso, verás un proyecto como este.
+
+03:43.710 --> 03:48.300
+Dentro, puedes buscar en la ventana del proyecto para encontrar la escena relacionada que tocaremos.
+
+03:48.300 --> 03:51.390
+O puedes buscar en este menú que he creado aquí.
+
+03:51.390 --> 03:53.190
+Así que si vamos a la Sección uno.
+
+03:54.130 --> 03:56.820
+Video dos, Pirámide 3D.
+
+03:56.830 --> 04:01.290
+Lo abrimos, podemos hacer clic en jugar, pausar y avanzar paso a paso a través de la escena.
+
+04:01.300 --> 04:02.930
+El paso va cuadro por cuadro.
+
+04:02.970 --> 04:03.910
+Aquí vamos a jugar.
+
+04:03.920 --> 04:06.160
+Vemos que estas cajas se acomodan unas sobre otras.
+
+04:06.160 --> 04:11.680
+Luego podemos manipular la escena y vemos interacción física del mundo real.
+
+04:12.100 --> 04:17.470
+Cada uno de estos cubos está configurado de manera similar y en la ventana del inspector podemos ver que tenemos
+
+04:17.470 --> 04:19.780
+un colisionador de caja y un cuerpo rígido.
+
+04:19.780 --> 04:26.020
+Aprenderemos acerca de estos dos componentes de física en lecciones futuras en el próximo video, la física de Unity
+
+04:26.020 --> 04:28.180
+sistema, pasado, presente y futuro.
+
+04:28.270 --> 04:29.890
+Veremos qué es Unity.
+
+04:29.890 --> 04:32.350
+Daremos un paso atrás y veremos el sistema en sí.
+
+04:32.350 --> 04:37.780
+Veremos qué bibliotecas y potencia Unity Physics hoy en día, y veremos el futuro de Unity
+
+04:37.780 --> 04:38.440
+Physics.

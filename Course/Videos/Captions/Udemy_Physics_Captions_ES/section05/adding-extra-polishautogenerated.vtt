@@ -1,0 +1,214 @@
+WEBVTT
+
+00:01.710 --> 00:03.190
+Añadiendo pulido extra.
+
+00:03.210 --> 00:09.210
+En este vídeo veremos qué es el pulido y qué características es mejor dejar para el final del desarrollo.
+
+00:09.240 --> 00:15.210
+Vamos a añadir algunas animaciones de explosiones, física, efectos y sonidos para las explosiones en nuestro juego
+
+00:15.210 --> 00:15.870
+también.
+
+00:16.700 --> 00:18.030
+¿Qué es el polaco?
+
+00:18.050 --> 00:25.420
+El polaco son los últimos pasos del juego, normalmente antes de un gran hito o incluso antes del envío.
+
+00:25.430 --> 00:32.840
+Cuando inviertes tu tiempo y recursos en hacer pequeñas diferencias en los gráficos, los efectos visuales, los
+
+00:32.840 --> 00:37.310
+la jugabilidad, cosas que hacen que el juego pase de ser bueno a ser genial.
+
+00:37.430 --> 00:43.340
+En nuestro juego, el desglose de tareas para nosotros es que vamos a añadir algunas explosiones cuando desaparezcan las cajas.
+
+00:43.730 --> 00:50.390
+Actualmente, cuando las cajas desaparecen es a la vez una parte bastante importante del juego y así como no es
+
+00:50.390 --> 00:51.830
+realmente dramático.
+
+00:51.830 --> 00:56.340
+Así que si añadimos algunas explosiones, ayuda a celebrar y añadir un poco de dramatismo a ese momento.
+
+00:56.360 --> 00:58.730
+Añadiremos una animación de explosión.
+
+00:58.730 --> 01:04.850
+Usaremos un efector DX para que los objetos cercanos a la explosión se muevan un poco y luego
+
+01:04.850 --> 01:09.950
+añadiremos un gestor de sonido porque el sonido ha estado ausente de nuestro juego hasta ahora y buscaremos
+
+01:09.950 --> 01:13.820
+en los eventos clave de la jugabilidad que necesitan un poco de atención extra.
+
+01:14.120 --> 01:19.280
+Abriremos la sección cinco Video cinco Upset Ducks cinco para nuestro proyecto.
+
+01:20.000 --> 01:24.830
+Muy bien, vamos a saltar dentro de Unity aquí y abrir nuestro Upset Dux cinco.
+
+01:25.130 --> 01:26.210
+Vamos a jugar.
+
+01:26.840 --> 01:29.420
+Notaremos algunas cosas diferentes que hemos pulido.
+
+01:29.720 --> 01:35.450
+Número uno, cada vez que reinicio la escena aquí usando la barra espaciadora, podemos ver que el asteroide
+
+01:35.450 --> 01:40.040
+se desvanece de una escala cero a una escala uno con un pequeño rebote.
+
+01:40.070 --> 01:44.780
+Es un efecto pequeño, pero es bastante barato de añadir y da un poco de atractivo visual.
+
+01:44.930 --> 01:47.840
+Además, cuando dispare aquí, verás una explosión.
+
+01:51.760 --> 01:53.760
+Así que el efecto de sonido funciona muy bien.
+
+01:53.770 --> 01:58.210
+La explosión hace que sea mucho más emocionante cuando una caja desaparece.
+
+01:58.210 --> 02:01.840
+Y también conseguimos una fuerza física de explosión.
+
+02:01.840 --> 02:03.730
+Así que vamos a ver cómo se configura todo esto.
+
+02:03.790 --> 02:05.800
+Primero, echemos un vistazo a la interpolación.
+
+02:06.470 --> 02:08.000
+Así que en el asteroide
+
+02:08.890 --> 02:10.210
+Dentro de su inicio.
+
+02:10.660 --> 02:14.410
+Hago un escalado programático de la animación de 0 a 1.
+
+02:14.440 --> 02:19.800
+Es fácil añadir trabajos usando una librería gratuita que se llama do tween.
+
+02:19.810 --> 02:23.890
+Y es realmente divertido tener este tipo de efectos añadidos a lo largo del juego.
+
+02:23.890 --> 02:25.090
+Así que eso es lo primero.
+
+02:25.450 --> 02:29.350
+Volviendo al juego, veamos cómo funcionan los sonidos.
+
+02:29.350 --> 02:34.240
+Así que dentro del entorno en esta escena, tenemos un gestor de sonido añadido.
+
+02:34.570 --> 02:37.650
+Y lo que hago es preparar los sonidos que quiero.
+
+02:37.660 --> 02:43.600
+Estos son los archivos WAV o MP tres que se añaden al proyecto y entonces soy capaz de llamar a ellos pasando
+
+02:43.600 --> 02:44.860
+en el índice.
+
+02:44.860 --> 02:49.510
+Play cero, play uno, play cuatro, y reproduzco el sonido correspondiente.
+
+02:49.660 --> 02:53.410
+Veamos en qué parte de nuestro juego de patos llamamos a eso.
+
+02:53.800 --> 02:58.980
+Así que aquí abajo, cuando destruyo la caja, lo que pasa es que primero reproduzco ese sonido.
+
+02:58.990 --> 03:01.030
+Puedes ver que la sintaxis es realmente fácil.
+
+03:01.450 --> 03:03.550
+Luego creo la explosión.
+
+03:03.700 --> 03:06.460
+La creación de la explosión sólo instanciar un prefab.
+
+03:06.460 --> 03:09.070
+Lo hemos hecho antes para el asteroide, por ejemplo.
+
+03:09.070 --> 03:14.650
+Y luego aquí abajo quito la explosión después de unos segundos.
+
+03:14.650 --> 03:17.260
+Así que la explosión dura tal vez medio segundo.
+
+03:17.260 --> 03:21.760
+Se puede modificar y hacer que permanezca un poco más, dependiendo del impacto visual que se quiera conseguir.
+
+03:21.760 --> 03:22.600
+quieres tener ahí.
+
+03:23.440 --> 03:26.750
+Y por último, echemos un vistazo a la explosión en sí.
+
+03:26.770 --> 03:28.240
+Aquí está la prefabricada.
+
+03:28.880 --> 03:29.920
+Esto es lo que parece.
+
+03:30.310 --> 03:36.370
+Y podemos ver que tenemos un círculo collider aquí y es este tamaño collider que va a tener una física
+
+03:36.370 --> 03:37.340
+aplicada.
+
+03:37.360 --> 03:42.260
+Así que es este efector puntual que hemos añadido el que va a tener una magnitud de fuerza de cinco.
+
+03:42.280 --> 03:47.230
+Así que usted puede ver esta es la magnitud de la fuerza que se va a aplicar positivo es en un exterior
+
+03:47.230 --> 03:47.890
+dirección.
+
+03:47.890 --> 03:51.010
+Así que esta explosión va a empujar las cajas un poco hacia fuera.
+
+03:51.160 --> 03:53.200
+Así que esa es la configuración para el polaco.
+
+03:53.200 --> 03:56.950
+Y creo que el juego tiene muy buena pinta después de estos cinco vídeos.
+
+03:58.730 --> 04:01.960
+Como tarea extra, puedes añadir tu propio pulido a este proyecto.
+
+04:01.970 --> 04:05.870
+Puedes añadir más ajustes programáticos para tener diferentes efectos.
+
+04:05.870 --> 04:10.100
+Puedes tener más efectos de sonido y obstáculos, niveles más grandes.
+
+04:10.100 --> 04:15.320
+Con una cámara de desplazamiento o múltiples niveles, puedes tener diferentes tipos de asteroides para que
+
+04:15.320 --> 04:20.390
+pudieras disparar a los que explotan solos o a diferentes tipos de patos molestos.
+
+04:20.390 --> 04:22.160
+Algunos que son más inteligentes.
+
+04:22.160 --> 04:28.700
+Pueden apartarse del camino, algunos que tienen más potencia, más defensa, algunos que se mueven y los hacen
+
+04:28.700 --> 04:29.870
+más difíciles de golpear.
+
+04:30.080 --> 04:34.970
+En la siguiente sección, veremos cómo crear un juego de tres D clónico de Marble Madness.

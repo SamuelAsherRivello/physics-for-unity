@@ -1,0 +1,301 @@
+WEBVTT
+
+00:01.630 --> 00:03.160
+Creando los obstáculos.
+
+00:03.550 --> 00:08.720
+En este video, vamos a cubrir la creación de nuevos obstáculos en el uso de eventos de colisión para la detección de golpes.
+
+00:08.740 --> 00:14.930
+También veremos la documentación de la salud de los objetos dañados y el uso de un evento unity para la comunicación.
+
+00:14.950 --> 00:20.620
+También intercambiaremos sprites en el sprite render para mostrar cuando un objeto está dañado.
+
+00:21.220 --> 00:22.360
+Creando los obstáculos.
+
+00:22.360 --> 00:24.340
+Esto es un desglose de tareas.
+
+00:24.400 --> 00:29.140
+Vamos a crear el prefab del Pato Molesto y el script C-sharp.
+
+00:29.170 --> 00:33.080
+Junto con el prefab del pato disgustado añadiremos un script de item del mundo.
+
+00:33.100 --> 00:38.920
+Luego añadiremos el prefab Create y el script Crate y finalmente echaremos un vistazo a una versión muy básica
+
+00:38.920 --> 00:41.560
+del script del juego del pato enfadado.
+
+00:41.800 --> 00:44.070
+Nuestra imagen objetivo se muestra aquí.
+
+00:44.080 --> 00:49.360
+Ya tenemos la catapulta y otros gráficos, pero vamos a añadir los patos y las cajas
+
+00:49.360 --> 00:50.110
+esta vez.
+
+00:50.620 --> 00:55.810
+Así que vamos a abrir el proyecto Sección cinco Video tres Vamos a ver la escena.
+
+00:55.810 --> 00:57.340
+Upset Ducks tres.
+
+00:57.910 --> 00:59.380
+Abramos la unidad aquí.
+
+01:00.110 --> 01:02.900
+Vamos a ver a los molestos Ducks tres.
+
+01:03.690 --> 01:06.810
+Ahora en esta escena, tiene la configuración familiar.
+
+01:06.810 --> 01:09.540
+Ahora tenemos una pirámide de cajas, sin embargo, eso es nuevo.
+
+01:09.540 --> 01:13.290
+Y también las propias aves, que son los patos molestos.
+
+01:13.290 --> 01:15.200
+Podemos seguir adelante y golpearlos.
+
+01:15.210 --> 01:21.750
+El tipo aletea un poco y puedo golpear la caja y el arroyo se golpea lo suficiente.
+
+01:21.750 --> 01:23.040
+Desaparece.
+
+01:23.040 --> 01:26.210
+Puedes ver que reaccionan con una pequeña expresión facial y esas cosas.
+
+01:26.220 --> 01:27.690
+Así que vamos a ver cómo configurar eso.
+
+01:28.690 --> 01:33.940
+Si nos fijamos en el interior del mundo, los elementos aquí, que tiene los propios muelles y las cajas.
+
+01:34.090 --> 01:39.100
+Si miramos una caja, tiene el siguiente sprite renderizado.
+
+01:39.250 --> 01:48.010
+Rigid body box Collider world item y Crate World item es lo que gestiona la salud y tengo daños.
+
+01:48.010 --> 01:50.050
+La caja escucha eso.
+
+01:50.050 --> 01:53.020
+Recibo un mensaje de daño y decide qué hacer al respecto.
+
+01:53.020 --> 01:59.080
+En este caso, va a desaparecer Si se hizo demasiado daño más adelante en el futuro, el vídeo se
+
+01:59.590 --> 02:00.640
+explosión también.
+
+02:01.150 --> 02:07.540
+Dado que la caja está configurado, al igual que el pato en realidad va a crear el pato desde cero aquí en esto.
+
+02:07.540 --> 02:09.520
+Así que tiene un sprite similar.
+
+02:09.520 --> 02:13.450
+Renderiza un collider un cuerpo rígido a DX.
+
+02:14.260 --> 02:16.080
+Item del mundo y pato enfadado.
+
+02:16.090 --> 02:16.870
+Misma regla.
+
+02:17.170 --> 02:21.970
+El elemento del mundo gestiona la salud y el daño y el pato molesto decide qué hacer al respecto.
+
+02:22.150 --> 02:24.820
+Así que vamos a deshacernos de esos patos molestos.
+
+02:26.380 --> 02:28.870
+Y vamos a deshacernos de los patos molestos prefabricados.
+
+02:29.820 --> 02:31.570
+Entonces crearemos uno desde cero.
+
+02:35.770 --> 02:40.630
+Así que tenemos un montón de diferentes marcos aquí voy a elegir utilizar.
+
+02:41.740 --> 02:42.970
+El.
+
+02:44.300 --> 02:45.410
+Este del ídolo.
+
+02:46.850 --> 02:50.300
+Y luego voy a añadir en los componentes necesarios que queremos.
+
+03:01.950 --> 03:03.180
+En el elemento del mundo.
+
+03:05.700 --> 03:08.160
+Entonces tenemos el item mundo.
+
+03:09.380 --> 03:11.570
+Y luego arrastraré el disgusto.
+
+03:14.210 --> 03:16.100
+Bien, danos un nombre y haz prefab.
+
+03:26.770 --> 03:27.130
+De acuerdo.
+
+03:27.550 --> 03:31.480
+Miramos el script del pato enfadado y el script del item del mundo.
+
+03:31.480 --> 03:36.880
+Supongo que podemos ver que el script del pato molesto quiere una referencia al item mundo.
+
+03:38.200 --> 03:40.360
+Y una referencia al renderizador de sprites.
+
+03:41.660 --> 03:45.410
+Y luego una referencia a algunos de los diferentes.
+
+03:46.360 --> 03:47.160
+Sprites que tenemos.
+
+03:47.170 --> 03:51.490
+Así que si ejecutamos este, podemos elegir.
+
+03:56.190 --> 03:58.170
+Vamos a elegir el.
+
+03:59.530 --> 04:00.820
+Héroe.
+
+04:01.580 --> 04:09.830
+Y luego el héroe uno y el héroe al que parece que le han dado un buen golpe.
+
+04:09.830 --> 04:10.550
+Está muerto.
+
+04:11.270 --> 04:13.280
+Y veamos cada uno de estos guiones.
+
+04:14.200 --> 04:20.080
+Así que en el elemento mundo, lo que es interesante es que usamos un evento de unidad aquí para pasar un flotador de cuánto era
+
+04:20.080 --> 04:21.040
+¿Dañado?
+
+04:21.460 --> 04:25.720
+Luego aquí abajo dentro de la colisión entrar.
+
+04:26.320 --> 04:29.480
+Comprobamos la velocidad de la colisión.
+
+04:29.500 --> 04:33.970
+Si es demasiado pequeña, la saltamos y volvemos a hacer cualquier otro código.
+
+04:34.360 --> 04:41.410
+Si es un daño suficientemente grande, calculamos y disminuimos la salud y luego usamos en salud
+
+04:41.410 --> 04:47.710
+cambio, invocar daño para enviar un evento a cualquier ámbito que se preocupa y pueden escuchar.
+
+04:48.100 --> 04:53.920
+Luego, si nos fijamos en el script de pato molesto en sí, lo que hacemos que es interesante aquí en el inicio es
+
+04:53.920 --> 04:56.420
+añadimos un oyente a ese cambio de salud.
+
+04:56.440 --> 05:02.380
+Ahora, la secuencia de comandos pato molesto puede aquí en cualquier momento la salud cambiado en el elemento de mundo, así es como eso es
+
+05:02.380 --> 05:02.950
+configurado.
+
+05:02.950 --> 05:04.750
+Así es como funciona el evento de unidad.
+
+05:05.110 --> 05:11.650
+Luego aquí abajo, cuando cambia, es capaz de cambiarlo al sprite muerto en el caso de que la salud
+
+05:11.650 --> 05:19.420
+es demasiado baja o puede parpadear temporalmente al segundo de los fotogramas donde fue golpeado.
+
+05:19.420 --> 05:25.900
+Pero no está del todo muerto en este script aquí abajo en la parte inferior sólo gira el Sprite render o Sprite
+
+05:25.900 --> 05:31.210
+a uno, y luego después de un par de segundos, en realidad es después de unos pocos milisegundos porque tienen
+
+05:31.210 --> 05:35.800
+un pequeño valor allí, entonces se convertirá de nuevo a la sprite inactivo.
+
+05:36.100 --> 05:38.740
+Veamos cómo funciona todo esto.
+
+05:40.240 --> 05:43.620
+Así que vamos a coger a nuestro tipo aquí.
+
+05:43.630 --> 05:47.290
+Duplicaremos un par de ellos y ejecutaremos la escena.
+
+05:52.400 --> 05:54.290
+Así que mira cuando golpee.
+
+05:58.120 --> 06:00.580
+Puedes ver que la orientación está un poco desviada.
+
+06:00.580 --> 06:03.400
+Podríamos ajustar eso y ajustar las direcciones y esas cosas.
+
+06:03.760 --> 06:04.750
+Está bien.
+
+06:04.810 --> 06:10.840
+Lo que quiero mostrarte es que cuando son golpeados, aletean un poco, y si son golpeados demasiado,
+
+06:10.840 --> 06:13.060
+entonces sus ojos sobresalen.
+
+06:14.650 --> 06:15.370
+Y eso es todo.
+
+06:15.400 --> 06:16.600
+Muchas gracias.
+
+06:20.360 --> 06:26.600
+Oh, una cosa más que quiero mostrar aquí es que la secuencia de comandos pato molesto, que si echamos un vistazo a eso,
+
+06:26.660 --> 06:28.690
+tiene muy pocas cosas en él.
+
+06:28.760 --> 06:35.030
+Lo que hace aquí es añadir el asteroide en START, así que pone uno en la catapulta y más tarde el
+
+06:35.030 --> 06:35.510
+caja.
+
+06:35.510 --> 06:40.070
+Cuando las cajas han sufrido demasiado daño, la caja puede decir: Eh, ¿me destruyes?
+
+06:40.070 --> 06:42.050
+Y la caja pasará por sí misma.
+
+06:42.050 --> 06:43.910
+Y entonces aquí hacemos la destrucción.
+
+06:44.120 --> 06:45.050
+Y eso es todo.
+
+06:45.820 --> 06:46.570
+Y eso es todo.
+
+06:46.600 --> 06:47.560
+Muchas gracias.
+
+06:48.720 --> 06:52.500
+Y en el próximo video, echaremos un vistazo a la adición de condiciones de ganar-perder.

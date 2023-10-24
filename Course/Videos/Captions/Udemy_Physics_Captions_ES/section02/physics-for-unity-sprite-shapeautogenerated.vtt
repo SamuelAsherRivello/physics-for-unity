@@ -1,0 +1,236 @@
+WEBVTT
+
+00:01.780 --> 00:05.070
+En este video, cubriremos la física para la forma del sprite de unity.
+
+
+00:05.080 --> 00:08.740
+Aprenderemos que es un sprite shape y como configurarlo e instalarlo.
+
+
+00:08.740 --> 00:11.120
+Luego jugaremos con él dentro del Editor de Unity.
+
+
+00:11.140 --> 00:13.750
+Esta es una característica de vista previa en la beta pública.
+
+
+00:14.290 --> 00:20.670
+La forma de sprites funciona mediante la colocación de sprites a lo largo de splines creadas en la escena como objetos del juego.
+
+
+00:20.680 --> 00:26.230
+Puedes pensar en esto como en las plataformas de un juego de plataformas 2D orgánico.
+
+
+00:26.530 --> 00:31.200
+El objeto de juego configurado con Transform y un controlador de forma Sprite.
+
+
+00:31.210 --> 00:34.660
+Luego enlazamos a un activo de perfil de forma de sprite.
+
+
+00:35.690 --> 00:41.660
+La aplicación de hoja de cálculo es una característica de la vista previa de Unity en beta pública y debe ser añadida manualmente a través de la función
+
+
+00:41.660 --> 00:43.250
+Gestor de paquetes de Unity.
+
+
+00:43.280 --> 00:48.680
+Ahora bien, esto ya está hecho para usted en nuestro proyecto de ejemplo, pero para los nuevos proyectos vamos a aprender cómo.
+
+
+00:48.800 --> 00:54.560
+En primer lugar, abra la última versión pública de Unity Unity 2019 uno o superior.
+
+
+00:54.590 --> 00:56.430
+Abre el menú Unity.
+
+
+00:56.450 --> 00:58.460
+Gestor de paquetes de ventanas.
+
+
+00:58.490 --> 01:00.230
+Seleccionar todos los Paquetes.
+
+
+01:00.230 --> 01:02.600
+Avanzado Mostrar Vista Previa de Paquetes.
+
+
+01:02.600 --> 01:04.370
+Seleccionar el Sprite 2D.
+
+
+01:04.370 --> 01:08.360
+Ahora Selecciona descargar o actualizar como se te muestra.
+
+
+01:08.360 --> 01:13.970
+Y luego, opcionalmente, si lo deseas, puedes importar muestras para echar un vistazo a lo que ofrece unity.
+
+
+01:14.360 --> 01:16.920
+Hay dos pasos para crear la hoja de cálculo.
+
+
+01:16.940 --> 01:19.730
+Primero, creamos un perfil de forma de sprite.
+
+
+01:19.760 --> 01:26.690
+La hoja de cálculo funciona embaldosando los sprites a lo largo de una trayectoria spline creada en la escena como objetos del juego primero
+
+
+01:26.690 --> 01:29.510
+crear un activo llamado Sprite Shape Profile.
+
+
+01:29.510 --> 01:34.070
+Se utiliza para definir y almacenar información sobre un tipo particular de forma.
+
+
+01:34.280 --> 01:37.040
+Abre el menú en unity assets.
+
+
+01:37.040 --> 01:39.320
+Crear perfil de forma de sprite.
+
+
+01:39.320 --> 01:46.550
+Usted puede elegir entre la forma abierta, que es una plataforma larga franja o una forma cerrada, como un
+
+
+01:46.550 --> 01:50.660
+forma delimitada, como un suelo o el fondo detrás de tus personajes.
+
+
+01:50.900 --> 01:56.510
+Selecciona el perfil de forma de sprite creado y establece la propiedad de textura ahora para crear la forma de sprite
+
+
+01:56.510 --> 01:57.150
+mismo.
+
+
+01:57.170 --> 02:00.470
+Abrir el menú Unity Game objeto Sprite Shape.
+
+
+02:00.470 --> 02:03.590
+Seleccionar el objeto de juego creado en la ventana de jerarquía.
+
+
+02:03.590 --> 02:07.970
+Establece la propiedad profile al perfil de forma de sprite que acabas de crear.
+
+
+02:08.120 --> 02:09.890
+Y ahora podemos editar la spline.
+
+
+02:09.890 --> 02:14.930
+Como puedes ver en la animación, podemos añadir, mover y borrar diferentes puntos.
+
+
+02:16.460 --> 02:21.440
+Ahora para añadir física, selecciona de nuevo el objeto del juego y añade los siguientes componentes.
+
+
+02:21.470 --> 02:24.670
+Edge Collider a DX Cuerpo rigido a DX.
+
+
+02:24.680 --> 02:30.140
+Y si no quieres que esta pieza caiga con la gravedad, establece el tipo de cuerpo a cinemático.
+
+
+02:30.960 --> 02:33.850
+Ahora vamos a echar un vistazo a una hoja de cálculo de demostración empezar.
+
+
+02:33.880 --> 02:36.650
+Dentro de esta escena crearemos una nueva hoja de cálculo.
+
+
+02:36.670 --> 02:39.520
+Vamos a jugar con la escena a ver como va.
+
+
+02:40.760 --> 02:42.080
+Vamos a abrir nuestro siguiente proyecto.
+
+
+02:42.080 --> 02:44.130
+Aquí estará la hoja de cálculo.
+
+
+02:44.150 --> 02:44.810
+Comenzamos.
+
+
+02:45.610 --> 02:47.500
+Hay dos pasos para crear esta forma brillante.
+
+
+02:47.530 --> 02:52.030
+Primero, crearemos el perfil de la forma del sprite, y luego crearemos la propia forma del sprite.
+
+
+02:57.950 --> 02:59.270
+Vamos a añadir una textura.
+
+
+03:02.800 --> 03:04.840
+Y ahora vamos a crear el sprite.
+
+
+03:10.620 --> 03:12.030
+Añadiremos el perfil.
+
+
+03:14.240 --> 03:17.430
+Y ahora vemos nuestro perfil trabajando junto con el sprite.
+
+
+03:17.450 --> 03:18.710
+Vamos a editar la spline.
+
+
+03:26.340 --> 03:27.660
+Ahora vamos a añadir la física.
+
+
+03:31.030 --> 03:35.140
+Pondremos el tipo de cuerpo en cinemático para que no caiga con la gravedad.
+
+
+03:40.510 --> 03:42.520
+Ahora vamos a traer algunos sujetos de prueba.
+
+
+03:48.520 --> 03:49.150
+Tiene buena pinta.
+
+
+03:49.150 --> 03:55.180
+Tenemos un entorno de plataformas orgánico con física completa y soportando estos objetos, pudiendo
+
+
+03:55.180 --> 03:57.270
+rebotar en ellos e interactuar de forma agradable.
+
+
+03:57.280 --> 04:01.210
+Puedes duplicar esto y crear tantas plataformas como quieras y reutilizarlas.
+
+
+04:03.060 --> 04:07.170
+En la siguiente sección, veremos los componentes de física de Unity three D.

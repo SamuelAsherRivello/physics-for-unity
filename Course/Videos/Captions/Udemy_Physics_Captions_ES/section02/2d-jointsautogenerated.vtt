@@ -1,0 +1,238 @@
+WEBVTT
+
+00:01.720 --> 00:04.630
+En este vídeo veremos dos articulaciones en D.
+
+00:04.630 --> 00:09.940
+Veremos qué es la articulación dos componentes RD y los diferentes tipos de articulación a DS.
+
+00:09.940 --> 00:12.550
+Luego jugaremos con esto dentro de la unity ed.
+
+00:13.090 --> 00:21.070
+Una articulación es el componente que mantiene una relación ya sea posicional o rotacional con uno o más
+
+00:21.070 --> 00:22.030
+objetos del juego.
+
+00:22.030 --> 00:26.740
+Puedes unir tus articulaciones a un objeto del juego con un cuerpo rígido.
+
+00:26.740 --> 00:30.460
+Esto es común o a una posición fija en el espacio del mundo.
+
+00:30.460 --> 00:32.290
+Puedes ver la configuración aquí en la imagen.
+
+00:32.290 --> 00:37.960
+Tenemos un objeto de juego con tres componentes diferentes la transformación y el cuerpo rígido como hemos visto antes,
+
+00:37.960 --> 00:39.910
+y luego hemos añadido el componente de articulación.
+
+00:40.700 --> 00:42.950
+¿Cuándo debería mi juego usar articulaciones?
+
+00:43.630 --> 00:45.770
+Hablemos de algunos usos de las articulaciones.
+
+00:45.980 --> 00:53.210
+Típicamente, las articulaciones físicas son útiles en los juegos para mantener una relación, ya sea posicional o rotacional
+
+00:53.210 --> 00:55.320
+entre dos o más objetos del juego.
+
+00:55.340 --> 00:58.790
+Utiliza articulaciones para imitar la realidad o para añadir jugabilidad.
+
+00:58.940 --> 01:03.020
+Imagina crear una cadena colgante como la que vemos a la derecha.
+
+01:03.020 --> 01:07.340
+Puedes hacerlo con varios objetos de juego diferentes conectados con articulaciones de bisagra.
+
+01:07.340 --> 01:08.750
+La bisagra es muy útil.
+
+01:08.750 --> 01:13.310
+También puedes crear un puente de madera que rebote o una puerta conectada a una pared.
+
+01:13.310 --> 01:18.660
+Si quisieras un vehículo con suspensión, podrías usar la articulación de muelle y la articulación de rueda.
+
+01:18.680 --> 01:21.170
+Hay muchos tipos de articulaciones en 2D.
+
+01:21.290 --> 01:23.240
+Hablemos de algunos de los tipos.
+
+01:23.240 --> 01:25.520
+En primer lugar, está la junta de distancia a DX.
+
+01:25.550 --> 01:30.530
+Esta es una articulación muy simple que mantiene una cierta relación entre dos objetos del juego.
+
+01:30.530 --> 01:33.710
+Esa relación puede ser la distancia entre sus posiciones.
+
+01:33.710 --> 01:39.800
+Es similar a la crianza de un objeto de juego en virtud de otro sólo que usted no tiene esta restricción de crianza.
+
+01:39.980 --> 01:45.980
+La articulación bisagra dos d fija un objeto de juego a un punto en el espacio y permite la rotación.
+
+01:46.250 --> 01:52.340
+Puedes pensar en un puente como el de la imagen inferior derecha o en la típica puerta que se abre y se cierra
+
+01:52.340 --> 01:53.180
+sobre una bisagra.
+
+01:53.180 --> 01:56.960
+Hay muchos tipos de articulaciones, ¿cuán fuerte es una articulación?
+
+01:57.470 --> 01:59.240
+Es posible romper las articulaciones.
+
+01:59.240 --> 02:03.740
+Hay algo llamado restricción, que es una regla que la articulación intentará seguir.
+
+02:03.740 --> 02:09.980
+Algunas restricciones limitan el comportamiento, como asegurar que un cuerpo rígido permanezca en una posición determinada.
+
+02:09.980 --> 02:16.520
+Cuando la regla se rompe temporalmente, la junta aplicará fuerzas correctoras para que pueda volver a seguirla.
+
+02:16.520 --> 02:21.230
+La ruptura de la regla es posible cuando la fuerza correctiva necesaria es demasiado grande.
+
+02:21.230 --> 02:26.840
+La articulación se romperá permanentemente las articulaciones individuales, deja de funcionar para siempre en su juego.
+
+02:26.840 --> 02:31.000
+Tienes que parar e iniciar la escena o el juego para que vuelva a funcionar.
+
+02:31.010 --> 02:33.920
+Una fuerza lineal excesiva se llama fuerza de frenado.
+
+02:33.920 --> 02:36.860
+Una fuerza de torsión excesiva se denomina par de frenado.
+
+02:37.040 --> 02:43.910
+La propiedad de fuerza de frenado, se establece en infinito por defecto para que la articulación nunca se rompa para permitir
+
+02:43.910 --> 02:47.060
+rotura, ajústala a un valor finito más bajo.
+
+02:47.060 --> 02:48.860
+Por ejemplo, 5000.
+
+02:48.860 --> 02:51.650
+A veces queremos que nuestras articulaciones se rompan.
+
+02:51.650 --> 02:52.280
+¿Y ahora por qué?
+
+02:52.310 --> 02:57.740
+En primer lugar, tal vez estamos imitando algo en la realidad que no es infinitamente fuerte y queremos
+
+02:57.740 --> 03:01.610
+que se rompa o que la rotura pueda añadir algo a la experiencia de juego.
+
+03:01.610 --> 03:07.280
+Quizás tu personaje se balancea sobre una cadena, pero si lo hace con demasiada fuerza, la cadena se romperá.
+
+03:07.980 --> 03:09.710
+Hagamos algunas demostraciones juntos.
+
+03:09.720 --> 03:16.350
+La articulación de bisagra para comenzar la escena creará cinco tablones para un puente de madera saltarina creará una bisagra
+
+03:16.350 --> 03:16.710
+articulación.
+
+03:16.710 --> 03:23.040
+Dos rd entre cada tablón creará una articulación de bisagra a RD en cada extremo del puente para mantenerlo a la
+
+03:23.040 --> 03:23.730
+columnas.
+
+03:23.730 --> 03:26.370
+Y luego jugaremos la escena y veremos cómo va.
+
+03:26.520 --> 03:27.810
+Una tarea extra.
+
+03:27.810 --> 03:31.860
+Si quieres profundizar en el aprendizaje de las articulaciones, echa un vistazo a esta escena.
+
+03:31.860 --> 03:33.870
+La articulación objetivo para empezar.
+
+03:33.870 --> 03:36.420
+Crea una junta objetivo para DH en la caja.
+
+03:36.420 --> 03:43.410
+Crea tu propio script llamado algo como Target Joint follows Mouse Reproduce la escena, mueve el ratón
+
+03:43.410 --> 03:44.550
+y observa el resultado.
+
+03:44.550 --> 03:47.070
+¿Has conseguido que la caja siga al ratón?
+
+03:47.070 --> 03:52.980
+Puedes poner la fuerza de frenado a 5000 para romper la unión si quieres ayuda o quieres ver el acabado
+
+03:52.980 --> 03:57.150
+resultado o el script creado de Target Joint sigue a Mouse.
+
+03:57.150 --> 04:01.770
+Echa un vistazo a la articulación de destino a DH subrayado escena completa.
+
+04:01.770 --> 04:03.870
+Todo está ahí para que le eches un vistazo.
+
+04:06.790 --> 04:10.150
+Vamos a abrir nuestra siguiente escena, la articulación de bisagra para empezar.
+
+04:11.130 --> 04:13.460
+Aquí tenemos un terreno montado con un par de columnas.
+
+04:13.470 --> 04:15.090
+Vamos a añadir un nuevo tablón.
+
+04:15.120 --> 04:19.710
+Duplícalo cinco veces y utiliza la articulación de bisagra a RD para hacer un puente de madera.
+
+04:23.150 --> 04:28.040
+Bajo el sprite de Planck añadiremos el cuerpo rígido y el colisionador y la articulación de bisagra.
+
+04:35.340 --> 04:38.220
+Pondremos el ancla de la articulación de bisagra a su lado izquierdo.
+
+04:42.870 --> 04:47.610
+Colocaremos un tablón muy a la izquierda y luego duplicaremos cinco veces en total.
+
+04:47.610 --> 04:49.350
+Entonces tenemos algunas a la derecha.
+
+04:55.280 --> 05:01.940
+El tablón más a la izquierda dejará su cuerpo rígido conectado a ninguno, por lo que está anclado en el espacio para el
+
+05:01.940 --> 05:05.060
+otros se conectarán a su vecino más cercano a la izquierda.
+
+05:14.170 --> 05:18.580
+Y para el tablón de más a la derecha, añadiremos una segunda articulación que lo una al espacio.
+
+05:21.970 --> 05:24.130
+Y ajustando su anclaje al lado derecho.
+
+05:26.550 --> 05:28.050
+Añadamos algunos extras.
+
+05:29.260 --> 05:30.280
+Y probemos.
+
+05:36.990 --> 05:40.500
+En el próximo video, veremos la física para la forma del sprite de la unidad.

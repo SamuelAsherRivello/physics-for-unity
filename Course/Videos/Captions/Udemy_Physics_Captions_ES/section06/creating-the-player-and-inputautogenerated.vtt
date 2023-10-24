@@ -1,0 +1,205 @@
+WEBVTT
+
+00:01.500 --> 00:08.190
+La creación del reproductor y la entrada en este video cubrirá la toma de entrada de teclado utilizando cuerpo rígido añadir fuerza
+
+00:08.190 --> 00:11.440
+para el movimiento y el uso de pro grids para posicionar las paredes.
+
+00:11.460 --> 00:12.840
+Este es el desglose de la tarea.
+
+00:12.840 --> 00:15.140
+Añadiremos el script C-sharp de la bola loca.
+
+00:15.150 --> 00:19.220
+Usaremos pro grids para posicionar los elementos del muro y añadiremos esos muros.
+
+00:19.230 --> 00:21.570
+Esta captura de pantalla representa nuestro objetivo final.
+
+00:22.390 --> 00:27.550
+Para el proyecto, abriremos la sección seis, Video dos y la escena bola loca a.
+
+00:28.750 --> 00:34.270
+Muy bien, vamos a abrir la unidad aquí y vamos a entrar en Bola loca dos si jugamos esta escena
+
+00:34.270 --> 00:34.780
+aquí.
+
+00:37.070 --> 00:39.230
+Veremos que soy capaz de tomar la entrada del teclado.
+
+00:40.220 --> 00:42.000
+y rebotar adecuadamente en las paredes.
+
+00:42.020 --> 00:43.550
+Así que vamos a ver cómo se configura.
+
+00:44.240 --> 00:46.370
+En primer lugar, tenemos una bola loca aquí.
+
+00:47.230 --> 00:48.250
+Ya sabes, la bola loca.
+
+00:48.250 --> 00:55.060
+Es sólo una esfera con un colisionador esfera, un cuerpo rígido con la configuración predeterminada, y luego una costumbre loco
+
+00:55.060 --> 00:55.930
+personalizado.
+
+00:55.960 --> 00:59.060
+Veamos como funciona en el script de la bola loca.
+
+00:59.080 --> 01:01.750
+En la actualización, capturamos la entrada del teclado.
+
+01:01.750 --> 01:09.040
+Usamos la clase input de Unity, que automáticamente mapea las teclas de flecha del teclado y cualquier gamepad
+
+01:09.040 --> 01:10.000
+que tengas conectado.
+
+01:10.000 --> 01:11.560
+Sólo estoy usando el teclado.
+
+01:11.890 --> 01:21.400
+Luego cacheo la última entrada y en cada actualización uso rigid body add force y multiplico la última entrada
+
+01:21.400 --> 01:22.600
+por la velocidad.
+
+01:22.810 --> 01:28.570
+De esta forma puedo tener una entrada de teclado más dramática o menos dramática dependiendo de ese valor de velocidad.
+
+01:28.600 --> 01:29.830
+Veamos cómo funciona.
+
+01:30.680 --> 01:31.850
+Cuando ejecuto la escena
+
+01:35.430 --> 01:37.500
+Ahora usa la entrada del teclado aquí.
+
+01:37.500 --> 01:39.360
+Muevo mi personaje por el mundo.
+
+01:39.540 --> 01:47.400
+Si cambio esto a un valor de 100 para la velocidad, por ejemplo, obtendré mucha más velocidad máxima también
+
+01:47.400 --> 01:48.660
+como aceleración.
+
+01:50.470 --> 01:52.630
+Esto es un poco demasiada potencia.
+
+01:52.660 --> 01:55.390
+Probemos con un valor bajo como 5.
+
+01:56.800 --> 01:57.250
+Aquí.
+
+01:57.250 --> 02:02.230
+La bola parece que tiene mucho peso y realmente tengo que mantener las teclas en cualquier dirección
+
+02:02.230 --> 02:05.110
+durante un largo periodo de tiempo para corregir su movimiento.
+
+02:05.650 --> 02:07.750
+Puedes experimentar con los valores que quieras.
+
+02:07.780 --> 02:08.910
+A mí me gusta 20.
+
+02:08.920 --> 02:13.720
+Creo que es una buena mezcla de sentir que tengo suficiente control, pero respetando que hay
+
+02:13.720 --> 02:15.400
+algo de masa y movimiento.
+
+02:16.560 --> 02:17.010
+Estupendo.
+
+02:17.130 --> 02:19.140
+Hablemos ahora de este entorno.
+
+02:19.500 --> 02:22.170
+Tenemos una serie de paredes aquí dispuestas.
+
+02:24.370 --> 02:30.310
+Cada trozo de pared es así de grande y ya tiene un colisionador de malla.
+
+02:30.310 --> 02:33.280
+Así que todo lo que tenemos que hacer es colocarlas en el mundo donde queramos.
+
+02:33.490 --> 02:35.230
+Decidamos cómo queremos hacerlo.
+
+02:35.620 --> 02:38.560
+Así que primero me desharé de los que tenemos.
+
+02:40.050 --> 02:41.610
+Y sacaré un trozo de pared.
+
+02:48.080 --> 02:48.680
+Ya está.
+
+02:49.270 --> 02:51.830
+Ahora, puedo mover esto libremente.
+
+02:51.850 --> 02:55.030
+Puedes ver que soy capaz de moverlos con mucha precisión.
+
+02:55.720 --> 03:00.790
+Pero es posible que los coloque con un poco de espacio entre ellos o posibles solapamientos.
+
+03:00.790 --> 03:06.040
+Así que vamos a utilizar una herramienta muy buena que ya he importado llamada pro grids.
+
+03:06.610 --> 03:14.230
+Cuando activo pro grids, se ajustará automáticamente a una unidad y con el interruptor de encendido, todo
+
+03:14.230 --> 03:17.140
+que mueva se ajustará automáticamente.
+
+03:17.590 --> 03:22.000
+Así que cuando empiezo a mover estos alrededor del mundo, se puede ver que se ajustan en unidades enteras.
+
+03:22.300 --> 03:28.300
+Luego usaré control dx o comando dx en el Mac para duplicarlas y moverlas hacia fuera.
+
+03:29.530 --> 03:30.190
+Por aquí.
+
+03:30.190 --> 03:33.390
+Sé que si quiero un hueco, será una unidad entera.
+
+03:33.400 --> 03:36.250
+Si no, sé que me estoy ajustando justo al borde del objeto.
+
+03:36.860 --> 03:40.910
+Así que puedo duplicar y añadir una línea entera de esos.
+
+03:41.210 --> 03:47.090
+Luego puedo duplicar y también utilizar la rotación, por supuesto, para colocar estos exactamente donde yo quiero.
+
+03:53.900 --> 03:56.210
+Y continúas haciendo tu diseño de nivel así.
+
+04:00.850 --> 04:06.490
+Y debido a que tienen automáticamente planeadores de malla incorporado en ellos, se puede ver que tenemos la funcionalidad
+
+04:06.490 --> 04:10.750
+que queremos, que es que mi personaje colisione e interactúe con ellos.
+
+04:18.910 --> 04:19.380
+Ya está.
+
+04:19.390 --> 04:22.420
+Tenemos la entrada de movimiento y las paredes.
+
+04:24.640 --> 04:30.550
+En el próximo video, trabajaremos en la creación de los obstáculos que cubriremos, creando movibles e inamovibles
+
+04:30.550 --> 04:34.900
+y añadiremos monedas giratorias que el jugador podrá recoger.

@@ -1,0 +1,252 @@
+WEBVTT
+
+00:01.890 --> 00:07.500
+Física, ciclo de vida de la física, simulación y dilatación del tiempo. En este video, cubriremos la estructura de
+
+00:07.500 --> 00:13.650
+los proyectos de Unity, el papel de los comportamientos mono dentro de Unity y el código de comportamiento para la física.
+
+00:13.830 --> 00:15.660
+Entonces, ¿cómo está estructurada Unity?
+
+00:15.840 --> 00:18.330
+Estructura de Unity desde el nivel más alto.
+
+00:18.330 --> 00:21.870
+Tienes un proyecto con una escena dentro de la escena.
+
+00:21.870 --> 00:26.990
+Hay uno o más objetos de juego y en cada objeto de juego tienes componentes en C#.
+
+00:27.000 --> 00:30.330
+Los componentes en C# son de tipo de datos Unity Engine.
+
+00:30.350 --> 00:31.260
+MonoBehaviour.
+
+00:31.260 --> 00:36.120
+En este curso, me referiré a los componentes y comportamientos como lo mismo.
+
+00:36.120 --> 00:41.460
+Como muestra la imagen, tenemos un objeto de juego en el centro con muchos componentes posibles alrededor de él, y
+
+00:41.460 --> 00:43.770
+esos objetos de juego encajan dentro del mundo del juego.
+
+00:44.190 --> 00:49.290
+Comprender los comportamientos es fundamental para comprender los comportamientos de Unity.
+
+00:49.290 --> 00:56.010
+Para adjuntar tu clase de código a un objeto de juego, debes extender MonoBehaviour, pero no todo tu
+
+00:56.010 --> 00:58.440
+código se extenderá de MonoBehaviour.
+
+00:58.440 --> 01:03.840
+Los comportamientos de MonoBehaviour vienen con funciones integradas potentes con un orden de ejecución predecible.
+
+01:03.840 --> 01:08.400
+Este orden de ejecución de los comportamientos de MonoBehaviour es muy importante en el desarrollo de juegos.
+
+01:08.400 --> 01:09.720
+Hablaremos sobre el tiempo de ejecución.
+
+01:09.720 --> 01:11.160
+Ese es el orden de ejecución.
+
+01:11.160 --> 01:16.620
+Mientras tu juego se está ejecutando para tus jugadores, en la imagen a la derecha, puedes ver que hay muchos, muchos
+
+01:16.620 --> 01:18.990
+diferentes funciones de orden de ejecución.
+
+01:19.020 --> 01:20.340
+Echemos un vistazo más de cerca.
+
+01:20.490 --> 01:26.400
+En la mitad superior, podemos ver secciones principales, inicialización, física, eventos de entrada y más.
+
+01:26.430 --> 01:32.400
+Cada una de estas es una función que Unity llamará por nosotros y podemos escuchar opcionalmente.
+
+01:32.400 --> 01:34.710
+Las principales para nosotros son Awake.
+
+01:34.710 --> 01:41.100
+Start FixedUpdate, Trigger y eventos de colisión y Update si miramos abajo.
+
+01:41.100 --> 01:42.690
+El diagrama continúa.
+
+01:42.690 --> 01:46.440
+Hay renderizado de escena, pausa y desactivación.
+
+01:46.440 --> 01:49.260
+Aquí nuestro enfoque está en OnDestroy.
+
+01:49.290 --> 01:55.320
+Juntas, las funciones de orden de ejecución de MonoBehaviour que nos importan se enumeran aquí, Awake y
+
+01:55.320 --> 01:59.100
+Start se llaman una vez y temprano en la vida del proyecto, en medio y en negrita.
+
+01:59.100 --> 02:01.590
+Tenemos varias claves relacionadas con la física.
+
+02:01.590 --> 02:04.470
+FixedUpdate se llama una vez por tick de física.
+
+02:04.500 --> 02:09.600
+Es importante que esto sea independiente de la velocidad de fotogramas, por lo que obtenemos resultados confiables en eventos de activación
+
+02:09.600 --> 02:11.640
+y eventos de colisión.
+
+02:11.640 --> 02:13.440
+Hablaremos más de eso más adelante.
+
+02:13.440 --> 02:19.440
+Allí, cuando nuestros objetos de mundo de la física se superponen, cómo podemos escuchar en esa actualización se llama una vez por cuadro.
+
+02:19.440 --> 02:20.640
+Esa es la función principal para la mayoría de nuestro código excepto la física.
+
+02:20.640 --> 02:25.110
+El código OnDestroy se llama cuando el objeto de juego se elimina o cuando el mundo del juego termina.
+
+02:31.910 --> 02:35.870
+Aquí tienes un ejemplo de archivo de plantilla que he creado para el cual podemos programar.
+
+02:35.870 --> 02:41.060
+Ahora, este es código en C# y podríamos declararlo en Unity y funcionaría bien.
+
+02:41.060 --> 02:42.680
+No está sucediendo mucho aquí.
+
+02:42.680 --> 02:45.200
+Solo hay declaraciones de funciones vacías.
+
+02:45.200 --> 02:48.770
+Pero solo quiero mostrarte la firma, cómo están configuradas.
+
+02:48.860 --> 02:54.680
+Y es importante tener en cuenta que no necesitarías declarar todas estas, solo si quieres esperar y
+
+02:54.680 --> 02:55.190
+actualizarte.
+
+02:55.190 --> 02:56.530
+Solo declara esas, también.
+
+02:56.540 --> 02:59.060
+Pero te estoy mostrando una plantilla completa aquí para empezar.
+
+03:00.140 --> 03:02.950
+Veamos una demostración para que podamos ver esta plantilla en acción.
+
+03:02.960 --> 03:08.900
+Ejecutaremos la plantilla de comportamiento, veremos la escena, agregaremos una declaración de registro de depuración para que
+
+03:08.900 --> 03:14.300
+podamos ver qué partes del código hemos alcanzado y probaremos un evento de activación y un evento de colisión.
+
+03:15.540 --> 03:17.970
+Vamos a abrir activos.
+
+03:17.970 --> 03:22.050
+Sección uno,
+
+ Video cinco de la plantilla de comportamiento.
+
+03:22.050 --> 03:22.710
+En esta escena.
+
+03:22.710 --> 03:25.220
+Tenemos un cubo flotando sobre el suelo.
+
+03:25.230 --> 03:28.170
+Además del colisionador de caja y el cuerpo rígido.
+
+03:28.170 --> 03:31.000
+Podemos ver que tenemos el script de la plantilla de comportamiento de MonoBehaviour.
+
+03:31.020 --> 03:32.220
+Vamos a hacer clic en eso.
+
+03:32.490 --> 03:34.500
+Eso lo abrirá en tu editor de código favorito.
+
+03:34.860 --> 03:38.910
+Ahora, desde arriba, podemos ver todos los diferentes métodos que ya hemos discutido aquí.
+
+03:38.910 --> 03:45.480
+Dentro del Awake, tenemos una declaración de registro de depuración y nuevamente dentro del OnCollisionEnter y dentro
+
+03:45.480 --> 03:51.480
+del OnDestroy, la declaración de depuración enviará un poco de texto a una ventana dentro de Unity solo para confirmar que
+
+03:51.480 --> 03:53.040
+hemos llegado a ese punto en el código.
+
+03:53.040 --> 03:54.600
+Vamos a ejecutar la escena.
+
+03:56.470 --> 04:01.240
+Aquí en la ventana de la consola, podemos ver que se ha despertado y ha ocurrido la colisión.
+
+04:01.240 --> 04:06.010
+Y una vez que detuve la escena y todos los objetos se limpiaron, podemos ver la destrucción.
+
+04:06.080 --> 04:08.070
+Puedes ver que la colisión ha entrado.
+
+04:08.080 --> 04:10.750
+Dice que el cubo fue golpeado por el suelo.
+
+04:10.750 --> 04:14.680
+Y eso simplemente nos muestra el nombre Cube aquí como golpeó el nombre suelo aquí.
+
+04:14.680 --> 04:17.410
+Ese es el tipo de detección que puedes hacer usando la física.
+
+04:18.520 --> 04:20.130
+Hablemos de la dilatación del tiempo.
+
+04:20.140 --> 04:20.560
+Ahora.
+
+04:20.560 --> 04:26.710
+Si deseas crear algo como un efecto de ralentización que ves en una película como Matrix o en
+
+04:26.710 --> 04:33.250
+un juego como Max Payne, donde todo el mundo se está ralentizando para simular un momento más dramático.
+
+04:33.280 --> 04:35.300
+Puedes simular eso en la física.
+
+04:35.320 --> 04:42.070
+Lo que hacemos es desactivar la simulación automática de la física y luego simulamos manualmente la física nosotros mismos.
+
+04:42.100 --> 04:43.120
+Este es el punto clave.
+
+04:43.150 --> 04:48.060
+Esperamos durante cierta cantidad de tiempo antes de molestarnos en llamar a la simulación de física.
+
+04:48.070 --> 04:52.540
+Ahora, en nuestros proyectos y probablemente en tus proyectos, no necesitas hacer esto.
+
+04:52.720 --> 04:57.400
+Solo quiero hablar un poco al respecto sobre la dilatación del tiempo para que comprendas que normalmente
+
+04:57.400 --> 05:04.450
+Unity se ejecuta de una manera realista para la gravedad de la Tierra y no necesitamos simular la física manualmente.
+
+05:04.450 --> 05:06.310
+Pero aquí tienes cómo puedes hacerlo si es necesario.
+
+05:08.790 --> 05:09.830
+En la siguiente sección.
+
+05:09.840 --> 05:12.150
+Componentes de Física 2D de Unity.

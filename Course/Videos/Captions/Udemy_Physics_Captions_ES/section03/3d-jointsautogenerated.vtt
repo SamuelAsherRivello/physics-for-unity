@@ -1,0 +1,241 @@
+WEBVTT
+
+00:01.720 --> 00:02.930
+Tres articulaciones D.
+
+00:02.950 --> 00:06.710
+En este video, cubriremos los conceptos para tres articulaciones en D.
+
+00:06.730 --> 00:12.670
+También veremos varios tipos de articulaciones y abriremos el editor de Unity y crearemos una cadena3d
+
+00:12.670 --> 00:13.810
+utilizando articulaciones.
+
+00:14.140 --> 00:21.370
+Visionado Recomendado Sección dos Unity dos D Componentes de Física introduce los fundamentos básicos de la física,
+
+00:21.370 --> 00:23.020
+que también se aplican a tres D.
+
+00:23.350 --> 00:26.500
+Se sugiere ver la Sección dos antes de la Sección tres.
+
+00:27.330 --> 00:28.410
+El componente conjunto.
+
+00:29.080 --> 00:35.020
+Este componente es el que mantiene una relación ya sea posicional o rotacional con uno o más juego
+
+00:35.020 --> 00:35.740
+objetos.
+
+00:35.770 --> 00:39.730
+Puedes adjuntar articulaciones ya sea a un objeto del juego con cuerpo rígido.
+
+00:39.730 --> 00:43.300
+Esto es común o a una posición fija en el espacio del mundo.
+
+00:43.330 --> 00:48.340
+Como puedes ver, tenemos un objeto de juego con la conocida transformación y cuerpo rígido, y luego añadimos
+
+00:48.340 --> 00:52.480
+un componente de tipos de articulaciones en tres D hay muchos.
+
+00:52.900 --> 00:57.100
+La articulación bisagra constriñe a los cuerpos rígidos como si estuvieran conectados por una bisagra.
+
+00:57.100 --> 01:01.480
+Por ejemplo, una típica puerta batiente que se abre y se cierra o una cadena.
+
+01:01.480 --> 01:07.240
+La articulación de resorte mantiene una relación entre dos objetos de juego, como si de un muelle elástico se tratara, para
+
+01:07.240 --> 01:09.880
+ejemplo, la suspensión de una rueda en un vehículo.
+
+01:09.880 --> 01:15.820
+La articulación fija mantiene un cierto ángulo de posición relativa y desplazamiento entre dos objetos de juego.
+
+01:15.820 --> 01:20.470
+La articulación del personaje es una rótula que se utiliza principalmente para la física ragdoll.
+
+01:20.470 --> 01:22.840
+Cubriremos Ragdoll en una sección futura.
+
+01:22.840 --> 01:25.810
+La articulación configurable es extremadamente versátil.
+
+01:25.810 --> 01:29.560
+Te da un control total y puedes construir todas las demás articulaciones usándola.
+
+01:30.710 --> 01:32.810
+Echemos un vistazo a las propiedades avanzadas.
+
+01:33.350 --> 01:37.220
+Hay muchos tipos diferentes de juntas, pero veamos sólo una para hacernos una idea.
+
+01:37.250 --> 01:38.790
+Veremos la articulación de carácter.
+
+01:38.810 --> 01:41.760
+Hay muchas propiedades, nos centraremos en unas pocas.
+
+01:41.780 --> 01:46.250
+El cuerpo conectado es una referencia al otro cuerpo rígido al que se conecta esta articulación.
+
+01:46.280 --> 01:51.320
+El ancla es la posición del ancla alrededor de la cual se restringe el movimiento de la articulación.
+
+01:51.350 --> 01:55.040
+La configuración automática conectada es verdadera por defecto.
+
+01:55.040 --> 02:02.000
+Cuando es verdadero, entonces la propiedad ancla conectada será calculada automáticamente para coincidir con la propiedad global
+
+02:02.000 --> 02:04.460
+de la propiedad ancla.
+
+02:04.640 --> 02:05.420
+Límites.
+
+02:05.420 --> 02:11.810
+Esto restringe el rango de valores posibles para las propiedades del mundo de las articulaciones como posición, rotación
+
+02:11.810 --> 02:14.930
+y movimiento para editar los límites angulares de la articulación.
+
+02:14.930 --> 02:20.150
+Puedes hacerlo visualmente o numéricamente editando el límite de giro y el límite de balanceo.
+
+02:21.360 --> 02:22.950
+Vamos a crear una cadena3d.
+
+02:23.580 --> 02:29.790
+El objetivo aquí será tener una serie de eslabones metálicos donde cada eslabón esté entrelazado con uno o dos
+
+02:29.790 --> 02:36.090
+otros enlaces en tiempo de ejecución se moverá el enlace superior y vamos a ver todos los otros enlaces se mueven en un creíble
+
+02:36.090 --> 02:36.600
+creíble.
+
+02:36.630 --> 02:43.440
+El desglose de tareas Primero en la parte superior, usaremos una articulación fija para conectar el eslabón superior a una posición fija
+
+02:43.440 --> 02:44.620
+en el mundo 3D.
+
+02:44.640 --> 02:50.180
+Usaremos un cubo para tener una señal visual cuando el cubo se mueva, la cadena le sigue.
+
+02:50.190 --> 02:54.370
+De esta forma el cubo actúa como nuestro tirador y podemos moverlo con el ratón.
+
+02:54.390 --> 02:58.440
+Usa una unión de caracteres para conectar todos los demás enlaces al enlace anterior.
+
+02:59.560 --> 03:00.700
+Empecemos la demo.
+
+03:00.940 --> 03:06.730
+Comienza la cadena de tres D vista Crear una articulación fija para conectar el eslabón superior al cubo.
+
+03:06.760 --> 03:09.130
+Luego creamos una articulación de carácter para conectar.
+
+03:09.130 --> 03:14.950
+Cada uno de los otros enlaces reproducirá la escena y moverá el cubo en la escena y veremos los resultados.
+
+03:15.100 --> 03:16.720
+Abramos nuestra siguiente escena.
+
+03:18.000 --> 03:19.920
+Vamos a utilizar la cadena de tres D empezar.
+
+03:21.390 --> 03:25.470
+El primer paso es conectar el eslabón de la cadena al cubo.
+
+03:25.800 --> 03:27.270
+Lo haremos con una unión fija.
+
+03:39.800 --> 03:42.650
+Podemos ver ahora que cuando movemos el cubo.
+
+03:44.110 --> 03:46.930
+Obtenemos automáticamente el movimiento de la articulación.
+
+03:52.050 --> 03:53.580
+Ahora voy a duplicar.
+
+03:57.810 --> 04:00.030
+Y en lugar de una articulación fija.
+
+04:01.090 --> 04:02.680
+Vamos a usar una articulación de carácter.
+
+04:18.170 --> 04:25.550
+Y he pegado algunos valores de experimentar antes para que lo que tenemos aquí es el ancla y
+
+04:25.550 --> 04:30.170
+eje fijado en la parte superior del enlace resaltado.
+
+04:30.380 --> 04:33.470
+Eso hará que oscile desde la parte superior de una manera creíble.
+
+04:36.610 --> 04:38.440
+Por supuesto, también querremos rotar.
+
+04:41.320 --> 04:43.210
+Y ahora obtenemos el resultado que queremos.
+
+04:43.950 --> 04:50.220
+Observa que el eslabón de la cadena dos va a estar conectado al eslabón de la cadena uno.
+
+04:50.760 --> 04:55.980
+Ahora vamos a duplicar y replicar la misma configuración para varios eslabones más.
+
+05:12.390 --> 05:13.320
+Duplicar.
+
+05:13.320 --> 05:19.920
+Estoy usando el control D, pero hay una opción de duplicar aquí que toma el elemento seleccionado en la jerarquía
+
+05:19.920 --> 05:21.090
+y lo duplica.
+
+05:26.600 --> 05:28.430
+Ahora para que parezca creíble
+
+05:28.430 --> 05:31.610
+Voy a rotar cada uno 190 grados.
+
+05:41.600 --> 05:41.870
+Ahí.
+
+05:41.870 --> 05:43.130
+Tenemos un buen efecto.
+
+05:43.160 --> 05:47.600
+Ahora revisita cada articulación del personaje y asegúrate de que está emparentada con la articulación de arriba.
+
+05:50.250 --> 05:51.540
+Enlace en cadena a.
+
+05:52.840 --> 05:54.460
+Conectado al eslabón de cadena uno.
+
+06:08.380 --> 06:10.390
+Vamos a ejecutar la escena y ver cómo se ve.
+
+06:17.530 --> 06:20.440
+Seleccionando el cubo superior, puedo moverlo y ver el resultado.
+
+06:29.270 --> 06:30.200
+Se ve muy bien.
+
+06:31.240 --> 06:36.130
+Puedes añadir tantos de estos enlaces como quieras y conseguir un efecto de aspecto aún mayor.
+
+06:39.380 --> 06:42.230
+En el próximo video, cubriremos la física del ragdoll.
