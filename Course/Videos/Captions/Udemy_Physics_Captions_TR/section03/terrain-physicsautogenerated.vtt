@@ -1,0 +1,193 @@
+WEBVTT
+
+00:01.750 --> 00:02.800
+Terrain physics.
+
+00:02.800 --> 00:05.760
+In this video, we'll cover what is unity terrain.
+
+00:05.770 --> 00:08.850
+We'll learn how do we create terrain and add physics.
+
+00:08.860 --> 00:13.930
+Finally, we'll create a new terrain inside the unity editor and interact with its physics.
+
+00:14.140 --> 00:15.460
+First of all, what is terrain?
+
+00:15.460 --> 00:19.870
+Well, video games may include organic areas like a planet surface.
+
+00:19.870 --> 00:25.060
+Our game characters and other game items might walk around and interact on that surface.
+
+00:25.060 --> 00:28.000
+For example, our main character, walking up a mountain.
+
+00:28.000 --> 00:33.070
+The realistic physics interaction on this surface is what we call terrain physics.
+
+00:33.070 --> 00:35.230
+So what is Unity's terrain system?
+
+00:35.230 --> 00:39.250
+Unity's terrain system allows you to add vast landscapes to your game.
+
+00:39.250 --> 00:45.100
+The Unity editor provides a selection of tools to create the terrain quickly and easily at runtime.
+
+00:45.100 --> 00:48.430
+Terrain rendering is highly optimized for efficiency.
+
+00:48.730 --> 00:50.920
+The characteristics of the terrain System.
+
+00:50.920 --> 00:57.340
+It has an editable surface texture and editable surface geometry and an automated terrain collider.
+
+00:58.150 --> 01:03.910
+For example, in this scene here, there's a terrain that I created and I have a series of different
+
+01:03.910 --> 01:09.670
+balls falling on top of the surface and interacting with the surface like a real physics surface.
+
+01:11.160 --> 01:12.990
+The terrain collider component.
+
+01:12.990 --> 01:17.730
+It's what defines the collision surface for the same shape as the terrain.
+
+01:18.000 --> 01:21.720
+So we have a game object with our typical transform component.
+
+01:21.720 --> 01:27.180
+And then to set up this scenario, we need to add the terrain component, the terrain Collider, and
+
+01:27.180 --> 01:29.040
+then the terrain data asset.
+
+01:30.340 --> 01:32.830
+So what are the physical properties of terrain?
+
+01:33.160 --> 01:36.910
+There's lots of settings here, but we'll focus on the physics ones of material.
+
+01:36.910 --> 01:42.370
+That's a reference to the asset that describes how to handle colliding objects per friction and bouncing
+
+01:42.370 --> 01:42.740
+us.
+
+01:42.760 --> 01:45.850
+The terrain data is something we haven't seen yet.
+
+01:45.850 --> 01:50.530
+It stores the height, maps or the surface of where the mountains and valleys are.
+
+01:50.560 --> 01:57.220
+The detail mesh positions, Any tree instances you've added, you're able to add trees on top of the
+
+01:57.220 --> 02:03.430
+surface to create a realistic scene and the terrain texture alpha maps enable tree colliders.
+
+02:03.430 --> 02:10.210
+If you set it true, then you'll also include the geometry of the trees into the collision calculations.
+
+02:10.210 --> 02:15.940
+So setting true here is more expensive, but it gives you the realistic result you may want, which
+
+02:15.940 --> 02:20.940
+is that your character and other items would bounce off the trees in a believable way.
+
+02:20.950 --> 02:26.230
+The thickness property here determines how thick the terrain will be in the vertical direction when
+
+02:26.230 --> 02:27.730
+used with a terrain collider.
+
+02:27.730 --> 02:33.820
+Any colliders found within this surface of thickness will be placed on top of the surface.
+
+02:34.660 --> 02:37.060
+So let's create a terrain with physics.
+
+02:37.510 --> 02:38.950
+We'll open up the terrain.
+
+02:38.950 --> 02:41.430
+Begin scene will create a terrain.
+
+02:41.440 --> 02:43.120
+We'll learn about editing it.
+
+02:43.150 --> 02:46.630
+We'll create some following items on top to test out the physics.
+
+02:47.350 --> 02:49.270
+We're going to be using terrain begin.
+
+02:51.020 --> 02:51.200
+Here.
+
+02:51.200 --> 02:52.760
+We've got a camera set up.
+
+02:52.760 --> 02:55.880
+No terrain yet, so let's go ahead and create the terrain.
+
+02:56.390 --> 02:59.510
+We're going to use Game object three D object terrain.
+
+03:01.580 --> 03:03.710
+This creates a terrain in the middle of the world.
+
+03:03.740 --> 03:07.880
+Now we're going to add some layers on top that we can use to paint the texture.
+
+03:12.620 --> 03:13.940
+Will create three layers.
+
+03:13.940 --> 03:15.170
+One for rock.
+
+03:16.250 --> 03:17.990
+One for snow and one for grass.
+
+03:21.760 --> 03:27.770
+And then we'll go ahead and instead of painting texture, first, we will raise and lower terrain.
+
+03:29.070 --> 03:32.370
+With both the brushes and the terrain, we can adjust the size and opacity.
+
+03:43.340 --> 03:45.830
+And then on to the mountains will paint the right texture.
+
+04:06.480 --> 04:06.750
+There.
+
+04:06.750 --> 04:11.910
+We've got some mountains with some snow and some different textures, and we'll notice that.
+
+04:13.120 --> 04:13.930
+On the terrain.
+
+04:13.930 --> 04:17.140
+We have the terrain card or automatically set up for us.
+
+04:17.860 --> 04:19.510
+And let's go ahead and run the scene.
+
+04:20.990 --> 04:25.610
+We'll also bring in the sponsor I have created to put some objects on top to test the physics.
+
+04:31.170 --> 04:37.350
+We can see our yellow spawned objects are responding to the surface and collecting at low points, also
+
+04:37.350 --> 04:38.640
+falling off the terrain.
+
+04:39.600 --> 04:40.710
+Behaving with physics.
+
+04:45.460 --> 04:49.270
+In the next section, we'll look at Unity C Sharp physics programming.
