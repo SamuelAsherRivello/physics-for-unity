@@ -1,0 +1,172 @@
+WEBVTT
+
+00:00.180 --> 00:02.810
+Hola y bienvenidos a una introducción a la Física de Juegos.
+
+00:02.820 --> 00:04.830
+Mi nombre es Samuel Asher Rivello.
+
+00:05.040 --> 00:09.810
+Mi misión en mi carrera es educar y entretener con tecnología interactiva.
+
+00:09.850 --> 00:15.150
+Soy un desarrollador certificado por Unity con más de 20 años de experiencia en el desarrollo de juegos.
+
+00:15.420 --> 00:22.140
+En los últimos ocho años, me he centrado específicamente en Unity, desarrollando juegos Unity para PC y Xbox,
+
+00:22.140 --> 00:23.430
+PlayStation y más.
+
+00:23.460 --> 00:29.310
+Normalmente, en los proyectos, soy desarrollador de juegos Unity o desarrollador de herramientas Unity, y estoy disponible para
+
+00:29.310 --> 00:30.690
+contrato a distancia.
+
+00:31.860 --> 00:33.750
+En primer lugar, la física es divertida.
+
+00:34.400 --> 00:37.940
+Hacer juegos con física es divertido y jugarlos también lo es.
+
+00:37.970 --> 00:42.950
+Las mecánicas de juego son experimentales, emergentes, incluso educativas.
+
+00:42.950 --> 00:46.970
+Algunos ejemplos populares de juegos basados en la física son Angry Birds.
+
+00:46.970 --> 00:49.880
+Corta las pruebas de cuerda y márcala.
+
+00:50.540 --> 00:52.430
+Echemos un vistazo a la vista general del recorrido.
+
+00:53.130 --> 00:54.990
+En la Sección uno, Introducción a la Física.
+
+00:54.990 --> 00:58.170
+veremos las ventajas de crear juegos basados en la física.
+
+00:58.200 --> 01:03.870
+Veremos las tres principales preocupaciones de cualquier sistema de física, y revisaremos el sistema de física de Unity.
+
+01:03.870 --> 01:04.920
+y la configuración del proyecto.
+
+01:05.460 --> 01:08.940
+En la Sección dos, veremos los dos componentes de física de Unity.
+
+01:09.150 --> 01:14.970
+Comenzaremos con el muy importante cuerpo rígido, 2D y Collider 2D, y pasaremos a avanzado
+
+01:14.970 --> 01:18.030
+los efectores 2D y las articulaciones 2D.
+
+01:18.060 --> 01:23.070
+Incluso veremos un proyecto que está en beta pública llamado Unity Sprite Sheet.
+
+01:23.740 --> 01:27.940
+En la sección tres, veremos los tres componentes de física D de Unity.
+
+01:27.970 --> 01:33.790
+En primer lugar, vamos a revisar los principios básicos de tres D, y luego vamos a pasar a material físico, ragdoll
+
+01:33.790 --> 01:34.660
+y tren.
+
+01:37.310 --> 01:41.440
+En la sección cuatro, nos sumergiremos de lleno en la programación de física aguda de Unity C.
+
+01:41.450 --> 01:45.200
+Manejaremos eventos de física como colisiones y disparadores.
+
+01:45.200 --> 01:50.540
+Añadiremos fuerzas físicas para mover nuestros objetos, y veremos las propiedades y funciones vitales
+
+01:50.540 --> 01:51.860
+que necesitamos para nuestra física.
+
+01:51.860 --> 01:53.720
+Incluso nos adentraremos en la depuración de la física.
+
+01:53.720 --> 01:56.720
+Así, si surge un problema en nuestro código, sabremos cómo resolverlo.
+
+01:57.080 --> 02:02.660
+En la sección cinco, crearemos un proyecto desde cero usando dos D algo como Angry Birds.
+
+02:02.840 --> 02:07.940
+Vamos a crear el movimiento de proyectiles utilizando nuestra entrada, y vamos a poblar el mundo con obstáculos que colisionan
+
+02:07.940 --> 02:08.570
+y se destruyan.
+
+02:10.130 --> 02:16.370
+En la Sección seis crearemos un proyecto desde cero usando tres D, algo así como el clásico juego de los años 80
+
+02:16.370 --> 02:17.490
+Marble Madness.
+
+02:17.510 --> 02:19.690
+Crearemos un juego completo en tres D.
+
+02:19.700 --> 02:25.610
+Usaremos fuerzas físicas para mover a nuestro personaje y poblaremos el mundo con obstáculos de cuerpo rígido.
+
+02:27.480 --> 02:33.300
+En la sección siete, veremos algunos temas avanzados, las mejores prácticas con la física y cómo optimizar
+
+02:33.300 --> 02:37.580
+nuestros proyectos, y luego aplicaremos lo que hemos aprendido a ejemplos del mundo real.
+
+02:37.620 --> 02:43.590
+Incluso veremos la pila de tecnología orientada a datos o dots y el futuro de la física de la unidad.
+
+02:45.150 --> 02:46.620
+Requisitos previos para este curso.
+
+02:46.620 --> 02:47.970
+Necesitarás un ordenador, por supuesto.
+
+02:47.970 --> 02:49.570
+Con Windows o Mac.
+
+02:49.590 --> 02:52.420
+Necesitarás un editor de unity y un editor de texto de código.
+
+02:52.470 --> 02:58.030
+La edición personal gratuita de Unity viene con algunos conocimientos básicos de ser necesario aquí.
+
+02:58.050 --> 03:03.870
+Comenzando la programación, el conocimiento de cualquier idioma, e incluso una docena de horas más o menos específicamente con la unidad
+
+03:03.870 --> 03:05.260
+sería de gran ayuda.
+
+03:05.280 --> 03:08.760
+Pero cubriremos esos aspectos básicos y aportaremos tu pasión.
+
+03:08.760 --> 03:12.510
+Trae tu amor por los videojuegos y tu curiosidad por aprender algo nuevo.
+
+03:13.360 --> 03:14.720
+Objetivos de este curso.
+
+03:14.740 --> 03:16.360
+Divertirse con la física.
+
+03:16.390 --> 03:22.270
+Conocer en profundidad el sistema de física y unirlo todo para crear juegos 2D y 3D.
+
+03:22.270 --> 03:23.170
+desde cero.
+
+03:23.200 --> 03:28.570
+También tendrás la oportunidad de comprender algunos de los principales temas avanzados y entender mejor el futuro
+
+03:28.570 --> 03:29.740
+de la física de la unidad.
+
+03:30.760 --> 03:32.110
+Así que empecemos.
