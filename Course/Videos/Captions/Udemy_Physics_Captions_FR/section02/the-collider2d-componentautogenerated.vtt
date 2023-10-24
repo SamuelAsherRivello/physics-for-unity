@@ -1,181 +1,181 @@
 WEBVTT
 
 00:01.650 --> 00:03.450
-The collider two rd component.
+La deuxième composante du collisionneur.
 
 00:03.450 --> 00:08.530
-In this video, we'll cover the collider, two RD component and its most important properties.
+Dans cette vidéo, nous allons aborder le composant collider, two RD et ses propriétés les plus importantes.
 
 00:08.550 --> 00:11.000
-We'll also play with this component in the editor.
+Nous allons également jouer avec ce composant dans l'éditeur.
 
 00:11.010 --> 00:16.410
-Collider is the component that defines the shape of an object for the purposes of physical collisions.
+Le collisionneur est le composant qui définit la forme d'un objet à des fins de collisions physiques.
 
 00:16.530 --> 00:20.760
-As this diagram shows, we can have a game object with multiple components.
+Comme le montre ce diagramme, un objet de jeu peut comporter plusieurs composants.
 
 00:20.760 --> 00:25.560
-In this example, we have a transform and rigid body, as we've discussed in previous videos.
+Dans cet exemple, nous avons une transformation et un corps rigide, comme nous l'avons vu dans les vidéos précédentes.
 
 00:25.560 --> 00:29.510
-And then we also have a collider with both a rigid body and a collider.
+Nous avons également un collider avec un corps rigide et un collider.
 
 00:29.520 --> 00:35.970
-We can think of this object being physical in this game world and being able to interact and collide
+Nous pouvons considérer que cet objet est physique dans le monde du jeu et qu'il peut interagir et entrer en collision.
 
 00:35.970 --> 00:36.750
-with others.
+avec d'autres.
 
 00:36.870 --> 00:38.130
-Types of Colliders.
+Types de collisionneurs.
 
 00:38.130 --> 00:44.310
-The most popular Circle Collider and box Collider as shown in the pictures they give you the area you'd
+Le Circle Collider et le Box Collider sont les plus populaires. Comme le montrent les images, ils vous donnent la zone que vous voulez...
 
 00:44.310 --> 00:49.460
-expect a circle and a box, and that carries most of the examples that you'd want in a game.
+d'un cercle et d'une boîte, et cela correspond à la plupart des exemples que l'on souhaite voir dans un jeu.
 
 00:49.470 --> 00:55.770
-However, there's a variety of other ones for shapes that don't quite fit in one of those two polygons
+Cependant, il existe une variété d'autres formes qui ne rentrent pas tout à fait dans l'un de ces deux polygones.
 
 00:55.770 --> 00:57.660
-and Edge capsule.
+et Edge capsule.
 
 00:57.660 --> 01:02.730
-And sometimes you want to have multiple colliders inside the same object.
+Et parfois, vous voulez avoir plusieurs colliders à l'intérieur d'un même objet.
 
 01:02.730 --> 01:08.730
-Perhaps the shape of the object is quite complex, so you could add other colliders together using the
+Si la forme de l'objet est assez complexe, vous pouvez ajouter d'autres colliders à l'aide de la fonction
 
 01:08.730 --> 01:09.920
-composite collider too.
+composite.
 
 01:09.930 --> 01:15.630
-DD If we were to select a game object in the scene with a collider, we can open up the inspector window
+DD Si nous sélectionnons un objet de jeu dans la scène avec un collider, nous pouvons ouvrir la fenêtre de l'inspecteur
 
 01:15.630 --> 01:17.110
-and look at all the components.
+et regarder tous les composants.
 
 01:17.130 --> 01:20.640
-Let's browse the properties of an example Box Collider to DD.
+Parcourons les propriétés d'un exemple de Box Collider à DD.
 
 01:20.670 --> 01:24.030
-There's a lot of properties we'll focus on just a few.
+Il y a beaucoup de propriétés, nous allons nous concentrer sur quelques-unes d'entre elles.
 
 01:24.030 --> 01:29.370
-The most important, first of all, material physics material describes the friction and bouncy ness
+Les plus importantes, tout d'abord, la physique des matériaux, qui décrit le frottement et le rebondissement.
 
 01:29.370 --> 01:30.300
-of collisions.
+des collisions.
 
 01:30.300 --> 01:35.250
-We'll cover this in a later section, but I want to note here that we've already seen this material
+Nous aborderons ce sujet dans une section ultérieure, mais je tiens à souligner que nous avons déjà vu ce matériau
 
 01:35.250 --> 01:36.990
-property inside rigid body.
+à l'intérieur d'un corps rigide.
 
 01:36.990 --> 01:39.260
-So why does it exist in two places?
+Alors pourquoi existe-t-elle à deux endroits ?
 
 01:39.270 --> 01:43.690
-Well, typically, most commonly we want to add it only to the rigid body.
+En général, nous voulons l'ajouter uniquement au corps rigide.
 
 01:43.710 --> 01:50.190
-However, if you have multiple colliders and you want to have unique materials per collider, you can
+Cependant, si vous avez plusieurs collisionneurs et que vous souhaitez avoir des matériaux uniques par collisionneur, vous pouvez
 
 01:50.190 --> 01:53.670
-also put it inside the box collider instead of the rigid body.
+également le placer dans la boîte de collision au lieu du corps rigide.
 
 01:53.820 --> 01:57.360
-Another important property is the is trigger boolean.
+Une autre propriété importante est le booléen is trigger.
 
 01:57.360 --> 01:59.940
-This determines if the collider behaves as a trigger.
+Cette propriété détermine si le collisionneur se comporte comme un déclencheur.
 
 01:59.940 --> 02:01.740
-The default value is false.
+La valeur par défaut est false.
 
 02:01.740 --> 02:03.720
-It behaves as a solid object.
+Il se comporte comme un objet solide.
 
 02:03.720 --> 02:07.860
-It collides with other objects and it dispatches the on collision events.
+Il entre en collision avec d'autres objets et envoie les événements de collision.
 
 02:07.860 --> 02:11.000
-For example, did the bullet hit the character?
+Par exemple, la balle a-t-elle touché le personnage ?
 
 02:11.010 --> 02:14.610
-However, some situations we want is trigger to be true.
+Cependant, dans certaines situations, nous voulons que is trigger soit vrai.
 
 02:14.610 --> 02:19.620
-This means it does not collide with other objects and it dispatches a different event called the on
+Cela signifie qu'elle n'entre pas en collision avec d'autres objets et qu'elle envoie un événement différent appelé on
 
 02:19.620 --> 02:20.280
-Trigger.
+Déclencheur.
 
 02:20.280 --> 02:24.420
-And you could ask yourself in a game, did the hero enter the cave?
+Dans un jeu, vous pouvez vous demander si le héros est entré dans la grotte.
 
 02:24.420 --> 02:30.210
-We want to allow the character to enter the cave, but using a trigger, we're able to get a notification
+Nous voulons permettre au personnage d'entrer dans la grotte, mais en utilisant un déclencheur, nous pouvons obtenir une notification
 
 02:30.210 --> 02:32.790
-so we can have some game event occur.
+pour qu'un événement de jeu se produise.
 
 02:32.790 --> 02:39.910
-When he enters by default, Unity usually places the collider to match the size of the graphics.
+Par défaut, lorsqu'il entre, Unity place généralement le collider de manière à ce qu'il corresponde à la taille des graphiques.
 
 02:39.960 --> 02:43.650
-However, we're free to adjust the Collider's position and scale.
+Cependant, nous sommes libres d'ajuster la position et l'échelle du collider.
 
 02:43.650 --> 02:48.870
-For example, you may want the collider to be larger than the graphics, so it detects collisions a
+Par exemple, vous pouvez vouloir que le collider soit plus grand que les graphiques, afin qu'il détecte les collisions a
 
 02:48.870 --> 02:49.740
-little earlier.
+un peu plus tôt.
 
 02:49.740 --> 02:54.210
-Or maybe you want the collider to be smaller than the graphics, so it's a bit more forgiving.
+Ou bien vous voulez que le collisionneur soit plus petit que les graphiques, pour qu'il soit un peu plus indulgent.
 
 02:54.210 --> 02:57.690
-Maybe it gives a game a different difficulty that you like.
+Peut-être que cela donne à un jeu une difficulté différente que vous aimez.
 
 02:57.690 --> 03:02.940
-You can choose to edit the size of the collider using the edit collider button to adjust visually,
+Vous pouvez choisir d'éditer la taille du collider en utilisant le bouton edit collider pour l'ajuster visuellement,
 
 03:02.940 --> 03:09.180
-or you can adjust individual properties of offset size edge radius and you can adjust them numerically.
+ou vous pouvez ajuster les propriétés individuelles de la taille du décalage, du rayon de l'arête et vous pouvez les ajuster numériquement.
 
 03:10.290 --> 03:14.670
-Let's look at a demo In the two D Pyramid scene will select a crate.
+Examinons une démo Dans la scène de la pyramide à deux D, nous allons sélectionner une caisse.
 
 03:14.700 --> 03:17.150
-We'll see the collider in the inspector window.
+Nous verrons le collider dans la fenêtre de l'inspecteur.
 
 03:17.160 --> 03:22.170
-We can edit the collider visually and numerically to give a feel for both of those options.
+Nous pouvons modifier le collider visuellement et numériquement pour nous familiariser avec ces deux options.
 
 03:22.170 --> 03:27.180
-And finally, we'll play with the is trigger value setting it true and false to observe the result.
+Enfin, nous allons jouer avec la valeur de déclenchement is en la réglant sur true et false pour observer le résultat.
 
 03:28.600 --> 03:33.820
-Let's open up the two D pyramid and we'll select one of the crates in the scene view.
+Ouvrons la pyramide à deux D et sélectionnons l'une des caisses dans la vue de la scène.
 
 03:33.830 --> 03:40.180
-And we see here that we're able to edit the collider and then adjust either numerically.
+Nous voyons ici que nous pouvons éditer le collider et l'ajuster numériquement.
 
 03:41.540 --> 03:43.610
-And we can see in the scene view it's moving.
+Dans la vue de la scène, nous pouvons voir qu'il se déplace.
 
 03:44.780 --> 03:48.410
-The positioning of the offset or the size.
+Le positionnement du décalage ou de la taille.
 
 03:49.310 --> 03:53.480
-Or we can actually use our mouse down here and do it visually.
+Nous pouvons également utiliser notre souris pour le faire visuellement.
 
 03:55.760 --> 03:56.360
-That's it.
+C'est tout.
 
 03:57.430 --> 03:59.680
-In the next video two rd Effectors.
+Dans la prochaine vidéo, nous verrons deux effecteurs.

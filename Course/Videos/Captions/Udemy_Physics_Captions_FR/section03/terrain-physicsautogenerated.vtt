@@ -1,193 +1,193 @@
 WEBVTT
 
 00:01.750 --> 00:02.800
-Terrain physics.
+Physique du terrain.
 
 00:02.800 --> 00:05.760
-In this video, we'll cover what is unity terrain.
+Dans cette vidéo, nous allons voir ce qu'est le terrain de l'unité.
 
 00:05.770 --> 00:08.850
-We'll learn how do we create terrain and add physics.
+Nous apprendrons comment créer un terrain et ajouter de la physique.
 
 00:08.860 --> 00:13.930
-Finally, we'll create a new terrain inside the unity editor and interact with its physics.
+Enfin, nous allons créer un nouveau terrain dans l'éditeur unity et interagir avec sa physique.
 
 00:14.140 --> 00:15.460
-First of all, what is terrain?
+Tout d'abord, qu'est-ce qu'un terrain ?
 
 00:15.460 --> 00:19.870
-Well, video games may include organic areas like a planet surface.
+Eh bien, les jeux vidéo peuvent inclure des zones organiques comme la surface d'une planète.
 
 00:19.870 --> 00:25.060
-Our game characters and other game items might walk around and interact on that surface.
+Nos personnages et d'autres éléments du jeu peuvent se promener et interagir sur cette surface.
 
 00:25.060 --> 00:28.000
-For example, our main character, walking up a mountain.
+Par exemple, notre personnage principal, marchant sur une montagne.
 
 00:28.000 --> 00:33.070
-The realistic physics interaction on this surface is what we call terrain physics.
+L'interaction physique réaliste sur cette surface est ce que nous appelons la physique du terrain.
 
 00:33.070 --> 00:35.230
-So what is Unity's terrain system?
+Qu'est-ce que le système de terrain d'Unity ?
 
 00:35.230 --> 00:39.250
-Unity's terrain system allows you to add vast landscapes to your game.
+Le système de terrain d'Unity vous permet d'ajouter de vastes paysages à votre jeu.
 
 00:39.250 --> 00:45.100
-The Unity editor provides a selection of tools to create the terrain quickly and easily at runtime.
+L'éditeur Unity fournit une sélection d'outils pour créer le terrain rapidement et facilement au moment de l'exécution.
 
 00:45.100 --> 00:48.430
-Terrain rendering is highly optimized for efficiency.
+Le rendu du terrain est hautement optimisé pour plus d'efficacité.
 
 00:48.730 --> 00:50.920
-The characteristics of the terrain System.
+Les caractéristiques du système de terrain.
 
 00:50.920 --> 00:57.340
-It has an editable surface texture and editable surface geometry and an automated terrain collider.
+Il dispose d'une texture et d'une géométrie de surface modifiables, ainsi que d'un collisionneur de terrain automatisé.
 
 00:58.150 --> 01:03.910
-For example, in this scene here, there's a terrain that I created and I have a series of different
+Par exemple, dans cette scène, il y a un terrain que j'ai créé et j'ai une série d'objets différents.
 
 01:03.910 --> 01:09.670
-balls falling on top of the surface and interacting with the surface like a real physics surface.
+différentes balles tombant sur la surface et interagissant avec elle comme une véritable surface physique.
 
 01:11.160 --> 01:12.990
-The terrain collider component.
+Le composant collisionneur de terrain.
 
 01:12.990 --> 01:17.730
-It's what defines the collision surface for the same shape as the terrain.
+C'est ce qui définit la surface de collision pour la même forme que le terrain.
 
 01:18.000 --> 01:21.720
-So we have a game object with our typical transform component.
+Nous avons donc un objet de jeu avec notre composant de transformation typique.
 
 01:21.720 --> 01:27.180
-And then to set up this scenario, we need to add the terrain component, the terrain Collider, and
+Pour mettre en place ce scénario, nous devons ajouter le composant terrain, le collisionneur de terrain, et
 
 01:27.180 --> 01:29.040
-then the terrain data asset.
+puis la ressource de données de terrain.
 
 01:30.340 --> 01:32.830
-So what are the physical properties of terrain?
+Quelles sont les propriétés physiques du terrain ?
 
 01:33.160 --> 01:36.910
-There's lots of settings here, but we'll focus on the physics ones of material.
+Il existe de nombreux paramètres, mais nous allons nous concentrer sur les propriétés physiques des matériaux.
 
 01:36.910 --> 01:42.370
-That's a reference to the asset that describes how to handle colliding objects per friction and bouncing
+Il s'agit d'une référence à la ressource qui décrit comment gérer les collisions d'objets par frottement et rebond.
 
 01:42.370 --> 01:42.740
-us.
+nous.
 
 01:42.760 --> 01:45.850
-The terrain data is something we haven't seen yet.
+Les données de terrain sont quelque chose que nous n'avons pas encore vu.
 
 01:45.850 --> 01:50.530
-It stores the height, maps or the surface of where the mountains and valleys are.
+Elles stockent la hauteur, les cartes ou la surface où se trouvent les montagnes et les vallées.
 
 01:50.560 --> 01:57.220
-The detail mesh positions, Any tree instances you've added, you're able to add trees on top of the
+Les positions du maillage détaillé, toutes les instances d'arbres que vous avez ajoutées, vous pouvez ajouter des arbres au-dessus du maillage détaillé.
 
 01:57.220 --> 02:03.430
-surface to create a realistic scene and the terrain texture alpha maps enable tree colliders.
+pour créer une scène réaliste et les cartes alpha de la texture du terrain permettent d'activer les collisionneurs d'arbres.
 
 02:03.430 --> 02:10.210
-If you set it true, then you'll also include the geometry of the trees into the collision calculations.
+Si vous le définissez comme vrai, vous inclurez également la géométrie des arbres dans les calculs de collision.
 
 02:10.210 --> 02:15.940
-So setting true here is more expensive, but it gives you the realistic result you may want, which
+L'option true est donc plus coûteuse, mais elle permet d'obtenir le résultat réaliste que vous souhaitez, à savoir
 
 02:15.940 --> 02:20.940
-is that your character and other items would bounce off the trees in a believable way.
+c'est-à-dire que votre personnage et d'autres objets rebondissent sur les arbres de manière crédible.
 
 02:20.950 --> 02:26.230
-The thickness property here determines how thick the terrain will be in the vertical direction when
+La propriété thickness détermine ici l'épaisseur du terrain dans le sens vertical lorsque
 
 02:26.230 --> 02:27.730
-used with a terrain collider.
+utilisé avec un collisionneur de terrain.
 
 02:27.730 --> 02:33.820
-Any colliders found within this surface of thickness will be placed on top of the surface.
+Tous les collisionneurs trouvés à l'intérieur de cette surface d'épaisseur seront placés au-dessus de la surface.
 
 02:34.660 --> 02:37.060
-So let's create a terrain with physics.
+Créons donc un terrain avec la physique.
 
 02:37.510 --> 02:38.950
-We'll open up the terrain.
+Nous allons ouvrir le terrain.
 
 02:38.950 --> 02:41.430
-Begin scene will create a terrain.
+Begin scene va créer un terrain.
 
 02:41.440 --> 02:43.120
-We'll learn about editing it.
+Nous allons apprendre à l'éditer.
 
 02:43.150 --> 02:46.630
-We'll create some following items on top to test out the physics.
+Nous créerons quelques objets suivants pour tester la physique.
 
 02:47.350 --> 02:49.270
-We're going to be using terrain begin.
+Nous allons utiliser le terrain begin.
 
 02:51.020 --> 02:51.200
-Here.
+Ici.
 
 02:51.200 --> 02:52.760
-We've got a camera set up.
+Nous avons installé une caméra.
 
 02:52.760 --> 02:55.880
-No terrain yet, so let's go ahead and create the terrain.
+Pas encore de terrain, alors allons-y et créons le terrain.
 
 02:56.390 --> 02:59.510
-We're going to use Game object three D object terrain.
+Nous allons utiliser l'objet Game object three D object terrain.
 
 03:01.580 --> 03:03.710
-This creates a terrain in the middle of the world.
+Cela crée un terrain au milieu du monde.
 
 03:03.740 --> 03:07.880
-Now we're going to add some layers on top that we can use to paint the texture.
+Nous allons maintenant ajouter quelques calques que nous utiliserons pour peindre la texture.
 
 03:12.620 --> 03:13.940
-Will create three layers.
+Nous allons créer trois calques.
 
 03:13.940 --> 03:15.170
-One for rock.
+Un pour la roche.
 
 03:16.250 --> 03:17.990
-One for snow and one for grass.
+Une pour la neige et une pour l'herbe.
 
 03:21.760 --> 03:27.770
-And then we'll go ahead and instead of painting texture, first, we will raise and lower terrain.
+Ensuite, au lieu de peindre la texture, nous allons d'abord élever et abaisser le terrain.
 
 03:29.070 --> 03:32.370
-With both the brushes and the terrain, we can adjust the size and opacity.
+Nous pouvons ajuster la taille et l'opacité des brosses et du terrain.
 
 03:43.340 --> 03:45.830
-And then on to the mountains will paint the right texture.
+Ensuite, nous passerons aux montagnes pour peindre la bonne texture.
 
 04:06.480 --> 04:06.750
-There.
+Voilà.
 
 04:06.750 --> 04:11.910
-We've got some mountains with some snow and some different textures, and we'll notice that.
+Nous avons des montagnes avec de la neige et des textures différentes, et nous allons le remarquer.
 
 04:13.120 --> 04:13.930
-On the terrain.
+Sur le terrain.
 
 04:13.930 --> 04:17.140
-We have the terrain card or automatically set up for us.
+La carte de terrain est automatiquement configurée pour nous.
 
 04:17.860 --> 04:19.510
-And let's go ahead and run the scene.
+Et allons-y, exécutons la scène.
 
 04:20.990 --> 04:25.610
-We'll also bring in the sponsor I have created to put some objects on top to test the physics.
+Nous allons également introduire le sponsor que j'ai créé pour placer quelques objets dessus afin de tester la physique.
 
 04:31.170 --> 04:37.350
-We can see our yellow spawned objects are responding to the surface and collecting at low points, also
+Nous pouvons voir que nos objets jaunes réagissent à la surface et s'accumulent aux points bas.
 
 04:37.350 --> 04:38.640
-falling off the terrain.
+tombent du terrain.
 
 04:39.600 --> 04:40.710
-Behaving with physics.
+Comportement physique.
 
 04:45.460 --> 04:49.270
-In the next section, we'll look at Unity C Sharp physics programming.
+Dans la section suivante, nous nous pencherons sur la programmation de la physique dans Unity C Sharp.

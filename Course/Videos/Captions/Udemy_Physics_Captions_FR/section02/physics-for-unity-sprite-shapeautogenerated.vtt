@@ -1,178 +1,178 @@
 WEBVTT
 
 00:01.780 --> 00:05.070
-In this video, we'll cover physics for unity sprite shape.
+Dans cette vidéo, nous allons aborder la physique pour la forme des sprites unity.
 
 00:05.080 --> 00:08.740
-We'll learn what is a sprite shape and how to set it up and install it.
+Nous allons apprendre ce qu'est un sprite shape et comment le configurer et l'installer.
 
 00:08.740 --> 00:11.120
-Then we'll play with it inside the Unity Editor.
+Nous allons ensuite jouer avec dans l'éditeur Unity.
 
 00:11.140 --> 00:13.750
-This is a preview feature in public beta.
+Il s'agit d'une fonctionnalité de prévisualisation dans la version bêta publique.
 
 00:14.290 --> 00:20.670
-The sprite shape works by tiling sprites along spline paths created in the scene as game objects.
+La forme des sprites fonctionne par empilement de sprites le long de trajectoires splines créées dans la scène en tant qu'objets de jeu.
 
 00:20.680 --> 00:26.230
-You can think of this like the platforms in an organic 2D platformer game.
+On peut comparer cela aux plates-formes d'un jeu de plates-formes 2D organique.
 
 00:26.530 --> 00:31.200
-The game object set up with Transform and a Sprite shape controller.
+L'objet de jeu configuré avec Transform et un contrôleur de forme Sprite.
 
 00:31.210 --> 00:34.660
-Then we link to a sprite shape profile asset.
+Nous établissons ensuite un lien avec un profil de forme de sprite.
 
 00:35.690 --> 00:41.660
-The spreadsheet app is a unity preview feature in public beta and must be manually added through the
+L'application de feuille de calcul est une fonctionnalité de unity preview en beta publique et doit être ajoutée manuellement par le biais de l'application de feuille de calcul.
 
 00:41.660 --> 00:43.250
-Unity Package manager.
+Gestionnaire de paquets Unity.
 
 00:43.280 --> 00:48.680
-Now this is already done for you in our sample project, but for new projects let's learn how.
+Ceci est déjà fait pour vous dans notre exemple de projet, mais pour les nouveaux projets, apprenons à le faire.
 
 00:48.800 --> 00:54.560
-First, open up the latest public release of Unity Unity 2019 one or greater.
+Tout d'abord, ouvrez la dernière version publique d'Unity Unity 2019 one ou supérieure.
 
 00:54.590 --> 00:56.430
-Open the Unity Menu.
+Ouvrez le menu Unity.
 
 00:56.450 --> 00:58.460
-Window Package Manager.
+Fenêtre Gestionnaire de paquets.
 
 00:58.490 --> 01:00.230
-Select all Packages.
+Sélectionner tous les paquets.
 
 01:00.230 --> 01:02.600
-Advanced Show Preview Packages.
+Avancé Afficher l'aperçu des paquets.
 
 01:02.600 --> 01:04.370
-Select the 2D Sprite Shape.
+Sélectionnez la forme du sprite 2D.
 
 01:04.370 --> 01:08.360
-Now Select either download or update as it's shown for you.
+Sélectionnez maintenant soit le téléchargement, soit la mise à jour, comme cela vous est proposé.
 
 01:08.360 --> 01:13.970
-And then optionally, if you want, you can import samples to have a look at what unity provides.
+Si vous le souhaitez, vous pouvez importer des échantillons pour avoir un aperçu de ce que propose unity.
 
 01:14.360 --> 01:16.920
-There's two steps to creating the spreadsheet.
+La création de la feuille de calcul se fait en deux étapes.
 
 01:16.940 --> 01:19.730
-First, we create a sprite shape profile.
+Tout d'abord, nous créons un profil de forme de sprite.
 
 01:19.760 --> 01:26.690
-The spreadsheet works by tiling sprites along a spline path created in the scene as game objects first
+La feuille de calcul fonctionne en alignant les sprites le long d'une trajectoire spline créée dans la scène en tant qu'objets de jeu.
 
 01:26.690 --> 01:29.510
-set up an asset called the Sprite Shape Profile.
+configurer un actif appelé profil de forme de sprite.
 
 01:29.510 --> 01:34.070
-It is used to define and store information about a particular type of shape.
+Il permet de définir et de stocker des informations sur un type de forme particulier.
 
 01:34.280 --> 01:37.040
-Open the menu in unity assets.
+Ouvrez le menu dans unity assets.
 
 01:37.040 --> 01:39.320
-Create sprite shape profile.
+Créer un profil de forme de sprite.
 
 01:39.320 --> 01:46.550
-You can choose between to the open shape, which is a long stripe platform or a close shape, like a
+Vous pouvez choisir entre la forme ouverte, qui est une plateforme à longues rayures, et la forme fermée, comme une plateforme à rayures, qui est une plateforme à rayures.
 
 01:46.550 --> 01:50.660
-bounded shape such as a ground or the background behind your characters.
+forme délimitée, comme un sol ou l'arrière-plan derrière vos personnages.
 
 01:50.900 --> 01:56.510
-Select the created sprite shape profile and set the texture property now to create the sprite shape
+Sélectionnez le profil de forme de sprite créé et définissez maintenant la propriété de texture pour créer la forme de sprite
 
 01:56.510 --> 01:57.150
-itself.
+elle-même.
 
 01:57.170 --> 02:00.470
-Open the menu Unity Game object Sprite Shape.
+Ouvrez le menu de l'objet Unity Game Sprite Shape.
 
 02:00.470 --> 02:03.590
-Select the created game object in the hierarchy window.
+Sélectionnez l'objet de jeu créé dans la fenêtre de hiérarchie.
 
 02:03.590 --> 02:07.970
-Set the profile property to the sprite shape profile you just created.
+Définissez la propriété profile sur le profil de forme de sprite que vous venez de créer.
 
 02:08.120 --> 02:09.890
-And now we can edit the spline.
+Nous pouvons maintenant modifier la spline.
 
 02:09.890 --> 02:14.930
-As you can see in the animation, we're able to add, move and delete different points.
+Comme vous pouvez le voir dans l'animation, nous pouvons ajouter, déplacer et supprimer différents points.
 
 02:16.460 --> 02:21.440
-Now to add physics, select the game object again and add the following components.
+Pour ajouter la physique, sélectionnez à nouveau l'objet de jeu et ajoutez les composants suivants.
 
 02:21.470 --> 02:24.670
-Edge Collider to DX Rigid body to DX.
+Edge Collider à DX Rigid body à DX.
 
 02:24.680 --> 02:30.140
-And if you don't want this piece to fall with gravity, set the body type to kinematic.
+Et si vous ne voulez pas que cette pièce tombe avec la gravité, définissez le type de corps sur kinematic.
 
 02:30.960 --> 02:33.850
-Now let's take a look at a demo spreadsheet begin.
+Jetons maintenant un coup d'œil à une feuille de calcul de démonstration.
 
 02:33.880 --> 02:36.650
-Inside this scene will create a new spreadsheet.
+A l'intérieur de cette scène, nous allons créer une nouvelle feuille de calcul.
 
 02:36.670 --> 02:39.520
-We'll play with the scene and see how it goes.
+Nous allons jouer avec la scène et voir comment cela se passe.
 
 02:40.760 --> 02:42.080
-Let's open up our next project.
+Ouvrons notre prochain projet.
 
 02:42.080 --> 02:44.130
-Here will be the spreadsheet.
+Voici la feuille de calcul.
 
 02:44.150 --> 02:44.810
-Begin.
+Commencez.
 
 02:45.610 --> 02:47.500
-There's two steps to creating this bright shape.
+La création de cette forme lumineuse se fait en deux étapes.
 
 02:47.530 --> 02:52.030
-First, we'll create the sprite shape profile, and then we'll create the sprite shape itself.
+Tout d'abord, nous allons créer le profil de la forme du sprite, puis nous allons créer la forme du sprite elle-même.
 
 02:57.950 --> 02:59.270
-Let's add in a texture.
+Ajoutons une texture.
 
 03:02.800 --> 03:04.840
-And now let's create the sprite shape itself.
+Et maintenant, créons le sprite lui-même.
 
 03:10.620 --> 03:12.030
-We'll add in the profile.
+Nous allons ajouter le profil.
 
 03:14.240 --> 03:17.430
-And now we see our profile working together with the sprite shape.
+Nous voyons maintenant notre profil fonctionner avec le sprite.
 
 03:17.450 --> 03:18.710
-Let's edit the spline.
+Modifions la spline.
 
 03:26.340 --> 03:27.660
-Now let's add physics.
+Ajoutons maintenant la physique.
 
 03:31.030 --> 03:35.140
-Will set the body type to kinematic so it doesn't fall with gravity.
+Nous allons définir le type de corps sur kinematic pour qu'il ne tombe pas avec la gravité.
 
 03:40.510 --> 03:42.520
-Now let's bring in a few test subjects.
+Maintenant, amenons quelques sujets de test.
 
 03:48.520 --> 03:49.150
-Looks great.
+Ça a l'air bien.
 
 03:49.150 --> 03:55.180
-We have an organic platforming environment with full physics and supporting these objects, being able
+Nous disposons d'un environnement de jeu de plateforme organique avec une physique complète et un support de ces objets, ce qui permet de
 
 03:55.180 --> 03:57.270
-to bounce off of them and interact nicely.
+de rebondir sur eux et d'interagir agréablement.
 
 03:57.280 --> 04:01.210
-You could duplicate this and create as many platforms as you want and reuse them.
+Vous pouvez dupliquer cela et créer autant de plates-formes que vous le souhaitez et les réutiliser.
 
 04:03.060 --> 04:07.170
-In the next section, we'll look at Unity three D physics components.
+Dans la prochaine section, nous examinerons les composants physiques de Unity three D.

@@ -1,217 +1,217 @@
 WEBVTT
 
 00:01.770 --> 00:04.650
-Creating a Marble Madness clone 3D game.
+Création d'un jeu 3D clone de Marble Madness.
 
 00:04.680 --> 00:08.710
-In this section we'll cover creating a complete 3D game from scratch.
+Dans cette section, nous aborderons la création d'un jeu 3D complet à partir de zéro.
 
 00:08.730 --> 00:11.290
-We'll use physics forces to move our character.
+Nous utiliserons les forces physiques pour déplacer notre personnage.
 
 00:11.310 --> 00:17.880
-We'll add rigid body obstacles, win loss conditions and extra Polish 3D project setup.
+Nous ajouterons des obstacles à corps rigide, des conditions de victoire et de défaite et une configuration supplémentaire du projet 3D polonais.
 
 00:17.910 --> 00:23.850
-In this video, we'll cover taking the inspiration for a new game project and translating that into
+Dans cette vidéo, nous allons nous intéresser à l'inspiration d'un nouveau projet de jeu et à sa traduction en
 
 00:23.850 --> 00:24.990
-key concepts.
+concepts clés.
 
 00:25.530 --> 00:27.030
-Planning a 3D Game.
+Planification d'un jeu en 3D.
 
 00:27.120 --> 00:31.860
-The inspiration for our new game is the 1980s classic Marble Madness.
+Notre nouveau jeu s'inspire du classique des années 1980 Marble Madness.
 
 00:31.890 --> 00:33.660
-We'll call our game Crazy Ball.
+Nous appellerons notre jeu Crazy Ball.
 
 00:33.660 --> 00:37.620
-And here's a simple mockup graphics of the major game elements.
+Voici une maquette simple des principaux éléments du jeu.
 
 00:37.620 --> 00:44.640
-Things will borrow from the original 3D physics motion with input, physics, collisions, time limit
+Les éléments emprunteront au mouvement physique 3D original avec l'entrée, la physique, les collisions, la limite de temps.
 
 00:44.640 --> 00:47.370
-and a minimalistic futuristic art style.
+et un style artistique minimaliste et futuriste.
 
 00:47.400 --> 00:49.600
-The rules of crazy ball will be like this.
+Les règles de la balle folle seront les suivantes.
 
 00:49.620 --> 00:52.470
-Race to the finish within the time limit to win.
+Courir jusqu'à l'arrivée dans le temps imparti pour gagner.
 
 00:52.470 --> 00:54.120
-Collect coins for points.
+Collectez des pièces pour marquer des points.
 
 00:54.150 --> 00:58.290
-Navigate through the level design with movable and immovable objects.
+Naviguez dans le niveau avec des objets mobiles et inamovibles.
 
 00:58.290 --> 01:02.570
-The physics breakdown is will be moving using rigid body add force.
+Les objets se déplacent à l'aide d'un corps rigide et d'une force supplémentaire.
 
 01:02.580 --> 01:08.280
-We'll collect coins with on collision events and we'll get the event of when we reach the finish line.
+Nous collecterons des pièces avec les événements de collision et nous obtiendrons l'événement lorsque nous atteindrons la ligne d'arrivée.
 
 01:08.280 --> 01:09.410
-Using on trigger.
+Utilisation de l'événement on trigger.
 
 01:09.420 --> 01:15.150
-The task breakdown will be three d project setup, creating the characters and input, creating the
+La répartition des tâches se fera en trois étapes : configuration du projet, création des personnages et des entrées, création de l'interface utilisateur.
 
 01:15.150 --> 01:21.720
-obstacles, adding win loss conditions, and finally adding extra polish with sounds and animation.
+obstacles, l'ajout de conditions de victoire et de perte, et enfin l'ajout de sons et d'animations.
 
 01:22.590 --> 01:24.300
-Package installation building.
+Construction de l'installation du paquet.
 
 01:24.300 --> 01:27.030
-This type of game does not require any extra packages.
+Ce type de jeu ne nécessite aucun paquet supplémentaire.
 
 01:27.030 --> 01:32.540
-However, I've chosen to use a couple to help us if you want to follow along, These are necessary.
+Cependant, j'ai choisi d'en utiliser quelques uns pour nous aider si vous voulez suivre, Ceux-ci sont nécessaires.
 
 01:32.550 --> 01:36.350
-However, note that this is already done for you in our course demo project.
+Cependant, notez que ceci est déjà fait pour vous dans le projet de démonstration de notre cours.
 
 01:36.360 --> 01:42.330
-These instructions are only if you want to start a new project completely from scratch outside of our
+Ces instructions ne s'appliquent que si vous souhaitez démarrer un nouveau projet entièrement à partir de zéro en dehors de notre projet de démonstration.
 
 01:42.330 --> 01:44.640
-work and get these same features.
+et obtenir les mêmes fonctionnalités.
 
 01:44.820 --> 01:49.260
-First, we'll use Cinema Machine to track the camera following our ball.
+Tout d'abord, nous allons utiliser Cinema Machine pour suivre la caméra qui suit notre balle.
 
 01:49.260 --> 01:54.420
-Next, we'll use pro grids to help snap the objects as we're laying out and doing level design.
+Ensuite, nous utiliserons les pro grids pour nous aider à fixer les objets lors de la mise en place et de la conception du niveau.
 
 01:55.180 --> 01:56.680
-Three D project setup.
+Configuration du projet Three D.
 
 01:56.950 --> 01:59.410
-Here's the task breakdown for our first setup.
+Voici la répartition des tâches pour notre première configuration.
 
 01:59.410 --> 02:02.200
-This is a screenshot which represents our final target.
+Voici une capture d'écran représentant notre objectif final.
 
 02:02.200 --> 02:06.290
-We'll add the ground, we'll add the background, and we'll add the crazy ball prefab.
+Nous allons ajouter le sol, l'arrière-plan et le préfabriqué "crazy ball".
 
 02:06.310 --> 02:10.120
-Then we'll set up the cinema machine camera to follow our crazy ball.
+Nous allons ensuite configurer la caméra de la machine de cinéma pour qu'elle suive notre balle folle.
 
 02:10.870 --> 02:17.260
-For the project, we'll open up section six, Video one and the scene Crazy Ball zero one.
+Pour le projet, nous ouvrons la section six, vidéo un et la scène Crazy Ball zero one.
 
 02:20.450 --> 02:21.680
-We'll open up our crazy ball.
+Nous allons ouvrir notre boule de folie.
 
 02:21.680 --> 02:28.010
-One scene we see we've got the crazy ball and some background elements and of course our cameras looking
+Dans une scène, nous voyons la balle folle, quelques éléments d'arrière-plan et, bien sûr, les caméras qui regardent.
 
 02:28.010 --> 02:28.910
-at the crazy ball.
+la balle folle.
 
 02:29.240 --> 02:33.980
-So if we look at the environment, we see a lot of similar things to our other scenes, including we've
+Si nous regardons l'environnement, nous voyons beaucoup d'éléments similaires à ceux de nos autres scènes, y compris les éléments suivants
 
 02:33.980 --> 02:39.740
-got a floor here and then we have a copy of the floor, uses the background, just have something behind
+nous avons un sol ici, puis nous avons une copie du sol, nous utilisons l'arrière-plan, nous avons juste quelque chose derrière
 
 02:39.740 --> 02:40.070
-it.
+l'arrière-plan.
 
 02:40.890 --> 02:44.090
-We zoom into the crazy ball, we see we've just got a textured ball.
+Nous zoomons sur la balle folle, nous voyons que nous avons juste une balle texturée.
 
 02:44.100 --> 02:45.630
-Nothing too great there yet.
+Rien de bien extraordinaire pour l'instant.
 
 02:46.680 --> 02:48.600
-But something new is this virtual camera.
+Mais la nouveauté, c'est cette caméra virtuelle.
 
 02:48.600 --> 02:52.050
-So let's learn how to set up a virtual camera using cinema machine.
+Apprenons donc à configurer une caméra virtuelle à l'aide de cinema machine.
 
 02:52.050 --> 02:57.450
-So I'll delete the camera, the virtual camera and the crazy ball, and we'll create these from scratch.
+Je vais donc supprimer la caméra, la caméra virtuelle et la balle folle, et nous allons les créer à partir de zéro.
 
 03:06.390 --> 03:06.910
-Look.
+Regardez.
 
 03:07.050 --> 03:11.520
-So we'll create a new D object sphere for our ball.
+Nous allons donc créer une nouvelle sphère d'objet D pour notre balle.
 
 03:12.210 --> 03:14.700
-We'll put it more or less in the center of the world.
+Nous allons la placer plus ou moins au centre du monde.
 
 03:16.850 --> 03:18.300
-Maybe a little bit off the ground.
+Peut-être un peu au-dessus du sol.
 
 03:18.320 --> 03:19.010
-Great.
+Très bien.
 
 03:19.550 --> 03:21.770
-Then we'll create a new Unity camera.
+Nous allons ensuite créer une nouvelle caméra Unity.
 
 03:22.950 --> 03:23.910
-And then something new.
+Et ensuite quelque chose de nouveau.
 
 03:23.910 --> 03:26.460
-We're going to create a cinema machine, virtual camera.
+Nous allons créer une machine de cinéma, une caméra virtuelle.
 
 03:26.940 --> 03:31.650
-Once we do that onto the camera, it's automatically added to cinema machine brain.
+Une fois que nous l'avons fait sur la caméra, elle est automatiquement ajoutée à la machine cinéma brain.
 
 03:31.680 --> 03:36.960
-Now the unity camera will be driven by the cinema machine system instead.
+La caméra unity sera désormais pilotée par le système cinema machine.
 
 03:37.110 --> 03:41.160
-And the beauty of that is that these cameras come with a lot of functionality.
+La beauté de la chose, c'est que ces caméras sont dotées de nombreuses fonctionnalités.
 
 03:42.110 --> 03:45.110
-We'll do some tweaking on this virtual camera.
+Nous allons procéder à quelques ajustements sur cette caméra virtuelle.
 
 03:45.530 --> 03:50.540
-We'll have it follow our sphere and we'll have it look at our sphere.
+Nous allons la faire suivre notre sphère et la faire regarder notre sphère.
 
 03:51.330 --> 03:53.600
-Then down here we can choose some options.
+Ensuite, nous pouvons choisir quelques options.
 
 03:53.610 --> 03:59.010
-We'll have the body be offset using a transposon and we'll have the aim.
+Nous allons faire en sorte que le corps soit décalé à l'aide d'un transposon et nous aurons l'objectif.
 
 03:59.810 --> 04:02.060
-Follow by a composer.
+Suivi d'un compositeur.
 
 04:02.450 --> 04:05.360
-Now, the offset, we just turn it a little bit up.
+Maintenant, l'offset, nous le tournons un peu vers le haut.
 
 04:06.440 --> 04:09.150
-Maybe we want to back off a little bit or zoom in.
+Nous voulons peut-être reculer un peu ou faire un zoom avant.
 
 04:09.170 --> 04:11.660
-You can tweak that to the lawyer that you want.
+Vous pouvez adapter l'image à l'avocat de votre choix.
 
 04:12.110 --> 04:17.780
-Then down here in the composer, we can choose to track the object a little high or a little low or
+Ensuite, dans le compositeur, nous pouvons choisir de suivre l'objet un peu plus haut ou un peu plus bas ou
 
 04:17.780 --> 04:19.040
-just dead in the center.
+juste au centre.
 
 04:19.040 --> 04:20.660
-And that's all that we have to do.
+Et c'est tout ce que nous avons à faire.
 
 04:20.810 --> 04:26.420
-Now, when we play the scene, we can take that sphere manually and we can move it around and you can
+Maintenant, lorsque nous jouons la scène, nous pouvons prendre cette sphère manuellement et la déplacer.
 
 04:26.420 --> 04:29.630
-see that the cinema machine follows it perfectly.
+voir que la machine de cinéma la suit parfaitement.
 
 04:33.290 --> 04:39.230
-In the next video, we'll look at creating the player and input we'll cover taking keyboard input using
+Dans la prochaine vidéo, nous verrons comment créer le lecteur et la saisie au clavier à l'aide de la fonction
 
 04:39.230 --> 04:43.880
-rigid body, add force for motion and using pro grids to position the walls.
+corps rigide, l'ajout de force pour le mouvement et l'utilisation de pro grids pour positionner les murs.

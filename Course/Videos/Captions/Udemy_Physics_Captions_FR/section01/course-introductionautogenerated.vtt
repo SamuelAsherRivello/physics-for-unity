@@ -1,172 +1,172 @@
 WEBVTT
 
 00:00.180 --> 00:02.810
-Hello and welcome to an introduction to Game Physics.
+Bonjour et bienvenue dans cette introduction à la physique des jeux.
 
 00:02.820 --> 00:04.830
-My name is Samuel Asher Rivello.
+Je m'appelle Samuel Asher Rivello.
 
 00:05.040 --> 00:09.810
-My mission in my career is to educate and entertain with interactive technology.
+Ma mission dans ma carrière est d'éduquer et de divertir grâce à la technologie interactive.
 
 00:09.850 --> 00:15.150
-I'm a unity certified developer with over 20 years of game development experience.
+Je suis un développeur certifié unity avec plus de 20 ans d'expérience dans le développement de jeux.
 
 00:15.420 --> 00:22.140
-In the last eight years, I've focused specifically on unity, shipping unity games for PC, Xbox,
+Au cours des huit dernières années, je me suis concentré spécifiquement sur unity, livrant des jeux unity pour PC, Xbox,
 
 00:22.140 --> 00:23.430
-PlayStation and more.
+PlayStation et bien plus encore.
 
 00:23.460 --> 00:29.310
-Typically on projects, I'm a unity game developer or unity tools developer, and I'm available for
+Typiquement, sur les projets, je suis un développeur de jeux ou d'outils unity, et je suis disponible pour
 
 00:29.310 --> 00:30.690
-remote contract hire.
+contrat de travail à distance.
 
 00:31.860 --> 00:33.750
-First of all, physics is fun.
+Tout d'abord, la physique est amusante.
 
 00:34.400 --> 00:37.940
-Making games with physics is fun and playing them is fun too.
+Créer des jeux avec la physique est amusant et y jouer l'est tout autant.
 
 00:37.970 --> 00:42.950
-The gameplay mechanics are experimental, emergent, even educational.
+Les mécanismes de jeu sont expérimentaux, émergents, voire éducatifs.
 
 00:42.950 --> 00:46.970
-Some popular examples of physics based games are Angry Birds.
+Les Angry Birds sont des exemples populaires de jeux basés sur la physique.
 
 00:46.970 --> 00:49.880
-Cut the rope trials and marble it up.
+Couper les essais de corde et les marbrer.
 
 00:50.540 --> 00:52.430
-Let's take a look at the course overview.
+Jetons un coup d'œil à l'aperçu du parcours.
 
 00:53.130 --> 00:54.990
-In Section one, Intro to Physics.
+Dans la première section, Introduction à la physique.
 
 00:54.990 --> 00:58.170
-We'll look at the benefits of creating physics based games.
+Nous examinerons les avantages de la création de jeux basés sur la physique.
 
 00:58.200 --> 01:03.870
-We'll look at the three major concerns of any physics system, and we'll review Unity's physics system
+Nous examinerons les trois principales préoccupations de tout système physique, et nous passerons en revue le système physique de Unity.
 
 01:03.870 --> 01:04.920
-and project setup.
+et la configuration du projet.
 
 01:05.460 --> 01:08.940
-In Section two, we'll look at Unity's two physics components.
+Dans la deuxième section, nous examinerons les deux composants physiques d'Unity.
 
 01:09.150 --> 01:14.970
-We'll start with the very important rigid body, 2D and Collider 2D, and we'll move on to advanced
+Nous commencerons par les très importants corps rigides, 2D et Collider 2D, puis nous passerons aux composants avancés.
 
 01:14.970 --> 01:18.030
-topics, 2D effectors and 2D joints.
+les effecteurs 2D et les articulations 2D.
 
 01:18.060 --> 01:23.070
-We'll even look at a project that's in public beta called Unity Sprite Sheet.
+Nous examinerons même un projet en version bêta publique appelé Unity Sprite Sheet.
 
 01:23.740 --> 01:27.940
-In section three, we'll look at Unity's three D physics components.
+Dans la troisième section, nous examinerons les trois composants physiques D de Unity.
 
 01:27.970 --> 01:33.790
-First, we'll review the core principles of three D, and then we'll move on to physic material, ragdoll
+Tout d'abord, nous passerons en revue les principes fondamentaux des trois D, puis nous aborderons le matériel physique, le ragdoll
 
 01:33.790 --> 01:34.660
-and train.
+et à l'entraînement.
 
 01:37.310 --> 01:41.440
-In section four, we'll dive deep into Unity C sharp physics programming.
+Dans la quatrième section, nous nous plongerons dans la programmation physique Unity C sharp.
 
 01:41.450 --> 01:45.200
-We'll handle physics events such as collisions and triggers.
+Nous gérerons les événements physiques tels que les collisions et les déclenchements.
 
 01:45.200 --> 01:50.540
-We'll add physics forces to move our objects around, and we'll look at the vital properties and functions
+Nous ajouterons des forces physiques pour déplacer nos objets et nous examinerons les propriétés et les fonctions vitales.
 
 01:50.540 --> 01:51.860
-we need for our physics.
+dont nous avons besoin pour notre physique.
 
 01:51.860 --> 01:53.720
-We'll even get into physics debugging.
+Nous aborderons même le débogage de la physique.
 
 01:53.720 --> 01:56.720
-So if a problem arises in our code, we know how to solve it.
+Ainsi, si un problème survient dans notre code, nous savons comment le résoudre.
 
 01:57.080 --> 02:02.660
-In section five, we'll create a project from scratch using two D something like Angry Birds.
+Dans la cinquième section, nous allons créer un projet à partir de zéro en utilisant deux D comme Angry Birds.
 
 02:02.840 --> 02:07.940
-We'll create projectile motion using our input, and we'll populate the world with obstacles that collide
+Nous créerons un mouvement de projectile à l'aide de notre entrée, et nous peuplerons le monde d'obstacles qui entreront en collision.
 
 02:07.940 --> 02:08.570
-and destruct.
+et se détruisent.
 
 02:10.130 --> 02:16.370
-In Section six will create a project from scratch using three D, something like the 1980s classic game
+Dans la section 6, nous créerons un projet à partir de zéro en utilisant Three D, un peu comme le jeu classique des années 1980
 
 02:16.370 --> 02:17.490
 Marble Madness.
 
 02:17.510 --> 02:19.690
-We'll create a complete three D game.
+Nous allons créer un jeu complet en trois D.
 
 02:19.700 --> 02:25.610
-We'll use physics forces to move our character around and we'll populate the world with rigid body obstacles.
+Nous utiliserons les forces physiques pour déplacer notre personnage et nous peuplerons le monde d'obstacles à corps rigide.
 
 02:27.480 --> 02:33.300
-In section seven, we'll look at some advanced topics, best practices with physics and how to optimize
+Dans la septième section, nous aborderons des sujets avancés, les meilleures pratiques en matière de physique et la manière d'optimiser le développement de notre personnage.
 
 02:33.300 --> 02:37.580
-our projects, and then we'll apply what we've learned to real world examples.
+nos projets, puis nous appliquerons ce que nous avons appris à des exemples concrets.
 
 02:37.620 --> 02:43.590
-We'll even look at the data oriented technology stack or dots and the future of unity physics.
+Nous nous pencherons même sur la pile de technologies orientées données ou dots et sur l'avenir de la physique de l'unité.
 
 02:45.150 --> 02:46.620
-Prerequisites for this course.
+Pré-requis pour ce cours.
 
 02:46.620 --> 02:47.970
-You'll need a computer, of course.
+Vous aurez besoin d'un ordinateur, bien sûr.
 
 02:47.970 --> 02:49.570
-Running windows or Mac.
+Windows ou Mac.
 
 02:49.590 --> 02:52.420
-You'll need a unity editor and a code text editor.
+Vous aurez besoin d'un éditeur unity et d'un éditeur de texte de code.
 
 02:52.470 --> 02:58.030
-The free personal edition of Unity comes with both some basic skills of being required here.
+L'édition personnelle gratuite d'Unity est livrée avec les deux compétences de base requises ici.
 
 02:58.050 --> 03:03.870
-Beginning programming, knowledge of any language, and even a dozen hours or so specifically with unity
+Un début de programmation, la connaissance de n'importe quel langage, et même une douzaine d'heures spécifiquement avec Unity
 
 03:03.870 --> 03:05.260
-would be very helpful.
+serait très utile.
 
 03:05.280 --> 03:08.760
-But we'll cover those basics and bring your passion.
+Mais nous couvrirons ces bases et apporterons votre passion.
 
 03:08.760 --> 03:12.510
-Bring a love of video games and a curiosity to learn something new.
+Apportez votre amour des jeux vidéo et votre curiosité pour apprendre quelque chose de nouveau.
 
 03:13.360 --> 03:14.720
-Goals of this course.
+Objectifs de ce cours.
 
 03:14.740 --> 03:16.360
-Have fun with physics.
+S'amuser avec la physique.
 
 03:16.390 --> 03:22.270
-Get an in-depth understanding of the physics system and bring it all together to create 2D and 3D games
+Comprendre en profondeur le système physique et le mettre en œuvre pour créer des jeux en 2D et en 3D.
 
 03:22.270 --> 03:23.170
-from scratch.
+à partir de zéro.
 
 03:23.200 --> 03:28.570
-You also have a chance to grasp some of the key advanced topics and understand more about the future
+Vous aurez également l'occasion de vous familiariser avec certains des principaux sujets avancés et de mieux comprendre l'avenir.
 
 03:28.570 --> 03:29.740
-of unity physics.
+de la physique de l'unité.
 
 03:30.760 --> 03:32.110
-So let's get started.
+Commençons donc.

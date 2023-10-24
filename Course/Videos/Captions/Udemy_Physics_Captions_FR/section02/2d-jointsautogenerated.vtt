@@ -1,238 +1,238 @@
 WEBVTT
 
 00:01.720 --> 00:04.630
-In this video, we'll cover two D joints.
+Dans cette vidéo, nous aborderons deux articulations D.
 
 00:04.630 --> 00:09.940
-We'll look at what is the joint two RD component and different types of joint to DS.
+Nous verrons ce qu'est l'articulation deux D et les différents types d'articulation pour DS.
 
 00:09.940 --> 00:12.550
-Then we'll play with these inside the unity ed.
+Nous jouerons ensuite avec ces éléments à l'intérieur de l'unité ed.
 
 00:13.090 --> 00:21.070
-A joint is the component that maintains a relationship either positional or rotational with one or more
+Une articulation est le composant qui entretient une relation de position ou de rotation avec un ou plusieurs éléments de l'unité.
 
 00:21.070 --> 00:22.030
-game objects.
+objets du jeu.
 
 00:22.030 --> 00:26.740
-You can attach your joints to either a game object with a rigid body.
+Vous pouvez attacher vos articulations à un objet de jeu avec un corps rigide.
 
 00:26.740 --> 00:30.460
-This is common or to a fixed position in world space.
+Ceci est courant ou à une position fixe dans l'espace mondial.
 
 00:30.460 --> 00:32.290
-You can see the setup here in the picture.
+Vous pouvez voir la configuration sur l'image.
 
 00:32.290 --> 00:37.960
-We've got a game object with three different components the transform and rigid body as we've seen before,
+Nous avons un objet de jeu avec trois composants différents : la transformation et le corps rigide, comme nous l'avons vu précédemment,
 
 00:37.960 --> 00:39.910
-and then we've added the joint component.
+puis nous avons ajouté le composant joint.
 
 00:40.700 --> 00:42.950
-When should my game use joints?
+Quand mon jeu doit-il utiliser des articulations ?
 
 00:43.630 --> 00:45.770
-Let's talk about some uses for joints.
+Voyons quelques utilisations des articulations.
 
 00:45.980 --> 00:53.210
-Typically, physic joints are useful in gaming to maintain a relationship, either positional or rotational
+En règle générale, les articulations physiques sont utiles dans les jeux pour maintenir une relation, qu'elle soit positionnelle ou rotationnelle.
 
 00:53.210 --> 00:55.320
-between two or more game objects.
+entre deux ou plusieurs objets du jeu.
 
 00:55.340 --> 00:58.790
-Use joints to mimic reality or to add gameplay.
+Utilisez les articulations pour imiter la réalité ou pour ajouter du gameplay.
 
 00:58.940 --> 01:03.020
-Imagine creating a hanging chain like the picture we see on the right there.
+Imaginez que vous créez une chaîne suspendue comme celle que vous voyez à droite.
 
 01:03.020 --> 01:07.340
-You can do that with several different game objects connected with hinge joints.
+Vous pouvez le faire avec plusieurs objets de jeu différents reliés par des articulations.
 
 01:07.340 --> 01:08.750
-The hinge is very useful.
+La charnière est très utile.
 
 01:08.750 --> 01:13.310
-You could also create a bouncy wooden bridge or a door connected to a wall.
+Vous pouvez également créer un pont en bois rebondissant ou une porte reliée à un mur.
 
 01:13.310 --> 01:18.660
-If you wanted a vehicle with suspension, you could use the spring joint and the wheel joint.
+Si vous vouliez un véhicule avec une suspension, vous pourriez utiliser l'articulation à ressort et l'articulation à roue.
 
 01:18.680 --> 01:21.170
-There are many types of joints in 2D.
+Il existe de nombreux types d'articulations en 2D.
 
 01:21.290 --> 01:23.240
-Let's talk about a few of the types.
+Examinons quelques-uns d'entre eux.
 
 01:23.240 --> 01:25.520
-First of all, there's distance joint to DX.
+Tout d'abord, il y a l'articulation de distance à DX.
 
 01:25.550 --> 01:30.530
-This is a very simple joint that maintains a certain relationship between two game objects.
+Il s'agit d'une articulation très simple qui maintient une certaine relation entre deux objets du jeu.
 
 01:30.530 --> 01:33.710
-That relationship could be the distance between their positions.
+Cette relation peut être la distance entre leurs positions.
 
 01:33.710 --> 01:39.800
-It's similar to parenting one game object under another only you don't have this restriction of parenting.
+C'est un peu comme si l'on parentait un objet de jeu sous un autre, sauf que l'on n'a pas cette restriction de parentage.
 
 01:39.980 --> 01:45.980
-The hinge joint two d fixes a game object to a point in space and allows rotation.
+La charnière deux d fixe un objet de jeu à un point dans l'espace et permet la rotation.
 
 01:46.250 --> 01:52.340
-You can think of a bridge like the image in the lower right or a typical door that opens and closes
+Vous pouvez penser à un pont comme dans l'image en bas à droite ou à une porte typique qui s'ouvre et se ferme
 
 01:52.340 --> 01:53.180
-on a hinge.
+sur une charnière.
 
 01:53.180 --> 01:56.960
-There's many types of joints, so how strong is a joint?
+Il existe de nombreux types d'articulations. Quelle est la solidité d'une articulation ?
 
 01:57.470 --> 01:59.240
-It's possible to break joints.
+Il est possible de casser les articulations.
 
 01:59.240 --> 02:03.740
-There's something called a constraint, which is a rule which the joint will try to follow.
+Il existe ce que l'on appelle une contrainte, c'est-à-dire une règle que l'articulation s'efforce de suivre.
 
 02:03.740 --> 02:09.980
-Some constraints limit behavior such as ensuring a rigid body stays in a certain position.
+Certaines contraintes limitent le comportement, par exemple en veillant à ce qu'un corps rigide reste dans une certaine position.
 
 02:09.980 --> 02:16.520
-When the rule is broken temporarily, the joint will apply corrective forces so it can again follow.
+Lorsque la règle est temporairement enfreinte, l'articulation applique des forces correctives pour qu'elle puisse à nouveau être respectée.
 
 02:16.520 --> 02:21.230
-The rule breaking is possible when the corrective force needed is too great.
+La transgression de la règle est possible lorsque la force de correction nécessaire est trop importante.
 
 02:21.230 --> 02:26.840
-The joint will permanently break the individual joints, stops working forever in your game.
+L'articulation brisera définitivement les articulations individuelles et cessera de fonctionner pour toujours dans votre jeu.
 
 02:26.840 --> 02:31.000
-You have to stop and start the scene or the game in order to have it work again.
+Vous devez arrêter et redémarrer la scène ou le jeu pour qu'il fonctionne à nouveau.
 
 02:31.010 --> 02:33.920
-Excessive linear force is called a brake force.
+Une force linéaire excessive est appelée force de freinage.
 
 02:33.920 --> 02:36.860
-Excessive torque force is called a brake torque.
+Une force de couple excessive est appelée couple de freinage.
 
 02:37.040 --> 02:43.910
-The brake force property, it's set to infinity by default so that the joint will never break to allow
+La propriété de force de freinage est définie par défaut à l'infini afin que l'articulation ne se brise jamais pour permettre à l'utilisateur d'avoir accès à l'information.
 
 02:43.910 --> 02:47.060
-breakage, set it to a lower finite value.
+la rupture, fixez-la à une valeur finie inférieure.
 
 02:47.060 --> 02:48.860
-For example, 5000.
+Par exemple, 5000.
 
 02:48.860 --> 02:51.650
-Sometimes we want our joints to break.
+Parfois, nous voulons que nos articulations se cassent.
 
 02:51.650 --> 02:52.280
-Now why?
+Mais pourquoi ?
 
 02:52.310 --> 02:57.740
-First of all, maybe we're mimicking something in reality that is not infinitely strong and we want
+Tout d'abord, il se peut que nous imitions quelque chose dans la réalité qui n'est pas infiniment fort et que nous voulions
 
 02:57.740 --> 03:01.610
-it to break or breaking could add to your gameplay experience.
+qu'il se brise ou que sa rupture ajoute à l'expérience de jeu.
 
 03:01.610 --> 03:07.280
-Perhaps your character swings on a chain, but if you swings too strongly, the chain will break.
+Peut-être que votre personnage se balance sur une chaîne, mais si vous vous balancez trop fort, la chaîne se cassera.
 
 03:07.980 --> 03:09.710
-Let's do some demos together.
+Faisons quelques démonstrations ensemble.
 
 03:09.720 --> 03:16.350
-The hinge joint to begin scene will create five planks for a bouncy wooden bridge will create a hinge
+L'articulation de la charnière pour commencer la scène créera cinq planches pour un pont en bois rebondissant créera une charnière
 
 03:16.350 --> 03:16.710
-joint.
+articulation.
 
 03:16.710 --> 03:23.040
-Two rd between each plank will create a hinge joint to RD at each end of the bridge to hold it to the
+Deux rd entre chaque planche créeront une charnière à RD à chaque extrémité du pont pour le maintenir au sol.
 
 03:23.040 --> 03:23.730
-columns.
+colonnes.
 
 03:23.730 --> 03:26.370
-And then we'll play the scene and see how it goes.
+Ensuite, nous jouerons la scène pour voir comment cela se passe.
 
 03:26.520 --> 03:27.810
-A bonus assignment.
+Un devoir bonus.
 
 03:27.810 --> 03:31.860
-If you want to get deeper into learning about joints, take a look at this scene.
+Si vous voulez aller plus loin dans l'apprentissage des articulations, jetez un coup d'œil à cette scène.
 
 03:31.860 --> 03:33.870
-The target joint to begin.
+L'articulation cible pour commencer.
 
 03:33.870 --> 03:36.420
-Create a target joint to DH on the crate.
+Créer une articulation cible pour DH sur la caisse.
 
 03:36.420 --> 03:43.410
-Create your own script called something like Target Joint follows Mouse Play the scene, move your mouse
+Créez votre propre script appelé quelque chose comme Target Joint follows Mouse Jouez la scène, déplacez votre souris
 
 03:43.410 --> 03:44.550
-and observe the result.
+et observez le résultat.
 
 03:44.550 --> 03:47.070
-Did you get the crate to follow the mouse?
+Avez-vous réussi à faire en sorte que la caisse suive la souris ?
 
 03:47.070 --> 03:52.980
-You can set the brake force to 5000 to break the joint if you want help or you want to see the finished
+Vous pouvez régler la force de freinage sur 5000 pour casser l'articulation si vous avez besoin d'aide ou si vous voulez voir le résultat.
 
 03:52.980 --> 03:57.150
-result or the created script of Target Joint follows Mouse.
+ou le script créé de Target Joint follows Mouse.
 
 03:57.150 --> 04:01.770
-Take a look at the target joint to DH underscore complete scene.
+Jetez un coup d'œil à l'articulation cible pour DH underscore scène complète.
 
 04:01.770 --> 04:03.870
-Everything's there for you to take a look at.
+Tout est là pour que vous puissiez jeter un coup d'œil.
 
 04:06.790 --> 04:10.150
-Let's open up our next scene, the hinge joint to begin.
+Ouvrons la scène suivante, l'articulation de la charnière, pour commencer.
 
 04:11.130 --> 04:13.460
-Here we have a ground set up with a couple of columns.
+Nous avons ici un terrain avec quelques colonnes.
 
 04:13.470 --> 04:15.090
-We're going to add a new plank.
+Nous allons ajouter une nouvelle planche.
 
 04:15.120 --> 04:19.710
-Duplicate it five times and use the hinge joint to RD to make a wooden bridge.
+Dupliquez-le cinq fois et utilisez la charnière à RD pour faire un pont en bois.
 
 04:23.150 --> 04:28.040
-Under the Planck sprite will add the rigid body and the collider and the hinge joint.
+Sous le sprite Planck, on ajoutera le corps rigide, le collisionneur et l'articulation.
 
 04:35.340 --> 04:38.220
-We'll set the hinge joints anchor to its left side.
+Nous plaçons l'ancrage de l'articulation sur son côté gauche.
 
 04:42.870 --> 04:47.610
-We'll place one plank far to the left and then we'll duplicate five times total.
+Nous placerons une planche loin sur la gauche, puis nous dupliquerons cinq fois au total.
 
 04:47.610 --> 04:49.350
-So we have some on the right.
+Nous en avons donc à droite.
 
 04:55.280 --> 05:01.940
-The leftmost plank will leave its connected rigid body set to none, so it's anchored in space for the
+La planche la plus à gauche laissera son corps rigide connecté réglé sur none, de sorte qu'elle soit ancrée dans l'espace pour le
 
 05:01.940 --> 05:05.060
-others will connect to its nearest neighbor on the left.
+Les autres se connecteront à leur voisin le plus proche sur la gauche.
 
 05:14.170 --> 05:18.580
-And for the rightmost plank, we'll add a second hinge joint hinging it to space.
+Et pour la planche la plus à droite, nous ajouterons une deuxième charnière la reliant à l'espace.
 
 05:21.970 --> 05:24.130
-And adjusting its anchor to the right side.
+Et nous ajustons son ancrage sur le côté droit.
 
 05:26.550 --> 05:28.050
-Let's add some extras.
+Ajoutons quelques éléments supplémentaires.
 
 05:29.260 --> 05:30.280
-And give it a try.
+Et faisons un essai.
 
 05:36.990 --> 05:40.500
-In the next video, we'll look at physics for unity sprite shape.
+Dans la prochaine vidéo, nous nous pencherons sur la physique des formes de sprites unitaires.

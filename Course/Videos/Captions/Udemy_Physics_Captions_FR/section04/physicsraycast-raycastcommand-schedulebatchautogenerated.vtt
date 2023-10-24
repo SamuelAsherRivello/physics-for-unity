@@ -1,316 +1,316 @@
 WEBVTT
 
 00:00.670 --> 00:04.450
-Physics Ray cast and Ray cast Command Schedule batch.
+Physique Ray cast et Ray cast Command Schedule batch.
 
 00:04.660 --> 00:08.500
-In this video, we'll cover what are spatial queries in physics?
+Dans cette vidéo, nous verrons ce que sont les requêtes spatiales en physique.
 
 00:08.650 --> 00:10.870
-Why are they useful and how do we do them?
+Pourquoi sont-elles utiles et comment les utiliser ?
 
 00:11.320 --> 00:13.900
-Then we'll open up the Unity editor and play with them.
+Ensuite, nous ouvrirons l'éditeur Unity et nous jouerons avec elles.
 
 00:14.530 --> 00:15.810
-Let's take a step back.
+Revenons en arrière.
 
 00:15.820 --> 00:18.550
-What do we mean when we talk about a game physics system?
+Que veut-on dire quand on parle d'un système physique de jeu ?
 
 00:18.580 --> 00:20.140
-Well, there's two major parts.
+Eh bien, il y a deux parties principales.
 
 00:20.140 --> 00:23.980
-Most of this course so far has talked about rigid body simulation.
+Jusqu'à présent, la majeure partie de ce cours a porté sur la simulation de corps rigides.
 
 00:24.280 --> 00:28.000
-This is the realistic movement and interaction between groups of objects.
+Il s'agit du mouvement réaliste et de l'interaction entre des groupes d'objets.
 
 00:28.240 --> 00:31.120
-We haven't yet talked much about spatial queries.
+Nous n'avons pas encore beaucoup parlé des requêtes spatiales.
 
 00:31.330 --> 00:39.130
-This is projecting a ray or a collider through space to see about distance and check future collisions.
+Il s'agit de la projection d'un rayon ou d'un collisionneur dans l'espace pour connaître la distance et vérifier les collisions futures.
 
 00:39.400 --> 00:44.290
-For example, we could see is my gun pointing directly toward the enemy.
+Par exemple, nous pourrions voir si mon arme pointe directement vers l'ennemi.
 
 00:44.590 --> 00:49.090
-The physics class defines global physics, properties and helper methods.
+La classe de physique définit la physique globale, les propriétés et les méthodes d'aide.
 
 00:49.210 --> 00:55.270
-Our focus will be on physics recast one of the methods that gives us some great information we can learn.
+Nous allons nous concentrer sur la refonte de la physique, l'une des méthodes qui nous donne des informations intéressantes à apprendre.
 
 00:55.270 --> 00:57.130
-Is there anything in front of my object?
+Y a-t-il quelque chose devant mon objet ?
 
 00:57.130 --> 00:59.200
-What exactly is in front of my object?
+Qu'y a-t-il exactement devant mon objet ?
 
 00:59.200 --> 00:59.620
-What?
+Qu'est-ce que c'est ?
 
 00:59.620 --> 01:02.260
-Empty space is in front of the object?
+L'espace vide se trouve devant l'objet ?
 
 01:02.440 --> 01:04.390
-So why do spatial queries?
+Alors pourquoi faire des requêtes spatiales ?
 
 01:04.540 --> 01:08.370
-Well, spatial queries can help us answer a lot of compelling questions.
+Les requêtes spatiales peuvent nous aider à répondre à de nombreuses questions.
 
 01:08.380 --> 01:09.970
-Is our enemy near a wall?
+Notre ennemi est-il proche d'un mur ?
 
 01:09.970 --> 01:11.830
-Well, the enemy could turn around.
+L'ennemi pourrait faire demi-tour.
 
 01:11.860 --> 01:13.540
-Is the enemy in our gun sights?
+L'ennemi est-il dans notre ligne de mire ?
 
 01:13.540 --> 01:17.300
-Well, we could indicate to us as the player that now is time to shoot.
+Eh bien, nous pourrions indiquer au joueur qu'il est temps de tirer.
 
 01:17.320 --> 01:18.640
-Can the enemy see me?
+L'ennemi peut-il me voir ?
 
 01:18.670 --> 01:19.780
-This could help the enemy.
+Cela pourrait aider l'ennemi.
 
 01:19.780 --> 01:20.860
-AI alert.
+Alerte à l'IA.
 
 01:20.860 --> 01:21.760
-Other enemy.
+Autre ennemi.
 
 01:21.760 --> 01:25.170
-AI is an object under my mouse position.
+L'IA est un objet situé sous la position de ma souris.
 
 01:25.180 --> 01:27.580
-This could help us select or drag the object.
+Cela peut nous aider à sélectionner ou à faire glisser l'objet.
 
 01:27.580 --> 01:30.970
-Where exactly within a collider did the collision occur?
+À quel endroit précis d'un collisionneur la collision s'est-elle produite ?
 
 01:31.000 --> 01:36.940
-This could tell us the difference in points rewarded for a bull's eye shot at a target or a lower point
+Cela pourrait nous indiquer la différence de points récompensés pour un tir dans le mille sur une cible ou un point plus bas
 
 01:36.940 --> 01:37.540
-value.
+valeur.
 
 01:37.900 --> 01:39.520
-And there's much more possible.
+Et il y a bien d'autres possibilités.
 
 01:39.520 --> 01:41.260
-This is very useful stuff.
+C'est très utile.
 
 01:41.260 --> 01:45.360
-The physics class that I mentioned has a lot of methods available for us.
+Le cours de physique que j'ai mentionné a beaucoup de méthodes à notre disposition.
 
 01:45.370 --> 01:47.080
-Let's talk about recast.
+Parlons de la refonte.
 
 01:47.110 --> 01:48.800
-Take a look at the diagram here.
+Jetez un coup d'œil au diagramme ci-dessous.
 
 01:48.820 --> 01:55.330
-Imagine that we cast array from point one and we cast it in a direction toward the pink box.
+Imaginons que nous ayons lancé un tableau à partir du point un et que nous l'ayons lancé en direction de la boîte rose.
 
 01:55.330 --> 02:00.980
-This is going to return us a ordered list of intersecting colliders in the scene.
+Cela va nous renvoyer une liste ordonnée des collisionneurs qui se croisent dans la scène.
 
 02:01.000 --> 02:03.880
-In this case, it would return number three.
+Dans ce cas, elle renvoie le numéro trois.
 
 02:03.910 --> 02:07.510
-Now, notice that we're not going to cast out into infinite space here.
+Remarquez que nous n'allons pas nous lancer dans l'espace infini.
 
 02:07.510 --> 02:13.090
-We're going to use a set finite distance that's an optimization that's going to help the calculations.
+Nous allons utiliser une distance finie qui est une optimisation qui va faciliter les calculs.
 
 02:13.090 --> 02:18.610
-So, for example, if we have the distance set to four, we would collide with the pink box, but not
+Par exemple, si la distance est réglée sur quatre, nous entrerons en collision avec la boîte rose, mais pas avec les objets suivants
 
 02:18.610 --> 02:19.570
-the blue box.
+la boîte bleue.
 
 02:19.600 --> 02:22.030
-A similar method would be box cast.
+Une méthode similaire serait le lancer de boîte.
 
 02:22.030 --> 02:27.690
-This cast a shape out from the point one through to the pink cube, but not to the blue cube.
+Cette méthode permet de créer une forme à partir du point un jusqu'au cube rose, mais pas jusqu'au cube bleu.
 
 02:27.700 --> 02:32.770
-The distance here is instead of sending out a line or array, it's a thicker space.
+Au lieu d'envoyer une ligne ou un réseau, la distance ici est un espace plus épais.
 
 02:32.770 --> 02:38.920
-The array cast, command schedule, batch functions, something like the physics recast, but it's much,
+L'array cast, le command schedule, les fonctions batch, quelque chose comme la refonte de la physique, mais c'est beaucoup plus,
 
 02:38.920 --> 02:39.940
-much faster.
+beaucoup plus rapide.
 
 02:39.940 --> 02:46.660
-The operations will be performed asynchronously and in parallel on parallel processors if they're available.
+Les opérations seront effectuées de manière asynchrone et en parallèle sur des processeurs parallèles s'ils sont disponibles.
 
 02:46.660 --> 02:48.940
-This gives us blazing fast speed.
+Cela nous permet d'atteindre une vitesse fulgurante.
 
 02:49.120 --> 02:53.200
-It's a relatively new feature to unity, but it's publicly available.
+Il s'agit d'une fonctionnalité relativement nouvelle pour unity, mais elle est disponible publiquement.
 
 02:53.410 --> 02:54.670
-Let's see some demos.
+Voyons quelques démonstrations.
 
 02:54.940 --> 02:57.130
-We'll take a look at the Ray cast demo.
+Jetons un coup d'œil à la démo Ray cast.
 
 02:57.160 --> 02:59.800
-We'll play the scene and inspect the code.
+Nous allons jouer la scène et inspecter le code.
 
 03:03.000 --> 03:03.180
-Here.
+Ici.
 
 03:03.180 --> 03:05.520
-We're going to be looking at the recast demo.
+Nous allons examiner la démo recast.
 
 03:06.770 --> 03:08.010
-We run the scene.
+Nous exécutons la scène.
 
 03:08.190 --> 03:16.410
-And this capsule, as we can see with the red guideline here, it is sending out a rate cast below it.
+Cette capsule, comme nous pouvons le voir avec la ligne directrice rouge ici, envoie une distribution de taux en dessous d'elle.
 
 03:16.770 --> 03:20.850
-And then in the console window, it's showing us what it's colliding with.
+Dans la fenêtre de la console, nous voyons ce avec quoi elle entre en collision.
 
 03:21.240 --> 03:25.290
-So the red line, as you'd expect, it's saying the ramp is close below.
+La ligne rouge, comme on peut s'y attendre, indique que la rampe est proche du sol.
 
 03:25.350 --> 03:31.690
-Now, if I manually move this off of the ramp, it then says the floor is close below.
+Maintenant, si je la déplace manuellement hors de la rampe, elle indique que le sol est proche en dessous.
 
 03:31.710 --> 03:37.980
-So you can see we can detect which object is below us or in whatever direction we want and get some
+Vous voyez donc que nous pouvons détecter l'objet qui se trouve en dessous de nous ou dans la direction que nous voulons et obtenir des informations sur les objets qui se trouvent en dessous de nous.
 
 03:37.980 --> 03:39.020
-information about it.
+informations à son sujet.
 
 03:39.030 --> 03:40.200
-Let's see how that works.
+Voyons comment cela fonctionne.
 
 03:44.590 --> 03:45.760
-In the update.
+Dans la mise à jour.
 
 03:46.670 --> 03:52.220
-What we do is we use physics, recast, and we cast a ray in the direction of downward.
+Ce que nous faisons, c'est que nous utilisons la physique, la refonte, et nous lançons un rayon dans la direction du bas.
 
 03:52.460 --> 03:57.200
-Then if there's a collider there that we've collided with, we'll check the layer of it.
+Ensuite, s'il y a un collisionneur avec lequel nous sommes entrés en collision, nous vérifions sa couche.
 
 03:57.410 --> 04:00.890
-If it's a floor layer, in this case, we do a debug log.
+S'il s'agit d'une couche de sol, dans ce cas, nous effectuons un journal de débogage.
 
 04:01.010 --> 04:07.570
-Perhaps your character's footsteps change sound when he's walking on a metal surface or on top of water.
+Les pas de votre personnage changent peut-être de son lorsqu'il marche sur une surface métallique ou sur de l'eau.
 
 04:07.580 --> 04:09.230
-You could do things like that.
+On peut faire des choses comme ça.
 
 04:09.560 --> 04:10.530
-And that's it.
+Et c'est tout.
 
 04:10.550 --> 04:13.160
-We'll take a look at the Ray cast command demo.
+Nous allons jeter un coup d'œil à la démo de la commande Ray cast.
 
 04:13.190 --> 04:15.800
-We'll play the scene and inspect the code.
+Nous allons jouer la scène et inspecter le code.
 
 04:16.770 --> 04:19.650
-All right, let's open up the Ray cast command demo.
+Très bien, ouvrons la démo de la commande Ray cast.
 
 04:21.560 --> 04:21.830
-Here.
+Ici.
 
 04:21.830 --> 04:27.090
-We've got a familiar setup from our Recast demo, but with recast command.
+Nous retrouvons la même configuration que dans notre démo Recast, mais avec la commande recast.
 
 04:27.110 --> 04:32.030
-What we're going to do is a slightly different way to get the end result here.
+Ce que nous allons faire est une manière légèrement différente d'obtenir le résultat final.
 
 04:32.030 --> 04:37.760
-So similar to the last one we've got, ramp is close below in our console.
+Comme dans le cas précédent, la rampe est proche dans notre console.
 
 04:38.150 --> 04:43.370
-We move out, the floor is close below in our console, so we're detecting what's beneath us.
+Nous nous déplaçons, le sol est proche du bas dans notre console, nous détectons donc ce qui se trouve en dessous de nous.
 
 04:43.600 --> 04:46.070
-Let's see that the implementation here is different.
+Voyons que l'implémentation est ici différente.
 
 04:47.070 --> 04:49.350
-Inside the recast command.
+À l'intérieur de la commande recast.
 
 04:50.460 --> 04:53.940
-What we're doing is inside the update.
+Ce que nous faisons est à l'intérieur de la commande update.
 
 04:54.060 --> 05:01.790
-Every update, I'm creating a new recast command here, and I'm scheduling a batch of commands.
+À chaque mise à jour, je crée une nouvelle commande de refonte et je planifie un lot de commandes.
 
 05:01.800 --> 05:08.310
-Now, in this simple example, what I'm doing here is I'm populating a list of commands with only one.
+Dans cet exemple simple, ce que je fais ici, c'est que j'alimente une liste de commandes avec une seule.
 
 05:08.310 --> 05:10.800
-I'm putting it the zero index one command.
+Je mets la commande zéro index un.
 
 05:10.800 --> 05:16.620
-But you can imagine if you had a complex scene where you happen to be doing a lot of recasting, we
+Mais vous pouvez imaginer que si vous avez une scène complexe où vous faites beaucoup de remaniements, nous
 
 05:16.620 --> 05:20.730
-could put them all into the same commands list and call schedule batch.
+pourrait les mettre tous dans la même liste de commandes et appeler le lot de programmation.
 
 05:20.730 --> 05:21.450
-Once.
+Une fois.
 
 05:21.540 --> 05:27.030
-What we can do then is we can guarantee we're getting really fast results because this is going to happen
+Nous pouvons alors garantir que nous obtiendrons des résultats très rapides, car voici ce qui va se passer
 
 05:27.030 --> 05:31.560
-asynchronously and it's also going to happen on multiple cores.
+de manière asynchrone et sur plusieurs cœurs.
 
 05:31.560 --> 05:35.880
-If the computer or the device you're running on has multiple processing.
+Si l'ordinateur ou l'appareil sur lequel vous travaillez dispose de plusieurs processeurs.
 
 05:36.490 --> 05:42.490
-Then down here, similar to the last example, we just go through the hits that we've got and we see
+Ensuite, comme dans l'exemple précédent, nous passons en revue les résultats que nous avons obtenus et nous constatons ce qui suit
 
 05:42.490 --> 05:48.550
-if for any of the hits, if there's a collider present and if it's either the floor or the ramp, that's
+si pour l'un des hits, il y a un collisionneur présent et s'il s'agit du sol ou de la rampe, c'est
 
 05:48.550 --> 05:49.000
-it.
+c'est le cas.
 
 05:49.150 --> 05:50.230
-A bonus assignment.
+Une attribution de bonus.
 
 05:50.230 --> 05:56.530
-If you want to get a bit deeper into Ray casting, check out the Ray cast drag and drop demo, play
+Si vous voulez aller plus loin dans le Ray casting, jetez un coup d'œil à la démo de Ray cast par glisser-déposer, jouez
 
 05:56.530 --> 05:58.450
-the scene and inspect the code.
+la scène et inspectez le code.
 
 05:59.140 --> 06:05.260
-In the next video we'll look at physics, debugging, debug, draw ray physics, debugger window and
+Dans la prochaine vidéo, nous aborderons la physique, le débogage, le débogage, le dessin de rayons physiques, la fenêtre de débogage et les éléments suivants
 
 06:05.260 --> 06:06.490
-profile a window.
+profil d'une fenêtre.
 
 06:06.910 --> 06:09.790
-In this video we'll cover what is the bugging?
+Dans cette vidéo, nous verrons ce qu'est le bugging.
 
 06:09.790 --> 06:12.520
-What are the challenges of debugging physics?
+Quels sont les défis posés par le débogage de la physique ?
 
 06:12.520 --> 06:14.770
-What tools do we have that help us out?
+Quels sont les outils dont nous disposons pour nous aider ?
 
 06:15.070 --> 06:18.580
-And finally, we'll open up the Unity editor and we'll play with all this.
+Enfin, nous allons ouvrir l'éditeur Unity et jouer avec tout cela.

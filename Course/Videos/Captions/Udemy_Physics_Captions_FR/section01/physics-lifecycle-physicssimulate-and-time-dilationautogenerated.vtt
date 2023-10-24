@@ -1,253 +1,253 @@
 WEBVTT
 
 00:01.890 --> 00:07.500
-Physics, life cycle physics, simulate and time dilation in this video will cover the structure of
+La physique, la physique du cycle de vie, la simulation et la dilatation temporelle dans cette vidéo couvrira la structure du
 
 00:07.500 --> 00:13.650
-unity projects, the role of mono behaviors inside unity and the code of behavior for physics.
+projets unity, le rôle des mono-comportements dans unity et le code de comportement pour la physique.
 
 00:13.830 --> 00:15.660
-So how is Unity structured?
+Comment est structuré Unity ?
 
 00:15.840 --> 00:18.330
-Unity Structure from the highest level.
+Structure d'Unity au plus haut niveau.
 
 00:18.330 --> 00:21.870
-You have a project with seen inside the scene.
+Vous avez un projet avec des vues à l'intérieur de la scène.
 
 00:21.870 --> 00:26.990
-There are one or more game objects, and on each game object you have C-sharp components.
+Il y a un ou plusieurs objets de jeu, et sur chaque objet de jeu vous avez des composants C-sharp.
 
 00:27.000 --> 00:30.330
-C-sharp components are of a data type unity engine.
+Les composants C-sharp sont de type unity engine.
 
 00:30.350 --> 00:31.260
-My behavior.
+Mon comportement.
 
 00:31.260 --> 00:36.120
-In this course, I will refer to components and behaviors as the same thing.
+Dans ce cours, je ferai référence aux composants et aux comportements comme étant la même chose.
 
 00:36.120 --> 00:41.460
-As the image shows, we have a game object in the center with many possible components around it, and
+Comme le montre l'image, nous avons un objet de jeu au centre avec de nombreux composants possibles autour de lui, et
 
 00:41.460 --> 00:43.770
-those game objects fit inside the game world.
+ces objets de jeu s'intègrent dans le monde du jeu.
 
 00:44.190 --> 00:49.290
-Understanding behaviors is critical to understanding unity behaviors.
+Il est essentiel de comprendre les comportements pour comprendre les comportements de l'unité.
 
 00:49.290 --> 00:56.010
-To attach your code class to a game object, you have to extend mono behavior much, but not all of
+Pour attacher votre classe de code à un objet de jeu, vous devez étendre le comportement mono en grande partie, mais pas en totalité.
 
 00:56.010 --> 00:58.440
-your code will extend from mono behaviors.
+votre code s'étendra à partir des comportements mono.
 
 00:58.440 --> 01:03.840
-Mono behaviors come with powerful built in functions with a predictable execution order.
+Les comportements mono sont accompagnés de fonctions puissantes intégrées avec un ordre d'exécution prévisible.
 
 01:03.840 --> 01:08.400
-This execution order of mono behaviors is very important in game development.
+Cet ordre d'exécution des comportements mono est très important dans le développement d'un jeu.
 
 01:08.400 --> 01:09.720
-We'll talk about runtime.
+Nous allons parler du temps d'exécution.
 
 01:09.720 --> 01:11.160
-That's the execution order.
+C'est l'ordre d'exécution.
 
 01:11.160 --> 01:16.620
-While your game is running for your players in the image on the right, you can see there's many, many
+Pendant que votre jeu s'exécute pour vos joueurs dans l'image de droite, vous pouvez voir qu'il y a beaucoup, beaucoup de
 
 01:16.620 --> 01:18.990
-different execution order functions.
+différentes fonctions d'ordre d'exécution.
 
 01:19.020 --> 01:20.340
-Let's zoom in a little bit.
+Zoomons un peu.
 
 01:20.490 --> 01:26.400
-On the top half, we can see major sections, initialization, physics, input events and more.
+Dans la moitié supérieure, nous pouvons voir les principales sections, l'initialisation, la physique, les événements d'entrée, etc.
 
 01:26.430 --> 01:32.400
-Each of these is a function that unity will call for us and we can optionally listen in.
+Chacune de ces sections est une fonction que unity appellera pour nous et que nous pouvons éventuellement écouter.
 
 01:32.400 --> 01:34.710
-The key ones for us are awake.
+Les fonctions clés pour nous sont les éveils.
 
 01:34.710 --> 01:41.100
-Start fixed update trigger and collision events and update if we look below.
+Démarrage de la mise à jour fixe des événements de déclenchement et de collision et mise à jour si nous regardons ci-dessous.
 
 01:41.100 --> 01:42.690
-The diagram continues.
+Le diagramme continue.
 
 01:42.690 --> 01:46.440
-There's scene rendering, pausing and decommissioning.
+Il y a le rendu de la scène, la mise en pause et le déclassement.
 
 01:46.440 --> 01:49.260
-Here our focus is on on destroy.
+Ici, nous nous concentrons sur la destruction.
 
 01:49.290 --> 01:55.320
-Together the execution order of Monte behavior functions that we care about are listed here awake and
+L'ordre d'exécution des fonctions de comportement de Monte qui nous intéressent est listé ici awake et
 
 01:55.320 --> 01:59.100
-start are called once and early in the project's life in the middle and bold.
+start sont appelées une fois et au début de la vie du projet au milieu et en gras.
 
 01:59.100 --> 02:01.590
-We've got several key ones related to physics.
+Nous avons plusieurs éléments clés liés à la physique.
 
 02:01.590 --> 02:04.470
-Fixed update is called once per physics tick.
+La mise à jour fixe est appelée une fois par tic physique.
 
 02:04.500 --> 02:09.600
-It's important that this is independent of the frame rate, so we get dependable results on trigger
+Il est important que cela soit indépendant du taux de rafraîchissement, afin d'obtenir des résultats fiables sur le déclenchement.
 
 02:09.600 --> 02:11.640
-events and on collision events.
+et sur les événements de collision.
 
 02:11.640 --> 02:13.440
-We'll talk about those more later.
+Nous en reparlerons plus tard.
 
 02:13.440 --> 02:19.440
-But there, when our physics world objects are overlapping, how we can listen in on that update is
+Mais là, lorsque nos objets du monde physique se chevauchent, la façon dont nous pouvons écouter cette mise à jour est la suivante
 
 02:19.440 --> 02:20.640
-called once per frame.
+appelée une fois par image.
 
 02:20.640 --> 02:25.110
-That's the main workhorse function for most of our code except physics.
+C'est la fonction principale de la plupart de notre code, à l'exception de la physique.
 
 02:25.110 --> 02:30.390
-Code on destroy is called when the game object is deleted or when the game world ends.
+Code on destroy est appelé lorsque l'objet du jeu est supprimé ou lorsque le monde du jeu se termine.
 
 02:31.910 --> 02:35.870
-Here's an example template file I created for which we can code.
+Voici un exemple de fichier modèle que j'ai créé et pour lequel nous pouvons coder.
 
 02:35.870 --> 02:41.060
-Now this is C code, and we could declare this in unity and it would run well.
+Ceci est du code C, et nous pourrions le déclarer dans unity et il fonctionnerait bien.
 
 02:41.060 --> 02:42.680
-There's not much happening here.
+Il ne se passe pas grand chose ici.
 
 02:42.680 --> 02:45.200
-There's just empty function declarations.
+Il n'y a que des déclarations de fonctions vides.
 
 02:45.200 --> 02:48.770
-But I just want to show you the signature, how these are set up.
+Mais je veux juste vous montrer la signature, comment ils sont mis en place.
 
 02:48.860 --> 02:54.680
-And it's important to note that you wouldn't need to declare all of these only if you want to wait and
+Il est important de noter qu'il n'est pas nécessaire de déclarer tous ces éléments uniquement si l'on souhaite attendre et
 
 02:54.680 --> 02:55.190
-update.
+mettre à jour.
 
 02:55.190 --> 02:56.530
-Just declare those, too.
+Il suffit de les déclarer aussi.
 
 02:56.540 --> 02:59.060
-But I'm showing you a complete template here to get started.
+Mais je vous montre ici un modèle complet pour commencer.
 
 03:00.140 --> 03:02.950
-Let's look at a demo so we can see this template in action.
+Jetons un coup d'œil à une démo pour voir ce modèle en action.
 
 03:02.960 --> 03:08.900
-We'll run the behavior template, we'll see the scene, we'll add a debug log statement so that we're
+Nous allons exécuter le modèle de comportement, nous allons voir la scène, nous allons ajouter une déclaration de journal de débogage pour que nous soyons sûrs que le modèle de comportement fonctionne.
 
 03:08.900 --> 03:14.300
-able to see which parts of the code we've reached and we'll test a trigger in a collision event.
+de voir quelles parties du code nous avons atteintes et nous testerons un déclencheur dans un événement de collision.
 
 03:15.540 --> 03:17.970
-Let's go ahead and open up assets.
+Allons-y et ouvrons les actifs.
 
 03:17.970 --> 03:22.050
-Section one, Video five of Behavior template.
+Section un, vidéo cinq du modèle de comportement.
 
 03:22.050 --> 03:22.710
-In this scene.
+Dans cette scène.
 
 03:22.710 --> 03:25.220
-We've got one cube floating over the floor.
+Nous avons un cube qui flotte sur le sol.
 
 03:25.230 --> 03:28.170
-In addition to Box Collider and rigid body.
+En plus du Box Collider et du corps rigide.
 
 03:28.170 --> 03:31.000
-We can see we have Monarch Behavior template script.
+Nous pouvons voir que nous avons un script de modèle de comportement Monarch.
 
 03:31.020 --> 03:32.220
-Let's go ahead and click that.
+Allons-y et cliquons sur ce script.
 
 03:32.490 --> 03:34.500
-That'll open it in your favorite code editor.
+Cela l'ouvrira dans votre éditeur de code préféré.
 
 03:34.860 --> 03:38.910
-Now, here from the top, we can see all of the different methods we've already discussed here.
+Maintenant, en partant du haut, nous pouvons voir toutes les différentes méthodes dont nous avons déjà parlé ici.
 
 03:38.910 --> 03:45.480
-Inside the awake, we have a debug log statement and again inside the on collision enter and inside
+À l'intérieur de l'éveil, nous avons une déclaration de journal de débogage et à nouveau à l'intérieur de l'entrée de collision on et à l'intérieur de l'entrée de collision on.
 
 03:45.480 --> 03:51.480
-the destroy debug log will send a little bit of text into a window inside unity just to confirm that
+le debug log destroy enverra un peu de texte dans une fenêtre à l'intérieur de unity juste pour confirmer que
 
 03:51.480 --> 03:53.040
-we've reached that point in the code.
+nous avons atteint ce point du code.
 
 03:53.040 --> 03:54.600
-Let's go ahead and run the scene.
+Exécutons la scène.
 
 03:56.470 --> 04:01.240
-Down here in the console window, we can see the wake up and the collision happened.
+Dans la fenêtre de la console, nous pouvons voir que le réveil et la collision ont eu lieu.
 
 04:01.240 --> 04:06.010
-And then once I stopped the scene and all objects would be cleaned up, we can see the destroy.
+Ensuite, une fois que j'ai arrêté la scène et que tous les objets ont été nettoyés, nous pouvons voir la destruction.
 
 04:06.080 --> 04:08.070
-You can see that the collision enter.
+On peut voir que la collision entre.
 
 04:08.080 --> 04:10.750
-It says the cube was hit by the floor.
+Il indique que le cube a été heurté par le sol.
 
 04:10.750 --> 04:14.680
-And that's just showing us the name Cube here as hit the name floor here.
+Et cela nous montre simplement que le nom Cube a été frappé par le nom Floor.
 
 04:14.680 --> 04:17.410
-That's the kind of detection you can do using physics.
+C'est le type de détection que l'on peut faire en utilisant la physique.
 
 04:18.520 --> 04:20.130
-Let's talk about time dilation.
+Parlons de la dilatation du temps.
 
 04:20.140 --> 04:20.560
-Now.
+Maintenant.
 
 04:20.560 --> 04:26.710
-If you want to create something like a slowdown effect that you see in a movie like The Matrix or in
+Si vous voulez créer quelque chose comme un effet de ralentissement que vous voyez dans un film comme The Matrix ou dans
 
 04:26.710 --> 04:33.250
-a game like Max Payne, where the whole world is slowing down to simulate a more dramatic moment.
+un jeu comme Max Payne, où le monde entier ralentit pour simuler un moment plus dramatique.
 
 04:33.280 --> 04:35.300
-You can simulate that in physics.
+Il est possible de simuler cela en physique.
 
 04:35.320 --> 04:42.070
-What we do is we turn physics, auto simulation to false, and then we manually simulate physics ourselves.
+Ce que nous faisons, c'est que nous mettons la simulation automatique de la physique sur false, puis nous simulons manuellement la physique nous-mêmes.
 
 04:42.100 --> 04:43.120
-This is the key.
+Voici la clé.
 
 04:43.150 --> 04:48.060
-We're waiting for a certain amount of time before we bother to call physics simulate.
+Nous attendons un certain temps avant de prendre la peine d'appeler la simulation physique.
 
 04:48.070 --> 04:52.540
-Now in our projects and probably in your projects, you don't need to do this.
+Maintenant, dans nos projets et probablement dans les vôtres, vous n'avez pas besoin de faire cela.
 
 04:52.720 --> 04:57.400
-I just want to talk about it a little bit about the time dilation so that you understand that typically
+Je voudrais juste parler un peu de la dilatation du temps pour que vous compreniez que, typiquement, c'est une dilatation du temps.
 
 04:57.400 --> 05:04.450
-unity runs in a realistic way for Earth's gravity and we don't need to simulate physics manually.
+L'unité fonctionne de manière réaliste pour la gravité terrestre et nous n'avons pas besoin de simuler la physique manuellement.
 
 05:04.450 --> 05:06.310
-But here's how you can do it if you need to.
+Mais voici comment vous pouvez le faire si vous en avez besoin.
 
 05:08.790 --> 05:09.830
-In the next section.
+Dans la section suivante.
 
 05:09.840 --> 05:12.150
-Unity two D Physics components.
+Unité deux composants D Physics.

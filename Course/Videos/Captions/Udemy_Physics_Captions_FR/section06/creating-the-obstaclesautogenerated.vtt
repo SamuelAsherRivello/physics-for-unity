@@ -1,298 +1,298 @@
 WEBVTT
 
 00:01.780 --> 00:03.200
-Creating the obstacles.
+Création des obstacles.
 
 00:03.220 --> 00:08.950
-In this video, we'll cover creating movable and immovable objects, and we'll add spinning coins which
+Dans cette vidéo, nous aborderons la création d'objets mobiles et inamovibles, et nous ajouterons des pièces de monnaie qui tournent.
 
 00:08.950 --> 00:10.650
-are collectible by the player.
+sont à collectionner par le joueur.
 
 00:10.660 --> 00:12.100
-Here's the task breakdown.
+Voici la répartition des tâches.
 
 00:12.100 --> 00:18.140
-We'll add the cube movable prefab, and we'll add the cube immovable prefab along with its script.
+Nous allons ajouter le préfabriqué mobile cube, et nous allons ajouter le préfabriqué immobile cube avec son script.
 
 00:18.160 --> 00:23.260
-We'll add a coin prefab and its script to handle spinning and being collected by the player.
+Nous allons ajouter un préfabriqué de pièce de monnaie et son script pour gérer la rotation et la collecte par le joueur.
 
 00:23.410 --> 00:27.190
-For the project, we'll open up section six, Video three and the scene.
+Pour le projet, nous allons ouvrir la section six, la vidéo trois et la scène.
 
 00:27.190 --> 00:28.390
-Crazy Ball three.
+Crazy Ball trois.
 
 00:28.780 --> 00:30.310
-All right, Here we are inside Unity.
+Très bien, nous voici à l'intérieur d'Unity.
 
 00:30.670 --> 00:33.890
-Let's go ahead and open up our crazy ball three scene.
+Allons-y et ouvrons notre scène "crazy ball three".
 
 00:33.910 --> 00:34.810
-Give it a play.
+Jouons-y.
 
 00:35.470 --> 00:38.980
-So what's new in this is we have objects within the walls.
+Ce qui est nouveau ici, c'est que nous avons des objets à l'intérieur des murs.
 
 00:38.980 --> 00:40.870
-We've got different platforms.
+Nous avons différentes plates-formes.
 
 00:40.870 --> 00:44.350
-We've got different movable and immovable objects.
+Nous avons différents objets mobiles et immobiles.
 
 00:44.350 --> 00:49.090
-So the darker cubes, I can't move and the lighter cubes I can move them.
+Les cubes plus foncés ne peuvent pas être déplacés et les cubes plus clairs peuvent l'être.
 
 00:49.090 --> 00:51.070
-So it just gives a little visual variety.
+Cela donne un peu de variété visuelle.
 
 00:51.280 --> 00:56.170
-Also, as I'm collecting these coins, you can see I collide with them and they disappear.
+De plus, lorsque je collecte ces pièces, vous pouvez voir que j'entre en collision avec elles et qu'elles disparaissent.
 
 00:56.290 --> 00:58.240
-So they instantly disappear.
+Elles disparaissent donc instantanément.
 
 00:58.240 --> 01:01.990
-And of course they're spinning around just for a nice visual effect.
+Et bien sûr, elles tournent sur elles-mêmes pour un bel effet visuel.
 
 01:02.540 --> 01:04.850
-And also cast shadows, which is cool.
+Ils projettent aussi des ombres, ce qui est sympa.
 
 01:04.870 --> 01:08.500
-So let's focus on just how the coin is set up.
+Concentrons-nous sur la façon dont la pièce est mise en place.
 
 01:08.530 --> 01:10.570
-Let's do that together from scratch.
+Faisons-le ensemble à partir de zéro.
 
 01:10.690 --> 01:12.580
-So here we are.
+Nous y voilà.
 
 01:12.790 --> 01:15.040
-Let's take a look at the.
+Jetons un coup d'œil sur le.
 
 01:18.290 --> 01:20.030
-Pick up prototype object.
+Prenez le prototype de l'objet.
 
 01:20.660 --> 01:21.440
-Just double check.
+Vérifions à nouveau.
 
 01:21.440 --> 01:24.350
-When we see this, I'm going to drag out the right one.
+Quand nous verrons ceci, je ferai glisser le bon.
 
 01:26.390 --> 01:30.410
-Okay, So let's talk about converting this into our coin.
+Ok, alors parlons de la conversion dans notre pièce de monnaie.
 
 01:31.070 --> 01:34.400
-So first thing, we want it to be a little bit higher off the ground.
+Tout d'abord, nous voulons qu'il soit un peu plus haut que le sol.
 
 01:35.350 --> 01:36.460
-Uh, you could make a call.
+Euh, vous pourriez passer un coup de fil.
 
 01:36.460 --> 01:40.510
-If this is the right size for us, I'm going to say we want it to be a little bit smaller.
+Si c'est la bonne taille pour nous, je vais dire que nous voulons qu'elle soit un peu plus petite.
 
 01:42.270 --> 01:43.920
-So I scale it down.
+Je réduis donc l'échelle.
 
 01:45.130 --> 01:48.290
-Checking the scale against the size of our character.
+Vérification de l'échelle par rapport à la taille de notre personnage.
 
 01:49.230 --> 01:50.550
-I think that looks pretty good.
+Je trouve que ça a l'air pas mal du tout.
 
 01:50.850 --> 01:52.830
-Then I've got a gold texture setup.
+J'ai ensuite configuré une texture dorée.
 
 01:52.830 --> 01:53.910
-We could use that.
+Nous pourrions l'utiliser.
 
 01:54.870 --> 01:58.050
-It's often in games that we want our coins to look like gold coins.
+Dans les jeux, nous voulons souvent que nos pièces ressemblent à des pièces d'or.
 
 01:58.050 --> 02:00.270
-So we'll use that same look.
+Nous utiliserons donc la même apparence.
 
 02:01.170 --> 02:03.480
-And then let's get the code going on.
+Ensuite, nous allons lancer le code.
 
 02:03.480 --> 02:07.710
-So I've already created a script for.
+J'ai déjà créé un script pour.
 
 02:08.970 --> 02:10.770
-The queen.
+La reine.
 
 02:11.430 --> 02:14.100
-And to do that, we'll need a collider as well.
+Et pour ce faire, nous avons également besoin d'un collisionneur.
 
 02:15.620 --> 02:21.890
-So I'm going to add a box collider and I can go ahead and give a look at the box collider just to make
+Je vais donc ajouter un collisionneur de boîtes et je peux aller de l'avant et jeter un coup d'oeil au collisionneur de boîtes juste pour m'assurer qu'il n'y a pas de problème.
 
 02:21.890 --> 02:22.670
-sure it's sized.
+qu'il est bien dimensionné.
 
 02:22.670 --> 02:23.000
-Right?
+C'est bien cela ?
 
 02:23.000 --> 02:24.740
-But it looks pretty good to me.
+Mais il me semble que c'est une bonne chose.
 
 02:25.340 --> 02:28.220
-And then let's take a look at our coin script.
+Jetons ensuite un coup d'œil à notre script de pièces de monnaie.
 
 02:28.640 --> 02:31.460
-This is really the bulk of our work here, some scripting.
+C'est vraiment le gros de notre travail ici, un peu de script.
 
 02:31.820 --> 02:37.820
-So in the coin, first of all, I track if it's alive or not, I set it alive to true.
+Dans la pièce, tout d'abord, je vérifie si elle est vivante ou non, je lui attribue la valeur true.
 
 02:37.850 --> 02:42.920
-Now, typically you can keep the amount of behavior alive and just delete it when you're ready for it
+En règle générale, vous pouvez conserver le comportement en vie et le supprimer lorsque vous en avez besoin.
 
 02:42.920 --> 02:43.810
-not to be alive.
+à ne plus être en vie.
 
 02:43.820 --> 02:46.580
-But here I needed this bull for an extra reason.
+Mais ici, j'avais besoin de ce taureau pour une raison supplémentaire.
 
 02:46.860 --> 02:47.990
-Talk about it in a second.
+J'en reparlerai dans une seconde.
 
 02:48.290 --> 02:51.010
-So in the update, I rotate the graphics.
+Dans la mise à jour, je fais pivoter les graphiques.
 
 02:51.020 --> 02:55.610
-I'm doing rotation based on how much do I want it to rotate per frame.
+J'effectue la rotation en fonction de l'ampleur de la rotation par image.
 
 02:55.610 --> 02:58.920
-And I'm using a crazy ball constants class to handle that.
+Et j'utilise une classe de constantes de balle folle pour gérer cela.
 
 02:58.970 --> 03:03.630
-So in here I've got some isolated variables so that it's really easy to tweak.
+Dans cette classe, j'ai quelques variables isolées pour qu'il soit facile de les modifier.
 
 03:03.650 --> 03:09.080
-So you can see that it's going to units in the Y direction every frame then.
+Vous pouvez donc voir qu'il s'agit d'unités dans la direction Y à chaque image.
 
 03:10.060 --> 03:11.140
-Back in the coin.
+Retour dans la pièce.
 
 03:12.820 --> 03:16.840
-Hear something from outside is going to call this public, destroy me.
+Entendre quelque chose de l'extérieur va appeler ce public, me détruire.
 
 03:16.840 --> 03:22.090
-And what's going to happen inside is I'm going to use that is alive to market false, and then I immediately
+Et ce qui va se passer à l'intérieur, c'est que je vais utiliser ce qui est vivant pour commercialiser du faux, et ensuite je vais immédiatement
 
 03:22.090 --> 03:23.410
-destroy the game object.
+détruire l'objet jeu.
 
 03:23.440 --> 03:29.530
-It's not quite obvious yet why I'm using this as a live, but in a future video we're going to see that
+Il n'est pas encore évident de comprendre pourquoi j'utilise ceci comme un live, mais dans une prochaine vidéo nous verrons que
 
 03:29.530 --> 03:31.450
-instead of instantly destroying it.
+au lieu de le détruire instantanément.
 
 03:31.450 --> 03:36.400
-Like now, I'm going to use a programmatic motion to have it slowly fade away for some polish.
+Comme maintenant, je vais utiliser un mouvement programmatique pour le faire disparaître lentement afin de le rendre plus élégant.
 
 03:36.400 --> 03:38.260
-So this is just the setup for that.
+C'est donc la configuration pour cela.
 
 03:38.260 --> 03:41.920
-Now, how do we detect the ball and the coin?
+Maintenant, comment détecter la balle et la pièce ?
 
 03:41.920 --> 03:47.710
-Well, I've chosen to put that inside the crazy ball here, so we're going to use trigger enter.
+J'ai choisi de placer la pièce à l'intérieur de la balle folle, nous allons donc utiliser le trigger enter.
 
 03:47.710 --> 03:54.520
-So that's important that then I go into the coins Collider and I set is trigger.
+Il est donc important que j'aille ensuite dans le coin Collider et que je règle son trigger.
 
 03:54.520 --> 04:00.850
-So by setting this trigger here, then the crazy ball, when it's going to get into the same collider
+En réglant ce déclencheur ici, la balle folle, lorsqu'elle entre dans le même collisionneur
 
 04:00.850 --> 04:04.210
-area as the coin, the on trigger enter is going to fire.
+que la pièce de monnaie, le trigger enter va se déclencher.
 
 04:04.210 --> 04:09.340
-I could choose to put this trigger, enter code inside the coin or inside the ball.
+Je pourrais choisir de placer ce code de déclenchement et d'entrée à l'intérieur de la pièce ou à l'intérieur de la balle.
 
 04:09.340 --> 04:10.630
-Either one is fine.
+L'un ou l'autre convient.
 
 04:10.630 --> 04:16.750
-I know in the future of this game I want the crazy ball to collide with multiple different types of
+Je sais que dans l'avenir de ce jeu, je veux que la balle folle entre en collision avec plusieurs types de pièces de monnaie.
 
 04:16.750 --> 04:17.380
-objects.
+objets.
 
 04:17.380 --> 04:19.840
-So I'm going to put all that here in the same spot.
+Je vais donc placer tout cela au même endroit.
 
 04:19.840 --> 04:21.640
-So this is the nice spot for me.
+C'est donc le bon endroit pour moi.
 
 04:21.640 --> 04:24.100
-So here I detect and I collect the coin.
+Ici, je détecte et je ramasse la pièce.
 
 04:24.190 --> 04:28.330
-I check the tag of what I'm colliding with to make sure it's the coin tag.
+Je vérifie la balise de ce avec quoi j'entre en collision pour m'assurer qu'il s'agit bien de la balise de la pièce.
 
 04:28.480 --> 04:30.250
-Take a look at that variable.
+Je jette un coup d'œil à cette variable.
 
 04:30.250 --> 04:31.600
-It's just coin.
+Il s'agit simplement de coin.
 
 04:31.600 --> 04:37.120
-And when I go here and I set up this world, it's important that I set the tag to coin.
+Et quand je vais ici et que je crée ce monde, il est important que je mette la balise à coin.
 
 04:38.150 --> 04:45.320
-Then back here in the crazy ball, I then check to see does the game object in colliding with have the
+Ensuite, dans la boule folle, je vérifie si l'objet de jeu avec lequel j'entre en collision possède la balise
 
 04:45.320 --> 04:47.930
-game object component called coin?
+composant de l'objet de jeu appelé pièce de monnaie ?
 
 04:47.960 --> 04:52.700
-Of course it does because of how I've constructed this, but it's just a good idea to check if it's
+Bien sûr, c'est le cas à cause de la façon dont j'ai construit l'objet, mais c'est une bonne idée de vérifier si c'est le cas.
 
 04:52.700 --> 04:56.000
-null and then I check to see is it still alive?
+null et ensuite je vérifie s'il est toujours vivant ?
 
 04:56.000 --> 04:57.940
-If so, destroy me that way.
+Si oui, détruisez-moi de cette façon.
 
 04:57.950 --> 05:05.330
-Once we add a programmatic effect as the coin is dissolving away, perhaps shrinking, I don't want
+Une fois que nous aurons ajouté un effet programmatique au moment où la pièce se dissout, peut-être en se rétrécissant, je ne veux pas
 
 05:05.330 --> 05:08.300
-to collide with it again and again and again as it's shrinking.
+entrer en collision avec elle encore et encore et encore au fur et à mesure qu'elle rétrécit.
 
 05:08.300 --> 05:09.260
-So I tag.
+Je marque donc.
 
 05:09.260 --> 05:10.640
-It is a live false.
+C'est un faux vivant.
 
 05:10.640 --> 05:13.310
-Then I won't trigger this again and again.
+Ainsi, je ne déclencherai plus ce phénomène à plusieurs reprises.
 
 05:13.310 --> 05:16.580
-So destroy me executes exactly one time for each.
+Donc destroy me s'exécute exactement une fois pour chaque.
 
 05:16.580 --> 05:17.630
-So that's it?
+Et c'est tout ?
 
 05:17.630 --> 05:18.890
-That's the way it's set up.
+C'est comme ça que c'est configuré.
 
 05:18.890 --> 05:21.290
-I can go ahead and run the scene now.
+Je peux maintenant lancer la scène.
 
 05:23.840 --> 05:27.800
-And run into there and it disappears perfectly.
+Je l'exécute et elle disparaît parfaitement.
 
 05:29.270 --> 05:29.960
-That's it.
+C'est tout.
 
 05:32.070 --> 05:35.370
-In the next video, we'll cover adding win loss conditions.
+Dans la prochaine vidéo, nous aborderons l'ajout de conditions gagnant-perdant.

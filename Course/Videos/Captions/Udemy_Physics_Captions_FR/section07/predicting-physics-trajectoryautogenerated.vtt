@@ -1,265 +1,265 @@
 WEBVTT
 
 00:01.540 --> 00:03.510
-Predicting physics trajectory.
+Prédiction de la trajectoire de la physique.
 
 00:03.520 --> 00:08.050
-In this video, we'll see how we can predict physics movement before it happens.
+Dans cette vidéo, nous allons voir comment nous pouvons prédire les mouvements physiques avant qu'ils ne se produisent.
 
 00:08.050 --> 00:13.090
-We'll learn how this can help our games and our game players, and then we'll open up unity and see
+Nous verrons comment cela peut aider nos jeux et nos joueurs, puis nous ouvrirons unity et verrons
 
 00:13.090 --> 00:16.270
-a real world example of predicting trajectory.
+un exemple concret de prédiction de trajectoire.
 
 00:16.270 --> 00:18.100
-So what is physics Prediction?
+Qu'est-ce que la prédiction physique ?
 
 00:18.100 --> 00:24.400
-Prediction is calculating the future properties, for example, position or rotation of objects within
+La prédiction consiste à calculer les propriétés futures, par exemple, la position ou la rotation d'objets à l'intérieur d'une trajectoire.
 
 00:24.400 --> 00:25.480
-your physics system.
+votre système physique.
 
 00:25.750 --> 00:33.280
-Some examples of this are visualization showing a line or arrow to suggest to the user where their bullet
+Par exemple, la visualisation affiche une ligne ou une flèche pour suggérer à l'utilisateur l'emplacement de sa balle.
 
 00:33.280 --> 00:34.240
-will go.
+ira.
 
 00:34.240 --> 00:40.900
-Or I Doing this prediction gives more relevant input into the intelligence systems of our game.
+Ou encore, je pense que cette prédiction fournit des informations plus pertinentes aux systèmes d'intelligence de notre jeu.
 
 00:41.970 --> 00:45.870
-Let's take an example from our Section five Upset Ducks game.
+Prenons l'exemple de notre jeu de la section 5 "Upset Ducks".
 
 00:45.870 --> 00:50.220
-Currently it's complete and playable, but it has no predictive physics.
+Actuellement, il est complet et jouable, mais il n'a pas de physique prédictive.
 
 00:50.220 --> 00:57.330
-An example of visualization would be to calculate the path of the asteroid and display an arrow as visualization.
+Un exemple de visualisation serait de calculer la trajectoire de l'astéroïde et d'afficher une flèche comme visualisation.
 
 00:57.330 --> 01:02.220
-This would increase feedback for the user and give them a better connection to the game.
+Cela permettrait à l'utilisateur d'avoir un meilleur retour d'information et une meilleure connexion avec le jeu.
 
 01:02.220 --> 01:03.840
-A more positive game feel.
+Une sensation de jeu plus positive.
 
 01:03.840 --> 01:09.330
-The result would be helping our users make smarter choices before they even release the asteroid.
+Le résultat serait d'aider nos utilisateurs à faire des choix plus judicieux avant même de libérer l'astéroïde.
 
 01:09.330 --> 01:11.400
-They would know more or less where it's headed.
+Ils sauraient plus ou moins où il se dirige.
 
 01:11.430 --> 01:13.410
-Another example would be AI.
+Un autre exemple serait l'IA.
 
 01:13.440 --> 01:16.500
-We can calculate the path of the asteroid for the eye.
+Nous pouvons calculer la trajectoire de l'astéroïde pour l'œil.
 
 01:16.530 --> 01:20.520
-We could have enemies react with fear as we aim right toward them.
+Nous pourrions faire en sorte que les ennemis réagissent avec crainte lorsque nous les visons.
 
 01:20.520 --> 01:24.570
-Or we could have enemies that jump out of the way to avoid the collisions.
+Ou bien nous pourrions avoir des ennemis qui sautent pour éviter les collisions.
 
 01:24.810 --> 01:26.450
-Or, of course, we could do both.
+Ou, bien sûr, nous pouvons faire les deux.
 
 01:26.460 --> 01:29.820
-We could have visualization and updated AI.
+Nous pourrions avoir une visualisation et une IA actualisée.
 
 01:30.450 --> 01:32.190
-So how do we predict physics?
+Comment prédire la physique ?
 
 01:32.700 --> 01:37.200
-We create a primary scene and we set up an object with some physics forces.
+Nous créons une scène primaire et nous configurons un objet avec des forces physiques.
 
 01:37.200 --> 01:40.450
-Then we create a secondary invisible physics scene.
+Nous créons ensuite une scène physique secondaire invisible.
 
 01:40.470 --> 01:47.940
-There we can add marker balls, and for each of the balls we can simulate Delta time with a unique Delta
+Nous pouvons y ajouter des billes de marquage et, pour chacune d'entre elles, simuler le temps Delta à l'aide d'un Delta unique.
 
 01:47.940 --> 01:52.860
-time kind of ticking through the arc of travel where that object would travel.
+temps Delta unique qui parcourt l'arc de déplacement de l'objet.
 
 01:53.430 --> 01:54.790
-Let's take a look at a demo.
+Jetons un coup d'œil à une démonstration.
 
 01:54.810 --> 01:56.860
-Let's look at trajectory prediction.
+Regardons la prédiction de trajectoire.
 
 01:56.880 --> 01:58.080
-We'll play the scene.
+Jouons la scène.
 
 01:58.080 --> 02:03.750
-Will view the inspector for the jumping Cube game object, will update its force, will view the prediction,
+Nous allons voir l'inspecteur pour l'objet de jeu jumping Cube, nous allons mettre à jour sa force, nous allons voir la prédiction,
 
 02:03.750 --> 02:05.160
-and will inspect the code.
+et inspectera le code.
 
 02:06.330 --> 02:06.570
-All right.
+Nous sommes d'accord.
 
 02:06.570 --> 02:11.800
-Here we are inside unity, jumping into trajectory prediction.
+Nous voici à l'intérieur de unity, et nous passons à la prédiction de trajectoire.
 
 02:11.820 --> 02:14.700
-Now, in this project, what I've got set up is.
+Dans ce projet, ce que j'ai mis en place est...
 
 02:15.660 --> 02:18.050
-A cube that has a script on it.
+Un cube contenant un script.
 
 02:18.060 --> 02:25.940
-And what this does is it illustrates where the physics force that is about to be applied is headed.
+Ce script illustre l'orientation de la force physique sur le point d'être appliquée.
 
 02:25.950 --> 02:31.970
-And you can see this arc of markers that is here in front of the cube.
+Vous pouvez voir cet arc de marqueurs devant le cube.
 
 02:31.980 --> 02:36.810
-And what I'm able to do here is this is the physics force that's going to be applied.
+Ce que je peux faire ici, c'est la force physique qui va être appliquée.
 
 02:36.810 --> 02:41.550
-I use that same value to show where this will travel.
+J'utilise cette même valeur pour montrer où cette force va se déplacer.
 
 02:41.940 --> 02:46.520
-Now, one thing, while I was working on this, this is relatively new into unity.
+Pendant que je travaillais sur ce projet, je me suis rendu compte qu'il s'agissait d'un élément relativement nouveau dans unity.
 
 02:46.530 --> 02:53.610
-It's a public feature, but still, I hadn't used it in in production before and I was disappointed
+C'est une fonctionnalité publique, mais je ne l'avais pas encore utilisée en production et j'ai été déçu.
 
 02:53.610 --> 02:55.200
-by the speed of this.
+par la vitesse de cette fonction.
 
 02:55.200 --> 03:01.440
-It's not actually that smooth and there could be some optimizations to be had, but it certainly works
+En fait, ce n'est pas très fluide et il pourrait y avoir des optimisations à faire, mais cela fonctionne.
 
 03:01.440 --> 03:02.310
-and it works well.
+et il fonctionne bien.
 
 03:02.310 --> 03:06.900
-So I'm able to move the forces there and then I've got a couple of buttons here that would be set up,
+Je peux donc déplacer les forces ici et j'ai quelques boutons ici qui seraient mis en place,
 
 03:06.900 --> 03:10.250
-probably simulating the user input somehow to move.
+probablement en simulant l'entrée de l'utilisateur d'une manière ou d'une autre pour se déplacer.
 
 03:10.260 --> 03:15.450
-I'll go ahead and use force and you can see it hops there and that follows the line perfectly.
+Je vais aller de l'avant et utiliser la force et vous pouvez voir qu'il saute ici et qu'il suit parfaitement la ligne.
 
 03:15.450 --> 03:21.150
-See, I've got a couple prediction sliders here so we can make more or less of those.
+Vous voyez, j'ai quelques curseurs de prédiction ici pour que nous puissions en faire plus ou moins.
 
 03:22.520 --> 03:25.820
-More or less of these markers in the arc.
+Plus ou moins de ces marqueurs dans l'arc.
 
 03:26.360 --> 03:29.540
-So let's take a look if I go into the code here.
+Voyons ce qu'il en est si j'entre dans le code.
 
 03:30.590 --> 03:31.910
-Let's go through the important things.
+Passons en revue les éléments importants.
 
 03:31.910 --> 03:36.240
-So the serialized properties we just saw are there in the start.
+Les propriétés sérialisées que nous venons de voir sont présentes au début.
 
 03:36.260 --> 03:41.480
-What I'm doing is I'm creating new scene parameters and a new scene.
+Ce que je fais, c'est que je crée de nouveaux paramètres de scène et une nouvelle scène.
 
 03:41.750 --> 03:44.440
-This is of a type called local physics.
+Il s'agit d'un type appelé physique locale.
 
 03:44.450 --> 03:50.600
-So I'm creating a new scene that's going to run kind of transparently right next to our main scene.
+Je crée donc une nouvelle scène qui s'exécutera de manière transparente à côté de notre scène principale.
 
 03:51.080 --> 03:53.000
-So I do that in the start.
+C'est ce que je fais au démarrage.
 
 03:53.510 --> 03:56.750
-Then down here in the.
+Puis ici, dans le.
 
 03:58.410 --> 03:59.640
-In the prediction.
+Dans la prédiction.
 
 04:03.690 --> 04:05.200
-Me see here.
+Moi voir ici.
 
 04:05.210 --> 04:08.330
-So what's really happening in the prediction?
+Que se passe-t-il réellement dans la prédiction ?
 
 04:09.230 --> 04:11.840
-As I'm calling this use markers.
+Comme je l'appelle, il s'agit de marqueurs d'utilisation.
 
 04:12.170 --> 04:14.570
-I've got a few timing iterations set up.
+J'ai mis en place quelques itérations de chronométrage.
 
 04:14.570 --> 04:16.880
-So here's the bulk of the work, right?
+Voici donc le gros du travail, n'est-ce pas ?
 
 04:17.090 --> 04:18.210
-There's two steps.
+Il y a deux étapes.
 
 04:18.230 --> 04:23.960
-First, I rebuild the markers, so periodically when I update the inspector by tweaking some of the
+Tout d'abord, je reconstruis les marqueurs, donc périodiquement, lorsque je mets à jour l'inspecteur en modifiant certains des marqueurs.
 
 04:23.960 --> 04:25.610
-values, I'll rebuild the markers.
+valeurs, je reconstruis les marqueurs.
 
 04:25.640 --> 04:29.690
-Again, this is regenerating those marker ball game objects.
+Encore une fois, il s'agit de régénérer ces objets de jeu de balle de marqueur.
 
 04:30.200 --> 04:33.580
-And what I'm doing is just looping through and creating enough of them.
+Et ce que je fais, c'est boucler et créer suffisamment d'objets.
 
 04:33.590 --> 04:41.060
-So now that we've got enough of them and notice here in line 151, I'm moving these game objects to
+Maintenant que nous en avons suffisamment, remarquez qu'à la ligne 151, je déplace ces objets de jeu vers
 
 04:41.060 --> 04:46.070
-the other scene, to that prediction scene that we created, and I'm giving them a name as well that
+l'autre scène, vers la scène de prédiction que nous avons créée, et je leur donne également un nom qui
 
 04:46.070 --> 04:47.660
-just helps me in the inspector.
+m'aider dans l'inspecteur.
 
 04:47.750 --> 04:51.590
-So after I've rebuilt the markers, I can actually do the prediction.
+Après avoir reconstruit les marqueurs, je peux donc effectuer la prédiction.
 
 04:51.590 --> 04:57.980
-So I take that same set of prediction iterations and I loop through them.
+Je prends donc le même ensemble d'itérations de prédiction et je les parcours en boucle.
 
 04:57.980 --> 05:04.700
-And in this for loop, what I'm doing is for each prediction that I'm doing, I'm simulating that scene's
+Et dans cette boucle for, ce que je fais, c'est que pour chaque prédiction que je fais, je simule la scène de
 
 05:04.700 --> 05:05.300
-physics.
+physique.
 
 05:05.300 --> 05:06.130
-One tick.
+Un tick.
 
 05:06.820 --> 05:12.060
-So if I hadn't manually called simulate, there would be no physics simulation there.
+Donc si je n'avais pas appelé manuellement simulate, il n'y aurait pas de simulation physique ici.
 
 05:12.070 --> 05:19.210
-So what I'm able to do is loop through and tick it once and then move one of the markers to that spot.
+Ce que je peux faire, c'est boucler la boucle et cocher la case une fois, puis déplacer l'un des marqueurs à cet endroit.
 
 05:19.210 --> 05:25.440
-Then I tick it again and I move the next marker to that spot and I proceed until I make the entire arc.
+Puis je le coche à nouveau et je déplace le marqueur suivant à cet endroit, et je continue jusqu'à ce que j'aie parcouru tout l'arc.
 
 05:25.450 --> 05:26.620
-And that's it.
+Et c'est tout.
 
 05:27.460 --> 05:29.170
-The process works really well.
+Le processus fonctionne très bien.
 
 05:29.170 --> 05:31.140
-It's giving me just the result that I want.
+Il me donne exactement le résultat que je veux.
 
 05:31.150 --> 05:37.690
-As I mentioned, it doesn't run so fast in a frame rate sort of way, but it still works really good.
+Comme je l'ai dit, le processus n'est pas très rapide en termes de fréquence d'images, mais il fonctionne toujours très bien.
 
 05:38.110 --> 05:38.750
-That's it.
+C'est tout.
 
 05:38.770 --> 05:39.730
-Thanks very much.
+Merci beaucoup.
 
 05:41.950 --> 05:47.470
-In the next video, we'll take a look at the data oriented technology stack or dots for unity physics.
+Dans la prochaine vidéo, nous examinerons la pile technologique orientée données ou les points pour la physique de l'unité.

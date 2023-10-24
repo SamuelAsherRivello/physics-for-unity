@@ -1,205 +1,205 @@
 WEBVTT
 
 00:01.500 --> 00:08.190
-Creating the player and input in this video will cover taking keyboard input using rigid body add force
+La création du lecteur et de l'entrée dans cette vidéo couvrira la prise d'entrée au clavier en utilisant un corps rigide pour ajouter de la force.
 
 00:08.190 --> 00:11.440
-for motion and using pro grids to position the walls.
+pour les mouvements et l'utilisation de pro grids pour positionner les murs.
 
 00:11.460 --> 00:12.840
-Here's the task breakdown.
+Voici la répartition des tâches.
 
 00:12.840 --> 00:15.140
-We'll add the crazy ball C-sharp script.
+Nous allons ajouter le script C-sharp de la balle folle.
 
 00:15.150 --> 00:19.220
-We'll use pro grids to position the wall elements and we'll add those walls.
+Nous utiliserons les pro grids pour positionner les éléments de mur et nous ajouterons ces murs.
 
 00:19.230 --> 00:21.570
-This screenshot represents our end target.
+Cette capture d'écran représente notre objectif final.
 
 00:22.390 --> 00:27.550
-For the project, we'll open up section six, Video two and the scene crazy ball to.
+Pour le projet, nous allons ouvrir la section six, la vidéo deux et la scène crazy ball to.
 
 00:28.750 --> 00:34.270
-All right, let's open up unity here and we're going to go into Crazy Ball two if we play this scene
+Très bien, ouvrons unity ici et nous allons aller dans Crazy Ball 2 si nous jouons cette scène.
 
 00:34.270 --> 00:34.780
-here.
+ici.
 
 00:37.070 --> 00:39.230
-We'll see that I'm able to take keyboard input.
+Nous allons voir que je suis capable de prendre des entrées au clavier.
 
 00:40.220 --> 00:42.000
-And bounce properly off the walls.
+Et rebondir correctement sur les murs.
 
 00:42.020 --> 00:43.550
-So let's see how that set up.
+Voyons comment cela se passe.
 
 00:44.240 --> 00:46.370
-First of all, we've got a crazy ball here.
+Tout d'abord, nous avons une balle folle ici.
 
 00:47.230 --> 00:48.250
-You know, the crazy ball.
+Vous savez, la balle folle.
 
 00:48.250 --> 00:55.060
-It's just a sphere with a sphere collider, a rigid body with default settings, and then a custom crazy
+Il s'agit simplement d'une sphère avec un collisionneur de sphère, un corps rigide avec les paramètres par défaut, puis une boule folle personnalisée.
 
 00:55.060 --> 00:55.930
-ball script.
+script de balle.
 
 00:55.960 --> 00:59.060
-Let's see how that works in the crazy ball script.
+Voyons comment cela fonctionne dans le script de la balle folle.
 
 00:59.080 --> 01:01.750
-In the update, we capture the keyboard input.
+Dans la mise à jour, nous capturons l'entrée clavier.
 
 01:01.750 --> 01:09.040
-We use Unity's input class, which automatically maps to the arrow keys on the keyboard and any gamepads
+Nous utilisons la classe d'entrée d'Unity, qui correspond automatiquement aux touches fléchées du clavier et aux manettes de jeu.
 
 01:09.040 --> 01:10.000
-that you have hooked up.
+que vous avez branchées.
 
 01:10.000 --> 01:11.560
-I'm just using the keyboard.
+Je n'utilise que le clavier.
 
 01:11.890 --> 01:21.400
-Then I cache the last input and every update I use rigid body add force and I multiply the last input
+Ensuite, je mets en cache la dernière entrée et, à chaque mise à jour, j'utilise le corps rigide pour ajouter une force et je multiplie la dernière entrée.
 
 01:21.400 --> 01:22.600
-times the speed.
+fois la vitesse.
 
 01:22.810 --> 01:28.570
-This way I can have more dramatic or less dramatic keyboard input depending on that speed value.
+De cette façon, la saisie au clavier peut être plus ou moins dramatique en fonction de la valeur de la vitesse.
 
 01:28.600 --> 01:29.830
-Let's see how it works.
+Voyons comment cela fonctionne.
 
 01:30.680 --> 01:31.850
-When I run the scene.
+Lorsque je lance la scène.
 
 01:35.430 --> 01:37.500
-Now use the keyboard input here.
+Utilisons maintenant la saisie au clavier ici.
 
 01:37.500 --> 01:39.360
-I'm moving my character through the world.
+Je déplace mon personnage dans le monde.
 
 01:39.540 --> 01:47.400
-If I change this to a value of 100 for speed, for example, I'll get much more maximum speed as well
+Si je passe à une valeur de 100 pour la vitesse, par exemple, j'obtiendrai également une vitesse maximale beaucoup plus élevée
 
 01:47.400 --> 01:48.660
-as acceleration.
+ainsi que l'accélération.
 
 01:50.470 --> 01:52.630
-This is a little bit too much power.
+C'est un peu trop de puissance.
 
 01:52.660 --> 01:55.390
-Let's try a low value like five.
+Essayons une valeur faible comme cinq.
 
 01:56.800 --> 01:57.250
-Here.
+Ici.
 
 01:57.250 --> 02:02.230
-The ball feels like it has a lot of weight to it and I really have to hold the keys in any direction
+La balle semble avoir beaucoup de poids et je dois vraiment tenir les touches dans n'importe quelle direction.
 
 02:02.230 --> 02:05.110
-for a long period of time to correct its movement.
+pendant une longue période pour corriger son mouvement.
 
 02:05.650 --> 02:07.750
-You can experiment with the values you like.
+Vous pouvez expérimenter les valeurs qui vous conviennent.
 
 02:07.780 --> 02:08.910
-I like 20.
+J'aime bien 20.
 
 02:08.920 --> 02:13.720
-I think it's a good mixture of feeling like I have enough control, but still respecting that there's
+Je pense que c'est un bon mélange entre le sentiment d'avoir suffisamment de contrôle et le respect du fait qu'il y a un certain nombre de choses à faire.
 
 02:13.720 --> 02:15.400
-some mass and movement going on.
+une certaine masse et un certain mouvement.
 
 02:16.560 --> 02:17.010
-Great.
+Très bien.
 
 02:17.130 --> 02:19.140
-So now let's talk about this environment.
+Parlons maintenant de cet environnement.
 
 02:19.500 --> 02:22.170
-We've got a series of walls here set up.
+Nous avons mis en place une série de murs.
 
 02:24.370 --> 02:30.310
-Each wall piece is about this big and already has a mesh collider on it.
+Chaque morceau de mur fait à peu près cette taille et est déjà équipé d'un collisionneur de maillage.
 
 02:30.310 --> 02:33.280
-So all we have to do is position these in the world where we want.
+Il ne nous reste plus qu'à les positionner dans le monde à l'endroit voulu.
 
 02:33.490 --> 02:35.230
-Let's decide how we want to do that.
+Décidons de la manière dont nous allons procéder.
 
 02:35.620 --> 02:38.560
-So first I'll get rid of the ones that we've got.
+Je vais d'abord me débarrasser de ceux que nous avons.
 
 02:40.050 --> 02:41.610
-And I'll drag out a wall piece.
+Et je vais sortir un morceau de mur.
 
 02:48.080 --> 02:48.680
-There you go.
+Et voilà.
 
 02:49.270 --> 02:51.830
-Now, I could freely move these around.
+Je peux maintenant les déplacer librement.
 
 02:51.850 --> 02:55.030
-You can see that I'm able to move them with a lot of accuracy.
+Vous pouvez voir que je suis capable de les déplacer avec beaucoup de précision.
 
 02:55.720 --> 03:00.790
-But it's possible that I would set them up with a little gaps between them or possible overlaps.
+Mais il est possible que je les place avec un peu d'espace entre eux ou des chevauchements possibles.
 
 03:00.790 --> 03:06.040
-So we're going to use a really nice tool that I've already imported called pro grids.
+Nous allons donc utiliser un outil très intéressant que j'ai déjà importé et qui s'appelle pro grids.
 
 03:06.610 --> 03:14.230
-When I turn pro grids on, it will automatically snap to one unit and with the on toggle, everything
+Lorsque j'active pro grids, il s'enclenche automatiquement sur une unité et, avec la bascule activée, tout ce qui se trouve à l'intérieur de l'écran s'enclenche.
 
 03:14.230 --> 03:17.140
-that I move will automatically be snapped.
+que je déplace sera automatiquement accroché.
 
 03:17.590 --> 03:22.000
-So when I start to move these around the world, you can see they snap in whole units.
+Lorsque je commence à déplacer ces objets dans le monde, vous pouvez voir qu'ils s'enclenchent par unités entières.
 
 03:22.300 --> 03:28.300
-Then I'll use control dx or command dx on the Mac to duplicate and move them out.
+J'utilise ensuite control dx ou command dx sur Mac pour les dupliquer et les déplacer.
 
 03:29.530 --> 03:30.190
-This way.
+Par ici.
 
 03:30.190 --> 03:33.390
-I know if I want a gap, it will be a whole unit.
+Je sais que si je veux un espace, il s'agira d'une unité entière.
 
 03:33.400 --> 03:36.250
-Otherwise, I know I'm snapping right to the edge of the object.
+Sinon, je sais que j'accroche directement au bord de l'objet.
 
 03:36.860 --> 03:40.910
-So I can duplicate and add a whole line of those.
+Je peux donc dupliquer et ajouter une ligne entière de ces objets.
 
 03:41.210 --> 03:47.090
-Then I can duplicate and also use rotation, of course, to position these exactly where I want them.
+Je peux ensuite dupliquer et utiliser la rotation, bien sûr, pour les positionner exactement là où je le souhaite.
 
 03:53.900 --> 03:56.210
-And you continue to make your level design like that.
+Et vous continuez à concevoir votre niveau de cette manière.
 
 04:00.850 --> 04:06.490
-And because they have automatically mesh gliders built onto them, you can see that we get the functionality
+Et parce qu'ils ont des planeurs à maillage automatique intégrés, vous pouvez voir que nous obtenons la fonctionnalité
 
 04:06.490 --> 04:10.750
-we want, which is that my character collides and interacts with them.
+que nous voulons, c'est-à-dire que mon personnage entre en collision et interagit avec eux.
 
 04:18.910 --> 04:19.380
-That's it.
+C'est tout.
 
 04:19.390 --> 04:22.420
-We've got the movement input and the walls.
+Nous avons l'entrée de mouvement et les murs.
 
 04:24.640 --> 04:30.550
-In the next video, we'll work on creating the obstacles we'll cover, creating movable and immovable
+Dans la prochaine vidéo, nous travaillerons sur la création des obstacles que nous couvrirons, en créant des objets mobiles et immobiles.
 
 04:30.550 --> 04:34.900
-objects, and adding spinning coins which are collectible by the player.
+et à ajouter des pièces de monnaie qui peuvent être collectées par le joueur.

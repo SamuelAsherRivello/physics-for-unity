@@ -1,154 +1,154 @@
 WEBVTT
 
 00:01.060 --> 00:03.670
-On trigger events and the collider object.
+Sur les événements déclencheurs et l'objet collider.
 
 00:03.760 --> 00:08.470
-In this video, we'll cover what our trigger events and why are they useful in our game.
+Dans cette vidéo, nous allons voir ce que sont les événements déclencheurs et pourquoi ils sont utiles dans notre jeu.
 
 00:08.740 --> 00:12.280
-We'll also open up the Unity editor and play with trigger events.
+Nous allons également ouvrir l'éditeur Unity et jouer avec les événements déclencheurs.
 
 00:12.790 --> 00:14.890
-So why use on trigger events?
+Pourquoi utiliser des événements déclencheurs ?
 
 00:15.220 --> 00:19.210
-These events give us more information about physics intersections.
+Ces événements nous donnent plus d'informations sur les intersections physiques.
 
 00:19.510 --> 00:22.630
-These are between game objects with colliders.
+Ces intersections se produisent entre des objets du jeu dotés de collisionneurs.
 
 00:22.630 --> 00:24.790
-When is trigger is set to true.
+Lorsque le déclencheur est réglé sur true.
 
 00:25.150 --> 00:26.500
-This is useful in a game.
+Ceci est utile dans un jeu.
 
 00:26.500 --> 00:29.980
-For example, when a character enters a dungeon room.
+Par exemple, lorsqu'un personnage entre dans une salle de donjon.
 
 00:30.460 --> 00:33.730
-Let's go through a scenario here with a non trigger event.
+Voyons un scénario avec un événement non déclenché.
 
 00:34.180 --> 00:37.300
-A pink cube is following toward a trigger volume.
+Un cube rose se dirige vers un volume de déclenchement.
 
 00:37.510 --> 00:43.120
-Pink has a rigid body and a collider so that it falls and it detects where its bounds are.
+Le cube rose a un corps rigide et un collisionneur qui lui permettent de tomber et de détecter ses limites.
 
 00:43.120 --> 00:47.350
-And the green has a collider with collider is trigger set to true.
+Et le vert a un collider avec collider is trigger fixé à true.
 
 00:47.620 --> 00:55.450
-So pink is falling, pink enters the trigger volume, we get the on trigger enter one time while pink
+Donc le rose tombe, le rose entre dans le volume de déclenchement, nous obtenons l'entrée de déclenchement une fois pendant que le rose
 
 00:55.450 --> 00:57.640
-is in the trigger volume.
+est dans le volume de déclenchement.
 
 00:57.640 --> 01:01.900
-While it's staying in there, we'll get a repeated call to the on trigger stay.
+Pendant qu'il reste dans le volume de déclenchement, nous recevons un appel répété à la fonction on trigger stay.
 
 01:02.080 --> 01:04.840
-We would expect this to be called many times.
+On peut s'attendre à ce qu'il soit appelé plusieurs fois.
 
 01:05.570 --> 01:12.560
-When pink exits, the trigger volume will get one time on trigger exit called and then pink continues
+Lorsque le rose sort, le volume de déclenchement est appelé une fois, puis le rose continue.
 
 01:12.560 --> 01:13.220
-to fall.
+à la baisse.
 
 01:13.610 --> 01:16.740
-Our focus here is really about the on trigger enter.
+Nous nous concentrons ici sur l'entrée de déclenchement.
 
 01:16.760 --> 01:21.530
-That's usually enough information to get what we need from the callback.
+C'est généralement une information suffisante pour obtenir ce dont nous avons besoin de la part du callback.
 
 01:21.620 --> 01:27.800
-For example, again, when a character enters a dungeon room, we would get notified that the character
+Par exemple, lorsqu'un personnage entre dans une salle de donjon, nous recevons une notification indiquant que le personnage
 
 01:27.800 --> 01:34.040
-has entered something and then we can inspect the collider object to find out if it's the dungeon room.
+est entré dans quelque chose, puis nous pouvons inspecter l'objet collider pour savoir s'il s'agit de la salle du donjon.
 
 01:34.310 --> 01:40.460
-So the collider object itself is the component that defines the shape of an object for the purposes
+L'objet collider est donc le composant qui définit la forme d'un objet pour les besoins de l'application.
 
 01:40.460 --> 01:41.700
-of physical collision.
+de la collision physique.
 
 01:41.720 --> 01:47.210
-We've used colliders before, of course, and we're going to focus on one property here, the collider
+Nous avons déjà utilisé des collisionneurs, bien sûr, et nous allons nous concentrer sur une propriété, le collisionneur.
 
 01:47.420 --> 01:51.510
-game object that's going to tell us for the collider that we're hitting.
+objet de jeu qui va nous indiquer le collider que nous frappons.
 
 01:51.530 --> 01:53.600
-What game object is it on?
+Sur quel objet de jeu se trouve-t-il ?
 
 01:53.990 --> 01:57.380
-Let's take a look at a demo we'll look at on trigger events.
+Jetons un coup d'œil à une démo que nous allons étudier sur les événements de déclenchement.
 
 01:57.380 --> 02:03.290
-One, we'll play the scene, we'll inspect the code, and as a bonus, we'll take a look at the console
+Nous allons jouer la scène, inspecter le code et, en prime, jeter un coup d'oeil à la console.
 
 02:03.290 --> 02:05.360
-Windows feature called Collapse.
+Fonctionnalité de Windows appelée Effondrement.
 
 02:06.600 --> 02:07.610
-Here we are in unity.
+Nous voici dans unity.
 
 02:07.620 --> 02:09.150
-Let's open up the next scene.
+Ouvrons la scène suivante.
 
 02:12.660 --> 02:19.260
-The en trigger events, number one, and we'll notice that q b here is set up with a box collider with
+Les événements de déclenchement en, numéro un, et nous remarquerons que q b ici est configuré avec un collisionneur de boîte avec
 
 02:19.260 --> 02:21.480
-is trigger set on.
+est activé.
 
 02:21.780 --> 02:23.430
-There's also no rigid body.
+Il n'y a pas non plus de corps rigide.
 
 02:23.640 --> 02:27.030
-When we play the scene, we expect the pink to fall right through it.
+Lorsque nous jouons la scène, nous nous attendons à ce que le rose passe au travers.
 
 02:27.180 --> 02:28.020
-Let's see.
+Voyons ce qu'il en est.
 
 02:32.280 --> 02:32.650
-Yep.
+Oui.
 
 02:32.760 --> 02:34.770
-It behaves exactly as we'd expect.
+Il se comporte exactement comme prévu.
 
 02:34.860 --> 02:42.110
-And if we look at the console we see we get one enter many stays and one exit.
+Et si nous regardons la console, nous voyons que nous avons une entrée, plusieurs séjours et une sortie.
 
 02:42.120 --> 02:43.230
-Let's look at the code.
+Regardons le code.
 
 02:46.790 --> 02:47.390
-On trigger.
+Sur le déclencheur.
 
 02:47.390 --> 02:48.560
-Enter on sugar.
+Entrée sur le sucre.
 
 02:48.560 --> 02:49.830
-Stay and on sugar.
+Reste et sur le sucre.
 
 02:49.850 --> 02:50.330
-Exit.
+Sortie.
 
 02:50.330 --> 02:51.600
-Just like we'd expect.
+Comme prévu.
 
 02:51.620 --> 02:52.430
-That's it.
+C'est tout.
 
 02:53.600 --> 02:57.320
-In the next video, we'll look at adding Programatic forces.
+Dans la prochaine vidéo, nous verrons comment ajouter des forces programmatiques.
 
 02:57.920 --> 03:04.880
-We'll cover movement and unity from a traditional sense movement in unity for physics specifically.
+Nous aborderons le mouvement et l'unité d'un point de vue traditionnel, le mouvement dans l'unité pour la physique en particulier.
 
 03:04.970 --> 03:10.100
-We'll look at types of forces and then we'll open up the unity editor and we'll play with those forces.
+Nous verrons les types de forces, puis nous ouvrirons l'éditeur unity et nous jouerons avec ces forces.

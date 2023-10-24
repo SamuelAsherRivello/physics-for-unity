@@ -1,463 +1,463 @@
 WEBVTT
 
 00:01.840 --> 00:03.150
-Optimizing physics.
+Optimisation de la physique.
 
 00:03.160 --> 00:06.810
-In this video, we'll take a look at a real world example of physics.
+Dans cette vidéo, nous allons examiner un exemple concret de physique.
 
 00:06.820 --> 00:09.220
-We'll experiment with some optimizations.
+Nous allons expérimenter quelques optimisations.
 
 00:09.220 --> 00:12.700
-Finally, we'll improve on the performance dramatically.
+Enfin, nous améliorerons considérablement les performances.
 
 00:13.030 --> 00:14.530
-So let's optimize.
+Optimisons donc.
 
 00:14.980 --> 00:19.560
-I created a demo with many instances of the same chain object.
+J'ai créé une démo avec plusieurs instances du même objet chaîne.
 
 00:19.570 --> 00:22.810
-You can see here I'm spawning about 20,000.
+Vous pouvez voir ici que j'en crée environ 20 000.
 
 00:23.260 --> 00:25.420
-The current performance is very low.
+Les performances actuelles sont très faibles.
 
 00:25.420 --> 00:28.420
-It's around three frames per second on my laptop.
+Elle est d'environ trois images par seconde sur mon ordinateur portable.
 
 00:28.420 --> 00:31.900
-You might see different performance, of course, depending what machine you're on.
+Les performances peuvent varier, bien sûr, en fonction de la machine sur laquelle vous vous trouvez.
 
 00:31.900 --> 00:36.100
-Let's set a goal for ourselves to get performance around 60 frames per second.
+Fixons-nous pour objectif d'obtenir des performances de l'ordre de 60 images par seconde.
 
 00:36.280 --> 00:38.500
-We'll see what we can do to optimize it.
+Nous allons voir ce que nous pouvons faire pour l'optimiser.
 
 00:40.620 --> 00:41.980
-Let's take a look at the demo.
+Jetons un coup d'œil à la démo.
 
 00:42.000 --> 00:44.720
-We'll use the optimized physics begin scene.
+Nous allons utiliser la scène de début de physique optimisée.
 
 00:44.730 --> 00:50.430
-We'll play the scene and then we'll iterate on optimizations, will continually check the frame rate
+Nous jouons la scène, puis nous itérons sur les optimisations, nous vérifions continuellement le taux de rafraîchissement.
 
 00:50.430 --> 00:51.480
-and see how we do.
+et nous verrons comment nous nous en sortons.
 
 00:52.110 --> 00:53.790
-All right, let's jump into the project.
+Très bien, entrons dans le projet.
 
 00:54.300 --> 00:57.150
-So we're looking at the optimized begin scene.
+Nous examinons donc la scène de début optimisée.
 
 00:57.540 --> 01:02.460
-What I have set up here is a series of links from a chain.
+Ce que j'ai mis en place ici est une série de liens d'une chaîne.
 
 01:02.640 --> 01:04.170
-It's not a chain with joints.
+Ce n'est pas une chaîne avec des articulations.
 
 01:04.170 --> 01:06.000
-I'm just using those pieces.
+Je n'utilise que ces morceaux.
 
 01:06.000 --> 01:11.460
-And if I open this window up a little bit more Unity has some stats.
+Et si j'ouvre un peu plus cette fenêtre, Unity affiche quelques statistiques.
 
 01:12.420 --> 01:18.300
-With the statistics, we can see that as these pieces are falling and interacting with the flaw in each
+Avec les statistiques, nous pouvons voir qu'au fur et à mesure que ces pièces tombent et interagissent avec le défaut de chacune d'entre elles, elles s'effondrent.
 
 01:18.300 --> 01:18.840
-other.
+l'autre.
 
 01:18.840 --> 01:25.200
-We're getting a frame rate around 2.8 to 3 frames per second, so this is very low.
+Nous obtenons une fréquence d'images d'environ 2,8 à 3 images par seconde, ce qui est très faible.
 
 01:25.860 --> 01:28.840
-Let's shoot for a target of something like 60 frames a second.
+Visons un objectif d'environ 60 images par seconde.
 
 01:28.890 --> 01:30.720
-See what kinds of changes we can make.
+Voyons quels types de changements nous pouvons apporter.
 
 01:32.070 --> 01:33.990
-So the scene setup is pretty simple.
+La configuration de la scène est donc assez simple.
 
 01:33.990 --> 01:35.040
-There's a floor.
+Il y a un sol.
 
 01:35.070 --> 01:40.680
-Then I have a in here, which I'm using to create about 20,000 objects, which is a lot.
+J'ai ensuite un in ici, que j'utilise pour créer environ 20 000 objets, ce qui est beaucoup.
 
 01:41.010 --> 01:42.420
-Then I have a scene.
+J'ai ensuite une scène.
 
 01:43.350 --> 01:46.630
-Game object set up called Optimized Physics setup.
+Configuration de l'objet de jeu appelé Optimized Physics setup (configuration de la physique optimisée).
 
 01:46.650 --> 01:50.200
-It's a bunch of stuff that's comments or code that's commented out.
+C'est un tas de choses qui sont des commentaires ou du code qui est commenté.
 
 01:50.220 --> 01:51.690
-Let's step through each of them.
+Passons en revue chacun d'entre eux.
 
 01:51.780 --> 01:56.850
-First of all, as testing advice, this doesn't really make it a more efficient project, but it gives
+Tout d'abord, en tant que conseil de test, cela ne rend pas vraiment le projet plus efficace, mais cela donne
 
 01:56.850 --> 02:00.270
-us better frame rate readout in that screen UI.
+une meilleure lecture de la fréquence d'images dans l'interface utilisateur de l'écran.
 
 02:00.390 --> 02:02.550
-We just set the V Sync count to zero.
+Nous venons de mettre le compte V Sync à zéro.
 
 02:02.550 --> 02:09.660
-So for the optimization itself, the first big step is always upgrade unity to the latest public version.
+Pour ce qui est de l'optimisation proprement dite, la première étape consiste toujours à mettre à jour unity vers la dernière version publique.
 
 02:09.660 --> 02:14.670
-If you can, you're going to get better performance because unity is always updating their whole system
+Si vous le pouvez, vous obtiendrez de meilleures performances car unity met constamment à jour l'ensemble de son système.
 
 02:14.670 --> 02:18.510
-of rendering and physics, etc. so you get really great results.
+de rendu et de physique, etc. afin d'obtenir de très bons résultats.
 
 02:18.600 --> 02:24.300
-Secondly, while you're testing, if the frame rate is very important to you, consider building to
+Deuxièmement, pendant que vous testez, si la fréquence d'images est très importante pour vous, envisagez de passer à
 
 02:24.300 --> 02:29.550
-your end device, whether it's a windows build or building it on iOS or Android and testing it closer
+votre appareil final, qu'il s'agisse d'une version Windows ou d'une version iOS ou Android, et testez-la de plus près.
 
 02:29.550 --> 02:37.080
-to the end users experience, you'll get performance that is either better or more close to what the
+de l'expérience de l'utilisateur final, vous obtiendrez des performances meilleures ou plus proches de celles de l'utilisateur final.
 
 02:37.080 --> 02:39.510
-user will get, which is of course, important benchmark.
+l'utilisateur, ce qui est bien sûr un point de référence important.
 
 02:40.660 --> 02:43.390
-Let's start with some of the stuff that we can do within the project.
+Commençons par les choses que nous pouvons faire dans le cadre du projet.
 
 02:43.720 --> 02:48.190
-Number three, we can go ahead and turn the shadows off in the scene.
+Troisièmement, nous pouvons aller de l'avant et désactiver les ombres dans la scène.
 
 02:48.220 --> 02:52.450
-We can also set the floor in the scene to static, which is a physics change.
+Nous pouvons également rendre le sol de la scène statique, ce qui est une modification de la physique.
 
 02:52.810 --> 03:00.100
-We can go to the thing prefab and we can set its mesh collider off and use a primitive like a box collider
+Nous pouvons aller dans le préfabriqué de la chose et désactiver son collider mesh pour utiliser une primitive comme un collider box.
 
 03:00.100 --> 03:00.700
-instead.
+à la place.
 
 03:00.730 --> 03:03.940
-Let's do those three steps and see what kinds of changes we get.
+Faisons ces trois étapes et voyons quels types de changements nous obtenons.
 
 03:04.450 --> 03:06.070
-So first of all, with the lighting.
+Commençons par l'éclairage.
 
 03:07.270 --> 03:10.660
-We've got a hard shadows which are.
+Nous avons des ombres dures qui sont.
 
 03:11.440 --> 03:13.630
-More efficient than the soft shadows.
+Plus efficaces que les ombres douces.
 
 03:13.630 --> 03:15.370
-But let's try no shadows.
+Mais essayons sans ombres.
 
 03:15.370 --> 03:16.930
-Let's see if we get any effect here.
+Voyons si nous obtenons un effet quelconque.
 
 03:16.930 --> 03:20.620
-So just we're going to step through in Some of these things might make a good difference, and some
+Nous allons donc passer en revue certaines de ces choses qui pourraient faire une bonne différence, et d'autres qui pourraient être utiles pour la mise en place d'un système de gestion des ombres.
 
 03:20.620 --> 03:21.490
-of them might not.
+d'entre elles pourraient ne pas l'être.
 
 03:21.880 --> 03:27.970
-So what we do is a mouse click here to kick off the spinner and.
+Nous cliquons donc ici sur la souris pour lancer le spinner et...
 
 03:28.780 --> 03:30.190
-At least in the beginning.
+Au moins au début.
 
 03:30.190 --> 03:34.330
-I mean, with more time, it's going to slow down because there's more and more calculations.
+Je veux dire qu'avec le temps, ça va ralentir parce qu'il y a de plus en plus de calculs.
 
 03:34.330 --> 03:36.490
-But I think it might be a little bit better.
+Mais je pense que c'est un peu mieux.
 
 03:36.490 --> 03:41.170
-We're hovering closer to three than we were before, so consider that an option.
+Nous sommes plus proches de trois qu'auparavant, alors considérez cela comme une option.
 
 03:42.180 --> 03:44.230
-Your game, of course, may require shadows.
+Votre jeu, bien sûr, peut nécessiter des ombres.
 
 03:44.290 --> 03:45.150
-Maybe you can't do that.
+Vous ne pouvez peut-être pas le faire.
 
 03:45.150 --> 03:49.050
-But I just want to point out there's a non physics kind of go to solution there.
+Mais je tiens à souligner qu'il existe une solution non physique.
 
 03:49.200 --> 03:54.120
-The next thing we're going to look at is setting the simple floor, which is under everything, setting
+La prochaine chose que nous allons examiner est le réglage du plancher simple, qui se trouve en dessous de tout, en réglant
 
 03:54.120 --> 03:55.020
-it to static.
+à statique.
 
 03:55.820 --> 04:00.980
-In just doing that may optimize the rigid body, may be able to work more efficiently.
+En faisant cela, on peut optimiser le corps rigide et travailler plus efficacement.
 
 04:00.980 --> 04:02.030
-So let's take a look.
+Jetons un coup d'œil.
 
 04:02.650 --> 04:05.660
-So remember, we were getting about three in the best.
+Souvenez-vous, nous avions environ trois dans le meilleur des cas.
 
 04:06.580 --> 04:07.780
-Here.
+Ici.
 
 04:10.280 --> 04:11.780
-It's more or less the same.
+C'est plus ou moins la même chose.
 
 04:11.780 --> 04:16.010
-It's possible that there's little changes, but that's something to check out.
+Il est possible qu'il y ait de petits changements, mais c'est à vérifier.
 
 04:16.640 --> 04:19.820
-If you had more objects, setting more of them static would be good.
+Si vous aviez plus d'objets, il serait bon d'en rendre un plus grand nombre statiques.
 
 04:19.850 --> 04:21.960
-Next, let's look at the thing prefab.
+Regardons ensuite le préfabriqué thing.
 
 04:21.980 --> 04:25.190
-So let's take this and bring it out into the world and zoom in.
+Prenons-le et amenons-le dans le monde en zoomant.
 
 04:25.190 --> 04:28.430
-And we can see here we've got a mesh collider on there.
+Nous pouvons voir ici que nous avons un collisionneur de maillage.
 
 04:28.430 --> 04:35.540
-So if we turn off the mesh collider and instead add a box collider and we can see that the box collider
+Si nous désactivons le collider de maillage et que nous ajoutons à la place un collider de boîte, nous pouvons voir que le collider de boîte
 
 04:35.540 --> 04:38.600
-does a pretty good job of estimating its shape anyway.
+fait de toute façon un très bon travail d'estimation de sa forme.
 
 04:38.600 --> 04:43.910
-Of course, the corners are not round anymore and depending on our game project that might actually
+Bien sûr, les coins ne sont plus ronds et, en fonction de notre projet de jeu, cela pourrait en fait
 
 04:43.910 --> 04:47.000
-matter, might give us a different enough physics result.
+Cela peut avoir de l'importance et nous donner un résultat physique assez différent.
 
 04:47.300 --> 04:52.910
-So now that I've made that change and saved it into the prefab, let's see how that works.
+Maintenant que j'ai effectué ce changement et que je l'ai enregistré dans le préfabriqué, voyons comment cela fonctionne.
 
 04:55.830 --> 04:58.020
-So I click my mouse to give it a start.
+Je clique donc sur ma souris pour démarrer.
 
 05:03.740 --> 05:05.350
-It's hovering around three.
+Il oscille autour de trois.
 
 05:06.850 --> 05:09.670
-Then that that may not have made a big difference here.
+Il se peut donc que cela n'ait pas fait une grande différence ici.
 
 05:10.720 --> 05:16.360
-So I'm just going to double check actually that that is indeed a change has been done.
+Je vais donc vérifier une nouvelle fois qu'il s'agit bien d'un changement.
 
 05:16.660 --> 05:17.880
-I have a box collider.
+J'ai un box collider.
 
 05:17.890 --> 05:19.570
-The mesh collider is off.
+Le collider mesh est désactivé.
 
 05:19.780 --> 05:21.550
-I'm going to remove the mesh Collider.
+Je vais supprimer le collider mesh.
 
 05:21.850 --> 05:23.800
-I don't know if that even makes a difference, but.
+Je ne sais pas si cela fait une différence, mais...
 
 05:24.800 --> 05:29.150
-Even though it was toggled off, because I'm surprised we're not getting a little bit of a frame jump
+Même s'il a été désactivé, parce que je suis surpris que nous n'ayons pas un petit saut d'image.
 
 05:29.150 --> 05:31.730
-there, a little bit of improvement.
+ici, un peu d'amélioration.
 
 05:35.810 --> 05:37.640
-And it doesn't look like that's made a big difference.
+Et il ne semble pas que cela ait fait une grande différence.
 
 05:37.640 --> 05:39.440
-But maybe in your project it would.
+Mais peut-être que dans votre projet, ce serait le cas.
 
 05:40.350 --> 05:41.490
-Let's go to the next steps.
+Passons aux étapes suivantes.
 
 05:42.850 --> 05:43.390
-Here.
+Ici.
 
 05:43.390 --> 05:47.200
-There's several different time values that we're going to be able to tweak.
+Il y a plusieurs valeurs de temps différentes que nous allons pouvoir régler.
 
 05:47.410 --> 05:55.990
-Now, with each of these, you're going to look for a compromise between accurate physics or efficient
+Pour chacune de ces valeurs, vous allez chercher un compromis entre une physique précise et une physique efficace.
 
 05:55.990 --> 05:56.740
-frame rate.
+taux de rafraîchissement.
 
 05:56.980 --> 06:01.930
-So we're able to tweak these and they're going to be doing calculations still, but maybe less often
+Nous sommes donc en mesure d'ajuster ces éléments et ils continueront à effectuer des calculs, mais peut-être moins souvent.
 
 06:01.930 --> 06:03.360
-or more often than before.
+ou plus souvent qu'avant.
 
 06:03.370 --> 06:08.110
-So just with those tweaks, these are some values that I fooled around with ahead of time and I got
+Voici donc quelques valeurs avec lesquelles j'ai joué à l'avance et que j'ai obtenues avec ces ajustements
 
 06:08.110 --> 06:08.890
-some good results.
+de bons résultats.
 
 06:08.890 --> 06:09.760
-So let's take a look.
+Jetons donc un coup d'œil.
 
 06:10.800 --> 06:11.880
-I'm going to run here.
+Je vais courir ici.
 
 06:15.850 --> 06:16.810
-And give it a play.
+Et faire un essai.
 
 06:18.030 --> 06:21.570
-So this is making a huge difference.
+Cela fait une énorme différence.
 
 06:21.570 --> 06:24.330
-I think in this case, this is really the key.
+Je pense que dans ce cas, c'est vraiment la clé.
 
 06:25.080 --> 06:28.830
-We could probably do only this change and an undo those other ones.
+Nous pourrions probablement ne faire que ce changement et annuler les autres.
 
 06:28.830 --> 06:31.740
-Previously, we're up to 80, 80 some frames a second.
+Auparavant, nous sommes passés à 80, 80 images par seconde.
 
 06:31.740 --> 06:35.100
-So we've met our target of 60, which is fantastic.
+Nous avons donc atteint notre objectif de 60, ce qui est fantastique.
 
 06:35.220 --> 06:39.450
-So again, if you look at the documentation for those two properties, you can learn a little bit more
+Encore une fois, si vous regardez la documentation pour ces deux propriétés, vous pouvez en apprendre un peu plus
 
 06:39.450 --> 06:41.700
-about what they do and why you can tweak them.
+sur ce qu'elles font et pourquoi vous pouvez les modifier.
 
 06:41.700 --> 06:46.800
-And depending on your project, maybe you can't tweak them exactly as as extremely as I did.
+Et en fonction de votre projet, vous ne pourrez peut-être pas les modifier autant que je l'ai fait.
 
 06:46.800 --> 06:49.920
-You might need the accuracy there.
+Vous pourriez avoir besoin d'une certaine précision.
 
 06:50.490 --> 06:53.790
-Then a couple of other things that I try that didn't really help me out.
+Ensuite, j'ai essayé d'autres choses qui ne m'ont pas vraiment aidé.
 
 06:54.330 --> 07:01.530
-There's some physics settings that you can set here and setting them, and maybe the values I've chosen
+Il y a quelques paramètres de physique que vous pouvez régler ici et en les réglant, et peut-être les valeurs que j'ai choisies
 
 07:01.530 --> 07:04.020
-didn't really give me a good difference.
+ne m'ont pas permis d'obtenir une bonne différence.
 
 07:04.020 --> 07:09.060
-So I'm not going to bring those into the party of this conversation, but just know that there are some
+Je ne vais donc pas en parler dans le cadre de cette conversation, mais sachez qu'il y en a quelques-unes.
 
 07:09.060 --> 07:10.050
-other values tweak.
+d'autres valeurs.
 
 07:10.050 --> 07:13.320
-And lastly, there is something in the settings called Adaptive Force.
+Enfin, il y a quelque chose dans les paramètres qui s'appelle Adaptive Force (force adaptative).
 
 07:13.320 --> 07:14.550
-I'll give that a try.
+Je vais essayer.
 
 07:15.300 --> 07:22.680
-In physics Project settings Physics enable adaptive force.
+Dans les paramètres de Physics Project, Physics active la force adaptative.
 
 07:22.680 --> 07:25.110
-Oh, it's already enabled actually in our demo here.
+Oh, c'est déjà activé dans notre démo.
 
 07:25.110 --> 07:30.780
-So it is enables the force which improves the stability of large stacks.
+Il s'agit donc d'activer la force qui améliore la stabilité des grandes piles.
 
 07:30.780 --> 07:37.800
-So stability sounds like maybe it's better result but more slow because I imagine there's a calculation
+La stabilité semble donc être un meilleur résultat mais plus lent car j'imagine qu'il y a un calcul...
 
 07:37.800 --> 07:38.160
-there.
+il y a un calcul.
 
 07:38.160 --> 07:42.600
-Let's turn it off and let's see if we get worse Performance.
+Désactivons-le et voyons si nous obtenons de moins bonnes performances.
 
 07:42.600 --> 07:44.250
-We're better performance.
+Nous sommes plus performants.
 
 07:46.400 --> 07:47.630
-Or maybe it'll be the same.
+Ou peut-être que ce sera la même chose.
 
 07:48.320 --> 07:50.840
-So we're looking good.
+Nous avons donc l'air en forme.
 
 07:52.970 --> 07:54.710
-Before.
+Avant.
 
 07:57.000 --> 07:59.230
-Yeah, I would say that this is better now.
+Oui, je dirais que c'est mieux maintenant.
 
 07:59.250 --> 08:03.840
-So not having the adaptive feature on is better.
+Il est donc préférable de ne pas activer la fonction d'adaptation.
 
 08:04.380 --> 08:08.490
-It's hard to tell because as we let this play, there's more complexity in the scene.
+C'est difficile à dire parce qu'au fur et à mesure que nous laissons jouer, la scène devient plus complexe.
 
 08:08.490 --> 08:14.250
-So it's not scientific the way that we're just looking at the frame rate here and doing a visual gauge.
+Il ne s'agit donc pas d'une approche scientifique, puisque nous nous contentons de regarder la fréquence d'images et de faire une évaluation visuelle.
 
 08:14.250 --> 08:19.830
-But overall we see that we've gotten much better performance than we had before.
+Mais dans l'ensemble, nous constatons que les performances sont bien meilleures qu'auparavant.
 
 08:20.620 --> 08:20.890
-Now.
+Maintenant.
 
 08:20.890 --> 08:23.320
-And of course, we're with 20,000 objects.
+Et bien sûr, nous sommes avec 20 000 objets.
 
 08:23.320 --> 08:29.950
-So it's good in your game, too, if you're experiencing some frame rate problems, maybe complicate
+C'est donc une bonne chose pour votre jeu, si vous rencontrez des problèmes de fréquence d'images, et si vous compliquez les choses.
 
 08:29.950 --> 08:35.680
-the issue with more obstacles, more levels in your level design.
+le problème avec plus d'obstacles, plus de niveaux dans votre conception de niveau.
 
 08:36.160 --> 08:41.980
-See if you can make it slower then these each of these little changes will make a more dramatic frame
+Voyez si vous pouvez le rendre plus lent, puis chacun de ces petits changements rendra le cadre plus dramatique.
 
 08:41.980 --> 08:44.470
-rate change and then you'll understand.
+et vous comprendrez.
 
 08:44.470 --> 08:45.790
-Okay, this feature helps.
+D'accord, cette fonction est utile.
 
 08:45.790 --> 08:46.830
-This feature doesn't.
+Cette fonction n'aide pas.
 
 08:46.840 --> 08:51.880
-Then when you remove the complexity, you're back to a frame rate that's more stable and again, that
+Ensuite, lorsque vous supprimez la complexité, vous revenez à une fréquence d'images plus stable.
 
 08:51.880 --> 08:53.950
-represents the game that you want there.
+représente le jeu que vous voulez.
 
 08:53.950 --> 08:55.090
-So that's it.
+C'est tout.
 
 08:55.390 --> 09:00.520
-You can also take a look at the optimized physics complete scene to see the exact same end result.
+Vous pouvez également jeter un coup d'oeil à la scène physique optimisée complète pour voir exactement le même résultat final.
 
 09:00.520 --> 09:04.600
-But just as you're experimenting, if you want to jump in, play around and then compare yourself,
+Mais comme vous êtes en train d'expérimenter, si vous voulez vous lancer, jouez un peu et comparez ensuite,
 
 09:04.600 --> 09:05.400
-you can do that.
+vous pouvez le faire.
 
 09:05.410 --> 09:06.140
-So that's it.
+Voilà, c'est tout.
 
 09:06.160 --> 09:07.030
-Thanks very much.
+Merci beaucoup.
 
 09:09.720 --> 09:14.010
-In the next video, we'll take a look at predicting physics trajectory.
+Dans la prochaine vidéo, nous nous intéresserons à la prédiction de la trajectoire de la physique.

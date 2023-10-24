@@ -1,253 +1,253 @@
 WEBVTT
 
 00:01.740 --> 00:07.570
-Adding extra polish in this video will cover adding programmatic animation for the collected coins.
+Cette vidéo couvre l'ajout d'une animation programmatique pour les pièces collectées.
 
 00:07.590 --> 00:11.640
-We'll add sounds through the sound manager and we'll discuss level design.
+Nous ajouterons des sons à l'aide du gestionnaire de sons et nous discuterons de la conception des niveaux.
 
 00:11.850 --> 00:13.230
-So what is Polish?
+Qu'est-ce que le polonais ?
 
 00:13.230 --> 00:13.640
-Polish?
+Polonais ?
 
 00:13.830 --> 00:18.960
-Are the small details at the end of a project which take a good project and make it great?
+Ce sont les petits détails à la fin d'un projet qui font d'un bon projet un grand projet ?
 
 00:18.990 --> 00:24.420
-Often they're visual and audio and animation and small gameplay tweaks to.
+Souvent, il s'agit de détails visuels, audio et d'animation, ainsi que de petits ajustements au niveau du gameplay.
 
 00:25.560 --> 00:29.370
-The tax break breakdown here will be to add animation to our spinning coins.
+La répartition de l'allégement fiscal ici sera d'ajouter de l'animation à nos pièces qui tournent.
 
 00:29.370 --> 00:33.870
-So when we collect them, they fade in instead of instantly disappearing.
+Ainsi, lorsque nous les collectons, elles s'effacent au lieu de disparaître instantanément.
 
 00:33.870 --> 00:38.670
-We'll add sounds to key events through the sound manager and we'll discuss level design.
+Nous ajouterons des sons aux événements clés à l'aide du gestionnaire de sons et nous discuterons de la conception des niveaux.
 
 00:39.680 --> 00:45.000
-For the project, we'll open up section six Video five Crazy Ball five OC.
+Pour le projet, nous ouvrirons la section six Vidéo cinq Crazy Ball cinq OC.
 
 00:45.050 --> 00:49.070
-Here we are inside Unity and we'll open up Crazy Ball five.
+Nous voici dans Unity et nous allons ouvrir Crazy Ball five.
 
 00:49.850 --> 00:55.580
-Now here, we've added some polish, we've added some sounds, we've added some animation.
+Ici, nous avons ajouté un peu de polissage, des sons et de l'animation.
 
 00:55.580 --> 00:57.740
-And I also want to talk a bit about level design.
+J'aimerais aussi parler un peu de la conception des niveaux.
 
 00:57.890 --> 01:02.180
-So let's start with the effect that we've added for when we collect coins.
+Commençons par l'effet que nous avons ajouté lorsque nous collectons des pièces.
 
 01:02.540 --> 01:07.370
-Now, before, when we collected a coin, it would instantly disappear.
+Auparavant, lorsque nous ramassions une pièce, elle disparaissait instantanément.
 
 01:07.880 --> 01:12.860
-And here what I've done is I have it scale from its full size down to zero.
+Ici, je l'ai fait passer de sa taille maximale à zéro.
 
 01:13.130 --> 01:14.120
-Very quickly.
+Très rapidement.
 
 01:14.120 --> 01:15.620
-But I think the effect is nice.
+Mais je pense que l'effet est agréable.
 
 01:15.620 --> 01:15.860
-Watch.
+Regardez.
 
 01:15.860 --> 01:19.040
-When I collect this coin, it shrinks down.
+Lorsque je collectionne cette pièce, elle rétrécit.
 
 01:19.040 --> 01:23.780
-It's subtle, but it's a really nice level of polish that just gives you a little bit of extra feeling
+C'est subtil, mais c'est un niveau de polissage vraiment agréable qui vous donne un petit sentiment supplémentaire.
 
 01:23.780 --> 01:26.790
-that there's some care in the game and it's a nice effect.
+que le jeu est soigné et que l'effet est agréable.
 
 01:26.810 --> 01:28.700
-So let's see how we accomplish that.
+Voyons comment nous y parvenons.
 
 01:29.460 --> 01:30.960
-We'll take a look at some code.
+Jetons un coup d'œil à un peu de code.
 
 01:31.690 --> 01:38.230
-Here in the coin, we can see that in the destroy that we had set up before the destroy me public method
+Ici, dans la pièce, nous pouvons voir que dans la méthode destroy que nous avons mise en place avant la méthode publique destroy me
 
 01:38.230 --> 01:42.990
-I flag the is a live false and then I used to immediately do a destroy.
+J'ai marqué le is a live false et ensuite j'ai utilisé pour faire immédiatement un destroy.
 
 01:43.000 --> 01:49.180
-Now in number one here we can see that we're using the do scale operation and it's going to scale down
+Maintenant, dans le numéro un, nous pouvons voir que nous utilisons l'opération de mise à l'échelle et qu'il va être mis à l'échelle.
 
 01:49.180 --> 01:55.390
-to zero Over the course of about a fourth of a second, I'm able to set an easing to have it kind of
+jusqu'à zéro Sur une durée d'environ un quart de seconde, je suis capable de définir un easing pour qu'il ait une sorte d'effet d'échelle.
 
 01:55.390 --> 01:58.150
-bounce or do it quickly or accelerate as it goes.
+de rebondir, de le faire rapidement ou d'accélérer au fur et à mesure.
 
 01:58.150 --> 01:59.680
-You've got lots of options there.
+De nombreuses options s'offrent à vous.
 
 01:59.680 --> 02:01.960
-And then I set the on complete method.
+Je règle ensuite la méthode "on complete".
 
 02:01.960 --> 02:07.090
-What that does is waits till the end of the animation and then destroys the object.
+Cette méthode attend la fin de l'animation et détruit l'objet.
 
 02:07.090 --> 02:12.700
-So instead of instantly destroying the object, it does this nice animation and about a quarter of a
+Ainsi, au lieu de détruire instantanément l'objet, il effectue cette belle animation et environ un quart de
 
 02:12.700 --> 02:15.430
-second later it will be destroyed.
+seconde plus tard, il sera détruit.
 
 02:15.430 --> 02:16.810
-We can see the settings here.
+Nous pouvons voir les paramètres ici.
 
 02:16.810 --> 02:22.330
-I've got shrinks down to about zero and it does it over a quarter of a second, but you could tweak
+J'ai réduit la taille à environ zéro et cela se fait en un quart de seconde.
 
 02:22.330 --> 02:22.720
-that.
+cela.
 
 02:22.720 --> 02:25.870
-Now let's talk about the sound design inside the scene.
+Parlons maintenant de la conception du son à l'intérieur de la scène.
 
 02:25.870 --> 02:27.280
-I've set up a sound manager.
+J'ai mis en place un gestionnaire de son.
 
 02:27.280 --> 02:28.390
-Let's take a look at that.
+Jetons-y un coup d'œil.
 
 02:29.630 --> 02:37.250
-So in the environment, we've got the sound manager here and it has all the sounds we want lined up
+Dans l'environnement, nous avons le gestionnaire de sons ici et il contient tous les sons que nous voulons.
 
 02:37.250 --> 02:38.900
-in there, dragged in from our project.
+à partir de notre projet.
 
 02:38.900 --> 02:42.920
-These are WAV files or M.P. threes that we can use to make some sounds.
+Il s'agit de fichiers WAV ou de trois M.P. que nous pouvons utiliser pour produire des sons.
 
 02:42.920 --> 02:50.000
-Then I can call by index and say play zero for the coin, play one for the collision, etc..
+Je peux ensuite appeler par index et dire "play zero" pour la pièce, "play one" pour la collision, etc.
 
 02:50.090 --> 02:51.410
-Let's look at the code again.
+Reprenons le code.
 
 02:52.490 --> 02:59.780
-So what I do here inside the on trigger enter is after I know that I've got the coin and I start the
+Ce que je fais ici, à l'intérieur du trigger enter, c'est qu'une fois que je sais que j'ai la pièce et que j'ai démarré la fonction
 
 02:59.780 --> 03:05.990
-shrinking operation with a destroy me call, I then play the sound I use sound manager instance play
+l'opération de rétrécissement avec un appel à me détruire, je joue ensuite le son - j'utilise l'instance du gestionnaire de son play
 
 03:05.990 --> 03:09.320
-audio clip and I pass in the index of what I want to play.
+et je passe l'index de ce que je veux jouer.
 
 03:09.680 --> 03:10.940
-Those are all stored here.
+Tous ces éléments sont stockés ici.
 
 03:10.940 --> 03:14.930
-So now within the constants, I know exactly which sound I'm about to play.
+Maintenant, dans les constantes, je sais exactement quel son je suis sur le point de jouer.
 
 03:14.930 --> 03:18.110
-There's lots of ways to organize your sound in a project, but that way works.
+Il existe de nombreuses façons d'organiser les sons dans un projet, mais cette méthode fonctionne.
 
 03:18.110 --> 03:20.570
-Well, now let's talk about the game design.
+Parlons maintenant de la conception du jeu.
 
 03:22.050 --> 03:25.770
-So if we zoom out a little bit and look at the world from a top.
+Si nous faisons un petit zoom arrière et que nous regardons le monde d'en haut.
 
 03:27.430 --> 03:30.070
-This is how I originally designed the game.
+C'est ainsi que j'ai conçu le jeu à l'origine.
 
 03:30.130 --> 03:35.400
-I thought from the beginning here in the game view, I want to be able to see the finish line.
+Dès le début, je me suis dit que je devais pouvoir voir la ligne d'arrivée dans la vue du jeu.
 
 03:35.410 --> 03:42.700
-So between the time UI, the score UI and visually connecting with the end goal, the user is led on
+Ainsi, entre l'interface utilisateur du temps, l'interface utilisateur du score et la connexion visuelle avec l'objectif final, l'utilisateur est conduit à
 
 03:42.700 --> 03:45.340
-a clear path where they should go.
+un chemin clair vers lequel il doit se diriger.
 
 03:45.550 --> 03:48.610
-Then as they play the game, they would.
+Puis, au fur et à mesure qu'il joue, il pourrait.
 
 03:49.430 --> 03:55.970
-Move across here, perhaps trying to get all the coins they could round the corner, come up, they
+Se déplacent ici, en essayant peut-être d'obtenir toutes les pièces qu'ils peuvent, tournent le coin, remontent, ils
 
 03:55.970 --> 04:01.070
-would see as they collect the coins that the score goes up so they get the connection.
+verraient qu'en collectant les pièces, le score augmente et qu'ils obtiennent la connexion.
 
 04:01.070 --> 04:05.750
-That points is a good thing in games typically, and they see that that increments when they collect
+Les points sont généralement une bonne chose dans les jeux, et ils voient que le score augmente lorsqu'ils collectent des pièces de monnaie.
 
 04:05.750 --> 04:06.440
-coins.
+pièces.
 
 04:06.440 --> 04:07.900
-So that works really well.
+Cela fonctionne donc très bien.
 
 04:07.910 --> 04:11.350
-I've created a very simple maze pattern here.
+J'ai créé un modèle de labyrinthe très simple.
 
 04:11.360 --> 04:17.600
-Also allowing user who's interested in the best possible time to just be able to come right over this
+Cela permet également à l'utilisateur intéressé par le meilleur moment possible de passer directement par là.
 
 04:17.600 --> 04:21.560
-little hill and come around the corner and get the quickest score.
+la petite colline, de prendre le virage et d'obtenir le score le plus rapide.
 
 04:21.590 --> 04:25.370
-They would also see that they win, but they don't get the highest score.
+Ils verraient aussi qu'ils gagnent, mais qu'ils n'obtiennent pas le score le plus élevé.
 
 04:25.370 --> 04:27.830
-So I'd imagine a player would look at it this way.
+J'imagine donc qu'un joueur verrait les choses de cette façon.
 
 04:27.860 --> 04:33.950
-They'd play the game, probably fool around and lose the first time by hitting the time of zero.
+Il jouerait le jeu, s'amuserait probablement et perdrait la première fois en atteignant le temps de zéro.
 
 04:34.130 --> 04:39.320
-Then they'd play again, realizing maybe coins are good, but the finish line is the point.
+Puis ils joueraient à nouveau, réalisant que les pièces sont peut-être bonnes, mais que la ligne d'arrivée est le but.
 
 04:39.320 --> 04:42.020
-Get to the finish line with a few points.
+Atteindre la ligne d'arrivée avec quelques points.
 
 04:42.020 --> 04:47.600
-Then on a third play they might try to get all of the coins possible within the time limit.
+Lors d'une troisième partie, ils peuvent essayer d'obtenir toutes les pièces possibles dans le temps imparti.
 
 04:47.930 --> 04:49.100
-In this demo game.
+Dans ce jeu de démonstration.
 
 04:49.100 --> 04:54.320
-I've made that pretty simple to do, but you can imagine playing with the user and imagining the different
+J'ai fait en sorte que ce soit assez simple à réaliser, mais vous pouvez imaginer jouer avec l'utilisateur et imaginer les différentes
 
 04:54.320 --> 04:58.550
-ways that they'd approach the game to encourage them to play again and again and again.
+différentes façons d'aborder le jeu pour l'encourager à jouer encore et encore.
 
 04:58.550 --> 05:03.680
-So it's just a little bit of a note on the gameplay design and also that adds to the good feeling of
+Il s'agit donc d'une petite remarque sur la conception du jeu, qui contribue également à l'ambiance agréable du jeu.
 
 05:03.680 --> 05:04.970
-Polish at the end of game.
+polonais à la fin du jeu.
 
 05:04.970 --> 05:05.530
-That's it.
+C'est tout.
 
 05:05.540 --> 05:06.620
-Thanks very much.
+Merci beaucoup.
 
 05:07.820 --> 05:10.400
-As a bonus assignment, you can add your own polish.
+En guise de bonus, vous pouvez ajouter votre propre polissage.
 
 05:10.430 --> 05:11.750
-Here's some ideas.
+Voici quelques idées.
 
 05:11.750 --> 05:18.710
-More programmatic twinning sounds, obstacles, even larger levels or multiple levels and different
+Jumelage plus programmatique de sons, d'obstacles, de niveaux encore plus grands ou de niveaux multiples et d'éléments différents.
 
 05:18.710 --> 05:19.940
-types of crazy balls.
+types de boules folles.
 
 05:21.810 --> 05:25.290
-In the next section, we'll handle advanced topics.
+Dans la section suivante, nous aborderons des sujets plus avancés.

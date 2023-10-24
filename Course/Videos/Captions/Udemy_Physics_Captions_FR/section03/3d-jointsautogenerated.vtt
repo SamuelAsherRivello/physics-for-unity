@@ -1,241 +1,241 @@
 WEBVTT
 
 00:01.720 --> 00:02.930
-Three D joints.
+Trois joints D.
 
 00:02.950 --> 00:06.710
-In this video, we'll cover the concepts for three D joints.
+Dans cette vidéo, nous allons aborder les concepts des articulations en trois D.
 
 00:06.730 --> 00:12.670
-We'll also look at various types of joints and we'll open up the Unity editor and will create a3d chain
+Nous verrons également les différents types d'articulations et nous ouvrirons l'éditeur Unity pour créer une chaîne 3D.
 
 00:12.670 --> 00:13.810
-using joints.
+en utilisant des articulations.
 
 00:14.140 --> 00:21.370
-Recommended Viewing Section two Unity two D Physics Components introduces the core fundamentals of physics,
+Visionnage recommandé Section 2 Unity 2 D Composants physiques présente les principes fondamentaux de la physique,
 
 00:21.370 --> 00:23.020
-which also apply to three D.
+qui s'appliquent également à l'unité trois D.
 
 00:23.350 --> 00:26.500
-It is suggested to watch Section two before Section three.
+Il est conseillé de regarder la section deux avant la section trois.
 
 00:27.330 --> 00:28.410
-The joint component.
+La composante commune.
 
 00:29.080 --> 00:35.020
-This component is what maintains a relationship either positional or rotational with one or more game
+Cette composante est ce qui maintient une relation de position ou de rotation avec une ou plusieurs parties.
 
 00:35.020 --> 00:35.740
-objects.
+objets.
 
 00:35.770 --> 00:39.730
-You can attach joints either to a game object with rigid body.
+Vous pouvez attacher des articulations à un objet de jeu avec un corps rigide.
 
 00:39.730 --> 00:43.300
-This is common or to a fixed position in world space.
+C'est courant, ou à une position fixe dans l'espace mondial.
 
 00:43.330 --> 00:48.340
-As you can see, we have a game object with the familiar transform and rigid body, and then we add
+Comme vous pouvez le voir, nous avons un objet de jeu avec la transformation familière et le corps rigide, puis nous ajoutons
 
 00:48.340 --> 00:52.480
-a component of joint types of joints in three D there are many.
+un composant de types d'articulations dans trois D, il y en a beaucoup.
 
 00:52.900 --> 00:57.100
-The hinge joint constrains to rigid bodies as if connected by a hinge.
+L'articulation charnière contraint les corps rigides comme s'ils étaient reliés par une charnière.
 
 00:57.100 --> 01:01.480
-For example, a typical swinging door that opens and closes or a chain.
+Par exemple, une porte battante typique qui s'ouvre et se ferme ou une chaîne.
 
 01:01.480 --> 01:07.240
-The spring joint maintains a relationship between two game objects, as if by an elastic spring, for
+L'articulation à ressort maintient une relation entre deux objets de jeu, comme par un ressort élastique, pour
 
 01:07.240 --> 01:09.880
-example, the suspension of a wheel on a vehicle.
+exemple, la suspension d'une roue sur un véhicule.
 
 01:09.880 --> 01:15.820
-The fixed joint maintains a certain relative position angle and offset between two game objects.
+L'articulation fixe maintient un certain angle de position relative et un certain décalage entre deux objets de jeu.
 
 01:15.820 --> 01:20.470
-The character joint is a ball socket joint used mainly for ragdoll physics.
+L'articulation du personnage est une articulation à rotule utilisée principalement pour la physique des ragdolls.
 
 01:20.470 --> 01:22.840
-We'll cover Ragdoll in a future section.
+Nous aborderons la question du ragdoll dans une prochaine section.
 
 01:22.840 --> 01:25.810
-The configurable joint is extremely versatile.
+L'articulation configurable est extrêmement polyvalente.
 
 01:25.810 --> 01:29.560
-It gives you complete control and you can build all other joints using it.
+Elle vous donne un contrôle total et vous pouvez construire toutes les autres articulations à partir d'elle.
 
 01:30.710 --> 01:32.810
-Let's take a look at the advanced properties here.
+Jetons un coup d'œil aux propriétés avancées.
 
 01:33.350 --> 01:37.220
-There are many different types of joints, but let's just look at one to get a feel.
+Il existe de nombreux types de joints différents, mais nous allons en examiner un pour nous faire une idée.
 
 01:37.250 --> 01:38.790
-We'll look at the character joint.
+Nous allons examiner l'articulation du caractère.
 
 01:38.810 --> 01:41.760
-There are many properties we'll focus on just a few.
+Il existe de nombreuses propriétés, mais nous nous concentrerons sur quelques-unes d'entre elles.
 
 01:41.780 --> 01:46.250
-The Connected body is a reference to the other rigid body that this joint connects to.
+Le corps connecté est une référence à l'autre corps rigide auquel cette articulation est connectée.
 
 01:46.280 --> 01:51.320
-The anchor is the position of the anchor around which the joints motion is constrained.
+L'ancre est la position de l'ancre autour de laquelle le mouvement de l'articulation est contraint.
 
 01:51.350 --> 01:55.040
-The auto configure connected is true by default.
+La configuration automatique connectée est vraie par défaut.
 
 01:55.040 --> 02:02.000
-When true, then the connected anchor property will be calculated automatically to match the global
+Lorsqu'elle est vraie, la propriété d'ancrage connectée est calculée automatiquement pour correspondre à la propriété d'ancrage globale.
 
 02:02.000 --> 02:04.460
-position of the anchor property.
+de la propriété d'ancrage.
 
 02:04.640 --> 02:05.420
-Limits.
+Limites.
 
 02:05.420 --> 02:11.810
-This restricts the range of possible values for the joints world properties such as position, rotation
+Cela limite la plage des valeurs possibles pour les propriétés du monde des articulations, telles que la position, la rotation, etc.
 
 02:11.810 --> 02:14.930
-and movement to edit the joint angular limits.
+et le mouvement pour modifier les limites angulaires de l'articulation.
 
 02:14.930 --> 02:20.150
-You can do that visually or numerically by editing the twist limit and swing limit.
+Vous pouvez le faire visuellement ou numériquement en modifiant la limite de torsion et la limite d'oscillation.
 
 02:21.360 --> 02:22.950
-Let's create a3d chain.
+Créons une chaîne 3D.
 
 02:23.580 --> 02:29.790
-The goal here will be to have a series of metal links where each link is interlocked with one or two
+L'objectif est d'obtenir une série de maillons métalliques où chaque maillon est imbriqué dans un ou deux maillons de la chaîne.
 
 02:29.790 --> 02:36.090
-other links at runtime will move the top link and we'll see all the other links move in a believable
+d'autres maillons en cours d'exécution déplaceront le maillon supérieur et nous verrons tous les autres maillons se déplacer de façon crédible.
 
 02:36.090 --> 02:36.600
-way.
+crédible.
 
 02:36.630 --> 02:43.440
-The task Breakdown First on the top, we'll use a fixed joint to connect the top link to a fixed position
+La décomposition de la tâche Tout d'abord, en haut, nous utiliserons une articulation fixe pour relier le maillon supérieur à une position fixe.
 
 02:43.440 --> 02:44.620
-in the 3D world.
+dans le monde 3D.
 
 02:44.640 --> 02:50.180
-We'll use a cube to have a visual cue when the cube moves, the chain follows.
+Nous utiliserons un cube pour avoir un repère visuel lorsque le cube se déplace, la chaîne suit.
 
 02:50.190 --> 02:54.370
-This way the cube acts like our handle and we can move it with the mouse.
+De cette façon, le cube agit comme notre poignée et nous pouvons le déplacer à l'aide de la souris.
 
 02:54.390 --> 02:58.440
-Use a character joint to connect all other links to the link above.
+Utilisez une articulation de caractère pour relier tous les autres liens au lien ci-dessus.
 
 02:59.560 --> 03:00.700
-Let's start the demo.
+Commençons la démo.
 
 03:00.940 --> 03:06.730
-The three D chain begin seen Create a fixed joint to connect the top link to the cube.
+La chaîne à trois D commence Créer une articulation fixe pour relier le maillon supérieur au cube.
 
 03:06.760 --> 03:09.130
-Then we create a character joint to connect.
+Nous créons ensuite une articulation de caractère pour relier le maillon supérieur au cube.
 
 03:09.130 --> 03:14.950
-Each of the other links will play the scene and will move the cube in the scene and see the results.
+Chacun des autres liens jouera la scène et déplacera le cube dans la scène pour voir les résultats.
 
 03:15.100 --> 03:16.720
-Let's open up our next scene.
+Ouvrons la scène suivante.
 
 03:18.000 --> 03:19.920
-We'll use the three D chain begin.
+Nous allons utiliser la chaîne des trois D pour commencer.
 
 03:21.390 --> 03:25.470
-The first step is to connect the chain link to the cube.
+La première étape consiste à connecter le maillon de la chaîne au cube.
 
 03:25.800 --> 03:27.270
-We'll do that with a fixed joint.
+Nous allons le faire avec une articulation fixe.
 
 03:39.800 --> 03:42.650
-We can see now that when we move the cube.
+Nous voyons maintenant que lorsque nous déplaçons le cube.
 
 03:44.110 --> 03:46.930
-We automatically get the movement of the link.
+Nous obtenons automatiquement le mouvement du lien.
 
 03:52.050 --> 03:53.580
-Now I'm going to duplicate.
+Je vais maintenant dupliquer.
 
 03:57.810 --> 04:00.030
-And instead of a fixed joint.
+Et au lieu d'une articulation fixe.
 
 04:01.090 --> 04:02.680
-We're going to use a character joint.
+nous allons utiliser un joint de caractère.
 
 04:18.170 --> 04:25.550
-And I've pasted in some values from experimenting before so that what we have here is the anchor and
+Et j'ai collé quelques valeurs obtenues lors d'expériences antérieures, de sorte que nous avons ici l'ancre et le joint de caractère.
 
 04:25.550 --> 04:30.170
-axis set to the top of the highlighted link.
+axe réglés sur le haut du lien mis en évidence.
 
 04:30.380 --> 04:33.470
-That's going to make it swing from the top in a believable way.
+Cela va lui permettre de se balancer depuis le haut d'une manière crédible.
 
 04:36.610 --> 04:38.440
-Of course, we'd also want to rotate.
+Bien sûr, nous voulons aussi le faire pivoter.
 
 04:41.320 --> 04:43.210
-And now we get the result that we want.
+Et maintenant, nous obtenons le résultat que nous souhaitons.
 
 04:43.950 --> 04:50.220
-Notice that chain link two is going to be connected to chain link one.
+Remarquez que le maillon de chaîne 2 va être connecté au maillon de chaîne 1.
 
 04:50.760 --> 04:55.980
-Now we'll just duplicate and replicate the same setup for several more links.
+Nous allons maintenant reproduire la même configuration pour plusieurs maillons supplémentaires.
 
 05:12.390 --> 05:13.320
-To duplicate.
+Pour dupliquer.
 
 05:13.320 --> 05:19.920
-I'm using control D, but there's a duplicate option here which takes the selected item in the hierarchy
+J'utilise le contrôle D, mais il existe une option de duplication qui prend l'élément sélectionné dans la hiérarchie.
 
 05:19.920 --> 05:21.090
-and duplicates it.
+et le duplique.
 
 05:26.600 --> 05:28.430
-Now to make it look believably.
+Maintenant, il s'agit de rendre le tout crédible.
 
 05:28.430 --> 05:31.610
-I'm going to rotate each other 190 degrees.
+Je vais faire pivoter l'un et l'autre de 190 degrés.
 
 05:41.600 --> 05:41.870
-There.
+Voilà.
 
 05:41.870 --> 05:43.130
-We've got a good looking effect.
+Nous avons un bel effet.
 
 05:43.160 --> 05:47.600
-Now revisit each character joint and make sure it's parented to the joint above.
+Revenez maintenant sur chaque articulation du personnage et assurez-vous qu'elle est liée à l'articulation du dessus.
 
 05:50.250 --> 05:51.540
-Chain link to.
+Lien de chaîne vers.
 
 05:52.840 --> 05:54.460
-Connected to chain link one.
+Connecté au premier maillon de la chaîne.
 
 06:08.380 --> 06:10.390
-Let's run the scene and see how it looks.
+Exécutons la scène et voyons ce que cela donne.
 
 06:17.530 --> 06:20.440
-Selecting the top cube, I can move it and see the result.
+En sélectionnant le cube du haut, je peux le déplacer et voir le résultat.
 
 06:29.270 --> 06:30.200
-Looks really good.
+Le résultat est vraiment bon.
 
 06:31.240 --> 06:36.130
-You could add as many of these links as you want and get an even greater looking effect.
+Vous pouvez ajouter autant de liens que vous le souhaitez pour obtenir un effet encore plus impressionnant.
 
 06:39.380 --> 06:42.230
-In the next video, we'll cover ragdoll physics.
+Dans la prochaine vidéo, nous aborderons la physique des ragdolls.

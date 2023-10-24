@@ -1,238 +1,238 @@
 WEBVTT
 
 00:01.600 --> 00:02.960
-Two rd effectors.
+Deux effecteurs rd.
 
 00:02.980 --> 00:09.310
-In this video we'll cover the effector two RD component and different types of effector two DS.
+Dans cette vidéo, nous aborderons le composant effector two RD et les différents types d'effector two DS.
 
 00:09.430 --> 00:13.000
-We'll also play with effector two RDS inside the Unity ed.
+Nous allons également jouer avec l'effecteur deux RDS à l'intérieur de Unity ed.
 
 00:13.180 --> 00:17.620
-The effector is the component that directs the forces of physics in your project.
+L'effecteur est le composant qui dirige les forces de la physique dans votre projet.
 
 00:17.620 --> 00:21.000
-When game object colliders come into contact with each other.
+Lorsque les collisionneurs d'objets du jeu entrent en contact les uns avec les autres.
 
 00:21.010 --> 00:26.770
-As you can see in this setup, we have a transform, a collider and an effector component all added
+Comme vous pouvez le voir dans cette configuration, nous avons ajouté un transformateur, un collisionneur et un effecteur.
 
 00:26.770 --> 00:28.030
-to the same game object.
+au même objet de jeu.
 
 00:28.450 --> 00:34.690
-A few common ones that I use in this course are buoyancy effector to d to make objects float as in the
+Quelques composants courants que j'utilise dans ce cours sont l'effecteur de flottabilité, qui permet de faire flotter les objets, comme dans l'exemple suivant
 
 00:34.690 --> 00:41.350
-first illustration and surface effector to DD to create a conveyer belt feel as you see in the second
+première illustration et l'effecteur de surface à DD pour créer une sensation de tapis roulant comme vous le voyez dans la deuxième illustration.
 
 00:41.350 --> 00:46.360
-picture, these green arrows indicate more or less the direction of movement that is applied to the
+Ces flèches vertes indiquent plus ou moins la direction du mouvement appliqué à l'effecteur de surface.
 
 00:46.360 --> 00:47.080
-objects.
+objets.
 
 00:47.080 --> 00:54.040
-You can also use the others area effector Platform Effector Point effector for different types of effects.
+Vous pouvez également utiliser les autres effecteurs de zone Effet de plate-forme Effet de point pour différents types d'effets.
 
 00:54.130 --> 00:58.750
-If we select a game object with an effector, we can open the inspector window to look at all of its
+Si nous sélectionnons un objet de jeu doté d'un effecteur, nous pouvons ouvrir la fenêtre de l'inspecteur pour examiner tous ses effets.
 
 00:58.750 --> 00:59.560
-components.
+composants.
 
 00:59.560 --> 01:03.260
-If we look at the point effector to DH, we can browse its properties.
+Si nous regardons l'effecteur de point vers DH, nous pouvons parcourir ses propriétés.
 
 01:03.310 --> 01:05.290
-There's a lot of different properties now.
+Il y a beaucoup de propriétés différentes maintenant.
 
 01:05.290 --> 01:10.840
-Each type of effective CD has unique properties, but let's take a look at the point effector to DH.
+Chaque type de CD efficace possède des propriétés uniques, mais examinons l'effecteur ponctuel de la DH.
 
 01:10.930 --> 01:13.870
-First, let's take a look at the collider itself.
+Tout d'abord, examinons le collisionneur lui-même.
 
 01:13.870 --> 01:19.270
-We have to set is trigger is true and used by effector is true.
+Nous devons définir is trigger is true et used by effector is true.
 
 01:19.300 --> 01:24.700
-This will allow that collider to work together with our effector to DH.
+Cela permettra à ce collider de travailler avec notre effector pour DH.
 
 01:24.940 --> 01:28.990
-When we focus on the effector itself, we have a collider mask.
+Lorsque nous nous concentrons sur l'effecteur lui-même, nous avons un masque de collision.
 
 01:28.990 --> 01:35.320
-The mask which is optional, is used to select which specific layers will be affected.
+Le masque, qui est facultatif, est utilisé pour sélectionner les couches spécifiques qui seront affectées.
 
 01:35.320 --> 01:40.840
-So you can have this effect happen only on some groups of your objects and force.
+Vous pouvez donc faire en sorte que cet effet ne se produise que sur certains groupes de vos objets et de vos forces.
 
 01:40.840 --> 01:45.640
-This is the magnitude distances and other details of the force that will be applied.
+Il s'agit de la magnitude, des distances et d'autres détails de la force qui sera appliquée.
 
 01:46.030 --> 01:48.280
-Let's do some demos first.
+Commençons par quelques démonstrations.
 
 01:48.280 --> 01:51.490
-Let's take a look at the point effector to DH Begin.
+Jetons un coup d'œil à l'effecteur ponctuel de DH Begin.
 
 01:51.490 --> 01:53.740
-Seen some of the scenes in this course.
+Nous avons vu quelques-unes des scènes de ce cours.
 
 01:53.740 --> 01:55.270
-Have an underscore begin.
+Faire débuter un soulignement.
 
 01:55.270 --> 02:02.980
-This is our starting point and we'll add some code and some assets as we go for each scene with a underscore
+C'est notre point de départ et nous ajouterons du code et des éléments au fur et à mesure pour chaque scène comportant un trait de soulignement.
 
 02:02.980 --> 02:03.580
-begin.
+commencer.
 
 02:03.580 --> 02:09.550
-There's an equivalent scene with underscore complete and you can look at that to see the final results
+Il y a une scène équivalente avec underscore complet et vous pouvez la regarder pour voir les résultats finaux
 
 02:09.550 --> 02:10.360
-in this scene.
+dans cette scène.
 
 02:10.360 --> 02:11.290
-We'll play it.
+Nous allons la jouer.
 
 02:11.290 --> 02:17.830
-We'll create a new BOM Sprite, add the point effector to DX and Circle Collider to DX, activate the
+Nous allons créer un nouveau Sprite BOM, ajouter l'effecteur de point à DX et le Circle Collider à DX, activer l'effecteur de point et le Circle Collider à DX, activer l'effecteur de point et le Circle Collider à DX.
 
 02:17.830 --> 02:22.940
-point effector to DH when we click the mouse and then we'll play the scene again to see the end result.
+l'effecteur de point à DH lorsque nous cliquons sur la souris, puis nous rejouerons la scène pour voir le résultat final.
 
 02:22.960 --> 02:25.030
-In this video we have a bonus assignment.
+Dans cette vidéo, nous avons une mission bonus.
 
 02:25.300 --> 02:29.470
-This is something if you want to go deeper into the topic, you can in this one.
+Si vous souhaitez approfondir le sujet, vous pouvez le faire dans cette vidéo.
 
 02:29.470 --> 02:31.330
-There's a various effector scene.
+Il y a une scène d'effecteurs divers.
 
 02:31.330 --> 02:37.030
-You can play the scene, see the Spanish script, the details of it are out of scope of this course,
+Vous pouvez jouer la scène, voir le script espagnol, les détails sont hors de portée de ce cours,
 
 02:37.030 --> 02:37.900
-but take a look.
+mais jetez-y un coup d'œil.
 
 02:38.020 --> 02:44.050
-It will spawn new objects every few seconds just to populate our scene and create a little chaos.
+Il va créer de nouveaux objets toutes les quelques secondes pour peupler notre scène et créer un peu de chaos.
 
 02:44.050 --> 02:47.380
-You can play with the properties of each of the effector two DS.
+Vous pouvez jouer avec les propriétés de chacun des effecteurs two DS.
 
 02:49.160 --> 02:51.050
-Let's open up the next scene.
+Ouvrons la scène suivante.
 
 02:51.050 --> 02:52.850
-Point effector to begin.
+Pointer l'effecteur pour commencer.
 
 02:54.010 --> 02:58.510
-What we're going to do is we're going to create a new bomb sprite with a point effector on it, and
+Ce que nous allons faire, c'est créer un nouveau sprite de bombe avec un effecteur ponctuel, et
 
 02:58.510 --> 03:02.020
-then we'll let our mouse clicking trigger the explosion.
+puis nous laisserons le clic de la souris déclencher l'explosion.
 
 03:15.170 --> 03:21.320
-Well we've added is a rigid body to DD and two different circle Collider's One circle collider will
+Nous avons ajouté un corps rigide à DD et deux colliders de cercle différents. Le premier collider de cercle va
 
 03:21.320 --> 03:23.300
-be for collision detection.
+pour la détection des collisions.
 
 03:23.540 --> 03:27.800
-The other circle collider will be used as a trigger for the point effector.
+L'autre cercle de collision sera utilisé comme déclencheur pour l'effecteur de points.
 
 03:31.730 --> 03:34.670
-We'll set the force magnitude here to be something high.
+Nous allons régler l'ampleur de la force ici pour qu'elle soit élevée.
 
 03:35.400 --> 03:38.580
-And then we'll make the trigger large enough.
+Et nous allons faire en sorte que le déclencheur soit suffisamment grand.
 
 03:48.130 --> 03:52.690
-The collider is now large enough that it will cause damage to everything within the collider.
+Le collisionneur est maintenant suffisamment grand pour endommager tout ce qui s'y trouve.
 
 03:52.720 --> 03:54.820
-Let's go ahead and run the scene as is.
+Exécutons la scène telle quelle.
 
 03:56.610 --> 04:03.450
-We immediately see there's a massive explosion because these objects were within the circle Collider
+Nous constatons immédiatement qu'il y a une explosion massive parce que ces objets se trouvaient à l'intérieur du cercle du collisionneur.
 
 04:03.450 --> 04:06.990
-and immediately got a big boost of constant force.
+et ont immédiatement reçu une grande impulsion de force constante.
 
 04:07.260 --> 04:11.670
-Let's turn the force off and instead use the mouse to trigger the explosion.
+Désactivons la force et utilisons la souris pour déclencher l'explosion.
 
 04:19.210 --> 04:21.170
-This is a custom script that I created.
+Il s'agit d'un script personnalisé que j'ai créé.
 
 04:21.190 --> 04:25.390
-It takes the effector to DD, and then it has a series of booleans.
+Il prend l'effecteur pour DD, puis comporte une série de booléens.
 
 04:27.910 --> 04:33.520
-We first want to disable the point effector on awake, so I'll leave that unchecked.
+Nous voulons d'abord désactiver l'effecteur de point sur awake, je vais donc laisser cette case décochée.
 
 04:33.730 --> 04:38.840
-And then each time we fire this, we wanted to automatically toggle back off.
+Ensuite, à chaque fois que nous activons l'effecteur, nous voulons qu'il se désactive automatiquement.
 
 04:38.860 --> 04:42.080
-That way the explosion happens over the course of one frame.
+De cette façon, l'explosion se produit au cours d'une seule image.
 
 04:42.100 --> 04:43.210
-Let's give it a try.
+Essayons.
 
 04:47.890 --> 04:49.330
-There's no explosion yet.
+Il n'y a pas encore d'explosion.
 
 04:49.840 --> 04:52.600
-And when I click, we'll get a one frame explosion.
+Et lorsque je clique, nous obtenons une explosion d'une image.
 
 04:54.090 --> 04:55.590
-It's subtle, but it works.
+C'est subtil, mais ça marche.
 
 04:55.590 --> 04:56.760
-I can click again.
+Je peux cliquer à nouveau.
 
 04:57.900 --> 04:58.770
-And more.
+Et plus encore.
 
 04:59.430 --> 05:02.910
-Eventually, the objects will be outside of the collider.
+Les objets finissent par se trouver à l'extérieur du collisionneur.
 
 05:03.030 --> 05:03.630
-That's it.
+C'est tout.
 
 05:03.750 --> 05:05.040
-Let's take a look at the code.
+Jetons un coup d'œil au code.
 
 05:06.940 --> 05:08.650
-This is a custom script that I created.
+Il s'agit d'un script personnalisé que j'ai créé.
 
 05:08.650 --> 05:11.630
-So we take the effector to DD in the few booleans.
+Nous prenons donc l'effecteur pour DD dans les quelques booléens.
 
 05:11.650 --> 05:16.810
-Inside the awake we trigger the enabled on or off depending on our boolean.
+A l'intérieur de l'éveil, nous déclenchons l'activation ou la désactivation en fonction de notre booléen.
 
 05:16.810 --> 05:19.660
-When the enabled is off, the effector does not work.
+Lorsque le enabled est désactivé, l'effecteur ne fonctionne pas.
 
 05:19.660 --> 05:25.700
-Then on update we listen for mouse click and when mouse click occurs we toggle the enabled.
+Ensuite, lors de la mise à jour, nous écoutons le clic de la souris et, lorsqu'il se produit, nous activons l'effecteur.
 
 05:25.720 --> 05:26.500
-That's it.
+C'est tout.
 
 05:28.860 --> 05:31.230
-In the next video, two D joints.
+Dans la prochaine vidéo, deux joints D.
 
 05:31.230 --> 05:36.090
-We'll cover the joint, two D component and the different types of joint two DS.
+Nous aborderons l'articulation, le composant deux D et les différents types d'articulation deux DS.
 
 05:36.090 --> 05:38.910
-We'll also play with them inside the unity ed.
+Nous allons également jouer avec eux à l'intérieur de unity ed.

@@ -1,196 +1,196 @@
 WEBVTT
 
 00:01.860 --> 00:03.650
-Adding win loss conditions.
+Ajout des conditions gagnant-perdant.
 
 00:03.660 --> 00:10.230
-In this video we'll cover adding UI text for score and time will reward points for collecting the coins
+Dans cette vidéo, nous allons couvrir l'ajout de texte d'interface utilisateur pour le score et le temps qui récompensera les points pour la collecte des pièces.
 
 00:10.410 --> 00:12.870
-and will create a timer for the loss condition.
+et nous créerons un minuteur pour la condition de perte.
 
 00:12.990 --> 00:18.060
-For winning, we'll add the finish area which our crazy ball can reach and collide with.
+Pour la victoire, nous ajouterons la zone d'arrivée que notre balle folle peut atteindre et percuter.
 
 00:18.480 --> 00:19.980
-Here's the test breakdown.
+Voici le déroulement du test.
 
 00:19.980 --> 00:23.730
-We'll create the crazy ball UI prefab and C-sharp script.
+Nous allons créer le préfabriqué de l'interface utilisateur de la balle folle et le script C-sharp.
 
 00:23.850 --> 00:27.330
-Then we'll add the finish area prefab and see sharp script.
+Ensuite, nous ajouterons le préfabriqué "finish area" et le script "see sharp".
 
 00:27.750 --> 00:32.500
-Then we'll add the crazy ball game, which will drive the high level logic for our gameplay.
+Ensuite, nous ajouterons le jeu crazy ball, qui pilotera la logique de haut niveau de notre gameplay.
 
 00:32.520 --> 00:36.010
-And between each of these, we'll add the win and loss conditions.
+Et entre chacun d'entre eux, nous ajouterons les conditions de victoire et de perte.
 
 00:36.030 --> 00:42.390
-This screenshot represents our target goal for the project will open up section six, Video four and
+Cette capture d'écran représente notre objectif cible pour le projet : ouvrir la section six, la vidéo quatre et la vidéo quatre.
 
 00:42.390 --> 00:44.130
-the scene Crazy Ball four.
+la scène Crazy Ball quatre.
 
 00:44.850 --> 00:48.780
-All right, here we are in unity and we're jumping into Crazy Ball four.
+Très bien, nous voici dans l'unité et nous passons à la scène Crazy Ball 4.
 
 00:49.990 --> 00:56.320
-Now, what we've added here is the UI and the other code for the rules of the game.
+Ce que nous avons ajouté ici, c'est l'interface utilisateur et le code des règles du jeu.
 
 00:56.320 --> 00:58.120
-This is the win and loss conditions.
+Voici les conditions de victoire et de défaite.
 
 00:58.120 --> 00:59.290
-So let's take a look.
+Jetons un coup d'œil.
 
 00:59.740 --> 01:01.810
-We've got this finish area set up.
+Nous avons mis en place cette zone d'arrivée.
 
 01:03.460 --> 01:04.810
-It looks like a checkerboard.
+Elle ressemble à un damier.
 
 01:05.170 --> 01:08.200
-And we've got this collider here.
+Et nous avons ce collisionneur ici.
 
 01:08.200 --> 01:13.660
-So when our ball interacts with that, we're able to trigger the game to be over.
+Lorsque notre balle interagit avec ce collisionneur, nous pouvons déclencher la fin du jeu.
 
 01:14.260 --> 01:20.980
-Then we've got the UI, which is the time and the score and a results text that's currently invisible,
+Nous avons ensuite l'interface utilisateur, qui indique l'heure et le score, ainsi qu'un texte de résultats qui est actuellement invisible,
 
 01:20.980 --> 01:26.050
-ready to be populated with values of the current time and the current score, etc..
+prêt à être rempli avec les valeurs de l'heure actuelle et du score actuel, etc.
 
 01:26.260 --> 01:28.810
-And then we've got this new crazy ball game script.
+Ensuite, nous avons ce nouveau script de jeu de balle endiablé.
 
 01:28.810 --> 01:30.730
-So let's take a look at each of those three.
+Jetons un coup d'œil à chacun de ces trois scripts.
 
 01:31.540 --> 01:32.890
-In the crazy ball UI.
+Dans l'interface utilisateur de crazy ball.
 
 01:32.890 --> 01:37.270
-If we wanted to add UI, we'd create a game object from scratch.
+Si nous voulions ajouter une interface utilisateur, nous créerions un objet de jeu à partir de zéro.
 
 01:37.450 --> 01:45.070
-With a UI, we'd be able to create this by creating a game object and then creating the UI with different
+Avec une interface utilisateur, nous pourrions la créer en créant un objet de jeu, puis en créant l'interface utilisateur avec des éléments différents.
 
 01:45.070 --> 01:45.940
-text values.
+valeurs de texte.
 
 01:45.940 --> 01:48.400
-We'd go ahead and do that in position on the screen.
+Nous ferons cela en position sur l'écran.
 
 01:48.910 --> 01:55.570
-Then we add a custom UI script here and drag in the references to each of the text fields that we want
+Ensuite, nous ajoutons un script d'interface utilisateur personnalisé ici et faisons glisser les références à chacun des champs de texte que nous voulons.
 
 01:55.570 --> 01:56.600
-to be able to change.
+modifier.
 
 01:56.620 --> 02:00.130
-So let's start by taking a look at that crazy ball UI script.
+Commençons par jeter un coup d'œil au script de l'interface utilisateur de la balle folle.
 
 02:01.480 --> 02:07.810
-So what we do is we take in the different references as serialized fields and then simply have a public
+Ce que nous faisons, c'est que nous prenons les différentes références en tant que champs sérialisés et que nous avons simplement un champ public
 
 02:07.810 --> 02:13.270
-method for each of them, one to show the time, one to show the score, and then in the end, one to
+pour chacune d'entre elles, une pour afficher l'heure, une pour afficher le score, et à la fin, une pour afficher le score.
 
 02:13.270 --> 02:14.050
-show the result.
+le résultat.
 
 02:14.050 --> 02:17.350
-Depending if you've won or lost, be able to show unique text there.
+Selon que vous avez gagné ou perdu, vous pouvez afficher un texte unique.
 
 02:17.800 --> 02:24.040
-The crazy ball game, which sits in the scene on its own game object, is able to hold the score and
+Le jeu de la balle folle, qui se trouve dans la scène sur son propre objet de jeu, est capable de conserver le score et de
 
 02:24.040 --> 02:25.120
-hold the time.
+retenir le temps.
 
 02:25.120 --> 02:30.820
-And within each of those, when you set the score, for example, it just calls that show score method
+Et dans chacun de ces objets, lorsque vous définissez le score, par exemple, il suffit d'appeler la méthode show score
 
 02:30.820 --> 02:32.680
-and calls the show time method.
+et appelle la méthode show time.
 
 02:32.680 --> 02:37.660
-So you can see the interaction between the crazy ball game and the crazy ball UI.
+Vous pouvez donc voir l'interaction entre le jeu de la balle folle et l'interface utilisateur de la balle folle.
 
 02:38.620 --> 02:39.700
-Sit down here.
+Asseyez-vous ici.
 
 02:39.700 --> 02:43.530
-We set the initial values of score and how much time we have left.
+Nous définissons les valeurs initiales du score et du temps restant.
 
 02:43.540 --> 02:45.790
-Those will get shown to the UI.
+Ces valeurs seront affichées dans l'interface utilisateur.
 
 02:46.150 --> 02:49.030
-And then on update, we tick down the time.
+Lors de la mise à jour, nous faisons défiler le temps.
 
 02:49.780 --> 02:51.970
-Down from 30 down to zero.
+De 30 à zéro.
 
 02:51.970 --> 02:55.900
-And then if it reaches zero, we are able to set the end game.
+Si le temps atteint zéro, nous pouvons définir la fin de la partie.
 
 02:55.900 --> 03:03.070
-And setting the end game will lock in that the game is over so that different systems in the game can
+La définition de la fin du jeu permet de verrouiller la fin du jeu, de sorte que les différents systèmes du jeu peuvent
 
 03:03.070 --> 03:03.580
-stop.
+s'arrêter.
 
 03:03.580 --> 03:08.170
-You no longer can have input, for example, and then show that result in the UI.
+Il n'est plus possible d'effectuer une saisie, par exemple, puis d'afficher le résultat dans l'interface utilisateur.
 
 03:08.200 --> 03:10.390
-Then one more thing I want to show.
+Il y a encore une chose que je veux montrer.
 
 03:10.420 --> 03:15.190
-Inside the crazy ball itself, this is how we handle the finish area collision.
+À l'intérieur de la boule folle elle-même, voici comment nous gérons la collision avec la zone d'arrivée.
 
 03:15.190 --> 03:21.010
-It's quite simple again, because we don't want that bounding box of the finish area to feel like a
+C'est encore une fois très simple, car nous ne voulons pas que la boîte englobante de la zone d'arrivée ressemble à une zone de collision.
 
 03:21.010 --> 03:22.570
-box we can't penetrate.
+que nous ne pouvons pas pénétrer.
 
 03:22.570 --> 03:30.280
-We use a trigger and the trigger allows us to go inside of that volume, but we're able to end the game
+Nous utilisons un déclencheur qui nous permet de pénétrer dans ce volume, mais nous sommes en mesure de terminer le jeu.
 
 03:30.280 --> 03:32.260
-properly using the on trigger enter.
+correctement en utilisant l'entrée sur le déclencheur.
 
 03:33.710 --> 03:34.700
-Let's give it a play.
+Jouons un peu.
 
 03:38.590 --> 03:40.390
-We can see the time ticking down.
+Nous pouvons voir le temps s'écouler.
 
 03:41.280 --> 03:45.630
-We can see the score going up every time I get the coins.
+Nous pouvons voir le score augmenter à chaque fois que j'obtiens des pièces.
 
 03:46.170 --> 03:51.900
-And then if I make my way over to the finish area, the moment I enter that trigger volume, it says
+Et si je me dirige vers la zone d'arrivée, au moment où j'entre dans le volume de déclenchement, le message suivant s'affiche
 
 03:51.900 --> 03:52.560
-I win.
+Je gagne.
 
 03:53.360 --> 03:58.040
-I'll hit spacebar to restart and we could let the timer fall all the way down.
+Je vais appuyer sur la barre d'espacement pour redémarrer et nous pourrions laisser le chronomètre descendre jusqu'au bout.
 
 03:58.070 --> 04:04.630
-If it did, it would show a similar message to our UN, except it would say you lose.
+S'il le fait, il affichera un message similaire à celui de notre ONU, sauf qu'il dira que vous avez perdu.
 
 04:04.640 --> 04:05.780
-And that's the only difference.
+Et c'est la seule différence.
 
 04:05.780 --> 04:09.560
-So there's all the win and loss conditions and our new scripting.
+Voilà donc toutes les conditions de gain et de perte et notre nouveau script.
 
 04:12.240 --> 04:15.120
-In the next video, we'll cover adding extra polish.
+Dans la prochaine vidéo, nous nous pencherons sur l'ajout d'une finition supplémentaire.

@@ -1,184 +1,184 @@
 WEBVTT
 
 00:01.730 --> 00:03.650
-The physical material asset.
+Le bien matériel physique.
 
 00:03.650 --> 00:09.260
-In this video, we'll cover what is the physical material, what are its most important properties,
+Dans cette vidéo, nous verrons ce qu'est le matériau physique et quelles sont ses principales propriétés,
 
 00:09.260 --> 00:11.030
-and then we'll get a chance to use it.
+puis nous aurons l'occasion de l'utiliser.
 
 00:11.030 --> 00:17.600
-Inside the Unity Editor A note about two D versus three D Unity has two separate physics systems in
+A l'intérieur de l'éditeur Unity Une note à propos de deux D par rapport à trois D Unity a deux systèmes de physique distincts dans l'éditeur Unity.
 
 00:17.600 --> 00:23.090
-two D, the rigid body, two D references the physics material two RD asset.
+two D, le corps rigide, two D référence le matériel physique two RD asset.
 
 00:23.090 --> 00:30.350
-This has an SE in the title in three d The rigid body references the physic material without an se physic
+Ceci a un SE dans le titre en trois d Le corps rigide fait référence au matériel physique sans se physique
 
 00:30.350 --> 00:36.860
 material asset in three d physic material is the asset that describes how to handle colliding objects,
 
 00:36.860 --> 00:39.740
-specifically friction and bouncy ness.
+en particulier le frottement et le rebondissement.
 
 00:39.740 --> 00:42.410
-The physical material to RD asset.
+Le matériel physique à l'actif de RD.
 
 00:42.410 --> 00:44.090
-The same goes in to DX.
+Il en va de même pour DX.
 
 00:44.540 --> 00:46.910
-Let's take a look at an example in three D.
+Prenons un exemple dans trois D.
 
 00:47.880 --> 00:51.810
-Select a game object with a physic material in the inspector window.
+Sélectionnez un objet de jeu avec un matériau physique dans la fenêtre de l'inspecteur.
 
 00:51.810 --> 00:53.560
-We can look at all the components.
+Nous pouvons voir tous les composants.
 
 00:53.580 --> 00:55.200
-Let's browse the properties.
+Parcourons les propriétés.
 
 00:55.770 --> 00:58.560
-Our focus will be dynamic friction.
+Nous allons nous concentrer sur la friction dynamique.
 
 00:58.560 --> 01:01.010
-The friction used when already moving.
+La friction utilisée lorsqu'on est déjà en mouvement.
 
 01:01.020 --> 01:03.590
-Usually it's a value between zero and one.
+Il s'agit généralement d'une valeur comprise entre zéro et un.
 
 01:03.600 --> 01:07.470
-A value of zero feels like ice, static friction.
+Une valeur de zéro donne l'impression d'une glace, d'un frottement statique.
 
 01:07.470 --> 01:11.790
-This is the friction that's used when an object is laying still on a surface.
+Il s'agit de la friction utilisée lorsqu'un objet reste immobile sur une surface.
 
 01:11.790 --> 01:14.220
-Usually it's a value from 0 to 1.
+Il s'agit généralement d'une valeur comprise entre 0 et 1.
 
 01:14.220 --> 01:16.320
-A value of zero feels like ice.
+Une valeur de zéro donne l'impression d'être sur de la glace.
 
 01:16.410 --> 01:17.520
-Bouncy ness.
+La sensation de rebond.
 
 01:17.520 --> 01:19.410
-How bouncy is the surface?
+Quel est le degré de rebondissement de la surface ?
 
 01:19.410 --> 01:21.810
-A value of zero will not bounce.
+Une valeur de zéro ne rebondit pas.
 
 01:21.810 --> 01:25.200
-A value of one will bounce without any loss of energy.
+Une valeur de un rebondit sans perte d'énergie.
 
 01:25.200 --> 01:25.800
 Friction.
 
 01:25.800 --> 01:30.330
-Combine how the friction of two colliding objects is combined bounce.
+Combinez la façon dont le frottement de deux objets en collision est combiné au rebond.
 
 01:30.330 --> 01:34.230
-Combine how the bouncy ness of two objects is combined.
+Combinez la façon dont le rebond de deux objets est combiné.
 
 01:35.560 --> 01:36.950
-Let's take a look at a demo.
+Jetons un coup d'œil à une démo.
 
 01:36.970 --> 01:43.210
 Sliding cubes begin will play the scene will create a physic material from scratch and we'll play with
 
 01:43.210 --> 01:44.110
-its properties.
+ses propriétés.
 
 01:44.710 --> 01:48.430
-In this scene, let's open up our sliding cubes.
+Dans cette scène, ouvrons nos cubes coulissants.
 
 01:48.430 --> 01:49.120
-Begin.
+Commençons.
 
 01:50.320 --> 01:54.940
-We'll give it a run and we'll see that the cubes interact in the same way.
+Nous allons faire un essai et nous verrons que les cubes interagissent de la même manière.
 
 01:56.070 --> 02:01.110
-They slowly fall down, turning over themselves with the default.
+Ils tombent lentement, en se retournant par défaut.
 
 02:01.380 --> 02:04.080
-We do not yet have physic materials applied.
+Nous n'avons pas encore appliqué les matériaux physiques.
 
 02:04.110 --> 02:05.670
-Let's go ahead and create some.
+Allons-y et créons-en.
 
 02:05.760 --> 02:11.250
-We'll leave one of these cubes as the default and then we'll create a few experiments for the other
+Nous laisserons l'un de ces cubes par défaut, puis nous créerons quelques expériences pour l'autre
 
 02:11.250 --> 02:11.730
-two.
+deux.
 
 02:12.300 --> 02:16.320
-So if we right click on the folder we created.
+Si nous faisons un clic droit sur le dossier que nous avons créé.
 
 02:17.320 --> 02:24.250
-We can go to create and physic material because we're in a 3D scene, it's important that we pick physic
+Nous pouvons aller à create and physic material parce que nous sommes dans une scène 3D, il est important que nous choisissions physic
 
 02:24.250 --> 02:25.090
-material.
+matériel.
 
 02:27.100 --> 02:28.630
-We'll call this one default.
+Nous appellerons celui-ci default.
 
 02:29.560 --> 02:32.020
-And we'll leave it at those default settings.
+Et nous le laisserons à ces paramètres par défaut.
 
 02:32.650 --> 02:34.120
-Now, let's create another one.
+Maintenant, créons-en un autre.
 
 02:37.940 --> 02:40.220
-This one will make it very bouncy.
+Celui-ci le rendra très rebondissant.
 
 02:41.210 --> 02:48.170
-And we'll use the default values for the first, as I mentioned, and then the bouncy one will increase
+Nous utiliserons les valeurs par défaut pour le premier, comme je l'ai mentionné, puis le rebond augmentera.
 
 02:48.170 --> 02:50.780
-the bouncy ness to the highest value of one.
+le caractère rebondissant jusqu'à la valeur la plus élevée de un.
 
 02:50.900 --> 02:54.170
-And now we'll create the third wheel right click.
+Nous allons maintenant créer la troisième roue en cliquant avec le bouton droit de la souris.
 
 02:54.170 --> 03:02.270
-We create physical material and this one will make it a very slippery or slippy one.
+Nous créons un matériau physique et celui-ci le rendra très glissant.
 
 03:03.420 --> 03:09.960
-That will be with no dynamic friction and no static friction to show an extreme.
+Ce sera sans frottement dynamique et sans frottement statique, pour montrer l'extrême.
 
 03:11.200 --> 03:13.150
-We'll leave the bouncy ness at the default.
+Nous laisserons le caractère rebondissant à la valeur par défaut.
 
 03:13.720 --> 03:15.010
-Now let's assign them.
+Maintenant, attribuons-les.
 
 03:16.220 --> 03:19.700
-We can see the highlight here on the left one, we'll leave that as default.
+Nous pouvons voir la surbrillance ici sur la gauche, nous la laisserons par défaut.
 
 03:20.240 --> 03:25.700
-These are all set up identically, but I gave them a unique name just to hint where we should use so
+Ces éléments sont tous configurés de la même manière, mais je leur ai donné un nom unique pour indiquer où nous devrions les utiliser.
 
 03:25.700 --> 03:28.310
-bouncy we'll drag that into the box Collider.
+bouncy, nous allons le faire glisser dans la boîte Collider.
 
 03:28.580 --> 03:34.490
-And then group three, this one here, we will go ahead and we'll add the slippi.
+Et puis le groupe trois, celui-là, nous allons aller de l'avant et ajouter le slippi.
 
 03:35.700 --> 03:37.470
-Now let's play the scene again.
+Reprenons la scène.
 
 03:37.470 --> 03:40.980
-And we should see them fall in a different way.
+Et nous devrions les voir tomber d'une manière différente.
 
 03:46.220 --> 03:48.110
-You can see that we got different results.
+Vous pouvez voir que nous avons obtenu des résultats différents.
 
 03:50.150 --> 03:53.120
-In the next video, we'll take a look at three D joints.
+Dans la prochaine vidéo, nous nous intéresserons aux articulations en trois D.
