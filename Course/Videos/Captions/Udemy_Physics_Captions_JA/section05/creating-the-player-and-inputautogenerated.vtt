@@ -1,214 +1,214 @@
 WEBVTT
 
 00:01.800 --> 00:08.190
-Creating the player and input in this video will cover capturing mouse input from the user and using
+このビデオでは、プレーヤーと入力を作成することで、ユーザーからのマウス入力をキャプチャし、その入力を使用することについて説明します。
 
 00:08.190 --> 00:11.170
-a target joint to restrict the asteroid's movement.
+ターゲットジョイントを使って小惑星の動きを制限します。
 
 00:11.190 --> 00:15.570
-Then we'll use rigid body add force for the projectile motion of the asteroid.
+そして，小惑星の投射運動に剛体付加力を使用します。
 
 00:16.110 --> 00:19.820
-The task breakdown here we have this is our screenshot goal.
+タスクの内訳はスクリーンショットのゴールです。
 
 00:19.830 --> 00:26.760
-We'll add a catapult prefab, add the catapult script, add the asteroid that will go in the catapult
+カタパルトのプレハブを追加し、カタパルトスクリプトを追加し、カタパルトに入る小惑星を追加します。
 
 00:26.760 --> 00:28.260
-and fly across the sky.
+空を飛びます。
 
 00:28.290 --> 00:29.130
-An asteroid.
+小惑星
 
 00:29.130 --> 00:30.270
-C-sharp Script.
+C-シャープ・スクリプト
 
 00:31.130 --> 00:32.730
-Let's open up Section five.
+セクション5を開きましょう。
 
 00:32.750 --> 00:33.650
-Video two.
+ビデオ2
 
 00:33.650 --> 00:34.940
-Upset Ducks two.
+逆転ダックス2
 
 00:36.950 --> 00:38.900
-We're going to open up upset ducks to.
+アップセット・ダックを公開します。
 
 00:39.860 --> 00:40.910
-And give it a play.
+"アヒル "を "アヒル "に
 
 00:43.760 --> 00:49.910
-We see the addition here as a catapult and the asteroid we can mouse drag around and when we release
+"カタパルト "と "小惑星 "をマウスでドラッグして動かすと...
 
 00:49.910 --> 00:57.230
-it shoots and we can hit spacebar to reset and choose any angle and it shoots.
+スペースバーを押すとリセットされ、好きな角度を選んで撃つことができる。
 
 00:57.560 --> 00:59.270
-So let's create that from scratch.
+では、それを一から作ってみよう。
 
 01:00.800 --> 01:03.320
-First, we'll get rid of the stuff that we're planning to create.
+まず、これから作る予定のものを取り除きます。
 
 01:03.320 --> 01:07.700
-This video, the asteroid, the catapult, the two scripts.
+このビデオ、小惑星、カタパルト、2つのスクリプト。
 
 01:12.780 --> 01:13.890
-And here we are.
+そして到着
 
 01:14.310 --> 01:17.460
-So as a starting point, first thing we're going to create is the asteroid.
+まずは小惑星を作ります。
 
 01:27.690 --> 01:29.130
-We'll bring out that sprite.
+そのスプライトを出します。
 
 01:29.340 --> 01:32.700
-It looks like it's sized well already, so we don't have to scale it.
+サイズはすでに合っているようなので、拡大縮小する必要はありません。
 
 01:32.820 --> 01:37.320
-And we'll go ahead and add a rigid body circle collider and a target joint.
+剛体サークルコライダーとターゲットジョイントを追加します。
 
 01:52.100 --> 01:54.320
-The target joint will turn off initially.
+ターゲットジョイントは最初はオフにします。
 
 01:55.630 --> 01:58.330
-Then we're going to add our own custom script of asteroid.
+小惑星のスクリプトを追加します。
 
 02:08.270 --> 02:10.520
-Then selecting the asteroid sprite.
+小惑星のスプライトを選択します。
 
 02:12.680 --> 02:16.220
-We'll rename it to simply asteroid and add our new script.
+名前を "asteroid "に変更し、スクリプトを追加します。
 
 02:21.620 --> 02:22.910
-That's the basic setup.
+これが基本的なセットアップだ。
 
 02:22.910 --> 02:27.950
-Let's make that a prefab and then let's look at our asteroid script and start coding it.
+これをプレハブにして、小惑星のスクリプトを見てコーディングを始めましょう。
 
 02:34.490 --> 02:36.440
-We'll double click the asteroid script.
+小惑星スクリプトをダブルクリックします。
 
 02:37.070 --> 02:39.510
-Now, this is what Unity gives us from the beginning.
+これでUnityは最初からこのようなものを提供してくれます。
 
 02:39.530 --> 02:43.280
-I'm going to jump in and paste in what I've already created for us.
+すでに作成したものを貼り付けます。
 
 02:49.870 --> 02:50.980
-Let's take a look.
+見てみよう。
 
 02:51.980 --> 02:58.220
-So we've extended mono behavior and I've used a few additional features to capture mouse clicks.
+monoのビヘイビアを拡張し、マウスクリックをキャプチャする機能を追加しました。
 
 02:58.790 --> 03:02.900
-Then I've got some public properties of rigid body and target.
+そして、剛体とターゲットのプロパティを公開しました。
 
 03:03.140 --> 03:08.900
-I keep track of if we've released this into the air or not, how far we're able to drag it.
+宙に浮かせたかどうか、どこまでドラッグできるかを記録しています。
 
 03:09.770 --> 03:11.630
-Some serialized fields there.
+シリアル化されたフィールド
 
 03:12.410 --> 03:18.440
-We can also use a serialized flight speed, which we can set from the inspector to change how fast it
+インスペクタで飛行速度を設定することもできます。
 
 03:18.440 --> 03:19.760
-should move through the sky.
+空中を移動します。
 
 03:20.960 --> 03:24.920
-Then down here on update is how I handle the mouse input.
+そして、この下のupdateでマウスの入力を処理します。
 
 03:26.780 --> 03:31.100
-And on mouse down, I set that we're dragging and I turn the target joint.
+そしてマウスダウン時にドラッグしていることを設定し、ターゲットジョイントを回転させます。
 
 03:31.100 --> 03:35.840
-On the target joint is what's going to restrict our movement so it doesn't let us drag too far.
+ターゲットジョイントで動きを制限し、ドラッグしすぎないようにする。
 
 03:36.320 --> 03:39.020
-And on pointer up, I release that.
+"ポインターアップ "を解除する
 
 03:40.340 --> 03:45.110
-And in the release is when I add the physics force, we'll see that familiar add force.
+ポインターを離すと物理的な力が加わります。
 
 03:48.710 --> 03:49.820
-Let's play the scene.
+シーンを再生してみましょう。
 
 03:52.700 --> 03:53.270
-Great.
+いいぞ
 
 03:54.700 --> 03:56.230
-Now let's add the catapult.
+カタパルトを追加します。
 
 04:49.190 --> 04:50.960
-And we'll create a catapult script.
+カタパルトスクリプトを作成します。
 
 05:05.540 --> 05:08.600
-We open that up and let's paste in what I've created for us.
+スクリプトを開き、作成したものを貼り付けます。
 
 05:15.780 --> 05:17.640
-So here we've got the catapult.
+これでカタパルトが完成しました。
 
 05:18.360 --> 05:24.150
-I'm going to have an asteroid prefab the asteroid parent where it should be connected.
+小惑星のプレハブを作成します。
 
 05:24.150 --> 05:27.420
-And the center point, the position it should be connected to.
+そして中心点、接続されるべき位置。
 
 05:27.900 --> 05:29.730
-When we wake up, I'll add an asteroid.
+起きたら小惑星を追加します。
 
 05:29.730 --> 05:35.640
-And what I do here is I instantiate a new asteroid game object from the prefab and set it in the right
+プレハブから新しい小惑星のゲームオブジェクトをインスタンス化し、それを右側にセットします。
 
 05:35.640 --> 05:36.390
-position.
+の位置に設定する。
 
 05:36.600 --> 05:39.780
-Notice down here I turn the target joint on Finally There.
+ターゲットジョイントをFinally Thereにします。
 
 05:39.780 --> 05:41.190
-That's what does the restriction.
+これで制限をかける。
 
 05:41.460 --> 05:42.840
-Let's go ahead and wire that up.
+このまま配線していきます。
 
 06:13.450 --> 06:15.400
-And finally, we'll put it in the position.
+そして最後にポジションを決めます。
 
 06:27.040 --> 06:29.080
-And let's give it a play.
+試してみましょう
 
 06:37.010 --> 06:45.980
-You know, I can see on the asteroid I'm missing a reference to the target joint and the rigid body.
+小惑星のターゲットジョイントと剛体へのリファレンスが欠けているのがわかりますね。
 
 06:55.420 --> 06:56.260
-Looks good.
+いい感じだ
 
 06:57.210 --> 06:59.070
-The centre point is a bit off.
+中心点が少しずれています。
 
 06:59.070 --> 07:00.300
-We'll raise that up.
+上げるぞ
 
 07:05.340 --> 07:06.320
-Then give it a play.
+そしてプレーする
 
 07:11.540 --> 07:12.800
-Looks really good.
+いい感じ
 
 07:13.520 --> 07:20.360
-As a last adjustment, I see that the front Sprite needs to be a higher number than the asteroid itself.
+最後の調整として、フロントのスプライトは小惑星よりも高い数値にする必要があるようだ。
 
 07:23.080 --> 07:26.620
-So now the asteroid believably is between the two pieces of wood.
+これで小惑星は2つの木片の間にあることが証明された。
 
 07:27.250 --> 07:27.940
-And that's it.
+以上です。
 
 07:27.970 --> 07:28.990
-Thanks very much.
+ありがとうございました。
 
 07:31.520 --> 07:35.060
-In the next video, we'll work on creating the obstacles.
+次のビデオでは、障害物の作成に取り組みます。

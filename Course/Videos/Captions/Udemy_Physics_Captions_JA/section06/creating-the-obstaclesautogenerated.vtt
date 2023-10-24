@@ -1,298 +1,292 @@
 WEBVTT
 
 00:01.780 --> 00:03.200
-Creating the obstacles.
+障害物を作る。
 
 00:03.220 --> 00:08.950
-In this video, we'll cover creating movable and immovable objects, and we'll add spinning coins which
+このビデオでは、移動可能なオブジェクトと移動不可能なオブジェクトの作成について説明します。
 
 00:08.950 --> 00:10.650
-are collectible by the player.
+を追加します。
 
 00:10.660 --> 00:12.100
-Here's the task breakdown.
+タスクの内訳は以下の通り。
 
 00:12.100 --> 00:18.140
-We'll add the cube movable prefab, and we'll add the cube immovable prefab along with its script.
+キューブ可動プレハブを追加し、スクリプトと共にキューブ不動プレハブを追加します。
 
 00:18.160 --> 00:23.260
-We'll add a coin prefab and its script to handle spinning and being collected by the player.
+コインのプレハブとスクリプトを追加します。
 
 00:23.410 --> 00:27.190
-For the project, we'll open up section six, Video three and the scene.
+プロジェクトでは、セクション6、ビデオ3、シーンを開きます。
 
 00:27.190 --> 00:28.390
-Crazy Ball three.
+クレイジーボール3
 
 00:28.780 --> 00:30.310
-All right, Here we are inside Unity.
+ユニティ内部です
 
 00:30.670 --> 00:33.890
-Let's go ahead and open up our crazy ball three scene.
+"クレイジーボール3 "のシーンを開きます。
 
 00:33.910 --> 00:34.810
-Give it a play.
+プレイしてみましょう。
 
 00:35.470 --> 00:38.980
-So what's new in this is we have objects within the walls.
+壁の中にオブジェクトがあるのが新しいですね。
 
 00:38.980 --> 00:40.870
-We've got different platforms.
+プラットフォームが違う
 
 00:40.870 --> 00:44.350
-We've got different movable and immovable objects.
+移動可能な物体と移動不可能な物体がある
 
 00:44.350 --> 00:49.090
-So the darker cubes, I can't move and the lighter cubes I can move them.
+"黒い立方体は動かせない" "明るい立方体は動かせる
 
 00:49.090 --> 00:51.070
-So it just gives a little visual variety.
+視覚的に変化をつけられる
 
 00:51.280 --> 00:56.170
-Also, as I'm collecting these coins, you can see I collide with them and they disappear.
+コインを集めると......ぶつかったり消えたりします。
 
 00:56.290 --> 00:58.240
-So they instantly disappear.
+瞬時に消えるんですね。
 
 00:58.240 --> 01:01.990
-And of course they're spinning around just for a nice visual effect.
+もちろん、回転しているのは視覚的な効果だ。
 
 01:02.540 --> 01:04.850
-And also cast shadows, which is cool.
+そして影を落とす。
 
 01:04.870 --> 01:08.500
-So let's focus on just how the coin is set up.
+コインのセッティングに注目してみましょう。
 
 01:08.530 --> 01:10.570
-Let's do that together from scratch.
+一から一緒にやりましょう。
 
 01:10.690 --> 01:12.580
-So here we are.
+こうだ
 
 01:12.790 --> 01:15.040
-Let's take a look at the.
+を見てみましょう。
 
 01:18.290 --> 01:20.030
-Pick up prototype object.
+プロトタイプのオブジェクトをピックアップします。
 
 01:20.660 --> 01:21.440
-Just double check.
+ダブルチェック
 
 01:21.440 --> 01:24.350
-When we see this, I'm going to drag out the right one.
+これを見たら、正しいものを引きずり出します。
 
 01:26.390 --> 01:30.410
-Okay, So let's talk about converting this into our coin.
+では、これをコインに変換してみましょう。
 
 01:31.070 --> 01:34.400
-So first thing, we want it to be a little bit higher off the ground.
+まずは地面から少し離します。
 
 01:35.350 --> 01:36.460
-Uh, you could make a call.
+あ、電話したら？
 
 01:36.460 --> 01:40.510
-If this is the right size for us, I'm going to say we want it to be a little bit smaller.
+このサイズでいいなら、もう少し小さい方がいいと思います。
 
 01:42.270 --> 01:43.920
-So I scale it down.
+だから縮小する。
 
 01:45.130 --> 01:48.290
-Checking the scale against the size of our character.
+キャラクターの大きさとスケールを照らし合わせる。
 
 01:49.230 --> 01:50.550
-I think that looks pretty good.
+なかなかいい感じだと思います。
 
 01:50.850 --> 01:52.830
-Then I've got a gold texture setup.
+ゴールドのテクスチャを設定しました。
 
 01:52.830 --> 01:53.910
-We could use that.
+これは使える
 
 01:54.870 --> 01:58.050
-It's often in games that we want our coins to look like gold coins.
+ゲームでは金貨のように見せたいことがよくあります。
 
 01:58.050 --> 02:00.270
-So we'll use that same look.
+だから同じように見せる
 
 02:01.170 --> 02:03.480
-And then let's get the code going on.
+そして、コードを書いていきましょう。
 
 02:03.480 --> 02:07.710
-So I've already created a script for.
+スクリプトはすでに作ってあります。
 
 02:08.970 --> 02:10.770
-The queen.
+女王
 
 02:11.430 --> 02:14.100
-And to do that, we'll need a collider as well.
+そのためにはコライダーも必要だ。
 
 02:15.620 --> 02:21.890
-So I'm going to add a box collider and I can go ahead and give a look at the box collider just to make
-
-02:21.890 --> 02:22.670
-sure it's sized.
+そこでボックスコライダーを追加することにした。
 
 02:22.670 --> 02:23.000
-Right?
+そうだろ？
 
 02:23.000 --> 02:24.740
-But it looks pretty good to me.
+でもいい感じだよ
 
 02:25.340 --> 02:28.220
-And then let's take a look at our coin script.
+そしてコインスクリプトを見てみましょう。
 
 02:28.640 --> 02:31.460
-This is really the bulk of our work here, some scripting.
+これがスクリプトの大部分です。
 
 02:31.820 --> 02:37.820
-So in the coin, first of all, I track if it's alive or not, I set it alive to true.
+コインの中で、まず生きているかどうかを追跡し、生きていることをtrueに設定します。
 
 02:37.850 --> 02:42.920
-Now, typically you can keep the amount of behavior alive and just delete it when you're ready for it
-
-02:42.920 --> 02:43.810
-not to be alive.
+通常であれば、行動量を維持したまま、準備ができたら削除することができます。
 
 02:43.820 --> 02:46.580
-But here I needed this bull for an extra reason.
+しかし、この雄牛が必要だったのには理由がある。
 
 02:46.860 --> 02:47.990
-Talk about it in a second.
+その話はまた今度。
 
 02:48.290 --> 02:51.010
-So in the update, I rotate the graphics.
+アップデートでグラフィックを回転させる。
 
 02:51.020 --> 02:55.610
-I'm doing rotation based on how much do I want it to rotate per frame.
+1フレームでどれだけ回転させるかを決めて回転させています。
 
 02:55.610 --> 02:58.920
-And I'm using a crazy ball constants class to handle that.
+クレイジーボールの定数クラスを使っています。
 
 02:58.970 --> 03:03.630
-So in here I've got some isolated variables so that it's really easy to tweak.
+このクラスでは、いくつかの変数を分離しているので、微調整はとても簡単です。
 
 03:03.650 --> 03:09.080
-So you can see that it's going to units in the Y direction every frame then.
+毎フレーム、Y方向にユニットが移動するのがわかりますね。
 
 03:10.060 --> 03:11.140
-Back in the coin.
+コインに戻ります。
 
 03:12.820 --> 03:16.840
-Hear something from outside is going to call this public, destroy me.
+外から何か聞こえてきそうだ。
 
 03:16.840 --> 03:22.090
-And what's going to happen inside is I'm going to use that is alive to market false, and then I immediately
+そして内部で起こることは、その生きていることを利用して偽のマーケットを作り、そしてすぐに
 
 03:22.090 --> 03:23.410
-destroy the game object.
+ゲームオブジェクトを破棄します。
 
 03:23.440 --> 03:29.530
-It's not quite obvious yet why I'm using this as a live, but in a future video we're going to see that
+なぜこれをライブで使っているのかはまだよくわかりませんが、今後のビデオでは
 
 03:29.530 --> 03:31.450
-instead of instantly destroying it.
+即座に破壊するのではなく
 
 03:31.450 --> 03:36.400
-Like now, I'm going to use a programmatic motion to have it slowly fade away for some polish.
+03:31.450 --> 03:36.450 今と同じように、プログラムモーションでゆっくりとフェードアウトしていく。
 
 03:36.400 --> 03:38.260
-So this is just the setup for that.
+これはそのためのセットアップだ。
 
 03:38.260 --> 03:41.920
-Now, how do we detect the ball and the coin?
+さて、どうやってボールとコインを検出するのでしょうか？
 
 03:41.920 --> 03:47.710
-Well, I've chosen to put that inside the crazy ball here, so we're going to use trigger enter.
+ボールを入れるためにトリガーを入力します。
 
 03:47.710 --> 03:54.520
-So that's important that then I go into the coins Collider and I set is trigger.
+そしてコインコライダーでトリガーをセットする。
 
 03:54.520 --> 04:00.850
-So by setting this trigger here, then the crazy ball, when it's going to get into the same collider
+このトリガーを設定することで、クレイジーボールが同じコライダーに入った時に
 
 04:00.850 --> 04:04.210
-area as the coin, the on trigger enter is going to fire.
+コインと同じエリアに入るとトリガーが作動します。
 
 04:04.210 --> 04:09.340
-I could choose to put this trigger, enter code inside the coin or inside the ball.
+このトリガー、エンターのコードをコインの中に入れるか、ボールの中に入れるかを選ぶことができる。
 
 04:09.340 --> 04:10.630
-Either one is fine.
+どちらでも構いません。
 
 04:10.630 --> 04:16.750
-I know in the future of this game I want the crazy ball to collide with multiple different types of
+このゲームの将来的には、クレイジーボールが複数の異なるタイプのボールと衝突するようにしたいんだ。
 
 04:16.750 --> 04:17.380
-objects.
+オブジェクト
 
 04:17.380 --> 04:19.840
-So I'm going to put all that here in the same spot.
+だから、それを全部同じ場所に置くんだ。
 
 04:19.840 --> 04:21.640
-So this is the nice spot for me.
+ここが僕にとっていい場所なんだ。
 
 04:21.640 --> 04:24.100
-So here I detect and I collect the coin.
+ここでコインを回収します。
 
 04:24.190 --> 04:28.330
-I check the tag of what I'm colliding with to make sure it's the coin tag.
+コインのタグを確認します。
 
 04:28.480 --> 04:30.250
-Take a look at that variable.
+その変数を見ます。
 
 04:30.250 --> 04:31.600
-It's just coin.
+ただのコインです。
 
 04:31.600 --> 04:37.120
-And when I go here and I set up this world, it's important that I set the tag to coin.
+タグをコインに設定することが重要だ。
 
 04:38.150 --> 04:45.320
-Then back here in the crazy ball, I then check to see does the game object in colliding with have the
+そして、このクレイジーボールに戻って、衝突しているゲームオブジェクトが
 
 04:45.320 --> 04:47.930
-game object component called coin?
+04:47.960 --> 04:47.960 --> 04:47.960
 
 04:47.960 --> 04:52.700
-Of course it does because of how I've constructed this, but it's just a good idea to check if it's
+勿論、この構成からしてそうなのですが、一応確認しておきましょう。
 
 04:52.700 --> 04:56.000
-null and then I check to see is it still alive?
+nullであるかどうか、そしてまだ生きているかどうかを確認する。
 
 04:56.000 --> 04:57.940
-If so, destroy me that way.
+もしそうなら、私を破壊してください。
 
 04:57.950 --> 05:05.330
-Once we add a programmatic effect as the coin is dissolving away, perhaps shrinking, I don't want
+コインが溶けてなくなっていくようなエフェクトを加えたい。
 
 05:05.330 --> 05:08.300
-to collide with it again and again and again as it's shrinking.
+何度も何度もぶつかってはいけない。
 
 05:08.300 --> 05:09.260
-So I tag.
+だからタグをつける。
 
 05:09.260 --> 05:10.640
-It is a live false.
+生きた嘘です。
 
 05:10.640 --> 05:13.310
-Then I won't trigger this again and again.
+これで何度も発動することはない。
 
 05:13.310 --> 05:16.580
-So destroy me executes exactly one time for each.
+だからdestroy meは1回ずつきっちり実行される。
 
 05:16.580 --> 05:17.630
-So that's it?
+これで終わり？
 
 05:17.630 --> 05:18.890
-That's the way it's set up.
+そういう設定なんだ。
 
 05:18.890 --> 05:21.290
-I can go ahead and run the scene now.
+シーンを実行します
 
 05:23.840 --> 05:27.800
-And run into there and it disappears perfectly.
+完璧に消えます。
 
 05:29.270 --> 05:29.960
-That's it.
+以上です。
 
 05:32.070 --> 05:35.370
-In the next video, we'll cover adding win loss conditions.
+次回のビデオでは、勝敗条件の追加について説明する。

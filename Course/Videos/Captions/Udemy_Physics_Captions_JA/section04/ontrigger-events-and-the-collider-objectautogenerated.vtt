@@ -1,154 +1,154 @@
 WEBVTT
 
 00:01.060 --> 00:03.670
-On trigger events and the collider object.
+トリガー・イベントとコライダー・オブジェクトについて。
 
 00:03.760 --> 00:08.470
-In this video, we'll cover what our trigger events and why are they useful in our game.
+このビデオでは、トリガー・イベントとは何か、そしてなぜトリガー・イベントがゲームに役立つのかを説明します。
 
 00:08.740 --> 00:12.280
-We'll also open up the Unity editor and play with trigger events.
+また、Unityのエディタを開き、トリガーイベントを使って遊びます。
 
 00:12.790 --> 00:14.890
-So why use on trigger events?
+なぜトリガーイベントを使うのか？
 
 00:15.220 --> 00:19.210
-These events give us more information about physics intersections.
+トリガーイベントは、物理的な交差に関するより多くの情報を与えてくれます。
 
 00:19.510 --> 00:22.630
-These are between game objects with colliders.
+ゲームオブジェクトとコライダーとの間に発生します。
 
 00:22.630 --> 00:24.790
-When is trigger is set to true.
+トリガーがtrueに設定されている場合。
 
 00:25.150 --> 00:26.500
-This is useful in a game.
+ゲーム中に有効です。
 
 00:26.500 --> 00:29.980
-For example, when a character enters a dungeon room.
+例えば、ダンジョンの部屋に入った時など。
 
 00:30.460 --> 00:33.730
-Let's go through a scenario here with a non trigger event.
+ここで、トリガーイベント以外のシナリオを見てみましょう。
 
 00:34.180 --> 00:37.300
-A pink cube is following toward a trigger volume.
+ピンクのキューブがトリガーのボリュームに向かっている。
 
 00:37.510 --> 00:43.120
-Pink has a rigid body and a collider so that it falls and it detects where its bounds are.
+ピンクの立方体は剛体とコライダーを持ち、落下してその境界を検出します。
 
 00:43.120 --> 00:47.350
-And the green has a collider with collider is trigger set to true.
+そして緑にはコライダーがあり、トリガーはtrueに設定されています。
 
 00:47.620 --> 00:55.450
-So pink is falling, pink enters the trigger volume, we get the on trigger enter one time while pink
+ピンクが落下し、ピンクがトリガーボリュームに入り、ピンクの間に1回トリガーが入る。
 
 00:55.450 --> 00:57.640
-is in the trigger volume.
+がトリガーボリュームに入る。
 
 00:57.640 --> 01:01.900
-While it's staying in there, we'll get a repeated call to the on trigger stay.
+ピンクがトリガーボリュームの中にいる間、トリガーステイのコールが繰り返されます。
 
 01:02.080 --> 01:04.840
-We would expect this to be called many times.
+何度も呼び出されることが予想されます。
 
 01:05.570 --> 01:12.560
-When pink exits, the trigger volume will get one time on trigger exit called and then pink continues
+ピンクが退場すると、トリガーボリュームに1回だけon trigger exitが呼び出され、その後ピンクが続行します。
 
 01:12.560 --> 01:13.220
-to fall.
+下落を続けます。
 
 01:13.610 --> 01:16.740
-Our focus here is really about the on trigger enter.
+01:16.760 --> 01:16.760
 
 01:16.760 --> 01:21.530
-That's usually enough information to get what we need from the callback.
+コールバックから必要な情報を得るには、これで十分です。
 
 01:21.620 --> 01:27.800
-For example, again, when a character enters a dungeon room, we would get notified that the character
+例えば、キャラクターがダンジョンの部屋に入ると、次のように通知されます。
 
 01:27.800 --> 01:34.040
-has entered something and then we can inspect the collider object to find out if it's the dungeon room.
+コライダーオブジェクトを検査することで、それがダンジョンの部屋かどうかを調べることができます。
 
 01:34.310 --> 01:40.460
-So the collider object itself is the component that defines the shape of an object for the purposes
+つまり、コライダーオブジェクトはオブジェクトの形状を定義するコンポーネントなのです。
 
 01:40.460 --> 01:41.700
-of physical collision.
+物理的な衝突のために
 
 01:41.720 --> 01:47.210
-We've used colliders before, of course, and we're going to focus on one property here, the collider
+もちろんコライダーは以前にも使ったことがあるが、ここではコライダーという1つのプロパティに焦点を当てることにする。
 
 01:47.420 --> 01:51.510
-game object that's going to tell us for the collider that we're hitting.
+01:47.420→01:51.510:ゲームオブジェクトのコライダープロパティです。
 
 01:51.530 --> 01:53.600
-What game object is it on?
+どのゲームオブジェクトか？
 
 01:53.990 --> 01:57.380
-Let's take a look at a demo we'll look at on trigger events.
+トリガーイベントのデモを見てみましょう。
 
 01:57.380 --> 02:03.290
-One, we'll play the scene, we'll inspect the code, and as a bonus, we'll take a look at the console
+シーンを再生し、コードをチェックし、おまけとしてコンソールを見てみましょう。
 
 02:03.290 --> 02:05.360
-Windows feature called Collapse.
+折りたたみというWindowsの機能
 
 02:06.600 --> 02:07.610
-Here we are in unity.
+ここはunityです。
 
 02:07.620 --> 02:09.150
-Let's open up the next scene.
+次のシーンを開いてみましょう。
 
 02:12.660 --> 02:19.260
-The en trigger events, number one, and we'll notice that q b here is set up with a box collider with
+enのトリガーイベント、その1、ここではq bにボックスコライダーが設定されていることに気づくだろう。
 
 02:19.260 --> 02:21.480
-is trigger set on.
+トリガーが設定されている。
 
 02:21.780 --> 02:23.430
-There's also no rigid body.
+剛体もありません。
 
 02:23.640 --> 02:27.030
-When we play the scene, we expect the pink to fall right through it.
+このシーンを再生すると、ピンクがそのまま落ちてくると思われます。
 
 02:27.180 --> 02:28.020
-Let's see.
+見てみよう
 
 02:32.280 --> 02:32.650
-Yep.
+そうだ
 
 02:32.760 --> 02:34.770
-It behaves exactly as we'd expect.
+予想通りの動きだ。
 
 02:34.860 --> 02:42.110
-And if we look at the console we see we get one enter many stays and one exit.
+コンソールを見てみると......1回の入場で何度も滞在し、1回の退場がある。
 
 02:42.120 --> 02:43.230
-Let's look at the code.
+コードを見てみよう。
 
 02:46.790 --> 02:47.390
-On trigger.
+トリガー
 
 02:47.390 --> 02:48.560
-Enter on sugar.
+シュガーを入力
 
 02:48.560 --> 02:49.830
-Stay and on sugar.
+そのままゴール。
 
 02:49.850 --> 02:50.330
-Exit.
+終了。
 
 02:50.330 --> 02:51.600
-Just like we'd expect.
+予想通り
 
 02:51.620 --> 02:52.430
-That's it.
+これで終了。
 
 02:53.600 --> 02:57.320
-In the next video, we'll look at adding Programatic forces.
+次のビデオでは、プログラマティック・フォースを追加します。
 
 02:57.920 --> 03:04.880
-We'll cover movement and unity from a traditional sense movement in unity for physics specifically.
+このビデオでは、物理学に特化したユニティにおける伝統的な意味での動きとユニティを取り上げます。
 
 03:04.970 --> 03:10.100
-We'll look at types of forces and then we'll open up the unity editor and we'll play with those forces.
+unityエディターを開き、その力を使って遊びます。

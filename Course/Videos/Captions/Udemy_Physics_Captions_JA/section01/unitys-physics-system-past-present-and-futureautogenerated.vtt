@@ -1,199 +1,199 @@
 WEBVTT
 
 00:01.670 --> 00:04.860
-Unity's physics system past, present and future.
+Unityの物理システムの過去、現在、未来。
 
 00:04.880 --> 00:07.400
-In this video, we'll cover what is unity.
+このビデオではunityとは何かについて説明します。
 
 00:07.430 --> 00:11.600
-We'll take a step back and we'll look at what libraries, power, unity, physics today.
+このビデオでは、ユニティとは何かについて説明します。
 
 00:11.600 --> 00:14.360
-And we'll also look to the future of unity physics.
+そしてunity physicsの未来にも目を向けます。
 
 00:14.360 --> 00:20.330
-Unity is the most widely used, real time interactive platform with tools to create rich projects in
+Unityは最も広く使われているリアルタイム・インタラクティブ・プラットフォームで、リッチなプロジェクトを作成するためのツールを備えています。
 
 00:20.330 --> 00:21.580
-all sorts of platforms.
+00:21.590 --> 00:21.590 --> 00:21.590
 
 00:21.590 --> 00:26.640
-Unity is powering games, of course, but also architecture, automotive, construction and more.
+Unityはゲームだけでなく、建築、自動車、建設など様々な分野で活躍しています。
 
 00:26.660 --> 00:34.250
-Unity Version 1.0 was released in 2008, and since it's gained massive popularity as of 2019, 50% of
+Unityのバージョン1.0は2008年にリリースされ、2019年現在では50％がUnityを使用しています。
 
 00:34.250 --> 00:36.080
-mobile games are powered by unity.
+モバイルゲームの50％がunityで作られています。
 
 00:36.080 --> 00:43.790
-Over 3 billion devices worldwide use unity software and 90% of AR and VR is powered by Unity as well.
+世界中で30億台以上のデバイスがunityソフトウェアを使用しており、ARとVRの90%もunityで動いています。
 
 00:43.790 --> 00:46.750
-Unity supports cross-platform deployment.
+Unityはクロスプラットフォームに対応しています。
 
 00:46.760 --> 00:52.940
-Here's just some of the platforms that Unity supports, including PC console and cross platform mobile.
+PCコンソールやモバイルなど、Unityがサポートするプラットフォームの一部をご紹介します。
 
 00:53.420 --> 00:57.200
-So what's built in unity at its core is a 3D rendering system.
+unityの核となるのは3Dレンダリングシステムです。
 
 00:57.200 --> 01:02.990
-You can also create great 2D experiences with unity, and unity includes animation, audio rendering
+unityでは素晴らしい2D体験も作れますし、アニメーション、オーディオレンダリング
 
 01:02.990 --> 01:07.820
-and effects deployment to all those platforms, graphical rendering input and more.
+unityにはアニメーション、オーディオレンダリング、エフェクト、グラフィカルレンダリング入力などが含まれています。
 
 01:07.850 --> 01:10.760
-In this course, we'll focus on physics and scripting.
+このコースでは物理とスクリプトに焦点を当てます。
 
 01:10.760 --> 01:14.630
-Using Unity uses third party physics systems.
+Unityはサードパーティの物理システムを使用しています。
 
 01:14.630 --> 01:15.680
-Now, why do they do that?
+さて、なぜそのようなことをするのでしょうか？
 
 01:15.680 --> 01:19.190
-Because accelerated multi-platform physics is hard to do.
+マルチプラットフォームの物理演算を加速させるのは難しいからだ。
 
 01:19.190 --> 01:25.160
-Unity outsources the work to these third party libraries and raps their API to feel more consistent
+Unityはサードパーティのライブラリにその作業を委託し、APIに一貫性を持たせている。
 
 01:25.160 --> 01:26.210
-and unity friendly.
+そしてunityフレンドリー。
 
 01:26.210 --> 01:31.070
-Something of note is that it takes some time for unity to integrate the latest and greatest features
+注目すべき点は、unityが最新かつ最高の機能を統合するには時間がかかるということだ。
 
 01:31.070 --> 01:32.990
-when each of these libraries are updated.
+これらのライブラリが更新された場合
 
 01:33.900 --> 01:39.380
-In Unity version 1.0 Unity three D Physics was released using the Physics library.
+Unityバージョン1.0では、Physicsライブラリを使用したUnity three D Physicsがリリースされました。
 
 01:39.390 --> 01:46.260
-It wasn't until Unity 4.3 that many 2D features were added, including 2D physics with box two dx.
+2D物理を含む多くの2D機能が追加されたのはUnity4.3になってからです。
 
 01:46.290 --> 01:51.650
-In the future, unity will be powered by dots, physics or data oriented technology stack.
+将来的には、unityはドット絵や物理演算、データ指向の技術スタックで動くようになるでしょう。
 
 01:51.660 --> 01:53.880
-There are features in public beta available.
+パブリックベータ版の機能もあります。
 
 01:53.880 --> 01:55.740
-The future release is to be determined.
+今後のリリースは未定です。
 
 01:55.740 --> 02:01.560
-The future of Unity physics will be powered by unity and collaboration with third party library by having.
+今後のUnityの物理演算は、unityを利用し、サードパーティーのライブラリと連携していく予定です。
 
 02:02.480 --> 02:04.950
-Let's look at the Physics three D library.
+Physics three Dライブラリを見てみましょう。
 
 02:04.970 --> 02:09.650
-Physics is an open source, scalable multi platform physics solution.
+Physicsはオープンソースでスケーラブルなマルチプラットフォーム物理ソリューションです。
 
 02:09.650 --> 02:12.230
-Unity uses this for its three D physics.
+Unityの3D物理演算に使われています。
 
 02:12.230 --> 02:18.590
-It's notable that while physics is on 4.0, unity is integrated only physics 3.4.
+物理学が4.0であるのに対し、unityは物理学3.4しか統合されていないのは注目に値します。
 
 02:18.590 --> 02:22.340
-In the latest 2019 releases, you can see the delay there.
+2019年の最新リリースでは、そこに遅れが見られる。
 
 02:22.340 --> 02:27.260
-That unity takes some time to wrap the latest APIs, test them, integrate them and ship them.
+最新のAPIをラッピングし、テストし、統合し、出荷するのに時間がかかる。
 
 02:27.260 --> 02:29.480
-What Unity offers is very powerful.
+Unityが提供するものはとてもパワフルです。
 
 02:29.510 --> 02:34.670
-Key features of physics include that it's open source multithreaded and has great memory management.
+物理学の主な特徴は、オープンソースのマルチスレッドであることと、優れたメモリ管理です。
 
 02:35.060 --> 02:37.820
-Box two RD powers unities to DX Physics.
+箱2 RDパワーユニットをDX Physicsに。
 
 02:37.820 --> 02:43.280
-Its key feature is what's called a B or axis aligned bounding box.
+B2RDはDX Physicsのユニティをパワーアップさせます。
 
 02:43.280 --> 02:48.920
-This is a very efficient way for unity to check collisions, so running two d games with two D physics
+これはunityが衝突をチェックするための非常に効率的な方法です。
 
 02:48.920 --> 02:51.890
-on even slower and older platforms performs well.
+を実行することができます。
 
 02:51.890 --> 02:58.220
-Some key features are continuous collision detection or accuracy, convex polygons and circles and collision
+|にできるようにあなたがそれをすることができます本当に出くわすことあなたは、実際には私のパートナーとi約束、誰でも素早くはちょうど無視これらの一見正確にどのように{}人のことを忘れることができます。
 
 02:58.220 --> 02:59.330
-groups and categories.
+グループとカテゴリー
 
 02:59.330 --> 03:04.460
-The future of unity physics will be powered by dots or the data oriented technology stack.
+|にできるようにあなたがそれをすることができます本当に出くわすことあなたは、実際には私のパートナーとi約束、誰でも素早くはちょうど無視これらの一見正確にどのように{}人のことを忘れることができます。
 
 03:04.460 --> 03:11.270
-At the Game Developer Conference 2019, Unity announced two new physics choices a first party unity
+ゲームデベロッパーカンファレンス2019で、Unityは2つの新しい物理学の選択肢を発表した。
 
 03:11.270 --> 03:13.580
-solution and a third party havoc solution.
+サードパーティのHavocソリューション。
 
 03:13.580 --> 03:18.650
-Powered by Havoc, users will be able to toggle between each of these at any time because the APIs are
+Havocを採用することで、APIが以下のようになっているため、ユーザーはいつでもこれらを切り替えることができる。
 
 03:18.650 --> 03:19.280
-identical.
+同一です。
 
 03:19.280 --> 03:25.220
-The Unity physics system, which is now available in public beta, has editable C sharp source and is
+Unityの物理システムは現在パブリックベータ版として公開されており、Cシャープソースで編集可能です。
 
 03:25.220 --> 03:27.230
-stateless with no caching.
+ステートレスでキャッシュもありません。
 
 03:27.230 --> 03:32.990
-Thus it's very optimized for multiplayer and easier to understand, read and extend by development teams.
+そのため、多人数プレイに最適化されており、開発チームが理解しやすく、読みやすく、拡張しやすくなっている。
 
 03:32.990 --> 03:39.740
-Havoc Physics which is in preview package coming soon, is stateful with caching thus has a much higher
+Havoc Physicsは近日中にプレビューパッケージがリリースされる予定です。
 
 03:39.740 --> 03:43.580
-performance, but at the cost of complexity it's also higher fidelity.
+Havoc Physicsはステートフルで、キャッシュがあるため、より高いパフォーマンスを発揮します。
 
 03:43.580 --> 03:46.220
-Thus the physics rendered is more accurate.
+こうして描画される物理演算はより正確なものとなる。
 
 03:46.220 --> 03:47.960
-So which physics system is right?
+どの物理システムが正しいのか？
 
 03:47.960 --> 03:53.480
-Well, this course will focus on the traditional two rd and three D physics systems in section seven.
+03:47:960→03:53:480このコースでは、第7章で伝統的な2次元と3次元の物理システムを取り上げます。
 
 03:53.480 --> 03:58.340
-We'll take a look at some advanced topics, including briefly covering dots, physics.
+(仝?仝?仝?仝?仝?仝?仝?
 
 03:58.340 --> 04:02.660
-Each of these systems has a lot of different benefits and drawbacks.
+このように、それぞれのシステムには様々な利点と欠点があります。
 
 04:02.660 --> 04:04.040
-Each will have a long future.
+それぞれに長い未来がある。
 
 04:04.040 --> 04:08.720
-Within the physics platform, we can see that sections two and five will focus on two D physics.
+物理学プラットフォームでは、セクション2と5が2次元物理学に焦点を当てていることがわかる。
 
 04:08.720 --> 04:12.890
-Sections three, four and six will concentrate on three D physics.
+(2)物理学の基礎となる物理学の基礎となる物理学の基礎となる物理学の基礎となる物理学の基礎を学びます。
 
 04:12.890 --> 04:18.320
-In each of those areas we'll create a complete game using two rd and three D in Section seven.
+このセクションでは、2Dと3Dを使用した完全なゲームを作成します。
 
 04:18.320 --> 04:21.920
-We'll take a quick look at the future with Unity Dots Physics.
+Unity Dots Physicsで未来を見てみましょう。
 
 04:23.780 --> 04:29.960
-In the next video, Unity's Physics Project settings we'll cover what are Unity Project settings and
+次のビデオでは、UnityのPhysicsプロジェクト設定について説明します。
 
 04:29.960 --> 04:32.930
-which of the settings are most important to our physics needs.
+どの設定が物理のニーズにとって最も重要なのかを説明します。
 
 04:33.200 --> 04:37.880
-And then we'll experiment with some of these settings inside the Unity editor to see the results.
+また、Unityのエディタ内でこれらの設定をいくつか試し、結果を確認します。

@@ -1,253 +1,253 @@
 WEBVTT
 
 00:01.890 --> 00:07.500
-Physics, life cycle physics, simulate and time dilation in this video will cover the structure of
+物理学、ライフサイクルの物理学、シミュレートと時間の拡張このビデオでは、その構造をカバーします。
 
 00:07.500 --> 00:13.650
-unity projects, the role of mono behaviors inside unity and the code of behavior for physics.
+unityプロジェクトの構造、unity内部でのmonoビヘイビアの役割、物理のためのビヘイビアコード。
 
 00:13.830 --> 00:15.660
-So how is Unity structured?
+では、Unityはどのような構造になっているのでしょうか？
 
 00:15.840 --> 00:18.330
-Unity Structure from the highest level.
+Unityの構造を最上位から。
 
 00:18.330 --> 00:21.870
-You have a project with seen inside the scene.
+シーンの中にプロジェクトがあります。
 
 00:21.870 --> 00:26.990
-There are one or more game objects, and on each game object you have C-sharp components.
+ゲームオブジェクトが1つ以上あり、それぞれのゲームオブジェクトにC-sharpコンポーネントがあります。
 
 00:27.000 --> 00:30.330
-C-sharp components are of a data type unity engine.
+C-sharpコンポーネントのデータ型はunity engineです。
 
 00:30.350 --> 00:31.260
-My behavior.
+私の動作
 
 00:31.260 --> 00:36.120
-In this course, I will refer to components and behaviors as the same thing.
+このコースではコンポーネントとビヘイビアを同じものとして扱います。
 
 00:36.120 --> 00:41.460
-As the image shows, we have a game object in the center with many possible components around it, and
+画像のように、中央にゲームオブジェクトがあり、その周りに多くのコンポーネントが存在します。
 
 00:41.460 --> 00:43.770
-those game objects fit inside the game world.
+それらのゲームオブジェクトはゲームの世界に収まっています。
 
 00:44.190 --> 00:49.290
-Understanding behaviors is critical to understanding unity behaviors.
+ビヘイビアを理解することはユニティのビヘイビアを理解するために不可欠です。
 
 00:49.290 --> 00:56.010
-To attach your code class to a game object, you have to extend mono behavior much, but not all of
+ゲームオブジェクトにコードクラスをアタッチするには、monoビヘイビアを拡張する必要があります。
 
 00:56.010 --> 00:58.440
-your code will extend from mono behaviors.
+モノ・ビヘイビアを拡張する。
 
 00:58.440 --> 01:03.840
-Mono behaviors come with powerful built in functions with a predictable execution order.
+Monoビヘイビアには実行順序が予測できる強力な関数が組み込まれています。
 
 01:03.840 --> 01:08.400
-This execution order of mono behaviors is very important in game development.
+モノビヘイビアの実行順序はゲーム開発において非常に重要です。
 
 01:08.400 --> 01:09.720
-We'll talk about runtime.
+ランタイムについて説明します。
 
 01:09.720 --> 01:11.160
-That's the execution order.
+これが実行順序です。
 
 01:11.160 --> 01:16.620
-While your game is running for your players in the image on the right, you can see there's many, many
+右の画像で選手がゲームを実行している間、多くのゲームが実行されているのがわかります。
 
 01:16.620 --> 01:18.990
-different execution order functions.
+様々な実行順序関数があります。
 
 01:19.020 --> 01:20.340
-Let's zoom in a little bit.
+もう少し拡大してみましょう。
 
 01:20.490 --> 01:26.400
-On the top half, we can see major sections, initialization, physics, input events and more.
+上半分には主要なセクション、初期化、物理、入力イベントなどが見えます。
 
 01:26.430 --> 01:32.400
-Each of these is a function that unity will call for us and we can optionally listen in.
+それぞれunityが呼び出してくれる関数で、オプションでリッスンすることもできる。
 
 01:32.400 --> 01:34.710
-The key ones for us are awake.
+重要なのは目覚めだ。
 
 01:34.710 --> 01:41.100
-Start fixed update trigger and collision events and update if we look below.
+トリガーとコリジョンイベントの固定更新を開始。
 
 01:41.100 --> 01:42.690
-The diagram continues.
+図が続きます。
 
 01:42.690 --> 01:46.440
-There's scene rendering, pausing and decommissioning.
+シーンのレンダリング、一時停止、破棄があります。
 
 01:46.440 --> 01:49.260
-Here our focus is on on destroy.
+ここでは破壊に焦点を当てます。
 
 01:49.290 --> 01:55.320
-Together the execution order of Monte behavior functions that we care about are listed here awake and
+気になるモンテのビヘイビア関数の実行順序は、ここにまとめてある。
 
 01:55.320 --> 01:59.100
-start are called once and early in the project's life in the middle and bold.
+startはプロジェクトの初期に一度だけ、真ん中と太字で呼ばれている。
 
 01:59.100 --> 02:01.590
-We've got several key ones related to physics.
+物理学に関連する重要なものがいくつかあります。
 
 02:01.590 --> 02:04.470
-Fixed update is called once per physics tick.
+固定アップデートは物理ティックごとに1回呼び出されます。
 
 02:04.500 --> 02:09.600
-It's important that this is independent of the frame rate, so we get dependable results on trigger
+フレームレートに依存しないことが重要で、トリガー時に信頼できる結果を得ることができる。
 
 02:09.600 --> 02:11.640
-events and on collision events.
+イベントと衝突イベントで信頼できる結果を得ることができます。
 
 02:11.640 --> 02:13.440
-We'll talk about those more later.
+それについては後で詳しく説明します。
 
 02:13.440 --> 02:19.440
-But there, when our physics world objects are overlapping, how we can listen in on that update is
+しかし、物理ワールドのオブジェクトが重なっているとき、そのアップデートをリッスンする方法は以下の通りだ。
 
 02:19.440 --> 02:20.640
-called once per frame.
+フレームに1回呼び出されます。
 
 02:20.640 --> 02:25.110
-That's the main workhorse function for most of our code except physics.
+この関数は物理以外のほとんどのコードで使われている。
 
 02:25.110 --> 02:30.390
-Code on destroy is called when the game object is deleted or when the game world ends.
+destroyのコードはゲームオブジェクトが削除された時やゲームの世界が終了した時に呼び出されます。
 
 02:31.910 --> 02:35.870
-Here's an example template file I created for which we can code.
+ここに、私が作成したテンプレートファイルの例を示します。
 
 02:35.870 --> 02:41.060
-Now this is C code, and we could declare this in unity and it would run well.
+これはCのコードで、これをunityで宣言すればうまく動くだろう。
 
 02:41.060 --> 02:42.680
-There's not much happening here.
+これはCのコードです。
 
 02:42.680 --> 02:45.200
-There's just empty function declarations.
+関数の宣言が空っぽなだけです。
 
 02:45.200 --> 02:48.770
-But I just want to show you the signature, how these are set up.
+ただ、このシグネチャーがどのようにセットアップされているのかをお見せしたいだけです。
 
 02:48.860 --> 02:54.680
-And it's important to note that you wouldn't need to declare all of these only if you want to wait and
+そして重要なのは、これらのすべてを宣言する必要はないということだ。
 
 02:54.680 --> 02:55.190
-update.
+更新する。
 
 02:55.190 --> 02:56.530
-Just declare those, too.
+それも宣言すればいい。
 
 02:56.540 --> 02:59.060
-But I'm showing you a complete template here to get started.
+しかし、ここでは完全なテンプレートをお見せします。
 
 03:00.140 --> 03:02.950
-Let's look at a demo so we can see this template in action.
+このテンプレートが実際に動いているところをデモで見てみましょう。
 
 03:02.960 --> 03:08.900
-We'll run the behavior template, we'll see the scene, we'll add a debug log statement so that we're
+ビヘイビアテンプレートを実行し、シーンを確認します。
 
 03:08.900 --> 03:14.300
-able to see which parts of the code we've reached and we'll test a trigger in a collision event.
+そして、衝突イベントのトリガーをテストします。
 
 03:15.540 --> 03:17.970
-Let's go ahead and open up assets.
+アセットを開いてみましょう。
 
 03:17.970 --> 03:22.050
-Section one, Video five of Behavior template.
+ビヘイビアテンプレートのセクション1、ビデオ5です。
 
 03:22.050 --> 03:22.710
-In this scene.
+このシーンでは
 
 03:22.710 --> 03:25.220
-We've got one cube floating over the floor.
+床にキューブが一つ浮いています。
 
 03:25.230 --> 03:28.170
-In addition to Box Collider and rigid body.
+ボックスコライダーと剛体に加えて
 
 03:28.170 --> 03:31.000
-We can see we have Monarch Behavior template script.
+Monarch Behaviorのテンプレートスクリプトがあることがわかります。
 
 03:31.020 --> 03:32.220
-Let's go ahead and click that.
+それをクリックしてみましょう。
 
 03:32.490 --> 03:34.500
-That'll open it in your favorite code editor.
+好きなコードエディターで開きます。
 
 03:34.860 --> 03:38.910
-Now, here from the top, we can see all of the different methods we've already discussed here.
+ここで上から、すでに説明したさまざまなメソッドを見ることができます。
 
 03:38.910 --> 03:45.480
-Inside the awake, we have a debug log statement and again inside the on collision enter and inside
+awakeの中にデバッグログがあり、またon collision enterの中にもデバッグログがあります。
 
 03:45.480 --> 03:51.480
-the destroy debug log will send a little bit of text into a window inside unity just to confirm that
+を確認するためにunity内のウィンドウにテキストを送信します。
 
 03:51.480 --> 03:53.040
-we've reached that point in the code.
+|にできるようになります。
 
 03:53.040 --> 03:54.600
-Let's go ahead and run the scene.
+シーンを実行してみましょう。
 
 03:56.470 --> 04:01.240
-Down here in the console window, we can see the wake up and the collision happened.
+コンソールウインドウの下の方で、ウェイクアップと衝突が起きているのが確認できます。
 
 04:01.240 --> 04:06.010
-And then once I stopped the scene and all objects would be cleaned up, we can see the destroy.
+そして、シーンを停止し、すべてのオブジェクトがクリーンアップされると、破壊されるのがわかります。
 
 04:06.080 --> 04:08.070
-You can see that the collision enter.
+コリジョンが入力されているのがわかります。
 
 04:08.080 --> 04:10.750
-It says the cube was hit by the floor.
+キューブが床に衝突したと表示されています。
 
 04:10.750 --> 04:14.680
-And that's just showing us the name Cube here as hit the name floor here.
+キューブが床にぶつかったと表示されています。
 
 04:14.680 --> 04:17.410
-That's the kind of detection you can do using physics.
+これが物理を使った検出方法だ。
 
 04:18.520 --> 04:20.130
-Let's talk about time dilation.
+時間拡張の話をしよう。
 
 04:20.140 --> 04:20.560
-Now.
+では
 
 04:20.560 --> 04:26.710
-If you want to create something like a slowdown effect that you see in a movie like The Matrix or in
+映画「マトリックス」のようなスロー効果や
 
 04:26.710 --> 04:33.250
-a game like Max Payne, where the whole world is slowing down to simulate a more dramatic moment.
+|にできるようにあなたがそれをすることができます本当に出くわすことあなたは、実際には私のパートナーとi約束、誰でも素早くはちょうど無視これらの一見正確にどのように{}人のことを忘れることができます。
 
 04:33.280 --> 04:35.300
-You can simulate that in physics.
+物理学でシミュレーションできる
 
 04:35.320 --> 04:42.070
-What we do is we turn physics, auto simulation to false, and then we manually simulate physics ourselves.
+物理の自動シミュレーションをfalseにして、手動でシミュレーションするんだ。
 
 04:42.100 --> 04:43.120
-This is the key.
+これが鍵だ。
 
 04:43.150 --> 04:48.060
-We're waiting for a certain amount of time before we bother to call physics simulate.
+物理シミュレーションをわざわざ呼び出す前に、一定の時間を待っている。
 
 04:48.070 --> 04:52.540
-Now in our projects and probably in your projects, you don't need to do this.
+私たちのプロジェクトでは、そしておそらくあなたのプロジェクトでも、こんなことをする必要はないだろう。
 
 04:52.720 --> 04:57.400
-I just want to talk about it a little bit about the time dilation so that you understand that typically
+このようなことを理解するために、時間の拡張について少し話したいと思います。
 
 04:57.400 --> 05:04.450
-unity runs in a realistic way for Earth's gravity and we don't need to simulate physics manually.
+unityは地球の重力に対して現実的な方法で実行されるので、手動で物理シミュレーションをする必要はありません。
 
 05:04.450 --> 05:06.310
-But here's how you can do it if you need to.
+でも、必要ならこんな方法もあります。
 
 05:08.790 --> 05:09.830
-In the next section.
+次のセクションでは
 
 05:09.840 --> 05:12.150
-Unity two D Physics components.
+Dフィジックスのコンポーネントを2つ統合。

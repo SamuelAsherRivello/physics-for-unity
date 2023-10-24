@@ -1,148 +1,148 @@
 WEBVTT
 
 00:01.780 --> 00:03.850
-Unity three d Physics components.
+ユニティ3D物理コンポーネント
 
 00:03.850 --> 00:07.940
-In this section, we'll review the core principles of three D physics.
+このセクションでは、3次元物理学の核となる原理をおさらいします。
 
 00:07.960 --> 00:16.120
-Then we'll dive into physics, Material Asset Ragdoll and train a recap of Rigid Body and Collider for
+そして物理学、マテリアルアセット・ラグドール、リジッドボディとコライダーの復習をします。
 
 00:16.120 --> 00:16.840
-three D.
+3つのD
 
 00:17.050 --> 00:22.720
-In this video, we'll cover Rigid Body and Collider specifically for three D.
+このビデオでは、3Dに特化したリジッドボディとコライダーについて説明します。
 
 00:22.870 --> 00:26.260
-And then we'll take a look at these inside the Unity Editor.
+また、Unityエディターでの操作についても説明します。
 
 00:26.860 --> 00:34.300
-A note about two D verses three D Unity has two separate physics systems to RD and three D The principles
+Unity には RD と 3 D の 2 つの物理システムがあります。
 
 00:34.300 --> 00:39.130
-components naming and C-sharp code for each is similar, but not identical.
+を構成する要素の命名とC-嬰コードは似ていますが同一ではありません。
 
 00:39.130 --> 00:46.240
-For example, in two D, a game object uses a rigid body two d component, yet in 3da game object uses
+例えば、2Dではゲームオブジェクトは剛体2Dコンポーネントを使いますが、3Dではゲームオブジェクトは剛体2Dコンポーネントを使います。
 
 00:46.240 --> 00:51.100
-a rigid body component without the three d in its name for consistency.
+を使いますが、3dでは一貫性を保つために3dを除いた剛体コンポーネントを使います。
 
 00:51.100 --> 00:56.320
-In this course we refer to rigid body as it relates to both 2D and 3D.
+このコースでは、2Dと3Dの両方に関する剛体について説明します。
 
 00:56.920 --> 01:04.450
-Recommended viewing Section two Unity two D Physics components introduces core fundamentals of physics,
+このコースでは2次元と3次元の剛体を扱います、
 
 01:04.450 --> 01:06.310
-which also applies to three D.
+これは3Dにも当てはまります。
 
 01:06.460 --> 01:10.120
-It is suggested that you watch Section two before a Section three.
+セクション3の前にセクション2を見ることをお勧めします。
 
 01:10.570 --> 01:12.130
-Let's look at rigid body.
+剛体について説明します。
 
 01:12.860 --> 01:16.720
-Starting with the transform component, the most basic component in unity.
+unityの最も基本的なコンポーネントであるtransformコンポーネントから始めます。
 
 01:16.730 --> 01:22.070
-This component is what enables position, rotation and scale for a game object.
+ゲームオブジェクトの位置、回転、スケールを可能にするコンポーネントです。
 
 01:22.100 --> 01:26.330
-This is the only component which is automatically added to every game object.
+すべてのゲームオブジェクトに自動的に追加される唯一のコンポーネントです。
 
 01:26.450 --> 01:27.620
-Rigid body.
+剛体。
 
 01:27.620 --> 01:33.380
-This is the component that enables physical behavior for a game object with a rigid body attached.
+剛体を装着したゲームオブジェクトの物理的な動作を可能にするコンポーネント。
 
 01:33.380 --> 01:36.050
-The object will immediately respond to gravity.
+オブジェクトが重力に即座に反応します。
 
 01:36.560 --> 01:38.120
-Let's look at the collider.
+コライダーを見てみましょう。
 
 01:38.630 --> 01:44.780
-The collider is the component that defines the shape of an object for the purposes of physical collisions.
+コライダーは物理的な衝突のためにオブジェクトの形状を定義するコンポーネントです。
 
 01:45.290 --> 01:47.180
-Types of colliders in 3D.
+3Dにおけるコライダーの種類
 
 01:47.300 --> 01:50.450
-The Sphere Collider for Spherical Areas.
+球体のコライダー。
 
 01:50.450 --> 01:53.630
-The box Collider for box shaped areas.
+ボックスコライダー（box Collider）：箱型のコライダーです。
 
 01:53.630 --> 01:57.560
-These two are very common, as you can see in the illustrations.
+この2つはイラストを見ればわかるように非常に一般的なものです。
 
 01:57.560 --> 01:58.670
-That's their shape.
+これがその形です。
 
 01:58.670 --> 02:02.330
-The Capsule Collider and the Mesh Collider are also available.
+カプセルコライダー・メッシュコライダーもあります。
 
 02:02.540 --> 02:04.820
-Select a game object with rigid body.
+剛体を持つゲームオブジェクトを選択します。
 
 02:04.850 --> 02:07.610
-Open the inspector window to see all of its components.
+インスペクタウィンドウを開き、すべてのコンポーネントを確認します。
 
 02:07.610 --> 02:08.990
-Browse the properties.
+プロパティを参照します。
 
 02:09.230 --> 02:10.580
-There's a lot of properties.
+たくさんのプロパティがあります。
 
 02:10.580 --> 02:18.080
-Our focus will be is trigger material mass drag use gravity and is kinematic.
+このような場合、"踵 "と "踵 "の間の "踵 "が "踵 "であることが重要です。
 
 02:18.440 --> 02:23.420
-See section two For more info on these properties, let's take a look at a demo.
+これらのプロパティの詳細については、セクション2を参照してください。
 
 02:23.990 --> 02:25.850
-We'll open up three D Pyramid.
+3つのDピラミッドを開きます。
 
 02:25.970 --> 02:27.350
-We'll play the scene.
+シーンを再生します。
 
 02:27.350 --> 02:33.290
-Select one of the cubes in the scene to see its rigid body and its collider in the inspector.
+インスペクタで立方体の剛体とコライダーを見ることができます。
 
 02:34.210 --> 02:35.990
-Let's open up our scene here.
+シーンを開いてみましょう。
 
 02:36.010 --> 02:38.230
-We're going to look at the three D pyramid.
+3Dピラミッドを見てみましょう。
 
 02:40.180 --> 02:43.300
-If we explore this scene, we've got a series of cubes.
+このシーンを探索すると立方体が並んでいます。
 
 02:43.930 --> 02:49.180
-And the part that is important to see here is the components on each cube.
+ここで重要なのは各キューブ上のコンポーネントだ。
 
 02:49.330 --> 02:54.430
-In order to have full physics, we have a collider and then also a rigid body.
+このように "物理 "をフルに活用するためには、コライダーと剛体が必要だ。
 
 02:55.320 --> 03:01.710
-And the rigid body we have used gravity set and we have is kinematic not set.
+この剛体には重力が設定されており、運動学は設定されていない。
 
 03:01.950 --> 03:06.090
-So when we run the scene, we'll have a realistic physics interaction.
+シーンを実行すると、リアルな物理インタラクションが得られます。
 
 03:08.560 --> 03:10.810
-The objects fall quite subtly.
+オブジェクトが微妙に落下します。
 
 03:10.810 --> 03:16.720
-But if I go ahead and manipulate a few of the objects, we'll see a realistic physics interaction.
+03:10.810 --> 03:16.720 しかし、オブジェクトの一部を操作してみると、リアルな物理的相互作用を見ることができる。
 
 03:20.510 --> 03:27.080
-In the next video, the physical material asset will take a look at what is physic material, what are
+次のビデオでは、物理素材とは何か、物理素材とは何か、物理素材とは何か、物理素材とは何か、物理素材とは何か、物理素材とは何かについて説明します。
 
 03:27.080 --> 03:31.790
-the most important properties, and then we'll take a look at it inside the unity ed.
+そしてunity ed.の内部を見てみましょう。

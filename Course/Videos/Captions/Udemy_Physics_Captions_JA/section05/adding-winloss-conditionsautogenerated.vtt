@@ -1,265 +1,262 @@
 WEBVTT
 
 00:01.860 --> 00:03.870
-Adding win loss conditions.
+勝敗条件を追加
 
 00:03.900 --> 00:07.950
-In this video, we'll cover creating the high level rules for the game.
+このビデオでは、ゲームのハイレベルなルールを作ります。
 
 00:08.190 --> 00:14.940
-We'll figure out how does the user win and how does the user lose, and we'll add UI and rules to support
+このビデオでは、ユーザーがどのように勝ち、どのように負けるかを考え、それをサポートするためのUIとルールを追加します。
 
 00:14.940 --> 00:15.390
-that.
+ということです。
 
 00:16.130 --> 00:23.270
-The task break down here is to add the upset ducks UI prefab and C-sharp script that will give us that
+このタスクはupset ducks UIプレハブとC-sharpスクリプトを追加することです。
 
 00:23.270 --> 00:25.160
-text we see in the screenshot here.
+スクリーンショットにあるテキストを追加することです。
 
 00:25.490 --> 00:32.630
-Then with the game class and the UI class together, we'll create the win and loss conditions so that
+そして、ゲームクラスとUIクラスを一緒にして、勝敗条件を作成します。
 
 00:32.630 --> 00:38.450
-we know when the user wins and when the user is done because they've lost the game.
+ユーザーが勝ったときと負けたときがわかるようにします。
 
 00:39.340 --> 00:43.410
-We'll open up project in Section five Video for Upset.
+セクション5「逆転のビデオ」でプロジェクトを公開します。
 
 00:43.420 --> 00:44.290
-Ducks four.
+ダックス4
 
 00:44.680 --> 00:44.890
-All right.
+よし
 
 00:44.890 --> 00:46.330
-Let's jump into Unity here.
+ユニティに飛び込もう
 
 00:46.480 --> 00:50.590
-We're going to be looking at the upset ducks for.
+"逆転のアヒル "に注目です。
 
 00:51.630 --> 00:52.470
-Go ahead and run it.
+走らせろ
 
 00:53.070 --> 00:54.750
-You can see now we have UI on the screen.
+画面にUIが表示されました。
 
 00:54.750 --> 00:59.310
-We have text that shows we have three asteroids each time we shoot an asteroid.
+小惑星を撃つたびに、3つの小惑星があることを示すテキストが表示されます。
 
 00:59.760 --> 01:03.960
-After the effect happens, the asteroid ticks from 3 to 2.
+エフェクトがかかった後、小惑星は3から2に刻まれる。
 
 01:04.080 --> 01:05.790
-Also, the score increases.
+また、得点も増加。
 
 01:05.790 --> 01:09.510
-This tells us how many of the ducks have we hit successfully.
+アヒルの何匹に命中したかがわかります。
 
 01:09.510 --> 01:11.880
-So we see we've got score two of three.
+3本中2本が成功。
 
 01:12.940 --> 01:14.770
-And let me see.
+そして
 
 01:14.770 --> 01:16.330
-I got one more shot.
+もう一発
 
 01:22.840 --> 01:23.620
-Didn't get him.
+ダメだった
 
 01:25.970 --> 01:27.350
-And then the result is shown.
+そして結果が表示される
 
 01:27.470 --> 01:33.710
-So all that there, the asteroids, the score and the you lose results text is what we're going to work
+アステロイド、スコア、そして敗戦のテキストが表示されます。
 
-01:33.710 --> 01:34.310
-on now.
-
-01:34.640 --> 01:39.410
-So we're going to create a new upset duck's UI from scratch.
+s01:34.640 --> 01:39.410
+そこで、アップセットダックのUIを一から作り直します。
 
 01:41.050 --> 01:42.070
-So let's start.
+それではスタートです。
 
 01:42.400 --> 01:44.710
-We'll create an empty game object.
+空のゲームオブジェクトを作ります。
 
 01:51.580 --> 01:53.650
-Just make sure we're at zero there.
+0になったことを確認します。
 
 01:55.460 --> 02:00.200
-And then to start adding UI, we'll simply right click that and we're going to add UI.
+そしてUIを追加するために、それを右クリックしてUIを追加します。
 
 02:00.230 --> 02:01.820
-We've got lots of different options.
+様々なオプションがあります。
 
 02:01.820 --> 02:08.600
-I'm going to just use the text here and you can see what we get here is text of a certain size.
+ここではテキストを使用します。あるサイズのテキストが表示されます。
 
 02:08.720 --> 02:17.840
-I'm going to bump it up to 30 and tweak the width and height.
+30に拡大し、幅と高さを調整します。
 
 02:20.090 --> 02:21.800
-And the positioning.
+位置も調整
 
 02:25.530 --> 02:26.460
-Near we go.
+あと少し
 
 02:26.820 --> 02:29.280
-For effect, you can also add an outline.
+効果的に輪郭をつけることもできます。
 
 02:31.070 --> 02:32.840
-And give that a color as well.
+色もつけて。
 
 02:34.280 --> 02:38.480
-And have it be black on white text or white on black text, however we like it.
+白地に黒でも黒地に白でも好きなように。
 
 02:39.240 --> 02:43.230
-And then we'll just give this a name here and we'll have the score.
+そして、ここに名前を付け、点数を表示します。
 
 02:46.230 --> 02:51.060
-And then we'll duplicate that for the asteroids text.
+そして小惑星のテキストを複製します。
 
 02:55.050 --> 02:57.540
-And we'll move the score to one side.
+スコアを片側に寄せます。
 
 03:04.400 --> 03:06.770
-We'll add one more for the results text.
+結果テキストを1つ追加します。
 
 03:20.140 --> 03:22.090
-Maybe we like that one to be a little bit bigger.
+もう少し大きい方がいいかも。
 
 03:32.410 --> 03:32.830
-All right.
+わかった
 
 03:32.830 --> 03:35.890
-Now to that, we're going to add our existing UI script.
+では、既存のUIスクリプトを追加します。
 
 03:36.610 --> 03:40.440
-I'm going to drag it from here to make sure I grab the right one.
+ここからドラッグして、正しいスクリプトを選択します。
 
 03:40.450 --> 03:41.890
-Upset duck's UI.
+動揺するアヒルのUI
 
 03:42.160 --> 03:44.830
-Then I populate those references.
+リファレンスに入力する。
 
 03:48.950 --> 03:52.720
-Whoops asteroids goes in first results in they're the last.
+アステロイドが最初に入って、最後になってしまった。
 
 03:53.600 --> 03:55.610
-And then I'll play the scene.
+そしてシーンを再生します。
 
 04:00.210 --> 04:04.410
-I see that the results script needs to start with no text inside of it.
+結果スクリプトはテキストがない状態から始める必要がありますね。
 
 04:07.450 --> 04:07.870
-All right.
+よし。
 
 04:07.870 --> 04:10.750
-So we can see that the values get populated here.
+ここに値が入力されるのがわかる。
 
 04:11.020 --> 04:12.740
-And let's see how that happens.
+どうなるか見てみよう。
 
 04:12.760 --> 04:16.840
-So let's take a look at the upset Docs UI script, first of all.
+それではまず、upset DocsのUIスクリプトを見てみましょう。
 
 04:17.440 --> 04:23.770
-So the one thing I want to show here is that I have a public method for populating each of these fields
+ここで示したいのは、それぞれのフィールドに入力するためのpublicメソッドです。
 
 04:23.770 --> 04:26.590
-the asteroids, the score and the result.
+アステロイド、スコア、結果。
 
 04:29.100 --> 04:32.970
-So in the game script, that's where we've set up the rules.
+ゲームスクリプトの中で、ルールを設定します。
 
 04:32.970 --> 04:35.100
-Let's go through four key areas.
+4つの重要な部分を見ていきましょう。
 
 04:36.700 --> 04:42.700
-First of all, inside the start, what I do is I loop through the list of all the world items in the
+まず最初に、スタート地点の内部で行っているのは、ワールドアイテムのリストをループすることです。
 
 04:42.700 --> 04:43.240
-scene.
+シーン
 
 04:43.570 --> 04:45.970
-I do that to count how many ducks we have.
+アヒルが何羽いるか数えています。
 
 04:45.970 --> 04:49.340
-That way I know what's the total score we want to hit?
+そうすることで、合計得点がわかるんだ。
 
 04:49.360 --> 04:50.980
-There's other ways I could do that.
+他にも方法はあるよ。
 
 04:50.980 --> 04:55.600
-I could also hard code the value of three in this case, but this way is a little more flexible.
+この場合、3の値をハードコードすることもできるが、この方法の方が少し柔軟だ。
 
 04:55.600 --> 04:58.270
-So level designers could add as many ducks as they want.
+レベルデザイナーは好きなだけアヒルを追加できるわけだ。
 
 04:59.080 --> 05:01.970
-Secondly, I give our beginning gameplay values.
+次に、ゲームプレイの初期値です。
 
 05:01.990 --> 05:08.410
-I'll set the score to zero and I'll set the asteroids to a concert value, which is in our case, set
+スコアをゼロに設定し、アステロイドをコンサート値に設定する。
 
 05:08.410 --> 05:09.400
-to be three.
+を3とする。
 
 05:09.550 --> 05:11.770
-And these are easily tweaked values.
+そして、これらは簡単に微調整できる値である。
 
 05:12.800 --> 05:17.540
-So now I know I've got a score of zero and I need two to hit three of the ducks.
+これでスコアが0になったので、アヒルの3人に当てるには2人必要だとわかった。
 
 05:18.900 --> 05:20.370
-With three of the asteroids.
+小惑星を3つ
 
 05:20.490 --> 05:25.020
-Then down here, every update, I'll check to see if there's any dead ducks.
+アヒルの死骸を確認します
 
 05:25.020 --> 05:26.280
-So I do that here.
+ここでそうする
 
 05:26.280 --> 05:28.040
-I loop through all the world items.
+全てのワールドアイテムをループします。
 
 05:28.050 --> 05:33.630
-If it's a duck, then I check to see if it's currently alive, but its health is zero.
+アヒルであれば、生きているかどうかをチェックします。
 
 05:33.630 --> 05:36.270
-Then it should be flagged as not alive anymore.
+それなら、もう生きていないフラグが立っているはずです。
 
 05:36.270 --> 05:37.920
-And I increment some points.
+そしてポイントを増やします。
 
 05:37.920 --> 05:39.990
-In this case I'm giving one point per duck.
+この場合、アヒル1羽につき1ポイントです。
 
 05:40.590 --> 05:43.590
-Then lastly, I checked to see if the game is ended.
+そして最後に、試合が終了したかどうかを確認しました。
 
 05:43.590 --> 05:49.110
-If the score that we have is greater or equal to the number of ducks we're trying to get, which is
+もし、今持っているスコアが狙っているアヒルの数以上であれば、それは
 
 05:49.110 --> 05:55.830
-three, then I show the result of true and that result will show a you win.
+(3)であれば "true "と表示され、"you win "となる。
 
 05:55.830 --> 05:58.920
-Or if in the case of a loss that you lose.
+また、負けた場合は「負けた」と表示される。
 
 05:58.920 --> 05:59.940
-So that's it.
+以上です。
 
 06:00.360 --> 06:05.600
-In this case, we've covered how the UI and the game rules were added into our project.
+今回は、UIとゲームルールの追加について説明しました。
 
 06:05.610 --> 06:06.750
-Thanks very much.
+ありがとうございました。
 
 06:07.940 --> 06:11.030
-In the next video, we'll cover adding extra polish.
+次のビデオでは、さらに磨きをかけていきます。

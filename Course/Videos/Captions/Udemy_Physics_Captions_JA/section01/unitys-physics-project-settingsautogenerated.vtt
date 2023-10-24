@@ -1,289 +1,286 @@
 WEBVTT
 
 00:01.640 --> 00:04.290
-Unities physics project settings.
+ユニティ物理プロジェクトの設定
 
 00:04.310 --> 00:07.880
-In this video we'll cover what are Unity Project settings?
+このビデオでは、Unityのプロジェクト設定とは何か？
 
 00:07.880 --> 00:10.550
-Which of these settings are most important to physics?
+物理演算に最も重要な設定とは？
 
 00:10.550 --> 00:15.230
-And we'll experiment with these settings inside the Unity editor to see some results.
+また、Unityのエディタ内でこれらの設定を試し、いくつかの結果を見てみましょう。
 
 00:15.860 --> 00:17.360
-Unity Project Settings.
+Unityプロジェクトの設定。
 
 00:17.360 --> 00:23.390
-These are the high level settings we use to adjust major systems in unity, including graphics and physics
+これらはグラフィックや物理など、unityの主要なシステムを調整するために使用する高レベルの設定です。
 
 00:23.390 --> 00:24.290
-To open them.
+開くには
 
 00:24.290 --> 00:26.730
-You use unity edit project settings.
+unityのプロジェクト設定を編集します。
 
 00:26.750 --> 00:31.370
-As the screenshot shows, there's a search box that you can filter through the settings.
+スクリーンショットが示すように、検索ボックスがあり、設定を絞り込むことができます。
 
 00:31.370 --> 00:36.890
-There's settings organized by category and there's a details pane with the settings themselves that
+設定項目はカテゴリー別に分類され、詳細ペインには設定項目が表示されます。
 
 00:36.890 --> 00:39.440
-will interact with the physics project.
+物理プロジェクトと相互作用します。
 
 00:39.440 --> 00:43.100
-Settings for three D include many different properties.
+3つのDの設定には様々なプロパティが含まれています。
 
 00:43.100 --> 00:45.020
-We'll focus on a few key ones.
+ここではいくつかの重要なものに焦点を当てます。
 
 00:45.020 --> 00:46.310
-First of all, gravity.
+まずは重力です。
 
 00:46.310 --> 00:52.670
-The default settings are simulating gravity on earth If you want to simulate other planets or different
+初期設定では地球の重力をシミュレートしています。
 
 00:52.670 --> 00:55.460
-scenarios in your game, you could tweak the gravity here.
+重力を調整することができます。
 
 00:55.460 --> 01:01.010
-It should be noted that if you change the gravity drastically, you may want to also tweak the default
+なお、重力を大幅に変更する場合は、デフォルトの
 
 01:01.010 --> 01:04.070
-solver iterations that'll give you more stable results.
+ソルバーの反復を調整することで、より安定した結果が得られるだろう。
 
 01:04.070 --> 01:09.320
-You can also set the default material in a later section will cover what physics materials are.
+また、デフォルトのマテリアルを設定することもできます。後のセクションで物理マテリアルについて説明します。
 
 01:09.320 --> 01:14.120
-They allow each object in your world to have different properties of bouncy ness and friction.
+このマテリアルを設定することで、ワールド内の各オブジェクトの弾みやすさや摩擦などの特性を変えることができます。
 
 01:14.120 --> 01:15.440
-If you want to set them globally.
+もしそれらをグローバルに設定したいのであれば
 
 01:15.440 --> 01:18.080
-Here you can do that and contact pair modes.
+このモードとコンタクトペアモードがあります。
 
 01:18.080 --> 01:22.520
-This is a setting you might want to tweak if you're moving kinematic Objects in a physics world.
+物理ワールドでキネマティックオブジェクトを動かす場合は、この設定を微調整するとよいでしょう。
 
 01:22.520 --> 01:25.550
-We'll talk about kinematic rigid body properties later.
+キネマティック剛体のプロパティについては後で説明します。
 
 01:25.550 --> 01:29.090
-Other properties that are interesting enable enhanced determinism.
+他にも興味深い性質があり、決定論が強化されています。
 
 01:29.090 --> 01:34.130
-Now this mode will sacrifice some performance, meaning you'll need a more powerful device, but you'll
+このモードではパフォーマンスが犠牲になる。
 
 01:34.130 --> 01:35.570
-get better determinism.
+より良い決定論が得られる。
 
 01:35.570 --> 01:41.630
-Determinism in physics means if you ran the same simulation again and again, you'd get the same result
+物理学における決定論とは，同じシミュレーションを何度繰り返しても同じ結果が得られるということだ。
 
 01:41.630 --> 01:43.520
-in some gameplay design.
+ゲームプレイのデザインによっては
 
 01:43.520 --> 01:44.480
-This is important.
-
-01:44.480 --> 01:45.380
-Often it is not.
+これは重要なことだ。
 
 01:45.380 --> 01:51.200
-The layer collision matrix defines which objects in your world collide with which other objects.
+レイヤーのコリジョンマトリックスは、ワールド内のどのオブジェクトがどのオブジェクトと衝突するかを定義します。
 
 01:51.200 --> 01:54.950
-Now, by default, in unity, everything collides with everything.
+unityのデフォルトでは、すべてのオブジェクトはすべてのオブジェクトと衝突します。
 
 01:54.950 --> 01:57.920
-It gives you the visual result and quick feedback you want.
+このように、視覚的な結果と素早いフィードバックが得られます。
 
 01:57.920 --> 02:03.350
-When you're designing a game as an optimization, consider unchecking all of the collisions that don't
+最適化としてゲームをデザインする場合、衝突しないすべてのチェックを外すことを検討する。
 
 02:03.350 --> 02:07.190
-occur in your game or that you do not want and you'll get better performance.
+そうすれば、より良いパフォーマンスが得られるでしょう。
 
 02:07.980 --> 02:09.400
-Let's take a look at a demo.
+デモを見てみよう。
 
 02:09.420 --> 02:11.280
-We'll look at the three D Pyramids project.
+3Dピラミッドのプロジェクトを見てみましょう。
 
 02:11.280 --> 02:11.730
-Again.
+もう一度
 
 02:11.730 --> 02:18.060
-We'll play with the gravity default material and the layer collision matrix inside Unity.
+重力のデフォルトマテリアルとレイヤーのコリジョン・マトリックスをUnityの中で遊んでみます。
 
 02:18.060 --> 02:22.520
-Let's open up section one, Video two, three, D Pyramid.
+セクション1、ビデオ2、ビデオ3、Dピラミッドを開いてみましょう。
 
 02:22.530 --> 02:29.640
-We'll be reusing this scene to discuss the project settings in the edit window project settings.
+このシーンを再利用して、エディットウィンドウのプロジェクト設定について説明します。
 
 02:29.790 --> 02:34.560
-We're able to see all of the project settings for various things inside Unity.
+Unity内の様々なプロジェクト設定を全て見ることができます。
 
 02:34.620 --> 02:40.830
-We're interested in the Physics two D for our two D physics, and in this demo the physics for our three
+このデモでは2D物理のPhysics two Dと3D物理のPhysics three Dに興味があります。
 
 02:40.830 --> 02:41.640
 D physics.
 
 02:41.640 --> 02:45.330
-Since we have a3d scene, let's go ahead and manipulate that one first.
+3Dシーンがあるので、まずそれを操作してみましょう。
 
 02:45.330 --> 02:50.000
-Let's just start by playing the scene and we can see that these cubes settle on top of each other.
+まずはシーンを再生してみましょう。この立方体が互いに重なっているのがわかります。
 
 02:50.010 --> 02:55.710
-Now let's change it from a negative gravity that simulates Earth to a positive gravity.
+地球を模した負の重力から正の重力に変えてみましょう。
 
 02:55.830 --> 03:00.000
-This would be something that creates gravity in an upwards direction.
+これは上方向に重力を発生させるものでしょう。
 
 03:00.000 --> 03:03.210
-Maybe your game needs that depending on the game mechanics you have.
+ゲームの仕組みによっては必要かもしれませんね。
 
 03:03.630 --> 03:07.560
-So we can see that these objects fly up in the air.
+このオブジェクトは空中を飛ぶことができます。
 
 03:07.560 --> 03:11.310
-It's a little bit silly for most of our examples, but you know, you can control that.
+(゜ロ゜)(。_。)ウンウン
 
 03:11.310 --> 03:15.300
-They're inside this little cogwheel you can open this menu and hit reset.
+この小さな歯車の中にあるメニューを開いてリセットを押すんだ。
 
 03:15.370 --> 03:18.990
-That'll bring all the values in this particular window back to the defaults.
+これで、このウインドウのすべての値がデフォルトに戻ります。
 
 03:18.990 --> 03:21.110
-So there we've undone that change.
+これで変更は元に戻りました。
 
 03:21.120 --> 03:25.140
-Now let's look at the default material inside the project window.
+次にプロジェクトウィンドウ内のデフォルトの素材を見てみましょう。
 
 03:25.140 --> 03:27.630
-We're able to create a physics material.
+物理マテリアルを作成することができました。
 
 03:27.630 --> 03:32.820
-Now we'll be talking more about this later, but we want to show you that if we create a physic material
+これについては後で詳しく説明しますが、物理マテリアルを作成した場合
 
 03:32.820 --> 03:38.490
-and we create it with a lot of bouncy ness, a bouncy ness of one, then we drag that in as the new
+のような弾力性のある素材を作成し、それをドラッグして新しい
 
 03:38.490 --> 03:39.570
-default material.
+デフォルトのマテリアルです。
 
 03:39.570 --> 03:45.480
-And that says that if there's any objects in the scene that do not already have a material attached,
+シーンにまだマテリアルがついていないオブジェクトがあれば、それをマテリアルとしてドラッグします、
 
 03:45.480 --> 03:47.940
-then this will be the new default material.
+これが新しいデフォルトのマテリアルになります。
 
 03:47.940 --> 03:50.520
-So here we're giving them this one that's bouncy.
+この素材は弾むような素材です。
 
 03:50.520 --> 03:52.140
-So let's go ahead and play the scene.
+それではシーンを再生してみましょう。
 
 03:53.890 --> 03:57.310
-And we can see that at least one of the boxes behaves a little wacky.
+少なくとも1つの箱は少しおかしな動きをしているのがわかります。
 
 03:57.730 --> 04:03.100
-Now, if I go ahead and I move this, we can see that the ones that I've moved bounce around the scene
+これを動かしてみると......動かしたものがシーンを跳ね回っているのがわかる。
 
 04:03.670 --> 04:05.620
-with a high level of bouncy ness.
+跳ね返りのレベルが高い。
 
 04:05.650 --> 04:07.360
-Now they're all affected evenly.
+これで全員に均等に影響が出た。
 
 04:07.360 --> 04:09.400
-Just depends on which one I manipulate.
+どれを操作するかによる
 
 04:11.260 --> 04:13.720
-Now, if we stop the scene again and I reset.
+もう一度シーンを止めてリセットすると
 
 04:14.710 --> 04:17.660
-We can look down here and we see the layer collision matrix.
+レイヤーのコリジョンマトリックスが表示されます。
 
 04:17.680 --> 04:23.440
-This is showing that everything in the project collides with everything by layer.
+これはレイヤーごとにプロジェクト内のすべてのものが衝突していることを示しています。
 
 04:23.470 --> 04:25.120
-Layers are set here.
+レイヤーが設定されています。
 
 04:25.390 --> 04:30.850
-At the top we can designate the layer for each of the objects in our scene so we can see that the cubes
+一番上に、シーン内のオブジェクトのレイヤーを指定します。
 
 04:30.850 --> 04:32.590
-are designated as default.
+はデフォルトとして指定されています。
 
 04:33.550 --> 04:38.530
-And inside the environment, we've got floor designated as floor.
+そして環境内では床がfloorに指定されています。
 
 04:38.920 --> 04:40.990
-So if I go ahead and play the scene.
+シーンを再生すると
 
 04:43.980 --> 04:47.310
-And then down here I can uncheck floor and default.
+フロアのチェックを外してデフォルトにします。
 
 04:47.310 --> 04:52.890
-And we'll see that Now our default cubes fall directly through the floor.
+すると、デフォルトのキューブが床を突き破って落ちてくるのがわかります。
 
 04:52.920 --> 04:55.920
-So you're able to control within that matrix.
+マトリックスの中でコントロールできるわけだ。
 
 04:56.220 --> 05:01.450
-Also, note that any changes we make during the scene may be reset once we stop the scene.
+また、シーン中に加えた変更は、シーンを止めるとリセットされる可能性があることに注意。
 
 05:01.470 --> 05:03.450
-Within this window, it depends a bit.
+このウィンドウの中では、少し異なります。
 
 05:03.450 --> 05:05.610
-Some of the settings stick and some do not.
+設定は固定されるものとされないものがあります。
 
 05:05.640 --> 05:08.070
-So just be conscious of when you make changes.
+だから、変更するときは意識してください。
 
 05:08.070 --> 05:12.360
-If you're playing the scene, they might need to be reset after you stop the scene.
+シーンを再生している場合は、シーンを止めた後にリセットする必要があるかもしれません。
 
 05:14.140 --> 05:17.830
-The physics project settings in 2D is a separate panel.
+2Dの物理プロジェクトの設定は別のパネルになっています。
 
 05:17.830 --> 05:22.160
-Now most of the important properties in 2D are the same ones we just discussed in 3D.
+2Dで重要なプロパティのほとんどは、3Dで説明したものと同じです。
 
 05:22.180 --> 05:24.820
-You can see them in the screenshot, but something of note.
+スクリーンショットを見てもらえばわかると思いますが、注目すべき点があります。
 
 05:24.820 --> 05:30.910
-Now it is possible that your game project includes both 2D and 3D physics, but it's likely that you
+あなたのゲームプロジェクトに2Dと3Dの両方の物理演算が含まれている可能性があります。
 
 05:30.910 --> 05:31.630
-choose one.
+どちらかを選択します。
 
 05:31.630 --> 05:38.080
-So if your game is 2D and you have two D physics, be sure that when you're changing the physics settings,
+もしあなたのゲームが2Dで、2つのD物理を使用しているのであれば、物理設定を変更する際に確認してください、
 
 05:38.080 --> 05:41.050
-you're on the right panel here of physics 2D.
+05:38.080 --> 05:41.050 右の物理2Dのパネルにいることを確認してください。
 
 05:42.620 --> 05:47.770
-In the next video physics, life cycle physics, simulate and time dilation.
+(゜ロ゜;ノ）ノ
 
 05:47.780 --> 05:50.330
-We'll look at the structure of unity projects.
+unityプロジェクトの構造を見ていきます。
 
 05:50.330 --> 05:56.360
-We'll see the role of mono behaviors in unity, and we'll look at some code for behaviors regarding
+unityにおけるmonoビヘイビアの役割と、ビヘイビアのコードを見ていきます。
 
 05:56.360 --> 05:56.990
-physics.
+物理学

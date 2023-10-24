@@ -1,238 +1,238 @@
 WEBVTT
 
 00:01.720 --> 00:04.630
-In this video, we'll cover two D joints.
+このビデオでは、2つのDジョイントを取り上げます。
 
 00:04.630 --> 00:09.940
-We'll look at what is the joint two RD component and different types of joint to DS.
+このビデオでは、2つのRDコンポーネントとDSの様々なタイプのジョイントについて説明します。
 
 00:09.940 --> 00:12.550
-Then we'll play with these inside the unity ed.
+そしてunity ed.の中でこれらを使って遊びます。
 
 00:13.090 --> 00:21.070
-A joint is the component that maintains a relationship either positional or rotational with one or more
+ジョイントとは，1つまたは複数の関節と位置関係や回転関係を保つ部品のことです。
 
 00:21.070 --> 00:22.030
-game objects.
+ゲームオブジェクトのことです。
 
 00:22.030 --> 00:26.740
-You can attach your joints to either a game object with a rigid body.
+関節は剛体でゲームオブジェクトに取り付けることができます。
 
 00:26.740 --> 00:30.460
-This is common or to a fixed position in world space.
+これは一般的なもので、ワールド空間の固定された位置に取り付けることもできます。
 
 00:30.460 --> 00:32.290
-You can see the setup here in the picture.
+写真でセットアップの様子をご覧下さい。
 
 00:32.290 --> 00:37.960
-We've got a game object with three different components the transform and rigid body as we've seen before,
+ゲームオブジェクトには3つのコンポーネントがあり、トランスフォームと剛体です、
 
 00:37.960 --> 00:39.910
-and then we've added the joint component.
+そして関節コンポーネントを追加しました。
 
 00:40.700 --> 00:42.950
-When should my game use joints?
+どんな時に関節を使うべきか？
 
 00:43.630 --> 00:45.770
-Let's talk about some uses for joints.
+関節の使い方について説明しましょう。
 
 00:45.980 --> 00:53.210
-Typically, physic joints are useful in gaming to maintain a relationship, either positional or rotational
+一般的に，物理的な関節は位置関係や回転関係を維持するために使われます．
 
 00:53.210 --> 00:55.320
-between two or more game objects.
+00:53.210 --> 00:55.320
 
 00:55.340 --> 00:58.790
-Use joints to mimic reality or to add gameplay.
+現実を模倣したり、ゲーム性を付加するためにジョイントを使います。
 
 00:58.940 --> 01:03.020
-Imagine creating a hanging chain like the picture we see on the right there.
+右の写真のようなぶら下がった鎖を想像してみてください。
 
 01:03.020 --> 01:07.340
-You can do that with several different game objects connected with hinge joints.
+いくつかの異なるゲームオブジェクトをヒンジジョイントでつなげれば、それが可能になります。
 
 01:07.340 --> 01:08.750
-The hinge is very useful.
+ヒンジはとても便利です。
 
 01:08.750 --> 01:13.310
-You could also create a bouncy wooden bridge or a door connected to a wall.
+弾む木の橋や、壁とつながったドアなども作れます。
 
 01:13.310 --> 01:18.660
-If you wanted a vehicle with suspension, you could use the spring joint and the wheel joint.
+サスペンションのある乗り物なら、スプリングジョイントとホイールジョイントが使えます。
 
 01:18.680 --> 01:21.170
-There are many types of joints in 2D.
+2Dには多くの種類のジョイントがあります。
 
 01:21.290 --> 01:23.240
-Let's talk about a few of the types.
+そのいくつかを紹介しましょう。
 
 01:23.240 --> 01:25.520
-First of all, there's distance joint to DX.
+まずDXには距離関節があります。
 
 01:25.550 --> 01:30.530
-This is a very simple joint that maintains a certain relationship between two game objects.
+これは2つのゲームオブジェクトの間にある一定の関係を維持するとてもシンプルなジョイントです。
 
 01:30.530 --> 01:33.710
-That relationship could be the distance between their positions.
+その関係とは、2つの位置の距離かもしれません。
 
 01:33.710 --> 01:39.800
-It's similar to parenting one game object under another only you don't have this restriction of parenting.
+このように、あるゲームオブジェクトを別のゲームオブジェクトの下に配置するのと同じようなものです。
 
 01:39.980 --> 01:45.980
-The hinge joint two d fixes a game object to a point in space and allows rotation.
+ヒンジジョイント2dは、ゲームオブジェクトを空間の一点に固定し、回転させることができます。
 
 01:46.250 --> 01:52.340
-You can think of a bridge like the image in the lower right or a typical door that opens and closes
+右下の画像のような橋や、一般的なドアの開閉をイメージしてください。
 
 01:52.340 --> 01:53.180
-on a hinge.
+蝶番
 
 01:53.180 --> 01:56.960
-There's many types of joints, so how strong is a joint?
+関節には様々な種類がありますが、関節の強度はどの程度なのでしょうか？
 
 01:57.470 --> 01:59.240
-It's possible to break joints.
+関節を壊すことは可能です。
 
 01:59.240 --> 02:03.740
-There's something called a constraint, which is a rule which the joint will try to follow.
+関節には拘束力というものがあり、それに従おうとするルールがあります。
 
 02:03.740 --> 02:09.980
-Some constraints limit behavior such as ensuring a rigid body stays in a certain position.
+このような制約は、剛体が特定の位置にとどまるように動作を制限するものです。
 
 02:09.980 --> 02:16.520
-When the rule is broken temporarily, the joint will apply corrective forces so it can again follow.
+このような場合、関節は一時的にルールが破られたとしても、再びルールに従うことができるように修正力を加える。
 
 02:16.520 --> 02:21.230
-The rule breaking is possible when the corrective force needed is too great.
+掟破りは、必要な修正力が大きすぎる時に可能になる。
 
 02:21.230 --> 02:26.840
-The joint will permanently break the individual joints, stops working forever in your game.
+(2)その関節は永久に壊れ、あなたの試合では永久に機能しなくなります。
 
 02:26.840 --> 02:31.000
-You have to stop and start the scene or the game in order to have it work again.
+また動くようにするには、シーンやゲームを中断したり、開始したりする必要があります。
 
 02:31.010 --> 02:33.920
-Excessive linear force is called a brake force.
+過度の直線的な力はブレーキ力と呼ばれます。
 
 02:33.920 --> 02:36.860
-Excessive torque force is called a brake torque.
+過大なトルクはブレーキトルクと呼ばれます。
 
 02:37.040 --> 02:43.910
-The brake force property, it's set to infinity by default so that the joint will never break to allow
+ブレーキフォースのプロパティは、デフォルトで無限大に設定されています。
 
 02:43.910 --> 02:47.060
-breakage, set it to a lower finite value.
+このプロパティはデフォルトでは無限大に設定されています。
 
 02:47.060 --> 02:48.860
-For example, 5000.
+例えば5000。
 
 02:48.860 --> 02:51.650
-Sometimes we want our joints to break.
+関節を壊したい時もある
 
 02:51.650 --> 02:52.280
-Now why?
+なぜだ？
 
 02:52.310 --> 02:57.740
-First of all, maybe we're mimicking something in reality that is not infinitely strong and we want
+(´・ω・｀)まず第一に、無限に強いわけではない現実の何かを模倣しているのかもしれない。
 
 02:57.740 --> 03:01.610
-it to break or breaking could add to your gameplay experience.
+|にできるようにあなたがそれをすることができます本当に出くわすことあなたは、実際には私たち約束、誰でも素早くはちょうど無視これらの一見正確にどのように{}人のことを忘れることができます。
 
 03:01.610 --> 03:07.280
-Perhaps your character swings on a chain, but if you swings too strongly, the chain will break.
+鎖にぶら下がってスイングしているが、あまり強くスイングすると鎖が切れてしまう。
 
 03:07.980 --> 03:09.710
-Let's do some demos together.
+一緒にデモをしましょう。
 
 03:09.720 --> 03:16.350
-The hinge joint to begin scene will create five planks for a bouncy wooden bridge will create a hinge
+ヒンジジョイントで5枚の板を作り、跳ねる木橋を作ります。
 
 03:16.350 --> 03:16.710
-joint.
+ジョイント
 
 03:16.710 --> 03:23.040
-Two rd between each plank will create a hinge joint to RD at each end of the bridge to hold it to the
+各板の間に2本の桟を入れることで、橋の両端をRDに固定するためのヒンジ・ジョイントを作ります。
 
 03:23.040 --> 03:23.730
-columns.
+柱
 
 03:23.730 --> 03:26.370
-And then we'll play the scene and see how it goes.
+そしてシーンを再生して様子を見ます。
 
 03:26.520 --> 03:27.810
-A bonus assignment.
+ボーナス課題
 
 03:27.810 --> 03:31.860
-If you want to get deeper into learning about joints, take a look at this scene.
+関節についてもっと深く学びたい方は、このシーンをご覧ください。
 
 03:31.860 --> 03:33.870
-The target joint to begin.
+対象となる関節から始めます。
 
 03:33.870 --> 03:36.420
-Create a target joint to DH on the crate.
+木箱にDHするターゲットジョイントを作ります。
 
 03:36.420 --> 03:43.410
-Create your own script called something like Target Joint follows Mouse Play the scene, move your mouse
+Target Joint follows Mouseのようなスクリプトを作成します。 シーンを再生し、マウスを動かします。
 
 03:43.410 --> 03:44.550
-and observe the result.
+その結果を観察する。
 
 03:44.550 --> 03:47.070
-Did you get the crate to follow the mouse?
+木箱がマウスに追従しましたか？
 
 03:47.070 --> 03:52.980
-You can set the brake force to 5000 to break the joint if you want help or you want to see the finished
+また、このような動きをさせたい場合は、ブレーキ力を5000に設定し、関節を破壊することができます。
 
 03:52.980 --> 03:57.150
-result or the created script of Target Joint follows Mouse.
+このスクリプトで作成したスクリプトはマウスに従います。
 
 03:57.150 --> 04:01.770
-Take a look at the target joint to DH underscore complete scene.
+DHアンダースコアの完成シーンをターゲットジョイントで見てみましょう。
 
 04:01.770 --> 04:03.870
-Everything's there for you to take a look at.
+全て揃っています。
 
 04:06.790 --> 04:10.150
-Let's open up our next scene, the hinge joint to begin.
+次のシーン、ヒンジジョイントを開きましょう。
 
 04:11.130 --> 04:13.460
-Here we have a ground set up with a couple of columns.
+地面に柱を立てます。
 
 04:13.470 --> 04:15.090
-We're going to add a new plank.
+新しい板を追加します。
 
 04:15.120 --> 04:19.710
-Duplicate it five times and use the hinge joint to RD to make a wooden bridge.
+それを5回繰り返して、ヒンジジョイントを使って木製の橋を作ります。
 
 04:23.150 --> 04:28.040
-Under the Planck sprite will add the rigid body and the collider and the hinge joint.
+プランクスプライトの下に剛体とコライダーとヒンジジョイントを追加します。
 
 04:35.340 --> 04:38.220
-We'll set the hinge joints anchor to its left side.
+ヒンジジョイントのアンカーを左側に設定します。
 
 04:42.870 --> 04:47.610
-We'll place one plank far to the left and then we'll duplicate five times total.
+板を1枚左端に置き、合計5回複製します。
 
 04:47.610 --> 04:49.350
-So we have some on the right.
+右にも何枚か
 
 04:55.280 --> 05:01.940
-The leftmost plank will leave its connected rigid body set to none, so it's anchored in space for the
+一番左の板は、剛体連結を「なし」にします。
 
 05:01.940 --> 05:05.060
-others will connect to its nearest neighbor on the left.
+他の剛体は左隣の剛体に接続します。
 
 05:14.170 --> 05:18.580
-And for the rightmost plank, we'll add a second hinge joint hinging it to space.
+そして一番右の板には2つ目のヒンジジョイントを追加し、スペースに固定します。
 
 05:21.970 --> 05:24.130
-And adjusting its anchor to the right side.
+そしてアンカーを右側に調整します。
 
 05:26.550 --> 05:28.050
-Let's add some extras.
+おまけもつけましょう。
 
 05:29.260 --> 05:30.280
-And give it a try.
+試してみましょう。
 
 05:36.990 --> 05:40.500
-In the next video, we'll look at physics for unity sprite shape.
+次のビデオでは、ユニティースプライトシェイプの物理を見てみよう。

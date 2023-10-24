@@ -1,259 +1,256 @@
 WEBVTT
 
 00:01.650 --> 00:06.010
-Data oriented technology stack or dots for unity physics.
+ユニティ物理学のためのデータ指向技術スタック。
 
 00:06.030 --> 00:11.350
-In this video, we'll cover what is Unity dots and what are the three major features.
+このビデオでは、Unity dotsとは何か、そして3つの主な特徴について説明します。
 
 00:11.370 --> 00:15.750
-We'll also look at how dots will impact the future of unity physics.
+また、dotsがunity physicsの未来にどのような影響を与えるかについても見ていきます。
 
 00:16.470 --> 00:17.820
-So what is dots?
+ドッツとは？
 
 00:18.630 --> 00:22.890
-Dance is a project by unity that promises performance by default.
+ダンスはデフォルトでパフォーマンスを約束するunityのプロジェクトです。
 
 00:22.920 --> 00:30.360
-It takes advantage of today's multi core processors and Unity's new high performance system data oriented
+現在のマルチコアプロセッサとUnityの新しい高性能システムデータ指向を利用しています。
 
 00:30.360 --> 00:31.410
-technology stack.
+技術スタックです。
 
 00:31.440 --> 00:37.260
-Your games will run faster and your code will be easier to read and reuse across other projects.
+ゲームの動作が速くなり、コードが読みやすくなり、他のプロジェクトでも再利用しやすくなります。
 
 00:37.290 --> 00:42.030
-Take a look at this screenshot from the free megacity demo by Unity Technologies.
+Unity Technologiesの無料デモ「megacity」のスクリーンショットをご覧ください。
 
 00:42.030 --> 00:46.380
-It's a really complex scene with lots going on in the megacity demo.
+このシーンは本当に複雑で、いろいろなことが起こっています。
 
 00:46.380 --> 00:52.420
-It features four and a half million mesh renders and over 200,000 unique building objects.
+450万のメッシュレンダリングと20万以上のユニークなビルオブジェクトが特徴です。
 
 00:52.440 --> 00:57.400
-It's so complex and would not be possible without dots to accomplish this.
+これはとても複雑で、ドットなしでは不可能なことです。
 
 00:57.420 --> 01:00.180
-Unity is rebuilding the core of the tool.
+Unityはツールのコアを再構築しています。
 
 01:00.180 --> 01:05.040
-It's rebuilding each of the major systems with high performance multithreaded dots.
+高性能なマルチスレッドドットで各主要システムを再構築しています。
 
 01:05.040 --> 01:11.970
-Features of this system are the C-sharp job system for running multithreaded code, the entity component
+このシステムの特徴は、マルチスレッドコードを実行するためのCシャープジョブシステム、エンティティコンポーネント
 
 01:11.970 --> 01:18.720
-system for writing high performance code and finally the burst compiler for producing highly optimized
+このシステムの特徴は，マルチスレッドコードを実行するためのC-sharpジョブシステム，高性能コードを書くためのエンティティコンポーネントシステム，そして最後に高度に最適化されたコードを生成するためのバーストコンパイラです。
 
 01:18.720 --> 01:19.710
-native code.
+ネイティブ・コード
 
 01:20.520 --> 01:22.290
-So what is dots Physics.
+ドットフィジックスとは？
 
 01:22.590 --> 01:27.270
-In the future, Dot's physics will be rebranded to just unity physics.
+将来的には、ドットの物理学はunity physicsにリブランディングされる予定です。
 
 01:27.270 --> 01:34.500
-The philosophy is complete deterministic, rigid body dynamics and spatial query system written in high
+その哲学は，完全な決定論的剛体力学であり，空間クエリーシステムである。
 
 01:34.500 --> 01:35.070
-performance.
+パフォーマンス
 
 01:35.070 --> 01:41.160
-C-sharp It will be stateless unity Physics forgoes any caching in favor of simplicity.
+01:35.070→01:41.160.C-嬰 Physicsはシンプルであることを優先し，キャッシュを一切行わないステートレスなユニティとなる。
 
 01:41.160 --> 01:46.140
-It's modular, it's decoupled from other systems, and it encourages its re-use.
+モジュール化され、他のシステムから切り離され、再利用が奨励される。
 
 01:46.380 --> 01:47.550
-It's performant.
+パフォーマンスが高い。
 
 01:47.550 --> 01:52.830
-It will meet or exceed the performance of any commercially available physics engine.
+市販の物理エンジンと同等以上のパフォーマンスを発揮します。
 
 01:52.830 --> 01:54.570
-So what does this mean for us?
+これはどういう意味なんだ？
 
 01:54.570 --> 01:59.970
-The principles we cover in this course are relevant for today's physics, as well as the future with
+このコースで扱う原理は，現在の物理学に関連するものであると同時に，次のような未来の物理学にも関連するものです。
 
 01:59.970 --> 02:06.090
-unity physics, The version of today's 2D and 3D physics that we cover will continue to exist.
+このコースで学ぶ原則は、現在の物理学にも、そして未来の2次元や3次元の物理学にも通用するものです。
 
 02:06.090 --> 02:11.220
-Unity Physics will be an additional option for blazing fast speed improvements.
+Unity Physicsは高速化のための追加オプションとなります。
 
 02:11.930 --> 02:12.530
-Let's see.
+見てみよう。
 
 02:12.560 --> 02:12.880
-Dots.
+ドット
 
 02:12.890 --> 02:14.030
-Physics in action.
+物理の世界
 
 02:14.300 --> 02:16.670
-The following steps have already been done for you.
+次のステップはすでに終わっています。
 
 02:16.670 --> 02:17.750
-But here's the steps.
+しかし、ここからが本番です。
 
 02:17.750 --> 02:21.800
-If you wanted to create a project from scratch, first, you check out this repo.
+ゼロからプロジェクトを作成したい場合は、まずこのレポをチェックアウトする。
 
 02:21.830 --> 02:27.160
-Then you open up the latest Unity editor and open up the Unity Physics Examples Project.
+最新のUnityエディタを開き、Unity Physics Examples Projectを開きます。
 
 02:27.170 --> 02:30.950
-Then we have to make sure we have the right packages and update them.
+そして、正しいパッケージがあることを確認し、アップデートします。
 
 02:30.950 --> 02:38.000
-So open up the package manager, click Advanced Click Show preview packages Verify you have the latest
+パッケージマネージャーを開き、[詳細]をクリックし、[プレビューパッケージを表示]をクリックします。
 
 02:38.000 --> 02:42.020
-version of the required packages, including Unity Physics.
+Unity Physicsを含む必要なパッケージのバージョンを確認します。
 
 02:43.210 --> 02:44.720
-Let's take a look at a demo.
+デモを見てみましょう。
 
 02:44.740 --> 02:50.350
-Note that compared to every other demo in this course, this one is located in a separate project.
+このコースの他のデモと比べて、このデモは別のプロジェクトにあることに注意してください。
 
 02:50.350 --> 02:52.960
-That's because it has unique setup aspects.
+それは、独自のセットアップがあるからです。
 
 02:52.960 --> 02:55.930
-Play the scene and will inspect the scene together.
+シーンを再生し、一緒に検査します。
 
 02:55.930 --> 02:59.950
-We'll see that the physics, shape and physics body are new components.
+物理、シェイプ、物理ボディが新しいコンポーネントであることがわかります。
 
 02:59.950 --> 03:06.730
-We'll check out my restart scene controller code and see how I had to tweak it specifically for dots.
+リスタートシーンのコントローラーのコードをチェックし、ドットのためにどのように手を加えたか見てみましょう。
 
 03:06.730 --> 03:10.000
-As a bonus, I've added some spanners to the scene.
+おまけとして、スパナを追加してみました。
 
 03:10.000 --> 03:14.170
-We'll be able to add a lot of physics objects and see how the performance works.
+物理オブジェクトをたくさん追加して、パフォーマンスを確認してみます。
 
 03:14.620 --> 03:16.830
-All right, let's open up our Dots project here.
+それではDotsプロジェクトを開いてみましょう。
 
 03:16.840 --> 03:21.710
-Again, note that this is a different project than we've used for the rest of the course.
+繰り返しますが、これはこのコースの他の部分で使っているプロジェクトとは異なるものです。
 
 03:21.730 --> 03:24.370
-That's because this needs some specific setup.
+これは特別な設定が必要だからです。
 
 03:24.930 --> 03:32.070
-But here in the Unity Physics Dots example, we'll run the scene and see a pretty similar setup.
+このような場合、「Unity Physics Dots」の例でシーンを実行すると、かなり似たようなセットアップが表示されます。
 
 03:32.160 --> 03:36.810
-We've got a stack of cubes, something like our demos we've used before.
+キューブのスタックを用意しました。以前使ったデモのようなものです。
 
 03:36.840 --> 03:41.910
-I can even hit the spacebar and reload the scene as we've been able to do before.
+スペースキーを押してシーンをリロードすることもできます。
 
 03:42.180 --> 03:46.950
-And if we look into the scene, we'll notice that we have no cubes in here anymore.
+そしてシーンを覗いてみると、ここにはもうキューブはありません。
 
 03:47.370 --> 03:53.160
-There's a temporary, I think, unique aspect to dots in that once the scene starts, certain objects
+ドットは一時的なもので、シーンが始まると特定のオブジェクトが出現するユニークなものです。
 
 03:53.160 --> 03:54.130
-will disappear.
+は消えてしまう。
 
 03:54.150 --> 03:55.200
-It's not a bug.
+バグではありません。
 
 03:55.200 --> 04:01.620
-It's just a way that the optimization works and in the future that will be represented in the hierarchy.
+最適化された方法であり、将来的には階層構造で表現されることになるだろう。
 
 04:02.300 --> 04:08.000
-So if we look at one of the cubes, instead of seeing the familiar collider, we see physics shape.
+キューブのひとつを見ると、おなじみのコライダーではなく、物理的な形が見える。
 
 04:08.150 --> 04:12.560
-And instead of seeing the familiar rigid body, we see physics body.
+また，見慣れた剛体ではなく，物理学的なボディを見ることができる。
 
 04:12.560 --> 04:14.930
-So there's a different naming scheme here.
+つまり、ここでは別の命名法があるわけだ。
 
 04:15.080 --> 04:20.900
-But a lot of the similar values we'd expect to see, including being able to have something like a physics
+しかし、物理学のようなものを持つことができるなど、似たような値を見ることができる。
 
 04:20.900 --> 04:23.030
-material for bouncing --, etc..
+バウンドの素材など。
 
 04:23.420 --> 04:29.120
-Something else I wanted to show is that I was able to restart the scene, but I had to add a little
+他にも、シーンを再スタートさせることができたのですが、その際に少し
 
 04:29.120 --> 04:31.820
-bit of something to the code down here.
+04:31.820 --> 04:31.820 --> 04:31.820
 
 04:31.820 --> 04:38.570
-In addition to reloading the scene which I did before here for dots, I have to restart the system by
+ドットのために以前やったシーンのリロードに加え、システムを再起動する必要がある。
 
 04:38.570 --> 04:40.970
-destroying what are called entities in the scene.
+シーンのエンティティというものを破壊する。
 
 04:40.970 --> 04:46.700
-So definitely a little bit more thinking I have to do when I had to do some simple steps here but works
+このように、簡単なステップを踏んだだけなのに、少し考えなければならないことが増えたが、うまくいった。
 
 04:46.700 --> 04:47.180
-great.
+素晴らしい。
 
 04:48.250 --> 04:54.160
-Lastly, I want to show I have a sponsor set up here that's going to spawn 3000 different objects in
+最後に、3000の異なるオブジェクトをスポーンするスポンサーをセットアップしたことを示したい。
 
 04:54.160 --> 04:54.760
-the world.
+(゜Д゜)ゴルァ!
 
 04:55.330 --> 04:57.190
-Let's see how well it performs.
+どれくらいのパフォーマンスが出るか見てみましょう。
 
 04:57.520 --> 05:01.780
-I'm going to show just the game view here and give it a play.
+ここではゲームビューだけを表示してプレイしてみます。
 
 05:02.230 --> 05:04.840
-I'm also going to turn on the frame rate counter.
+フレームレートカウンターもオンにしてみます。
 
 05:05.170 --> 05:11.830
-You can see we're at about six frames, ten frames a second when the scene first starts and then it
+最初のシーンは1秒間に6フレームか10フレームくらいで、その後
 
 05:11.830 --> 05:13.660
-quickly gains a lot of speed.
+すぐにスピードが上がります。
 
 05:13.690 --> 05:17.410
-I think it's the instantiation of items in the world that's expensive.
+ワールド内のアイテムのインスタンス化にコストがかかっているのだと思います。
 
 05:17.410 --> 05:20.620
-But then the physics operation runs really well.
+でも、物理演算はとてもうまく動いています。
 
 05:20.650 --> 05:25.900
-Here we have thousands of objects more than we can even see on screen, and I'm still able to interact
+何千ものオブジェクトが画面上に表示されているのですが、それでもインタラクションは可能です。
 
 05:25.900 --> 05:27.610
-with them with really good frame rate.
+フレームレートもいい。
 
 05:27.640 --> 05:32.980
-I think this will continue to improve as the project matures, but we were already seeing really good
-
-05:32.980 --> 05:33.880
-performance.
+プロジェクトが成熟するにつれて改善されていくと思うが、すでに本当に良いフレームレートを見ることができた。
 
 05:34.150 --> 05:35.040
-So that's it.
+以上です。
 
 05:35.050 --> 05:37.210
-That's a quick overview of Unity Dots.
+以上、ユニティ・ドッツの概要でした。
 
 05:38.290 --> 05:39.830
-This is the end of the course.
+これでコースは終了です。
 
 05:39.850 --> 05:41.380
-Thank you very much.
+ありがとうございました。

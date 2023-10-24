@@ -1,205 +1,205 @@
 WEBVTT
 
 00:01.500 --> 00:08.190
-Creating the player and input in this video will cover taking keyboard input using rigid body add force
+このビデオでは、選手と入力を作成し、剛体加算力を使ってキーボード入力を行うことについて説明する。
 
 00:08.190 --> 00:11.440
-for motion and using pro grids to position the walls.
+プログリッドを使って壁を配置します。
 
 00:11.460 --> 00:12.840
-Here's the task breakdown.
+タスクの内訳は以下の通り。
 
 00:12.840 --> 00:15.140
-We'll add the crazy ball C-sharp script.
+クレイジーボールのC-shineスクリプトを追加します。
 
 00:15.150 --> 00:19.220
-We'll use pro grids to position the wall elements and we'll add those walls.
+プログリッドを使って壁要素を配置し、その壁を追加します。
 
 00:19.230 --> 00:21.570
-This screenshot represents our end target.
+このスクリーンショットが最終目標です。
 
 00:22.390 --> 00:27.550
-For the project, we'll open up section six, Video two and the scene crazy ball to.
+プロジェクトでは、セクション6、ビデオ2、そしてクレイジーボールを開きます。
 
 00:28.750 --> 00:34.270
-All right, let's open up unity here and we're going to go into Crazy Ball two if we play this scene
+このシーンを再生すると、クレイジーボール2になります。
 
 00:34.270 --> 00:34.780
-here.
+ここで
 
 00:37.070 --> 00:39.230
-We'll see that I'm able to take keyboard input.
+キーボード入力が出来るようになりました。
 
 00:40.220 --> 00:42.000
-And bounce properly off the walls.
+ちゃんと壁に跳ね返ります。
 
 00:42.020 --> 00:43.550
-So let's see how that set up.
+では、その設定を見てみましょう。
 
 00:44.240 --> 00:46.370
-First of all, we've got a crazy ball here.
+まずはクレイジーボールです。
 
 00:47.230 --> 00:48.250
-You know, the crazy ball.
+クレイジーボール
 
 00:48.250 --> 00:55.060
-It's just a sphere with a sphere collider, a rigid body with default settings, and then a custom crazy
+球体コライダーとデフォルト設定の剛体、そしてカスタム設定のクレイジーボールです。
 
 00:55.060 --> 00:55.930
-ball script.
+ボールスクリプト
 
 00:55.960 --> 00:59.060
-Let's see how that works in the crazy ball script.
+クレイジーボールスクリプトの動作を見てみましょう。
 
 00:59.080 --> 01:01.750
-In the update, we capture the keyboard input.
+更新ではキーボード入力をキャプチャします。
 
 01:01.750 --> 01:09.040
-We use Unity's input class, which automatically maps to the arrow keys on the keyboard and any gamepads
+Unityの入力クラスを使用し、キーボードの矢印キーとゲームパッドに自動的にマッピングします。
 
 01:09.040 --> 01:10.000
-that you have hooked up.
+を使用しています。
 
 01:10.000 --> 01:11.560
-I'm just using the keyboard.
+キーボードだけでいい
 
 01:11.890 --> 01:21.400
-Then I cache the last input and every update I use rigid body add force and I multiply the last input
+そして、最後の入力をキャッシュし、更新のたびに剛体で力を加え、最後の入力を乗算する。
 
 01:21.400 --> 01:22.600
-times the speed.
+をスピードにかける。
 
 01:22.810 --> 01:28.570
-This way I can have more dramatic or less dramatic keyboard input depending on that speed value.
+こうすることで、スピードの値によってキーボード入力をよりドラマチックにしたり、そうでなくしたりすることができる。
 
 01:28.600 --> 01:29.830
-Let's see how it works.
+どう動くか見てみよう。
 
 01:30.680 --> 01:31.850
-When I run the scene.
+シーンを実行すると
 
 01:35.430 --> 01:37.500
-Now use the keyboard input here.
+ここでキーボード入力を使います。
 
 01:37.500 --> 01:39.360
-I'm moving my character through the world.
+キャラクターを動かします。
 
 01:39.540 --> 01:47.400
-If I change this to a value of 100 for speed, for example, I'll get much more maximum speed as well
+例えば、スピードの値を100にすると、最高速度はもっと速くなります。
 
 01:47.400 --> 01:48.660
-as acceleration.
+加速として
 
 01:50.470 --> 01:52.630
-This is a little bit too much power.
+これはちょっとパワーがありすぎる。
 
 01:52.660 --> 01:55.390
-Let's try a low value like five.
+5という低い値で試してみよう。
 
 01:56.800 --> 01:57.250
-Here.
+これだ
 
 01:57.250 --> 02:02.230
-The ball feels like it has a lot of weight to it and I really have to hold the keys in any direction
+ボールが重く感じるので、どの方向にもキーを持たないといけない。
 
 02:02.230 --> 02:05.110
-for a long period of time to correct its movement.
+長い時間、キーを押し続けなければならない。
 
 02:05.650 --> 02:07.750
-You can experiment with the values you like.
+好きな値を試してみてください。
 
 02:07.780 --> 02:08.910
-I like 20.
+20がいい。
 
 02:08.920 --> 02:13.720
-I think it's a good mixture of feeling like I have enough control, but still respecting that there's
+十分なコントロールができるような気もするし、それでいて、次のようなこともできる。
 
 02:13.720 --> 02:15.400
-some mass and movement going on.
+02:15.400 --> 02:16.560 --> 02:16.560
 
 02:16.560 --> 02:17.010
-Great.
+素晴らしい
 
 02:17.130 --> 02:19.140
-So now let's talk about this environment.
+ではこの環境について説明しよう。
 
 02:19.500 --> 02:22.170
-We've got a series of walls here set up.
+壁に囲まれてる
 
 02:24.370 --> 02:30.310
-Each wall piece is about this big and already has a mesh collider on it.
+各壁の大きさはこのくらいで、すでにメッシュコライダーが設置されています。
 
 02:30.310 --> 02:33.280
-So all we have to do is position these in the world where we want.
+あとはこれを好きな位置に配置するだけだ。
 
 02:33.490 --> 02:35.230
-Let's decide how we want to do that.
+どうするか決めよう。
 
 02:35.620 --> 02:38.560
-So first I'll get rid of the ones that we've got.
+まずは今あるものを取り除く
 
 02:40.050 --> 02:41.610
-And I'll drag out a wall piece.
+壁の一部を引っ張り出す
 
 02:48.080 --> 02:48.680
-There you go.
+これだ
 
 02:49.270 --> 02:51.830
-Now, I could freely move these around.
+これで自由に動かせる
 
 02:51.850 --> 02:55.030
-You can see that I'm able to move them with a lot of accuracy.
+かなり正確に動かせているのが分かると思います。
 
 02:55.720 --> 03:00.790
-But it's possible that I would set them up with a little gaps between them or possible overlaps.
+でも、ちょっと隙間ができたり、重なったりする可能性はありますね。
 
 03:00.790 --> 03:06.040
-So we're going to use a really nice tool that I've already imported called pro grids.
+そこで、すでにインポートしてあるプログリッドという素晴らしいツールを使います。
 
 03:06.610 --> 03:14.230
-When I turn pro grids on, it will automatically snap to one unit and with the on toggle, everything
+プログリッドをオンにすると、自動的に1つのユニットにスナップします。
 
 03:14.230 --> 03:17.140
-that I move will automatically be snapped.
+を動かすと自動的にスナップされる。
 
 03:17.590 --> 03:22.000
-So when I start to move these around the world, you can see they snap in whole units.
+このように、世界各地を移動させると、全体の単位でスナップされるのがわかる。
 
 03:22.300 --> 03:28.300
-Then I'll use control dx or command dx on the Mac to duplicate and move them out.
+Macの場合はcontrol dxかcommand dxで複製して移動させる。
 
 03:29.530 --> 03:30.190
-This way.
+このように
 
 03:30.190 --> 03:33.390
-I know if I want a gap, it will be a whole unit.
+隙間が欲しい時は丸ごと一個になりますね。
 
 03:33.400 --> 03:36.250
-Otherwise, I know I'm snapping right to the edge of the object.
+そうでなければ、オブジェクトの端にスナップする。
 
 03:36.860 --> 03:40.910
-So I can duplicate and add a whole line of those.
+複製して一列に並べられる
 
 03:41.210 --> 03:47.090
-Then I can duplicate and also use rotation, of course, to position these exactly where I want them.
+そして、複製して、回転も使って、好きな位置に配置できる。
 
 03:53.900 --> 03:56.210
-And you continue to make your level design like that.
+そうやってレベルデザインを作り続けるんだ。
 
 04:00.850 --> 04:06.490
-And because they have automatically mesh gliders built onto them, you can see that we get the functionality
+グライダーは自動的にメッシュになるので、以下のような機能があります。
 
 04:06.490 --> 04:10.750
-we want, which is that my character collides and interacts with them.
+(笑)。
 
 04:18.910 --> 04:19.380
-That's it.
+以上です。
 
 04:19.390 --> 04:22.420
-We've got the movement input and the walls.
+"移動 "と "壁 "が入力されました。
 
 04:24.640 --> 04:30.550
-In the next video, we'll work on creating the obstacles we'll cover, creating movable and immovable
+次のビデオでは、障害物の作成に取り組みます。
 
 04:30.550 --> 04:34.900
-objects, and adding spinning coins which are collectible by the player.
+次のビデオでは、障害物の作成、移動可能なオブジェクトと移動不可能なオブジェクトの作成、スピニングコインの追加に取り組みます。

@@ -1,253 +1,217 @@
 WEBVTT
 
-00:01.740 --> 00:07.570
-Adding extra polish in this video will cover adding programmatic animation for the collected coins.
+00:01.770 --> 00:04.650
+マーブルマッドネスのクローン3Dゲームを作る。
 
-00:07.590 --> 00:11.640
-We'll add sounds through the sound manager and we'll discuss level design.
+00:04.680 --> 00:08.710
+このセクションでは、完全な3Dゲームを一から作成する方法を説明します。
 
-00:11.850 --> 00:13.230
-So what is Polish?
+00:08.730 --> 00:11.290
+物理的な力を使ってキャラクターを動かします。
 
-00:13.230 --> 00:13.640
-Polish?
+00:11.310 --> 00:17.880
 
-00:13.830 --> 00:18.960
-Are the small details at the end of a project which take a good project and make it great?
 
-00:18.990 --> 00:24.420
-Often they're visual and audio and animation and small gameplay tweaks to.
+00:17.910 --> 00:23.850
+このビデオでは、新しいゲームプロジェクトの着想を得て、それを
 
-00:25.560 --> 00:29.370
-The tax break breakdown here will be to add animation to our spinning coins.
+00:23.850 --> 00:24.990
+キーコンセプト
 
-00:29.370 --> 00:33.870
-So when we collect them, they fade in instead of instantly disappearing.
+00:25.530 --> 00:27.030
+3Dゲームのプランニング
 
-00:33.870 --> 00:38.670
-We'll add sounds to key events through the sound manager and we'll discuss level design.
+00:27.120 --> 00:31.860
+1980年代の名作「マーブルマッドネス」にインスパイアされました。
 
-00:39.680 --> 00:45.000
-For the project, we'll open up section six Video five Crazy Ball five OC.
+00:31.890 --> 00:33.660
+ゲーム名は "クレイジーボール
 
-00:45.050 --> 00:49.070
-Here we are inside Unity and we'll open up Crazy Ball five.
+00:33.660 --> 00:37.620
+そしてこれが主なゲーム要素の簡単なモックアップグラフィックスです。
 
-00:49.850 --> 00:55.580
-Now here, we've added some polish, we've added some sounds, we've added some animation.
+00:37.620 --> 00:44.640
+入力、物理、衝突、制限時間など、オリジナルの3D物理モーションから引用しています。
 
-00:55.580 --> 00:57.740
-And I also want to talk a bit about level design.
+00:44.640 --> 00:47.370
+(゜Д゜)ハッ!
 
-00:57.890 --> 01:02.180
-So let's start with the effect that we've added for when we collect coins.
+00:47.400 --> 00:49.600
+クレイジーボールのルールはこうなる。
 
-01:02.540 --> 01:07.370
-Now, before, when we collected a coin, it would instantly disappear.
+00:49.620 --> 00:52.470
+制限時間内にゴールすれば勝ち。
 
-01:07.880 --> 01:12.860
-And here what I've done is I have it scale from its full size down to zero.
+00:52.470 --> 00:54.120
+コインを集めてポイントを稼ぎます。
 
-01:13.130 --> 01:14.120
-Very quickly.
+00:54.150 --> 00:58.290
+(゜Д゜)ゴルァ!
 
-01:14.120 --> 01:15.620
-But I think the effect is nice.
+00:58.290 --> 01:02.570
+(๑-̀ㅂ-́)وグッ!
 
-01:15.620 --> 01:15.860
-Watch.
+01:02.580 --> 01:08.280
+(๑-̀ㅂ-́)وグッ!
 
-01:15.860 --> 01:19.040
-When I collect this coin, it shrinks down.
+01:08.280 --> 01:09.410
+トリガーを使います。
 
-01:19.040 --> 01:23.780
-It's subtle, but it's a really nice level of polish that just gives you a little bit of extra feeling
+01:09.420 --> 01:15.150
+タスクの内訳は、プロジェクトのセットアップ、キャラクターとインプットの作成、プロジェクトのセットアップ、プロジェクトのセットアップ、プロジェクトのセットアップの3つです。
 
-01:23.780 --> 01:26.790
-that there's some care in the game and it's a nice effect.
+01:15.150 --> 01:21.720
+そして最後にサウンドとアニメーションを追加します。
 
-01:26.810 --> 01:28.700
-So let's see how we accomplish that.
+01:22.590 --> 01:24.300
+パッケージのインストール。
 
-01:29.460 --> 01:30.960
-We'll take a look at some code.
+01:24.300 --> 01:27.030
+このタイプのゲームには余計なパッケージは必要ありません。
 
-01:31.690 --> 01:38.230
-Here in the coin, we can see that in the destroy that we had set up before the destroy me public method
+01:27.030 --> 01:32.540
+しかし、もしついていくなら、これらは必要です。
 
-01:38.230 --> 01:42.990
-I flag the is a live false and then I used to immediately do a destroy.
+01:32.550 --> 01:36.350
+しかし、これは私たちのコースのデモプロジェクトですでに行われていることに注意してください。
 
-01:43.000 --> 01:49.180
-Now in number one here we can see that we're using the do scale operation and it's going to scale down
+01:36.360 --> 01:42.330
+これらの手順は、私たちのコースの外で完全にゼロから新しいプロジェクトを始めたい場合のみです。
 
-01:49.180 --> 01:55.390
-to zero Over the course of about a fourth of a second, I'm able to set an easing to have it kind of
+01:42.330 --> 01:44.640
+このような機能を得ることができます。
 
-01:55.390 --> 01:58.150
-bounce or do it quickly or accelerate as it goes.
+01:44.820 --> 01:49.260
+まず、Cinema Machineを使ってボールを追うカメラを追跡します。
 
-01:58.150 --> 01:59.680
-You've got lots of options there.
+01:49.260 --> 01:54.420
+次に、プログリッドを使ってオブジェクトをスナップします。
 
-01:59.680 --> 02:01.960
-And then I set the on complete method.
+01:55.180 --> 01:56.680
+3Dプロジェクトのセットアップ。
 
-02:01.960 --> 02:07.090
-What that does is waits till the end of the animation and then destroys the object.
+01:56.950 --> 01:59.410
+最初のセットアップのタスクの内訳です。
 
-02:07.090 --> 02:12.700
-So instead of instantly destroying the object, it does this nice animation and about a quarter of a
+01:59.410 --> 02:02.200
+これは最終的な目標を示すスクリーンショットです。
 
-02:12.700 --> 02:15.430
-second later it will be destroyed.
+02:02.200 --> 02:06.290
+地面を追加し、背景を追加し、クレイジーボールのプレハブを追加します。
 
-02:15.430 --> 02:16.810
-We can see the settings here.
+02:06.310 --> 02:10.120
+そしてシネママシンのカメラでクレイジーボールを追います。
 
-02:16.810 --> 02:22.330
-I've got shrinks down to about zero and it does it over a quarter of a second, but you could tweak
+02:10.870 --> 02:17.260
+セクション6 "ビデオ1 "と "クレイジーボール・ゼロワン "を開きます。
 
-02:22.330 --> 02:22.720
-that.
+02:20.450 --> 02:21.680
+クレイジーボールを開きます。
 
-02:22.720 --> 02:25.870
-Now let's talk about the sound design inside the scene.
+02:21.680 --> 02:28.010
+クレイジーボールと背景、そしてカメラの映像が映し出されます。
 
-02:25.870 --> 02:27.280
-I've set up a sound manager.
+02:28.010 --> 02:28.910
+02:28.010 --> 02:28.910
 
-02:27.280 --> 02:28.390
-Let's take a look at that.
+02:29.240 --> 02:33.980
+環境を見てみると、他のシーンと似たようなものがたくさんあります。
 
-02:29.630 --> 02:37.250
-So in the environment, we've got the sound manager here and it has all the sounds we want lined up
+02:33.980 --> 02:39.740
+この床があり、そのコピーがあり、背景があり、その後ろに何かがある。
 
-02:37.250 --> 02:38.900
-in there, dragged in from our project.
+02:39.740 --> 02:40.070
+02:40.070 --> 02:40.890
 
-02:38.900 --> 02:42.920
-These are WAV files or M.P. threes that we can use to make some sounds.
+02:40.890 --> 02:44.090
+クレイジーボールを拡大すると...テクスチャを貼っただけのボールになりました。
 
-02:42.920 --> 02:50.000
-Then I can call by index and say play zero for the coin, play one for the collision, etc..
+02:44.100 --> 02:45.630
+まだ大したことはない
 
-02:50.090 --> 02:51.410
-Let's look at the code again.
+02:46.680 --> 02:48.600
+バーチャルカメラ
 
-02:52.490 --> 02:59.780
-So what I do here inside the on trigger enter is after I know that I've got the coin and I start the
+02:48.600 --> 02:52.050
+それではシネママシンを使ってバーチャルカメラをセットアップする方法を学びましょう。
 
-02:59.780 --> 03:05.990
-shrinking operation with a destroy me call, I then play the sound I use sound manager instance play
+02:52.050 --> 02:57.450
+カメラ、バーチャルカメラ、クレイジーボールを削除し、これらを一から作成します。
 
-03:05.990 --> 03:09.320
-audio clip and I pass in the index of what I want to play.
+03:06.390 --> 03:06.910
+見て
 
-03:09.680 --> 03:10.940
-Those are all stored here.
+03:07.050 --> 03:11.520
+ボールの球体を作ります。
 
-03:10.940 --> 03:14.930
-So now within the constants, I know exactly which sound I'm about to play.
+03:12.210 --> 03:14.700
+この球をワールドの中心に置きます。
 
-03:14.930 --> 03:18.110
-There's lots of ways to organize your sound in a project, but that way works.
+03:16.850 --> 03:18.300
+地面から少し離す
 
-03:18.110 --> 03:20.570
-Well, now let's talk about the game design.
+03:18.320 --> 03:19.010
+素晴らしい
 
-03:22.050 --> 03:25.770
-So if we zoom out a little bit and look at the world from a top.
+03:19.550 --> 03:21.770
+そしてUnityのカメラを新規作成します。
 
-03:27.430 --> 03:30.070
-This is how I originally designed the game.
+03:22.950 --> 03:23.910
+そして何か新しいものを。
 
-03:30.130 --> 03:35.400
-I thought from the beginning here in the game view, I want to be able to see the finish line.
+03:23.910 --> 03:26.460
+シネママシン、バーチャルカメラを作成します。
 
-03:35.410 --> 03:42.700
-So between the time UI, the score UI and visually connecting with the end goal, the user is led on
+03:26.940 --> 03:31.650
+カメラに追加すると、自動的にシネマシンブレインに追加されます。
 
-03:42.700 --> 03:45.340
-a clear path where they should go.
+03:31.680 --> 03:36.960
+これでユニティ・カメラはシネママシンのシステムによって駆動されるようになります。
 
-03:45.550 --> 03:48.610
-Then as they play the game, they would.
+03:37.110 --> 03:41.160
+そして、このカメラの素晴らしいところは、多くの機能が搭載されていることだ。
 
-03:49.430 --> 03:55.970
-Move across here, perhaps trying to get all the coins they could round the corner, come up, they
+03:42.110 --> 03:45.110
+このバーチャルカメラに少し手を加えてみよう。
 
-03:55.970 --> 04:01.070
-would see as they collect the coins that the score goes up so they get the connection.
+03:45.530 --> 03:50.540
+球体を追いかけ、球体を見る。
 
-04:01.070 --> 04:05.750
-That points is a good thing in games typically, and they see that that increments when they collect
+03:51.330 --> 03:53.600
+それからオプションを選びます。
 
-04:05.750 --> 04:06.440
-coins.
+03:53.610 --> 03:59.010
+"トランスポゾン "を使って球体をオフセットさせます。
 
-04:06.440 --> 04:07.900
-So that works really well.
+03:59.810 --> 04:02.060
+コンポーザーでフォロー
 
-04:07.910 --> 04:11.350
-I've created a very simple maze pattern here.
+04:02.450 --> 04:05.360
+オフセットを少し上げる
 
-04:11.360 --> 04:17.600
-Also allowing user who's interested in the best possible time to just be able to come right over this
+04:06.440 --> 04:09.150
+少し後ろに下がるか、ズームインするか。
 
-04:17.600 --> 04:21.560
-little hill and come around the corner and get the quickest score.
+04:09.170 --> 04:11.660
+好きなように調整できる。
 
-04:21.590 --> 04:25.370
-They would also see that they win, but they don't get the highest score.
+04:12.110 --> 04:17.780
+それからコンポーザーで、オブジェクトを少し高いところから追跡するか、少し低いところから追跡するか、あるいは
 
-04:25.370 --> 04:27.830
-So I'd imagine a player would look at it this way.
+04:17.780 --> 04:19.040
+ちょうど真ん中
 
-04:27.860 --> 04:33.950
-They'd play the game, probably fool around and lose the first time by hitting the time of zero.
+04:19.040 --> 04:20.660
+それだけで十分だ。
 
-04:34.130 --> 04:39.320
-Then they'd play again, realizing maybe coins are good, but the finish line is the point.
+04:20.810 --> 04:26.420
+あとはシーンを再生して、球体を手動で動かしてみましょう。
 
-04:39.320 --> 04:42.020
-Get to the finish line with a few points.
+04:26.420 --> 04:29.630
+シネママシンが完璧に追従しているのがわかる。
 
-04:42.020 --> 04:47.600
-Then on a third play they might try to get all of the coins possible within the time limit.
+04:33.290 --> 04:39.230
+次のビデオでは、プレーヤーの作成と、キーボード入力について説明します。
 
-04:47.930 --> 04:49.100
-In this demo game.
-
-04:49.100 --> 04:54.320
-I've made that pretty simple to do, but you can imagine playing with the user and imagining the different
-
-04:54.320 --> 04:58.550
-ways that they'd approach the game to encourage them to play again and again and again.
-
-04:58.550 --> 05:03.680
-So it's just a little bit of a note on the gameplay design and also that adds to the good feeling of
-
-05:03.680 --> 05:04.970
-Polish at the end of game.
-
-05:04.970 --> 05:05.530
-That's it.
-
-05:05.540 --> 05:06.620
-Thanks very much.
-
-05:07.820 --> 05:10.400
-As a bonus assignment, you can add your own polish.
-
-05:10.430 --> 05:11.750
-Here's some ideas.
-
-05:11.750 --> 05:18.710
-More programmatic twinning sounds, obstacles, even larger levels or multiple levels and different
-
-05:18.710 --> 05:19.940
-types of crazy balls.
-
-05:21.810 --> 05:25.290
-In the next section, we'll handle advanced topics.
+04:39.230 --> 04:43.880
+リジッドボディを使ったキーボード入力、モーションのための力の追加、そしてプログリッドを使って壁を配置します。

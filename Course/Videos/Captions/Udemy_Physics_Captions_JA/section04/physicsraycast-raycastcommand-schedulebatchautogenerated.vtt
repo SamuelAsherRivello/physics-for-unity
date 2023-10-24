@@ -1,316 +1,316 @@
 WEBVTT
 
 00:00.670 --> 00:04.450
-Physics Ray cast and Ray cast Command Schedule batch.
+物理レイキャストとレイキャストコマンドスケジュールバッチ。
 
 00:04.660 --> 00:08.500
-In this video, we'll cover what are spatial queries in physics?
+このビデオでは、物理学における空間クエリとは何か？
 
 00:08.650 --> 00:10.870
-Why are they useful and how do we do them?
+なぜ空間クエリーは有用なのか？
 
 00:11.320 --> 00:13.900
-Then we'll open up the Unity editor and play with them.
+そしてUnityのエディターを開いて、それらを使って遊んでみましょう。
 
 00:14.530 --> 00:15.810
-Let's take a step back.
+一歩下がってみましょう。
 
 00:15.820 --> 00:18.550
-What do we mean when we talk about a game physics system?
+ゲーム物理システムとはどういうものなのか？
 
 00:18.580 --> 00:20.140
-Well, there's two major parts.
+大きく分けて2つあります。
 
 00:20.140 --> 00:23.980
-Most of this course so far has talked about rigid body simulation.
+このコースではこれまで剛体シミュレーションについて説明してきました。
 
 00:24.280 --> 00:28.000
-This is the realistic movement and interaction between groups of objects.
+これはオブジェクトのグループ間のリアルな動きと相互作用です。
 
 00:28.240 --> 00:31.120
-We haven't yet talked much about spatial queries.
+空間クエリについてはまだあまり触れていません。
 
 00:31.330 --> 00:39.130
-This is projecting a ray or a collider through space to see about distance and check future collisions.
+これは空間に光線やコライダーを投影して距離を調べたり、将来の衝突をチェックするものです。
 
 00:39.400 --> 00:44.290
-For example, we could see is my gun pointing directly toward the enemy.
+例えば、私の銃が敵の方を向いているかどうかがわかります。
 
 00:44.590 --> 00:49.090
-The physics class defines global physics, properties and helper methods.
+物理クラスはグローバルな物理、プロパティ、ヘルパーメソッドを定義します。
 
 00:49.210 --> 00:55.270
-Our focus will be on physics recast one of the methods that gives us some great information we can learn.
+このクラスは物理学に特化したクラスです。
 
 00:55.270 --> 00:57.130
-Is there anything in front of my object?
+目の前に何かある？
 
 00:57.130 --> 00:59.200
-What exactly is in front of my object?
+目の前には何がある？
 
 00:59.200 --> 00:59.620
-What?
+何が？
 
 00:59.620 --> 01:02.260
-Empty space is in front of the object?
+物体の前には何もない？
 
 01:02.440 --> 01:04.390
-So why do spatial queries?
+では、なぜ空間クエリーをするのか？
 
 01:04.540 --> 01:08.370
-Well, spatial queries can help us answer a lot of compelling questions.
+空間クエリを使えば、多くの魅力的な質問に答えることができる。
 
 01:08.380 --> 01:09.970
-Is our enemy near a wall?
+敵は壁の近くにいるのか？
 
 01:09.970 --> 01:11.830
-Well, the enemy could turn around.
+敵は振り向くかもしれない
 
 01:11.860 --> 01:13.540
-Is the enemy in our gun sights?
+照準に敵はいるか？
 
 01:13.540 --> 01:17.300
-Well, we could indicate to us as the player that now is time to shoot.
+今が撃つ時だと、プレイヤーに示すことができますね。
 
 01:17.320 --> 01:18.640
-Can the enemy see me?
+敵から見えるか？
 
 01:18.670 --> 01:19.780
-This could help the enemy.
+これは敵の助けになるかもしれません。
 
 01:19.780 --> 01:20.860
-AI alert.
+AIが警告
 
 01:20.860 --> 01:21.760
-Other enemy.
+他の敵
 
 01:21.760 --> 01:25.170
-AI is an object under my mouse position.
+マウス位置の下にAIがいます。
 
 01:25.180 --> 01:27.580
-This could help us select or drag the object.
+このようにオブジェクトを選択したり、ドラッグしたりすることができます。
 
 01:27.580 --> 01:30.970
-Where exactly within a collider did the collision occur?
+コライダー内のどこで衝突が起きたのか？
 
 01:31.000 --> 01:36.940
-This could tell us the difference in points rewarded for a bull's eye shot at a target or a lower point
+これは、ターゲットに正鵠を得たシュートを打った場合とそうでない場合のポイントの違いを示している。
 
 01:36.940 --> 01:37.540
-value.
+値
 
 01:37.900 --> 01:39.520
-And there's much more possible.
+さらに多くの可能性がある
 
 01:39.520 --> 01:41.260
-This is very useful stuff.
+これはとても便利なものだ。
 
 01:41.260 --> 01:45.360
-The physics class that I mentioned has a lot of methods available for us.
+物理学のクラスにはたくさんのメソッドが用意されています。
 
 01:45.370 --> 01:47.080
-Let's talk about recast.
+リキャストについて話そう。
 
 01:47.110 --> 01:48.800
-Take a look at the diagram here.
+この図を見てください。
 
 01:48.820 --> 01:55.330
-Imagine that we cast array from point one and we cast it in a direction toward the pink box.
+点から配列をピンクのボックスの方向にキャストするとします。
 
 01:55.330 --> 02:00.980
-This is going to return us a ordered list of intersecting colliders in the scene.
+これで、シーン内で交差しているコライダーの順序付きリストが返されます。
 
 02:01.000 --> 02:03.880
-In this case, it would return number three.
+この場合、3番が返されます。
 
 02:03.910 --> 02:07.510
-Now, notice that we're not going to cast out into infinite space here.
+ここで、無限空間にキャストするわけではないことに注意してください。
 
 02:07.510 --> 02:13.090
-We're going to use a set finite distance that's an optimization that's going to help the calculations.
+"有限距離 "を計算することで 最適化するんだ
 
 02:13.090 --> 02:18.610
-So, for example, if we have the distance set to four, we would collide with the pink box, but not
+例えば、距離を4とした場合、ピンクのボックスと衝突することになるが、そうではなく
 
 02:18.610 --> 02:19.570
-the blue box.
+青い箱
 
 02:19.600 --> 02:22.030
-A similar method would be box cast.
+似たような方法としてボックスキャストがある。
 
 02:22.030 --> 02:27.690
-This cast a shape out from the point one through to the pink cube, but not to the blue cube.
+これは点1からピンクの立方体までの形をキャストするが、青い立方体まではキャストしない。
 
 02:27.700 --> 02:32.770
-The distance here is instead of sending out a line or array, it's a thicker space.
+この距離は線や配列ではなく、より太い空間です。
 
 02:32.770 --> 02:38.920
-The array cast, command schedule, batch functions, something like the physics recast, but it's much,
+配列のキャスト、コマンドのスケジュール、バッチ関数、物理学のリキャストみたいなものだが、それ以上のものだ、
 
 02:38.920 --> 02:39.940
-much faster.
+もっと速い
 
 02:39.940 --> 02:46.660
-The operations will be performed asynchronously and in parallel on parallel processors if they're available.
+この処理は非同期で実行され、並列プロセッサがあれば並列に実行される。
 
 02:46.660 --> 02:48.940
-This gives us blazing fast speed.
+これにより、圧倒的なスピードが実現する。
 
 02:49.120 --> 02:53.200
-It's a relatively new feature to unity, but it's publicly available.
+unityでは比較的新しい機能ですが、公開されています。
 
 02:53.410 --> 02:54.670
-Let's see some demos.
+デモを見てみよう。
 
 02:54.940 --> 02:57.130
-We'll take a look at the Ray cast demo.
+レイキャストのデモを見てみましょう。
 
 02:57.160 --> 02:59.800
-We'll play the scene and inspect the code.
+シーンを再生し、コードを確認します。
 
 03:03.000 --> 03:03.180
-Here.
+ここです。
 
 03:03.180 --> 03:05.520
-We're going to be looking at the recast demo.
+リキャストのデモを見ます。
 
 03:06.770 --> 03:08.010
-We run the scene.
+シーンを流します。
 
 03:08.190 --> 03:16.410
-And this capsule, as we can see with the red guideline here, it is sending out a rate cast below it.
+このカプセルは、赤いガイドラインでわかるように、その下にレートキャストを送っています。
 
 03:16.770 --> 03:20.850
-And then in the console window, it's showing us what it's colliding with.
+そしてコンソールウィンドウには衝突しているものが表示されています。
 
 03:21.240 --> 03:25.290
-So the red line, as you'd expect, it's saying the ramp is close below.
+赤い線は、予想通り、ランプが下に近づいていることを示しています。
 
 03:25.350 --> 03:31.690
-Now, if I manually move this off of the ramp, it then says the floor is close below.
+手動でこれをスロープから外すと、床が下に近いと表示されます。
 
 03:31.710 --> 03:37.980
-So you can see we can detect which object is below us or in whatever direction we want and get some
+つまり、どの物体が下にあるのか、あるいはどの方向にあるのかを検出することができるのだ。
 
 03:37.980 --> 03:39.020
-information about it.
+情報を得ることができる。
 
 03:39.030 --> 03:40.200
-Let's see how that works.
+どうなるかな？
 
 03:44.590 --> 03:45.760
-In the update.
+アップデートで
 
-03:46.670 --> 03:52.220
-What we do is we use physics, recast, and we cast a ray in the direction of downward.
+03:46.670 --> 03:52.220 
+物理演算とリキャストを使って、下方向に光線を投げます。
 
 03:52.460 --> 03:57.200
-Then if there's a collider there that we've collided with, we'll check the layer of it.
+そして、衝突したコライダーがあれば、そのレイヤーをチェックします。
 
 03:57.410 --> 04:00.890
-If it's a floor layer, in this case, we do a debug log.
+レイヤーが床の場合、デバッグログを取ります。
 
 04:01.010 --> 04:07.570
-Perhaps your character's footsteps change sound when he's walking on a metal surface or on top of water.
+金属の上や水の上を歩くと足音が変わります。
 
 04:07.580 --> 04:09.230
-You could do things like that.
+そんなこともできますね。
 
 04:09.560 --> 04:10.530
-And that's it.
+それでおしまい。
 
 04:10.550 --> 04:13.160
-We'll take a look at the Ray cast command demo.
+レイキャストコマンドのデモを見てみる。
 
 04:13.190 --> 04:15.800
-We'll play the scene and inspect the code.
+シーンを再生してコードを確認します。
 
 04:16.770 --> 04:19.650
-All right, let's open up the Ray cast command demo.
+レイキャストコマンドのデモを開いてみましょう。
 
 04:21.560 --> 04:21.830
-Here.
+ここです。
 
 04:21.830 --> 04:27.090
-We've got a familiar setup from our Recast demo, but with recast command.
+リキャストコマンドのデモでおなじみのセットアップです。
 
 04:27.110 --> 04:32.030
-What we're going to do is a slightly different way to get the end result here.
+このように、"recast "コマンドを使用することで、"recast "コマンドを使用するのとしないのとでは、結果が変わってきます。
 
 04:32.030 --> 04:37.760
-So similar to the last one we've got, ramp is close below in our console.
+前回と同じように、コンソールの下にランプが表示されます。
 
 04:38.150 --> 04:43.370
-We move out, the floor is close below in our console, so we're detecting what's beneath us.
+"床 "がコンソールの下にあるため、下を探知しています。
 
 04:43.600 --> 04:46.070
-Let's see that the implementation here is different.
+ここでは実装が異なることを確認しましょう。
 
 04:47.070 --> 04:49.350
-Inside the recast command.
+リキャストコマンドの内部
 
 04:50.460 --> 04:53.940
-What we're doing is inside the update.
+アップデートの中です。
 
 04:54.060 --> 05:01.790
-Every update, I'm creating a new recast command here, and I'm scheduling a batch of commands.
+アップデートのたびに、ここで新しいリキャストコマンドを作成し、コマンドのバッチをスケジューリングしています。
 
 05:01.800 --> 05:08.310
-Now, in this simple example, what I'm doing here is I'm populating a list of commands with only one.
+この単純な例では、コマンドのリストに1つだけ入力しています。
 
 05:08.310 --> 05:10.800
-I'm putting it the zero index one command.
+ゼロ・インデックス・ワンのコマンドを入れています。
 
 05:10.800 --> 05:16.620
-But you can imagine if you had a complex scene where you happen to be doing a lot of recasting, we
+しかし、もし複雑なシーンで多くのリキャストを行うようなことがあれば、次のようになります。
 
-05:16.620 --> 05:20.730
-could put them all into the same commands list and call schedule batch.
+05:20.730 --> 05:20.730 
+同じコマンドリストに入れて、バッチスケジュールを呼び出せばいい。
 
 05:20.730 --> 05:21.450
-Once.
+一旦。
 
 05:21.540 --> 05:27.030
-What we can do then is we can guarantee we're getting really fast results because this is going to happen
+そうすれば、本当に速い結果が得られることを保証できる。
 
 05:27.030 --> 05:31.560
-asynchronously and it's also going to happen on multiple cores.
+非同期で、しかもマルチコアで行われるからだ。
 
 05:31.560 --> 05:35.880
-If the computer or the device you're running on has multiple processing.
+コンピュータやデバイスに複数の処理がある場合。
 
 05:36.490 --> 05:42.490
-Then down here, similar to the last example, we just go through the hits that we've got and we see
+そして、この下にある、前回の例と同じように、ヒットしたものを調べてみると、以下のようになります。
 
 05:42.490 --> 05:48.550
-if for any of the hits, if there's a collider present and if it's either the floor or the ramp, that's
+どのヒットにもコライダーが存在し、それが床かスロープのどちらかであれば、それは
 
 05:48.550 --> 05:49.000
-it.
+それ
 
 05:49.150 --> 05:50.230
-A bonus assignment.
+ボーナスです。
 
 05:50.230 --> 05:56.530
-If you want to get a bit deeper into Ray casting, check out the Ray cast drag and drop demo, play
+レイ・キャストをもう少し深く知りたい方は、レイ・キャストのドラッグ＆ドロップ・デモをご覧ください。
 
 05:56.530 --> 05:58.450
-the scene and inspect the code.
+シーンを再生し、コードを確認してください。
 
 05:59.140 --> 06:05.260
-In the next video we'll look at physics, debugging, debug, draw ray physics, debugger window and
+次のビデオでは、物理、デバッグ、デバッグ、ドローレイ物理、デバッガーウィンドウ、そして
 
 06:05.260 --> 06:06.490
-profile a window.
+ウィンドウのプロファイル
 
 06:06.910 --> 06:09.790
-In this video we'll cover what is the bugging?
+このビデオでは、デバッグとは何か？
 
 06:09.790 --> 06:12.520
-What are the challenges of debugging physics?
+物理学のデバッグの難しさとは？
 
 06:12.520 --> 06:14.770
-What tools do we have that help us out?
+どのようなツールがあるのか？
 
 06:15.070 --> 06:18.580
-And finally, we'll open up the Unity editor and we'll play with all this.
+そして最後に、Unityエディターを開いて、このすべてを遊んでみましょう。

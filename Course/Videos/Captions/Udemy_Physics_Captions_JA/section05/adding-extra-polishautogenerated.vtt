@@ -1,214 +1,208 @@
 WEBVTT
 
 00:01.710 --> 00:03.190
-Adding extra polish.
+さらに磨きをかける。
 
 00:03.210 --> 00:09.210
-In this video, we'll cover what is Polish and what features are best left to the end of development.
+このビデオでは、何が "Polish"（洗練された）なのか、そしてどのような機能が開発の最後に残すのがベストなのかを説明します。
 
 00:09.240 --> 00:15.210
-We'll add some explosion animations, physics, effectors and sounds for the explosions into our game
+爆発アニメーション、物理演算、エフェクター、爆発音をゲームに追加します。
 
 00:15.210 --> 00:15.870
-as well.
+も追加します。
 
 00:16.700 --> 00:18.030
-So what is Polish?
+ポーランド語とは？
 
 00:18.050 --> 00:25.420
-Polish is the last steps of game play, typically before a big milestone or even before shipping.
+ポーランド語はゲームプレイの最後のステップのことで、一般的には大きなマイルストーンの前、あるいは出荷前のことである。
 
 00:25.430 --> 00:32.840
-When you spend your time and resources on making small differences to the graphics, the visuals, the
+グラフィックやビジュアル、ゲームプレイに細かな変更を加えることに時間とリソースを費やすこと。
 
-00:32.840 --> 00:37.310
-gameplay, things that take the game from being good to being great.
+00:37.430 --> 00:37.430 
+ゲームプレイ、ゲームを良いものから素晴らしいものにするために時間を使う。
 
 00:37.430 --> 00:43.340
-In our game, the task breakdown for us is we're going to add some explosions when the crates disappear.
+このゲームでは、木箱が消えた時の爆発を追加します。
 
 00:43.730 --> 00:50.390
-Currently, when crates disappear is both a pretty big part of the gameplay and as well as it's not
+現在、木箱が消えるのはゲームプレイの大きな要素であると同時に、そうでない部分でもあります。
 
 00:50.390 --> 00:51.830
-really that dramatic.
+それほど劇的なものでもない。
 
 00:51.830 --> 00:56.340
-So if we add some explosions, it helps to celebrate and add a bit of drama to that moment.
+だから爆発を起こせば、その瞬間を祝福し、ドラマチックにすることができる。
 
 00:56.360 --> 00:58.730
-We'll add in explosion animation.
+爆発アニメーションを追加します。
 
 00:58.730 --> 01:04.850
-We'll use an effector to DX so that objects near the explosion get moved just a little bit and then
+エフェクターを使ってDXを行い、爆発の近くにあるオブジェクトが少しだけ動くようにします。
 
 01:04.850 --> 01:09.950
-we'll add a sound manager because the sound has been missing from our gameplay so far and we'll look
+サウンドマネージャーを追加します。これまでのゲームプレイではサウンドが欠けていたので、サウンドマネージャーを追加します。
 
 01:09.950 --> 01:13.820
-at key events in the gameplay that need a little extra attention.
+ゲームプレイの中で重要なイベントには特別な注意が必要です。
 
 01:14.120 --> 01:19.280
-We'll open up section five Video five Upset Ducks five for our project.
+この企画では、セクション5「ビデオ5 アップセットダックス5」を公開します。
 
 01:20.000 --> 01:24.830
-All right, let's jump inside Unity here and open up our Upset Dux five.
+それでは、Unityの中に飛び込んで、アップセット・ダックス5を開いてみましょう。
 
-01:25.130 --> 01:26.210
-We'll give it a play.
-
-01:26.840 --> 01:29.420
-We'll notice a few different things that we've polished up.
+01:26.840->01:29.440
+アップセットダックス5を再生します。
 
 01:29.720 --> 01:35.450
-Number one, whenever I restart the scene here by using the space bar, we can see that the asteroid
+まず1つ目、スペースバーを使ってシーンを再開させると、小惑星の姿が見える。
 
 01:35.450 --> 01:40.040
-fades in from a zero scale to a one scale with a nice little bounce.
+ゼロスケールから1スケールにフェードインします。
 
 01:40.070 --> 01:44.780
-It's a little effect, but it's pretty cheap to add and it gives a little visual appeal.
+このエフェクトはちょっとだけですが、かなり安く追加できますし、ちょっとした視覚的なアピールになります。
 
 01:44.930 --> 01:47.840
-Also, when I shoot here, you'll see an explosion.
+あと、ここを撮ると爆発が起こります。
 
 01:51.760 --> 01:53.760
-So the sound effect works really well.
+効果音が効いてますね。
 
 01:53.770 --> 01:58.210
-The explosion makes it a lot more exciting when a crate is disappearing.
+木箱が消える時に爆発があると盛り上がりますね。
 
 01:58.210 --> 02:01.840
-And also we get a explosion physics force.
+また、爆発物理フォースもあります。
 
 02:01.840 --> 02:03.730
-So let's see how that stuff set up.
+では、その設定を見てみましょう。
 
 02:03.790 --> 02:05.800
-First, let's take a look at that tween.
+まずはトゥイーンを見てみましょう。
 
 02:06.470 --> 02:08.000
-So in the asteroid.
+小惑星に
 
 02:08.890 --> 02:10.210
-Inside of its start.
+スタート地点の内側
 
 02:10.660 --> 02:14.410
-I do programmatic animation scaling from 0 to 1.
+0から1へのスケーリングアニメーションをプログラムします。
 
 02:14.440 --> 02:19.800
-It's easy to add works using a free library that's called do tween.
+do tweenというフリーのライブラリを使えば簡単に追加できます。
 
 02:19.810 --> 02:23.890
-And it's really fun to have these kind of effects added in throughout the game.
+また、ゲーム中にこういったエフェクトが追加されるのは本当に楽しいです。
 
 02:23.890 --> 02:25.090
-So that's first.
+まずはこれですね。
 
 02:25.450 --> 02:29.350
-Then back in the game here, let's take a look at how the sounds are working.
+そしてゲームに戻り、サウンドの動きを見てみましょう。
 
 02:29.350 --> 02:34.240
-So inside the environment in this scene, we've got a sound manager added.
+このシーンの環境内にサウンドマネージャーを追加しました。
 
 02:34.570 --> 02:37.650
-And what I do is I cue up the sounds that I want.
+必要なサウンドをキューに入れます。
 
 02:37.660 --> 02:43.600
-These are WAV files or MP threes that are added to the project and then I'm able to call them by passing
+プロジェクトに追加されたWAVファイルやMP 3を、以下のようにして呼び出すことができる。
 
 02:43.600 --> 02:44.860
-in the index.
+をインデックスに追加します。
 
 02:44.860 --> 02:49.510
-Play zero, play one, play four, and I play the corresponding sound.
+プレイゼロ、プレイワン、プレイフォー、対応するサウンドを再生します。
 
 02:49.660 --> 02:53.410
-So let's see where in our duck game we call that.
+では、アヒルゲームのどこをそう呼ぶのか見てみましょう。
 
 02:53.800 --> 02:58.980
-So down here, when I destroy the crate, what happens is I first play that sound.
+木箱を壊すと、まずその音が鳴る。
 
 02:58.990 --> 03:01.030
-You can see the syntax is really easy.
+構文がとても簡単なのがわかるだろう。
 
 03:01.450 --> 03:03.550
-Then I create the explosion.
+そして爆発を起こす。
 
 03:03.700 --> 03:06.460
-Creating the explosion just instantiates a prefab.
+爆発を作るのはプレハブをインスタンス化するだけです。
 
 03:06.460 --> 03:09.070
-We've done that before for the asteroid, for example.
+例えば小惑星は以前にもやったことがありますね。
 
 03:09.070 --> 03:14.650
-And then down here I remove the explosion after a few seconds.
+そして数秒後に爆発を起こします。
 
 03:14.650 --> 03:17.260
-So the explosion is up for maybe a half a second.
+爆発が起きているのは半秒くらいか。
 
 03:17.260 --> 03:21.760
-You could tweak that and have it stick around a little more, depending on how much visual impact you
+視覚的なインパクトの大きさによっては、もう少し粘ってもいいかもしれない。
 
 03:21.760 --> 03:22.600
-want to have there.
+(゜ロ゜;ノ）ノ
 
 03:23.440 --> 03:26.750
-And lastly, let's take a look at the explosion itself.
+そして最後に爆発そのものを見てみよう。
 
 03:26.770 --> 03:28.240
-So here's the prefab.
+これがプレハブ
 
 03:28.880 --> 03:29.920
-Is what it looks like.
+こんな感じです。
 
 03:30.310 --> 03:36.370
-And we can see we've got a circle collider here and it's this size collider that's going to have a physics
+円形のコライダーがあり、この大きさのコライダーで物理演算が行われます。
 
 03:36.370 --> 03:37.340
-force applied.
+力がかかる。
 
 03:37.360 --> 03:42.260
-So it's this point effector that we've added that's going to have a force magnitude of five.
+このポイントエフェクターは力の大きさが5になるように追加したものだ。
 
 03:42.280 --> 03:47.230
-So you can see this is the magnitude of the force that's going to be applied positive is in an outward
-
-03:47.230 --> 03:47.890
-direction.
+つまり、これが外向きにかかる力の大きさであることがわかる。
 
 03:47.890 --> 03:51.010
-So this explosion is going to push the boxes out a little bit.
+この爆発で箱が少し押し出されるわけだ。
 
 03:51.160 --> 03:53.200
-So that's the setup for the Polish.
+(￣ー￣)ニヤリ
 
 03:53.200 --> 03:56.950
-And I think the game looks really great after these five videos.
+(￣ー￣)ニヤリ
 
 03:58.730 --> 04:01.960
-As a bonus assignment, you can add your own polish to this project.
+この動画には、あなたのオリジナル動画も追加することができます。
 
 04:01.970 --> 04:05.870
-You can add more programmatic tuning to have different effects in there.
+さらにプログラムによるチューニングを加えて、さまざまなエフェクトを加えることができます。
 
 04:05.870 --> 04:10.100
-You can have more sound effects and obstacles, larger levels.
+効果音や障害物も増やせるし、レベルも大きくできる。
 
 04:10.100 --> 04:15.320
-With a scrolling camera or multiple levels, you could have different types of asteroids so that you
+スクロールカメラや複数のレベルがあれば、様々な種類の小惑星を登場させることができます。
 
 04:15.320 --> 04:20.390
-could shoot maybe ones that explode themselves or different types of upset ducks.
+(´・ω・｀)←これって、"某 "さんの "某 "さんと同じ？
 
 04:20.390 --> 04:22.160
-Some that are smarter.
+もっと賢いのもいる
 
 04:22.160 --> 04:28.700
-They can move out of the way, some that have more power, more defense, some that move and make them
+(´・ω・｀)邪魔にならないように動けるやつとか、パワーがあるやつとか、防御力があるやつとか、動くやつとか
 
 04:28.700 --> 04:29.870
-more difficult to hit.
+(´・ω・｀)
 
 04:30.080 --> 04:34.970
-In the next section, we'll look at creating a Marble Madness clone three D game.
+このような場合、「next.next.next.next.

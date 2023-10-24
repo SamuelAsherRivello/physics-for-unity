@@ -1,193 +1,193 @@
 WEBVTT
 
 00:01.750 --> 00:02.800
-Terrain physics.
+地形物理学
 
 00:02.800 --> 00:05.760
-In this video, we'll cover what is unity terrain.
+このビデオでは、ユニティ地形とは何かを取り上げます。
 
 00:05.770 --> 00:08.850
-We'll learn how do we create terrain and add physics.
+地形を作り、物理を追加する方法を学びます。
 
 00:08.860 --> 00:13.930
-Finally, we'll create a new terrain inside the unity editor and interact with its physics.
+最後に、unityエディタ内で新しい地形を作成し、その物理を操作します。
 
 00:14.140 --> 00:15.460
-First of all, what is terrain?
+まず地形とは何か？
 
 00:15.460 --> 00:19.870
-Well, video games may include organic areas like a planet surface.
+ビデオゲームでは惑星の表面のような有機的な領域を含むことがあります。
 
 00:19.870 --> 00:25.060
-Our game characters and other game items might walk around and interact on that surface.
+キャラクターやアイテムがその上を歩き回ったりするわけです。
 
 00:25.060 --> 00:28.000
-For example, our main character, walking up a mountain.
+例えば、主人公が山を登るとします。
 
 00:28.000 --> 00:33.070
-The realistic physics interaction on this surface is what we call terrain physics.
+この表面のリアルな物理的相互作用が地形物理と呼ばれるものです。
 
 00:33.070 --> 00:35.230
-So what is Unity's terrain system?
+Unityの地形システムとは？
 
 00:35.230 --> 00:39.250
-Unity's terrain system allows you to add vast landscapes to your game.
+Unityの地形システムによって、ゲームに広大な風景を追加することができます。
 
 00:39.250 --> 00:45.100
-The Unity editor provides a selection of tools to create the terrain quickly and easily at runtime.
+Unityのエディターには、実行時に素早く簡単に地形を作成するためのツールが用意されています。
 
 00:45.100 --> 00:48.430
-Terrain rendering is highly optimized for efficiency.
+地形レンダリングは効率化のために高度に最適化されています。
 
 00:48.730 --> 00:50.920
-The characteristics of the terrain System.
+地形システムの特徴。
 
 00:50.920 --> 00:57.340
-It has an editable surface texture and editable surface geometry and an automated terrain collider.
+編集可能な表面テクスチャ，編集可能な表面ジオメトリ，自動化された地形コライダーを持つ．
 
 00:58.150 --> 01:03.910
-For example, in this scene here, there's a terrain that I created and I have a series of different
+例えば、このシーンでは、私が作成した地形があります。
 
 01:03.910 --> 01:09.670
-balls falling on top of the surface and interacting with the surface like a real physics surface.
+ボールがサーフェスの上に落ちてきて、実際の物理サーフェスのようにサーフェスと相互作用する。
 
 01:11.160 --> 01:12.990
-The terrain collider component.
+地形コライダーコンポーネント。
 
 01:12.990 --> 01:17.730
-It's what defines the collision surface for the same shape as the terrain.
+地形と同じ形状の衝突面を定義するものです。
 
 01:18.000 --> 01:21.720
-So we have a game object with our typical transform component.
+典型的な変形コンポーネントを持つゲームオブジェクトができました。
 
 01:21.720 --> 01:27.180
-And then to set up this scenario, we need to add the terrain component, the terrain Collider, and
+そして、このシナリオを設定するには、地形コンポーネントと地形コライダーを追加する必要がある。
 
 01:27.180 --> 01:29.040
-then the terrain data asset.
+そして地形データアセットです。
 
 01:30.340 --> 01:32.830
-So what are the physical properties of terrain?
+地形の物理的特性とは？
 
 01:33.160 --> 01:36.910
-There's lots of settings here, but we'll focus on the physics ones of material.
+様々な設定がありますが、ここではマテリアルの物理的な設定について説明します。
 
 01:36.910 --> 01:42.370
-That's a reference to the asset that describes how to handle colliding objects per friction and bouncing
+これはアセットへの参照で、衝突するオブジェクトの摩擦やバウンドの処理方法について書かれています。
 
 01:42.370 --> 01:42.740
-us.
+こちらです。
 
 01:42.760 --> 01:45.850
-The terrain data is something we haven't seen yet.
+地形データはまだ見たことがありません。
 
 01:45.850 --> 01:50.530
-It stores the height, maps or the surface of where the mountains and valleys are.
+山や谷の高さ、地図、地表が保存されています。
 
 01:50.560 --> 01:57.220
-The detail mesh positions, Any tree instances you've added, you're able to add trees on top of the
+詳細メッシュの位置、追加した樹木のインスタンス、その上に樹木を追加することができます。
 
 01:57.220 --> 02:03.430
-surface to create a realistic scene and the terrain texture alpha maps enable tree colliders.
+地形テクスチャのアルファマップは木のコライダーを有効にします。
 
 02:03.430 --> 02:10.210
-If you set it true, then you'll also include the geometry of the trees into the collision calculations.
+trueに設定すると、木のジオメトリも衝突計算に含まれるようになります。
 
 02:10.210 --> 02:15.940
-So setting true here is more expensive, but it gives you the realistic result you may want, which
+つまり、trueを設定すると、より高価になりますが、あなたが望むリアルな結果を得ることができます。
 
 02:15.940 --> 02:20.940
-is that your character and other items would bounce off the trees in a believable way.
+つまり、キャラクターや他のアイテムが木々から跳ね返されるのだ。
 
 02:20.950 --> 02:26.230
-The thickness property here determines how thick the terrain will be in the vertical direction when
+thicknessプロパティは、地形の垂直方向の厚さを指定します。
 
 02:26.230 --> 02:27.730
-used with a terrain collider.
+地形コライダーを使用した場合
 
 02:27.730 --> 02:33.820
-Any colliders found within this surface of thickness will be placed on top of the surface.
+この厚さの面内にあるコライダーは、その面の上に配置される。
 
 02:34.660 --> 02:37.060
-So let's create a terrain with physics.
+それでは物理演算で地形を作成してみましょう。
 
 02:37.510 --> 02:38.950
-We'll open up the terrain.
+地形を開きます。
 
 02:38.950 --> 02:41.430
-Begin scene will create a terrain.
+シーンを開始すると地形が作成されます。
 
 02:41.440 --> 02:43.120
-We'll learn about editing it.
+編集について学びます。
 
 02:43.150 --> 02:46.630
-We'll create some following items on top to test out the physics.
+物理演算を試すために、次のアイテムを作ります。
 
 02:47.350 --> 02:49.270
-We're going to be using terrain begin.
+地形開始を使います。
 
 02:51.020 --> 02:51.200
-Here.
+ここで
 
 02:51.200 --> 02:52.760
-We've got a camera set up.
+カメラをセット
 
 02:52.760 --> 02:55.880
-No terrain yet, so let's go ahead and create the terrain.
+まだ地形がないので、地形を作りましょう。
 
 02:56.390 --> 02:59.510
-We're going to use Game object three D object terrain.
+Game object three D object terrainを使います。
 
 03:01.580 --> 03:03.710
-This creates a terrain in the middle of the world.
+これで世界の真ん中に地形ができます。
 
 03:03.740 --> 03:07.880
-Now we're going to add some layers on top that we can use to paint the texture.
+レイヤーを追加してテクスチャを描きます。
 
 03:12.620 --> 03:13.940
-Will create three layers.
+レイヤーを3つ作ります。
 
 03:13.940 --> 03:15.170
-One for rock.
+ひとつは岩。
 
 03:16.250 --> 03:17.990
-One for snow and one for grass.
+雪と草
 
 03:21.760 --> 03:27.770
-And then we'll go ahead and instead of painting texture, first, we will raise and lower terrain.
+そしてテクスチャを塗る代わりに、まずは地形を上下させます。
 
 03:29.070 --> 03:32.370
-With both the brushes and the terrain, we can adjust the size and opacity.
+ブラシと地形の両方で、サイズと不透明度を調整します。
 
 03:43.340 --> 03:45.830
-And then on to the mountains will paint the right texture.
+そして山にテクスチャーを塗っていきます。
 
 04:06.480 --> 04:06.750
-There.
+そこです。
 
 04:06.750 --> 04:11.910
-We've got some mountains with some snow and some different textures, and we'll notice that.
+雪とテクスチャの違う山ができました。
 
 04:13.120 --> 04:13.930
-On the terrain.
+地形について
 
 04:13.930 --> 04:17.140
-We have the terrain card or automatically set up for us.
+地形カードが自動的にセットアップされます。
 
 04:17.860 --> 04:19.510
-And let's go ahead and run the scene.
+そしてシーンを走らせます。
 
 04:20.990 --> 04:25.610
-We'll also bring in the sponsor I have created to put some objects on top to test the physics.
+また、私が作成したスポンサーを持ち込んで、上にオブジェクトを置き、物理テストを行います。
 
 04:31.170 --> 04:37.350
-We can see our yellow spawned objects are responding to the surface and collecting at low points, also
+黄色のスポーンオブジェクトが表面に反応し、低い位置に集まっているのがわかります。
 
 04:37.350 --> 04:38.640
-falling off the terrain.
+地形から落ちている
 
 04:39.600 --> 04:40.710
-Behaving with physics.
+物理的な挙動
 
 04:45.460 --> 04:49.270
-In the next section, we'll look at Unity C Sharp physics programming.
+次のセクションでは、Unity C Sharpの物理プログラミングについて見ていこう。

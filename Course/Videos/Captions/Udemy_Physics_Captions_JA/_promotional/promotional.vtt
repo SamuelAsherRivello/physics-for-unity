@@ -1,172 +1,172 @@
 WEBVTT
 
 00:00.180 --> 00:02.810
-Hello and welcome to an introduction to Game Physics.
+ゲーム物理学入門へようこそ。
 
 00:02.820 --> 00:04.830
-My name is Samuel Asher Rivello.
+サミュエル・アッシャー・リベロです。
 
 00:05.040 --> 00:09.810
-My mission in my career is to educate and entertain with interactive technology.
+私の使命は インタラクティブな技術で 教育し楽しませることです
 
 00:09.850 --> 00:15.150
-I'm a unity certified developer with over 20 years of game development experience.
+unity認定デベロッパーで、20年以上のゲーム開発経験があります。
 
 00:15.420 --> 00:22.140
-In the last eight years, I've focused specifically on unity, shipping unity games for PC, Xbox,
+この8年間はunityに特化し、PC、Xbox向けにunityゲームを出荷してきました、
 
 00:22.140 --> 00:23.430
-PlayStation and more.
+プレイステーションなどです。
 
 00:23.460 --> 00:29.310
-Typically on projects, I'm a unity game developer or unity tools developer, and I'm available for
+通常、プロジェクトではunityゲーム開発者、またはunityツール開発者です。
 
 00:29.310 --> 00:30.690
-remote contract hire.
+00:30.690 --> 00:31.860
 
 00:31.860 --> 00:33.750
-First of all, physics is fun.
+まず、物理は楽しいです。
 
 00:34.400 --> 00:37.940
-Making games with physics is fun and playing them is fun too.
+物理を使ったゲームを作るのも楽しいし、それをプレイするのも楽しい。
 
 00:37.970 --> 00:42.950
-The gameplay mechanics are experimental, emergent, even educational.
+ゲームプレイの仕組みは実験的であり、創発的であり、教育的でさえある。
 
 00:42.950 --> 00:46.970
-Some popular examples of physics based games are Angry Birds.
+物理ベースのゲームといえば、「アングリーバード」などが有名です。
 
 00:46.970 --> 00:49.880
-Cut the rope trials and marble it up.
+ロープを切ってマーブルにします。
 
 00:50.540 --> 00:52.430
-Let's take a look at the course overview.
+コース概要を見てみましょう。
 
 00:53.130 --> 00:54.990
-In Section one, Intro to Physics.
+セクション1 物理学入門
 
 00:54.990 --> 00:58.170
-We'll look at the benefits of creating physics based games.
+物理ベースのゲームを作ることの利点を見ていきます。
 
 00:58.200 --> 01:03.870
-We'll look at the three major concerns of any physics system, and we'll review Unity's physics system
+物理システムにおける3つの主要な懸念について見ていきます。
 
 01:03.870 --> 01:04.920
-and project setup.
+とプロジェクトのセットアップについて説明します。
 
 01:05.460 --> 01:08.940
-In Section two, we'll look at Unity's two physics components.
+セクション2では、Unityの2つの物理コンポーネントについて見ていきます。
 
 01:09.150 --> 01:14.970
-We'll start with the very important rigid body, 2D and Collider 2D, and we'll move on to advanced
+このセクションでは、Unityの2つの物理コンポーネントについて説明します。
 
 01:14.970 --> 01:18.030
-topics, 2D effectors and 2D joints.
+2Dエフェクターと2Dジョイントです。
 
 01:18.060 --> 01:23.070
-We'll even look at a project that's in public beta called Unity Sprite Sheet.
+Unity Sprite Sheetというパブリックベータ版のプロジェクトも紹介します。
 
 01:23.740 --> 01:27.940
-In section three, we'll look at Unity's three D physics components.
+セクション3では、Unityの3つのD物理コンポーネントを見ていきます。
 
 01:27.970 --> 01:33.790
-First, we'll review the core principles of three D, and then we'll move on to physic material, ragdoll
+まず、3Dの核となる原理をおさらいし、次に物理素材、ラグドール
 
 01:33.790 --> 01:34.660
-and train.
+そしてトレーニング
 
 01:37.310 --> 01:41.440
-In section four, we'll dive deep into Unity C sharp physics programming.
+セクション4では、Unity Cのシャープな物理プログラミングを深く掘り下げます。
 
 01:41.450 --> 01:45.200
-We'll handle physics events such as collisions and triggers.
+衝突やトリガーなどの物理イベントを扱います。
 
 01:45.200 --> 01:50.540
-We'll add physics forces to move our objects around, and we'll look at the vital properties and functions
+オブジェクトを動かすために物理的な力を加えます。
 
 01:50.540 --> 01:51.860
-we need for our physics.
+01:51.860 --> 01:51.860
 
 01:51.860 --> 01:53.720
-We'll even get into physics debugging.
+物理のデバッグも行います。
 
 01:53.720 --> 01:56.720
-So if a problem arises in our code, we know how to solve it.
+問題が発生した場合，それを解決する方法を知っておくのです。
 
 01:57.080 --> 02:02.660
-In section five, we'll create a project from scratch using two D something like Angry Birds.
+第5章では、アングリーバードのような2Dを使ったプロジェクトをゼロから作ります。
 
 02:02.840 --> 02:07.940
-We'll create projectile motion using our input, and we'll populate the world with obstacles that collide
+入力されたものを使って投射モーションを作り、世界に障害物を配置して衝突させます。
 
 02:07.940 --> 02:08.570
-and destruct.
+そして破壊する
 
 02:10.130 --> 02:16.370
-In Section six will create a project from scratch using three D, something like the 1980s classic game
+セクション6では3Dを使ったプロジェクトをゼロから作ります。
 
 02:16.370 --> 02:17.490
-Marble Madness.
+マーブルマッドネス
 
 02:17.510 --> 02:19.690
-We'll create a complete three D game.
+完全な3Dゲームを作ります。
 
 02:19.700 --> 02:25.610
-We'll use physics forces to move our character around and we'll populate the world with rigid body obstacles.
+(このゲームでは)物理的な力を使ってキャラクターを移動させ、剛体の障害物を世界に配置します。
 
 02:27.480 --> 02:33.300
-In section seven, we'll look at some advanced topics, best practices with physics and how to optimize
+このセクションでは、物理演算のベストプラクティスと最適化について説明します。
 
 02:33.300 --> 02:37.580
-our projects, and then we'll apply what we've learned to real world examples.
+そして、学んだことを実際の例題に当てはめていきます。
 
 02:37.620 --> 02:43.590
-We'll even look at the data oriented technology stack or dots and the future of unity physics.
+データ指向の技術スタックやドット、ユニティ物理学の未来についても見ていきます。
 
 02:45.150 --> 02:46.620
-Prerequisites for this course.
+このコースの前提条件
 
 02:46.620 --> 02:47.970
-You'll need a computer, of course.
+もちろんパソコンが必要です。
 
 02:47.970 --> 02:49.570
-Running windows or Mac.
+ウィンドウズかマック
 
 02:49.590 --> 02:52.420
-You'll need a unity editor and a code text editor.
+ユニティエディタとコードテキストエディタが必要です。
 
 02:52.470 --> 02:58.030
-The free personal edition of Unity comes with both some basic skills of being required here.
+|にできるようにあなたがそれをすることができます本当に出くわすことあなたは、実際には私のパートナーとi約束、誰でも素早くはちょうど無視これらの一見正確にどのように{}人のことを忘れることができます。
 
 02:58.050 --> 03:03.870
-Beginning programming, knowledge of any language, and even a dozen hours or so specifically with unity
+プログラミングの初歩、あらゆる言語の知識、そしてunityに特化した十数時間程度の知識。
 
 03:03.870 --> 03:05.260
-would be very helpful.
+unityを数十時間でも使えると助かります。
 
 03:05.280 --> 03:08.760
-But we'll cover those basics and bring your passion.
+しかし、そのような基本的なことをカバーし、情熱を持って臨みましょう。
 
 03:08.760 --> 03:12.510
-Bring a love of video games and a curiosity to learn something new.
+ゲームが好きで、新しいことを学びたいという好奇心を持って来てください。
 
 03:13.360 --> 03:14.720
-Goals of this course.
+このコースの目標
 
 03:14.740 --> 03:16.360
-Have fun with physics.
+物理を楽しむ。
 
 03:16.390 --> 03:22.270
-Get an in-depth understanding of the physics system and bring it all together to create 2D and 3D games
+物理システムを深く理解し、2Dや3Dのゲーム制作に役立てる。
 
 03:22.270 --> 03:23.170
-from scratch.
+ゼロから
 
 03:23.200 --> 03:28.570
-You also have a chance to grasp some of the key advanced topics and understand more about the future
+また、主要な上級トピックを把握し、将来についてより深く理解するチャンスもあります。
 
 03:28.570 --> 03:29.740
-of unity physics.
+統一物理学の
 
 03:30.760 --> 03:32.110
-So let's get started.
+それでは始めましょう。
