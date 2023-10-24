@@ -1,0 +1,196 @@
+WEBVTT
+
+00:01.860 --> 00:03.650
+Adding win loss conditions.
+
+00:03.660 --> 00:10.230
+In this video we'll cover adding UI text for score and time will reward points for collecting the coins
+
+00:10.410 --> 00:12.870
+and will create a timer for the loss condition.
+
+00:12.990 --> 00:18.060
+For winning, we'll add the finish area which our crazy ball can reach and collide with.
+
+00:18.480 --> 00:19.980
+Here's the test breakdown.
+
+00:19.980 --> 00:23.730
+We'll create the crazy ball UI prefab and C-sharp script.
+
+00:23.850 --> 00:27.330
+Then we'll add the finish area prefab and see sharp script.
+
+00:27.750 --> 00:32.500
+Then we'll add the crazy ball game, which will drive the high level logic for our gameplay.
+
+00:32.520 --> 00:36.010
+And between each of these, we'll add the win and loss conditions.
+
+00:36.030 --> 00:42.390
+This screenshot represents our target goal for the project will open up section six, Video four and
+
+00:42.390 --> 00:44.130
+the scene Crazy Ball four.
+
+00:44.850 --> 00:48.780
+All right, here we are in unity and we're jumping into Crazy Ball four.
+
+00:49.990 --> 00:56.320
+Now, what we've added here is the UI and the other code for the rules of the game.
+
+00:56.320 --> 00:58.120
+This is the win and loss conditions.
+
+00:58.120 --> 00:59.290
+So let's take a look.
+
+00:59.740 --> 01:01.810
+We've got this finish area set up.
+
+01:03.460 --> 01:04.810
+It looks like a checkerboard.
+
+01:05.170 --> 01:08.200
+And we've got this collider here.
+
+01:08.200 --> 01:13.660
+So when our ball interacts with that, we're able to trigger the game to be over.
+
+01:14.260 --> 01:20.980
+Then we've got the UI, which is the time and the score and a results text that's currently invisible,
+
+01:20.980 --> 01:26.050
+ready to be populated with values of the current time and the current score, etc..
+
+01:26.260 --> 01:28.810
+And then we've got this new crazy ball game script.
+
+01:28.810 --> 01:30.730
+So let's take a look at each of those three.
+
+01:31.540 --> 01:32.890
+In the crazy ball UI.
+
+01:32.890 --> 01:37.270
+If we wanted to add UI, we'd create a game object from scratch.
+
+01:37.450 --> 01:45.070
+With a UI, we'd be able to create this by creating a game object and then creating the UI with different
+
+01:45.070 --> 01:45.940
+text values.
+
+01:45.940 --> 01:48.400
+We'd go ahead and do that in position on the screen.
+
+01:48.910 --> 01:55.570
+Then we add a custom UI script here and drag in the references to each of the text fields that we want
+
+01:55.570 --> 01:56.600
+to be able to change.
+
+01:56.620 --> 02:00.130
+So let's start by taking a look at that crazy ball UI script.
+
+02:01.480 --> 02:07.810
+So what we do is we take in the different references as serialized fields and then simply have a public
+
+02:07.810 --> 02:13.270
+method for each of them, one to show the time, one to show the score, and then in the end, one to
+
+02:13.270 --> 02:14.050
+show the result.
+
+02:14.050 --> 02:17.350
+Depending if you've won or lost, be able to show unique text there.
+
+02:17.800 --> 02:24.040
+The crazy ball game, which sits in the scene on its own game object, is able to hold the score and
+
+02:24.040 --> 02:25.120
+hold the time.
+
+02:25.120 --> 02:30.820
+And within each of those, when you set the score, for example, it just calls that show score method
+
+02:30.820 --> 02:32.680
+and calls the show time method.
+
+02:32.680 --> 02:37.660
+So you can see the interaction between the crazy ball game and the crazy ball UI.
+
+02:38.620 --> 02:39.700
+Sit down here.
+
+02:39.700 --> 02:43.530
+We set the initial values of score and how much time we have left.
+
+02:43.540 --> 02:45.790
+Those will get shown to the UI.
+
+02:46.150 --> 02:49.030
+And then on update, we tick down the time.
+
+02:49.780 --> 02:51.970
+Down from 30 down to zero.
+
+02:51.970 --> 02:55.900
+And then if it reaches zero, we are able to set the end game.
+
+02:55.900 --> 03:03.070
+And setting the end game will lock in that the game is over so that different systems in the game can
+
+03:03.070 --> 03:03.580
+stop.
+
+03:03.580 --> 03:08.170
+You no longer can have input, for example, and then show that result in the UI.
+
+03:08.200 --> 03:10.390
+Then one more thing I want to show.
+
+03:10.420 --> 03:15.190
+Inside the crazy ball itself, this is how we handle the finish area collision.
+
+03:15.190 --> 03:21.010
+It's quite simple again, because we don't want that bounding box of the finish area to feel like a
+
+03:21.010 --> 03:22.570
+box we can't penetrate.
+
+03:22.570 --> 03:30.280
+We use a trigger and the trigger allows us to go inside of that volume, but we're able to end the game
+
+03:30.280 --> 03:32.260
+properly using the on trigger enter.
+
+03:33.710 --> 03:34.700
+Let's give it a play.
+
+03:38.590 --> 03:40.390
+We can see the time ticking down.
+
+03:41.280 --> 03:45.630
+We can see the score going up every time I get the coins.
+
+03:46.170 --> 03:51.900
+And then if I make my way over to the finish area, the moment I enter that trigger volume, it says
+
+03:51.900 --> 03:52.560
+I win.
+
+03:53.360 --> 03:58.040
+I'll hit spacebar to restart and we could let the timer fall all the way down.
+
+03:58.070 --> 04:04.630
+If it did, it would show a similar message to our UN, except it would say you lose.
+
+04:04.640 --> 04:05.780
+And that's the only difference.
+
+04:05.780 --> 04:09.560
+So there's all the win and loss conditions and our new scripting.
+
+04:12.240 --> 04:15.120
+In the next video, we'll cover adding extra polish.
