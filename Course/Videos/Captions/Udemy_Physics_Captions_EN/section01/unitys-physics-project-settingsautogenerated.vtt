@@ -1,0 +1,289 @@
+WEBVTT
+
+00:01.640 --> 00:04.290
+Unities physics project settings.
+
+00:04.310 --> 00:07.880
+In this video we'll cover what are Unity Project settings?
+
+00:07.880 --> 00:10.550
+Which of these settings are most important to physics?
+
+00:10.550 --> 00:15.230
+And we'll experiment with these settings inside the Unity editor to see some results.
+
+00:15.860 --> 00:17.360
+Unity Project Settings.
+
+00:17.360 --> 00:23.390
+These are the high level settings we use to adjust major systems in unity, including graphics and physics
+
+00:23.390 --> 00:24.290
+To open them.
+
+00:24.290 --> 00:26.730
+You use unity edit project settings.
+
+00:26.750 --> 00:31.370
+As the screenshot shows, there's a search box that you can filter through the settings.
+
+00:31.370 --> 00:36.890
+There's settings organized by category and there's a details pane with the settings themselves that
+
+00:36.890 --> 00:39.440
+will interact with the physics project.
+
+00:39.440 --> 00:43.100
+Settings for three D include many different properties.
+
+00:43.100 --> 00:45.020
+We'll focus on a few key ones.
+
+00:45.020 --> 00:46.310
+First of all, gravity.
+
+00:46.310 --> 00:52.670
+The default settings are simulating gravity on earth If you want to simulate other planets or different
+
+00:52.670 --> 00:55.460
+scenarios in your game, you could tweak the gravity here.
+
+00:55.460 --> 01:01.010
+It should be noted that if you change the gravity drastically, you may want to also tweak the default
+
+01:01.010 --> 01:04.070
+solver iterations that'll give you more stable results.
+
+01:04.070 --> 01:09.320
+You can also set the default material in a later section will cover what physics materials are.
+
+01:09.320 --> 01:14.120
+They allow each object in your world to have different properties of bouncy ness and friction.
+
+01:14.120 --> 01:15.440
+If you want to set them globally.
+
+01:15.440 --> 01:18.080
+Here you can do that and contact pair modes.
+
+01:18.080 --> 01:22.520
+This is a setting you might want to tweak if you're moving kinematic Objects in a physics world.
+
+01:22.520 --> 01:25.550
+We'll talk about kinematic rigid body properties later.
+
+01:25.550 --> 01:29.090
+Other properties that are interesting enable enhanced determinism.
+
+01:29.090 --> 01:34.130
+Now this mode will sacrifice some performance, meaning you'll need a more powerful device, but you'll
+
+01:34.130 --> 01:35.570
+get better determinism.
+
+01:35.570 --> 01:41.630
+Determinism in physics means if you ran the same simulation again and again, you'd get the same result
+
+01:41.630 --> 01:43.520
+in some gameplay design.
+
+01:43.520 --> 01:44.480
+This is important.
+
+01:44.480 --> 01:45.380
+Often it is not.
+
+01:45.380 --> 01:51.200
+The layer collision matrix defines which objects in your world collide with which other objects.
+
+01:51.200 --> 01:54.950
+Now, by default, in unity, everything collides with everything.
+
+01:54.950 --> 01:57.920
+It gives you the visual result and quick feedback you want.
+
+01:57.920 --> 02:03.350
+When you're designing a game as an optimization, consider unchecking all of the collisions that don't
+
+02:03.350 --> 02:07.190
+occur in your game or that you do not want and you'll get better performance.
+
+02:07.980 --> 02:09.400
+Let's take a look at a demo.
+
+02:09.420 --> 02:11.280
+We'll look at the three D Pyramids project.
+
+02:11.280 --> 02:11.730
+Again.
+
+02:11.730 --> 02:18.060
+We'll play with the gravity default material and the layer collision matrix inside Unity.
+
+02:18.060 --> 02:22.520
+Let's open up section one, Video two, three, D Pyramid.
+
+02:22.530 --> 02:29.640
+We'll be reusing this scene to discuss the project settings in the edit window project settings.
+
+02:29.790 --> 02:34.560
+We're able to see all of the project settings for various things inside Unity.
+
+02:34.620 --> 02:40.830
+We're interested in the Physics two D for our two D physics, and in this demo the physics for our three
+
+02:40.830 --> 02:41.640
+D physics.
+
+02:41.640 --> 02:45.330
+Since we have a3d scene, let's go ahead and manipulate that one first.
+
+02:45.330 --> 02:50.000
+Let's just start by playing the scene and we can see that these cubes settle on top of each other.
+
+02:50.010 --> 02:55.710
+Now let's change it from a negative gravity that simulates Earth to a positive gravity.
+
+02:55.830 --> 03:00.000
+This would be something that creates gravity in an upwards direction.
+
+03:00.000 --> 03:03.210
+Maybe your game needs that depending on the game mechanics you have.
+
+03:03.630 --> 03:07.560
+So we can see that these objects fly up in the air.
+
+03:07.560 --> 03:11.310
+It's a little bit silly for most of our examples, but you know, you can control that.
+
+03:11.310 --> 03:15.300
+They're inside this little cogwheel you can open this menu and hit reset.
+
+03:15.370 --> 03:18.990
+That'll bring all the values in this particular window back to the defaults.
+
+03:18.990 --> 03:21.110
+So there we've undone that change.
+
+03:21.120 --> 03:25.140
+Now let's look at the default material inside the project window.
+
+03:25.140 --> 03:27.630
+We're able to create a physics material.
+
+03:27.630 --> 03:32.820
+Now we'll be talking more about this later, but we want to show you that if we create a physic material
+
+03:32.820 --> 03:38.490
+and we create it with a lot of bouncy ness, a bouncy ness of one, then we drag that in as the new
+
+03:38.490 --> 03:39.570
+default material.
+
+03:39.570 --> 03:45.480
+And that says that if there's any objects in the scene that do not already have a material attached,
+
+03:45.480 --> 03:47.940
+then this will be the new default material.
+
+03:47.940 --> 03:50.520
+So here we're giving them this one that's bouncy.
+
+03:50.520 --> 03:52.140
+So let's go ahead and play the scene.
+
+03:53.890 --> 03:57.310
+And we can see that at least one of the boxes behaves a little wacky.
+
+03:57.730 --> 04:03.100
+Now, if I go ahead and I move this, we can see that the ones that I've moved bounce around the scene
+
+04:03.670 --> 04:05.620
+with a high level of bouncy ness.
+
+04:05.650 --> 04:07.360
+Now they're all affected evenly.
+
+04:07.360 --> 04:09.400
+Just depends on which one I manipulate.
+
+04:11.260 --> 04:13.720
+Now, if we stop the scene again and I reset.
+
+04:14.710 --> 04:17.660
+We can look down here and we see the layer collision matrix.
+
+04:17.680 --> 04:23.440
+This is showing that everything in the project collides with everything by layer.
+
+04:23.470 --> 04:25.120
+Layers are set here.
+
+04:25.390 --> 04:30.850
+At the top we can designate the layer for each of the objects in our scene so we can see that the cubes
+
+04:30.850 --> 04:32.590
+are designated as default.
+
+04:33.550 --> 04:38.530
+And inside the environment, we've got floor designated as floor.
+
+04:38.920 --> 04:40.990
+So if I go ahead and play the scene.
+
+04:43.980 --> 04:47.310
+And then down here I can uncheck floor and default.
+
+04:47.310 --> 04:52.890
+And we'll see that Now our default cubes fall directly through the floor.
+
+04:52.920 --> 04:55.920
+So you're able to control within that matrix.
+
+04:56.220 --> 05:01.450
+Also, note that any changes we make during the scene may be reset once we stop the scene.
+
+05:01.470 --> 05:03.450
+Within this window, it depends a bit.
+
+05:03.450 --> 05:05.610
+Some of the settings stick and some do not.
+
+05:05.640 --> 05:08.070
+So just be conscious of when you make changes.
+
+05:08.070 --> 05:12.360
+If you're playing the scene, they might need to be reset after you stop the scene.
+
+05:14.140 --> 05:17.830
+The physics project settings in 2D is a separate panel.
+
+05:17.830 --> 05:22.160
+Now most of the important properties in 2D are the same ones we just discussed in 3D.
+
+05:22.180 --> 05:24.820
+You can see them in the screenshot, but something of note.
+
+05:24.820 --> 05:30.910
+Now it is possible that your game project includes both 2D and 3D physics, but it's likely that you
+
+05:30.910 --> 05:31.630
+choose one.
+
+05:31.630 --> 05:38.080
+So if your game is 2D and you have two D physics, be sure that when you're changing the physics settings,
+
+05:38.080 --> 05:41.050
+you're on the right panel here of physics 2D.
+
+05:42.620 --> 05:47.770
+In the next video physics, life cycle physics, simulate and time dilation.
+
+05:47.780 --> 05:50.330
+We'll look at the structure of unity projects.
+
+05:50.330 --> 05:56.360
+We'll see the role of mono behaviors in unity, and we'll look at some code for behaviors regarding
+
+05:56.360 --> 05:56.990
+physics.

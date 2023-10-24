@@ -1,0 +1,184 @@
+WEBVTT
+
+00:01.730 --> 00:03.650
+The physical material asset.
+
+00:03.650 --> 00:09.260
+In this video, we'll cover what is the physical material, what are its most important properties,
+
+00:09.260 --> 00:11.030
+and then we'll get a chance to use it.
+
+00:11.030 --> 00:17.600
+Inside the Unity Editor A note about two D versus three D Unity has two separate physics systems in
+
+00:17.600 --> 00:23.090
+two D, the rigid body, two D references the physics material two RD asset.
+
+00:23.090 --> 00:30.350
+This has an SE in the title in three d The rigid body references the physic material without an se physic
+
+00:30.350 --> 00:36.860
+material asset in three d physic material is the asset that describes how to handle colliding objects,
+
+00:36.860 --> 00:39.740
+specifically friction and bouncy ness.
+
+00:39.740 --> 00:42.410
+The physical material to RD asset.
+
+00:42.410 --> 00:44.090
+The same goes in to DX.
+
+00:44.540 --> 00:46.910
+Let's take a look at an example in three D.
+
+00:47.880 --> 00:51.810
+Select a game object with a physic material in the inspector window.
+
+00:51.810 --> 00:53.560
+We can look at all the components.
+
+00:53.580 --> 00:55.200
+Let's browse the properties.
+
+00:55.770 --> 00:58.560
+Our focus will be dynamic friction.
+
+00:58.560 --> 01:01.010
+The friction used when already moving.
+
+01:01.020 --> 01:03.590
+Usually it's a value between zero and one.
+
+01:03.600 --> 01:07.470
+A value of zero feels like ice, static friction.
+
+01:07.470 --> 01:11.790
+This is the friction that's used when an object is laying still on a surface.
+
+01:11.790 --> 01:14.220
+Usually it's a value from 0 to 1.
+
+01:14.220 --> 01:16.320
+A value of zero feels like ice.
+
+01:16.410 --> 01:17.520
+Bouncy ness.
+
+01:17.520 --> 01:19.410
+How bouncy is the surface?
+
+01:19.410 --> 01:21.810
+A value of zero will not bounce.
+
+01:21.810 --> 01:25.200
+A value of one will bounce without any loss of energy.
+
+01:25.200 --> 01:25.800
+Friction.
+
+01:25.800 --> 01:30.330
+Combine how the friction of two colliding objects is combined bounce.
+
+01:30.330 --> 01:34.230
+Combine how the bouncy ness of two objects is combined.
+
+01:35.560 --> 01:36.950
+Let's take a look at a demo.
+
+01:36.970 --> 01:43.210
+Sliding cubes begin will play the scene will create a physic material from scratch and we'll play with
+
+01:43.210 --> 01:44.110
+its properties.
+
+01:44.710 --> 01:48.430
+In this scene, let's open up our sliding cubes.
+
+01:48.430 --> 01:49.120
+Begin.
+
+01:50.320 --> 01:54.940
+We'll give it a run and we'll see that the cubes interact in the same way.
+
+01:56.070 --> 02:01.110
+They slowly fall down, turning over themselves with the default.
+
+02:01.380 --> 02:04.080
+We do not yet have physic materials applied.
+
+02:04.110 --> 02:05.670
+Let's go ahead and create some.
+
+02:05.760 --> 02:11.250
+We'll leave one of these cubes as the default and then we'll create a few experiments for the other
+
+02:11.250 --> 02:11.730
+two.
+
+02:12.300 --> 02:16.320
+So if we right click on the folder we created.
+
+02:17.320 --> 02:24.250
+We can go to create and physic material because we're in a 3D scene, it's important that we pick physic
+
+02:24.250 --> 02:25.090
+material.
+
+02:27.100 --> 02:28.630
+We'll call this one default.
+
+02:29.560 --> 02:32.020
+And we'll leave it at those default settings.
+
+02:32.650 --> 02:34.120
+Now, let's create another one.
+
+02:37.940 --> 02:40.220
+This one will make it very bouncy.
+
+02:41.210 --> 02:48.170
+And we'll use the default values for the first, as I mentioned, and then the bouncy one will increase
+
+02:48.170 --> 02:50.780
+the bouncy ness to the highest value of one.
+
+02:50.900 --> 02:54.170
+And now we'll create the third wheel right click.
+
+02:54.170 --> 03:02.270
+We create physical material and this one will make it a very slippery or slippy one.
+
+03:03.420 --> 03:09.960
+That will be with no dynamic friction and no static friction to show an extreme.
+
+03:11.200 --> 03:13.150
+We'll leave the bouncy ness at the default.
+
+03:13.720 --> 03:15.010
+Now let's assign them.
+
+03:16.220 --> 03:19.700
+We can see the highlight here on the left one, we'll leave that as default.
+
+03:20.240 --> 03:25.700
+These are all set up identically, but I gave them a unique name just to hint where we should use so
+
+03:25.700 --> 03:28.310
+bouncy we'll drag that into the box Collider.
+
+03:28.580 --> 03:34.490
+And then group three, this one here, we will go ahead and we'll add the slippi.
+
+03:35.700 --> 03:37.470
+Now let's play the scene again.
+
+03:37.470 --> 03:40.980
+And we should see them fall in a different way.
+
+03:46.220 --> 03:48.110
+You can see that we got different results.
+
+03:50.150 --> 03:53.120
+In the next video, we'll take a look at three D joints.

@@ -1,0 +1,238 @@
+WEBVTT
+
+00:00.700 --> 00:02.470
+Adding programatic forces.
+
+00:02.740 --> 00:08.720
+In this video, we'll cover movement in unity, both traditional movement and movement with physics.
+
+00:08.740 --> 00:12.510
+We'll examine the types of forces we can use in physics movement.
+
+00:12.520 --> 00:15.220
+We'll open up unity and we'll play with those forces.
+
+00:15.400 --> 00:18.490
+Movement in Unity with traditional movement.
+
+00:18.490 --> 00:22.060
+In unity, movement occurs via the transform component.
+
+00:22.360 --> 00:25.600
+Take a look at the snippet on a update call.
+
+00:25.600 --> 00:32.260
+We check if the input is In this case, a right arrow key is held down and then we move the transform
+
+00:32.260 --> 00:35.290
+position to some other position.
+
+00:35.290 --> 00:40.870
+The steps are update input and use the transform movement.
+
+00:40.870 --> 00:45.640
+In physics a little bit different Movement occurs via the rigid body component.
+
+00:45.910 --> 00:53.140
+Crafting a very similar example here we're using fixed update, taking the input and then adding a force
+
+00:53.140 --> 00:54.310
+to the rigid body.
+
+00:54.520 --> 01:00.640
+Let's compare the two in traditional we use update and update is called one time per frame.
+
+01:00.760 --> 01:06.760
+This depends on the frame rate, both the intended frame rate set by the developer and also the actual
+
+01:07.000 --> 01:12.970
+frame rate, which is variable and unpredictable depending on the device and how much computation is
+
+01:12.970 --> 01:14.470
+happening at the given moment.
+
+01:14.470 --> 01:17.580
+Fixed update, on the other hand, is only for physics.
+
+01:17.590 --> 01:22.870
+It's called zero or one or many times per frame, depending on your project setup.
+
+01:22.870 --> 01:25.810
+It depends on the value called fixed time step.
+
+01:25.810 --> 01:27.610
+It's very predictable.
+
+01:27.640 --> 01:29.170
+And note about fixed update.
+
+01:29.170 --> 01:35.260
+Fixed update function is recommended as the place to apply forces and change rigid body settings as
+
+01:35.260 --> 01:39.310
+opposed to update, which is used for most other unity tasks.
+
+01:39.310 --> 01:45.700
+The reason for this is that physics update is carried out in a measured time step and it doesn't coincide
+
+01:45.700 --> 01:46.870
+with the frame update.
+
+01:46.870 --> 01:53.260
+Fixed update is called immediately before each physics update, so any changes made there will be processed
+
+01:53.260 --> 01:53.920
+directly.
+
+01:53.920 --> 01:58.900
+So we want to use physics update for any of our physics based operations.
+
+01:58.900 --> 02:03.430
+Let's look at physics movement in unity, there's different types of forces we can apply.
+
+02:03.460 --> 02:10.750
+There's lots If we want to change, the position will be changing the property called velocity, and
+
+02:10.750 --> 02:15.610
+the methods that we can use are add force, add explosion force and more.
+
+02:15.730 --> 02:21.220
+If we want to change rotation, we'll be changing the angular velocity and there's methods for that
+
+02:21.220 --> 02:21.690
+too.
+
+02:21.700 --> 02:25.090
+The most common ones are add force and add torque.
+
+02:25.090 --> 02:27.280
+Really add force is the most common.
+
+02:27.400 --> 02:32.740
+If we look at a code snippet here, we see inside fixed update, we're adding a force and this object
+
+02:32.740 --> 02:37.060
+would be moving in the x direction positive, which is toward the right.
+
+02:37.240 --> 02:44.740
+If we were to add torque, we could use a similar setup and use the add torque method and apply a rotation
+
+02:44.740 --> 02:45.690
+to that object.
+
+02:45.700 --> 02:52.240
+Now the force mode, which is passed in to the ADD force and add torque has different consequences.
+
+02:52.330 --> 02:54.730
+The default value is force.
+
+02:54.820 --> 02:58.950
+There's also acceleration, impulse and velocity change.
+
+02:58.960 --> 03:04.300
+You can see that some of these are affected by the mass of the objects and some are not.
+
+03:04.480 --> 03:11.320
+The typical one of force is a gradual and realistic movement, and that's the one you typically use
+
+03:11.320 --> 03:13.840
+for basic physics and games.
+
+03:13.930 --> 03:16.630
+But these other ones offer good alternatives.
+
+03:16.870 --> 03:18.370
+Let's take a look at a demo.
+
+03:18.400 --> 03:24.340
+We'll open the ad force demo, we'll play the scene, we'll use the up and down arrow keys, which I
+
+03:24.340 --> 03:29.380
+have set up similar to the snippets we've saw to add forces to different objects.
+
+03:29.380 --> 03:34.600
+Then we'll check out the inspector and the source code and we'll play around with physic material,
+
+03:34.600 --> 03:35.080
+too.
+
+03:35.770 --> 03:35.980
+All right.
+
+03:35.980 --> 03:37.300
+Let's open up our next scene.
+
+03:37.300 --> 03:39.280
+We'll take a look at the ad force demo.
+
+03:40.310 --> 03:44.270
+Now here we've got a series of cubes set up on ramps.
+
+03:44.480 --> 03:46.190
+Notice the highlights text.
+
+03:46.190 --> 03:51.560
+Here we've got a force, impulse velocity change and acceleration.
+
+03:53.010 --> 03:58.610
+If we look at the code that's on each of these we see in the inspector, we have an add force demo script.
+
+03:58.620 --> 04:01.020
+We take an up arrow and a down arrows.
+
+04:01.020 --> 04:05.880
+Our input for all of them, we add the same force of 20 in the x direction.
+
+04:05.880 --> 04:09.450
+The force mode is different for each of the four cubes.
+
+04:10.430 --> 04:12.380
+The one we have highlighted here is force.
+
+04:12.380 --> 04:18.080
+Let's play the scene and see how differently they behave with the same scenario where the only difference
+
+04:18.080 --> 04:19.040
+is the force mode.
+
+04:24.220 --> 04:26.380
+If they're falling under their own control.
+
+04:28.080 --> 04:30.030
+And then I'm going to hold the up key.
+
+04:34.710 --> 04:36.570
+And then I'm going to hold the down key.
+
+04:42.730 --> 04:48.310
+Notice that some accelerate much more quickly and also some have more of an unpredictable movement in
+
+04:48.310 --> 04:49.510
+the Y direction.
+
+04:50.320 --> 04:51.610
+As a bonus assignment.
+
+04:51.610 --> 04:57.640
+If you want to get deeper into this, there's another scene you can take a look at its ad talk demo.
+
+04:57.670 --> 05:02.740
+You can play the scene, use the arrow keys and inspect the code to take a look.
+
+05:02.740 --> 05:04.930
+If you're interested to learn more about talk.
+
+05:05.410 --> 05:12.160
+In the next video we'll cover is Sleeping is kinematic use, gravity and velocity.
+
+05:12.250 --> 05:16.300
+These are common, useful physics properties that we can set with code.
+
+05:16.330 --> 05:21.760
+We'll also take a look at turning on and off physics in your game objects and we'll learn why we want
+
+05:21.760 --> 05:22.180
+to do that.
+
+05:22.180 --> 05:26.800
+Sometimes we'll also play around with all these properties inside the Unity Editor.
