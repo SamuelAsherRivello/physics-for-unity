@@ -118,7 +118,7 @@ namespace RMC.UnityGamePhysics.Sections.Section04
 				{
 					// 4. Access Physics Properties
 					_maxVelocity = Math.Max(_maxVelocity,
-						_dropperRigidBody.velocity.magnitude);
+						_dropperRigidBody.linearVelocity.magnitude);
 
 					SetVelocity(_maxVelocity);
 				}

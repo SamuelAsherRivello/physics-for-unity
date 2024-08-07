@@ -32,7 +32,7 @@ namespace RMC.UnityGamePhysics.Sections.Section06.Video05
 			float moveVertical = Input.GetAxis("Vertical");
 
 			_lastInput = new Vector3(moveHorizontal, 0.0f, moveVertical);
-			_isSpeedTooHigh = _rigidbody.velocity.magnitude > CrazyBallConstants.CrazyBallMaxSpeed;
+			_isSpeedTooHigh = _rigidbody.linearVelocity.magnitude > CrazyBallConstants.CrazyBallMaxSpeed;
 		}
 
 		protected void FixedUpdate()
@@ -40,7 +40,7 @@ namespace RMC.UnityGamePhysics.Sections.Section06.Video05
 			if (CrazyBallGame.Instance.IsGameOver)
 			{
 				// When the game ends, come to a quick but gradual stop
-				_rigidbody.angularDrag = CrazyBallConstants.CrazyBallAngularDragAtFinishArea;
+				_rigidbody.angularDamping = CrazyBallConstants.CrazyBallAngularDragAtFinishArea;
 				return;
 			}
 

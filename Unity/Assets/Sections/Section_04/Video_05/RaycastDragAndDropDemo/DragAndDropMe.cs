@@ -61,7 +61,7 @@ namespace RMC.UnityGamePhysics.Sections.Section04
 			Rigidbody rigidBody = _target.GetComponent<Rigidbody>();
 			if (rigidBody != null)
 			{
-				rigidBody.velocity = new Vector3();
+				rigidBody.linearVelocity = new Vector3();
 				rigidBody.angularVelocity = new Vector3();
 				rigidBody.isKinematic = isKinematic;
 			}
