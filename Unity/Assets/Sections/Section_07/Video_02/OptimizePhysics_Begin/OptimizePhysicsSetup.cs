@@ -6,6 +6,10 @@ namespace RMC.UnityGamePhysics.Sections.Section07.Video02.OptimizePhysics_Begin
 	{
 		protected void Awake()
 		{
+			
+			Debug.Log("Mouse click to start the simulation");
+			
+			
 			// ------------------------------------
 			// TESTING ADVICE
 

@@ -20,7 +20,7 @@ namespace RMC.UnityGamePhysics.Sections.Section06.Video05
 		public const float CrazyBallMaxSpeed = 10f;
 
 		// Tweakable values
-		public static Vector3 CoinRotationPerFrame = new Vector3(0, .5f, 0);
+		public static Vector3 CoinRotationPerFrame = new Vector3(0, 0.25f, 0);
 		public static float CoinDestroyEndSize = 0.01f;
 		public static float CoinDestroyEndDuration = 0.25f;
 		public static float CrazyBallAngularDragAtFinishArea = 5;
