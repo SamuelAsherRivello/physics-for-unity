@@ -2,7 +2,14 @@
 
 This is the source-code for the course "Physics For Unity".
 
-https://bit.ly/physics-for-unity-2022-on-udemy
+
+
+# Unit Testing For Unity
+
+This is the official repo for the [Physics For Unity](https://bit.ly/physics-for-unity-2022-on-udemy) course.
+
+<a href="https://bit.ly/physics-for-unity-2022-on-udemy"><img width="200" src="https://img.youtube.com/vi/ulclbvLL9A4/maxresdefault.jpg" alt="Best Practices"></a>
+
 
 
 # Repo
