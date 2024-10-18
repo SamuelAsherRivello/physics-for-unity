@@ -1,5 +1,6 @@
 ﻿using UnityEditor;
 
+#pragma warning disable CS0618// GetScriptingDefineSymbolsForGroup
 namespace RMC.UnityGamePhysics.Shared
 {
 

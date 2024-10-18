@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Unity_DOTS/Assets/PhysicsForUnity/Demos/Shared/Settings/URP_Renderer.asset.meta
 guid: 1d4c5f711ed19494382eabe85bcfc040
+========
+guid: 8073abb86f79d40448ff6d016c93b909
+>>>>>>>> 4fc0fe1 (Update To Unity Editor 2022.3.41f1):Unity_DOTS/Assets/PhysicsForUnity/Demos/Shared/Settings/URP_Settings.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

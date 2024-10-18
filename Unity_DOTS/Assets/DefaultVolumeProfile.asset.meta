@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Unity_DOTS/Assets/DefaultVolumeProfile.asset.meta
 guid: 6b8e94f0d8908cd4bb957072f326f0d9
+========
+guid: 853790655773cfc49b430683a91e7292
+>>>>>>>> 4fc0fe1 (Update To Unity Editor 2022.3.41f1):Unity_DOTS/Assets/PhysicsForUnity/Demos/Shared/Settings/URP_Asset.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
